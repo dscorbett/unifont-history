@@ -1,3 +1,53 @@
+2020-03-28  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 13.0.01
+	* font/Makefile: updated copyright to 2020.
+	* font/plane00/README: added to description of directory contents.
+	* font/plane00/unifont-base.hex:
+	  - David Corbett drew the new Arabic Extended-A glyphs
+	    (U+08A0..U+08FF), and modified existing Arabic glyphs with
+	    SMALL V or SMALL TAH for better consistency: U+063D, U+0692,
+	    U+06B5, U+06C6, U+06CE, U+0759, U+0768, U+077E, U+08A0.
+	  - Rebecca Bettencourt modified U+25E2..U+25E5 to match
+	    Symbols for Legacy Computing, U+1FB00..U+1FBFF, which
+	    she also drew for this release.
+	  - Paul Hardy drew glyphs added in Unicode 13.0.0 for:
+	    Oriya, Malayalam, Sinhala, Combining Diacritical Marks Extended,
+	    Miscellaneous Symbols and Arrows, Supplemental Punctuation,
+	    Bopomofo Extended, CJK Unified Ideographs Extension A,
+	    CJK Unified Ideographs, Latin Extended-D, Syloti Nagri, and
+	    Latin Extended-E.  He also modified the upper- and lower-case
+	    thorn glyphs in Latin Extended-D as revised in Unicode 13.0.0.
+	    He also moved U+0A23 up one row, and repositioned U+1C92 and
+	    U+1CA2 (thanks to Johnnie Weaver for noticing those errors).
+	* font/plane00/*: other files added for combining marks and
+	  filler glyphs as appropriate.
+	* font/plane01/noscript-ranges.txt: Added comment at start of file
+	  noting that code point ranges in that file are for areas of
+	  Plane 1 where no script is currently assigned to a range.
+	  This file is then used to generate filler glyphs in the file
+	  font/plane01/noscript.hex.
+	* font/plane01/plane01.hex:
+	  - Rebecca Bettencourt drew Symbols for Legacy Computing
+	    (U+1FB00..U+1FBFF).  She also added U+1F8B0 and U+1F8B1.
+	  - Johnnie Weaver drew:
+	    - Yezidi (U+10E80..U+10EBF)
+	    - Chorasmian (U+10FB0..U+10FDF)
+	    - Khitan Small Script (U+18B00..U+18CFF).
+	  - David Corbett drew Dives Akuru (U+11900..U+1195F).
+	  - Paul Hardy drew new glyphs for Ancient Symbols, Chakma, Sharada,
+	    Newa, Lisu Supplement, Ideographic Symbols and Punctuation,
+	    Enclosed Alphanumeric Supplement, Transport and Map Symbols,
+	    Supplemental Symbols and Pictographs, and Symbols and
+	    Pictographs Extended-A.
+	* font/plane01/*: other files added for combining marks and
+	  filler glyphs as appropriate.
+	* font/plane01/unassigned-ranges.txt: Added comment at start of
+	  file noting that code point rangs in that file are for areas
+	  of Plane 1 within assigned script ranges that have unassigned
+	  code points.  This file is then used to generate filler glyphs
+	  in the file font/plane01/plane01-unassigned.hex.
+	* font/ttfsrc/Makefile: updated copyright to 2020.
+
 2019-11-30  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 12.1.04
 	* font/Makefile:
@@ -9,7 +59,7 @@
 	  - png: Generate Plane 2 PNG files, generate compiled/plane02.html.
 	  - precompiled: added unifont_jp-$(VERSION).bdf.gz.
 	* font/plane00/unifont-base.hex:
-	  - Added two missing dots to Syriac glyph U+08BA.
+	  - Added two missing dots to Arabic glyph U+08BA.
 	    Submitted by David Corbett (Savannah bug 57273).
 	  - Added descending lines to coffin (U+26B0) so it looks more 3D.
 	* font/plane01/plane01.hex:

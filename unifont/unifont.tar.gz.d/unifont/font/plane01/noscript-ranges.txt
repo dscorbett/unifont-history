@@ -1,3 +1,7 @@
+; This file contains unassigned blocks of 16 code points
+; in Plane 1 of the Unicode Standard where no script
+; is yet assigned to those ranges.
+;
 ; Start of Plane 1
 ; Linear B Syllabary
 ; Linear B Ideograms
@@ -51,10 +55,12 @@
 ; Hanifi Rohingya
 010D40 010E5F
 ; Rumi Numeral Symbols
-010E80 010EFF 
+; Yezidi
+010EC0 010EFF 
 ; Old Sogdian
 ; Sogdian
-010F70 010FDF
+010F70 010FAF
+; Chorasmian
 ; Elymaic
 ; Brahmi
 ; Kaithi
@@ -82,7 +88,8 @@
 ; Dogra
 011850 01189F
 ; Warang Citi
-011900 01199F
+; Dives Akuru
+011960 01199F
 ; Nandinagari
 ; Zanabazar Square
 ; Soyombo
@@ -96,7 +103,8 @@
 ; Gunjala Gondi
 011DB0 011EDF
 ; Makasar
-011F00 011FBF
+011F00 011FAF
+; Lisu Supplement
 ; Tamil Supplement
 ; Cuneiform
 ; Cuneiform Numbers and Punctuation
@@ -120,7 +128,9 @@
 ; Ideographic Symbols and Punctuation
 ; Tangut
 ; Tangut Components
-018B00 01AFFF
+; Small Khitan Script
+; Tangut Supplement
+018D10 01AFFF
 ; Kana Supplement
 ; Kana Extended - A
 ; Small Kana Extension
@@ -171,4 +181,5 @@
 ; Supplemental Symbols and Pictographs
 ; Chess Symbols
 ; Symbols and Pictographs Extended-A
-01FB00 01FFFD
+; Symbols for Legacy Computing
+01FC00 01FFFD

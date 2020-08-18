@@ -279,6 +279,7 @@ main (int argc, char *argv[])
    for (i = 0x011680; i <= 0x0116CF; i++) wide[i] = 1; /* Takri              */
    for (i = 0x011700; i <= 0x01173F; i++) wide[i] = 1; /* Ahom               */
    for (i = 0x011800; i <= 0x01184F; i++) wide[i] = 1; /* Dogra              */
+   for (i = 0x011900; i <= 0x01195F; i++) wide[i] = 1; /* Dives Akuru        */
    for (i = 0x0119A0; i <= 0x0119FF; i++) wide[i] = 1; /* Nandinagari        */
    for (i = 0x011A00; i <= 0x011A4F; i++) wide[i] = 1; /* Zanabazar Square   */
    for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo            */

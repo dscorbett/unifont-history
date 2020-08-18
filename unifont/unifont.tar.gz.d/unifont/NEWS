@@ -1,3 +1,15 @@
+2020-03-28: Release 13.0.01
+   * Adds all new Unicode 13.0.0 glyphs for scripts previously covered.
+   * Adds several new scripts:
+     - U+10E80..U+10EBF Yezidi (Johnnie Weaver)
+     - U+10FB0..U+10FDF Chorasmian (Johnnie Weaver)
+     - U+11900..U+1195F Dives Akuru (David Corbett)
+     - U+11FB0          Lisu Supplement (Paul Hardy)
+     - U+18B00..U+18CFF Khitan Small Script (Johnnie Weaver)
+     - U+1FB00..U+1FBFF Symbols for Legacy Computing (Rebecca Bettencourt).
+   * Minor patches to several glyphs.
+   * See ChangeLog for details.
+
 2019-11-30: Release 12.1.04
    * Minor patches to several glyphs.
    * Some improvements to font/Makefile.

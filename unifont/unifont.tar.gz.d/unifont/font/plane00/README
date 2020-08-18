@@ -16,29 +16,44 @@ leaves 65,536 - 2,048 = 63,488 code points.
 The file copyleft.hex contains the Copyleft symbol, which is in the
 Supplemental Multilingual Plane (Plane 1); it is added to the TrueType
 version of Unifont (even though it lies above Plane 0) because of its
-significance.  The custom00.hex file is empty, so it has zero lines.
+significance.
 
-This makes a total of 63,489 lines in all *.hex files in this directory.
+The file custom00.hex is empty, so it has zero lines.
 
-The number of lines can be conveniently determined in this directory with
+The file izmg16-plane00.hex contains Japanese versions of glyphs in
+Plane 0 that replace glyphs in corresponding code points in the default
+Unifont build.  As of Unicode 12.1.04, this contains 9,880 glyphs.
+This number is not expected to change.  See the end of this document
+for further discussion of this file.
+
+The number of lines in a .hex file (or any other plain text file) can be
+conveniently determined in this directory with
 
    wc -l *.hex
 
-The last line will be a grand total, and this should equal 63,489 (with
-one line in copyleft.hex).  Here is the output of "wc -l *.hex" with the
-Unifont 11.0 glyph files:
+The last line will be a grand total.
 
-      1 copyleft.hex
-      0 custom00.hex
-  11172 hangul-syllables.hex
-      2 omit.hex
-     90 plane00-nonprinting.hex
-   1643 plane00-unassigned.hex
-   6400 pua.hex
-     17 spaces.hex
-  16314 unifont-base.hex
-  27850 wqy.hex
-  63489 total
+Here is the output of "wc -l *.hex" with the Unifont 13.0.01 glyph files:
+
+       1 copyleft.hex
+       0 custom00.hex
+   11172 hangul-syllables.hex
+    9880 izmg16-plane00.hex
+       2 omit.hex
+      90 plane00-nonprinting.hex
+    1551 plane00-unassigned.hex
+    6400 pua.hex
+      17 spaces.hex
+   16461 unifont-base.hex
+   27795 wqy.hex
+   73369 total
+
+This makes a total of 73,369 lines in all *.hex files in this directory.
+Subtracting the 9,880 duplicate code points that exist in izmg16-plane00.hex
+and the one Plane 1 glyph in copyleft.hex, the total non-duplicate Plane 0
+code points amount to 73,369 - 9,880 - 1 = 63,488 glyphs.  That subtotal
+should remain constant for Plane 0, as described at the beginning of
+this document.
 
 If there are any duplicates, most likely these will be from new
 glyphs being added to unifont-base.hex that were not removed from
@@ -84,4 +99,4 @@ standard, and replaces glyphs in the rest of Unifont to produce
 the Japanese version, unifont_jp.
 
 
-Paul Hardy, 2014, 2016, 2018, 2019
+Paul Hardy, 2014, 2016, 2018, 2019, 2020

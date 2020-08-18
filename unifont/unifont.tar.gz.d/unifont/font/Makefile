@@ -16,9 +16,9 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 12.1.04
+VERSION = 13.0.01
 
-COPYRIGHT = "Copyright (C) 1998-2019 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2020 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
 License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."

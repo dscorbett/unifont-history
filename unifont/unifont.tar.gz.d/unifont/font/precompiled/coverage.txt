@@ -651,9 +651,9 @@ Covered      Range       Script
 
    0.1%  U+17000..U+187FF  Tangut
 
-   1.7%  U+18800..U+18AFF  Tangut Components
+   0.0%  U+18800..U+18AFF  Tangut Components
 
- 100.0%  U+18B00..U+1AFFF  Unassigned
+  99.9%  U+18B00..U+1AFFF  Unassigned
 
  100.0%  U+1B000..U+1B0FF  Kana Supplement
 
