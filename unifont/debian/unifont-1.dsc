@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: unifont
 Binary: unifont, xfonts-unifont, ttf-unifont, psf-unifont, unifont-bin
 Architecture: any all
-Version: 1:9.0.06-1
+Version: 1:10.0.01-1
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Homepage: http://unifoundry.com
 Standards-Version: 3.9.8
@@ -15,11 +15,11 @@ Package-List:
  unifont-bin deb x11 extra arch=any
  xfonts-unifont deb fonts optional arch=all
 Checksums-Sha1:
- 842edbda1b8f8a3813d86aff2e8e17230f6caf60 14785468 unifont_9.0.06.orig.tar.gz
- f267d1135cf58b63b03f1b903739a7fe09fa056d 20316 unifont_9.0.06-1.debian.tar.xz
+ 4d78edd0d6be47bf8998559ef8274a43d42271d0 14840835 unifont_10.0.01.orig.tar.gz
+ 312a10a3b83381b2cbe6a6fc8865674129834ec3 20768 unifont_10.0.01-1.debian.tar.xz
 Checksums-Sha256:
- 07c51d4c74d0fe1056b73caa0d692f76a257b1a69f60f7d58acf5e14bbca7e79 14785468 unifont_9.0.06.orig.tar.gz
- 81046b6420bd1f8eb18ff4562335b2bdb9096719bfb211b816d13f9554ce7e07 20316 unifont_9.0.06-1.debian.tar.xz
+ 0f553642e91b10ebc01514f16f518e39a43bdd32da64c70fc3b692ed182a62b2 14840835 unifont_10.0.01.orig.tar.gz
+ 5632f94db734a6b4e289b80ba1840d85f3efd57a4c624bd76f79d7359f9abc4f 20768 unifont_10.0.01-1.debian.tar.xz
 Files:
- 64d1aef1ab02212294ef22fde3cb71f2 14785468 unifont_9.0.06.orig.tar.gz
- 262bd5b6c719f2cb9440c4e413fdf522 20316 unifont_9.0.06-1.debian.tar.xz
+ 20fed36a285df080862c231428b8ff50 14840835 unifont_10.0.01.orig.tar.gz
+ 33e29bdf109e486c69e1eba926fd36bb 20768 unifont_10.0.01-1.debian.tar.xz

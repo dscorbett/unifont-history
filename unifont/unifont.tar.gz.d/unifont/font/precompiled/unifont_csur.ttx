@@ -4,13 +4,13 @@
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
-    <fontRevision value="9.0"/>
-    <checkSumAdjustment value="0x5517982a"/>
+    <fontRevision value="10.0"/>
+    <checkSumAdjustment value="0x2f81626d"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Thu Dec 22 23:47:53 2016"/>
-    <modified value="Thu Dec 22 23:47:53 2016"/>
+    <created value="Tue Jun 20 15:25:14 2017"/>
+    <modified value="Tue Jun 20 15:25:17 2017"/>
     <xMin value="0"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -97,7 +97,7 @@
     <ulUnicodeRange3 value="00000100 00000000 00000000 00000000"/>
     <ulUnicodeRange4 value="00000000 00000000 00000000 00000000"/>
     <achVendID value="PfEd"/>
-    <fsSelection value="00000000 01000000"/>
+    <fsSelection value="00000000 00000000"/>
     <usFirstCharIndex value="57344"/>
     <usLastCharIndex value="65535"/>
     <sTypoAscender value="896"/>
@@ -111,7 +111,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (C) 2016 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+      Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
@@ -120,19 +120,19 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 22-12-2016
+      FontForge 2.0 : Unifont CSUR : 20-6-2017
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 9.0.06 
+      Version 10.0.01 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright (C) 2016 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+      Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
@@ -141,13 +141,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 22-12-2016
+      FontForge 2.0 : Unifont CSUR : 20-6-2017
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 9.0.06 
+      Version 10.0.01 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -5674,9 +5674,9 @@
   <FFTM>
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
-    <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Thu Dec 22 23:47:50 2016"/>
-    <sourceModified value="Thu Dec 22 23:47:53 2016"/>
+    <FFTimeStamp value="Sat Nov 12 15:07:51 2016"/>
+    <sourceCreated value="Tue Jun 20 15:25:14 2017"/>
+    <sourceModified value="Tue Jun 20 15:25:17 2017"/>
   </FFTM>
 
   <GDEF>
