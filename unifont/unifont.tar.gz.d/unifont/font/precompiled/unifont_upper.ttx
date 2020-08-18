@@ -5,13 +5,13 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="10.0"/>
-    <checkSumAdjustment value="0x7e1b715"/>
+    <checkSumAdjustment value="0x2584dcc5"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Fri Jun 30 18:58:57 2017"/>
-    <modified value="Fri Jun 30 18:59:03 2017"/>
-    <xMin value="0"/>
+    <created value="Fri Jun 30 22:57:33 2017"/>
+    <modified value="Fri Jun 30 22:57:39 2017"/>
+    <xMin value="-1024"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
     <yMax value="896"/>
@@ -28,8 +28,8 @@
     <descent value="-128"/>
     <lineGap value="72"/>
     <advanceWidthMax value="1024"/>
-    <minLeftSideBearing value="0"/>
-    <minRightSideBearing value="-1024"/>
+    <minLeftSideBearing value="-1024"/>
+    <minRightSideBearing value="0"/>
     <xMaxExtent value="1024"/>
     <caretSlopeRise value="1"/>
     <caretSlopeRun value="0"/>
@@ -126,7 +126,7 @@
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 10.0.02 
+      Version 10.0.03 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperMedium
@@ -147,7 +147,7 @@
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 10.0.02 
+      Version 10.0.03 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperMedium
@@ -9097,8 +9097,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sat Nov 12 15:07:51 2016"/>
-    <sourceCreated value="Fri Jun 30 18:58:57 2017"/>
-    <sourceModified value="Fri Jun 30 18:59:03 2017"/>
+    <sourceCreated value="Fri Jun 30 22:57:33 2017"/>
+    <sourceModified value="Fri Jun 30 22:57:39 2017"/>
   </FFTM>
 
   <GDEF>

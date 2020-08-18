@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="10.0"/>
-    <checkSumAdjustment value="0x1b0f24d6"/>
+    <checkSumAdjustment value="0x190b656c"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1000"/>
-    <created value="Fri Jun 30 18:59:04 2017"/>
-    <modified value="Fri Jun 30 18:59:04 2017"/>
+    <created value="Fri Jun 30 22:57:41 2017"/>
+    <modified value="Fri Jun 30 22:57:41 2017"/>
     <xMin value="33"/>
     <yMin value="-200"/>
     <xMax value="298"/>
@@ -131,7 +131,7 @@
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 10.0.02 
+      Version 10.0.03 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperSampleMedium
@@ -152,7 +152,7 @@
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 10.0.02 
+      Version 10.0.03 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperSampleMedium
@@ -9137,7 +9137,7 @@
       68207468 6520474e 5520466f 6e742045
       6d626564 64696e67 20457863 65707469
       6f6e2e00 464f4e54 5f564552 53494f4e
-      0031302e 302e3032 00464f4e 545f5459
+      0031302e 302e3033 00464f4e 545f5459
       50450042 69746d61 7000464f 554e4452
       5900474e 55004641 4d494c59 5f4e414d
       4500556e 69666f6e 74205570 70657220
@@ -82325,8 +82325,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sat Nov 12 15:07:51 2016"/>
-    <sourceCreated value="Fri Jun 30 18:59:04 2017"/>
-    <sourceModified value="Fri Jun 30 18:59:04 2017"/>
+    <sourceCreated value="Fri Jun 30 22:57:41 2017"/>
+    <sourceModified value="Fri Jun 30 22:57:41 2017"/>
   </FFTM>
 
 </ttFont>
