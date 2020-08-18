@@ -4,13 +4,13 @@
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
-    <fontRevision value="1.0"/>
-    <checkSumAdjustment value="0x85a4aca0"/>
+    <fontRevision value="6.29999"/>
+    <checkSumAdjustment value="0x827536ad"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 10001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sun Oct 20 17:50:04 2013"/>
-    <modified value="Sun Oct 20 17:50:04 2013"/>
+    <created value="Mon Dec 16 15:01:40 2013"/>
+    <modified value="Mon Dec 16 15:01:40 2013"/>
     <xMin value="0"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -39,15 +39,15 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="56993"/>
+    <numberOfHMetrics value="57090"/>
   </hhea>
 
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="56993"/>
+    <numGlyphs value="57091"/>
     <maxPoints value="256"/>
-    <maxContours value="44"/>
+    <maxContours value="45"/>
     <maxCompositePoints value="0"/>
     <maxCompositeContours value="0"/>
     <maxZones value="2"/>
@@ -94,12 +94,12 @@
     </panose>
     <ulUnicodeRange1 value="11111111 11111111 11111111 11111111"/>
     <ulUnicodeRange2 value="11101001 11111111 11111111 11111111"/>
-    <ulUnicodeRange3 value="11100000 00010111 11111111 11111111"/>
+    <ulUnicodeRange3 value="11101000 00010111 11111111 11111111"/>
     <ulUnicodeRange4 value="00000000 01111111 00000000 00011111"/>
     <achVendID value="PfEd"/>
     <fsSelection value="00000000 01000000"/>
     <usFirstCharIndex value="0"/>
-    <usLastCharIndex value="65533"/>
+    <usLastCharIndex value="65535"/>
     <sTypoAscender value="896"/>
     <sTypoDescender value="-128"/>
     <sTypoLineGap value="0"/>
@@ -115,41 +115,47 @@
   </cvt>
 
   <name>
+    <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
+      Copyright (C) 2013 Roman Czyborra, Paul Hardy, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+    </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      unifont
+      GNU
     </namerecord>
     <namerecord nameID="2" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : GNU Unifont : 20-10-2013
+      FontForge 2.0 : Unifont : 16-12-2013
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      GNU Unifont
+      Unifont
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 1.00 
+      Version 6.3.20131215 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      unifont
+      UnifontMedium
+    </namerecord>
+    <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
+      Copyright (C) 2013 Roman Czyborra, Paul Hardy, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
-      unifont
+      GNU
     </namerecord>
     <namerecord nameID="2" platformID="3" platEncID="1" langID="0x409">
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : GNU Unifont : 20-10-2013
+      FontForge 2.0 : Unifont : 16-12-2013
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
-      GNU Unifont
+      Unifont
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 1.00 
+      Version 6.3.20131215 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
-      unifont
+      UnifontMedium
     </namerecord>
   </name>
 
@@ -347,6 +353,7 @@
       <psName name="00AA"/>
       <psName name="00AB"/>
       <psName name="00AC"/>
+      <psName name="00AD"/>
       <psName name="00AE"/>
       <psName name="00AF"/>
       <psName name="00B0"/>
@@ -1020,6 +1027,7 @@
       <psName name="034C"/>
       <psName name="034D"/>
       <psName name="034E"/>
+      <psName name="034F"/>
       <psName name="0350"/>
       <psName name="0351"/>
       <psName name="0352"/>
@@ -1736,6 +1744,7 @@
       <psName name="0619"/>
       <psName name="061A"/>
       <psName name="061B"/>
+      <psName name="061C"/>
       <psName name="061D"/>
       <psName name="061E"/>
       <psName name="061F"/>
@@ -1928,6 +1937,7 @@
       <psName name="06DA"/>
       <psName name="06DB"/>
       <psName name="06DC"/>
+      <psName name="06DD"/>
       <psName name="06DE"/>
       <psName name="06DF"/>
       <psName name="06E0"/>
@@ -1977,6 +1987,7 @@
       <psName name="070C"/>
       <psName name="070D"/>
       <psName name="070E"/>
+      <psName name="070F"/>
       <psName name="0710"/>
       <psName name="0711"/>
       <psName name="0712"/>
@@ -4021,6 +4032,7 @@
       <psName name="0F09"/>
       <psName name="0F0A"/>
       <psName name="0F0B"/>
+      <psName name="0F0C"/>
       <psName name="0F0D"/>
       <psName name="0F0E"/>
       <psName name="0F0F"/>
@@ -4615,6 +4627,8 @@
       <psName name="115C"/>
       <psName name="115D"/>
       <psName name="115E"/>
+      <psName name="115F"/>
+      <psName name="1160"/>
       <psName name="1161"/>
       <psName name="1162"/>
       <psName name="1163"/>
@@ -6234,6 +6248,8 @@
       <psName name="17B1"/>
       <psName name="17B2"/>
       <psName name="17B3"/>
+      <psName name="17B4"/>
+      <psName name="17B5"/>
       <psName name="17B6"/>
       <psName name="17B7"/>
       <psName name="17B8"/>
@@ -6319,6 +6335,10 @@
       <psName name="1808"/>
       <psName name="1809"/>
       <psName name="180A"/>
+      <psName name="180B"/>
+      <psName name="180C"/>
+      <psName name="180D"/>
+      <psName name="180E"/>
       <psName name="180F"/>
       <psName name="1810"/>
       <psName name="1811"/>
@@ -8363,7 +8383,13 @@
       <psName name="2008"/>
       <psName name="2009"/>
       <psName name="200A"/>
+      <psName name="200B"/>
+      <psName name="200C"/>
+      <psName name="200D"/>
+      <psName name="200E"/>
+      <psName name="200F"/>
       <psName name="2010"/>
+      <psName name="2011"/>
       <psName name="2012"/>
       <psName name="2013"/>
       <psName name="2014"/>
@@ -8386,6 +8412,14 @@
       <psName name="2025"/>
       <psName name="2026"/>
       <psName name="2027"/>
+      <psName name="2028"/>
+      <psName name="2029"/>
+      <psName name="202A"/>
+      <psName name="202B"/>
+      <psName name="202C"/>
+      <psName name="202D"/>
+      <psName name="202E"/>
+      <psName name="202F"/>
       <psName name="2030"/>
       <psName name="2031"/>
       <psName name="2032"/>
@@ -8434,7 +8468,22 @@
       <psName name="205D"/>
       <psName name="205E"/>
       <psName name="205F"/>
+      <psName name="2060"/>
+      <psName name="2061"/>
+      <psName name="2062"/>
+      <psName name="2063"/>
+      <psName name="2064"/>
       <psName name="2065"/>
+      <psName name="2066"/>
+      <psName name="2067"/>
+      <psName name="2068"/>
+      <psName name="2069"/>
+      <psName name="206A"/>
+      <psName name="206B"/>
+      <psName name="206C"/>
+      <psName name="206D"/>
+      <psName name="206E"/>
+      <psName name="206F"/>
       <psName name="2070"/>
       <psName name="2071"/>
       <psName name="2072"/>
@@ -11778,6 +11827,7 @@
       <psName name="2D7C"/>
       <psName name="2D7D"/>
       <psName name="2D7E"/>
+      <psName name="2D7F"/>
       <psName name="2D80"/>
       <psName name="2D81"/>
       <psName name="2D82"/>
@@ -56658,6 +56708,38 @@
       <psName name="FDCD"/>
       <psName name="FDCE"/>
       <psName name="FDCF"/>
+      <psName name="FDD0"/>
+      <psName name="FDD1"/>
+      <psName name="FDD2"/>
+      <psName name="FDD3"/>
+      <psName name="FDD4"/>
+      <psName name="FDD5"/>
+      <psName name="FDD6"/>
+      <psName name="FDD7"/>
+      <psName name="FDD8"/>
+      <psName name="FDD9"/>
+      <psName name="FDDA"/>
+      <psName name="FDDB"/>
+      <psName name="FDDC"/>
+      <psName name="FDDD"/>
+      <psName name="FDDE"/>
+      <psName name="FDDF"/>
+      <psName name="FDE0"/>
+      <psName name="FDE1"/>
+      <psName name="FDE2"/>
+      <psName name="FDE3"/>
+      <psName name="FDE4"/>
+      <psName name="FDE5"/>
+      <psName name="FDE6"/>
+      <psName name="FDE7"/>
+      <psName name="FDE8"/>
+      <psName name="FDE9"/>
+      <psName name="FDEA"/>
+      <psName name="FDEB"/>
+      <psName name="FDEC"/>
+      <psName name="FDED"/>
+      <psName name="FDEE"/>
+      <psName name="FDEF"/>
       <psName name="FDF0"/>
       <psName name="FDF1"/>
       <psName name="FDF2"/>
@@ -56674,6 +56756,22 @@
       <psName name="FDFD"/>
       <psName name="FDFE"/>
       <psName name="FDFF"/>
+      <psName name="FE00"/>
+      <psName name="FE01"/>
+      <psName name="FE02"/>
+      <psName name="FE03"/>
+      <psName name="FE04"/>
+      <psName name="FE05"/>
+      <psName name="FE06"/>
+      <psName name="FE07"/>
+      <psName name="FE08"/>
+      <psName name="FE09"/>
+      <psName name="FE0A"/>
+      <psName name="FE0B"/>
+      <psName name="FE0C"/>
+      <psName name="FE0D"/>
+      <psName name="FE0E"/>
+      <psName name="FE0F"/>
       <psName name="FE10"/>
       <psName name="FE11"/>
       <psName name="FE12"/>
@@ -56913,6 +57011,7 @@
       <psName name="FEFC"/>
       <psName name="FEFD"/>
       <psName name="FEFE"/>
+      <psName name="FEFF"/>
       <psName name="FF00"/>
       <psName name="FF01"/>
       <psName name="FF02"/>
@@ -57162,8 +57261,13 @@
       <psName name="FFF6"/>
       <psName name="FFF7"/>
       <psName name="FFF8"/>
+      <psName name="FFF9"/>
+      <psName name="FFFA"/>
+      <psName name="FFFB"/>
       <psName name="FFFC"/>
       <psName name="FFFD"/>
+      <psName name="FFFE"/>
+      <psName name="FFFF"/>
     </extraNames>
   </post>
 
@@ -57175,8 +57279,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Feb 22 13:48:33 2011"/>
-    <sourceCreated value="Sun Oct 20 17:43:10 2013"/>
-    <sourceModified value="Sun Oct 20 17:43:51 2013"/>
+    <sourceCreated value="Mon Dec 16 14:54:47 2013"/>
+    <sourceModified value="Mon Dec 16 14:55:28 2013"/>
   </FFTM>
 
 </ttFont>
