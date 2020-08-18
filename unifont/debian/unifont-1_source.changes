@@ -1,0 +1,37 @@
+Format: 1.8
+Date: Fri, 14 Feb 2014 08:30:41 -0800
+Source: unifont
+Binary: unifont xfonts-unifont ttf-unifont psf-unifont unifont-bin
+Architecture: source
+Version: 1:6.3.20140214-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Paul Hardy <unifoundry@unifoundry.com>
+Changed-By: Paul Hardy <unifoundry@unifoundry.com>
+Description: 
+ psf-unifont - PSF (console) version of GNU Unifont with APL support
+ ttf-unifont - TrueType version of GNU Unifont
+ unifont    - font with a glyph for each visible Unicode Plane 0 character
+ unifont-bin - utilities for manipulating GNU Unifont
+ xfonts-unifont - PCF (bitmap) version of GNU Unifont
+Closes: 738836
+Changes: 
+ unifont (1:6.3.20140214-1) unstable; urgency=medium
+ .
+   * debian/copyright:
+     - Include reference to GNU Free Documentation License reference 1.3.
+       (Closes: 738836)
+     - Separately list authors of non-Basic Multilingual Plane Unicode and
+       ConScript Unicode Registry (CSUR) scripts.
+Checksums-Sha1: 
+ 53db45d8ce164a63f2e9bb010e88092add0242cf 1119 unifont_6.3.20140214-1.dsc
+ 705028e3f935356de7508f33d0ae42a005672ad4 17337004 unifont_6.3.20140214.orig.tar.gz
+ 7a37a098960e88e57178f3b2de2942c454deb516 20286 unifont_6.3.20140214-1.debian.tar.gz
+Checksums-Sha256: 
+ 08b3ece53968057a0bdb4d708d4db17ea702eb2dab6b34d5d8d3cf2345a422c7 1119 unifont_6.3.20140214-1.dsc
+ 8238b21c105b0af9574c2eac647073513e6c008710a116c7c9e271743cbfd5a7 17337004 unifont_6.3.20140214.orig.tar.gz
+ 978e0c7f790c2b2c14931a5de7caa871786504faddd6ab7291dcaf1063f20e6e 20286 unifont_6.3.20140214-1.debian.tar.gz
+Files: 
+ 2e8ec231817cb787bbec436e10868fdb 1119 fonts optional unifont_6.3.20140214-1.dsc
+ 25a31c9c5657666bf9a0e613df1d75b5 17337004 fonts optional unifont_6.3.20140214.orig.tar.gz
+ 2143f93ba48c3c0205edad3d56d3ba66 20286 fonts optional unifont_6.3.20140214-1.debian.tar.gz

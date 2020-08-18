@@ -4,7 +4,7 @@ SIZE 16 75 75
 FONTBOUNDINGBOX 16 16 0 -2
 STARTPROPERTIES 24
 COPYRIGHT "Copyright (C) 2014 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception."
-FONT_VERSION "6.3.20140204"
+FONT_VERSION "6.3.20140214"
 FONT_TYPE "Bitmap"
 FOUNDRY "GNU"
 FAMILY_NAME "Unifont Upper"
