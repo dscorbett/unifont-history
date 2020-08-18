@@ -4,13 +4,13 @@
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
-    <fontRevision value="10.0"/>
-    <checkSumAdjustment value="0xff49eb43"/>
+    <fontRevision value="11.0"/>
+    <checkSumAdjustment value="0x2980cdb3"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Wed Dec 27 22:36:05 2017"/>
-    <modified value="Wed Dec 27 22:36:08 2017"/>
+    <created value="Tue Jun  5 20:15:43 2018"/>
+    <modified value="Tue Jun  5 20:15:46 2018"/>
     <xMin value="-512"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -39,13 +39,13 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="5483"/>
+    <numberOfHMetrics value="5484"/>
   </hhea>
 
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="5493"/>
+    <numGlyphs value="5494"/>
     <maxPoints value="192"/>
     <maxContours value="23"/>
     <maxCompositePoints value="0"/>
@@ -92,13 +92,13 @@
       <bMidline value="0"/>
       <bXHeight value="0"/>
     </panose>
-    <ulUnicodeRange1 value="00000000 00000000 00000000 00000000"/>
+    <ulUnicodeRange1 value="00000000 00000000 00000000 00000001"/>
     <ulUnicodeRange2 value="00010010 00000000 00000000 00000000"/>
     <ulUnicodeRange3 value="00000100 00000000 00000000 00000000"/>
     <ulUnicodeRange4 value="00000000 00000000 00000000 00000000"/>
     <achVendID value="PfEd"/>
     <fsSelection value="00000000 00000000"/>
-    <usFirstCharIndex value="57344"/>
+    <usFirstCharIndex value="32"/>
     <usLastCharIndex value="65535"/>
     <sTypoAscender value="896"/>
     <sTypoDescender value="-128"/>
@@ -111,7 +111,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. License GPLv2+: GNU GPL version 2 or later &lt;http://gnu.org/licenses/gpl.html&gt; with the GNU Font Embedding Exception.
+      Copyright (C) 1998-2018 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. License GPLv2+: GNU GPL version 2 or later &lt;http://gnu.org/licenses/gpl.html&gt; with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
@@ -120,19 +120,19 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 27-12-2017
+      FontForge 2.0 : Unifont CSUR : 5-6-2018
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 10.0.07 
+      Version 11.0.01 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. License GPLv2+: GNU GPL version 2 or later &lt;http://gnu.org/licenses/gpl.html&gt; with the GNU Font Embedding Exception.
+      Copyright (C) 1998-2018 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. License GPLv2+: GNU GPL version 2 or later &lt;http://gnu.org/licenses/gpl.html&gt; with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
@@ -141,13 +141,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 27-12-2017
+      FontForge 2.0 : Unifont CSUR : 5-6-2018
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 10.0.07 
+      Version 11.0.01 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -175,6 +175,7 @@
     </psNames>
     <extraNames>
       <!-- following are the name that are not taken from the standard Mac glyph order -->
+      <psName name="uni000020"/>
       <psName name="uni00E000"/>
       <psName name="uni00E001"/>
       <psName name="uni00E002"/>
@@ -5676,8 +5677,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sat Aug 12 04:21:12 2017"/>
-    <sourceCreated value="Wed Dec 27 22:36:05 2017"/>
-    <sourceModified value="Wed Dec 27 22:36:08 2017"/>
+    <sourceCreated value="Tue Jun  5 20:15:43 2018"/>
+    <sourceModified value="Tue Jun  5 20:15:46 2018"/>
   </FFTM>
 
   <GDEF>
@@ -5685,6 +5686,7 @@
     <GlyphClassDef Format="2">
       <ClassDef glyph=".null" class="1"/>
       <ClassDef glyph="nonmarkingreturn" class="1"/>
+      <ClassDef glyph="uni000020" class="1"/>
       <ClassDef glyph="uni00E000" class="1"/>
       <ClassDef glyph="uni00E001" class="1"/>
       <ClassDef glyph="uni00E002" class="1"/>

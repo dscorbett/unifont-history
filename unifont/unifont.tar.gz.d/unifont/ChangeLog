@@ -1,3 +1,85 @@
+2018-06-05 Paul Hardy <unifoundry@unifoundry.com>
+	* Version: 11.0.01
+	* Contains the Copyleft glyph added in Unicode 11.0 (U+01F12F)
+	* font/Makefile:
+	  - Update COPYRIGHT for 2018.
+	  - Add font/plane00/copyleft.hex (U+01F12F) to Plane 0 TrueType
+	    Unifont build.  This glyph is not added to the BDF or PCF fonts,
+	    as they only allow code points below U+10000.
+	* font/plane00: Paul Hardy modified hex files to incorporate
+	  Unicode 11.0 BMP changes, maintaining full Unicode BMP coverage.
+	* font/plane00/README:
+	  - Updated for Unifont 11.0 directory structure.
+	  - Added historical note on font/plane00/wqy.hex contents.
+	* font/plane00/plane00-combining.txt:
+	  - Add 0D4E with offset of 0.
+	  - Set width of U+A926 and U+A92B to -16 after widening those glyphs.
+	* font/plane00/unifont-base.hex:
+	  - David Corbett contributed changes to:
+	    + Myanmar            (U+1000..U+019F)
+	    + Myanmar Extended-B (U+A9E0..U+A9FF)
+	    + Tamil              (U+0B80..U+0BFF)
+	    + Khmer              (U+1780..U+17FF)
+	    + Thai               (U+0E00..U+0E7F)
+	    + Lao                (U+0E80..U+0EFF)
+	    + New Tai Lue        (U+1980..U+19DF)
+	    + Sundanese          (U+1B80..U+1BBF)
+	    + Batak              (U+1BC0..U+1BFF)
+	    + Kayah Li           (U+A900..U+A92F)
+	    + Various Latin, Symbols, and Punctuation glyphs
+	  - Paul Hardy contributed changes to:
+	    + Kannada (U+0C80..U+0CFF) and various Latin, Symbols, and
+	      Punctuation glyphs based on comments by David Corbett
+	    + Various CJK glyphs based partially on comments by David Corbett.
+	* font/plane01: Updated for changes in Unicode 11.0 (scripts new in
+	  Unicode 11.0 are marked with an asterisk)
+	  - Johnny Weaver contributed changes to:
+	      + Ahom                  (U+011700..U+01173F)
+	      + Mayan Numerals        (U+01D2E0..U+01D2FF)*
+	      + Counting Rod Numerals (U+01D360..U+01D37F)
+	      + Makasar               (U+011EE0..U+011EFF)*
+	      + Indic Siyaq Numbers   (U+01EC70..U+01ECBF)*
+	  - Paul Hardy contributed changes to:
+	      + Kharoshthi            (U+010A00..U+010A5F)
+	      + Hanifi Rohingya       (U+010D00..U+010D3F)*
+	      + Old Sogdian           (U+010F00..U+010F2F)*
+	      + Sogdian               (U+010F30..U+010F6F)*
+	      + Brahmi                (U+011000..U+01107F)
+	      + Kaithi                (U+011080..U+0110CF)
+	      + Chakma                (U+011100..U+01114F)
+	      + Grantha               (U+011300..U+01137F)
+	      + Newa                  (U+011400..U+01147F)
+	      + Dogra                 (U+011800..U+01184F)*
+	      + Soyombo               (U+011A50..U+011AAF)
+	      + Gunjala Gondi         (U+011D60..U+011DAF)*
+	      + Medefaidrin           (U+016E40..U+016E9F)*
+	      + Encl. Alphanum. Supp. (U+01F100..U+01F1FF)
+	      + Transport/Map Symbols (U+01F680..U+01F6FF)
+	      + Geom. Shapes Extended (U+01F780..U+01F7FF)
+	      + Supp. Symbols/Pict.   (U+01F900..U+01F9FF)
+	      + Chess Symbols         (U+01FA00..U+01FA6F)*
+	  - Note that scripts containing new font glyphs in the
+	    Unicode 11.0 code charts (notably Emoticons) have not
+	    been modified in Unifont.
+	* font/plane01/plane01.hex:
+	  - David Corbett contributed changes to these scripts:
+	    + Kaithi            (U+011080..U+0110CF)
+	    + Sharada           (U+011180..U+0111DF)
+	    + Hatran            (U+0108E0..U+0108FF)
+	    + Takri             (U+011680..U+0116CF)
+	    + Zanabazar Square  (U+011A00..U+011A4F)
+	    + Khojki            (U+011200..U+01124F)
+	    + Soyombo           (U+011A50..U+011AAF)
+	    + Bhaiksuki         (U+011C00..U+011C6F)
+	  - Paul Hardy made these changes based on comments by David Corbett:
+	    + Sharada    (U+011180..U+0111DF)
+	    + Miao       (U+016F00..U+016F9F)
+	    + Palmyrene  (U+010860..U+01087F)
+	    + Nabataean  (U+010880..U+0108AF)
+	    + Takri      (U+011680..U+0116CF)
+	    + Bhaiksuki  (U+011C00..U+011C6F)
+	* font/ttfsrc/Makefile: update COPYRIGHT for 2018.
+
 2017-12-27 Paul Hardy <unifoundry@unifoundry.com>
 	* Version: 10.0.07
 	* ChangeLog: added version numbers for releases 10.0.04-10.0.06.

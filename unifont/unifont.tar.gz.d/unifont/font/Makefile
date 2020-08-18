@@ -16,9 +16,9 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 10.0.07
+VERSION = 11.0.01
 
-COPYRIGHT = "Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2018 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
 License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
@@ -85,12 +85,15 @@ NONPRINTING = $(HEXDIR)/plane00-nonprinting.hex
 PUA = 
 
 # The remaining .hex files will be constant unless a customized font
-# is being built.
+# is being built.  Note that COPYLEFT contains the encoding for U+01F12F,
+# which is in Unicode Plane 1 rather than Plane 0.  It is included in the
+# base Plane 0 Unifont TTF font as an exception because of its significance.
 UNIFONTBASE = $(HEXDIR)/unifont-base.hex
 CJK         = $(HEXDIR)/wqy.hex
 HANGUL      = $(HEXDIR)/hangul-syllables.hex
 SPACES      = $(HEXDIR)/spaces.hex
 CUSTOM00    = $(HEXDIR)/custom00.hex
+COPYLEFT    = $(HEXDIR)/copyleft.hex
 
 UNIFILES = $(UNIFONTBASE) $(CJK) $(HANGUL) $(SPACES) $(UNASSIGNED) \
 	   $(NONPRINTING) $(PUA) $(CUSTOM00)
@@ -133,7 +136,7 @@ hex:
 	fi
 	sort $(UNIFILES) > $(COMPILED_DIR)/unifont-$(VERSION).hex
 	(cd $(HEXDIR) && sort *.hex) | \
-	  egrep -v "^FFF[EF]" | \
+	  egrep -v "^FFF[EF]" | grep -v "^01F12F:" | \
 	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
 	   > $(COMPILED_DIR)/unifont_sample-$(VERSION).hex
 	sort $(UPPER_FILES) \
@@ -400,6 +403,8 @@ ttf: hex
 	install -p \
 		$(COMPILED_DIR)/unifont-$(VERSION).hex \
 		$(TTFSRC)/unifont.hex
+	# Add the Copyleft symbol to the Plane 0 Unifont TrueType font
+	cat $(COPYLEFT) >> $(TTFSRC)/unifont.hex
 	install -p \
 		$(HEXDIR)/plane00-combining.txt \
 		$(TTFSRC)/combining.txt

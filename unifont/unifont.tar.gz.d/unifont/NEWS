@@ -1,3 +1,14 @@
+2018-06-05: Release 11.0.01
+   Update for Unicode 11.0.0 release.  Modifications maintain complete
+   coverage of the Unicode Basic Multilingual Plane (BMP).  Also includes
+   many Supplemental Multilingual Plane (SMP) scripts added in Unicode 11.0.
+
+   Notable in this release is the Unicode 11.0 addition of the Copyleft
+   symbol at code point U+01F12F.  Because of its significance, this is
+   the only SMP glyph added to the Unicode TrueType BMP font.  This glyph
+   also appears in the Unicode Upper TrueType font.  BDF and PCF fonts
+   do not contain this symbol, as they only allow code points below U+10000.
+
 2017-12-27: Release 10.0.07
    Changes to allow cross-building from source.  Now the top-level Makefile
    and src/Makefile define INSTALL=install, rather than install C programs

@@ -1,9 +1,9 @@
 Format: 1.8
-Date: Wed, 27 Dec 2017 11:47:40 -0800
+Date: Tue, 05 Jun 2018 12:54:14 -0700
 Source: unifont
 Binary: unifont xfonts-unifont ttf-unifont psf-unifont unifont-bin
 Architecture: source
-Version: 1:10.0.07-1
+Version: 1:11.0.01-1
 Distribution: unstable
 Urgency: medium
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
@@ -14,35 +14,23 @@ Description:
  unifont    - font with a glyph for each visible Unicode Plane 0 character
  unifont-bin - utilities for manipulating GNU Unifont
  xfonts-unifont - PCF (bitmap) version of GNU Unifont
-Closes: 875572
 Changes:
- unifont (1:10.0.07-1) unstable; urgency=medium
+ unifont (1:11.0.01-1) unstable; urgency=medium
  .
-   [Helmut Grohne]
-   * Fix FTCBFS: (Closes: #875572)
-     + Let dh_auto_build pass cross compilers to make
-     + debian/patches/nostrip.patch: Do not strip during build
-     + Only build "bindir" during arch-only build.
-     + Add override_dh_auto_install-arch to only install arch:any components.
- .
-   [Paul Hardy]
-   * Update to Unifont 10.0.07 release.
-   * debian/control: update to Standards version 4.1.2.
-   * debian/watch:
-     - update to version 4
-     - change "ftp://" to "https://"
+   * Update for Unicode 11.0.
+   * debian/control: update to Standards version 4.1.4.
 Checksums-Sha1:
- 4e03477bc6c7a2ce32831bf2a905249be9bff22f 1373 unifont_10.0.07-1.dsc
- dd4ce56a711e786fc980c7941b599e903f47ebc2 15641307 unifont_10.0.07.orig.tar.gz
- 5b5651279cb789d123dc80f258284114519df09f 833 unifont_10.0.07.orig.tar.gz.asc
- bf649187fc052a350b414610bcc3b81d07366a5e 42197 unifont_10.0.07-1.debian.tar.gz
+ cbb17f03341d35329dadce16d19982e22195575f 1373 unifont_11.0.01-1.dsc
+ acbabcdff92a931d5c85ab3c6524534b91394937 15757814 unifont_11.0.01.orig.tar.gz
+ 31fd7a6a314ef8d235e485a971e37583c10b21d0 833 unifont_11.0.01.orig.tar.gz.asc
+ d1af1413d8ba5ad0a59be44726601b390ec08db2 42370 unifont_11.0.01-1.debian.tar.gz
 Checksums-Sha256:
- 3db72d608f9093c2307293add26bb5240f939a748357b034d497c44b0710a629 1373 unifont_10.0.07-1.dsc
- 136c304f77883d9c9e4b4136d25385180eedc87641759d2f96685fb2896d48cb 15641307 unifont_10.0.07.orig.tar.gz
- d7827bd78c4111ea1a92953a3a56a5de439f3984f1f062b49d4d44451751b843 833 unifont_10.0.07.orig.tar.gz.asc
- 6a07b940ed316ac5add4fe149ee33ad316fad6a14acf487258d0ab69d7d6abcd 42197 unifont_10.0.07-1.debian.tar.gz
+ 95bd5f8d988960bfd1238cb69b5f8da5e1ca406760f1ef71502fe09b06cab78a 1373 unifont_11.0.01-1.dsc
+ a2306643d17dc00d93c036f3d9189cda0be3a934cc6d5be9b88eb00854be6ada 15757814 unifont_11.0.01.orig.tar.gz
+ 2fe0e1ccbd5ceeac894ae95a0564ec1a6e3d4741ea8f3f0175516bbc4c1a0a8e 833 unifont_11.0.01.orig.tar.gz.asc
+ b5909a6cbac6c36059969819a4d74352d0d703a74048d8bbf3e2c13246df8f7e 42370 unifont_11.0.01-1.debian.tar.gz
 Files:
- 90562db8723263ad266fb83a35f07e94 1373 fonts optional unifont_10.0.07-1.dsc
- 4d4b23c8ddb16ac9529931aa4159cd25 15641307 fonts optional unifont_10.0.07.orig.tar.gz
- d16cb8b3fb83f793f818b436aabf09ee 833 fonts optional unifont_10.0.07.orig.tar.gz.asc
- 75f377674619727c6f94ba906c4a617b 42197 fonts optional unifont_10.0.07-1.debian.tar.gz
+ 71831d3698ecde0fa78343bfeccd0068 1373 fonts optional unifont_11.0.01-1.dsc
+ 47bd330c3ec131fbfaf091ae52b218a1 15757814 fonts optional unifont_11.0.01.orig.tar.gz
+ 8846d8bd5199eb77e80ced88e91ed669 833 fonts optional unifont_11.0.01.orig.tar.gz.asc
+ c8571c56605f9d19ec29bb1bab142396 42370 fonts optional unifont_11.0.01-1.debian.tar.gz

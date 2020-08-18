@@ -23,12 +23,12 @@ COMBINING="combining"
 # Could also use bash string replacement if you know you're using bash.
 #
 
-COPYRIGHT = "Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2018 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
 License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
 
-VERSION = 10.0.07
+VERSION = 11.0.01
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex

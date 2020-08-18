@@ -5,7 +5,7 @@
 # these are placed in directory "all/" so they are not included with
 # the main font build, which reads "plane01/*.hex".
 #
-all: plane01.hex plane01-nonprinting.hex unassigned-ranges.txt \
+all: plane01.hex space.hex plane01-nonprinting.hex unassigned-ranges.txt \
 	noscript-ranges.txt
 	if [ ! -d all ]; then \
 		mkdir all; \

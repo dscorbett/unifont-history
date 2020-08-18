@@ -55,6 +55,13 @@
         they are redrawn.
       - Added Miao script back as wide, because combining glyphs are
         added back to font/plane01/plane01-combining.txt.
+
+   05 June 2017 Paul Hardy:
+      - Made U+2329] and U+232A wide.
+      - Added to wide settings for CJK Compatibility Forms over entire range.
+      - Made Kayah Li script double-width.
+      - Made U+232A (Right-pointing Angle Bracket) double-width.
+      - Made U+01F5E7 (Three Rays Right) double-width.
 */
 
 #include <stdio.h>
@@ -190,8 +197,10 @@ main (int argc, char *argv[])
    for (i = 0x1C00; i <= 0x1C4F; i++) wide[i] = 1; /* Lepcha (5.1)           */
    for (i = 0x1CC0; i <= 0x1CCF; i++) wide[i] = 1; /* Sundanese Supplement   */
    for (i = 0x1CD0; i <= 0x1CFF; i++) wide[i] = 1; /* Vedic Extensions (5.2) */
+   wide[0x2329] = wide[0x232A] = 1; /* Left- & Right-pointing Angle Brackets */
    for (i = 0x2E80; i <= 0xA4CF; i++) wide[i] = 1; /* CJK                    */
 // for (i = 0x9FD8; i <= 0x9FE9; i++) wide[i] = 4; /* CJK quadruple-width    */
+   for (i = 0xA900; i <= 0xA92F; i++) wide[i] = 1; /* Kayah Li (5.1)         */
    for (i = 0xA930; i <= 0xA95F; i++) wide[i] = 1; /* Rejang (5.1)           */
    for (i = 0xA960; i <= 0xA97F; i++) wide[i] = 1; /* Hangul Jamo Extended-A */
    for (i = 0xA980; i <= 0xA9DF; i++) wide[i] = 1; /* Javanese (5.2)         */
@@ -205,7 +214,8 @@ main (int argc, char *argv[])
    for (i = 0xD7B0; i <= 0xD7FF; i++) wide[i] = 1; /* Hangul Jamo Extended-B */
    for (i = 0xF900; i <= 0xFAFF; i++) wide[i] = 1; /* CJK Compatibility      */
    for (i = 0xFE10; i <= 0xFE1F; i++) wide[i] = 1; /* Vertical Forms         */
-   for (i = 0xFE30; i <= 0xFE4F; i++) wide[i] = 1; /* CJK Compatibility Forms*/
+   for (i = 0xFE30; i <= 0xFE60; i++) wide[i] = 1; /* CJK Compatibility Forms*/
+   for (i = 0xFFE0; i <= 0xFFE6; i++) wide[i] = 1; /* CJK Compatibility Forms*/
 
    wide[0x303F] = 0; /* CJK half-space fill */
 
@@ -244,6 +254,7 @@ main (int argc, char *argv[])
    for (i = 0x01D800; i <= 0x01DAAF; i++) wide[i] = 1; /* Sutton SignWriting */
    for (i = 0x01E800; i <= 0x01E8DF; i++) wide[i] = 1; /* Mende Kikakui      */
    for (i = 0x01F200; i <= 0x01F2FF; i++) wide[i] = 1; /* Encl Ideograp Suppl*/
+   wide[0x01F5E7] = 1;                                 /* Three Rays Right   */
 
    /*
       Determine whether or not the file is a Microsoft Windows Bitmap file.

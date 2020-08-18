@@ -48,9 +48,13 @@
 ; Old Turkic
 010C50 010C7F
 ; Old Hungarian
-010D00 010E5F
+; Hanifi Rohingya
+010D40 010E5F
 ; Rumi Numeral Symbols
-010E80 010FFF
+010E80 010EFF 
+; Old Sogdian
+; Sogdian
+010F70 010FFF
 ; Brahmi
 ; Kaithi
 ; Sora Sompeng
@@ -73,7 +77,9 @@
 ; Takri
 0116D0 0116FF
 ; Ahom
-011740 01189F
+011740 0117FF
+; Dogra
+011850 01189F
 ; Warang Citi
 011900 0119FF
 ; Zanabazar Square
@@ -85,7 +91,10 @@
 ' Marchen
 011CC0 011CFF
 ; Masaram Gondi
-011D60 011FFF
+; Gunjala Gondi
+011DB0 011EDF
+; Makasar
+011F00 011FFF
 ; Cuneiform
 ; Cuneiform Numbers and Punctuation
 ; Early Dynastic Cuneiform
@@ -99,7 +108,9 @@
 016A70 016ACF
 ; Bassa Vah
 ; Pahawh Hmong
-016B90 016EFF
+016B90 016E3F
+; Medefaidrin
+016EA0 016EFF
 ; Miao
 016FA0 016FDF
 ; Ideographic Symbols and Punctuation
@@ -117,7 +128,8 @@
 ; Byzantine Musical Symbols
 ; Musical Symbols
 ; Ancient Greek Musical Notation
-01D250 01D2FF
+01D250 01D2DF
+; Mayan Numerals
 ; Tai Xuan Jing Symbols
 ; Counting Rod Numerals
 01D380 01D3FF
@@ -129,7 +141,9 @@
 ; Mende Kikakui
 01E8E0 01E8FF
 ; Adlam
-01E960 01EDFF
+01E960 01EC6F
+; Indic Siyaq Numbers
+01ECC0 01EDFF
 ; Arabic Mathematical Alphabetic Symbols
 01EF00 01EFFF
 ; Mahjong Tiles
@@ -145,4 +159,5 @@
 ; Geometric Shapes Extended
 ;  Supplemental Arrows - C
 ; Supplemental Symbols and Pictographs
-01FA00 01FFFD
+; Chess Symbols
+01FA70 01FFFD

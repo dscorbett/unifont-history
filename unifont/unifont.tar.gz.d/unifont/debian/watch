@@ -1,0 +1,11 @@
+# Watch control file for uscan
+# See uscan(1) for format
+
+# Compulsory line, this is a version 4 file
+version=4
+
+# Examine a Webserver directory
+opts=pgpsigurlmangle=s/$/.sig/ \
+     https://ftp.gnu.org/gnu/unifont/unifont-([\d\.]+)/ \
+           unifont-([\d\.]+)\.tar\.gz
+
