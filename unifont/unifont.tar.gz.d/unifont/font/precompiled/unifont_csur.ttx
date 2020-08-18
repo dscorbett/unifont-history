@@ -4,13 +4,13 @@
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
-    <fontRevision value="6.29999"/>
-    <checkSumAdjustment value="0x435e11f3"/>
+    <fontRevision value="7.0"/>
+    <checkSumAdjustment value="0xe1c659a0"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 10001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Fri Feb 14 16:52:52 2014"/>
-    <modified value="Fri Feb 14 16:52:52 2014"/>
+    <created value="Sun Jun 22 02:25:11 2014"/>
+    <modified value="Sun Jun 22 02:25:11 2014"/>
     <xMin value="0"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -39,13 +39,13 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="57773"/>
+    <numberOfHMetrics value="57772"/>
   </hhea>
 
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="57773"/>
+    <numGlyphs value="57772"/>
     <maxPoints value="256"/>
     <maxContours value="45"/>
     <maxCompositePoints value="0"/>
@@ -106,7 +106,7 @@
     <usWinAscent value="896"/>
     <usWinDescent value="128"/>
     <ulCodePageRange1 value="01100000 00111111 00000001 11111111"/>
-    <ulCodePageRange2 value="11011111 11111111 00000000 00000000"/>
+    <ulCodePageRange2 value="11111111 11111111 00000000 00000000"/>
   </OS_2>
 
   <cvt>
@@ -125,13 +125,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 14-2-2014
+      FontForge 2.0 : Unifont CSUR : 21-6-2014
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 6.3.20140214 
+      Version 7.0.01 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -146,13 +146,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 14-2-2014
+      FontForge 2.0 : Unifont CSUR : 21-6-2014
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 6.3.20140214 
+      Version 7.0.01 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -56080,7 +56080,6 @@
       <psName name="E827"/>
       <psName name="E828"/>
       <psName name="E829"/>
-      <psName name="EFFF"/>
       <psName name="F8A0"/>
       <psName name="F8A1"/>
       <psName name="F8A2"/>
@@ -57960,9 +57959,9 @@
   <FFTM>
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
-    <FFTimeStamp value="Tue Feb 22 13:48:33 2011"/>
-    <sourceCreated value="Fri Feb 14 16:48:24 2014"/>
-    <sourceModified value="Fri Feb 14 16:52:29 2014"/>
+    <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
+    <sourceCreated value="Sun Jun 22 02:20:36 2014"/>
+    <sourceModified value="Sun Jun 22 02:24:50 2014"/>
   </FFTM>
 
 </ttFont>
