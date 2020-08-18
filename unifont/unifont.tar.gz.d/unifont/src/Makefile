@@ -8,6 +8,13 @@ LOCALBINDIR = ../bin
 VPATH = . $(LOCALBINDIR)
 
 #
+# INSTALL can be defined on the command line to override
+# the next definition.  This is only applied to C programs
+# to allow INSTALL="install -s" to be specified.  Perl
+# programs just use "install", not "$(INSTALL)".
+#
+INSTALL=install
+#
 # $(PREFIX) is defined in top-level directory, so don't do a
 # 'make install' within this directory -- do it from above.
 #
@@ -40,9 +47,8 @@ all: $(CPROGS) bin
 bin: bin-stamp
 
 bin-stamp: $(CPROGS) $(PPROGS) $(PNGPROGS)
-	install    -m0755 -d $(LOCALBINDIR)
-#	install    -m0755 $? $(LOCALBINDIR)
-	install -s -m0755 $(CPROGS) $(LOCALBINDIR)
+	install -m0755 -d $(LOCALBINDIR)
+	$(INSTALL) -m0755 $(CPROGS) $(LOCALBINDIR)
 	install    -m0755 $(PPROGS) $(LOCALBINDIR)
 	\rm -f $(CPROGS)
 	touch $@
@@ -57,7 +63,7 @@ install:
 	install -m0755 -d $(INSTALLDIR)
 	set -e && \
 	   cd $(LOCALBINDIR) && \
-	   install -s -m0755 $(CPROGS) $(INSTALLDIR)
+	   $(INSTALL) -m0755 $(CPROGS) $(INSTALLDIR)
 	set -e && \
 	   cd ../bin && \
 	   install    -m0755 $(PPROGS) $(INSTALLDIR)

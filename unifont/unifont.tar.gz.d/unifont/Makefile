@@ -11,7 +11,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 10.0.06
+VERSION = 10.0.07
 
 #
 # The settings below will install software, man pages, and documentation
@@ -109,7 +109,7 @@ precompiled:
 # wchardata.o, uncomment the last line
 #
 lib/wchardata.c: $(HEXWIDTH) $(ZEROWIDTH) bindir
-	$(INSTALL) -m0755 -d lib
+	install -m0755 -d lib
 	sort $(HEXWIDTH) > unifonttemp.hex
 	sort $(ZEROWIDTH) > combiningtemp.txt
 	bin/unigenwidth unifonttemp.hex combiningtemp.txt > lib/wchardata.c
@@ -120,20 +120,20 @@ install: bindir libdir docdir
 	$(MAKE) -C src install PREFIX=$(PREFIX)
 	$(MAKE) -C man install PREFIX=$(PREFIX) COMPRESS=$(COMPRESS)
 	$(MAKE) -C font install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
-	$(INSTALL) -m0755 -d $(PKGDEST)
-	$(INSTALL) -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info $(PKGDEST)
+	install -m0755 -d $(PKGDEST)
+	install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info $(PKGDEST)
 	for i in $(TEXTFILES) unifont.txt unifont.info ; do \
 	   gzip $(GZFLAGS) $(PKGDEST)/$$i ; \
 	done
-	$(INSTALL) -m0644 -p lib/wchardata.c $(PKGDEST)
-	$(INSTALL) -m0644 -p font/plane00/plane00-combining.txt $(PKGDEST)
+	install -m0644 -p lib/wchardata.c $(PKGDEST)
+	install -m0644 -p font/plane00/plane00-combining.txt $(PKGDEST)
 	# If "make" wasn't run before, font/compiled won't exist.
 	if [ ! -d font/compiled ] ; then \
-	   $(INSTALL) -m0644 -p font/precompiled/unifont-$(VERSION).hex   $(PKGDEST)/unifont.hex && \
-	   $(INSTALL) -m0644 -p font/precompiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
+	   install -m0644 -p font/precompiled/unifont-$(VERSION).hex   $(PKGDEST)/unifont.hex && \
+	   install -m0644 -p font/precompiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
 	else \
-	   $(INSTALL) -m0644 -p font/compiled/unifont-$(VERSION).hex   $(PKGDEST)/unifont.hex && \
-	   $(INSTALL) -m0644 -p font/compiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
+	   install -m0644 -p font/compiled/unifont-$(VERSION).hex   $(PKGDEST)/unifont.hex && \
+	   install -m0644 -p font/compiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
 	fi
 
 clean:

@@ -1,4 +1,55 @@
+2017-12-27 Paul Hardy <unifoundry@unifoundry.com>
+	* Version: 10.0.07
+	* ChangeLog: added version numbers for releases 10.0.04-10.0.06.
+	* Makefile: changed "$(INSTALL)" to "install" in some places
+	  but allow redefinition of $(INSTALL) on the command line,
+	  to simplify cross-architecture builds.  This ability to
+	  change the INSTALL definition on the command line is passed
+	  to src/Makefile, to allow specifying INSTALL="install -s"
+	  for C programs (but not Perl programs, etc., where there
+	  is no stripping).  This allows the install change that
+	  Helmut Grohne requested for cross-architecture builds,
+	  while also allowing overriding if still desired.
+	* src/Makefile:
+	  - Added Helmut Grohne's change for cross-architecture builds:
+	    defined "INSTALL=install" at top of Makefile.  Changed
+	    "install -s" to "$(INSTALL)" everywhere for binaries.
+	  - Changed "install" to "$(INSTALL)" for C program installation
+	    so it can be overridden on the make invocation line (for example,
+	    with INSTALL="install -s") if desired.
+	* font/plane00/plane00-combining.txt:
+	  - Changed spacing of U+2CEF from -16 to -8 so it overlaps
+	    the current and following glyphs.
+	* font/plane00/unifont-base.hex:
+	  - Updated Tibetan glyphs (U+0F00..U+0FFF) to make most of them
+            single-width.
+          - Updated some Tai Le glyphs (U+1950..U+197F) with glyphs
+            from David Corbett.
+	  - Replaced Lepcha (U+1C00..U+1C4F) with glyphs from David Corbett.
+	  - Updated Coptic with suggestions from David Corbett; moved
+	    U+2CEF left by one column.
+	  - Repositioned superscript and subscript letters for consistency.
+	  - Removed the slash in superscript zero (U+2070) and subscript
+	    zero (U+2080).  The slashed zero was added to ASCII zero
+	    after multiple requests from programmers.  The difference
+	    between superscript zero and subscript zero versus the
+	    letter capital O should be understandable from context.
+	* font/plane01/plane01.hex:
+	  - Updated Byzantine Musical Symbols (U+01D000..U+01D0FF)
+	    to make gorgon shapes uniform.
+	  - Replaced Elbasan (U+010500..U+01052F) with glyphs by David Corbett.
+	  - Updated Old North Arabic glyph U+010A89 to add missing pixel.
+	* font/plane01/plane01-combining.txt:
+	  - Added Miao (U+016F00..U+016F9F) combining code points back.
+	* src/unibmp2hex.c:
+	  - Removed Tibetan hard-coding to 16 pixels wide.
+	  - Added Myanmar, Myanmar Extended-A and Myanmar Extended-B
+	    to list of scripts that are 16 pixels wide.
+	* src/unigencircles.c: Removed hard-coding of Miao with its being
+	  returned to src/unibmp2hex.c and font/plane01/plane01-combining.txt.
+
 2017-08-27 Paul Hardy <unifoundry@unifoundry.com>
+	* Version: 10.0.06
 	* Makefile: modifications from Mike Gilbert to support
 	  parallel make.
 	* font/Makefile:
@@ -134,6 +185,7 @@
 	* Corrected spelling of "Johnny Weaver" to "Johnnie Weaver".
 
 2017-07-12 Paul Hardy <unifoundry@unifoundry.com>
+	* Version: 10.0.05
 	* font/plane00/plane00.hex:
 	  - U+0252 modified to resemble U+1D9B
 	  - U+028B ('v' with hook): redrawn; matches new U+1DB9 shape.
@@ -170,6 +222,7 @@
 	  with "strchr".
 
 2017-07-08 Paul Hardy <unifoundry@unifoundry.com>
+	* Version: 10.0.04
 	* Thanks to David Corbett for bringing the issues concerning
 	  double diacritics, Western and Byzantine musical symbols,
 	  subjoiner glyphs, and other issues to my attention.  Those

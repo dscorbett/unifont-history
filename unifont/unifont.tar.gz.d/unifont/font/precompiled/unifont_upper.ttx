@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="10.0"/>
-    <checkSumAdjustment value="0x68cd95b2"/>
+    <checkSumAdjustment value="0x5fa7ab"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sun Aug 27 22:16:02 2017"/>
-    <modified value="Sun Aug 27 22:16:08 2017"/>
+    <created value="Wed Dec 27 22:36:10 2017"/>
+    <modified value="Wed Dec 27 22:36:16 2017"/>
     <xMin value="-1024"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -65,7 +65,7 @@
     <!-- The fields 'usFirstCharIndex' and 'usLastCharIndex'
          will be recalculated by the compiler -->
     <version value="1"/>
-    <xAvgCharWidth value="831"/>
+    <xAvgCharWidth value="833"/>
     <usWeightClass value="500"/>
     <usWidthClass value="5"/>
     <fsType value="00000000 00000000"/>
@@ -120,13 +120,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper : 27-8-2017
+      FontForge 2.0 : Unifont Upper : 27-12-2017
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 10.0.06 
+      Version 10.0.07 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperMedium
@@ -141,13 +141,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper : 27-8-2017
+      FontForge 2.0 : Unifont Upper : 27-12-2017
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 10.0.06 
+      Version 10.0.07 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperMedium
@@ -9096,9 +9096,9 @@
   <FFTM>
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
-    <FFTimeStamp value="Sat Nov 12 15:07:51 2016"/>
-    <sourceCreated value="Sun Aug 27 22:16:02 2017"/>
-    <sourceModified value="Sun Aug 27 22:16:08 2017"/>
+    <FFTimeStamp value="Sat Aug 12 04:21:12 2017"/>
+    <sourceCreated value="Wed Dec 27 22:36:10 2017"/>
+    <sourceModified value="Wed Dec 27 22:36:16 2017"/>
   </FFTM>
 
   <GDEF>

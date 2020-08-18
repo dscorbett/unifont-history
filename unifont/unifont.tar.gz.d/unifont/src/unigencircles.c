@@ -38,6 +38,10 @@
    12 August 2017 [Paul Hardy]:
       - Hard-code Miao vowels to show combining circles after
         removing them from font/plane01/plane01-combining.txt.
+
+   26 December 2017 [Paul Hardy]:
+      - Remove Miao hard-coding; they are back in unibmp2hex.c and
+        in font/plane01/plane01-combining.txt.
 */
 
 
@@ -101,15 +105,6 @@ main (int argc, char **argv)
       }
    }
    fclose (infilefp); /* all done reading combining.txt */
-
-   /*
-      Hard-code Miao vowels as combining, because they were removed
-      from font/plane01/plane01-combining.txt.
-   */
-   for (loc = 0x016F51; loc <= 0x016F7E; loc++) {
-      combining[loc] =  1;
-      x_offset [loc] = -8;
-   }
 
    /* Now read the non-printing glyphs; they never have dashed circles */
    if ((infilefp = fopen (argv[2],"r")) == NULL) {

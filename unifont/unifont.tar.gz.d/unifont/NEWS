@@ -1,3 +1,18 @@
+2017-12-27: Release 10.0.07
+   Changes to allow cross-building from source.  Now the top-level Makefile
+   and src/Makefile define INSTALL=install, rather than install C programs
+   with the "-s" (strip) option.  This is part of a change requested by
+   Helmut Grohne to allow cross-architecture building without invoking
+   an architecture-specific "install -s".  However, INSTALL still can
+   be defined on the top-level command line when make is invoked as
+   INSTALL="install -s" to allow stripping C binaries during installation
+   if desired.  This definition from the top-level Makefile is passed down
+   to src/Makefile, which uses any command line definition when installing
+   C programs.  Plain "install" is still used when installing Perl
+   programs.
+
+   Minor adjustments to glyphs as noted in the ChangeLog file.
+
 2017-08-27: Release 10.0.06
 
    Added numerous improvements to Unicode Plane 0 and Plane 1 scripts,

@@ -48,6 +48,13 @@
       - Remove Miao script from list of wide scripts, so it can contain
         single-width glyphs.
 
+   26 December 2017 Paul Hardy:
+      - Removed Tibetan from list of wide scripts, so it can contain
+        single-width glyphs.
+      - Added a number of scripts to be explicitly double-width in case
+        they are redrawn.
+      - Added Miao script back as wide, because combining glyphs are
+        added back to font/plane01/plane01-combining.txt.
 */
 
 #include <stdio.h>
@@ -163,46 +170,81 @@ main (int argc, char *argv[])
    for (i = 0x0700; i <= 0x074F; i++) wide[i] = 1; /* Syriac                 */
    for (i = 0x0800; i <= 0x083F; i++) wide[i] = 1; /* Samaritan (5.2)        */
    for (i = 0x0900; i <= 0x0DFF; i++) wide[i] = 1; /* Indic                  */
-   for (i = 0x0F00; i <= 0x0FFF; i++) wide[i] = 1; /* Tibetan                */
+   for (i = 0x1000; i <= 0x109F; i++) wide[i] = 1; /* Myanmar                */
    for (i = 0x1100; i <= 0x11FF; i++) wide[i] = 1; /* Hangul Jamo            */
    for (i = 0x1400; i <= 0x167F; i++) wide[i] = 1; /* Canadian Aboriginal    */
+   for (i = 0x1700; i <= 0x171F; i++) wide[i] = 1; /* Tagalog                */
+   for (i = 0x1720; i <= 0x173F; i++) wide[i] = 1; /* Hanunoo                */
+   for (i = 0x1740; i <= 0x175F; i++) wide[i] = 1; /* Buhid                  */
+   for (i = 0x1760; i <= 0x177F; i++) wide[i] = 1; /* Tagbanwa               */
+   for (i = 0x1780; i <= 0x17FF; i++) wide[i] = 1; /* Khmer                  */
    for (i = 0x18B0; i <= 0x18FF; i++) wide[i] = 1; /* Ext. Can. Aboriginal   */
    for (i = 0x1800; i <= 0x18AF; i++) wide[i] = 1; /* Mongolian              */
    for (i = 0x1900; i <= 0x194F; i++) wide[i] = 1; /* Limbu                  */
-   for (i = 0x1980; i <= 0x19DF; i++) wide[i] = 1; /* New Tai Lue            */
+// for (i = 0x1980; i <= 0x19DF; i++) wide[i] = 1; /* New Tai Lue            */
    for (i = 0x1A00; i <= 0x1A1F; i++) wide[i] = 1; /* Buginese               */
+   for (i = 0x1A20; i <= 0x1AAF; i++) wide[i] = 1; /* Tai Tham (5.2)         */
    for (i = 0x1B00; i <= 0x1B7F; i++) wide[i] = 1; /* Balinese               */
    for (i = 0x1B80; i <= 0x1BBF; i++) wide[i] = 1; /* Sundanese (5.1)        */
    for (i = 0x1BC0; i <= 0x1BFF; i++) wide[i] = 1; /* Batak (6.0)            */
    for (i = 0x1C00; i <= 0x1C4F; i++) wide[i] = 1; /* Lepcha (5.1)           */
+   for (i = 0x1CC0; i <= 0x1CCF; i++) wide[i] = 1; /* Sundanese Supplement   */
    for (i = 0x1CD0; i <= 0x1CFF; i++) wide[i] = 1; /* Vedic Extensions (5.2) */
    for (i = 0x2E80; i <= 0xA4CF; i++) wide[i] = 1; /* CJK                    */
 // for (i = 0x9FD8; i <= 0x9FE9; i++) wide[i] = 4; /* CJK quadruple-width    */
-   for (i = 0x1A20; i <= 0x1AAF; i++) wide[i] = 1; /* Tai Tham (5.2)         */
    for (i = 0xA930; i <= 0xA95F; i++) wide[i] = 1; /* Rejang (5.1)           */
+   for (i = 0xA960; i <= 0xA97F; i++) wide[i] = 1; /* Hangul Jamo Extended-A */
    for (i = 0xA980; i <= 0xA9DF; i++) wide[i] = 1; /* Javanese (5.2)         */
    for (i = 0xAA00; i <= 0xAA5F; i++) wide[i] = 1; /* Cham (5.1)             */
+   for (i = 0xA9E0; i <= 0xA9FF; i++) wide[i] = 1; /* Myanmar Extended-B     */
+   for (i = 0xAA00; i <= 0xAA5F; i++) wide[i] = 1; /* Cham                   */
+   for (i = 0xAA60; i <= 0xAA7F; i++) wide[i] = 1; /* Myanmar Extended-A     */
    for (i = 0xAAE0; i <= 0xAAFF; i++) wide[i] = 1; /* Meetei Mayek Ext (6.0) */
    for (i = 0xABC0; i <= 0xABFF; i++) wide[i] = 1; /* Meetei Mayek (5.2)     */
+   for (i = 0xAC00; i <= 0xD7AF; i++) wide[i] = 1; /* Hangul Syllables       */
+   for (i = 0xD7B0; i <= 0xD7FF; i++) wide[i] = 1; /* Hangul Jamo Extended-B */
+   for (i = 0xF900; i <= 0xFAFF; i++) wide[i] = 1; /* CJK Compatibility      */
+   for (i = 0xFE10; i <= 0xFE1F; i++) wide[i] = 1; /* Vertical Forms         */
+   for (i = 0xFE30; i <= 0xFE4F; i++) wide[i] = 1; /* CJK Compatibility Forms*/
 
    wide[0x303F] = 0; /* CJK half-space fill */
 
    /* Supplemental Multilingual Plane (Plane 01) */
-   for (i = 0x010A00; i <= 0x010A5F; i++) wide[i] = 1; /* Kharoshthi      */
-   for (i = 0x011000; i <= 0x01107F; i++) wide[i] = 1; /* Brahmi          */
-   for (i = 0x011080; i <= 0x0110CF; i++) wide[i] = 1; /* Kaithi          */
-   for (i = 0x011100; i <= 0x01114F; i++) wide[i] = 1; /* Chakma          */
-   for (i = 0x011180; i <= 0x0111DF; i++) wide[i] = 1; /* Sharada         */
-   for (i = 0x011300; i <= 0x01137F; i++) wide[i] = 1; /* Grantha         */
-   for (i = 0x011400; i <= 0x01147F; i++) wide[i] = 1; /* Newa            */
-   for (i = 0x011480; i <= 0x0114DF; i++) wide[i] = 1; /* Tirhuta         */
-   for (i = 0x011680; i <= 0x0116CF; i++) wide[i] = 1; /* Takri           */
-   for (i = 0x0112B0; i <= 0x0112FF; i++) wide[i] = 1; /* Khudawadi       */
-   for (i = 0x011600; i <= 0x01165F; i++) wide[i] = 1; /* Modi            */
-   for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo         */
-   for (i = 0x011D00; i <= 0x011D4F; i++) wide[i] = 1; /* Masaram Gondi non-digits */
-   for (i = 0x01D100; i <= 0x01D1FF; i++) wide[i] = 1; /* Musical Symbols */
-   for (i = 0x01E800; i <= 0x01E8Df; i++) wide[i] = 1; /* Mende Kikakui   */
+   for (i = 0x010A00; i <= 0x010A5F; i++) wide[i] = 1; /* Kharoshthi         */
+   for (i = 0x011000; i <= 0x01107F; i++) wide[i] = 1; /* Brahmi             */
+   for (i = 0x011080; i <= 0x0110CF; i++) wide[i] = 1; /* Kaithi             */
+   for (i = 0x011100; i <= 0x01114F; i++) wide[i] = 1; /* Chakma             */
+   for (i = 0x011180; i <= 0x0111DF; i++) wide[i] = 1; /* Sharada            */
+   for (i = 0x011200; i <= 0x01124F; i++) wide[i] = 1; /* Khojki             */
+   for (i = 0x0112B0; i <= 0x0112FF; i++) wide[i] = 1; /* Khudawadi          */
+   for (i = 0x011300; i <= 0x01137F; i++) wide[i] = 1; /* Grantha            */
+   for (i = 0x011400; i <= 0x01147F; i++) wide[i] = 1; /* Newa               */
+   for (i = 0x011480; i <= 0x0114DF; i++) wide[i] = 1; /* Tirhuta            */
+   for (i = 0x011580; i <= 0x0115FF; i++) wide[i] = 1; /* Siddham            */
+   for (i = 0x011600; i <= 0x01165F; i++) wide[i] = 1; /* Modi               */
+   for (i = 0x011660; i <= 0x01167F; i++) wide[i] = 1; /* Mongolian Suppl.   */
+   for (i = 0x011680; i <= 0x0116CF; i++) wide[i] = 1; /* Takri              */
+   for (i = 0x011700; i <= 0x01173F; i++) wide[i] = 1; /* Ahom               */
+   for (i = 0x011A00; i <= 0x011A4F; i++) wide[i] = 1; /* Zanabazar Square   */
+   for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo            */
+   for (i = 0x011C00; i <= 0x011C6F; i++) wide[i] = 1; /* Bhaiksuki          */
+   for (i = 0x011C70; i <= 0x011CBF; i++) wide[i] = 1; /* Marchen            */
+   for (i = 0x011D00; i <= 0x011D5F; i++) wide[i] = 1; /* Masaram Gondi      */
+   /* Make Bassa Vah all single width or all double width */
+   for (i = 0x016AD0; i <= 0x016AFF; i++) wide[i] = 1; /* Bassa Vah          */
+   for (i = 0x016B00; i <= 0x016B8F; i++) wide[i] = 1; /* Pahawh Hmong       */
+   for (i = 0x016F00; i <= 0x016F9F; i++) wide[i] = 1; /* Miao               */
+   for (i = 0x016FE0; i <= 0x016FFF; i++) wide[i] = 1; /* Ideograph Sym/Punct*/
+   for (i = 0x017000; i <= 0x0187FF; i++) wide[i] = 1; /* Tangut             */
+   for (i = 0x018800; i <= 0x018AFF; i++) wide[i] = 1; /* Tangut Components  */
+   for (i = 0x01B000; i <= 0x01B0FF; i++) wide[i] = 1; /* Kana Supplement    */
+   for (i = 0x01B100; i <= 0x01B12F; i++) wide[i] = 1; /* Kana Extended-A    */
+   for (i = 0x01B170; i <= 0x01B2FF; i++) wide[i] = 1; /* Nushu              */
+   for (i = 0x01D100; i <= 0x01D1FF; i++) wide[i] = 1; /* Musical Symbols    */
+   for (i = 0x01D800; i <= 0x01DAAF; i++) wide[i] = 1; /* Sutton SignWriting */
+   for (i = 0x01E800; i <= 0x01E8DF; i++) wide[i] = 1; /* Mende Kikakui      */
+   for (i = 0x01F200; i <= 0x01F2FF; i++) wide[i] = 1; /* Encl Ideograp Suppl*/
+
    /*
       Determine whether or not the file is a Microsoft Windows Bitmap file.
       If it starts with 'B', 'M', assume it's a Windows Bitmap file.

@@ -1,0 +1,151 @@
+Source: unifont
+Section: fonts
+Priority: optional
+Maintainer: Paul Hardy <unifoundry@unifoundry.com>
+Build-Depends: debhelper (>= 10)
+Build-Depends-Indep: fontforge, xfonts-utils, bdf2psf, libgd-perl
+Standards-Version: 4.1.2
+Homepage: http://unifoundry.com
+
+Package: unifont
+Architecture: all
+Multi-Arch: foreign
+Depends: xfonts-unifont, ttf-unifont, psf-unifont, xfonts-utils, ${misc:Depends}
+Replaces: unifont-bin (<< 1:5.1.20080706-1)
+Suggests: unifont-bin
+Description: font with a glyph for each visible Unicode Plane 0 character
+ This package is a convenient way to install the PCF bitmap version,
+ PSF bitmap version, and the scalable TrueType outline version of "Unifont"
+ (intended for general-purpose use) and "Unifont Sample" (which contains
+ combining circles to use for illustration purposes).  It also installs
+ a copy of unifont.hex and related files in /usr/share/unifont.
+ .
+ GNU Unifont was designed to render something besides an empty box
+ for each visible Unicode character in the Basic Multilingual Plane
+ (BMP, or Plane 0).  The BMP contains most of the world's modern writing
+ scripts.  This font looks best at 12pt.
+ .
+ Complex fonts (such as Indic or Semitic scripts, where letters change
+ shape depending on their position in a word, or such as Mongolian, which
+ can be written vertically) will not render perfectly.  The philosophy
+ behind this font, though, is that anything meaningful is better than
+ an empty box for an unknown glyph.
+
+Package: xfonts-unifont
+Architecture: all
+Multi-Arch: foreign
+Depends: xfonts-utils, ${misc:Depends}
+Replaces: unifont (<< 1:5.1.20080706)
+Conflicts: unifont (<< 1:5.1.20080706)
+Suggests: ttf-unifont
+Description: PCF (bitmap) version of GNU Unifont
+ This contains three fonts: "Unifont" (unifont.pcf.gz),
+ "Unifont CSUR" (unifont_csur.pcf.gz),  and
+ "Unifont Sample" (unifont_sample.pcf.gz).
+ .
+ This is a bitmap version of Unifont in a standard X11 format.
+ The fonts provide a glyph for each visible code point (character)
+ in the Unicode Basic Multilingual Plane (BMP, or Plane 0).  The BMP
+ contains most of the world's modern writing scripts.  These fonts
+ look best at 12pt.
+ .
+ unifont.pcf.gz contains Unicode Plane 0 glyphs.  This is the main font.
+ .
+ unifont_sample.pcf.gz contains combining circles for combining characters.
+ Thus it is suited for illustrating individual Unicode glyphs, whereas
+ Unifont is intended for general-purpose writing.
+ .
+ unifont_csur.pcf.gz contains some scripts in the Plane 0 ConScript
+ Unicode Registry (CSUR).  These scripts are not part of the Unicode
+ Standard, but are a popular use for the Private Use Area (PUA).
+ .
+ Complex fonts (such as Indic or Semitic scripts, where letters change
+ shape depending on their position in a word, or such as Mongolian, which
+ can be written vertically) will not render perfectly.  The philosophy
+ behind this font, though, is that anything meaningful is better than
+ an empty box for an unknown glyph.
+ .
+ Consider using the TrueType version instead (ttf-unifont), because
+ that version is scalable to any point size and has proper combining
+ character support.
+
+Package: ttf-unifont
+Architecture: all
+Multi-Arch: foreign
+Depends: xfonts-utils, ${misc:Depends}
+Description: TrueType version of GNU Unifont
+ This contains four fonts: "Unifont", "Unifont Upper", "Unifont CSUR",
+ and "Unifont Sample".
+ .
+ unifont.ttf is a bitmap font converted into a scalable TrueType
+ outline font, Unifont.  Each pixel in the original bitmap font
+ is represented as an outlined square.  The font provides a glyph
+ for each visible code point (character) in the Unicode Basic
+ Multilingual Plane (BMP, or Plane 0).  The BMP contains most of
+ the world's modern writing scripts.  This font looks best at 12pt.
+ .
+ unifont_upper.ttf is a bitmap font converted into a scalable TrueType
+ outline font that covers Unicode ranges above Plane 0.  Most of its
+ glyphs are in Plane 1, the Unicode Supplemental Multilingual Plane (SMP).
+ .
+ unifont_csur.ttf is a bitmap font converted into a scalable TrueType
+ outline font that contains some scripts in the ConScript Unicode
+ Registry (CSUR).  These scripts are not part of the Unicode Standard,
+ but are a popular use for the Private Use Area (PUA).  This font
+ contains glyphs in Plane 0 and in the higher PUA planes.
+ .
+ unifont_sample.ttf is an SBIT font that contains combining circles
+ and is therefore suitable for illustrating individual Unicode glyphs.
+ The other font files do not contain combining circles and so are suitable
+ for general-purpose writing.
+ .
+ Complex fonts (such as Indic or Semitic scripts, where letters change
+ shape depending on their position in a word, or such as Mongolian, which
+ can be written vertically) will not render perfectly.  The philosophy
+ behind this font, though, is that anything meaningful is better than
+ an empty box for an unknown glyph.
+
+Package: psf-unifont
+Architecture: all
+Multi-Arch: foreign
+Depends: bdf2psf, ${misc:Depends}
+Suggests: ttf-unifont
+Description: PSF (console) version of GNU Unifont with APL support
+ This contains a PSF font (Unifont-APL8x16.psf) as a console frame
+ buffer font with a subset of Unifont for use with GNU APL and other
+ APL implementations.  The font is installed in "/usr/share/consolefonts/".
+ This PSF font is only suitable for running in console mode, not under the
+ X Window System.
+ .
+ A PSF font allows a maximum of 512 glyphs.  The glyph subset in this
+ font includes ASCII, Latin-1, "oe" and "OE" ligatures for French, the
+ Euro sign, Unicode Box Drawing, Unicode Block Elements, plus various
+ glyphs for APL support and some other miscellaneous glyphs.  The font
+ is monospaced, 8 pixels wide by 16 pixels tall.
+ .
+ Consider using the TrueType version instead (ttf-unifont) if you are
+ not running in console mode, because that version is scalable to any
+ point size and has proper combining character support.
+
+Package: unifont-bin
+Section: x11
+Architecture: any
+Depends: xfonts-utils, bdf2psf, fontforge, ${shlibs:Depends}, ${misc:Depends},
+ ${perl:Depends}, libwx-perl, libgd-perl
+Suggests: unifont, texinfo, texlive
+Description: utilities for manipulating GNU Unifont
+ This is a set of Perl scripts, C programs, and FontForge scripts
+ to manipulate Roman Czyborra's GNU Unifont ".hex" format font
+ files.  GNU Unifont has a Unicode-compatible font structure.
+ These utilities allow editing ".hex" fonts with text and
+ graphical editors, producing final versions of fonts in BDF,
+ PCF, PSF, TrueType SBIT, and TrueType outline formats.
+ .
+ To build the TrueType fonts, install the package 'fontforge'.  To build
+ the PCF fonts, use 'bdftopcf', which is in the 'xfonts-utils' package.
+ To build the PSF font, use 'bdf2psf', which is in the 'console-setup'
+ package.  To obtain the font sources, run 'apt-get source unifont'.
+ .
+ Building the main Unifont TrueType font will require at least 4 GB of
+ main memory.  You only need texlive (~1 GB) if you want to rebuild the
+ unifont.pdf file in doc/ (see doc/Makefile); this is not done by default.
