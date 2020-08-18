@@ -49,6 +49,12 @@ The "font/precompiled" directory contains prebuilt font-related files:
      unifont-<version>.pcf.gz         PCF version of Unifont
      unifont-<version>.ttf            TrueType version of Unifont
 
+     unifont_jp-<version>.*           Version of Unifont with Japanese glyphs
+                                      mapped from Plane 1 and Plane 2 of the
+                                      JIS X 0213 standard to Unicode.  The
+                                      TrueType version includes those Unicode
+                                      Plane 2 glyphs that appear in JIS X 0213.
+
      unifont_sample-<version>.hex     Hex string source of all Plane 0 glyphs
                                       (except those for U+FFFE and U+FFFF),
                                       including nonprinting and PUA glyphs,

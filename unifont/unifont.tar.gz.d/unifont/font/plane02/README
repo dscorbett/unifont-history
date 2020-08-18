@@ -1,9 +1,13 @@
-Note on jiskan16-plane02.hex
+Note on izmg16-plane02.hex
 ----------------------------
-The file "jiskan16-plane02.hex" contains glyphs from the public 
-domain BDF font files jiskan16-1-2004.bdf and jiskan16-1-2000.bdf.
-Those font files are available on many operating system distributions.
-They contain glyphs for the JIS X 0213:2004 Japanese standard, and
-replace glyphs in the rest of Unifont to produce the Japanese version
-of a Unifont TrueType font, unifont_jp.
+The file "izmg16-plane02.hex" contains glyphs from the public
+domain Izumi BDF font, downloadable at
 
+     http://unifoundry.com/japanese/index.html
+
+That BDF font contains glyphs for the JIS X 0213:2004 Japanese
+standard, and adds 303 Unicode Plane 2 glyphs to the base Unifont
+file to produce the Japanese version, unifont_jp.
+
+
+Paul Hardy, 2019

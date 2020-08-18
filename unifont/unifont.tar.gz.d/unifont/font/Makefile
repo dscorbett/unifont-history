@@ -16,7 +16,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 12.1.02
+VERSION = 12.1.03
 
 COPYRIGHT = "Copyright (C) 1998-2019 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
@@ -110,7 +110,7 @@ PLANE0 = copyleft.hex custom00.hex hangul-syllables.hex \
 # JIS X 0213 hex files for Japanese.  The plane00 file contains glyphs
 # that will replace those in the default Chinese version of Unifont.
 #
-JISHEX = plane00/jiskan16-plane00.hex plane02/jiskan16-plane02.hex
+JISHEX = plane00/izmg16-plane00.hex plane02/izmg16-plane02.hex
 
 #
 # Planes 1 through 14 (0x0E) are ordinary;
@@ -192,9 +192,9 @@ hex:
 	   > $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex
 	# Build Japanese version with glyphs from JIS X 0213:2004
 	awk -F: -f unipatch-hex.awk $(COMPILED_DIR)/unifont-$(VERSION).hex \
-	   plane00/jiskan16-plane00.hex |\
+	   plane00/izmg16-plane00.hex |\
 	   sort > $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
-	cat plane02/jiskan16-plane02.hex \
+	cat plane02/izmg16-plane02.hex \
 	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
 
 #

@@ -1,3 +1,25 @@
+2019-08-11  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 12.1.03
+	* Replaced glyphs from the public domain bitmap font jiskan16
+	  with glyphs from the public domain bitmap font izmg16, which
+	  adds 132 more glyphs to Unicode Plane 0 and improves upon
+	  many of the original jiskan16 glyphs.
+	* README: added mention of unifont_jp font variant.
+	* font/plane00/alt/README: created file to explain directory
+	  contents, including some historical notes about their existence.
+	* font/plane00/alt/reiwa-vertical.hex: added alternative vertical
+	  rendering of Reiwa Era glypy, U+32FF.
+	* font/plane00/unifont-base.hex:
+	  - David Corbett adjusted glyph spacing of:
+	     - U+1900..U+194F Limbu
+	     - U+1A00..U+1A1F Buginese
+	     - U+1A20..U+1AAF Tai Tham
+	  - Paul Hardy redrew U+20B9, INDIAN RUPEE SIGN.
+	* font/plane01/plane01.hex:
+	  - Johnnie Weaver redrew these glyphs:
+	     - U+1D2E0..U+1D2FF  Mayan Numerals
+	     - U+1E900..U+1E95F  Adlam
+
 2019-06-01  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 12.1.02
 	* Added glyphs from the public domain bitmap font jiskan16 for
