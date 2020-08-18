@@ -1,3 +1,59 @@
+2020-04-25  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 13.0.02
+	* font/Makefile:
+	  - Changes in "compiled" directory:
+	    o Created unifont_jp_sample-$(VERSION).hex with combining
+	      circles for generating PNG or BMP glyph charts.
+	    o Placed unifont_jp BMP and PNG files in plane00-jp and
+	      plane02-jp directories under "bmp" or "png" directory,
+	      so the Unicode Plane 0 Japanese glyph versions of
+	      Unifont can be viewed alongside the non-Japanese versions.
+	    o Renamed the Unicode Plane 0 and Plane 2 BMP and PNG glyphs
+	      in the Japanese version from "unixxxx.{bmp,png}" to
+	      "unixxxx-jp.{bmp,png}", where "xxxx" is the most significant
+	      four hexadecimal digits of the Unicode code point (with 256
+	      code points per graphics image).
+	    o Modified default output from unipagecount in generating the
+	      html files in the font/compiled directory with a target="_blank"	
+	      field to open images in a new tab in a browser.  Did this
+	      rather than modify src/unipagecount.c to allow both forms
+	      without modifying the unipagecount.c program.
+	  - Changes in "precompiled" directory:
+	    o Added unifont_jp-$(VERSION).hex (without combining circles).
+	    o Added unifont_jp_sample-$(VERSION).hex (with combining circles).
+	* font/coverage.dat: updated for Unicode 13.0.0.
+	* font/plane00/izmg16-plane00.hex:  New glyphs for unifont_jp:
+	  - Added Hiragana glyphs (U+3040..U+309F) from izmg16 font.
+	  - Added Katakana glyphs (U+30A0..U+30FF) from izmg16 font.
+	  - Paul Hardy drew U+309F (HIRAGANA DIGRAPH YORI).
+	* font/plane00/unifont-base.hex:
+	  - Made U+1FBE (prosgeggrameni) a little taller and shifted to left.
+	  - Changed U+2CCE and U+2CCF (Coptic) to single-width glyphs.
+	  - Johnnie Weaver redrew U+A650 and U+A651 to be single-width.
+	  - David Corbett modified U+2720 (MALTESE CROSS) to look like
+	    the new half-Maltese crosses; U+A7F5 and U+A7F6 changed to
+	    reversed versions of U+2C75 and U+2C76 (LATIN CAPITAL and
+	    SMALL LETTER HALF H, respectively) (Savannah bug 58192).
+	  - Changed U+02B7 and U+AB69 following input from David Corbett,
+	    who then changed U+02AC to match (Savannah bug 58192).
+	  - Raised new Sinhala glyph U+0D81 one row (Savannah bug 58182).
+	  - Replaced Halfwidth CJK punctuation and Halfwidth Katakana
+	    variants (U+FF61..U+FF9F) with glyphs from the public domain
+	    DFLHN16X.FNT FONTX2 font.
+	* font/plane01/noscript-ranges.txt, font-plane01/unassigned-ranges.txt:
+	  Updated range of Tangut Supplement to be U+18D00..U+18D7F,
+	  as per errata that unicode.org has published for Unicode 13.0.0.
+	* font/plane01/plane01.hex:
+	  - David Corbett modified some glyphs in the Chorasmian block
+            (U+10FB0..U+10FCF) (Savannah bug 58137).
+	  - David Corbett modified U+1144D (NEWA COMMA) to resemble the
+	    new U+1145A (NEWA DOUBLE COMMA) (Savannah bug 58192).
+	  - Rebecca Bettencourt updated U+1FB3C..U+1FB6B in the Symbols
+	    for Legacy Computing block to improve their slopes.
+	* font/plane02-jp.html: Added "Japanese Version" in table title,
+	  as it is only present in unifont_jp TTF fonts.  This matches
+	  the table title change in font/compiled/plane00-jp.html.
+
 2020-03-28  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 13.0.01
 	* font/Makefile: updated copyright to 2020.

@@ -1,3 +1,15 @@
+2020-04-25: Release 13.0.02
+   * Glyph blocks replaced:
+     - U+3040..U+309F (Hiragana) and U+30A0..U+30FF (Katakana):
+       glyphs in unifont_jp replaced with glyphs from the public
+       domain izmb16.bdf font.
+     - U+FF61..U+FF64 (Halfwidth CKJ Punctuation) and U+FF65..U+FF9F
+       (Halfwidth Katakana Variations): glyphs in unifont and unifont_jp
+       replaced with glyphs from the public domain single-byte FONTX2
+       font DFLHN16.FNT.
+   * Minor patches to several glyphs.
+   * See ChangeLog for details.
+
 2020-03-28: Release 13.0.01
    * Adds all new Unicode 13.0.0 glyphs for scripts previously covered.
    * Adds several new scripts:

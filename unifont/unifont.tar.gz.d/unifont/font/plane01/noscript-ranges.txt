@@ -130,7 +130,7 @@
 ; Tangut Components
 ; Small Khitan Script
 ; Tangut Supplement
-018D10 01AFFF
+018D80 01AFFF
 ; Kana Supplement
 ; Kana Extended - A
 ; Small Kana Extension

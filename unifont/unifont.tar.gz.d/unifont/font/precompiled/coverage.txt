@@ -527,13 +527,19 @@ Covered      Range       Script
 
  100.0%  U+10E60..U+10E7F  Rumi Numeral Symbols
 
- 100.0%  U+10E80..U+10EFF  Unassigned
+ 100.0%  U+10E80..U+10EBF  Yezidi
+
+ 100.0%  U+10EC0..U+10EFF  Unassigned
 
  100.0%  U+10F00..U+10F2F  Old Sogdian
 
  100.0%  U+10F30..U+10F6F  Sogdian
 
- 100.0%  U+10F70..U+10FFF  Unassigned
+ 100.0%  U+10F70..U+10FAF  Unassigned
+
+ 100.0%  U+10FB0..U+10FDF  Chorasmian
+
+ 100.0%  U+10FE0..U+10FFF  Elymaic
 
  100.0%  U+11000..U+1107F  Brahmi
 
@@ -587,7 +593,11 @@ Covered      Range       Script
 
  100.0%  U+118A0..U+118FF  Warang Citi
 
- 100.0%  U+11900..U+119FF  Unassigned
+ 100.0%  U+11900..U+1195F  Dives Akuru
+
+ 100.0%  U+11960..U+1199F  Unassigned
+
+ 100.0%  U+119A0..U+119FF  Nandinagari
 
  100.0%  U+11A00..U+11A4F  Zanabazar Square
 
@@ -613,7 +623,11 @@ Covered      Range       Script
 
  100.0%  U+11EE0..U+11EFF  Makasar
 
- 100.0%  U+11F00..U+11FFF  Unassigned
+ 100.0%  U+11F00..U+11FAF  Unassigned
+
+ 100.0%  U+11FB0..U+11FBF  Lisu Supplement
+
+ 100.0%  U+11FC0..U+11FFF  Tamil Supplement
 
   10.0%  U+12000..U+123FF  Cuneiform
 
@@ -625,7 +639,9 @@ Covered      Range       Script
 
    0.1%  U+13000..U+1342F  Egyptian Hieroglyphs
 
- 100.0%  U+13430..U+143FF  Unassigned
+ 100.0%  U+13430..U+1343F  Egyptian Hieroglyph Format Controls
+
+ 100.0%  U+13440..U+143FF  Unassigned
 
    8.9%  U+14400..U+1467F  Anatolian Hieroglyphs
 
@@ -641,7 +657,11 @@ Covered      Range       Script
 
  100.0%  U+16B00..U+16B8F  Pahawh Hmong
 
- 100.0%  U+16B90..U+16EFF  Unassigned
+ 100.0%  U+16B90..U+16E3F  Unassigned
+
+ 100.0%  U+16E40..U+16E9F  Medefaidrin
+
+ 100.0%  U+16EA0..U+16EFF  Unassigned
 
  100.0%  U+16F00..U+16F9F  Miao
 
@@ -653,13 +673,17 @@ Covered      Range       Script
 
    0.0%  U+18800..U+18AFF  Tangut Components
 
-  99.9%  U+18B00..U+1AFFF  Unassigned
+ 100.0%  U+18B00..U+18CFF  Khitan Small Script
+
+  43.8%  U+18D00..U+18D0F  Tangut Supplement
+
+ 100.0%  U+18D10..U+1AFFF  Unassigned
 
  100.0%  U+1B000..U+1B0FF  Kana Supplement
 
  100.0%  U+1B100..U+1B12F  Kana Extended - A
 
- 100.0%  U+1B130..U+1B16F  Unassigned
+ 100.0%  U+1B130..U+1B16F  Small Kana Extension
 
  100.0%  U+1B170..U+1B2FF  Nushu
 
@@ -695,7 +719,15 @@ Covered      Range       Script
 
  100.0%  U+1E000..U+1E02F  Glagolitic Supplement
 
- 100.0%  U+1E030..U+1E7FF  Unassigned
+ 100.0%  U+1E030..U+1E0FF  Unassigned
+
+ 100.0%  U+1E100..U+1E14F  Nyiakeng Puachue Hmong
+
+ 100.0%  U+1E150..U+1E2BF  Unassigned
+
+ 100.0%  U+1E2C0..U+1E2FF  Wancho
+
+ 100.0%  U+1E300..U+1E7FF  Unassigned
 
  100.0%  U+1E800..U+1E8DF  Mende Kikakui
 
@@ -707,7 +739,11 @@ Covered      Range       Script
 
  100.0%  U+1EC70..U+1ECBF  Indic Siyaq Numbers
 
- 100.0%  U+1ECC0..U+1EDFF  Unassigned
+ 100.0%  U+1ECC0..U+1ECFF  Unassigned
+
+ 100.0%  U+1ED00..U+1ED4F  Ottoman Siyaq Numbers
+
+ 100.0%  U+1ED50..U+1EDFF  Unassigned
 
  100.0%  U+1EE00..U+1EEFF  Arabic Mathematical Alphabetic Symbols
 
@@ -741,7 +777,11 @@ Covered      Range       Script
 
  100.0%  U+1FA00..U+1FA6F  Chess Symbols
 
- 100.0%  U+1FA70..U+1FFFF  Unassigned
+ 100.0%  U+1FA70..U+1FAFF  Symbols and Pictographs Extended - A
+
+ 100.0%  U+1FB00..U+1FBFF  Symbols for Legacy Computing
+
+ 100.0%  U+1FC00..U+1FFFF  Unassigned
 
    0.0%  U+20000..U+2A6FF  CJK Unified Ideographs Extension B
 

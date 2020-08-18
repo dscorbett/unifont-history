@@ -16,7 +16,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 13.0.01
+VERSION = 13.0.02
 
 COPYRIGHT = "Copyright (C) 1998-2020 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
@@ -193,8 +193,10 @@ hex:
 	   > $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex
 	# Build Japanese version with glyphs from JIS X 0213:2004
 	awk -F: -f unipatch-hex.awk $(COMPILED_DIR)/unifont-$(VERSION).hex \
-	   plane00/izmg16-plane00.hex |\
-	   sort > $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	   plane00/izmg16-plane00.hex | sort |\
+	   tee $(COMPILED_DIR)/unifont_jp-$(VERSION).hex | \
+	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
+              > $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex
 	cat $(PLANE_2_HEX) \
 	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
 
@@ -326,6 +328,16 @@ png: hex $(BINDIR)/unihex2png
 	         -o $(PNGDIR)/plane00/uni00$$i$$j.png ; \
 	   done ; \
 	done
+	if [ ! -d $(PNGDIR)/plane00-jp ] ; then \
+	   mkdir -p $(PNGDIR)/plane00-jp ; \
+	fi
+	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	      $(BINDIR)/unihex2png -p 00$$i$$j \
+	         -i $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex \
+	         -o $(PNGDIR)/plane00-jp/uni00$$i$$j-jp.png ; \
+	   done ; \
+	done
 	if [ ! -d $(PNGDIR)/plane01 ] ; then \
 	   mkdir -p $(PNGDIR)/plane01 ; \
 	fi
@@ -336,14 +348,14 @@ png: hex $(BINDIR)/unihex2png
 	         -o $(PNGDIR)/plane01/uni01$$i$$j.png ; \
 	   done ; \
 	done
-	if [ ! -d $(PNGDIR)/plane02 ] ; then \
-	   mkdir -p $(PNGDIR)/plane02 ; \
+	if [ ! -d $(PNGDIR)/plane02-jp ] ; then \
+	   mkdir -p $(PNGDIR)/plane02-jp ; \
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(BINDIR)/unihex2png -p 02$$i$$j \
 	         -i $(PLANE_2_HEX) \
-	         -o $(PNGDIR)/plane02/uni02$$i$$j.png ; \
+	         -o $(PNGDIR)/plane02-jp/uni02$$i$$j.png ; \
 	   done ; \
 	done
 	if [ ! -d $(PNGDIR)/plane0E ] ; then \
@@ -373,14 +385,22 @@ png: hex $(BINDIR)/unihex2png
 	   done ; \
 	done
 	# Create HTML table showing color-coded percent coverage in Plane 0.
-	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont-$(VERSION).hex \
+	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont-$(VERSION).hex | \
+	   sed -e 's/<a /<a target="blank" /g' \
 	                          > $(COMPILED_DIR)/plane00.html
+	# Create HTML table showing color-coded percent coverage in Japanese Plane 0.
+	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex | \
+	   sed -e 's/Glyphs/Glyphs \&mdash; Japanese Version/' | \
+	   sed -e 's/<a /<a target="blank" /g' | \
+	   sed -e 's/plane00/plane00-jp/g' | \
+	   sed -e 's/\.png/-jp.png/g' \
+	                          > $(COMPILED_DIR)/plane00-jp.html
 	# Create HTML table showing color-coded percent coverage in Plane 1.
-	../bin/unipagecount -P1 -h < plane01/all/plane01-all.hex \
-	   > compiled/plane01.html
+	../bin/unipagecount -P1 -h < plane01/all/plane01-all.hex | \
+	   sed -e 's/<a /<a target="blank" /g' > compiled/plane01.html
 	# Copy Plane 2 HTML table, specially formatted to show empty
 	# ranges as gray because there are so many empty ranges.
-	cp plane02.html $(COMPILED_DIR)
+	cp plane02-jp.html $(COMPILED_DIR)
 	@echo "Done creating $(PNGDIR)"
 
 #
@@ -400,6 +420,16 @@ bmp: hex $(BINDIR)/unihex2bmp
 	         > $(BMPDIR)/plane00/uni00$$i$$j.bmp ; \
 	   done ; \
 	done
+	if [ ! -d $(BMPDIR)/plane00-jp ] ; then \
+	   mkdir -p $(BMPDIR)/plane00-jp ; \
+	fi
+	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	      $(BINDIR)/unihex2bmp -p00$$i$$j \
+	         < $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex \
+	         > $(BMPDIR)/plane00-jp/uni00$$i$$j-jp.bmp ; \
+	   done ; \
+	done
 	if [ ! -d $(BMPDIR)/plane01 ] ; then \
 	   mkdir -p $(BMPDIR)/plane01 ; \
 	fi
@@ -410,14 +440,14 @@ bmp: hex $(BINDIR)/unihex2bmp
 	         > $(BMPDIR)/plane01/uni01$$i$$j.bmp ; \
 	   done ; \
 	done
-	if [ ! -d $(BMPDIR)/plane02 ] ; then \
-	   mkdir -p $(BMPDIR)/plane02 ; \
+	if [ ! -d $(BMPDIR)/plane02-jp ] ; then \
+	   mkdir -p $(BMPDIR)/plane02-jp ; \
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(BINDIR)/unihex2bmp -p02$$i$$j \
 	         < $(PLANE_2_HEX) \
-	         > $(BMPDIR)/plane02/uni02$$i$$j.bmp ; \
+	         > $(BMPDIR)/plane02-jp/uni02$$i$$j-jp.bmp ; \
 	   done ; \
 	done
 	if [ ! -d $(BMPDIR)/plane0E ] ; then \
@@ -448,13 +478,23 @@ bmp: hex $(BINDIR)/unihex2bmp
 	done
 	# Create HTML table showing color-coded percent coverage in Plane 0.
 	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont-$(VERSION).hex | \
+	   sed -e 's/<a /<a target="blank" /g' | \
 	   sed -e 's/png/bmp/g'   > $(COMPILED_DIR)/plane00.html
+	# Create HTML table showing color-coded percent coverage in Japanese Plane 0.
+	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex | \
+	   sed -e 's/Glyphs/Glyphs \&mdash; Japanese Version/' | \
+	   sed -e 's/<a /<a target="blank" /g' | \
+	   sed -e 's/plane00/plane00-jp/g' | \
+	   sed -e 's/png/bmp/g' | \
+	   sed -e 's/\.bmp/-jp.bmp/g' \
+	                          > $(COMPILED_DIR)/plane00-jp.html
 	# Create HTML table showing color-coded percent coverage in Plane 1.
 	$(BINDIR)/unipagecount -P1 -h < plane01/all/plane01-all.hex | \
+	   sed -e 's/<a /<a target="blank" /g' | \
 	   sed -e 's/png/bmp/g'   > $(COMPILED_DIR)/plane01.html
 	# Copy Plane 2 HTML table, specially color coded to show empty
 	# ranges as gray because there are so many empty ranges in Plane 2..
-	sed -e 's/png/bmp/g' < plane02.html > $(COMPILED_DIR)/plane02.html
+	sed -e 's/png/bmp/g' < plane02-jp.html > $(COMPILED_DIR)/plane02-jp.html
 	echo "Done creating $(BMPDIR)"
 
 #
@@ -582,6 +622,8 @@ precompiled: all
 	install -m0644 -p $(COMPILED_DIR)/unifont-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).bdf.gz \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).pcf.gz \
+	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
+	                  $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex \
 	                  $(COMPILED_DIR)/Unifont-APL8x16-$(VERSION).psf.gz \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_csur-$(VERSION).pcf.gz \

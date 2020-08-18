@@ -264,10 +264,13 @@ FFF0-FFFF Specials
 010D00-010D3F Hanifi Rohingya
 010D40-010E5F Unassigned
 010E60-010E7F Rumi Numeral Symbols
-010E80-010EFF Unassigned
+010E80-010EBF Yezidi
+010EC0-010EFF Unassigned
 010F00-010F2F Old Sogdian
 010F30-010F6F Sogdian
-010F70-010FFF Unassigned
+010F70-010FAF Unassigned
+010FB0-010FDF Chorasmian
+010FE0-010FFF Elymaic
 011000-01107F Brahmi
 011080-0110CF Kaithi
 0110D0-0110FF Sora Sompeng
@@ -294,7 +297,9 @@ FFF0-FFFF Specials
 011800-01184F Dogra
 011850-01189F Unassigned
 0118A0-0118FF Warang Citi
-011900-0119FF Unassigned
+011900-01195F Dives Akuru
+011960-01199F Unassigned
+0119A0-0119FF Nandinagari
 011A00-011A4F Zanabazar Square
 011A50-011AAF Soyombo
 011AB0-011ABF Unassigned
@@ -307,13 +312,16 @@ FFF0-FFFF Specials
 011D60-011DAF Gunjala Gondi
 011DB0-011EDF Unassigned
 011EE0-011EFF Makasar
-011F00-011FFF Unassigned
+011F00-011FAF Unassigned
+011FB0-011FBF Lisu Supplement
+011FC0-011FFF Tamil Supplement
 012000-0123FF Cuneiform
 012400-01247F Cuneiform Numbers and Punctuation
 012480-01254F Early Dynastic Cuneiform
 012550-012FFF Unassigned
 013000-01342F Egyptian Hieroglyphs
-013430-0143FF Unassigned
+013430-01343F Egyptian Hieroglyph Format Controls
+013440-0143FF Unassigned
 014400-01467F Anatolian Hieroglyphs
 014680-0167FF Unassigned
 016800-016A3F Bamum Supplement
@@ -321,16 +329,20 @@ FFF0-FFFF Specials
 016A70-016ACF Unassigned
 016AD0-016AFF Bassa Vah
 016B00-016B8F Pahawh Hmong
-016B90-016EFF Unassigned
+016B90-016E3F Unassigned
+016E40-016E9F Medefaidrin
+016EA0-016EFF Unassigned
 016F00-016F9F Miao
 016FA0-016FDF Unassigned
 016FE0-016FFF Ideographic Symbols and Punctuation
 017000-0187FF Tangut
 018800-018AFF Tangut Components
-018B00-01AFFF Unassigned
+018B00-018CFF Khitan Small Script
+018D00-018D0F Tangut Supplement
+018D10-01AFFF Unassigned
 01B000-01B0FF Kana Supplement
 01B100-01B12F Kana Extended - A
-01B130-01B16F Unassigned
+01B130-01B16F Small Kana Extension
 01B170-01B2FF Nushu
 01B300-01BBFF Unassigned
 01BC00-01BC9F Duployan
@@ -348,13 +360,19 @@ FFF0-FFFF Specials
 01D800-01DAAF Sutton Sign Writing
 01DAB0-01DFFF Unassigned
 01E000-01E02F Glagolitic Supplement
-01E030-01E7FF Unassigned
+01E030-01E0FF Unassigned
+01E100-01E14F Nyiakeng Puachue Hmong
+01E150-01E2BF Unassigned
+01E2C0-01E2FF Wancho
+01E300-01E7FF Unassigned
 01E800-01E8DF Mende Kikakui
 01E8E0-01E8FF Unassigned
 01E900-01E95F Adlam
 01E960-01EC6F Unassigned
 01EC70-01ECBF Indic Siyaq Numbers
-01ECC0-01EDFF Unassigned
+01ECC0-01ECFF Unassigned
+01ED00-01ED4F Ottoman Siyaq Numbers
+01ED50-01EDFF Unassigned
 01EE00-01EEFF Arabic Mathematical Alphabetic Symbols
 01EF00-01EFFF Unassigned
 01F000-01F02F Mahjong Tiles
@@ -371,7 +389,9 @@ FFF0-FFFF Specials
 01F800-01F8FF Supplemental Arrows - C
 01F900-01F9FF Supplemental Symbols and Pictographs
 01FA00-01FA6F Chess Symbols
-01FA70-01FFFF Unassigned
+01FA70-01FAFF Symbols and Pictographs Extended - A
+01FB00-01FBFF Symbols for Legacy Computing
+01FC00-01FFFF Unassigned
 ;
 ; ===== PLANE 02 =====
 ;

@@ -272,7 +272,7 @@
 ; Khitan Small Script
 018CD6 018CFF
 ; Tangut Supplement
-18D09 18D0F
+18D09 18D7F
 ; Kana Supplement
 ; Kana Extended - A
 01B11F 01B12F
