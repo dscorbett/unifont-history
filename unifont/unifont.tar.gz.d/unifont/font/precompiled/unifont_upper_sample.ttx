@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="9.0"/>
-    <checkSumAdjustment value="0x818ebc2f"/>
+    <checkSumAdjustment value="0x79a5116d"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1000"/>
-    <created value="Sun Dec 11 23:05:31 2016"/>
-    <modified value="Sun Dec 11 23:05:31 2016"/>
+    <created value="Thu Dec 22 23:48:02 2016"/>
+    <modified value="Thu Dec 22 23:48:02 2016"/>
     <xMin value="33"/>
     <yMin value="-200"/>
     <xMax value="298"/>
@@ -125,13 +125,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper Sample Medium : 11-12-2016
+      FontForge 2.0 : Unifont Upper Sample Medium : 22-12-2016
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 9.0.05 
+      Version 9.0.06 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperSampleMedium
@@ -146,13 +146,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper Sample Medium : 11-12-2016
+      FontForge 2.0 : Unifont Upper Sample Medium : 22-12-2016
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 9.0.05 
+      Version 9.0.06 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperSampleMedium
@@ -8831,7 +8831,7 @@
       20474e55 20466f6e 7420456d 62656464
       696e6720 45786365 7074696f 6e2e0046
       4f4e545f 56455253 494f4e00 392e302e
-      30350046 4f4e545f 54595045 00426974
+      30360046 4f4e545f 54595045 00426974
       6d617000 464f554e 44525900 474e5500
       46414d49 4c595f4e 414d4500 556e6966
       6f6e7420 55707065 72205361 6d706c65
@@ -15806,22 +15806,22 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104B0">
         <rawimagedata>
-          00000000 08081414 22222241 41410000
+          00000000 10102828 44444482 82820000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104B1">
         <rawimagedata>
-          00000000 08081414 22222a49 49490000
+          00000000 10102828 44445492 92920000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104B2">
         <rawimagedata>
-          00000000 08081414 22222249 41410000
+          00000000 10102828 444454ba 92820000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104B3">
         <rawimagedata>
-          00000000 08080808 08142222 41410000
+          00000000 10101010 10284444 82820000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104B4">
@@ -15871,7 +15871,7 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104BD">
         <rawimagedata>
-          00000000 21722428 34222121 2121020c
+          00000000 42e44850 68444242 42420418
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104BE">
@@ -15886,7 +15886,7 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104C0">
         <rawimagedata>
-          00000000 36495554 54484040 40400000
+          00000000 6c92aaa8 a8908080 80800000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104C1">
@@ -15896,12 +15896,12 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104C2">
         <rawimagedata>
-          00000000 3e414141 41414141 413e0000
+          00000000 7c828282 82828282 827c0000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104C3">
         <rawimagedata>
-          00000000 3e414141 49494141 413e0000
+          00000000 7c828282 92928282 827c0000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104C4">
@@ -15911,7 +15911,7 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104C5">
         <rawimagedata>
-          00000000 20203e21 7921213e 20200000
+          00000000 40407c42 f242427c 40400000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104C6">
@@ -15946,12 +15946,12 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104CC">
         <rawimagedata>
-          00000000 3e090909 0e182020 7821211e
+          00000000 7c121212 1c304040 f042423c
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104CD">
         <rawimagedata>
-          00000000 7f101016 19111111 11110000
+          00000000 fe20202c 32222222 22220000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104CE">
@@ -15966,12 +15966,12 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104D0">
         <rawimagedata>
-          00000000 08080808 3e494949 49490000
+          00000000 10101010 7c929292 92920000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104D1">
         <rawimagedata>
-          00000000 49494949 493e0808 08080000
+          00000000 92929292 927c1010 10100000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104D2">
@@ -15986,17 +15986,17 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104D8">
         <rawimagedata>
-          00000000 00000808 14142222 41410000
+          00000000 00001010 28284444 82820000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104D9">
         <rawimagedata>
-          00000000 00000808 14142222 49410000
+          00000000 00001010 28284454 92920000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104DA">
         <rawimagedata>
-          00000000 00000808 1414222a 49490000
+          00000000 00001010 28284454 ba920000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104DB">
@@ -16051,7 +16051,7 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104E5">
         <rawimagedata>
-          00000000 20782122 24283422 2121020c
+          00000000 40f04244 48506844 42420418
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104E6">
@@ -16076,12 +16076,12 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104EA">
         <rawimagedata>
-          00000000 00003e41 41414141 413e0000
+          00000000 00007c82 82828282 827c0000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104EB">
         <rawimagedata>
-          00000000 00003e41 41494941 413e0000
+          00000000 00007c82 82929282 827c0000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104EC">
@@ -16091,7 +16091,7 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104ED">
         <rawimagedata>
-          00000000 0000203e 2179213e 20200000
+          00000000 0000407c 42f2427c 40400000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104EE">
@@ -16126,12 +16126,12 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104F4">
         <rawimagedata>
-          00000000 00003e09 09090e18 2079211e
+          00000000 00007c12 12121c30 40f2423c
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104F5">
         <rawimagedata>
-          00000000 00007f10 10161911 11110000
+          00000000 0000fe20 202c3222 22220000
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104F6">
@@ -16146,12 +16146,12 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104F8">
         <rawimagedata>
-          00000000 08083e49 49494949 08080808
+          00000000 10107c92 92929292 10101010
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104F9">
         <rawimagedata>
-          00000000 08084949 4949493e 08080808
+          00000000 10109292 9292927c 10101010
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104FA">
@@ -79762,8 +79762,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sun Dec 11 23:05:31 2016"/>
-    <sourceModified value="Sun Dec 11 23:05:31 2016"/>
+    <sourceCreated value="Thu Dec 22 23:48:02 2016"/>
+    <sourceModified value="Thu Dec 22 23:48:02 2016"/>
   </FFTM>
 
 </ttFont>

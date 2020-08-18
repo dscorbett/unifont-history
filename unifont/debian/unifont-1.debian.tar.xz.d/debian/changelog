@@ -1,8 +1,20 @@
+unifont (1:9.0.06-1) unstable; urgency=medium
+
+  * Unifont 9.0.06 release.  Upstream changes are in ChangeLog file.
+  * debian/changelog: added to unifont 1:9.0.05-1 description below
+    to mention bug number of lintian duplicate word false positive.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Thu, 22 Dec 2016 15:39:02 -0800
+
 unifont (1:9.0.05-1) unstable; urgency=medium
 
   * Unifont 9.0.05 release.
   * debian/control: reworded descriptions to avoid duplicate word "Plane"
     false positive lintian warning, rather than adding a lintian override.
+    Reported this in May 2016 as an update to Bug 822504: "lintian: false
+    positive spelling-error-in-copyright (duplicate word) involving names
+    and field labels".  The person who added that lintian check considered
+    removing it from lintian, but that hasn't happened yet.
   * debian/control: added "Multi-Arch: foreign" tag for "unifont" package.
 
  -- Paul Hardy <unifoundry@unifoundry.com>  Sat, 10 Dec 2016 16:58:01 -0800
