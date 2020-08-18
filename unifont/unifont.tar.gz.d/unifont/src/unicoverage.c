@@ -35,11 +35,15 @@
 
    11 May 2019: [Paul Hardy] changed strcpy function call to strlcpy
    for better error handling.
+
+   31 May 2019: [Paul Hardy] replaced strlcpy call with strncpy
+   for compilation on more systems.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 
 #define MAXBUF 256
 
@@ -176,7 +180,7 @@ nextrange (FILE *coveragefp,
             i = 0;
             while (inbuf[i] != ' ') i++;  /* find first blank */
             while (inbuf[i] == ' ') i++;  /* find next non-blank */
-            strlcpy (coverstring, &inbuf[i], MAXBUF);
+            strncpy (coverstring, &inbuf[i], MAXBUF);
          }
          else retval = 0;
       }

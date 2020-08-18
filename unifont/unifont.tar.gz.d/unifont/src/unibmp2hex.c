@@ -27,10 +27,6 @@
 */
 
 /*
-   23 February 2019 [Paul Hardy]:
-      - Set U+119A0..U+119FF (Nandinagari) to be wide.
-      - Set U+1E2C0..U+1E2FF (Wancho) to be wide.
-
    20 June 2017 [Paul Hardy]:
       - Modify to allow hard-coding of quadruple-width hex glyphs.
         The 32nd column (rightmost column) is cleared to zero, because
@@ -67,10 +63,22 @@
       - Made U+232A (Right-pointing Angle Bracket) double-width.
       - Made U+01F5E7 (Three Rays Right) double-width.
 
-   xx July 2018 Paul Hardy:
+   July 2018 Paul Hardy:
       - Changed 2017 to 2018 in previous change entry.
       - Added Dogra (U+011800..U+01184F) as double width.
       - Added Makasar (U+011EE0..U+011EFF) as dobule width.
+
+   23 February 2019 [Paul Hardy]:
+      - Set U+119A0..U+119FF (Nandinagari) to be wide.
+      - Set U+1E2C0..U+1E2FF (Wancho) to be wide.
+
+   25 May 2019 [Paul Hardy]:
+      - Added support for the case when the original .bmp monochrome
+        file has been converted to a 32 bit per pixel RGB file.
+      - Added support for bitmap images stored from either top to bottom
+        or bottom to top.
+      - Add DEBUG compile flag to print header information, to ease
+        adding support for additional bitmap formats in the future.
 */
 
 #include <stdio.h>
@@ -91,6 +99,29 @@ unsigned forcewide=0;       /* =1 to set each glyph to 16 pixels wide    */
 unsigned unidigit[6][4];
 
 
+/* Bitmap Header parameters */
+struct {
+   char filetype[2];
+   int file_size;
+   int image_offset;
+   int info_size;
+   int width;
+   int height;
+   int nplanes;
+   int bits_per_pixel;
+   int compression;
+   int image_size;
+   int x_ppm;
+   int y_ppm;
+   int ncolors;
+   int important_colors;
+} bmp_header;
+
+/* Bitmap Color Table -- maximum of 256 colors in a BMP file */
+unsigned char color_table[256][4];  /* R, G, B, alpha for up to 256 colors */
+
+// #define DEBUG
+
 int
 main (int argc, char *argv[])
 {
@@ -106,6 +137,9 @@ main (int argc, char *argv[])
    unsigned char thischar0[16], thischar3[16]; /* bytes for quadruple-width */
    int thisrow; /* index to point into thischar1[] and thischar2[] */
    int tmpsum;  /* temporary sum to see if a character is blank */
+   unsigned this_pixel;  /* color of one pixel, if > 1 bit per pixel */
+   unsigned next_pixels; /* pending group of 8 pixels being read */
+   unsigned color_mask = 0x00;  /* to invert monochrome bitmap, set to 0xFF */
 
    unsigned char bitmap[17*32][18*32/8]; /* final bitmap */
    /* For wide array:
@@ -316,23 +350,170 @@ main (int argc, char *argv[])
       }
    }
    /*
-      Otherwise, this must be a Windows Bitmap file, because we check
-      for that first.  Skip past the header, but save it for possible
-      future use.
+      Otherwise, treat this as a Windows Bitmap file, because we checked
+      that it began with "BM".  Save the header contents for future use.
+      Expect a 14 byte standard BITMAPFILEHEADER format header followed
+      by a 40 byte standard BITMAPINFOHEADER Device Independent Bitmap
+      header, with data stored in little-endian format.
    */
    else {
-      for (i=2; i<0x3e; i++)
+      for (i = 2; i < 54; i++)
          header[i] = fgetc (infp);
+
+      bmp_header.filetype[0] = 'B';
+      bmp_header.filetype[1] = 'M';
+
+      bmp_header.file_size =
+          (header[2] & 0xFF)        | ((header[3] & 0xFF) <<  8) |
+         ((header[4] & 0xFF) << 16) | ((header[5] & 0xFF) << 24);
+
+      /* header bytes 6..9 are reserved */
+
+      bmp_header.image_offset =
+          (header[10] & 0xFF)        | ((header[11] & 0xFF) <<  8) |
+         ((header[12] & 0xFF) << 16) | ((header[13] & 0xFF) << 24);
+
+      bmp_header.info_size =
+          (header[14] & 0xFF)        | ((header[15] & 0xFF) <<  8) |
+         ((header[16] & 0xFF) << 16) | ((header[17] & 0xFF) << 24);
+
+      bmp_header.width =
+          (header[18] & 0xFF)        | ((header[19] & 0xFF) <<  8) |
+         ((header[20] & 0xFF) << 16) | ((header[21] & 0xFF) << 24);
+
+      bmp_header.height =
+          (header[22] & 0xFF)        | ((header[23] & 0xFF) <<  8) |
+         ((header[24] & 0xFF) << 16) | ((header[25] & 0xFF) << 24);
+
+      bmp_header.nplanes =
+          (header[26] & 0xFF)        | ((header[27] & 0xFF) <<  8);
+
+      bmp_header.bits_per_pixel =
+          (header[28] & 0xFF)        | ((header[29] & 0xFF) <<  8);
+
+      bmp_header.compression =
+          (header[30] & 0xFF)        | ((header[31] & 0xFF) <<  8) |
+         ((header[32] & 0xFF) << 16) | ((header[33] & 0xFF) << 24);
+
+      bmp_header.image_size =
+          (header[34] & 0xFF)        | ((header[35] & 0xFF) <<  8) |
+         ((header[36] & 0xFF) << 16) | ((header[37] & 0xFF) << 24);
+
+      bmp_header.x_ppm =
+          (header[38] & 0xFF)        | ((header[39] & 0xFF) <<  8) |
+         ((header[40] & 0xFF) << 16) | ((header[41] & 0xFF) << 24);
+
+      bmp_header.y_ppm =
+          (header[42] & 0xFF)        | ((header[43] & 0xFF) <<  8) |
+         ((header[44] & 0xFF) << 16) | ((header[45] & 0xFF) << 24);
+
+      bmp_header.ncolors =
+          (header[46] & 0xFF)        | ((header[47] & 0xFF) <<  8) |
+         ((header[48] & 0xFF) << 16) | ((header[49] & 0xFF) << 24);
+
+      bmp_header.important_colors =
+          (header[50] & 0xFF)        | ((header[51] & 0xFF) <<  8) |
+         ((header[52] & 0xFF) << 16) | ((header[53] & 0xFF) << 24);
+
+      if (bmp_header.ncolors == 0)
+         bmp_header.ncolors = 1 << bmp_header.bits_per_pixel;
+
+      /* If a Color Table exists, read it */
+      if (bmp_header.ncolors > 0 && bmp_header.bits_per_pixel <= 8) {
+         for (i = 0; i < bmp_header.ncolors; i++) {
+            color_table[i][0] = fgetc (infp);  /* Red   */
+            color_table[i][1] = fgetc (infp);  /* Green */
+            color_table[i][2] = fgetc (infp);  /* Blue  */
+            color_table[i][3] = fgetc (infp);  /* Alpha */
+         }
+         /*
+            Determine from the first color table entry whether we
+            are inverting the resulting bitmap image.
+         */
+         if ( (color_table[0][0] + color_table[0][1] + color_table[0][2]) 
+              < (3 * 128) ) {
+            color_mask = 0xFF;
+         }
+      }
+
+#ifdef DEBUG
+
+      /*
+         Print header info for possibly adding support for
+         additional file formats in the future, to determine
+         how the bitmap is encoded.
+      */
+      fprintf (stderr, "Filetype: '%c%c'\n",
+                       bmp_header.filetype[0], bmp_header.filetype[1]);
+      fprintf (stderr, "File Size: %d\n", bmp_header.file_size);
+      fprintf (stderr, "Image Offset: %d\n", bmp_header.image_offset);
+      fprintf (stderr, "Info Header Size: %d\n", bmp_header.info_size);
+      fprintf (stderr, "Image Width: %d\n", bmp_header.width);
+      fprintf (stderr, "Image Height: %d\n", bmp_header.height);
+      fprintf (stderr, "Number of Planes: %d\n", bmp_header.nplanes);
+      fprintf (stderr, "Bits per Pixel: %d\n", bmp_header.bits_per_pixel);
+      fprintf (stderr, "Compression Method: %d\n", bmp_header.compression);
+      fprintf (stderr, "Image Size: %d\n", bmp_header.image_size);
+      fprintf (stderr, "X Pixels per Meter: %d\n", bmp_header.x_ppm);
+      fprintf (stderr, "Y Pixels per Meter: %d\n", bmp_header.y_ppm);
+      fprintf (stderr, "Number of Colors: %d\n", bmp_header.ncolors);
+      fprintf (stderr, "Important Colors: %d\n", bmp_header.important_colors);
+
+#endif
+
       /*
          Now read the bitmap.
       */
       for (i = 32*17-1; i >= 0; i--) {
          for (j=0; j < 32*18/8; j++) {
-            inchar = fgetc (infp);
-            bitmap[i][j] = ~inchar; /* invert bits for proper color */
+            next_pixels = 0x00;  /* initialize next group of 8 pixels */
+            /* Read a monochrome image -- the original case */
+            if (bmp_header.bits_per_pixel == 1) {
+               next_pixels = fgetc (infp);
+            }
+            /* Read a 32 bit per pixel RGB image; convert to monochrome */
+            else if (bmp_header.bits_per_pixel == 32) {
+               next_pixels = 0;
+               for (k = 0; k < 8; k++) {  /* get next 8 pixels */
+                  this_pixel = (fgetc (infp) & 0xFF) +
+                               (fgetc (infp) & 0xFF) +
+                               (fgetc (infp) & 0xFF);
+
+                  (void) fgetc (infp);  /* ignore alpha value */
+
+                  /* convert RGB color space to monochrome */
+                  if (this_pixel >= (128 * 3))
+                     this_pixel = 0;
+                  else
+                     this_pixel = 1;
+
+                  /* shift next pixel color into place for 8 pixels total */
+                  next_pixels = (next_pixels << 1) | this_pixel;
+               }
+            }
+            if (bmp_header.height < 0) {  /* Bitmap drawn top to bottom */
+               bitmap [(32*17-1) - i] [j] = next_pixels;
+            }
+            else {  /* Bitmap drawn bottom to top */
+               bitmap [i][j] = next_pixels;
+            }
          }
       }
+
+      /*
+         If any bits are set in color_mask, apply it to
+         entire bitmap to invert black <--> white.
+      */
+      if (color_mask != 0x00) {
+         for (i = 32*17-1; i >= 0; i--) {
+            for (j=0; j < 32*18/8; j++) {
+               bitmap [i][j] ^= color_mask;
+            }
+         }
+      }
+
    }
+
    /*
       We've read the entire file.  Now close the input file pointer.
    */
@@ -478,7 +659,7 @@ main (int argc, char *argv[])
             for (thisrow=0; thisrow<16; thisrow++) {
                /*
                   If second half is empty and we're not forcing this
-                  code point to double width, print as single width
+                  code point to double width, print as single width.
                */
                if (!forcewide &&
                    empty2 && !wide[(uniplane << 8) | (i << 4) | j]) {

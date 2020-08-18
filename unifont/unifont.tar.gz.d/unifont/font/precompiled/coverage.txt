@@ -307,73 +307,73 @@ Covered      Range       Script
 
  100.0%  U+E080..U+E0FF  PUA (CSUR/UCSUR): Cirth
 
-   0.0%  U+E100..U+E14F  PUA (CSUR/UCSUR): Engsvanyáli
+  11.2%  U+E100..U+E14F  PUA (CSUR/UCSUR): Engsvanyáli
 
  100.0%  U+E150..U+E1AF  PUA (CSUR/UCSUR): Kinya
 
  100.0%  U+E1B0..U+E1CF  PUA (CSUR/UCSUR): Ilianóre
 
-   0.0%  U+E1D0..U+E1FF  PUA (CSUR/UCSUR): Syai
+   6.2%  U+E1D0..U+E1FF  PUA (CSUR/UCSUR): Syai
 
  100.0%  U+E200..U+E26F  PUA (CSUR/UCSUR): Verdurian
 
- 100.0%  U+E270..U+E29F  PUA (CSUR/UCSUR): aUI
+  97.9%  U+E270..U+E29F  PUA (CSUR/UCSUR): aUI
 
-  31.2%  U+E2A0..U+E2CF  PUA (CSUR/UCSUR): Amman-Iar
+  79.2%  U+E2A0..U+E2CF  PUA (CSUR/UCSUR): Amman-Iar
 
-   0.0%  U+E2D0..U+E2DF  PUA (CSUR/UCSUR): Streich
+   6.2%  U+E2D0..U+E2DF  PUA (CSUR/UCSUR): Streich
 
-   0.0%  U+E2E0..U+E2FF  PUA (CSUR/UCSUR): Xaîni
+  12.5%  U+E2E0..U+E2FF  PUA (CSUR/UCSUR): Xaîni
 
-  79.7%  U+E300..U+E33F  PUA (CSUR/UCSUR): Mizarian
+ 100.0%  U+E300..U+E33F  PUA (CSUR/UCSUR): Mizarian
 
-  87.5%  U+E340..U+E35F  PUA (CSUR/UCSUR): Zírí:Nka
+ 100.0%  U+E340..U+E35F  PUA (CSUR/UCSUR): Zírí:Nka
 
-   0.0%  U+E360..U+E37F  PUA (CSUR/UCSUR): Sarkai
+  34.4%  U+E360..U+E37F  PUA (CSUR/UCSUR): Sarkai
 
-   0.0%  U+E380..U+E3AF  PUA (CSUR/UCSUR): Thelwik
+  25.0%  U+E380..U+E3AF  PUA (CSUR/UCSUR): Thelwik
 
-  96.2%  U+E3B0..U+E3FF  PUA (CSUR/UCSUR): Olaetyan
+ 100.0%  U+E3B0..U+E3FF  PUA (CSUR/UCSUR): Olaetyan
 
-   0.0%  U+E400..U+E42F  PUA (CSUR/UCSUR): Nísklôz
+  25.0%  U+E400..U+E42F  PUA (CSUR/UCSUR): Nísklôz
 
    0.0%  U+E430..U+E44F  PUA (CSUR/UCSUR): Kazat ?Akkorou
 
-   0.0%  U+E450..U+E46F  PUA (CSUR/UCSUR): Kazvarad
+  37.5%  U+E450..U+E46F  PUA (CSUR/UCSUR): Kazvarad
 
-   0.0%  U+E470..U+E48F  PUA (CSUR/UCSUR): Zarkhánd
+  12.5%  U+E470..U+E48F  PUA (CSUR/UCSUR): Zarkhánd
 
-   0.0%  U+E490..U+E4BF  PUA (CSUR/UCSUR): Røzhxh
+  22.9%  U+E490..U+E4BF  PUA (CSUR/UCSUR): Røzhxh
 
-   0.0%  U+E4C0..U+E4EF  PUA (CSUR/UCSUR): Serivelna
+  14.6%  U+E4C0..U+E4EF  PUA (CSUR/UCSUR): Serivelna
 
    0.0%  U+E4F0..U+E4FF  PUA (CSUR/UCSUR): Kelwathi
 
-   0.0%  U+E500..U+E51F  PUA (CSUR/UCSUR): Saklor
+  12.5%  U+E500..U+E51F  PUA (CSUR/UCSUR): Saklor
 
-   0.0%  U+E520..U+E54F  PUA (CSUR/UCSUR): Rynnan
+  14.6%  U+E520..U+E54F  PUA (CSUR/UCSUR): Rynnan
 
-   0.0%  U+E550..U+E57F  PUA (CSUR/UCSUR): Alzetjan
+  27.1%  U+E550..U+E57F  PUA (CSUR/UCSUR): Alzetjan
 
-   0.0%  U+E580..U+E59F  PUA (CSUR/UCSUR): Telarasso
+  37.5%  U+E580..U+E59F  PUA (CSUR/UCSUR): Telarasso
 
-   0.0%  U+E5A0..U+E5BF  PUA (CSUR/UCSUR): Ssûraki
+   9.4%  U+E5A0..U+E5BF  PUA (CSUR/UCSUR): Ssûraki
 
  100.0%  U+E5C0..U+E5DF  PUA (CSUR/UCSUR): Gargoyle
 
-   0.0%  U+E5E0..U+E5FF  PUA (CSUR/UCSUR): Ophidian
+  18.8%  U+E5E0..U+E5FF  PUA (CSUR/UCSUR): Ophidian
 
    0.0%  U+E600..U+E62F  PUA (CSUR/UCSUR): Ferengi
 
  100.0%  U+E630..U+E64F  PUA (CSUR/UCSUR): Seussian Latin Extenstions
 
-  85.4%  U+E650..U+E67F  PUA (CSUR/UCSUR): Sylabica
+ 100.0%  U+E650..U+E67F  PUA (CSUR/UCSUR): Sylabica
 
  100.0%  U+E680..U+E6CF  PUA (CSUR/UCSUR): Ewellic
 
-  31.2%  U+E6D0..U+E6FF  PUA (CSUR/UCSUR): Amlin
+  33.3%  U+E6D0..U+E6FF  PUA (CSUR/UCSUR): Amlin
 
- 222.9%  U+E740..U+E76F  PUA (CSUR/UCSUR): Unifon
+ 225.0%  U+E740..U+E76F  PUA (CSUR/UCSUR): Unifon
 
  100.0%  U+E770..U+E77F  PUA (CSUR/UCSUR): Solresol
 
@@ -381,23 +381,23 @@ Covered      Range       Script
 
  100.0%  U+E800..U+E82F  PUA (CSUR/UCSUR): Monofon
 
-  77.1%  U+E830..U+E88F  PUA (CSUR/UCSUR): D'ni
+ 100.0%  U+E830..U+E88F  PUA (CSUR/UCSUR): D'ni
 
-  73.8%  U+E890..U+E8DF  PUA (CSUR/UCSUR): Aurebesh
+ 100.0%  U+E890..U+E8DF  PUA (CSUR/UCSUR): Aurebesh
 
  100.0%  U+E8E0..U+E8FF  PUA (CSUR/UCSUR): Tonal
 
-  95.3%  U+E900..U+E97F  PUA (CSUR/UCSUR): Glaitha-A
+ 100.0%  U+E900..U+E97F  PUA (CSUR/UCSUR): Glaitha-A
 
  100.0%  U+E980..U+E9DF  PUA (CSUR/UCSUR): Glaitha-B
 
-  20.0%  U+EA00..U+EA9F  PUA (CSUR/UCSUR): Lhenazi
+  56.2%  U+EA00..U+EA9F  PUA (CSUR/UCSUR): Lhenazi
 
-  85.4%  U+EAA0..U+EAFF  PUA (CSUR/UCSUR): Wanya
+ 100.0%  U+EAA0..U+EAFF  PUA (CSUR/UCSUR): Wanya
 
- 164.1%  U+ED00..U+ED3F  PUA (CSUR/UCSUR): Deini
+ 200.0%  U+ED00..U+ED3F  PUA (CSUR/UCSUR): Deini
 
- 179.2%  U+F8A0..U+F8CF  PUA (CSUR/UCSUR): Aiha
+ 210.4%  U+F8A0..U+F8CF  PUA (CSUR/UCSUR): Aiha
 
  100.0%  U+F8D0..U+F8FF  PUA (CSUR/UCSUR): Klingon
 
@@ -761,5 +761,5 @@ Covered      Range       Script
 
  100.0%  U+F0000..U+F0E6F  PUA (CSUR/UCSUR): Kinya Syllables
 
- 100.0%  U+F0E70..U+F16AF  PUA (CSUR/UCSUR): Pikto
+ 114.3%  U+F0E70..U+F16AF  PUA (CSUR/UCSUR): Pikto
 

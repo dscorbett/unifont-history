@@ -16,7 +16,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 12.1.01
+VERSION = 12.1.02
 
 COPYRIGHT = "Copyright (C) 1998-2019 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
@@ -99,6 +99,20 @@ UNIFILES = $(UNIFONTBASE) $(CJK) $(HANGUL) $(SPACES) $(UNASSIGNED) \
 	   $(NONPRINTING) $(PUA) $(CUSTOM00)
 
 #
+# All Plane 0 glyphs except for the JIS X 0213 glyph file, for
+# creating the unifont_sample file.
+#
+PLANE0 = copyleft.hex custom00.hex hangul-syllables.hex \
+	omit.hex plane00-nonprinting.hex plane00-unassigned.hex \
+	pua.hex spaces.hex unifont-base.hex wqy.hex
+
+#
+# JIS X 0213 hex files for Japanese.  The plane00 file contains glyphs
+# that will replace those in the default Chinese version of Unifont.
+#
+JISHEX = plane00/jiskan16-plane00.hex plane02/jiskan16-plane02.hex
+
+#
 # Planes 1 through 14 (0x0E) are ordinary;
 # Planes 15 (0x0F) and 16 (0x10) are Private Use Area
 #
@@ -141,7 +155,7 @@ hex:
 	   mkdir -p $(COMPILED_DIR) ; \
 	fi
 	sort $(UNIFILES) > $(COMPILED_DIR)/unifont-$(VERSION).hex
-	(cd $(HEXDIR) && sort *.hex) | \
+	(cd $(HEXDIR) && sort $(PLANE0)) | \
 	  egrep -v "^FFF[EF]" | grep -v "^01F12F:" | \
 	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
 	   > $(COMPILED_DIR)/unifont_sample-$(VERSION).hex
@@ -157,10 +171,12 @@ hex:
 	   $(COMPILED_DIR)/upper_nonprinting.hex \
 	   > $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex
 	# Create a .hex file with CSUR glyphs, without combining circles
-	sort $(COMPILED_DIR)/unifont-$(VERSION).hex plane00csur/*.hex \
+	(cd plane00csur && make)
+	sort plane00csur/all/plane00csur-all.hex \
+	     $(COMPILED_DIR)/unifont-$(VERSION).hex \
 	   > $(COMPILED_DIR)/unifont_csur_lower-$(VERSION).hex
 	# Create a .hex file with only CSUR glyphs from all planes
-	sort plane00csur/*.hex | sed -e 's/^/00/' \
+	sort plane00csur/all/plane00csur-all.hex | sed -e 's/^/00/' \
 	   > $(COMPILED_DIR)/unifont_csur-$(VERSION).hex
 	sort plane0[1-F]csur/*.hex \
 	   >> $(COMPILED_DIR)/unifont_csur-$(VERSION).hex
@@ -174,6 +190,12 @@ hex:
 	     plane00/plane00-nonprinting.hex \
 	   < $(COMPILED_DIR)/unifont_csur-$(VERSION).hex \
 	   > $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex
+	# Build Japanese version with glyphs from JIS X 0213:2004
+	awk -F: -f unipatch-hex.awk $(COMPILED_DIR)/unifont-$(VERSION).hex \
+	   plane00/jiskan16-plane00.hex |\
+	   sort > $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	cat plane02/jiskan16-plane02.hex \
+	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
 
 #
 # Build a BDF font file from the final .hex file.
@@ -215,6 +237,20 @@ bdf: hex
 	   > $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).bdf
 	gzip $(GZFLAGS) <$(COMPILED_DIR)/unifont_upper_sample-$(VERSION).bdf \
 	           >$(COMPILED_DIR)/unifont_upper_sample-$(VERSION).bdf.gz
+	# Font with Japanese glyphs from JIS X 0213 standard
+	$(BINDIR)/hex2bdf --font "Unifont Japanese" \
+	   --version "$(VERSION)" --copyright $(COPYRIGHT) \
+	     $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
+	   > $(COMPILED_DIR)/unifont_jp-$(VERSION).bdf
+	gzip $(GZFLAGS) <$(COMPILED_DIR)/unifont_jp-$(VERSION).bdf \
+	           >$(COMPILED_DIR)/unifont_jp-$(VERSION).bdf.gz
+	# Same Japanese version, but only with Plane 0 glyphs for bdftopcf
+	grep "^....:" $(COMPILED_DIR)/unifont_jp-$(VERSION).hex |\
+	   $(BINDIR)/hex2bdf --font "Unifont Japanese" \
+	      --version "$(VERSION)" --copyright $(COPYRIGHT) \
+	      > $(COMPILED_DIR)/unifont_jp0-$(VERSION).bdf
+	gzip $(GZFLAGS) <$(COMPILED_DIR)/unifont_jp0-$(VERSION).bdf \
+	           >$(COMPILED_DIR)/unifont_jp0-$(VERSION).bdf.gz
 
 #
 # Build a PCF font file from the final .hex file.
@@ -229,6 +265,9 @@ pcf: bdf
 	bdftopcf <$(COMPILED_DIR)/unifont_csur-$(VERSION).bdf \
 	         >$(COMPILED_DIR)/unifont_csur-$(VERSION).pcf
 	gzip $(GZFLAGS) $(COMPILED_DIR)/unifont_csur-$(VERSION).pcf
+	bdftopcf <$(COMPILED_DIR)/unifont_jp0-$(VERSION).bdf \
+	         >$(COMPILED_DIR)/unifont_jp-$(VERSION).pcf
+	gzip $(GZFLAGS) $(COMPILED_DIR)/unifont_jp-$(VERSION).pcf
 
 #
 # Make the PSF (console) font for APL (A Programming Language).
@@ -440,6 +479,19 @@ ttf: hex
 		FONTNAME="Unifont Sample" PSNAME="UnifontSample"
 	mv $(TTFSRC)/unifont_sample.ttf \
 		$(COMPILED_DIR)/unifont_sample-$(VERSION).ttf 
+	# Third, make a version with Japanese glyphs as drawn in
+	# JIS X 0213:2004, adding Copyleft symbol.
+	sort $(COPYLEFT) $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
+		> $(TTFSRC)/unifont_jp.hex
+	install -p \
+		$(HEXDIR)/plane00-combining.txt \
+		$(TTFSRC)/combining.txt
+	cd $(TTFSRC) && \
+	   $(MAKE) FONTFILE="unifont_jp" COMBINING="combining" \
+		FONTNAME="Unifont-JP" PSNAME="Unifont-JP"
+	mv $(TTFSRC)/unifont_jp.sfd $(COMPILED_DIR)/unifont_jp-$(VERSION).sfd 
+	mv $(TTFSRC)/unifont_jp.ttf \
+		$(COMPILED_DIR)/unifont_jp-$(VERSION).ttf 
 
 #
 # Now build the ConScript Unicode Registry PUA font.
@@ -504,6 +556,7 @@ precompiled: all
 	                  $(COMPILED_DIR)/unifont-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_csur-$(VERSION).pcf.gz \
 	                  $(COMPILED_DIR)/unifont_csur-$(VERSION).ttf \
+	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).bdf.gz \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).pcf.gz \

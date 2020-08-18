@@ -11,7 +11,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 12.1.01
+VERSION = 12.1.02
 
 #
 # The settings below will install software, man pages, and documentation

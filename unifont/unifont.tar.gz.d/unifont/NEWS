@@ -1,3 +1,13 @@
+2019-06-01: Release 12.1.02
+   * Adds a Japanese version of Unifont, unifont_jp, containing
+     kanji glyphs from the public domain Jiskan16 font.
+
+   * Contains redrawn Devanagari and Bengali glyphs with
+     narrower consonants for better superimposing of vowels.
+
+   * Updated unibmp2hex.c to convert RGB color space files to
+     monochrome.
+
 2019-05-11: Release 12.1.01
    * This release adds the new Reiwa Japanese era sign, added in
      Unicode 12.1.0.

@@ -16,7 +16,15 @@ License for all non-font source code in this package:
    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 
-License for font files:
+License for font/plane00/jiskan16-plane00.hex and
+font/plane02/jiskan16-plane02.hex:
+
+     These two files are in the Public Domain.  They were created
+     from Public Domain BDF font files jiskan16-2004-1.bdf and
+     jiskan16-2000-2.bdf.
+
+
+License for font files except the jiskan16 files mentioned above:
 
      All glyphs are released under the GNU General Public License
      (GPL) version 2 or (at your option) a later version, with the

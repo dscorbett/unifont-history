@@ -1,3 +1,52 @@
+2019-06-01  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 12.1.02
+	* Added glyphs from the public domain bitmap font jiskan16 for
+	  support of the Japanese JIS X 0213:2004 Plane 1 & 2 glyphs.
+	  - Fonts named "unifont_jp" use font/plane00/jiskan16-plane00.hex
+	    glyphs to replace the Chinese versions in font/plane00/wqy.hex
+	    in these ranges:
+	     - U+3400..U+4DBF  CJK Unified Ideographs Extension A
+	     - U+4Exx..U+9xxx  CJK Unified Ideographs
+	     - U+F900..U_FAFF  CJK Compatibility Ideographs
+	    Specifically Japanese glyphs in Unifont (katakana, hiragana,
+	    dynasty glyphs, etc.) are not changed, as they were reviewed
+	    by native Japanese.
+	  - The TrueType version also adds the glyphs from
+	    font/plane02/jiskan16-plane02.hex, containing CJK Unified
+	    Ideographs Extension B, to support the full JIS X 0213
+	    repertoire in unifont_jp-12.1.02.ttf.
+	  - COPYRIGHT: noted public domain origin of jiskan16 glyphs.
+	  - font/Makefile: Add support for Japanese versions of Unifont.
+	  - font/unipatch-hex.awk: added awk script from David Corbett
+	    to substitute Japanese glyphs for Chinese glyphs in hex files;
+	    font/Makefile invokes this script during font builds.
+	  - font/plane00/jiskan16-plane00.hex: added file, with glyphs
+	    from jiskan16 public domain bitmap font.
+	  - font/plane02/jiskan16-plane02.hex: added file, with glyphs
+	    from jiskan16 public domain bitmap font.
+	* font/plane00/alt/uni0009-orig.hex: created this file, containing
+	  Unifont's original serif Devanagari and Bengali glyphs.
+	* font/plane00/unifont-base.hex: replaced Unifont's original
+	   Devanagari and Bengali glyphs with new ones with narrower
+	   consonants, so combining vowel marks would superimpose better.
+	* font/plane00csur: tidied up.
+	  - font/plane00csur/Makefile: adapted Makefile from font/plane01,
+	    mainly to automatically build glyphs for unassigned ranges
+	    in a script.
+	  - font/plane00csur/plane00csur-spaces.hex: added space glyph
+	    U+ED30, removing it from font/plane00csur/plane00csur.hex.
+	  - font/plane00csur/unassigned-ranges.txt: added missing entries
+	    for scripts defined in the Under Consript Unicode Registry (UCSUR).
+	* src/unibmp2hex.c:
+	  - Added support for the case when the original .bmp monochrome
+	    file has been converted to a 32 bit per pixel RGB file.
+	  - Added support for bitmap images stored from either top to bottom
+	    or bottom to top.
+	  - Add DEBUG compile flag to print header information, to ease
+	    adding support for additional bitmap formats in the future.
+	* src/unicoverage.c:
+	  - Changed strlcpy to strncpy to compile on more systems.
+
 2019-05-11  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 12.1.01
 	* font/Makefile:
