@@ -33,6 +33,7 @@ Description: font with a glyph for each visible Unicode Plane 0 character
 
 Package: xfonts-unifont
 Architecture: all
+Multi-Arch: foreign
 Depends: xfonts-utils, ${misc:Depends}
 Replaces: unifont (<< 1:5.1.20080706)
 Conflicts: unifont (<< 1:5.1.20080706)
@@ -63,6 +64,7 @@ Description: PCF (bitmap) version of GNU Unifont
 
 Package: ttf-unifont
 Architecture: all
+Multi-Arch: foreign
 Depends: xfonts-utils, ${misc:Depends}
 Description: TrueType version of GNU Unifont
  This contains two fonts: "Unifont" and "Unifont Sample".
@@ -87,6 +89,7 @@ Description: TrueType version of GNU Unifont
 
 Package: psf-unifont
 Architecture: all
+Multi-Arch: foreign
 Depends: bdf2psf, ${misc:Depends}
 Suggests: ttf-unifont
 Description: PSF (console) version of GNU Unifont with APL support

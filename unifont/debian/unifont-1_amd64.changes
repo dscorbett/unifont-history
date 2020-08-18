@@ -1,0 +1,70 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sat, 29 Oct 2016 14:51:08 -0700
+Source: unifont
+Binary: unifont xfonts-unifont ttf-unifont psf-unifont unifont-bin
+Architecture: source all amd64
+Version: 1:9.0.04-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Paul Hardy <unifoundry@unifoundry.com>
+Changed-By: Paul Hardy <unifoundry@unifoundry.com>
+Description:
+ psf-unifont - PSF (console) version of GNU Unifont with APL support
+ ttf-unifont - TrueType version of GNU Unifont
+ unifont    - font with a glyph for each visible Unicode Plane 0 character
+ unifont-bin - utilities for manipulating GNU Unifont
+ xfonts-unifont - PCF (bitmap) version of GNU Unifont
+Changes:
+ unifont (1:9.0.04-1) unstable; urgency=medium
+ .
+   * debian/control: added "Multi-Arch: foreign" tags for xfonts-unifont,
+     ttf-unifont, and psf-unifont.  Their formats are all byte-order
+     independent.
+   * Fixed two swapped glyphs and modified others as noted in ChangeLog file.
+Checksums-Sha1:
+ 5f53dc3b534c3f89326e2395774f3ea5cf4080c8 2003 unifont_9.0.04-1.dsc
+ da4df39b53ee5064917706bf1d2e9a757dca2507 14787042 unifont_9.0.04.orig.tar.gz
+ 0066f55f0f650780857df8eba54de6f69a2cc02e 20028 unifont_9.0.04-1.debian.tar.xz
+ 3913c050285de9f8690add85ca43b7575db95d2e 39136 psf-unifont_9.0.04-1_all.deb
+ fcc495a22720766eb9918cbd175a227f58dbd58e 3025944 ttf-unifont_9.0.04-1_all.deb
+ 3d4426286a18db4df47d0d6623ade750c524f502 385412 unifont-bin_9.0.04-1_amd64.deb
+ dd7143729a8d9bf936ac497200b7b32568057460 1440132 unifont_9.0.04-1_all.deb
+ f39e7b9b94c3a8770408eb835fa2ca98301affc1 2695728 xfonts-unifont_9.0.04-1_all.deb
+Checksums-Sha256:
+ b56fe0ff50a1d55ac3544bcf41edc363056e45937efe2503666ea1b4198955f0 2003 unifont_9.0.04-1.dsc
+ 9a7672fb132f4143b43fe60ae7eee028a8c6c27a10c2155cffb22661a3d6939b 14787042 unifont_9.0.04.orig.tar.gz
+ cf37eb4371badeb112d4681c347b6fda340b40fe180399f535e7597a3ec7aca2 20028 unifont_9.0.04-1.debian.tar.xz
+ d6e9a99a06e404d8e897764f084ab419aa38b5ceaeb5809cae9a9351d5977d8d 39136 psf-unifont_9.0.04-1_all.deb
+ 4b55ae0fe13a7ca9b56da90295f4ee8b9f65617ba293a2452e5c105dbe123cba 3025944 ttf-unifont_9.0.04-1_all.deb
+ 3ffba81dd21fe4e65404ca3b88e03a9b4fdaf50bbdc33b17173874092b53a4e5 385412 unifont-bin_9.0.04-1_amd64.deb
+ 8c89727203b7d6f826d2366e9366018fa1d049bf78e3bdbef7c7a749e27f8dac 1440132 unifont_9.0.04-1_all.deb
+ 818fe5d1f3a2a8e3069449ad08177116ce47f0d4055d3dea5f593396f6dda0fe 2695728 xfonts-unifont_9.0.04-1_all.deb
+Files:
+ 330ae6739de6e6b6d49d75772a5010a3 2003 fonts optional unifont_9.0.04-1.dsc
+ a070dd0573111bec32873825292c8a2d 14787042 fonts optional unifont_9.0.04.orig.tar.gz
+ 373c47544e3c5e9dd02baa4b3d8a7ee6 20028 fonts optional unifont_9.0.04-1.debian.tar.xz
+ b655d9e95fbd41b82caa85f7b638b5cb 39136 fonts optional psf-unifont_9.0.04-1_all.deb
+ f58da01c5f79318fbabb451fa6c24ec3 3025944 fonts optional ttf-unifont_9.0.04-1_all.deb
+ 5a48cc9a8bf2dc09bb087e08e5ecb7b7 385412 x11 extra unifont-bin_9.0.04-1_amd64.deb
+ 5d1b1ddef6b10c5c80eb6958daadf238 1440132 fonts optional unifont_9.0.04-1_all.deb
+ 677f14ec85e1cd208e7b75c09751b512 2695728 fonts optional xfonts-unifont_9.0.04-1_all.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCAAGBQJYFVHSAAoJEB6TENmtzmBlcbwQAJIPKjvhAdPwiOd6zb4G1blY
+y++hqs2zH2jlQXevds/ivoE+wsZPimYHwgUG9WHCeYHnQSCBFB5AH0WBashjNB7B
+ZEsLOGpUGotObM6Nmin6kljwFKhEIyHkmHEO9NRjJgPrQujzErFpP/U2V3WL41je
++XVJLP+QtFSFEJhz7W9qJQ7U2iqTT5UGLxBSw8AuMsOKA6kBz0pukhsx0e5xj1QK
+gvTX85Lb1ouEgK5MmxVrNPwrvKBPLOi9ztoHNUJOd/eSw1dHFJikcxYB+hhKjNsn
+7+M59PpIgEcjHcDsSps5bSakF/woaEKIFC1zk4FZJPOAKWg3LiQhsQzDFPXfoHXJ
+3eb8rfvrFL8FShvsTOPw3b486HwRaZfKieNP7l3/LLAtF+DFsXSvqPw8JnGrFtRu
+xsQsSe/mwu+2jR1RWYm9MBgyjvg66g9UD6dQUUTHD0kdM3eSRVfcASp/2RbDlhRd
+MEpkXXTddl+huS2WW6xKpC4dLcvZP3D7PTSn/pdBNw+249to76CuDQ4V5tpoWy9/
+dJkv0rv/PJhG6D1ly0cKgmg9OeTkM4D7mE8vpbsmN7bF/nDfLO4zgRYfxvhfvqaG
+lPxTRffarz8ACwvp/L5YF5jmYBUYI5XgLawn13R+SV+tVQTxOGe80ILE8xdYzYHK
+Jf95jXDEI440bAMhFvWO
+=kICW
+-----END PGP SIGNATURE-----

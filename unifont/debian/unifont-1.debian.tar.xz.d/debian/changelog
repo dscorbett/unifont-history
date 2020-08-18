@@ -1,3 +1,12 @@
+unifont (1:9.0.04-1) unstable; urgency=medium
+
+  * debian/control: added "Multi-Arch: foreign" tags for xfonts-unifont,
+    ttf-unifont, and psf-unifont.  Their formats are all byte-order
+    independent.
+  * Fixed two swapped glyphs and modified others as noted in ChangeLog file.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Sat, 29 Oct 2016 14:51:08 -0700
+
 unifont (1:9.0.03-1) unstable; urgency=medium
 
   * Unifont 9.0.03 release.
