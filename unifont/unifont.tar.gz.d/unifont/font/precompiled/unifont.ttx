@@ -4,13 +4,13 @@
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
-    <fontRevision value="1.0"/>
-    <checkSumAdjustment value="0x3e1f5a4a"/>
+    <fontRevision value="6.29999"/>
+    <checkSumAdjustment value="0x8553a5b4"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 10001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sun Dec 22 01:53:03 2013"/>
-    <modified value="Sun Dec 22 01:53:03 2013"/>
+    <created value="Sun Feb  2 23:45:59 2014"/>
+    <modified value="Sun Feb  2 23:45:59 2014"/>
     <xMin value="0"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -39,13 +39,13 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="57090"/>
+    <numberOfHMetrics value="57089"/>
   </hhea>
 
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="57091"/>
+    <numGlyphs value="57089"/>
     <maxPoints value="256"/>
     <maxContours value="45"/>
     <maxCompositePoints value="0"/>
@@ -99,7 +99,7 @@
     <achVendID value="PfEd"/>
     <fsSelection value="00000000 01000000"/>
     <usFirstCharIndex value="0"/>
-    <usLastCharIndex value="65535"/>
+    <usLastCharIndex value="65533"/>
     <sTypoAscender value="896"/>
     <sTypoDescender value="-128"/>
     <sTypoLineGap value="0"/>
@@ -115,41 +115,47 @@
   </cvt>
 
   <name>
+    <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
+      Copyright (C) 2014 Roman Czyborra, Paul Hardy, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+    </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      unifont
+      Unifont
     </namerecord>
     <namerecord nameID="2" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : GNU Unifont : 21-12-2013
+      FontForge 2.0 : Unifont : 2-2-2014
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      GNU Unifont
+      Unifont
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 1.00 
+      Version 6.3.20140202 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      unifont
+      UnifontMedium
+    </namerecord>
+    <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
+      Copyright (C) 2014 Roman Czyborra, Paul Hardy, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
-      unifont
+      Unifont
     </namerecord>
     <namerecord nameID="2" platformID="3" platEncID="1" langID="0x409">
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : GNU Unifont : 21-12-2013
+      FontForge 2.0 : Unifont : 2-2-2014
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
-      GNU Unifont
+      Unifont
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 1.00 
+      Version 6.3.20140202 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
-      unifont
+      UnifontMedium
     </namerecord>
   </name>
 
@@ -57260,8 +57266,6 @@
       <psName name="FFFB"/>
       <psName name="FFFC"/>
       <psName name="FFFD"/>
-      <psName name="FFFE"/>
-      <psName name="FFFF"/>
     </extraNames>
   </post>
 
@@ -57273,8 +57277,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Feb 22 13:48:33 2011"/>
-    <sourceCreated value="Sun Dec 22 01:46:10 2013"/>
-    <sourceModified value="Sun Dec 22 01:46:50 2013"/>
+    <sourceCreated value="Sun Feb  2 23:41:32 2014"/>
+    <sourceModified value="Sun Feb  2 23:45:37 2014"/>
   </FFTM>
 
 </ttFont>
