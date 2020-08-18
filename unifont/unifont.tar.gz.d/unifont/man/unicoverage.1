@@ -2,9 +2,7 @@
 .SH NAME
 unicoverage \- Print coverage of each Unicode Script
 .SH SYNOPSIS
-.br
-.B unicoverage
-[\-iinput-file] [\-ooutput-file]
+\fBunicoverage \fP[\-i\fIinput-file\fP] [\-o\fIoutput-file\fP]
 .SH DESCRIPTION
 .B unicoverage
 reads a GNU Unifont .hex font and uses data in
@@ -15,11 +13,12 @@ file.  The Unicode code points in the input .hex file must be
 in ascending order.
 .SH OPTIONS
 .TP 12
-\-i
+\fB\-i\fP
 Specify the input file. The default is STDIN.
 .TP
-\-o
+\fB\-o\fP
 Specify the output file. The default is STDOUT.
+.SH EXAMPLE
 Sample usage:
 .PP
 .RS
@@ -38,6 +37,7 @@ coverage.dat, *.hex GNU Unifont files.
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unidup(1),
 .BR unifont(5),
 .BR unifont-viewer(1),
@@ -51,6 +51,7 @@ coverage.dat, *.hex GNU Unifont files.
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

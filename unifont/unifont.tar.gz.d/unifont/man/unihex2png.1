@@ -2,18 +2,7 @@
 .SH NAME
 unihex2png \- GNU Unifont .hex file to Portable Network Graphics converter
 .SH SYNOPSIS
-.br
-.B unihex2png
-[\-i
-.I input_file.hex
-]
-\-o
-.I output_file.png
-[\-p 
-.I pagenum
-] [\-r
-.I rows
-]
+\fBunihex2png \fP[\-i \fIinput_file.hex\fP] \-o \fIoutput_file.png \fP[\-p \fIpagenum\fP] [\-r \fIrows\fP]
 .SH DESCRIPTION
 .B unihex2png
 reads a page of 256 Unicode code points from a GNU Unifont .hex file
@@ -32,15 +21,15 @@ with the
 .B unipng2hex
 command.
 .SH OPTIONS
-.TP 12
-\-i
+.TP 6
+.BR \-i
 Specify the input file.  If not omitted, a Unifont .hex file
 is read from STDIN.
 .TP
-\-o
+.BR \-o
 Specify the output file.
 .TP
-\-p pagenum
+.BR \-p
 Extract page
 .I pagenum
 from the .hex file.  The default is Page 0 (Unicode range
@@ -48,13 +37,13 @@ U+0000 through U+00FF).  Note that "page" is not a standard
 Unicode term.  It refers to an output bitmap graphics page of
 16 by 16 code points.
 .TP
-\-r rows
+.BR \-r
 Specify the
 .I rows
 of pixels in the output glyphs.  Valid values are 16, 24, and 32.
 The default is 16 pixel rows tall.
 .TP
-\-h
+.BR \-h
 Print a help message of options and exit.
 .SH EXAMPLE
 Sample usage:
@@ -75,6 +64,7 @@ unihex2png \-i my_input_file.hex \-o my_output_file.png
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -88,6 +78,7 @@ unihex2png \-i my_input_file.hex \-o my_output_file.png
 .BR unihex2bmp(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

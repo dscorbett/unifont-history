@@ -27,6 +27,10 @@
 */
 
 /*
+   23 February 2019 [Paul Hardy]:
+      - Set U+119A0..U+119FF (Nandinagari) to be wide.
+      - Set U+1E2C0..U+1E2FF (Wancho) to be wide.
+
    20 June 2017 [Paul Hardy]:
       - Modify to allow hard-coding of quadruple-width hex glyphs.
         The 32nd column (rightmost column) is cleared to zero, because
@@ -241,6 +245,7 @@ main (int argc, char *argv[])
    for (i = 0x011680; i <= 0x0116CF; i++) wide[i] = 1; /* Takri              */
    for (i = 0x011700; i <= 0x01173F; i++) wide[i] = 1; /* Ahom               */
    for (i = 0x011800; i <= 0x01184F; i++) wide[i] = 1; /* Dogra              */
+   for (i = 0x0119A0; i <= 0x0119FF; i++) wide[i] = 1; /* Nandinagari        */
    for (i = 0x011A00; i <= 0x011A4F; i++) wide[i] = 1; /* Zanabazar Square   */
    for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo            */
    for (i = 0x011C00; i <= 0x011C6F; i++) wide[i] = 1; /* Bhaiksuki          */
@@ -259,6 +264,7 @@ main (int argc, char *argv[])
    for (i = 0x01B170; i <= 0x01B2FF; i++) wide[i] = 1; /* Nushu              */
    for (i = 0x01D100; i <= 0x01D1FF; i++) wide[i] = 1; /* Musical Symbols    */
    for (i = 0x01D800; i <= 0x01DAAF; i++) wide[i] = 1; /* Sutton SignWriting */
+   for (i = 0x01E2C0; i <= 0x01E2FF; i++) wide[i] = 1; /* Wancho             */
    for (i = 0x01E800; i <= 0x01E8DF; i++) wide[i] = 1; /* Mende Kikakui      */
    for (i = 0x01F200; i <= 0x01F2FF; i++) wide[i] = 1; /* Encl Ideograp Suppl*/
    wide[0x01F5E7] = 1;                                 /* Three Rays Right   */

@@ -2,12 +2,7 @@
 .SH NAME
 unibdf2hex \- Convert BDF font glyphs into Unifont .hex glyphs
 .SH SYNOPSIS
-.br
-.B unibdf2hex
-<
-.I input-font.bdf
->
-.I output-font.hex
+\fBunibdf2hex \fP< \fIinput-font.bdf \fP> \fIoutput-font.hex\fP
 .SH DESCRIPTION
 .B unibdf2hex
 reads a BDF font file, extracting selected code points and printing
@@ -28,6 +23,7 @@ build "unifont.hex" but this source code could easily be modified.
 .BR hexmerge(1),
 .BR johab2ucs2(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -42,6 +38,7 @@ build "unifont.hex" but this source code could easily be modified.
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

@@ -9,6 +9,7 @@
 * unihex2bmp SYNOPSIS::
 * unihex2bmp DESCRIPTION::
 * unihex2bmp OPTIONS::
+* unihex2bmp EXAMPLE::
 * unihex2bmp FILES::
 * unihex2bmp SEE ALSO::
 * unihex2bmp AUTHOR::
@@ -31,11 +32,7 @@ unihex2bmp @minus{} GNU Unifont .hex file to bitmap graphics file converter
 @subsection unihex2bmp SYNOPSIS
 @c DEBUG: print_menu("unihex2bmp SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unihex2bmp
-@b{unihex2bmp}
-[@minus{}phexpage] [@minus{}iinput@t{_}file.hex] [@minus{}ooutput@t{_}file.bmp] [@minus{}f] [@minus{}w]
+@b{unihex2bmp }[@minus{}p@i{hexpage}] [@minus{}i@i{input@t{_}file.hex}] [@minus{}o@i{output@t{_}file.bmp}] [@minus{}f] [@minus{}w]
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unihex2bmp DESCRIPTION
@@ -65,36 +62,50 @@ command.
 @subsection unihex2bmp OPTIONS
 @c DEBUG: print_menu("unihex2bmp OPTIONS")
 
-@comment TROFF INPUT: .TP 12
+@comment TROFF INPUT: .TP 6
+@comment TROFF INPUT: .BR \-p
 
 @c ---------------------------------------------------------------------
 @table @code
-@item @minus{}ppagenum
+@item @b{@minus{}p}
 Extract page
-@comment TROFF INPUT: .I pagenum
-@i{pagenum}
+@comment TROFF INPUT: .I hexpage
+@i{hexpage}
 from the .hex file.  The default is Page 0 (Unicode range
 U+0000 through U+00FF).  Note that "page" is not a standard
 Unicode term.  It refers to an output bitmap graphics page of
 16 by 16 code points.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-i
 
-@item @minus{}i
+@item @b{@minus{}i}
 Specify the input file. The default is STDIN.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-o
 
-@item @minus{}o
+@item @b{@minus{}o}
 Specify the output file. The default is STDOUT.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-f
 
-@item @minus{}f
-"Flip" (transpose) the grid so it matches the Unicode standard order.
+@item @b{@minus{}f}
+"Flip" (transpose) the grid, swapping rows and columns
+from the Unicode standard orientation.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-w
 
-@item @minus{}w
+@item @b{@minus{}w}
 Produce a Wireless Bitmap format file instead of a Microsoft Windows
 Bitmap file.
-@comment TROFF INPUT: .PP
+@comment TROFF INPUT: .SH EXAMPLE
+
+@end table
+
+@c ---------------------------------------------------------------------
+
+@node unihex2bmp EXAMPLE
+@subsection unihex2bmp EXAMPLE
+@c DEBUG: print_menu("unihex2bmp EXAMPLE")
 
 Sample usage:
 @comment TROFF INPUT: .PP
@@ -110,10 +121,6 @@ unihex2bmp @minus{}imy@t{_}input@t{_}file.hex @minus{}omy@t{_}output@t{_}file.bm
 
 @c ---------------------------------------------------------------------
 @comment TROFF INPUT: .SH FILES
-
-@end table
-
-@c ---------------------------------------------------------------------
 
 @node unihex2bmp FILES
 @subsection unihex2bmp FILES
@@ -146,6 +153,8 @@ unihex2bmp @minus{}imy@t{_}input@t{_}file.hex @minus{}omy@t{_}output@t{_}file.bm
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -172,6 +181,8 @@ unihex2bmp @minus{}imy@t{_}input@t{_}file.hex @minus{}omy@t{_}output@t{_}file.bm
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

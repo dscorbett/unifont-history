@@ -2,12 +2,7 @@
 .SH NAME
 unifontpic \- Convert GNU Unifont .hex input to a bitmap image of the whole font
 .SH SYNOPSIS
-.br
-.B unifontpic
-[\-d\fInnn\fP][\-l][\-t] [\-P\fIplane\fP] <
-.I input-font.hex
->
-.I output-font.bmp
+\fBunifontpic \fP[\-d\fInnn\fP] [\-l] [\-t] [\-P\fIplane\fP] < \fIinput-font.hex \fP> \fIoutput-font.bmp\fP
 .SH DESCRIPTION
 .B unifontpic
 reads a GNU Unifont .hex file from STDIN and writes a two dimensional
@@ -28,18 +23,18 @@ results.  Use
 on a sorted input of .hex files to guarantee no code point
 duplication.
 .SH OPTIONS
-.TP 12
-\-d\fInnn\fP
+.TP 6
+.BR \-d
 Specify a Dots per Inch (DPI) resolution of
 .I nnn.
 For example, specifying \-d120 will encode the bitmap graphics file
 output as having a resolution of 120 DPI.
 .TP
-\-l
+.BR \-l
 Produce a long chart, 16 glyphs wide by 4,096 glyphs tall.
 The default is a wide chart, 256 glyphs wide by 256 glyphs tall.
 .TP
-\-t
+.BR \-t
 Use tiny numbers for the row and column code point labels.  Tiny
 numbers are on a 4 by 5 pixel grid.  Only tiny code point labels
 appear on the long chart variant; this option only has effect
@@ -48,7 +43,7 @@ is not specified for the default 256-by-256 grid, row and column
 code point labels are taken from Unifont's glyphs for `0' to `9'
 and `A' to `F'.
 .TP
-\-P\fIplane\fP
+.BR \-P
 Print a chart for Unicode plane number \fIplane\fP.
 The default is Plane\ 0, the Unicode Basic Multilingual Plane (BMP).
 The range of Unicode plane range is 0 through 17, inclusive.
@@ -81,6 +76,7 @@ unifontpic \-d120 >unifontpic.bmp
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -94,6 +90,7 @@ unifontpic \-d120 >unifontpic.bmp
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

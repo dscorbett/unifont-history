@@ -2,9 +2,7 @@
 .SH NAME
 unigenwidth \- Generate C code for POSIX wcwidth and wcswidth functions
 .SH SYNOPSIS
-.br
-.B unigenwidth
-.I unifont.hex combining.txt
+\fBunigenwidth \fIunifont.hex combining.txt \fP> \fIwccode.c\fP
 .SH DESCRIPTION
 .B unigenwidth
 reads a collection of glyphs in Unifont's .hex format,
@@ -35,6 +33,7 @@ unigenwidth unifont.hex combining.txt > wccode.c
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -48,6 +47,7 @@ unigenwidth unifont.hex combining.txt > wccode.c
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

@@ -2,9 +2,7 @@
 .SH NAME
 unihex2bmp \- GNU Unifont .hex file to bitmap graphics file converter
 .SH SYNOPSIS
-.br
-.B unihex2bmp
-[\-phexpage] [\-iinput_file.hex] [\-ooutput_file.bmp] [\-f] [\-w]
+\fBunihex2bmp \fP[\-p\fIhexpage\fP] [\-i\fIinput_file.hex\fP] [\-o\fIoutput_file.bmp\fP] [\-f] [\-w]
 .SH DESCRIPTION
 .B unihex2bmp
 reads a GNU Unifont .hex file Unicode page of 256 code points
@@ -21,28 +19,29 @@ with the
 .B unibmp2hex
 command.
 .SH OPTIONS
-.TP 12
-\-ppagenum
+.TP 6
+.BR \-p
 Extract page
-.I pagenum
+.I hexpage
 from the .hex file.  The default is Page 0 (Unicode range
 U+0000 through U+00FF).  Note that "page" is not a standard
 Unicode term.  It refers to an output bitmap graphics page of
 16 by 16 code points.
 .TP
-\-i
+.BR \-i
 Specify the input file. The default is STDIN.
 .TP
-\-o
+.BR \-o
 Specify the output file. The default is STDOUT.
 .TP
-\-f
-"Flip" (transpose) the grid so it matches the Unicode standard order.
+.BR \-f
+"Flip" (transpose) the grid, swapping rows and columns
+from the Unicode standard orientation.
 .TP
-\-w
+.BR \-w
 Produce a Wireless Bitmap format file instead of a Microsoft Windows
 Bitmap file.
-.PP
+.SH EXAMPLE
 Sample usage:
 .PP
 .RS
@@ -61,6 +60,7 @@ unihex2bmp \-imy_input_file.hex \-omy_output_file.bmp
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -74,6 +74,7 @@ unihex2bmp \-imy_input_file.hex \-omy_output_file.bmp
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

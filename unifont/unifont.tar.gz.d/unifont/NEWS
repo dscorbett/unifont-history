@@ -1,3 +1,34 @@
+2019-03-05: Release 12.0.01
+   This release adds changes in Unicode Standard version 12.0.0,
+   maintaining complete coverage of Unicode Plane 0, and adding
+   the 11,000th Plane 1 glyph.  Major additions are as follows:
+
+   *  New scripts in Unicode 12.0.0:
+
+      - U+10FE0..U+10FFF Elymaic
+      - U+119A0..U+119FF Nandinagari
+      - U+11FC0..U+11FFF Tamil Supplement
+      - U+13430..U+1343F Egyptian Hieroglyph Format Controls
+      - U+1B130..U+1B16F Small Kana Extension
+      - U+1E100..U+1E14F Nyiakeng Puachue Hmong
+      - U+1E2C0..U+1E2FF Wancho
+      - U+1ED00..U+1ED4F Ottoman Siyaq Numbers
+      - U+1FA70..U+1FAFF Symbols and Pictographs Extended-A
+
+   * U+1FA00..U+1FA5F Chess Symbols: 84 new glyphs added in Unicode 12.0.0.
+
+   * Two new programs:
+
+      - unibmpbump, by Paul Hardy, to shift glyphs created by
+        unihex2png but later converted to .bmp image files,
+        to allow processing by unibmp2hex.
+
+      - unihexrotate, by David Corbett, to rotate glyphs in
+        Unifont .hex files by any desired number of quarter turns
+        clockwise or counterclockwise.
+
+   Full details are in the ChangeLog file.
+
 2018-12-08: Release 11.0.03
    This release contains two significant contributions in the Unicode
    Supplementary Multilingual Plane (Plane 1):

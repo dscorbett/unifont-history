@@ -30,15 +30,10 @@ hexmerge @minus{} Merge two or more GNU Unifont .hex font files into one
 @subsection hexmerge SYNOPSIS
 @c DEBUG: print_menu("hexmerge SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B hexmerge
-@b{hexmerge}
-@comment TROFF INPUT: .I input-font1.hex input-font2.hex
-@i{input-font1.hex input-font2.hex}
->
-@comment TROFF INPUT: .I output-font.hex
-@i{output-font.hex}
+
+@comment WARNING: hexmerge.1:5:%%new font I started without closing previous font B
+
+@b{hexmerge }@i{input-font1.hex input-font2.hex }> @i{output-font.hex}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node hexmerge DESCRIPTION
@@ -80,6 +75,8 @@ the combined font to stdout.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -108,6 +105,8 @@ the combined font to stdout.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

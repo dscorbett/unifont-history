@@ -32,20 +32,7 @@ unipng2hex @minus{} Portable Network Graphics to GNU Unifont .hex file converter
 @subsection unipng2hex SYNOPSIS
 @c DEBUG: print_menu("unipng2hex SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unipng2hex
-@b{unipng2hex}
-@minus{}i
-@comment TROFF INPUT: .I input_file.png
-@i{input@t{_}file.png}
-[@minus{}o
-@comment TROFF INPUT: .I output_file.hex
-@i{output@t{_}file.hex}
-] [@minus{}w
-@comment TROFF INPUT: .I width
-@i{width}
-]
+@b{unipng2hex }@minus{}i @i{input@t{_}file.png }[@minus{}o @i{output@t{_}file.hex}] [@minus{}w @i{width}]
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unipng2hex DESCRIPTION
@@ -72,25 +59,29 @@ supported for 32 pixel row tall characters).
 @subsection unipng2hex OPTIONS
 @c DEBUG: print_menu("unipng2hex OPTIONS")
 
-@comment TROFF INPUT: .TP 12
+@comment TROFF INPUT: .TP 6
+@comment TROFF INPUT: .BR \-i
 
 @c ---------------------------------------------------------------------
 @table @code
-@item @minus{}i
+@item @b{@minus{}i}
 Specify the input file.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-o
 
-@item @minus{}o
+@item @b{@minus{}o}
 Specify the output file.  If omitted, a file in the Unifont .hex format
 is written to STDOUT.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-w
 
-@item @minus{}w width
+@item @b{@minus{}w}
 Specify the minimum width of the output glyphs.  Valid values are 16, 24,
  and 32.  The default is no minimum width.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-h
 
-@item @minus{}h
+@item @b{@minus{}h}
 Print a help message of options and exit.
 @comment TROFF INPUT: .SH EXAMPLE
 
@@ -148,6 +139,8 @@ unipng2hex @minus{}i my@t{_}input@t{_}file.png @minus{}o my@t{_}output@t{_}file.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -176,6 +169,8 @@ unipng2hex @minus{}i my@t{_}input@t{_}file.png @minus{}o my@t{_}output@t{_}file.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1)
 @b{unipagecount(1)}
 @comment TROFF INPUT: .SH AUTHOR

@@ -2,11 +2,7 @@
 .SH NAME
 hexmerge \- Merge two or more GNU Unifont .hex font files into one
 .SH SYNOPSIS
-.br
-.B hexmerge
-.I input-font1.hex input-font2.hex
->
-.I output-font.hex
+\fBhexmerge \fIinput-font1.hex input-font2.hex \fP> \fIoutput-font.hex\fP
 .SH DESCRIPTION
 .B hexmerge
 reads two or more GNU Unifont .hex files, sorts them, and writes
@@ -23,6 +19,7 @@ the combined font to stdout.
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -37,6 +34,7 @@ the combined font to stdout.
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

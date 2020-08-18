@@ -10,7 +10,7 @@
 This manual describes Unifont, a bitmap-based font covering the Unicode
 Basic Multilingual Plane and beyond, along with Unifont's utility programs.
 
-Copyright @copyright{} 2008--2018 Paul Hardy
+Copyright @copyright{} 2008--2019 Paul Hardy
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -1061,6 +1061,7 @@ Enjoy!
 * johab2ucs2::
 * unibdf2hex::
 * unibmp2hex::
+* unibmpbump::
 * unicoverage::
 * unidup::
 * unifont-viewer::
@@ -1074,6 +1075,7 @@ Enjoy!
 * unihex2png::
 * unihexfill::
 * unihexgen::
+* unihexrotate::
 * unipagecount::
 * unipng2hex::
 @end menu
@@ -1088,6 +1090,7 @@ Enjoy!
 @include johab2ucs2.texi
 @include unibdf2hex.texi
 @include unibmp2hex.texi
+@include unibmpbump.texi
 @include unicoverage.texi
 @include unidup.texi
 @include unifont-viewer.texi
@@ -1101,6 +1104,7 @@ Enjoy!
 @include unihex2png.texi
 @include unihexfill.texi
 @include unihexgen.texi
+@include unihexrotate.texi
 @include unipagecount.texi
 @include unipng2hex.texi
 

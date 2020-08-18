@@ -9,6 +9,7 @@
 * unicoverage SYNOPSIS::
 * unicoverage DESCRIPTION::
 * unicoverage OPTIONS::
+* unicoverage EXAMPLE::
 * unicoverage FILES::
 * unicoverage SEE ALSO::
 * unicoverage AUTHOR::
@@ -31,11 +32,7 @@ unicoverage @minus{} Print coverage of each Unicode Script
 @subsection unicoverage SYNOPSIS
 @c DEBUG: print_menu("unicoverage SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unicoverage
-@b{unicoverage}
-[@minus{}iinput-file] [@minus{}ooutput-file]
+@b{unicoverage }[@minus{}i@i{input-file}] [@minus{}o@i{output-file}]
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unicoverage DESCRIPTION
@@ -61,12 +58,22 @@ in ascending order.
 
 @c ---------------------------------------------------------------------
 @table @code
-@item @minus{}i
+@item @b{@minus{}i}
 Specify the input file. The default is STDIN.
 @comment TROFF INPUT: .TP
 
-@item @minus{}o
+@item @b{@minus{}o}
 Specify the output file. The default is STDOUT.
+@comment TROFF INPUT: .SH EXAMPLE
+
+@end table
+
+@c ---------------------------------------------------------------------
+
+@node unicoverage EXAMPLE
+@subsection unicoverage EXAMPLE
+@c DEBUG: print_menu("unicoverage EXAMPLE")
+
 Sample usage:
 @comment TROFF INPUT: .PP
 
@@ -81,10 +88,6 @@ unicoverage < unifont.hex >coverage.txt
 
 @c ---------------------------------------------------------------------
 @comment TROFF INPUT: .SH FILES
-
-@end table
-
-@c ---------------------------------------------------------------------
 
 @node unicoverage FILES
 @subsection unicoverage FILES
@@ -117,6 +120,8 @@ coverage.dat, *.hex GNU Unifont files.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unidup(1),
 @b{unidup(1),}
 @comment TROFF INPUT: .BR unifont(5),
@@ -143,6 +148,8 @@ coverage.dat, *.hex GNU Unifont files.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

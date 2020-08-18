@@ -31,18 +31,13 @@ unigencircles @minus{} Add dashed combining circles to a unifont.hex file
 @subsection unigencircles SYNOPSIS
 @c DEBUG: print_menu("unigencircles SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unigencircles
-@b{unigencircles}
-@comment TROFF INPUT: .I combining.txt nonprinting.hex
-@i{combining.txt nonprinting.hex}
-<
-@comment TROFF INPUT: .I unifont.hex
-@i{unifont.hex}
->
-@comment TROFF INPUT: .I unifont-circles.hex
-@i{unifont-circles.hex}
+
+@comment WARNING: unigencircles.1:5:%%new font I started without closing previous font B
+
+
+@comment WARNING: unigencircles.1:5:%%new font R started without closing previous font I
+
+@b{unigencircles }@i{combining.txt nonprinting.hex }< @i{unifont.hex }> @i{unifont-circles.hex}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unigencircles DESCRIPTION
@@ -128,6 +123,8 @@ for non-printing code points
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -154,6 +151,8 @@ for non-printing code points
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

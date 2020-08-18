@@ -30,13 +30,7 @@ hexbraille @minus{} Algorithmically generate the Unicode Braille range (U+28xx)
 @subsection hexbraille SYNOPSIS
 @c DEBUG: print_menu("hexbraille SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B hexbraille
-@b{hexbraille}
->
-@comment TROFF INPUT: .I output-font.hex
-@i{output-font.hex}
+@b{hexbraille }> @i{output-font.hex}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node hexbraille DESCRIPTION
@@ -78,6 +72,8 @@ braille.hex output font files
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -106,6 +102,8 @@ braille.hex output font files
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

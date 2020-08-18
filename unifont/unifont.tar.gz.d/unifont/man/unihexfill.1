@@ -2,12 +2,7 @@
 .SH NAME
 unihexfill \- Generate range of Unifont 4- or 6-digit hexadecimal glyphs
 .SH SYNOPSIS
-.br
-.B unihexfill
-<
-.I unassigned-ranges.txt
->
-.I filler-glyphs.hex
+\fBunihexfill \fP< \fIunassigned-ranges.txt \fP> \fIfiller-glyphs.hex\fP
 .SH DESCRIPTION
 .B unihexfill
 is a shell script that reads a list of code point ranges from STDIN
@@ -51,6 +46,7 @@ assigned scripts with this single-line command:
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -64,6 +60,7 @@ assigned scripts with this single-line command:
 .BR unihex2bmp(1),
 .BR unihex2png(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

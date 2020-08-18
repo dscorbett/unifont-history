@@ -54,7 +54,8 @@
 010E80 010EFF 
 ; Old Sogdian
 ; Sogdian
-010F70 010FFF
+010F70 010FDF
+; Elymaic
 ; Brahmi
 ; Kaithi
 ; Sora Sompeng
@@ -81,7 +82,8 @@
 ; Dogra
 011850 01189F
 ; Warang Citi
-011900 0119FF
+011900 01199F
+; Nandinagari
 ; Zanabazar Square
 ; Soyombo
 011AB0 011ABF
@@ -94,13 +96,15 @@
 ; Gunjala Gondi
 011DB0 011EDF
 ; Makasar
-011F00 011FFF
+011F00 011FBF
+; Tamil Supplement
 ; Cuneiform
 ; Cuneiform Numbers and Punctuation
 ; Early Dynastic Cuneiform
 012550 012FFF
 ; Egyptian Hieroglyphs
-013430 0143FF
+; Egyptian Hieroglyph Format Controls
+013440 0143FF
 ; Anatolian Hieroglyphs
 014680 0167FF
 ; Bamum Supplement
@@ -119,7 +123,7 @@
 018B00 01AFFF
 ; Kana Supplement
 ; Kana Extended - A
-01B130 01B16F
+; Small Kana Extension
 ; Nushu
 01B300 01BBFF
 ; Duployan
@@ -137,13 +141,19 @@
 ; Sutton SignWriting
 01DAB0 01DFFF
 ; Glagolitic Supplement
-01E030 01E7FF
+01E030 01E0FF
+; Nyiakeng Puachue Hmong
+01E150 01E2BF
+; Wancho
+01E300 01E7FF
 ; Mende Kikakui
 01E8E0 01E8FF
 ; Adlam
 01E960 01EC6F
 ; Indic Siyaq Numbers
-01ECC0 01EDFF
+01ECC0 01ECFF
+; Ottoman Siyaq Numbers
+01ED50 01EDFF
 ; Arabic Mathematical Alphabetic Symbols
 01EF00 01EFFF
 ; Mahjong Tiles
@@ -157,7 +167,8 @@
 ; Transport and Map Symbols
 ; Alchemical Symbols
 ; Geometric Shapes Extended
-;  Supplemental Arrows - C
+; Supplemental Arrows - C
 ; Supplemental Symbols and Pictographs
 ; Chess Symbols
-01FA70 01FFFD
+; Symbols and Pictographs Extended-A
+01FB00 01FFFD

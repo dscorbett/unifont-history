@@ -30,16 +30,7 @@ bdfimplode @minus{} Convert a BDF font into GNU Unifont .hex format
 @subsection bdfimplode SYNOPSIS
 @c DEBUG: print_menu("bdfimplode SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B bdfimplode
-@b{bdfimplode}
-<
-@comment TROFF INPUT: .I input-font.bdf
-@i{input-font.bdf}
->
-@comment TROFF INPUT: .I output-font.hex
-@i{output-font.hex}
+@b{bdfimplode }< @i{input-font.bdf }> @i{output-font.hex}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node bdfimplode DESCRIPTION
@@ -81,6 +72,8 @@ of the font to STDOUT.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -109,6 +102,8 @@ of the font to STDOUT.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

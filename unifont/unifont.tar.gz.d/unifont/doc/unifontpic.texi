@@ -32,16 +32,7 @@ unifontpic @minus{} Convert GNU Unifont .hex input to a bitmap image of the whol
 @subsection unifontpic SYNOPSIS
 @c DEBUG: print_menu("unifontpic SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unifontpic
-@b{unifontpic}
-[@minus{}d@i{nnn}][@minus{}l][@minus{}t] [@minus{}P@i{plane}] <
-@comment TROFF INPUT: .I input-font.hex
-@i{input-font.hex}
->
-@comment TROFF INPUT: .I output-font.bmp
-@i{output-font.bmp}
+@b{unifontpic }[@minus{}d@i{nnn}] [@minus{}l] [@minus{}t] [@minus{}P@i{plane}] < @i{input-font.hex }> @i{output-font.bmp}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unifontpic DESCRIPTION
@@ -76,24 +67,27 @@ duplication.
 @subsection unifontpic OPTIONS
 @c DEBUG: print_menu("unifontpic OPTIONS")
 
-@comment TROFF INPUT: .TP 12
+@comment TROFF INPUT: .TP 6
+@comment TROFF INPUT: .BR \-d
 
 @c ---------------------------------------------------------------------
 @table @code
-@item @minus{}d@i{nnn}
+@item @b{@minus{}d}
 Specify a Dots per Inch (DPI) resolution of
 @comment TROFF INPUT: .I nnn.
 @i{nnn.}
 For example, specifying @minus{}d120 will encode the bitmap graphics file
 output as having a resolution of 120 DPI.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-l
 
-@item @minus{}l
+@item @b{@minus{}l}
 Produce a long chart, 16 glyphs wide by 4,096 glyphs tall.
 The default is a wide chart, 256 glyphs wide by 256 glyphs tall.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-t
 
-@item @minus{}t
+@item @b{@minus{}t}
 Use tiny numbers for the row and column code point labels.  Tiny
 numbers are on a 4 by 5 pixel grid.  Only tiny code point labels
 appear on the long chart variant; this option only has effect
@@ -102,8 +96,9 @@ is not specified for the default 256-by-256 grid, row and column
 code point labels are taken from Unifont's glyphs for `0' to `9'
 and `A' to `F'.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-P
 
-@item @minus{}P@i{plane}
+@item @b{@minus{}P}
 Print a chart for Unicode plane number @i{plane}.
 The default is Plane@tie{}0, the Unicode Basic Multilingual Plane (BMP).
 The range of Unicode plane range is 0 through 17, inclusive.
@@ -183,6 +178,8 @@ unifontpic @minus{}d120 >unifontpic.bmp
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -209,6 +206,8 @@ unifontpic @minus{}d120 >unifontpic.bmp
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

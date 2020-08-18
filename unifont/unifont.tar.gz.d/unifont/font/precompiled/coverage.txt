@@ -649,7 +649,7 @@ Covered      Range       Script
 
  100.0%  U+16FE0..U+16FFF  Ideographic Symbols and Punctuation
 
-   0.2%  U+17000..U+187FF  Tangut
+   0.1%  U+17000..U+187FF  Tangut
 
    1.7%  U+18800..U+18AFF  Tangut Components
 

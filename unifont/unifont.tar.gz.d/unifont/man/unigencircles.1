@@ -2,13 +2,7 @@
 .SH NAME
 unigencircles \- Add dashed combining circles to a unifont.hex file
 .SH SYNOPSIS
-.br
-.B unigencircles
-.I combining.txt nonprinting.hex
-<
-.I unifont.hex
->
-.I unifont-circles.hex
+\fBunigencircles \fIcombining.txt nonprinting.hex \fR< \fIunifont.hex \fP> \fIunifont-circles.hex\fP
 .SH DESCRIPTION
 .B unigencircles
 reads a unifont.hex file from STDIN, adds dashed combining
@@ -49,6 +43,7 @@ for non-printing code points
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -62,6 +57,7 @@ for non-printing code points
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

@@ -16,9 +16,9 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 11.0.03
+VERSION = 12.0.01
 
-COPYRIGHT = "Copyright (C) 1998-2018 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2019 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
 License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
@@ -261,10 +261,7 @@ coverage:
 #
 pagecount: $(COMPILED_DIR)/unifont-$(VERSION).hex $(BINDIR)/unipagecount
 	$(BINDIR)/unipagecount -l < $(COMPILED_DIR)/unifont-$(VERSION).hex \
-		        > $(COMPILED_DIR)/pagecount.html
-	if [ x$(GRAPHICS) = xbmp ] ; then \
-	   sed -i 's/png/bmp/g' $(COMPILED_DIR)/plane00.html ; \
-	fi
+		                  > $(COMPILED_DIR)/pagecount.html
 
 #
 # Create the .png (Portable Network Graphics) versions of the glyphs.
@@ -381,13 +378,11 @@ bmp: hex $(BINDIR)/unihex2bmp
 	   done ; \
 	done
 	# Create HTML table showing color-coded percent coverage in Plane 0.
-	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont-$(VERSION).hex \
-	                          > $(COMPILED_DIR)/plane00.html
-	sed -i 's/png/bmp/g' $(COMPILED_DIR)/plane00.html ; \
-	# Create HTML table showing color-coded percent coverage in Plane 01.
-	../bin/unipagecount -P1 -h < plane01/all/plane01-all.hex \
-	   > $(COMPILED_DIR)/plane01.html
-	sed -i 's/png/bmp/g' $(COMPILED_DIR)/plane01.html ; \
+	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont-$(VERSION).hex | \
+	   sed -e 's/png/bmp/g'   > $(COMPILED_DIR)/plane00.html
+	# Create HTML table showing color-coded percent coverage in Plane 1.
+	$(BINDIR)/unipagecount -P1 -h < plane01/all/plane01-all.hex | \
+	   sed -e 's/png/bmp/g'   > $(COMPILED_DIR)/plane01.html
 	echo "Done creating $(BMPDIR)"
 
 #

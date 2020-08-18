@@ -30,10 +30,7 @@ unifont@minus{}viewer @minus{} View a .hex font file with a graphical user inter
 @subsection unifont-viewer SYNOPSIS
 @c DEBUG: print_menu("unifont-viewer SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unifont\-viewer &
-@b{unifont@minus{}viewer &}
+@b{unifont@minus{}viewer }&
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unifont-viewer DESCRIPTION
@@ -103,6 +100,8 @@ or by typing Control-X.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -129,6 +128,8 @@ or by typing Control-X.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

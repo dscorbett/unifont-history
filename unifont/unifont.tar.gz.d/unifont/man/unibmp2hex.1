@@ -2,9 +2,7 @@
 .SH NAME
 unibmp2hex \- Bitmap graphics file to GNU Unifont .hex file converter
 .SH SYNOPSIS
-.br
-.B unibmp2hex
-[\-phexpage] [\-iinput_file.bmp] [\-ooutput_file.hex] [\-w]
+\fBunibmp2hex \fP[\-p\fIhexpage\fP] [\-i\fIinput_file.bmp\fP] [\-o\fIoutput_file.hex\fP] [\-w]
 .SH DESCRIPTION
 .B unibmp2hex
 reads a bitmap produced by
@@ -16,8 +14,8 @@ pixel grid.  Characters are 16 rows high, and 8, 16, or 31 (treated as 32)
 columns wide.
 .PP
 .SH OPTIONS
-.TP 12
-\-ppagenum
+.TP 6
+.BR \-p
 Specify that the code points will be assigned to the 256 block space
 .I pagenum
 in the .hex file.  If not specified,
@@ -33,16 +31,16 @@ Multilingual Plane. In that event, the .hex file will contain
 eight digit hexadecimal code points rather than the Unifont
 standard of four hexadecimal code points.
 .TP
-\-i
+.BR \-i
 Specify the input file. The default is STDIN.
 .TP
-\-o
+.BR \-o
 Specify the output file. The default is STDOUT.
 .TP
-\-w
+.BR \-w
 Force all output .hex glyphs to be 16 pixels wide rather than dual
 width (8 or 16 pixels).
-.PP
+.SH EXAMPLE
 Sample usage:
 .PP
 .RS
@@ -60,6 +58,7 @@ unibmp2hex \-imy_input_file.bmp \-omy_output_file.hex
 .BR hexmerge(1),
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -74,6 +73,7 @@ unibmp2hex \-imy_input_file.bmp \-omy_output_file.hex
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

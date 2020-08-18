@@ -9,6 +9,7 @@
 * unibmp2hex SYNOPSIS::
 * unibmp2hex DESCRIPTION::
 * unibmp2hex OPTIONS::
+* unibmp2hex EXAMPLE::
 * unibmp2hex FILES::
 * unibmp2hex SEE ALSO::
 * unibmp2hex AUTHOR::
@@ -31,11 +32,7 @@ unibmp2hex @minus{} Bitmap graphics file to GNU Unifont .hex file converter
 @subsection unibmp2hex SYNOPSIS
 @c DEBUG: print_menu("unibmp2hex SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unibmp2hex
-@b{unibmp2hex}
-[@minus{}phexpage] [@minus{}iinput@t{_}file.bmp] [@minus{}ooutput@t{_}file.hex] [@minus{}w]
+@b{unibmp2hex }[@minus{}p@i{hexpage}] [@minus{}i@i{input@t{_}file.bmp}] [@minus{}o@i{output@t{_}file.hex}] [@minus{}w]
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unibmp2hex DESCRIPTION
@@ -60,11 +57,12 @@ columns wide.
 @subsection unibmp2hex OPTIONS
 @c DEBUG: print_menu("unibmp2hex OPTIONS")
 
-@comment TROFF INPUT: .TP 12
+@comment TROFF INPUT: .TP 6
+@comment TROFF INPUT: .BR \-p
 
 @c ---------------------------------------------------------------------
 @table @code
-@item @minus{}ppagenum
+@item @b{@minus{}p}
 Specify that the code points will be assigned to the 256 block space
 @comment TROFF INPUT: .I pagenum
 @i{pagenum}
@@ -83,19 +81,30 @@ Multilingual Plane. In that event, the .hex file will contain
 eight digit hexadecimal code points rather than the Unifont
 standard of four hexadecimal code points.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-i
 
-@item @minus{}i
+@item @b{@minus{}i}
 Specify the input file. The default is STDIN.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-o
 
-@item @minus{}o
+@item @b{@minus{}o}
 Specify the output file. The default is STDOUT.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-w
 
-@item @minus{}w
+@item @b{@minus{}w}
 Force all output .hex glyphs to be 16 pixels wide rather than dual
 width (8 or 16 pixels).
-@comment TROFF INPUT: .PP
+@comment TROFF INPUT: .SH EXAMPLE
+
+@end table
+
+@c ---------------------------------------------------------------------
+
+@node unibmp2hex EXAMPLE
+@subsection unibmp2hex EXAMPLE
+@c DEBUG: print_menu("unibmp2hex EXAMPLE")
 
 Sample usage:
 @comment TROFF INPUT: .PP
@@ -111,10 +120,6 @@ unibmp2hex @minus{}imy@t{_}input@t{_}file.bmp @minus{}omy@t{_}output@t{_}file.he
 
 @c ---------------------------------------------------------------------
 @comment TROFF INPUT: .SH FILES
-
-@end table
-
-@c ---------------------------------------------------------------------
 
 @node unibmp2hex FILES
 @subsection unibmp2hex FILES
@@ -145,6 +150,8 @@ unibmp2hex @minus{}imy@t{_}input@t{_}file.bmp @minus{}omy@t{_}output@t{_}file.he
 @b{johab2ucs2(1),}
 @comment TROFF INPUT: .BR unibdf2hex(1),
 @b{unibdf2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -173,6 +180,8 @@ unibmp2hex @minus{}imy@t{_}input@t{_}file.bmp @minus{}omy@t{_}output@t{_}file.he
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

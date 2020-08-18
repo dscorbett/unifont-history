@@ -32,16 +32,7 @@ hex2bdf @minus{} Convert a GNU Unifont .hex file into a BDF font
 @subsection hex2bdf SYNOPSIS
 @c DEBUG: print_menu("hex2bdf SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B hex2bdf
-@b{hex2bdf}
-<
-@comment TROFF INPUT: .I input-font.hex
-@i{input-font.hex}
->
-@comment TROFF INPUT: .I output-font.bdf
-@i{output-font.bdf}
+@b{hex2bdf }[@i{options}] < @i{input-font.hex }> @i{output-font.bdf}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node hex2bdf DESCRIPTION
@@ -65,22 +56,28 @@ to STDOUT.
 
 @c ---------------------------------------------------------------------
 @table @code
-@item @minus{}f "font-name"
+@item @b{@minus{}f} "font-name"
 Specify the target font name.  If omitted, the default
 font name "Unifont" is assigned.
 @comment TROFF INPUT: .TP
 
-@item @minus{}v "font-version"
+@item @b{@minus{}v} "font-version"
 Specify the target font version.  If omitted, the default
 version "1.0" is assigned.
 @comment TROFF INPUT: .TP
 
-@item @minus{}c "font-copyright"
+@item @b{@minus{}c} "font-copyright"
 Specify the target font copyright information.  The default
 is the null string.
 @comment TROFF INPUT: .TP
 
-@item @minus{}r <pixel-rows>
+@item 
+@comment WARNING: hex2bdf.1:26:%%new font I started without closing previous font B
+
+
+@comment WARNING: hex2bdf.1:26:%%new font R started without closing previous font I
+
+@b{@minus{}r }@i{pixel-rows}
 Specify how many pixel rows tall a glyph is.  The default
 is the traditional Unifont 16 rows of pixels.  This is an
 addition to support
@@ -145,6 +142,8 @@ hex2bdf @minus{}f "Unifont" @minus{}c "(C) 2013..." unifont.hex > unifont.bdf
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -173,6 +172,8 @@ hex2bdf @minus{}f "Unifont" @minus{}c "(C) 2013..." unifont.hex > unifont.bdf
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

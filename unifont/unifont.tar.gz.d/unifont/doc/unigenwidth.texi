@@ -31,12 +31,10 @@ unigenwidth @minus{} Generate C code for POSIX wcwidth and wcswidth functions
 @subsection unigenwidth SYNOPSIS
 @c DEBUG: print_menu("unigenwidth SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unigenwidth
-@b{unigenwidth}
-@comment TROFF INPUT: .I unifont.hex combining.txt
-@i{unifont.hex combining.txt}
+
+@comment WARNING: unigenwidth.1:5:%%new font I started without closing previous font B
+
+@b{unigenwidth }@i{unifont.hex combining.txt }> @i{wccode.c}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unigenwidth DESCRIPTION
@@ -109,6 +107,8 @@ unigenwidth unifont.hex combining.txt > wccode.c
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -135,6 +135,8 @@ unigenwidth unifont.hex combining.txt > wccode.c
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

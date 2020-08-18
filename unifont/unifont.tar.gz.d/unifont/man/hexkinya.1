@@ -2,15 +2,15 @@
 .SH NAME
 hexkinya \- Create the Private Use Area Kinya syllables
 .SH SYNOPSIS
-.br
-.B hexkinya
-> plane15.hex
+\fBhexkinya \fP> plane15.hex
 .SH DESCRIPTION
 .B hexkinya
-contains pre-defined initial, middle, and final alphabet glyphs
+contains pre-defined initial, middle, and final Kinya alphabet glyphs
 to form syllables.  The output is the Kinya Syllables Private Use Area
 block of the ConScript Unicode Registry (CSUR).  The output range is
 U+0F0000 through U+0FDE6F, inclusive.
+.PP
+.I Note that Plane 15 also contains Pikto glyphs, which follow after Kinya.
 .SH FILES
 None.
 .SH SEE ALSO
@@ -23,6 +23,7 @@ None.
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -37,6 +38,7 @@ None.
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1),
 .BR unipng2hex(1)
 .SH AUTHOR

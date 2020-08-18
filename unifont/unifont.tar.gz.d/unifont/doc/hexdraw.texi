@@ -30,26 +30,11 @@ hexdraw @minus{} Convert a GNU Unifont .hex file to and from an ASCII text file
 @subsection hexdraw SYNOPSIS
 @c DEBUG: print_menu("hexdraw SYNOPSIS")
 
+@b{hexdraw }< @i{input-font.hex }> @i{output-font.txt}
 @comment TROFF INPUT: .br
 @comment .br
-@comment TROFF INPUT: .B hexdraw
-@b{hexdraw}
-<
-@comment TROFF INPUT: .I input-font.hex
-@i{input-font.hex}
->
-@comment TROFF INPUT: .I output-font.txt
-@i{output-font.txt}
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B hexdraw
-@b{hexdraw}
-<
-@comment TROFF INPUT: .I input-font.txt
-@i{input-font.txt}
->
-@comment TROFF INPUT: .I output-font.hex
-@i{output-font.hex}
+
+@b{hexdraw }< @i{input-font.txt }> @i{output-font.hex}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node hexdraw DESCRIPTION
@@ -95,6 +80,8 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -123,6 +110,8 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

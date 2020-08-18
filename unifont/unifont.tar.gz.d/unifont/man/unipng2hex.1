@@ -2,15 +2,7 @@
 .SH NAME
 unipng2hex \- Portable Network Graphics to GNU Unifont .hex file converter
 .SH SYNOPSIS
-.br
-.B unipng2hex
-\-i
-.I input_file.png
-[\-o
-.I output_file.hex
-] [\-w
-.I width
-]
+\fBunipng2hex \fP\-i \fIinput_file.png \fP[\-o \fIoutput_file.hex\fP] [\-w \fIwidth\fP]
 .SH DESCRIPTION
 .B unipng2hex
 reads a PNG file produced by
@@ -24,19 +16,19 @@ depending on the "\-r" parameter specified by
 They can be 8, 16, 24, or 32 pixel columns wide (widths of 32 are only
 supported for 32 pixel row tall characters).
 .SH OPTIONS
-.TP 12
-\-i
+.TP 6
+.BR \-i
 Specify the input file.
 .TP
-\-o
+.BR \-o
 Specify the output file.  If omitted, a file in the Unifont .hex format
 is written to STDOUT.
 .TP
-\-w width
+.BR \-w
 Specify the minimum width of the output glyphs.  Valid values are 16, 24,
  and 32.  The default is no minimum width.
 .TP
-\-h 
+.BR \-h 
 Print a help message of options and exit.
 .SH EXAMPLE
 Sample usage:
@@ -57,6 +49,7 @@ unipng2hex \-i my_input_file.png \-o my_output_file.hex
 .BR johab2ucs2(1),
 .BR unibdf2hex(1),
 .BR unibmp2hex(1),
+.BR unibmpbump(1),
 .BR unicoverage(1),
 .BR unidup(1),
 .BR unifont(5),
@@ -71,6 +64,7 @@ unipng2hex \-i my_input_file.png \-o my_output_file.hex
 .BR unihex2png(1),
 .BR unihexfill(1),
 .BR unihexgen(1),
+.BR unihexrotate(1),
 .BR unipagecount(1)
 .SH AUTHOR
 .B unipng2hex

@@ -30,11 +30,7 @@ hexkinya @minus{} Create the Private Use Area Kinya syllables
 @subsection hexkinya SYNOPSIS
 @c DEBUG: print_menu("hexkinya SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B hexkinya
-@b{hexkinya}
-> plane15.hex
+@b{hexkinya }> plane15.hex
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node hexkinya DESCRIPTION
@@ -43,10 +39,14 @@ hexkinya @minus{} Create the Private Use Area Kinya syllables
 
 @comment TROFF INPUT: .B hexkinya
 @b{hexkinya}
-contains pre-defined initial, middle, and final alphabet glyphs
+contains pre-defined initial, middle, and final Kinya alphabet glyphs
 to form syllables.  The output is the Kinya Syllables Private Use Area
 block of the ConScript Unicode Registry (CSUR).  The output range is
 U+0F0000 through U+0FDE6F, inclusive.
+@comment TROFF INPUT: .PP
+
+@comment TROFF INPUT: .I Note that Plane 15 also contains Pikto glyphs, which follow after Kinya.
+@i{Note that Plane 15 also contains Pikto glyphs, which follow after Kinya.}
 @comment TROFF INPUT: .SH FILES
 
 @node hexkinya FILES
@@ -78,6 +78,8 @@ None.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -106,6 +108,8 @@ None.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

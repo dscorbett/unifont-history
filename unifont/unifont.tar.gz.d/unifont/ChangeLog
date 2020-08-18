@@ -1,3 +1,71 @@
+2019-03-05 Paul Hardy <unifoundry@unifoundry.com>
+	* Version 12.0.01
+	* doc/*.texi:
+	  - Update all *.texi files with man page edits.
+	  - Add files for new programs: unibmpbump.texi, unihexrotate.texi.
+	* font/Makefile:
+	  - Replaced instances of "sed -i" with "sed -e"
+	    to support sed versions that lack the "-i" option.
+	  - Changed 2018 to 2019 in copyright string.
+	* font/plane00/alt/
+	  - phags-pa-vertical.hex: added script, by rotating new
+	    'Phags-pa glyphs by 90 degrees for vertical writing.
+	  - mongolian-vertical.hex: added script, by rotating Mongolian
+	    Plane 0 glyphs by 90 degrees with new unihexrotate program.
+	* font/plane00/plane00-combining.txt:
+	  - Added new Lao code point.
+	  - Removed U+1CF2, U+1CF3 Vedic Extensions signs as per Unicode 12.
+	* font/plane00/unifont-base.hex:
+	  - U+1B5F: added a missing pixel (Savannah bug 55451).
+	  - David Corbett added the new Lao glyphs and redrew two earlier
+	    Lao glyphs.
+	  - Added new glyphs for Unicode 12.0.0 release in these scripts:
+	    Telugu, Vedic Extensions, Miscellaneous Symbols and Arrows,
+	    Supplemental Punctuation, Latin Extended-D, Latin Extended-E.
+	  - Bopomofo, Bopomofo Extended, and 'Phags-pa: redrew glyphs to
+	    match more block-structured version introduced in Unicode 12.0.0.
+	  - Also modified U+02EA, U+02EB, U+20A9.
+	* font/plane00/wqy.hex:
+	  - Moved all U+31xx glyphs to unifont-base.hex, as they were
+	    modified mainly as per Unicode Standard 12.0.0.
+	  - Modified U+3B9D, U+3CFD, U+4A76, U+6FF9, U+809E, and U+891D
+	    as per changes in Unicode 12.0.0.  Other changes did not
+	    affect the appearance of the first glyph listed for each
+	    code point, which is what Unifont contains.
+	* font/plane01/plane01-combining.txt: added new code points for
+	  Wancho, Nyiakeng Puachue Hmong, Miao, Nandinagari.
+	* font/plane01/plane01.hex:
+	  - Johnnie Weaver added a new glyph in Adlam.
+	  - Johnnie Weaver added new scripts introduced in Unicode 12.0.0:
+	    - U+10FE0..U+10FFF Elymaic
+	    - U+119A0..U+119FF Nandinagari
+	    - U+1B130..U+1B16F Small Kana Extension
+	    - U+1E100..U+1E14F Nyiakeng Puachue Hmong
+	    - U+1E2C0..U+1E2FF Wancho
+	  - David Corbett added the new Chess Symbols glyphs in the
+	    range U+1FA00..U+1FA5F.
+	  - David Corbett added new scripts introduced in Unicode 12.0.0:
+	    - U+11FC0..U+11FFF Tamil Supplement
+	    - U+1ED00..U+1ED4F Ottoman Siyaq Numbers
+	  - Raised Indic Siyaq Numbers script by three rows to match
+	    baseline of Arabic glyphs, as suggested by David Corbett.
+	  - Added new glyphs for Unicode 12.0.0 release in these scripts:
+	    Newa, Takri, Soyombo, Miao, Ideographic Symbols and Punctuation,
+	    Enclosed Alphanumeric Supplement, Transport and Map Symbols,
+	    Geometric Shapes Extended, Supplemental Symbols and Pictographs.
+	  - Added new scripts introduced in Unicode 12.0.0:
+	    - U+13430..U+1343F Egyptian Hieroglyph Format Controls
+	    - U+1FA70..U+1FAFF Symbols and Pictographs Extended-A
+	* font/ttfsrc/Makefile:
+	  - Changed 2018 to 2019 in copyright string.
+	* man:
+	  - Makefile: added new program pages unibmpbump.1, unihexrotate.1.
+	  - Modified man pages to have more similar format conventions.
+	* src/hexkinya: fixed comment syntax.
+	* src/unibmp2hex.c: added new wide scripts: Wancho, Nandinagari.
+	* src/unibmpbump.c: added program.
+	* src/unihexrotate: added program.
+
 2018-12-08 Paul Hardy <unifoundry@unifoundry.com>
 	* Version 11.0.03
 	* font/Makefile:

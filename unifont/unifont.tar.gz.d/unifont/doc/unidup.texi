@@ -30,13 +30,7 @@ unidup @minus{} Scan through a sorted .hex file and report duplicate code points
 @subsection unidup SYNOPSIS
 @c DEBUG: print_menu("unidup SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unidup [
-@b{unidup [}
-@comment TROFF INPUT: .I input-font.hex
-@i{input-font.hex}
-]
+@b{unidup }[@i{input-font.hex}]
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unidup DESCRIPTION
@@ -84,6 +78,8 @@ specified, input will be read from STDIN until end of file.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unifont(5),
@@ -110,6 +106,8 @@ specified, input will be read from STDIN until end of file.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

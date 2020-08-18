@@ -30,16 +30,7 @@ unifontksx @minus{} Extract Hangul syllables that comprise KS X 1001:1992
 @subsection unifontksx SYNOPSIS
 @c DEBUG: print_menu("unifontksx SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unifontksx
-@b{unifontksx}
-<
-@comment TROFF INPUT: .I input-font.hex
-@i{input-font.hex}
->
-@comment TROFF INPUT: .I output-font.hex
-@i{output-font.hex}
+@b{unifontksx }< @i{input-font.hex }> @i{output-font.hex}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unifontksx DESCRIPTION
@@ -88,6 +79,8 @@ common in modern Hangul usage during font development.
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -114,6 +107,8 @@ common in modern Hangul usage during font development.
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipagecount(1),
 @b{unipagecount(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)

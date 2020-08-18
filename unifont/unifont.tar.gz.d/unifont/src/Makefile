@@ -23,7 +23,7 @@ INSTALLDIR = $(PREFIX)/bin
 #
 # Programs written in C.
 #
-CPROGS = unibmp2hex unicoverage unidup unibdf2hex \
+CPROGS = unibmp2hex unicoverage unidup unibdf2hex unibmpbump \
 	 unifont1per unifontpic unigencircles unigenwidth \
 	 unihex2bmp unihexgen unipagecount
 
@@ -35,7 +35,7 @@ CPROGS = unibmp2hex unicoverage unidup unibdf2hex \
 #
 PPROGS = bdfimplode hex2bdf hex2sfd hexbraille hexdraw hexkinya hexmerge \
 	 johab2ucs2 unifontchojung unifontksx unihex2png unihexfill \
-	 unipng2hex unifont-viewer
+	 unihexrotate unipng2hex unifont-viewer
 
 PROGS = $(CPROGS) $(PPROGS)
 

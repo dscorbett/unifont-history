@@ -5,7 +5,7 @@ BINDIR = ../bin
 GZFLAGS = -f -9 -n
 
 #
-VERSION = 11.0.03
+VERSION = 12.0.01
 
 COPYRIGHT = "Copyright (C) 2013 Paul Hardy.  \
 Licensed under the GNU General Public License; either version 2, or \

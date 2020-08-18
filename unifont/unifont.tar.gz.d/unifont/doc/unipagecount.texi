@@ -31,11 +31,7 @@ unipagecount @minus{} Count the assigned code points in a GNU Unifont .hex file
 @subsection unipagecount SYNOPSIS
 @c DEBUG: print_menu("unipagecount SYNOPSIS")
 
-@comment TROFF INPUT: .br
-@comment .br
-@comment TROFF INPUT: .B unipagecount
-@b{unipagecount}
-[@minus{}ppagenum] [@minus{}h|@minus{}l]
+@b{unipagecount }[@minus{}P@i{plane}] [@minus{}p@i{pagenum}] [@minus{}h|@minus{}l]
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unipagecount DESCRIPTION
@@ -55,29 +51,33 @@ hex file; they are reserved and always counted as being present in a plane.
 @subsection unipagecount OPTIONS
 @c DEBUG: print_menu("unipagecount OPTIONS")
 
-@comment TROFF INPUT: .TP 12
+@comment TROFF INPUT: .TP 6
+@comment TROFF INPUT: .BR \-P
 
 @c ---------------------------------------------------------------------
 @table @code
-@item @minus{}Pplanenum
+@item @b{@minus{}P}
 Select a Unicode plane, from 0 through 16, inclusive.  If not specified,
 @comment TROFF INPUT: .B unipagecount
 @b{unipagecount}
 defaults to Plane 0 (the Basic Multilingual Plane).
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-p
 
-@item @minus{}ppagenum
+@item @b{@minus{}p}
 Just print information on one 256 code point "page" rather than
 the entire Basic Multilingual Plane.  This prints a 16 by 16 table with
 an asterisk in every code point that has an assigned glyph.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-h
 
-@item @minus{}h
+@item @b{@minus{}h}
 Print an HTML table with color-coded cell background colors
 instead of a plain text table.
 @comment TROFF INPUT: .TP
+@comment TROFF INPUT: .BR \-l
 
-@item @minus{}l
+@item @b{@minus{}l}
 [The letter "l"]: Print hyperlinks to font bitmaps in the HTML table.
 To create the bitmaps themselves, use the
 @comment TROFF INPUT: .B unihex2bmp
@@ -120,6 +120,8 @@ program.  The bitmaps are assumed to be in the directory "bmp/".
 @b{unibdf2hex(1),}
 @comment TROFF INPUT: .BR unibmp2hex(1),
 @b{unibmp2hex(1),}
+@comment TROFF INPUT: .BR unibmpbump(1),
+@b{unibmpbump(1),}
 @comment TROFF INPUT: .BR unicoverage(1),
 @b{unicoverage(1),}
 @comment TROFF INPUT: .BR unidup(1),
@@ -148,6 +150,8 @@ program.  The bitmaps are assumed to be in the directory "bmp/".
 @b{unihexfill(1),}
 @comment TROFF INPUT: .BR unihexgen(1),
 @b{unihexgen(1),}
+@comment TROFF INPUT: .BR unihexrotate(1),
+@b{unihexrotate(1),}
 @comment TROFF INPUT: .BR unipng2hex(1)
 @b{unipng2hex(1)}
 @comment TROFF INPUT: .SH AUTHOR
