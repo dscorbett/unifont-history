@@ -7,7 +7,7 @@
 2.5 Using Hexdraw
 2.6 Checking Coverage
 2.7 Custom Builds
-2.8 Dynamically Viewing a Unifont File
+2.8 Viewing a Unifont File Interactively
 2.9 Seeing the Big Picture (Literally!)
 2.10 Combining Circles
 2.11 Installing Fonts on GNU/Linux
@@ -205,38 +205,49 @@
   3.20.8 unihex2png AUTHOR
   3.20.9 unihex2png LICENSE
   3.20.10 unihex2png BUGS
-3.21 unihexgen
-  3.21.1 unihexgen NAME
-  3.21.2 unihexgen SYNOPSIS
-  3.21.3 unihexgen DESCRIPTION
-  3.21.4 unihexgen OPTIONS
-  3.21.5 unihexgen FILES
-  3.21.6 unihexgen EXAMPLE
-  3.21.7 unihexgen SEE ALSO
-  3.21.8 unihexgen AUTHOR
-  3.21.9 unihexgen LICENSE
-  3.21.10 unihexgen BUGS
-3.22 unipagecount
-  3.22.1 unipagecount NAME
-  3.22.2 unipagecount SYNOPSIS
-  3.22.3 unipagecount DESCRIPTION
-  3.22.4 unipagecount OPTIONS
-  3.22.5 unipagecount FILES
-  3.22.6 unipagecount SEE ALSO
-  3.22.7 unipagecount AUTHOR
-  3.22.8 unipagecount LICENSE
-  3.22.9 unipagecount BUGS
-3.23 unipng2hex
-  3.23.1 unipng2hex NAME
-  3.23.2 unipng2hex SYNOPSIS
-  3.23.3 unipng2hex DESCRIPTION
-  3.23.4 unipng2hex OPTIONS
-  3.23.5 unipng2hex EXAMPLE
-  3.23.6 unipng2hex FILES
-  3.23.7 unipng2hex SEE ALSO
-  3.23.8 unipng2hex AUTHOR
-  3.23.9 unipng2hex LICENSE
-  3.23.10 unipng2hex BUGS
+3.21 unihexfill
+  3.21.1 unihexfill NAME
+  3.21.2 unihexfill SYNOPSIS
+  3.21.3 unihexfill DESCRIPTION
+  3.21.4 unihexfill OPTIONS
+  3.21.5 unihexfill FILES
+  3.21.6 unihexfill EXAMPLE
+  3.21.7 unihexfill SEE ALSO
+  3.21.8 unihexfill AUTHOR
+  3.21.9 unihexfill LICENSE
+  3.21.10 unihexfill BUGS
+3.22 unihexgen
+  3.22.1 unihexgen NAME
+  3.22.2 unihexgen SYNOPSIS
+  3.22.3 unihexgen DESCRIPTION
+  3.22.4 unihexgen OPTIONS
+  3.22.5 unihexgen FILES
+  3.22.6 unihexgen EXAMPLE
+  3.22.7 unihexgen SEE ALSO
+  3.22.8 unihexgen AUTHOR
+  3.22.9 unihexgen LICENSE
+  3.22.10 unihexgen BUGS
+3.23 unipagecount
+  3.23.1 unipagecount NAME
+  3.23.2 unipagecount SYNOPSIS
+  3.23.3 unipagecount DESCRIPTION
+  3.23.4 unipagecount OPTIONS
+  3.23.5 unipagecount FILES
+  3.23.6 unipagecount SEE ALSO
+  3.23.7 unipagecount AUTHOR
+  3.23.8 unipagecount LICENSE
+  3.23.9 unipagecount BUGS
+3.24 unipng2hex
+  3.24.1 unipng2hex NAME
+  3.24.2 unipng2hex SYNOPSIS
+  3.24.3 unipng2hex DESCRIPTION
+  3.24.4 unipng2hex OPTIONS
+  3.24.5 unipng2hex EXAMPLE
+  3.24.6 unipng2hex FILES
+  3.24.7 unipng2hex SEE ALSO
+  3.24.8 unipng2hex AUTHOR
+  3.24.9 unipng2hex LICENSE
+  3.24.10 unipng2hex BUGS
 1 Introduction
 **************
 
@@ -783,10 +794,10 @@ whether the space is nominally a single- or double-width space.
 typesetting, such as a thin space, en space, em space, or quad space;
 all spaces are either 8 pixels wide or 16 pixels wide.)
 
-2.8 Dynamically Viewing a Unifont File
-======================================
+2.8 Viewing a Unifont File Interactively
+========================================
 
-The 'unifont-viewer' Perl script uses the 'libwx' Perl library to
+The 'unifont-viewer' Perl script uses the 'wxWidgets' Perl library to
 present a dynamic graphical representation of a Unifont hex file.  This
 is a convenient way to scan quickly through a complete Unifont hex file.
 It is ideal for scanning through a Unifont hex source file after you
@@ -1048,8 +1059,8 @@ hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1), hexkinya(1),
 hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipagecount(1), unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipagecount(1), unipng2hex(1)
 
 3.1.6 bdfimplode AUTHOR
 -----------------------
@@ -1132,8 +1143,8 @@ bdfimplode(1), hex2sfd(1), hexbraille(1), hexdraw(1), hexkinya(1),
 hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipagecount(1), unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipagecount(1), unipng2hex(1)
 
 3.2.8 hex2bdf AUTHOR
 --------------------
@@ -1190,8 +1201,8 @@ bdfimplode(1), hex2bdf(1), hexbraille(1), hexdraw(1), hexkinya(1),
 hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipagecount(1), unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipagecount(1), unipng2hex(1)
 
 3.3.6 hex2sfd AUTHOR
 --------------------
@@ -1246,8 +1257,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexdraw(1), hexkinya(1),
 hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipagecount(1), unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipagecount(1), unipng2hex(1)
 
 3.4.6 hexbraille AUTHOR
 -----------------------
@@ -1305,8 +1316,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexkinya(1),
 hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipagecount(1), unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipagecount(1), unipng2hex(1)
 
 3.5.6 hexdraw AUTHOR
 --------------------
@@ -1361,8 +1372,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipagecount(1), unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipagecount(1), unipng2hex(1)
 
 3.6.6 hexkinya AUTHOR
 ---------------------
@@ -1415,8 +1426,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexkinya(1),
 hexdraw(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1), unicoverage(1),
 unidup(1), unifont(5), unifont-viewer(1), unifontchojung(1),
 unifontksx(1), unifontpic(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.7.6 hexmerge AUTHOR
 ---------------------
@@ -1470,8 +1481,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), unibdf2hex(1), unibmp2hex(1), unicoverage(1),
 unidup(1), unifont(5), unifont-viewer(1), unifontchojung(1),
 unifontksx(1), unifontpic(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.8.6 johab2ucs2 AUTHOR
 -----------------------
@@ -1530,8 +1541,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibmp2hex(1), unicoverage(1),
 unidup(1), unifont(5), unifont-viewer(1), unifontchojung(1),
 unifontksx(1), unifontpic(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.9.6 unibdf2hex AUTHOR
 -----------------------
@@ -1616,8 +1627,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unicoverage(1),
 unidup(1), unifont(5), unifont-viewer(1), unifontchojung(1),
 unifontksx(1), unifontpic(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.10.7 unibmp2hex AUTHOR
 ------------------------
@@ -1689,8 +1700,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unidup(1), unifont(5), unifont-viewer(1), unifontchojung(1),
 unifontksx(1), unifontpic(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.11.7 unicoverage AUTHOR
 -------------------------
@@ -1747,8 +1758,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unifont(5), unifont-viewer(1), unifontchojung(1),
 unifontksx(1), unifontpic(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.12.6 unidup AUTHOR
 --------------------
@@ -1812,7 +1823,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifontchojung(1), unifontksx(1),
 unifontpic(1), unigencircles(1), unigenwidth(1), unihex2bmp(1),
-unihex2png(1), unihexgen(1), unipagecount(1), unipng2hex(1)
+unihex2png(1), unihexfill(1), unihexgen(1), unipagecount(1),
+unipng2hex(1)
 
 3.13.6 unifont-viewer AUTHOR
 ----------------------------
@@ -1869,7 +1881,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1), unifontksx(1),
 unifontpic(1), unigencircles(1), unigenwidth(1), unihex2bmp(1),
-unihex2png(1), unihexgen(1), unipagecount(1), unipng2hex(1)
+unihex2png(1), unihexfill(1), unihexgen(1), unipagecount(1),
+unipng2hex(1)
 
 3.14.6 unifontchojung AUTHOR
 ----------------------------
@@ -1927,8 +1940,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontpic(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.15.6 unifontksx AUTHOR
 ------------------------
@@ -2026,8 +2039,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unigencircles(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.16.8 unifontpic AUTHOR
 ------------------------
@@ -2102,8 +2115,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigenwidth(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.17.7 unigencircles AUTHOR
 ---------------------------
@@ -2168,8 +2181,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unihex2bmp(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unihex2bmp(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.18.7 unigenwidth AUTHOR
 -------------------------
@@ -2258,8 +2271,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2png(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unigenwidth(1), unihex2png(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.19.7 unihex2bmp AUTHOR
 ------------------------
@@ -2359,8 +2372,8 @@ bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihexgen(1), unipagecount(1),
-unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihexfill(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
 
 3.20.8 unihex2png AUTHOR
 ------------------------
@@ -2392,20 +2405,100 @@ not in the format of the original GNU Unifont .hex file, all bets are
 off.  Lines can be terminated either with line feed, or carriage return
 plus line feed.
 
-3.21 unihexgen
+3.21 unihexfill
+===============
+
+3.21.1 unihexfill NAME
+----------------------
+
+unihexfill - Generate range of Unifont 4- or 6-digit hexadecimal glyphs
+
+3.21.2 unihexfill SYNOPSIS
+--------------------------
+
+unihexfill < unassigned-ranges.txt > filler-glyphs.hex
+
+3.21.3 unihexfill DESCRIPTION
+-----------------------------
+
+unihexfill is a shell script that reads a list of code point ranges from
+STDIN and produces filler glyphs of 4- or 6-digit code points on STDOUT.
+The format of the input file is a combination of comment lines, single
+code points on a line, and start/stop pairs of code points on a line
+separated by a space.  Comment lines start with a semicolon (';') by
+convention.  Start and stop code points are strings of hexadecimal
+digits, by convention either four or six digits.  unihexfill invokes
+unihexgen for each non-comment line in its input file.  If a codepoint
+is less than or equal to "FFFF" (i.e., 0xFFFF), a four-digit hexadecimal
+number is encoded within the corresponding Unifont glyph as two digits
+on each of two rows.  Otherwise, a six-digit hexadecimal number is
+encoded as three digits on each of two rows.
+
+3.21.4 unihexfill OPTIONS
+-------------------------
+
+There are no options.
+
+3.21.5 unihexfill FILES
+-----------------------
+
+*.txt as input; *.hex as output.
+
+3.21.6 unihexfill EXAMPLE
+-------------------------
+
+In the Unifont source package, the file font/plane01/Makefile generates
+Unicode Plane 1 hexadecimal filler glyphs of unassigned code points
+within assigned scripts with this single-line command:
+
+     ../../bin/unihexfill < unassigned-ranges.txt > unassigned.hex
+
+3.21.7 unihexfill SEE ALSO
+--------------------------
+
+bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
+hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
+unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
+unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
+unipagecount(1), unipng2hex(1)
+
+3.21.8 unihexfill AUTHOR
+------------------------
+
+unihexfill was written by Paul Hardy.
+
+3.21.9 unihexfill LICENSE
+-------------------------
+
+unihexfill is Copyright (C) 2014 Paul Hardy.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+
+3.21.10 unihexfill BUGS
+-----------------------
+
+No known real bugs exist, except that this software does not perform
+extensive error checking on its input file.  Any line that appears to
+begin with a hexadecimal digit is fed to unihexgen.
+
+3.22 unihexgen
 ==============
 
-3.21.1 unihexgen NAME
+3.22.1 unihexgen NAME
 ---------------------
 
 unihexgen - Generate Unifont 4- or 6-digit hexadecimal glyphs
 
-3.21.2 unihexgen SYNOPSIS
+3.22.2 unihexgen SYNOPSIS
 -------------------------
 
 unihexgen startpoint endpoint
 
-3.21.3 unihexgen DESCRIPTION
+3.22.3 unihexgen DESCRIPTION
 ----------------------------
 
 unihexgen produces unifont.hex entries in the Unicode code point range
@@ -2416,17 +2509,17 @@ corresponding Unifont glyph as two digits on each of two rows.
 Otherwise, a six-digit hexadecimal number is encoded as three digits on
 each of two rows.
 
-3.21.4 unihexgen OPTIONS
+3.22.4 unihexgen OPTIONS
 ------------------------
 
 There are no options.
 
-3.21.5 unihexgen FILES
+3.22.5 unihexgen FILES
 ----------------------
 
 *.hex as output.
 
-3.21.6 unihexgen EXAMPLE
+3.22.6 unihexgen EXAMPLE
 ------------------------
 
 To generate the Private Use Area glyphs in the Unicode range
@@ -2434,22 +2527,22 @@ U+E000..U+F8FF, invoke unihexgen with these arguments:
 
      unihexgen e000 f8ff
 
-3.21.7 unihexgen SEE ALSO
+3.22.7 unihexgen SEE ALSO
 -------------------------
 
 bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unipagecount(1),
-unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unipagecount(1), unipng2hex(1)
 
-3.21.8 unihexgen AUTHOR
+3.22.8 unihexgen AUTHOR
 -----------------------
 
 unihexgen was written by Paul Hardy.
 
-3.21.9 unihexgen LICENSE
+3.22.9 unihexgen LICENSE
 ------------------------
 
 unihexgen is Copyright (C) 2013 Paul Hardy.
@@ -2459,7 +2552,7 @@ under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version 2 of the License, or (at your
 option) any later version.
 
-3.21.10 unihexgen BUGS
+3.22.10 unihexgen BUGS
 ----------------------
 
 No known real bugs exist, except that this software does not perform
@@ -2467,27 +2560,27 @@ extensive error checking on its command-line arguments.  If they're not
 in the format of the original bitmapped output from unihexgen, all bets
 are off.
 
-3.22 unipagecount
+3.23 unipagecount
 =================
 
-3.22.1 unipagecount NAME
+3.23.1 unipagecount NAME
 ------------------------
 
 unipagecount - Count the assigned code points in a GNU Unifont .hex file
 
-3.22.2 unipagecount SYNOPSIS
+3.23.2 unipagecount SYNOPSIS
 ----------------------------
 
 unipagecount [-ppagenum] [-h|-l]
 
-3.22.3 unipagecount DESCRIPTION
+3.23.3 unipagecount DESCRIPTION
 -------------------------------
 
 unipagecount reads a GNU Unifont .hex file from STDIN and prints a 16 by
 16 grid of the number of defined code points in each 256 character block
 to STDOUT. Code points proceed from left to right, then top to bottom.
 
-3.22.4 unipagecount OPTIONS
+3.23.4 unipagecount OPTIONS
 ---------------------------
 
 '-ppagenum'
@@ -2504,27 +2597,27 @@ to STDOUT. Code points proceed from left to right, then top to bottom.
      table.  To create the bitmaps themselves, use the unihex2bmp
      program.  The bitmaps are assumed to be in the directory "bmp/".
 
-3.22.5 unipagecount FILES
+3.23.5 unipagecount FILES
 -------------------------
 
 *.hex GNU Unifont font files
 
-3.22.6 unipagecount SEE ALSO
+3.23.6 unipagecount SEE ALSO
 ----------------------------
 
 bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipng2hex(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipng2hex(1)
 
-3.22.7 unipagecount AUTHOR
+3.23.7 unipagecount AUTHOR
 --------------------------
 
 unipagecount was written by Paul Hardy.
 
-3.22.8 unipagecount LICENSE
+3.23.8 unipagecount LICENSE
 ---------------------------
 
 unipagecount is Copyright (C) 2007 Paul Hardy.
@@ -2534,28 +2627,28 @@ under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version 2 of the License, or (at your
 option) any later version.
 
-3.22.9 unipagecount BUGS
+3.23.9 unipagecount BUGS
 ------------------------
 
 No known real bugs exist, except that this software does not perform
 extensive error checking on its input files.  If they're not in the
 format of the original GNU Unifont .hex file, all bets are off.
 
-3.23 unipng2hex
+3.24 unipng2hex
 ===============
 
-3.23.1 unipng2hex NAME
+3.24.1 unipng2hex NAME
 ----------------------
 
 unipng2hex - Portable Network Graphics to GNU Unifont .hex file
 converter
 
-3.23.2 unipng2hex SYNOPSIS
+3.24.2 unipng2hex SYNOPSIS
 --------------------------
 
 unipng2hex -i input_file.png [-o output_file.hex ] [-w width ]
 
-3.23.3 unipng2hex DESCRIPTION
+3.24.3 unipng2hex DESCRIPTION
 -----------------------------
 
 unipng2hex reads a PNG file produced by unihex2png before or after
@@ -2567,7 +2660,7 @@ Characters are either 16, 24 or 32 pixel rows high, depending on the
 pixel columns wide (widths of 32 are only supported for 32 pixel row
 tall characters).
 
-3.23.4 unipng2hex OPTIONS
+3.24.4 unipng2hex OPTIONS
 -------------------------
 
 '-i'
@@ -2584,35 +2677,35 @@ tall characters).
 '-h'
      Print a help message of options and exit.
 
-3.23.5 unipng2hex EXAMPLE
+3.24.5 unipng2hex EXAMPLE
 -------------------------
 
 Sample usage:
 
      unipng2hex -i my_input_file.png -o my_output_file.hex
 
-3.23.6 unipng2hex FILES
+3.24.6 unipng2hex FILES
 -----------------------
 
 *.png graphics files
 
-3.23.7 unipng2hex SEE ALSO
+3.24.7 unipng2hex SEE ALSO
 --------------------------
 
 bdfimplode(1), hex2bdf(1), hex2sfd(1), hexbraille(1), hexdraw(1),
 hexkinya(1), hexmerge(1), johab2ucs2(1), unibdf2hex(1), unibmp2hex(1),
 unicoverage(1), unidup(1), unifont(5), unifont-viewer(1),
 unifontchojung(1), unifontksx(1), unifontpic(1), unigencircles(1),
-unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexgen(1),
-unipagecount(1)
+unigenwidth(1), unihex2bmp(1), unihex2png(1), unihexfill(1),
+unihexgen(1), unipagecount(1)
 
-3.23.8 unipng2hex AUTHOR
+3.24.8 unipng2hex AUTHOR
 ------------------------
 
 unipng2hex was written by Andrew Miller, starting by converting Paul
 Hardy's unibmp2hex C program to Perl.
 
-3.23.9 unipng2hex LICENSE
+3.24.9 unipng2hex LICENSE
 -------------------------
 
 unipng2hex is Copyright (C) 2007, 2008 Paul Hardy, (C) 2013 Andrew
@@ -2623,7 +2716,7 @@ under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version 2 of the License, or (at your
 option) any later version.
 
-3.23.10 unipng2hex BUGS
+3.24.10 unipng2hex BUGS
 -----------------------
 
 No known real bugs exist, but the optional pixel rows parameter is not

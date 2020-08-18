@@ -1,0 +1,17 @@
+Document: unifont-bin
+Title: GNU Unifont Utilities Tutorial and Reference
+Author: Paul Hardy
+Abstract: This manual describes what the GNU Unifont utilities
+ are and how they can be used to create fonts.  The last chapter
+ contains a reference for all utility programs.
+Section: Help/HOWTO
+
+Format: Info
+Index: /usr/share/info/unifont.info.gz
+Files: /usr/share/info/unifont.info.gz
+
+Format: PDF
+Files: /usr/share/doc/unifont-bin/unifont.pdf.gz
+
+Format: Text
+Files: /usr/share/doc/unifont-bin/unifont.txt.gz

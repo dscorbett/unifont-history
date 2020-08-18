@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+
+CFLAGS   = -Wall $(shell dpkg-buildflags --get CFLAGS)
+CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
+LDFLAGS  = $(shell dpkg-buildflags --get LDFLAGS)
+
+%:
+	dh $@
+
+# The below build-indep target is the default way that Unifont
+# is built, and is already in the "font/precompiled/" directory.
+#
+# BUILDFONT=1 forces the building of the font from the contents of
+# "font/plane00/*.hex".  The results will be in the "font/compiled/"
+# directory.  The font files in that directory will get installed
+# in preference to the files in the "font/precompiled/" directory
+# if both exist.
+#
+# PUA="" makes sure that the glyphs in "font/plane00/pua.hex" don't
+# get built into the final font, though that is the default behavior.
+# The flag is there also as a placeholder for building a custom
+# font with a special set of PUA glyphs if desired.
+#
+# If the build-indep rule is commented out, then Unifont is installed
+# from the pre-built files in the "font/precompiled/" directory, which
+# should be identical to the files that this rule builds.
+#
+override_dh_auto_build-indep:
+	$(MAKE) BUILDFONT=1 PUA=""
+
+override_dh_auto_build-arch:
+	$(MAKE) CFLAGS='$(CFLAGS)' CPPFLAGS='$(CPPFLAGS)' \
+	   LDFLAGS='$(LDFLAGS)'
