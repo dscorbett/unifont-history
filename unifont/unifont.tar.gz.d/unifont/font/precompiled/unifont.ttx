@@ -4,13 +4,13 @@
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
-    <fontRevision value="6.29999"/>
-    <checkSumAdjustment value="0x8262f319"/>
+    <fontRevision value="1.0"/>
+    <checkSumAdjustment value="0x3e1f5a4a"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 10001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Wed Dec 18 03:57:58 2013"/>
-    <modified value="Wed Dec 18 03:57:58 2013"/>
+    <created value="Sun Dec 22 01:53:03 2013"/>
+    <modified value="Sun Dec 22 01:53:03 2013"/>
     <xMin value="0"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -115,47 +115,41 @@
   </cvt>
 
   <name>
-    <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (C) 2013 Roman Czyborra, Paul Hardy, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
-    </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      GNU
+      unifont
     </namerecord>
     <namerecord nameID="2" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont : 17-12-2013
+      FontForge 2.0 : GNU Unifont : 21-12-2013
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Unifont
+      GNU Unifont
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 6.3.20131217 
+      Version 1.00 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      UnifontMedium
-    </namerecord>
-    <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright (C) 2013 Roman Czyborra, Paul Hardy, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+      unifont
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
-      GNU
+      unifont
     </namerecord>
     <namerecord nameID="2" platformID="3" platEncID="1" langID="0x409">
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont : 17-12-2013
+      FontForge 2.0 : GNU Unifont : 21-12-2013
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
-      Unifont
+      GNU Unifont
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 6.3.20131217 
+      Version 1.00 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
-      UnifontMedium
+      unifont
     </namerecord>
   </name>
 
@@ -57279,8 +57273,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Feb 22 13:48:33 2011"/>
-    <sourceCreated value="Wed Dec 18 03:51:06 2013"/>
-    <sourceModified value="Wed Dec 18 03:51:46 2013"/>
+    <sourceCreated value="Sun Dec 22 01:46:10 2013"/>
+    <sourceModified value="Sun Dec 22 01:46:50 2013"/>
   </FFTM>
 
 </ttFont>
