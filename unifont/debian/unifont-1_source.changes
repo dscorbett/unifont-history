@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Sat, 10 Dec 2016 16:58:01 -0800
+Source: unifont
+Binary: unifont xfonts-unifont ttf-unifont psf-unifont unifont-bin
+Architecture: source
+Version: 1:9.0.05-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Paul Hardy <unifoundry@unifoundry.com>
+Changed-By: Paul Hardy <unifoundry@unifoundry.com>
+Description:
+ psf-unifont - PSF (console) version of GNU Unifont with APL support
+ ttf-unifont - TrueType version of GNU Unifont
+ unifont    - font with a glyph for each visible Unicode Plane 0 character
+ unifont-bin - utilities for manipulating GNU Unifont
+ xfonts-unifont - PCF (bitmap) version of GNU Unifont
+Changes:
+ unifont (1:9.0.05-1) unstable; urgency=medium
+ .
+   * Unifont 9.0.05 release.
+   * debian/control: reworded descriptions to avoid duplicate word "Plane"
+     false positive lintian warning, rather than adding a lintian override.
+   * debian/control: added "Multi-Arch: foreign" tag for "unifont" package.
+Checksums-Sha1:
+ 9ff2c00019edd1717c6287a755ae5eb8f00fd7dd 1152 unifont_9.0.05-1.dsc
+ 127679f1551f6c03bd2af8853dc98196bbc23a02 14796023 unifont_9.0.05.orig.tar.gz
+ f63bd966d01ee09e08974b6f7d35f0160c0a41db 20144 unifont_9.0.05-1.debian.tar.xz
+Checksums-Sha256:
+ 8b8af97df66345deee25f5c6d860e9d48c7ce1739f6bd2ebca2eed09f976eecc 1152 unifont_9.0.05-1.dsc
+ f4fd4f085a0be27b2da6ba845af2d2b679438498e0ce5611ea25dca17f744e8a 14796023 unifont_9.0.05.orig.tar.gz
+ ea5efbd7eaee9fb6a9432aa888638e91909c306f37266e0b71e992901a8c27d6 20144 unifont_9.0.05-1.debian.tar.xz
+Files:
+ 79c69e6dad035a1d97fc61cb965bab0d 1152 fonts optional unifont_9.0.05-1.dsc
+ a55bb8150ec548bf8325647a6f0b8386 14796023 fonts optional unifont_9.0.05.orig.tar.gz
+ 5f0c996e7aeaf080bfe58d1434635fb0 20144 fonts optional unifont_9.0.05-1.debian.tar.xz

@@ -1,3 +1,12 @@
+unifont (1:9.0.05-1) unstable; urgency=medium
+
+  * Unifont 9.0.05 release.
+  * debian/control: reworded descriptions to avoid duplicate word "Plane"
+    false positive lintian warning, rather than adding a lintian override.
+  * debian/control: added "Multi-Arch: foreign" tag for "unifont" package.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Sat, 10 Dec 2016 16:58:01 -0800
+
 unifont (1:9.0.04-1) unstable; urgency=medium
 
   * debian/control: added "Multi-Arch: foreign" tags for xfonts-unifont,
