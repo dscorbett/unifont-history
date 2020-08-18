@@ -5,13 +5,13 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="10.0"/>
-    <checkSumAdjustment value="0x3b1dfd38"/>
+    <checkSumAdjustment value="0x2ea0da7b"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sat Jul  8 10:27:04 2017"/>
-    <modified value="Sat Jul  8 10:27:07 2017"/>
-    <xMin value="-8"/>
+    <created value="Wed Jul 12 10:59:56 2017"/>
+    <modified value="Wed Jul 12 10:59:59 2017"/>
+    <xMin value="-512"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
     <yMax value="896"/>
@@ -28,8 +28,8 @@
     <descent value="-128"/>
     <lineGap value="72"/>
     <advanceWidthMax value="1024"/>
-    <minLeftSideBearing value="-8"/>
-    <minRightSideBearing value="-688"/>
+    <minLeftSideBearing value="-512"/>
+    <minRightSideBearing value="0"/>
     <xMaxExtent value="1024"/>
     <caretSlopeRise value="1"/>
     <caretSlopeRun value="0"/>
@@ -39,13 +39,13 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="5482"/>
+    <numberOfHMetrics value="5483"/>
   </hhea>
 
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="5492"/>
+    <numGlyphs value="5493"/>
     <maxPoints value="192"/>
     <maxContours value="23"/>
     <maxCompositePoints value="0"/>
@@ -120,13 +120,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 8-7-2017
+      FontForge 2.0 : Unifont CSUR : 12-7-2017
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 10.0.04 
+      Version 10.0.05 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -141,13 +141,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 8-7-2017
+      FontForge 2.0 : Unifont CSUR : 12-7-2017
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 10.0.04 
+      Version 10.0.05 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -473,6 +473,7 @@
       <psName name="uni00E19A"/>
       <psName name="uni00E19B"/>
       <psName name="uni00E19C"/>
+      <psName name="uni00E1A0"/>
       <psName name="uni00E1A1"/>
       <psName name="uni00E1A2"/>
       <psName name="uni00E1A3"/>
@@ -5675,8 +5676,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sat Nov 12 15:07:51 2016"/>
-    <sourceCreated value="Sat Jul  8 10:27:04 2017"/>
-    <sourceModified value="Sat Jul  8 10:27:07 2017"/>
+    <sourceCreated value="Wed Jul 12 10:59:56 2017"/>
+    <sourceModified value="Wed Jul 12 10:59:59 2017"/>
   </FFTM>
 
   <GDEF>
@@ -5982,6 +5983,7 @@
       <ClassDef glyph="uni00E19A" class="1"/>
       <ClassDef glyph="uni00E19B" class="1"/>
       <ClassDef glyph="uni00E19C" class="1"/>
+      <ClassDef glyph="uni00E1A0" class="1"/>
       <ClassDef glyph="uni00E1A1" class="1"/>
       <ClassDef glyph="uni00E1A2" class="1"/>
       <ClassDef glyph="uni00E1A3" class="1"/>

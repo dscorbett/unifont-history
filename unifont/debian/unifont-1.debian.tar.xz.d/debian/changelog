@@ -1,3 +1,9 @@
+unifont (1:10.0.05-1) unstable; urgency=medium
+
+  * Update to Unifont 10.0.05 release. 
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Wed, 12 Jul 2017 03:28:11 -0700
+
 unifont (1:10.0.04-1) unstable; urgency=low
 
   * Update to Unifont 10.0.04 release, which incorporates all changes
