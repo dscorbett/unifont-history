@@ -16,7 +16,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 12.1.03
+VERSION = 12.1.04
 
 COPYRIGHT = "Copyright (C) 1998-2019 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
@@ -111,6 +111,7 @@ PLANE0 = copyleft.hex custom00.hex hangul-syllables.hex \
 # that will replace those in the default Chinese version of Unifont.
 #
 JISHEX = plane00/izmg16-plane00.hex plane02/izmg16-plane02.hex
+PLANE_2_HEX = plane02/izmg16-plane02.hex
 
 #
 # Planes 1 through 14 (0x0E) are ordinary;
@@ -194,7 +195,7 @@ hex:
 	awk -F: -f unipatch-hex.awk $(COMPILED_DIR)/unifont-$(VERSION).hex \
 	   plane00/izmg16-plane00.hex |\
 	   sort > $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
-	cat plane02/izmg16-plane02.hex \
+	cat $(PLANE_2_HEX) \
 	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
 
 #
@@ -335,6 +336,16 @@ png: hex $(BINDIR)/unihex2png
 	         -o $(PNGDIR)/plane01/uni01$$i$$j.png ; \
 	   done ; \
 	done
+	if [ ! -d $(PNGDIR)/plane02 ] ; then \
+	   mkdir -p $(PNGDIR)/plane02 ; \
+	fi
+	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	      $(BINDIR)/unihex2png -p 02$$i$$j \
+	         -i $(PLANE_2_HEX) \
+	         -o $(PNGDIR)/plane02/uni02$$i$$j.png ; \
+	   done ; \
+	done
 	if [ ! -d $(PNGDIR)/plane0E ] ; then \
 	   mkdir -p $(PNGDIR)/plane0E ; \
 	fi
@@ -367,6 +378,9 @@ png: hex $(BINDIR)/unihex2png
 	# Create HTML table showing color-coded percent coverage in Plane 1.
 	../bin/unipagecount -P1 -h < plane01/all/plane01-all.hex \
 	   > compiled/plane01.html
+	# Copy Plane 2 HTML table, specially formatted to show empty
+	# ranges as gray because there are so many empty ranges.
+	cp plane02.html $(COMPILED_DIR)
 	@echo "Done creating $(PNGDIR)"
 
 #
@@ -394,6 +408,16 @@ bmp: hex $(BINDIR)/unihex2bmp
 	      $(BINDIR)/unihex2bmp -p01$$i$$j \
 	         < $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	         > $(BMPDIR)/plane01/uni01$$i$$j.bmp ; \
+	   done ; \
+	done
+	if [ ! -d $(BMPDIR)/plane02 ] ; then \
+	   mkdir -p $(BMPDIR)/plane02 ; \
+	fi
+	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
+	      $(BINDIR)/unihex2bmp -p02$$i$$j \
+	         < $(PLANE_2_HEX) \
+	         > $(BMPDIR)/plane02/uni02$$i$$j.bmp ; \
 	   done ; \
 	done
 	if [ ! -d $(BMPDIR)/plane0E ] ; then \
@@ -428,6 +452,9 @@ bmp: hex $(BINDIR)/unihex2bmp
 	# Create HTML table showing color-coded percent coverage in Plane 1.
 	$(BINDIR)/unipagecount -P1 -h < plane01/all/plane01-all.hex | \
 	   sed -e 's/png/bmp/g'   > $(COMPILED_DIR)/plane01.html
+	# Copy Plane 2 HTML table, specially color coded to show empty
+	# ranges as gray because there are so many empty ranges in Plane 2..
+	sed -e 's/png/bmp/g' < plane02.html > $(COMPILED_DIR)/plane02.html
 	echo "Done creating $(BMPDIR)"
 
 #
@@ -446,6 +473,9 @@ bigpic: hex
 	$(BINDIR)/unifontpic -d120 -P1 \
 	   < $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	   > $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp
+	$(BINDIR)/unifontpic -d120 -P2 \
+	   < $(PLANE_2_HEX) \
+	   > $(COMPILED_DIR)/unifont_plane2-$(VERSION).bmp
 
 #
 # Note that $(TTFSRC) must exist, because it contains some source files
@@ -556,6 +586,7 @@ precompiled: all
 	                  $(COMPILED_DIR)/unifont-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_csur-$(VERSION).pcf.gz \
 	                  $(COMPILED_DIR)/unifont_csur-$(VERSION).ttf \
+	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).bdf.gz \
 	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).bdf.gz \
@@ -629,6 +660,7 @@ clean:
 #
 distclean:
 	\rm -rf $(COMPILED_DIR)
+	$(MAKE) -C plane00csur distclean
 	$(MAKE) -C plane01 distclean
 	$(MAKE) -C ttfsrc distclean
 	\rm -f *~

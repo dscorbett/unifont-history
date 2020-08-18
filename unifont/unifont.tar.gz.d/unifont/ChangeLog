@@ -1,3 +1,29 @@
+2019-11-30  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 12.1.04
+	* font/Makefile:
+	  - Added variable PLANE_2_HEX to hold name of Plane 2 .hex file.
+	  - bigpic: Generate large unifont_plane2-$(VERSION).bmp file (this
+	      is very sparse, but added for the sake of completeness).
+	  - bmp: Generate Plane 2 BMP files, generate compiled/plane02.html.
+	  - distclean: add invoking distclean target in font/plane00csur.
+	  - png: Generate Plane 2 PNG files, generate compiled/plane02.html.
+	  - precompiled: added unifont_jp-$(VERSION).bdf.gz.
+	* font/plane00/unifont-base.hex:
+	  - Added two missing dots to Syriac glyph U+08BA.
+	    Submitted by David Corbett (Savannah bug 57273).
+	  - Added descending lines to coffin (U+26B0) so it looks more 3D.
+	* font/plane01/plane01.hex:
+	  - Removed dotted circles in Adlam (U+1E900..U+1E95F)
+	    (Savannah bug 56751).
+	  - Removed dotted circles in Nyiakeng Puachue Hmong
+	    (U+1E100..U+1E14F) (Savannah bug 56753).
+	  - David Corbett improved some Duployan glyphs
+	    (U+1BC00..U+1BC9F) (Savannah bug 56772).
+	  - Lowered Somboyo glyph U+11A9A as it is not a combining glyph.
+	    Submitted by David Corbett (Savannah bug 56773).
+	  - Removed stray pixels in three Soyombo glyphs
+	    (U+11A52, U+11A53, and U+11A5B) (Savannah bug 57250).
+
 2019-08-11  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 12.1.03
 	* Replaced glyphs from the public domain bitmap font jiskan16

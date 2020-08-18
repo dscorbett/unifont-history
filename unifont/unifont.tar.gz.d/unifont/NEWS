@@ -1,3 +1,8 @@
+2019-11-30: Release 12.1.04
+   * Minor patches to several glyphs.
+   * Some improvements to font/Makefile.
+   * See ChangeLog for details.
+
 2019-08-11: Release 12.1.03
    * Replaces the public domain Jiskan Japanese glyphs in
      unifont_jp with the improved Izumi Japanese glyphs,
