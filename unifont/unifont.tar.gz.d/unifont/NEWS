@@ -1,3 +1,10 @@
+2020-07-03: Release 13.0.03
+   * Redrawn glyphs for all of Thaana, two updated Tamil glyphs,
+     and some Canadian Aboriginal glyphs (David Corbett).
+   * Updated unifont.5 man page.
+   * Bug fix in font/Makefile for parallel building.
+   * Other changes listed in the ChangeLog file.
+
 2020-04-25: Release 13.0.02
    * Glyph blocks replaced:
      - U+3040..U+309F (Hiragana) and U+30A0..U+30FF (Katakana):

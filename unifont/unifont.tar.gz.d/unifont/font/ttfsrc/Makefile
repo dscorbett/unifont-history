@@ -19,16 +19,20 @@ PSNAME="Unifont"
 COMBINING="combining"
 
 #
+# Designate language for TrueType text as American English.
+#
+#
+TTF_LANG = 0x409
+#
 # The PostScript name of a font can't contain spaces--remove them.
 # Could also use bash string replacement if you know you're using bash.
 #
 
-COPYRIGHT = "Copyright (C) 1998-2020 Roman Czyborra, Paul Hardy, \
-Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
-License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
-with the GNU Font Embedding Exception."
+COPYRIGHT = "Copyright © 1998-2020 Roman Czyborra, Paul Hardy, \
+Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
+Rebecca Bettencourt, et al."
 
-VERSION = 13.0.02
+VERSION = 13.0.03
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex
@@ -64,6 +68,9 @@ all: outline
 # Convert unifont.hex to unifont.sfd as a single file, then generate
 # an outline TrueType font.
 #
+#
+# SetFontNames(fontname[, family[, fullname[, weight[, copyright-notice[, fontversion]]]]])
+#
 outline: $(FONTFILE).hex $(BINDIR)/hex2sfd
 	@echo "Converting font as a single file."
 	$(BINDIR)/hex2sfd $(COMBINING).txt < $(FONTFILE).hex > $(FONTFILE).sfd
@@ -71,7 +78,12 @@ outline: $(FONTFILE).hex $(BINDIR)/hex2sfd
 	   'Open($$1); \
 	    SetFontNames("$(PSNAME)Medium", \
 		"$(FONTNAME)", "$(FONTNAME)", "Medium", \
-		$(COPYRIGHT), "$(VERSION)"); \
+		$(COPYRIGHT)); \
+	    SetTTFName($(TTF_LANG),  2, "Regular"); \
+	    SetTTFName($(TTF_LANG),  5, "Version $(VERSION)"); \
+	    SetTTFName($(TTF_LANG), 11, "https://unifoundry.com/unifont/"); \
+	    SetTTFName($(TTF_LANG), 13, "License GPLv2+: GNU GPL version 2 or later with the GNU Font Embedding Exception."); \
+	    SetTTFName($(TTF_LANG), 14, "<http://gnu.org/licenses/gpl.html>"); \
 	    SelectAll(); \
 	    RemoveOverlap(); \
 	    Simplify(64,1); \

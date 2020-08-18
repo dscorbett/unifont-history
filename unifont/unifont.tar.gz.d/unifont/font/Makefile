@@ -16,10 +16,11 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 13.0.02
+VERSION = 13.0.03
 
 COPYRIGHT = "Copyright (C) 1998-2020 Roman Czyborra, Paul Hardy, \
-Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
+Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
+Rebecca Bettencourt, et al. \
 License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
 
@@ -295,7 +296,7 @@ psf: bdf
 # as a baseline.  Remove the Plane 1 Copyleft glyph from the Plane 0
 # set of hex files.
 #
-coverage:
+coverage: bdf
 	grep -v "^01F12F" $(COMPILED_DIR)/unifont_csur_lower-$(VERSION).hex \
 	   > $(COMPILED_DIR)/unifont_all-$(VERSION).hex
 	sort plane0[1-E]/*.hex plane0Fcsur/*.hex | grep -v "^0020:" \
@@ -355,7 +356,7 @@ png: hex $(BINDIR)/unihex2png
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(BINDIR)/unihex2png -p 02$$i$$j \
 	         -i $(PLANE_2_HEX) \
-	         -o $(PNGDIR)/plane02-jp/uni02$$i$$j.png ; \
+	         -o $(PNGDIR)/plane02-jp/uni02$$i$$j-jp.png ; \
 	   done ; \
 	done
 	if [ ! -d $(PNGDIR)/plane0E ] ; then \

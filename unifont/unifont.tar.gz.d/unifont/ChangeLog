@@ -1,3 +1,38 @@
+2020-07-03  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 13.0.03
+	* font/Makefile:
+	  - Added "bdf" as prerequisite for "coverage" target for
+	    parallel builds (Savannah bug 58589).
+	  - Added Rebecca Bettencourt to copyright string.
+	  - Changed output filename for Plane 2 Japanese PNG glyph
+	    graphics files from "$(BMPDIR)/plane02-jp/uni02$$i$$j.png"
+	    to "$(BMPDIR)/plane02-jp/uni02$$i$$j-jp.png".
+	* font/plane00/unifont-base.hex:
+	  - David Corbett redrew the entire Thaana script,
+	    U+0780..U+07B1 (Savannah bug 51885)..
+	  - David Corbett improved Tamil glyphs U+0BF6 and U+0BF7.
+	  - David Corbett contributed improvements to Canadian Aboriginal
+	    glyphs: U+1467..U+146A, U+1541, U+158E, U+158F, U+15B0..U+15B3,
+	    U+1656..U+1659, U+165D..U+1660, U+1669..U+166C, U+18B8..U+18BA
+	    (Savannah bug 58262).
+	* font/ttfsrc/Makefile, following recomendations of Ken Lunde:
+	  - Replaced "(C)" in copyright string with the Unicode code point
+	    U+00A9.  (The copyright string in font/Makefile still uses
+	    "(C)" though for creating BDF fonts, in case there is a BDF
+	    parser somewhere that does not expect non-ASCII content.)
+	  - Added Rebecca Bettencourt to copyright string.
+	  - Added settings for these Name ID font fields:
+	    o  2 Font Subfamily
+	    o  5 Version -- this was a workaround for a bug in the
+	       FontForge SetTTFNames function, which appended a space
+	       character after the font version string.
+	    o 11 URL
+	    o 13 License
+	    o 14 License URL
+	  - Removed license information from copyright string and
+	    moved it to separate Name IDs 13 & 14 in font.
+	* man/unifont.5: updated and corrected typos.
+
 2020-04-25  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 13.0.02
 	* font/Makefile:
