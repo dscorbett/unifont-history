@@ -113,7 +113,7 @@ Covered      Range       Script
 
  100.0%  U+1A20..U+1AAF  Tai Tham
 
- 100.0%  U+1AB0..U+1AFF  Unassigned
+ 100.0%  U+1AB0..U+1AFF  Combining Diacritical Marks Extended
 
  100.0%  U+1B00..U+1B7F  Balinese
 
@@ -125,7 +125,9 @@ Covered      Range       Script
 
  100.0%  U+1C50..U+1C7F  Ol Chiki
 
- 100.0%  U+1C80..U+1CBF  Unassigned
+ 100.0%  U+1C80..U+1C8F  Cyrillic Extended - C
+
+ 100.0%  U+1C90..U+1CBF  Unassigned
 
  100.0%  U+1CC0..U+1CCF  Sundanese Supplement
 
@@ -189,9 +191,9 @@ Covered      Range       Script
 
  100.0%  U+2B00..U+2BFF  Miscellaneous Symbols and Arrows
 
- 100.0%  U+2C00..U+2C5F  Glagolithic
+ 100.0%  U+2C00..U+2C5F  Glagolitic
 
- 100.0%  U+2C60..U+2C7F  Latin Extended C
+ 100.0%  U+2C60..U+2C7F  Latin Extended - C
 
  100.0%  U+2C80..U+2CFF  Coptic
 
@@ -201,7 +203,7 @@ Covered      Range       Script
 
  100.0%  U+2D80..U+2DDF  Ethiopic Extended
 
- 100.0%  U+2DE0..U+2DFF  Unassigned
+ 100.0%  U+2DE0..U+2DFF  Cyrillic Extended - A
 
  100.0%  U+2E00..U+2E7F  Supplemental Punctuation
 
@@ -251,7 +253,7 @@ Covered      Range       Script
 
  100.0%  U+A500..U+A63F  Vai
 
- 100.0%  U+A640..U+A69F  Unassigned
+ 100.0%  U+A640..U+A69F  Cyrillic Extended - B
 
  100.0%  U+A6A0..U+A6FF  Bamum
 
@@ -277,7 +279,7 @@ Covered      Range       Script
 
  100.0%  U+A980..U+A9DF  Javanese
 
- 100.0%  U+A9E0..U+A9FF  Unassigned
+ 100.0%  U+A9E0..U+A9FF  Myanmar Extended - B
 
  100.0%  U+AA00..U+AA5F  Cham
 
@@ -289,7 +291,9 @@ Covered      Range       Script
 
  100.0%  U+AB00..U+AB2F  Ethiopic Extended - A
 
- 100.0%  U+AB30..U+ABBF  Unassigned
+ 100.0%  U+AB30..U+AB6F  Latin Extended - E
+
+ 100.0%  U+AB70..U+ABBF  Cherokee Supplement
 
  100.0%  U+ABC0..U+ABFF  Meetei Mayek
 

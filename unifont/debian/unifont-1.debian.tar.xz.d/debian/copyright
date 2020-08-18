@@ -6,7 +6,7 @@ It was downloaded from http://unifoundry.com
 Upstream Author: Paul Hardy <unifoundry@unifoundry.com>
 
 Upstream packaging:
-     Copyright (c) 2007-2014 Paul Hardy <unifoundry@unifoundry.com>
+     Copyright (c) 2007-2016 Paul Hardy <unifoundry@unifoundry.com>
 
 Other files:
      Original unifont.hex and Perl scripts:
@@ -34,6 +34,8 @@ Other files:
         release (see ChangeLog for full details):
         (c) 2014 Paul Hardy, Andrew Miller, Nils Dagsson Moskopp, and
         Umbreon126.
+     Additions for Unicode 9.0 coverage (c) 2016 Paul Hardy, Johnny Weaver,
+        Terrence Eden.
      debian/ files:
         (c) 2013, 2014 Paul Hardy
 

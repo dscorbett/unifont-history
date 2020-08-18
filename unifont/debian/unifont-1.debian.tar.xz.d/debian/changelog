@@ -1,3 +1,11 @@
+unifont (1:9.0.01-1) unstable; urgency=medium
+
+  * Updated for the Unicode 9.0.0 standard.
+  * Modified U+301C glyph as per changes in Unicode 8.  (Closes: 826603)
+  * Many other modifications to existing glyphs as noted in the ChangeLog file.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Sat, 02 Jul 2016 09:22:47 -0700
+
 unifont (1:8.0.01-1) unstable; urgency=medium
 
   * Update to support Unicode 8.0.0.
