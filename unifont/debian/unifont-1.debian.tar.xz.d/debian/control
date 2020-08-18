@@ -5,7 +5,7 @@ Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Build-Depends: debhelper (>= 9)
 Build-Depends-Indep: fontforge, xfonts-utils, bdf2psf,
  libgd-perl | libgd-gd2-perl | libgd-gd2-noxpm-perl
-Standards-Version: 3.9.8
+Standards-Version: 4.0.0
 Homepage: http://unifoundry.com
 
 Package: unifont

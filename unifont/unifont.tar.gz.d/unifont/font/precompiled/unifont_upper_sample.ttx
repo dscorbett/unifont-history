@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="10.0"/>
-    <checkSumAdjustment value="0xeda1b1ac"/>
+    <checkSumAdjustment value="0x1b0f24d6"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1000"/>
-    <created value="Tue Jun 20 15:25:27 2017"/>
-    <modified value="Tue Jun 20 15:25:27 2017"/>
+    <created value="Fri Jun 30 18:59:04 2017"/>
+    <modified value="Fri Jun 30 18:59:04 2017"/>
     <xMin value="33"/>
     <yMin value="-200"/>
     <xMax value="298"/>
@@ -116,7 +116,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (C) 2016 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+      Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper Sample
@@ -125,19 +125,19 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper Sample Medium : 20-6-2017
+      FontForge 2.0 : Unifont Upper Sample Medium : 30-6-2017
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 10.0.01 
+      Version 10.0.02 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperSampleMedium
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright (C) 2016 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+      Copyright (C) 1998-2017 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper Sample
@@ -146,13 +146,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper Sample Medium : 20-6-2017
+      FontForge 2.0 : Unifont Upper Sample Medium : 30-6-2017
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 10.0.01 
+      Version 10.0.02 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperSampleMedium
@@ -9099,21 +9099,21 @@
       00010001 0000011a 0010001b 00000000
       00010000 00050000 00510001 00000056
       0000005f 00010000 006f0000 007a0010
-      00000084 00000165 00100000 01720000
-      017a0010 00000184 0000018b 00100000
-      01930000 01970010 000001a3 000001b8
-      00100000 01c40000 01cb0010 000001d1
-      000001d3 00100000 01e10000 01e80010
-      000001f7 00000202 00120000 00100000
-      020d0012 000000a0 00000218 00130000
-      004b0000 02250013 0000004b 00000232
-      00100000 023a0000 023c0012 00000050
-      0000024a 00100000 025b0000 02640010
-      00000275 00000277 0012ffff fffe0000
-      028a0012 00000001 0000029e 00120000
-      000a0000 02a90012 00000008 000002b2
-      00120000 000e0000 02be0012 00000002
-      000002cb 00130000 fffd464f 4e54002d
+      00000084 0000016a 00100000 01770000
+      017f0010 00000189 00000190 00100000
+      01980000 019c0010 000001a8 000001bd
+      00100000 01c90000 01d00010 000001d6
+      000001d8 00100000 01e60000 01ed0010
+      000001fc 00000207 00120000 00100000
+      02120012 000000a0 0000021d 00130000
+      004b0000 022a0013 0000004b 00000237
+      00100000 023f0000 02410012 00000050
+      0000024f 00100000 02600000 02690010
+      0000027a 0000027c 0012ffff fffe0000
+      028f0012 00000001 000002a3 00120000
+      000a0000 02ae0012 00000008 000002b7
+      00120000 000e0000 02c30012 00000002
+      000002d0 00130000 fffd464f 4e54002d
       676e752d 556e6966 6f6e7420 55707065
       72205361 6d706c65 2d4d6564 69756d2d
       522d4e6f 726d616c 2d53616e 732d3136
@@ -9122,44 +9122,44 @@
       31362037 35203735 00464f4e 54424f55
       4e44494e 47424f58 00313620 31362030
       202d3200 434f5059 52494748 5400436f
-      70797269 67687420 28432920 32303136
-      20526f6d 616e2043 7a79626f 7272612c
-      20506175 6c204861 7264792c 20516961
-      6e716961 6e204661 6e672c20 416e6472
-      6577204d 696c6c65 722c2065 7420616c
-      2e204c69 63656e73 65642075 6e646572
-      20746865 20474e55 2047656e 6572616c
-      20507562 6c696320 4c696365 6e73653b
-      20656974 68657220 76657273 696f6e20
-      322c206f 72202861 7420796f 7572206f
-      7074696f 6e292061 206c6174 65722076
-      65727369 6f6e2c20 77697468 20746865
-      20474e55 20466f6e 7420456d 62656464
-      696e6720 45786365 7074696f 6e2e0046
-      4f4e545f 56455253 494f4e00 31302e30
-      2e303100 464f4e54 5f545950 45004269
-      746d6170 00464f55 4e445259 00474e55
-      0046414d 494c595f 4e414d45 00556e69
-      666f6e74 20557070 65722053 616d706c
-      65005745 49474854 5f4e414d 45004d65
-      6469756d 00534c41 4e540052 00534554
-      57494454 485f4e41 4d45004e 6f726d61
-      6c004144 445f5354 594c455f 4e414d45
-      0053616e 73205365 72696600 50495845
-      4c5f5349 5a450050 4f494e54 5f53495a
-      45005245 534f4c55 54494f4e 5f580052
-      45534f4c 5554494f 4e5f5900 53504143
-      494e4700 43004156 45524147 455f5749
-      44544800 43484152 5345545f 52454749
-      53545259 0049534f 31303634 36004348
-      41525345 545f454e 434f4449 4e470031
-      00554e44 45524c49 4e455f50 4f534954
-      494f4e00 554e4445 524c494e 455f5448
-      49434b4e 45535300 4341505f 48454947
-      48540058 5f484549 47485400 464f4e54
-      5f415343 454e5400 464f4e54 5f444553
-      43454e54 00444546 41554c54 5f434841
-      5200   
+      70797269 67687420 28432920 31393938
+      2d323031 3720526f 6d616e20 437a7962
+      6f727261 2c205061 756c2048 61726479
+      2c205169 616e7169 616e2046 616e672c
+      20416e64 72657720 4d696c6c 65722c20
+      65742061 6c2e204c 6963656e 73656420
+      756e6465 72207468 6520474e 55204765
+      6e657261 6c205075 626c6963 204c6963
+      656e7365 3b206569 74686572 20766572
+      73696f6e 20322c20 6f722028 61742079
+      6f757220 6f707469 6f6e2920 61206c61
+      74657220 76657273 696f6e2c 20776974
+      68207468 6520474e 5520466f 6e742045
+      6d626564 64696e67 20457863 65707469
+      6f6e2e00 464f4e54 5f564552 53494f4e
+      0031302e 302e3032 00464f4e 545f5459
+      50450042 69746d61 7000464f 554e4452
+      5900474e 55004641 4d494c59 5f4e414d
+      4500556e 69666f6e 74205570 70657220
+      53616d70 6c650057 45494748 545f4e41
+      4d45004d 65646975 6d00534c 414e5400
+      52005345 54574944 54485f4e 414d4500
+      4e6f726d 616c0041 44445f53 54594c45
+      5f4e414d 45005361 6e732053 65726966
+      00504958 454c5f53 495a4500 504f494e
+      545f5349 5a450052 45534f4c 5554494f
+      4e5f5800 5245534f 4c555449 4f4e5f59
+      00535041 43494e47 00430041 56455241
+      47455f57 49445448 00434841 52534554
+      5f524547 49535452 59004953 4f313036
+      34360043 48415253 45545f45 4e434f44
+      494e4700 3100554e 4445524c 494e455f
+      504f5349 54494f4e 00554e44 45524c49
+      4e455f54 4849434b 4e455353 00434150
+      5f484549 47485400 585f4845 49474854
+      00464f4e 545f4153 43454e54 00464f4e
+      545f4445 5343454e 54004445 4641554c
+      545f4348 415200  
     </hexdata>
   </BDF>
 
@@ -82325,8 +82325,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sat Nov 12 15:07:51 2016"/>
-    <sourceCreated value="Tue Jun 20 15:25:27 2017"/>
-    <sourceModified value="Tue Jun 20 15:25:27 2017"/>
+    <sourceCreated value="Fri Jun 30 18:59:04 2017"/>
+    <sourceModified value="Fri Jun 30 18:59:04 2017"/>
   </FFTM>
 
 </ttFont>
