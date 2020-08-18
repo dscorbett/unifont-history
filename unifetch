@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# Copyright 2020 David Corbett
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: $0 UNIFONT_VERSION" >&2
+    return 1
+fi
+
+if ! which -s ttx
+then
+    echo "ttx not found" >&2
+    return 1
+fi
+
+SED=gsed
+if ! which -s "$SED"
+then
+    SED=sed
+fi
+
+VERSION="$1"
+SHORT_VERSION="$(printf %s "$VERSION" | cut -f 1-2 -d .)"
+
+rm -fr unifont
+wget --cut-dirs=2 --execute robots=off --level=inf --no-host-directories --no-parent --recursive \
+    --reject 'index.html*,*C=?;O=*,*.orig.*,*thumbnail*,*.md5,*.sha256,*.sig' \
+    --exclude-directories='*/*/*/font-builds' \
+    "https://unifoundry.com/pub/unifont/unifont-$VERSION/"
+find unifont-* '(' -name '*.tar.gz' -o -name '*.tar.xz' ')' -exec sh -c '
+        mkdir "{}.d"
+        tar -xf "{}" -C "{}.d" \
+            --exclude "*.pcf.gz" \
+            --exclude "*.pgp" \
+            --exclude "*.psf.gz"
+        rm "{}"
+    ' -delete ';'
+find "unifont-$VERSION" -name '*.gz' -exec gunzip {} ';'
+find "unifont-$VERSION" -name '*.ttf' -exec ttx -x GlyphOrder -x cmap -x glyf -x hmtx -x loca {} ';' -delete
+find -d "unifont-$VERSION" -name "*[-_]$SHORT_VERSION*" -exec sh -c '
+        mv "{}" "$(dirname "{}")/$(basename "{}" | '"$SED"' "s/[-_]\('"$VERSION"'\|'"$SHORT_VERSION"'\)//")"
+    ' ';'
+find unifont -name '*.hex' -print -exec ./hexdraw.py {} ';'
