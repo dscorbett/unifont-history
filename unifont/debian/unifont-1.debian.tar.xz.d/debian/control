@@ -4,8 +4,8 @@ Priority: optional
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Build-Depends: debhelper (>= 9)
 Build-Depends-Indep: fontforge, xfonts-utils, bdf2psf,
- libgd-gd2-noxpm-perl | libgd-gd2-perl
-Standards-Version: 3.9.5
+ libgd-perl | libgd-gd2-perl | libgd-gd2-noxpm-perl
+Standards-Version: 3.9.6
 Homepage: http://unifoundry.com
 
 Package: unifont
@@ -108,9 +108,11 @@ Description: PSF (console) version of GNU Unifont with APL support
 
 Package: unifont-bin
 Section: x11
+Priority: extra
 Architecture: any
 Depends: xfonts-utils, fontforge, ${shlibs:Depends}, ${misc:Depends},
- ${perl:Depends}, libwx-perl, libgd-gd2-noxpm-perl | libgd-gd2-perl
+ ${perl:Depends}, libwx-perl,
+ libgd-perl | libgd-gd2-perl | libgd-gd2-noxpm-perl
 Suggests: unifont, texinfo
 Description: utilities for manipulating GNU Unifont
  This is a set of Perl scripts, C programs, and FontForge scripts

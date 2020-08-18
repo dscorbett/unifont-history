@@ -1,3 +1,20 @@
+unifont (1:7.0.06-1) unstable; urgency=medium
+
+  * debian/control:
+    - Updated to Standards Version 3.9.6.
+    - Added "libgd-perl" to Depends and Build-Depends-Indep entries for
+      "libgd-gd2-noxpm-perl | libgd-gd2-perl".  The unihex2png utility
+      program that creates graphics images of each block of 256 code
+      points is invoked during the creation of font/compiled, with the
+      "png:" target; it requires the Perl GD library when run during
+      building.
+    - Set priority of unifont-bin to "extra" because three Perl scripts
+      (unihex2png, unipng2hex, and unifont-viewer) require libgd-perl (or
+      the related libgd-gd2-perl or libgd-gd2-noxpm-perl) to run, and those
+      Perl library packages have priority "extra".
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Thu, 23 Oct 2014 16:48:36 -0700
+
 unifont (1:7.0.05-1) unstable; urgency=medium
 
   * debian/control:

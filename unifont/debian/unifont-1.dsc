@@ -5,42 +5,42 @@ Format: 3.0 (quilt)
 Source: unifont
 Binary: unifont, xfonts-unifont, ttf-unifont, psf-unifont, unifont-bin
 Architecture: any all
-Version: 1:7.0.05-1
+Version: 1:7.0.06-1
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Homepage: http://unifoundry.com
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Build-Depends: debhelper (>= 9)
-Build-Depends-Indep: fontforge, xfonts-utils, bdf2psf, libgd-gd2-noxpm-perl | libgd-gd2-perl
+Build-Depends-Indep: fontforge, xfonts-utils, bdf2psf, libgd-perl | libgd-gd2-perl | libgd-gd2-noxpm-perl
 Package-List:
  psf-unifont deb fonts optional arch=all
  ttf-unifont deb fonts optional arch=all
  unifont deb fonts optional arch=all
- unifont-bin deb x11 optional arch=any
+ unifont-bin deb x11 extra arch=any
  xfonts-unifont deb fonts optional arch=all
 Checksums-Sha1:
- b5e0f9219ef8fd8557be07fc508df5a15c17f26e 19572577 unifont_7.0.05.orig.tar.gz
- 1f494abc2f5efb8e38cea5a67ee8080f9df86258 19584 unifont_7.0.05-1.debian.tar.xz
+ 42ce9552c6afb928fd3a2f42c620a9351c9fa96b 19656923 unifont_7.0.06.orig.tar.gz
+ 0a5922b46980f9c6d65d1e1ebbfd1b7f963acd3a 19768 unifont_7.0.06-1.debian.tar.xz
 Checksums-Sha256:
- cf926e9f3d9b4f263eb81633af700b40ef1cd149d44abdc3880c3f650bb09ca9 19572577 unifont_7.0.05.orig.tar.gz
- 2655cde44b2b62662867f8dc14a29da757f952e6413430ec6b6cbf01c8cd1f0f 19584 unifont_7.0.05-1.debian.tar.xz
+ d04e8c86aaaf7214b5212340ee853a35502b9fa311561007be3a8cf465dabf3b 19656923 unifont_7.0.06.orig.tar.gz
+ befce96d779c82e8ebcebaf8fe091a0494d7b2b5423a9222d4b6e5322610e2da 19768 unifont_7.0.06-1.debian.tar.xz
 Files:
- 2e9116388b2a8e1e3a8c215f6d844b2d 19572577 unifont_7.0.05.orig.tar.gz
- 5af518fe6d5058482994d366a94bbd56 19584 unifont_7.0.05-1.debian.tar.xz
+ e2f1afb52cbe659384c0764aede3cdbe 19656923 unifont_7.0.06.orig.tar.gz
+ 30eb5ec40e6d357691681374941f3492 19768 unifont_7.0.06-1.debian.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQIcBAEBCAAGBQJURCUXAAoJEB6TENmtzmBlsaUP/0dv/7GLdnmUznzlyfxWrgrO
-wvf5YU2xg8/XnsTfLSXFLz8GMJpDhNAbae8UjNBdoNai1YNFi4KKcUc5MW9uG/bK
-M5STTglk2EMY9SvkqK5CFBStn//CerV1OoM+g0xfh12us2cwLm8YlMFTkMGvHBtP
-F/1MqT8uLVTtE7zknSk2v18vLKK+yGMGwMtDM/hR788mS/ezDLOAQj5B6/ApYxYn
-LTupGIp8++CygBO4EHROYieZ8aD5OA2Ar1u8Az4tUbKKIQ/8GXjJ7AS3c3zUK+Gp
-Te8yiCLDwL0vdZCkJIVDf1S3gRLl3He0EAnOzdQpwJhOCaj8c9vvqKsy5k9eXd1j
-CtJySOSYxB4iIqm19xwlRCXipYpRP9A2pGS+KAMvK4Tnw+U3DaJGus6nT5V98Vwd
-jH/ZNPupRu/fHKY+xXnt/VzqS4zkioGoMPHAv2siw5KjdZJApSQ4mGt7MO8xT7SP
-2InmMURh/p+fpFGQwodJynbXhUyCztg73sUfgPmja+ToU+cKcHWLnioJ69NKexYX
-CFyQ8fG9Ab40nzVa5NHy/HEEXWGEv17uc09cbFg9jsts9+5jOygph0h2zACEPuUM
-RdxNYZI5MiT6LtNpTHOfzHJPuJ+P5/4d6iw1X1QKnY0PKNB0TMRHdFW4bYfb9LvW
-pbdAZbh95ecs/IpFOfTq
-=nedz
+iQIcBAEBCAAGBQJUSfA7AAoJEB6TENmtzmBlYLQP/1eXbyR84aKU9gXEcpHLx6nY
++8i5wqAmZsYBzo0CI/JPT0nyHM4+gDWD7axN+ZPZTCDJRrgvvsHog4ZRY0nLe8Zl
+pA9nxNi1wtwTgLERUQZSDlMhze5lDDpqctByeGvGFYGfZYYbOeuFf1sY5sHo8FoI
+JDX6ofoNkSyhdbZ73dpazffX9g2c+c4s9yY/RJ1nhqF25aSBw7CtgKGbE7/7qYlE
+wFLmY5gkH8Fh6OQoDywQMTqC/8a5/ZGwvlr/6odAHZxRzae1Xx0o6Og9eWJvw0Ak
+3gJ9meEj1ZaWk5dzBbJcBYsiEUegi5ai7rCitFFwLYMr5TlyZVoq5UVFVnK2DgWV
+O/GjPC58glnxZ4ryXaH6IJeJaFfeqxR7EFlA/cOFDKoyKNuUn3+bCkrxs8vPJvH5
+8S+vsR+QV6x69/FCXnV8h2wChHe8OAQoGwA0SjdeFEKIwkliIK5CY3D9o+VH/akV
++bqkA8gVogQdEQJkAkmK9P1GJSBEca5Sw0Rn/D6aeq5/bga/d7PShowC9PsygCOD
+ECIz9p2SgQMS+ecgMZbQQoFaABdvuVzXGjSVRRv0fA8AbOWSAM/eXa1mivi2v51O
+PYHcKjzKnGC0KmG+f5zr3Aj95VDbDsRaralXVQKAqMGIglG8cDiXafbA7075b/Wv
+RCPKxtcd00hUvwc/Zvqv
+=MtX3
 -----END PGP SIGNATURE-----
