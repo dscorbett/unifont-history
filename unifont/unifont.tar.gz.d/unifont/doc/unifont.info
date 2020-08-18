@@ -2594,7 +2594,7 @@ File: unifont.info,  Node: unifontpic SYNOPSIS,  Next: unifontpic DESCRIPTION,  
 3.17.2 unifontpic SYNOPSIS
 --------------------------
 
-unifontpic [-dnnn][-l][-t] < input-font.hex > output-font.bmp
+unifontpic [-dnnn][-l][-t] [-Pplane] < input-font.hex > output-font.bmp
 
 
 File: unifont.info,  Node: unifontpic DESCRIPTION,  Next: unifontpic OPTIONS,  Prev: unifontpic SYNOPSIS,  Up: unifontpic
@@ -2603,10 +2603,10 @@ File: unifont.info,  Node: unifontpic DESCRIPTION,  Next: unifontpic OPTIONS,  P
 -----------------------------
 
 unifontpic reads a GNU Unifont .hex file from STDIN and writes a two
-dimensional rendering for each glyph to STDOUT. The output displays the
-entire Unicode Basic Multilingual Plane (BMP) as one large graphic
-image, showing a grid of 256 glyphs by 256 glyphs as the default, or (at
-your option) 16 glyphs across by 4,096 glyphs down.
+dimensional rendering for each glyph to STDOUT. The output displays an
+entire Unicode plane of 65,536 glyphs as one large graphic image,
+showing a grid of 256 glyphs by 256 glyphs as the default, or (at your
+option) a long version of 16 glyphs across by 4,096 glyphs down.
 
 Input can be one or more files in Unifont .hex format.  They don't have
 to be sorted, as unifontpic will populate the entire glyph array of
@@ -2638,6 +2638,12 @@ File: unifont.info,  Node: unifontpic OPTIONS,  Next: unifontpic EXAMPLES,  Prev
      not specified for the default 256-by-256 grid, row and column code
      point labels are taken from Unifont's glyphs for '0' to '9' and 'A'
      to 'F'.
+
+'-Pplane'
+     Print a chart for Unicode plane number plane.  The default is
+     Plane 0, the Unicode Basic Multilingual Plane (BMP). The range of
+     Unicode plane range is 0 through 17, inclusive.  The plane number
+     is printed on the chart title line.
 
 
 File: unifont.info,  Node: unifontpic EXAMPLES,  Next: unifontpic FILES,  Prev: unifontpic OPTIONS,  Up: unifontpic
@@ -3913,97 +3919,97 @@ Node: unifontksx BUGS84720
 Node: unifontpic84879
 Node: unifontpic NAME85248
 Node: unifontpic SYNOPSIS85467
-Node: unifontpic DESCRIPTION85707
-Node: unifontpic OPTIONS86625
-Node: unifontpic EXAMPLES87575
-Node: unifontpic FILES87999
-Node: unifontpic SEE ALSO88198
-Node: unifontpic AUTHOR88741
-Node: unifontpic LICENSE88951
-Node: unifontpic BUGS89407
-Node: unigencircles89568
-Node: unigencircles NAME89947
-Node: unigencircles SYNOPSIS90168
-Node: unigencircles DESCRIPTION90444
-Node: unigencircles EXAMPLE91409
-Node: unigencircles FILES91693
-Node: unigencircles SEE ALSO92027
-Node: unigencircles AUTHOR92585
-Node: unigencircles LICENSE92816
-Node: unigencircles BUGS93293
-Node: unigenwidth93560
-Node: unigenwidth NAME93917
-Node: unigenwidth SYNOPSIS94132
-Node: unigenwidth DESCRIPTION94354
-Node: unigenwidth EXAMPLE94901
-Node: unigenwidth FILES95152
-Node: unigenwidth SEE ALSO95404
-Node: unigenwidth AUTHOR95952
-Node: unigenwidth LICENSE96169
-Node: unigenwidth BUGS96632
-Node: unihex2bmp96889
-Node: unihex2bmp NAME97232
-Node: unihex2bmp SYNOPSIS97440
-Node: unihex2bmp DESCRIPTION97690
-Node: unihex2bmp OPTIONS98480
-Node: unihex2bmp FILES99295
-Node: unihex2bmp SEE ALSO99493
-Node: unihex2bmp AUTHOR100036
-Node: unihex2bmp LICENSE100246
-Node: unihex2bmp BUGS100702
-Node: unihex2png101124
-Node: unihex2png NAME101489
-Node: unihex2png SYNOPSIS101702
-Node: unihex2png DESCRIPTION101956
-Node: unihex2png OPTIONS102900
-Node: unihex2png EXAMPLE103659
-Node: unihex2png FILES103905
-Node: unihex2png SEE ALSO104103
-Node: unihex2png AUTHOR104646
-Node: unihex2png LICENSE104925
-Node: unihex2png BUGS105405
-Node: unihexfill106092
-Node: unihexfill NAME106456
-Node: unihexfill SYNOPSIS106667
-Node: unihexfill DESCRIPTION106900
-Node: unihexfill OPTIONS107905
-Node: unihexfill FILES108103
-Node: unihexfill EXAMPLE108304
-Node: unihexfill SEE ALSO108740
-Node: unihexfill AUTHOR109285
-Node: unihexfill LICENSE109495
-Node: unihexfill BUGS109951
-Node: unihexgen110282
-Node: unihexgen NAME110636
-Node: unihexgen SYNOPSIS110832
-Node: unihexgen DESCRIPTION111034
-Node: unihexgen OPTIONS111647
-Node: unihexgen FILES111839
-Node: unihexgen EXAMPLE112018
-Node: unihexgen SEE ALSO112327
-Node: unihexgen AUTHOR112867
-Node: unihexgen LICENSE113070
-Node: unihexgen BUGS113519
-Node: unipagecount113876
-Node: unipagecount NAME114241
-Node: unipagecount SYNOPSIS114463
-Node: unipagecount DESCRIPTION114686
-Node: unipagecount OPTIONS115279
-Node: unipagecount FILES116174
-Node: unipagecount SEE ALSO116384
-Node: unipagecount AUTHOR116937
-Node: unipagecount LICENSE117161
-Node: unipagecount BUGS117637
-Node: unipng2hex117986
-Node: unipng2hex NAME118334
-Node: unipng2hex SYNOPSIS118547
-Node: unipng2hex DESCRIPTION118788
-Node: unipng2hex OPTIONS119483
-Node: unipng2hex EXAMPLE119996
-Node: unipng2hex FILES120242
-Node: unipng2hex SEE ALSO120432
-Node: unipng2hex AUTHOR120975
-Node: unipng2hex LICENSE121254
-Node: unipng2hex BUGS121740
+Node: unifontpic DESCRIPTION85717
+Node: unifontpic OPTIONS86644
+Node: unifontpic EXAMPLES87855
+Node: unifontpic FILES88279
+Node: unifontpic SEE ALSO88478
+Node: unifontpic AUTHOR89021
+Node: unifontpic LICENSE89231
+Node: unifontpic BUGS89687
+Node: unigencircles89848
+Node: unigencircles NAME90227
+Node: unigencircles SYNOPSIS90448
+Node: unigencircles DESCRIPTION90724
+Node: unigencircles EXAMPLE91689
+Node: unigencircles FILES91973
+Node: unigencircles SEE ALSO92307
+Node: unigencircles AUTHOR92865
+Node: unigencircles LICENSE93096
+Node: unigencircles BUGS93573
+Node: unigenwidth93840
+Node: unigenwidth NAME94197
+Node: unigenwidth SYNOPSIS94412
+Node: unigenwidth DESCRIPTION94634
+Node: unigenwidth EXAMPLE95181
+Node: unigenwidth FILES95432
+Node: unigenwidth SEE ALSO95684
+Node: unigenwidth AUTHOR96232
+Node: unigenwidth LICENSE96449
+Node: unigenwidth BUGS96912
+Node: unihex2bmp97169
+Node: unihex2bmp NAME97512
+Node: unihex2bmp SYNOPSIS97720
+Node: unihex2bmp DESCRIPTION97970
+Node: unihex2bmp OPTIONS98760
+Node: unihex2bmp FILES99575
+Node: unihex2bmp SEE ALSO99773
+Node: unihex2bmp AUTHOR100316
+Node: unihex2bmp LICENSE100526
+Node: unihex2bmp BUGS100982
+Node: unihex2png101404
+Node: unihex2png NAME101769
+Node: unihex2png SYNOPSIS101982
+Node: unihex2png DESCRIPTION102236
+Node: unihex2png OPTIONS103180
+Node: unihex2png EXAMPLE103939
+Node: unihex2png FILES104185
+Node: unihex2png SEE ALSO104383
+Node: unihex2png AUTHOR104926
+Node: unihex2png LICENSE105205
+Node: unihex2png BUGS105685
+Node: unihexfill106372
+Node: unihexfill NAME106736
+Node: unihexfill SYNOPSIS106947
+Node: unihexfill DESCRIPTION107180
+Node: unihexfill OPTIONS108185
+Node: unihexfill FILES108383
+Node: unihexfill EXAMPLE108584
+Node: unihexfill SEE ALSO109020
+Node: unihexfill AUTHOR109565
+Node: unihexfill LICENSE109775
+Node: unihexfill BUGS110231
+Node: unihexgen110562
+Node: unihexgen NAME110916
+Node: unihexgen SYNOPSIS111112
+Node: unihexgen DESCRIPTION111314
+Node: unihexgen OPTIONS111927
+Node: unihexgen FILES112119
+Node: unihexgen EXAMPLE112298
+Node: unihexgen SEE ALSO112607
+Node: unihexgen AUTHOR113147
+Node: unihexgen LICENSE113350
+Node: unihexgen BUGS113799
+Node: unipagecount114156
+Node: unipagecount NAME114521
+Node: unipagecount SYNOPSIS114743
+Node: unipagecount DESCRIPTION114966
+Node: unipagecount OPTIONS115559
+Node: unipagecount FILES116454
+Node: unipagecount SEE ALSO116664
+Node: unipagecount AUTHOR117217
+Node: unipagecount LICENSE117441
+Node: unipagecount BUGS117917
+Node: unipng2hex118266
+Node: unipng2hex NAME118614
+Node: unipng2hex SYNOPSIS118827
+Node: unipng2hex DESCRIPTION119068
+Node: unipng2hex OPTIONS119763
+Node: unipng2hex EXAMPLE120276
+Node: unipng2hex FILES120522
+Node: unipng2hex SEE ALSO120712
+Node: unipng2hex AUTHOR121255
+Node: unipng2hex LICENSE121534
+Node: unipng2hex BUGS122020
 
 End Tag Table

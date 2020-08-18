@@ -1,5 +1,6 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 CFLAGS   = -Wall $(shell dpkg-buildflags --get CFLAGS)
 CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
 LDFLAGS  = $(shell dpkg-buildflags --get LDFLAGS)

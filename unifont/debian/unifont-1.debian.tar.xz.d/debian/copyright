@@ -6,7 +6,7 @@ It was downloaded from http://unifoundry.com
 Upstream Author: Paul Hardy <unifoundry@unifoundry.com>
 
 Upstream packaging:
-     Copyright (c) 2007-2016 Paul Hardy <unifoundry@unifoundry.com>
+     Copyright (c) 2007-2017 Paul Hardy <unifoundry@unifoundry.com>
 
 Other files:
      Original unifont.hex and Perl scripts:
@@ -29,15 +29,17 @@ Other files:
         (c) 2007-2014 Paul Hardy, (c) 2013, 2014 Andrew Miller
      Modifications to existing Unicode blocks (see ChangeLog for details):
         (c) 2014 Paul Hardy, Joshua Krämer, Andrew Miller, Nils Dagsson
-        Moskopp, and Umbreon126.
+        Moskopp, and Anonymous1.
      Additions to Unicode Supplemental Multilingual Plane after Unicode 7.0
         release (see ChangeLog for full details):
         (c) 2014 Paul Hardy, Andrew Miller, Nils Dagsson Moskopp, and
-        Umbreon126.
+        Anonymous1.
      Additions for Unicode 9.0 coverage (c) 2016 Paul Hardy, Johnny Weaver,
         Terrence Eden.
+     Additions for Unicode 10.0 coverage (c) 2017 Paul Hardy, Johnny Weaver,
+        Anonymous1.
      debian/ files:
-        (c) 2013, 2014 Paul Hardy
+        (c) 2013, 2014, 2017 Paul Hardy
 
 
 License for the files doc/unifont.*:

@@ -130,11 +130,9 @@ Description: PSF (console) version of GNU Unifont with APL support
 
 Package: unifont-bin
 Section: x11
-Priority: extra
 Architecture: any
 Depends: xfonts-utils, bdf2psf, fontforge, ${shlibs:Depends}, ${misc:Depends},
- ${perl:Depends}, libwx-perl,
- libgd-perl | libgd-gd2-perl | libgd-gd2-noxpm-perl
+ ${perl:Depends}, libwx-perl, libgd-perl
 Suggests: unifont, texinfo, texlive
 Description: utilities for manipulating GNU Unifont
  This is a set of Perl scripts, C programs, and FontForge scripts

@@ -1,11 +1,11 @@
 Format: 1.8
-Date: Fri, 30 Jun 2017 15:04:14 -0700
+Date: Sat, 08 Jul 2017 03:13:19 -0700
 Source: unifont
 Binary: unifont xfonts-unifont ttf-unifont psf-unifont unifont-bin
 Architecture: source
-Version: 1:10.0.03-1
-Distribution: experimental
-Urgency: medium
+Version: 1:10.0.04-1
+Distribution: unstable
+Urgency: low
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Changed-By: Paul Hardy <unifoundry@unifoundry.com>
 Description:
@@ -14,21 +14,37 @@ Description:
  unifont    - font with a glyph for each visible Unicode Plane 0 character
  unifont-bin - utilities for manipulating GNU Unifont
  xfonts-unifont - PCF (bitmap) version of GNU Unifont
+Closes: 867220
 Changes:
- unifont (1:10.0.03-1) experimental; urgency=medium
+ unifont (1:10.0.04-1) unstable; urgency=low
  .
-   * unifont-10.0.03/src/hex2sfd: modified to reposition combining characters
-     when typing text in various editors.  This version probably works fine,
-     but is in "experimental" to allow testing before moving to unstable.
+   * Update to Unifont 10.0.04 release, which incorporates all changes
+     in experimental version 10.0.03.
+   * debian/control, unifont-bin section:
+     - Removed "Priority: extra" entry because "extra" no longer exists.
+       Now "Priority: optional" is inherited from the "unifont" source
+       package.  The change from "optional" to "extra" was made originally
+       because of unifont-bin Perl programs that required libgd-perl,
+       which had Priority "extra" (see 766699 for details).  (Closes: 867220)
+     - Removed Depends entries for libgd-gd2-perl and libgd-gd2-noxpm-perl
+       because they have been removed from Debian.
+   * debian/copyright: credited "Anonymous1" by request.
+   * debian/rules: added the line
+     "export DEB_BUILD_MAINT_OPTIONS = hardening=+all" to enable "BINDNOW"
+     and "RELRO" hardening flags.
+   * debian/unifont-bin.lintian-overrides: removed file, which contained
+     "unifont-bin: hardening-no-fortify-functions usr/bin/unifontpic".
+     The file was created to override a false positive.  That false positive
+     is no longer triggered.
 Checksums-Sha1:
- 47646fd559c2a9a52031e605f38fe6406f46f5d9 1159 unifont_10.0.03-1.dsc
- 2f23f3be882ac8f8ef66f40aa6667dd882eddba0 14866503 unifont_10.0.03.orig.tar.gz
- 4c12566d23ee53b33bf72e743a52e07e4e3596a5 20980 unifont_10.0.03-1.debian.tar.xz
+ 579006abfcb4dc1f5f4a4dfd0247ec614000713d 1162 unifont_10.0.04-1.dsc
+ e2201de2e5e594e96b59e6e7d2d29ec13f217162 15651848 unifont_10.0.04.orig.tar.gz
+ 4fdb0f5f36ade17fac0ff060f12b8578aa31c02f 21272 unifont_10.0.04-1.debian.tar.xz
 Checksums-Sha256:
- 590034b653dec6f43481cbf433a2f3d672d13b8a7704d4aea6fc882e063aab73 1159 unifont_10.0.03-1.dsc
- 22654806ca79e3ad7b1e3eaa07a9bfa33caf2aa42ada757e4d88ec1dbbb5c025 14866503 unifont_10.0.03.orig.tar.gz
- aa2fb8356ac4c5a2fed7fed9fd3e9d39e1422ed9ad9a1e888ef45bf016901432 20980 unifont_10.0.03-1.debian.tar.xz
+ 8060966142c4b025f2168fb325a4ea7cb95bc092112fbd3995097e2985ac26c8 1162 unifont_10.0.04-1.dsc
+ 17c89ebdb329f0ab8181dc020aeafe1fb23047fa8c37f1d625eb6782733a1794 15651848 unifont_10.0.04.orig.tar.gz
+ 78f5189874ba263344d201a48c3ac55c180fd4ea03f318c41292ffa094674c16 21272 unifont_10.0.04-1.debian.tar.xz
 Files:
- 264a14f7a3d206672cec4d6ddb8796ca 1159 fonts optional unifont_10.0.03-1.dsc
- 59bfe54e3127448bb111fc4e659eeca6 14866503 fonts optional unifont_10.0.03.orig.tar.gz
- 7833a5d2744f62385a96baf1b234b98a 20980 fonts optional unifont_10.0.03-1.debian.tar.xz
+ f4c369e5022cbe83dcb874bc583a6eb3 1162 fonts optional unifont_10.0.04-1.dsc
+ feeb01a0b715487cafcfb2d97e80bc41 15651848 fonts optional unifont_10.0.04.orig.tar.gz
+ 3925bbd47b44bc2fda17f190f6c0231c 21272 fonts optional unifont_10.0.04-1.debian.tar.xz

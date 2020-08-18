@@ -2080,16 +2080,16 @@ whole font
 3.17.2 unifontpic SYNOPSIS
 --------------------------
 
-unifontpic [-dnnn][-l][-t] < input-font.hex > output-font.bmp
+unifontpic [-dnnn][-l][-t] [-Pplane] < input-font.hex > output-font.bmp
 
 3.17.3 unifontpic DESCRIPTION
 -----------------------------
 
 unifontpic reads a GNU Unifont .hex file from STDIN and writes a two
-dimensional rendering for each glyph to STDOUT. The output displays the
-entire Unicode Basic Multilingual Plane (BMP) as one large graphic
-image, showing a grid of 256 glyphs by 256 glyphs as the default, or (at
-your option) 16 glyphs across by 4,096 glyphs down.
+dimensional rendering for each glyph to STDOUT. The output displays an
+entire Unicode plane of 65,536 glyphs as one large graphic image,
+showing a grid of 256 glyphs by 256 glyphs as the default, or (at your
+option) a long version of 16 glyphs across by 4,096 glyphs down.
 
 Input can be one or more files in Unifont .hex format.  They don't have
 to be sorted, as unifontpic will populate the entire glyph array of
@@ -2118,6 +2118,12 @@ files to guarantee no code point duplication.
      not specified for the default 256-by-256 grid, row and column code
      point labels are taken from Unifont's glyphs for '0' to '9' and 'A'
      to 'F'.
+
+'-Pplane'
+     Print a chart for Unicode plane number plane.  The default is
+     Plane 0, the Unicode Basic Multilingual Plane (BMP). The range of
+     Unicode plane range is 0 through 17, inclusive.  The plane number
+     is printed on the chart title line.
 
 3.17.5 unifontpic EXAMPLES
 --------------------------

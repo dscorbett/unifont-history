@@ -1,3 +1,26 @@
+unifont (1:10.0.04-1) unstable; urgency=low
+
+  * Update to Unifont 10.0.04 release, which incorporates all changes
+    in experimental version 10.0.03.
+  * debian/control, unifont-bin section:
+    - Removed "Priority: extra" entry because "extra" no longer exists.
+      Now "Priority: optional" is inherited from the "unifont" source
+      package.  The change from "optional" to "extra" was made originally
+      because of unifont-bin Perl programs that required libgd-perl,
+      which had Priority "extra" (see 766699 for details).  (Closes: 867220)
+    - Removed Depends entries for libgd-gd2-perl and libgd-gd2-noxpm-perl
+      because they have been removed from Debian.
+  * debian/copyright: credited "Anonymous1" by request.
+  * debian/rules: added the line
+    "export DEB_BUILD_MAINT_OPTIONS = hardening=+all" to enable "BINDNOW"
+    and "RELRO" hardening flags.
+  * debian/unifont-bin.lintian-overrides: removed file, which contained
+    "unifont-bin: hardening-no-fortify-functions usr/bin/unifontpic".
+    The file was created to override a false positive.  That false positive
+    is no longer triggered.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Sat, 08 Jul 2017 03:13:19 -0700
+
 unifont (1:10.0.03-1) experimental; urgency=medium
 
   * unifont-10.0.03/src/hex2sfd: modified to reposition combining characters
@@ -125,7 +148,7 @@ unifont (1:7.0.05-1) unstable; urgency=medium
     - Added alternate package dependency of libgd-gd2-perl to
       libgd-gd2-noxpm-perl so this package will build on Ubuntu
       and its derivatives.
-  * debian/copyright: corrected spelling of Umbreon126.
+  * debian/copyright: corrected spelling of anonymous contributor.
   * debian/patches: Removed directory; patch was applied to upstream source.
   * Note: there was no 1:7.0.04 release because of a bug in that version's
     font/plane01/Makefile, which made the package fail to build on a
