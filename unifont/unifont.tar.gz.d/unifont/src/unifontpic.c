@@ -44,6 +44,13 @@
           chart title of the "long" format chart.  The wide chart
           title still has double-spaced ASCII glyphs.
         - Adjusts centering of title on long and wide charts.
+
+     11 May 2019 [Paul Hardy]:
+        - Changed strncpy calls to memcpy.
+        - Added "HDR_LEN" to define length of header string
+	  for use in snprintf function call.
+	- Changed sprintf function calls to snprintf function
+	  calls for writing chart header string.
 */
 
 
@@ -51,6 +58,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "unifontpic.h"
+
+/* Define length of header string for top of chart. */
+#define HDR_LEN 33
 
 
 /*
@@ -254,8 +264,8 @@ void
 genlongbmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
 {
 
-   char header_string[33]; /* centered header             */
-   char raw_header[33];    /* left-aligned header         */
+   char header_string[HDR_LEN]; /* centered header             */
+   char raw_header[HDR_LEN];    /* left-aligned header         */
    int header[16][16];     /* header row, for chart title */
    int hdrlen;             /* length of HEADER_STRING     */
    int startcol;           /* column to start printing header, for centering */
@@ -335,7 +345,7 @@ genlongbmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
    /*
       Create header row bits.
    */
-   sprintf (raw_header, "%s Plane %d", HEADER_STRING, plane);
+   snprintf (raw_header, HDR_LEN, "%s Plane %d", HEADER_STRING, plane);
    memset ((void *)header, 0, 16 * 16 * sizeof (int)); /* fill with white */
    memset ((void *)header_string, ' ', 32 * sizeof (char)); /* 32 spaces */
    header_string[32] = '\0';  /* null-terminated */
@@ -344,7 +354,7 @@ genlongbmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
    if (hdrlen > 32) hdrlen = 32;        /* only 32 columns to print header */
    startcol = 16 - ((hdrlen + 1) >> 1); /* to center header                */
    /* center up to 32 chars */
-   strncpy (&header_string[startcol], raw_header, hdrlen);
+   memcpy (&header_string[startcol], raw_header, hdrlen);
 
    /* Copy each letter's bitmap from the plane_array[][] we constructed. */
    /* Each glyph must be single-width, to fit two glyphs in 16 pixels */
@@ -536,7 +546,7 @@ genwidebmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
 {
 
    char header_string[257];
-   char raw_header[33];
+   char raw_header[HDR_LEN];
    int header[16][256]; /* header row, for chart title */
    int hdrlen;         /* length of HEADER_STRING */
    int startcol;       /* column to start printing header, for centering */
@@ -615,7 +625,7 @@ genwidebmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
    /*
       Create header row bits.
    */
-   sprintf (raw_header, "%s Plane %d", HEADER_STRING, plane);
+   snprintf (raw_header, HDR_LEN, "%s Plane %d", HEADER_STRING, plane);
    memset ((void *)header, 0, 256 * 16 * sizeof (int)); /* fill with white */
    memset ((void *)header_string, ' ', 256 * sizeof (char)); /* 256 spaces */
    header_string[256] = '\0';  /* null-terminated */
@@ -625,7 +635,7 @@ genwidebmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
    if (hdrlen > 32) hdrlen = 32;
    startcol = 127 - ((hdrlen - 1) >> 1);  /* to center header */
    /* center up to 32 chars */
-   strncpy (&header_string[startcol], raw_header, hdrlen);
+   memcpy (&header_string[startcol], raw_header, hdrlen);
 
    /* Copy each letter's bitmap from the plane_array[][] we constructed. */
    for (j = 0; j < 256; j++) {

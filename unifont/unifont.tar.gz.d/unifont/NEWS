@@ -1,3 +1,16 @@
+2019-05-11: Release 12.1.01
+   * This release adds the new Reiwa Japanese era sign, added in
+     Unicode 12.1.0.
+
+   * Elizabeth Bettencourt contributed many Under ConScript Unicode
+     Registry (UCSUR) scripts for the Plane 0 Private Use Area.
+
+   * Some adjustments were made to Nandinagari and Nyiakeng Puachue
+     Hmong scripts.  Full details are in the ChangeLog file.
+
+   * Minor changes to source code, mainly to suppress warnings
+     on more systems.
+
 2019-03-05: Release 12.0.01
    This release adds changes in Unicode Standard version 12.0.0,
    maintaining complete coverage of Unicode Plane 0, and adding

@@ -42,6 +42,10 @@
    26 December 2017 [Paul Hardy]:
       - Remove Miao hard-coding; they are back in unibmp2hex.c and
         in font/plane01/plane01-combining.txt.
+
+   11 May 2019 [Paul Hardy]:
+      - Changed strncpy calls to memcpy calls to avoid a compiler
+        warning.
 */
 
 
@@ -188,7 +192,7 @@ add_single_circle (char *glyphstring)
    newstring[i++] = '\n';
    newstring[i++] = '\0';
 
-   strncpy (glyphstring, newstring, i);
+   memcpy (glyphstring, newstring, i);
 
    return;
 }
@@ -275,7 +279,7 @@ add_double_circle (char *glyphstring, int offset)
    newstring[i++] = '\n';
    newstring[i++] = '\0';
 
-   strncpy (glyphstring, newstring, i);
+   memcpy (glyphstring, newstring, i);
 
    return;
 }

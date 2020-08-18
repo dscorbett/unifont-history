@@ -1,6 +1,8 @@
 
 SHELL = /bin/sh
 
+CC = gcc
+
 CFLAGS   = -g -O2 -Wall
 
 LOCALBINDIR = ../bin
@@ -42,7 +44,7 @@ PROGS = $(CPROGS) $(PPROGS)
 
 all: $(CPROGS) bin
 
-.c:
+# .c:
 
 bin: bin-stamp
 

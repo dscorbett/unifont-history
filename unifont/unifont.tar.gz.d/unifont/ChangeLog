@@ -1,3 +1,50 @@
+2019-05-11  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 12.1.01
+	* font/Makefile:
+	  - Set BINDIR to ../bin rather than rely on $(CURDIR) being
+	    defined; old line is still in file, but commented out.
+	* font/plane00/unifont-base.hex:
+	  Johnnie Weaver contributed the Reiwa Japanese era glyph
+	  (U+32FF), new in Unicode 12.1.0.
+	* font/plane00/alt/codepage-437.hex:
+	  Paul Hardy added new file; contains glyphs corresponding
+	  to the legacy character set of PC Code Page 437.
+	* font/plane00csur:
+	  Rebecca Bettencourt contributed glyphs for these scripts:
+	    U+E290..U+E2BF Amman-iar
+	    U+E300..U+E33F Mizarian
+	    U+E340..U+E35F Ziri:nka
+	    U+E3B0..U+E3FF Olaetyan
+	    U+E650..U+E67F Sylabica
+	    U+E6F0..U+E6FF Unifon Extended
+	    U+E700..U+E76F Unifon (added U+E76C..U+E76F)
+	    U+E830..U+E88F D'ni
+	    U+E890..U+E8DF Aurebesh
+	    U+E900..U+E97F Glaitha-A
+	    U+E980..U+E9FF Glaitha-B
+	    U+EAA0..U+EAFF Wanya
+	    U+EB00..U+EB3F Orokin
+	    U+ED00..U+ED3F Deini
+	    U+F4C0..U+F4EF Ath
+	* font/plane01/plane01.hex:
+	  - David Corbett modified some Nandinagari glyphs
+	    (U+119A0..U+119FF).
+	  - Johnnie Weaver modified some Nyiakeng Puachue Hmong
+	    glyphs (U+1E100..U+1E14F).
+	* src/Makefile:
+	  - Add "CC = gcc" definition to use gcc on systems with
+	    more than one C compiler.
+	  - Comment out ".c:" line for BSD make.
+	* src/unicoverage.c:
+	  - Changed strcpy function call to strlcpy call for better
+	    error handling.
+	* src/unicoverage.c:
+	  - Changed strcpy function call to strlcpy.
+	* src/unifontpic.c, src/unigencircles.c:
+	  - Changed strncpy function calls to memcpy.
+	* src/unifont1per.c, unifontpic.c:
+	  - Changed sprintf function calls to snprintf.
+
 2019-03-05 Paul Hardy <unifoundry@unifoundry.com>
 	* Version 12.0.01
 	* doc/*.texi:
@@ -25,13 +72,8 @@
 	  - Bopomofo, Bopomofo Extended, and 'Phags-pa: redrew glyphs to
 	    match more block-structured version introduced in Unicode 12.0.0.
 	  - Also modified U+02EA, U+02EB, U+20A9.
-	* font/plane00/wqy.hex:
-	  - Moved all U+31xx glyphs to unifont-base.hex, as they were
-	    modified mainly as per Unicode Standard 12.0.0.
-	  - Modified U+3B9D, U+3CFD, U+4A76, U+6FF9, U+809E, and U+891D
-	    as per changes in Unicode 12.0.0.  Other changes did not
-	    affect the appearance of the first glyph listed for each
-	    code point, which is what Unifont contains.
+	* font/plane00/wqy.hex: moved all U+31xx glyphs to unifont-base.hex,
+	  as they were modified mainly as per Unicode Standard 12.0.0.
 	* font/plane01/plane01-combining.txt: added new code points for
 	  Wancho, Nyiakeng Puachue Hmong, Miao, Nandinagari.
 	* font/plane01/plane01.hex:

@@ -319,21 +319,21 @@ Covered      Range       Script
 
  100.0%  U+E270..U+E29F  PUA (CSUR/UCSUR): aUI
 
-   0.0%  U+E2A0..U+E2CF  PUA (CSUR/UCSUR): Amman-Iar
+  31.2%  U+E2A0..U+E2CF  PUA (CSUR/UCSUR): Amman-Iar
 
    0.0%  U+E2D0..U+E2DF  PUA (CSUR/UCSUR): Streich
 
    0.0%  U+E2E0..U+E2FF  PUA (CSUR/UCSUR): Xaîni
 
-   0.0%  U+E300..U+E33F  PUA (CSUR/UCSUR): Mizarian
+  79.7%  U+E300..U+E33F  PUA (CSUR/UCSUR): Mizarian
 
-   0.0%  U+E340..U+E35F  PUA (CSUR/UCSUR): Zírí:Nka
+  87.5%  U+E340..U+E35F  PUA (CSUR/UCSUR): Zírí:Nka
 
    0.0%  U+E360..U+E37F  PUA (CSUR/UCSUR): Sarkai
 
    0.0%  U+E380..U+E3AF  PUA (CSUR/UCSUR): Thelwik
 
-   0.0%  U+E3B0..U+E3FF  PUA (CSUR/UCSUR): Olaetyan
+  96.2%  U+E3B0..U+E3FF  PUA (CSUR/UCSUR): Olaetyan
 
    0.0%  U+E400..U+E42F  PUA (CSUR/UCSUR): Nísklôz
 
@@ -367,13 +367,13 @@ Covered      Range       Script
 
  100.0%  U+E630..U+E64F  PUA (CSUR/UCSUR): Seussian Latin Extenstions
 
-   0.0%  U+E650..U+E67F  PUA (CSUR/UCSUR): Sylabica
+  85.4%  U+E650..U+E67F  PUA (CSUR/UCSUR): Sylabica
 
  100.0%  U+E680..U+E6CF  PUA (CSUR/UCSUR): Ewellic
 
-   0.0%  U+E6D0..U+E6FF  PUA (CSUR/UCSUR): Amlin
+  31.2%  U+E6D0..U+E6FF  PUA (CSUR/UCSUR): Amlin
 
- 100.0%  U+E740..U+E76F  PUA (CSUR/UCSUR): Unifon
+ 222.9%  U+E740..U+E76F  PUA (CSUR/UCSUR): Unifon
 
  100.0%  U+E770..U+E77F  PUA (CSUR/UCSUR): Solresol
 
@@ -381,23 +381,23 @@ Covered      Range       Script
 
  100.0%  U+E800..U+E82F  PUA (CSUR/UCSUR): Monofon
 
-   0.0%  U+E830..U+E88F  PUA (CSUR/UCSUR): D'ni
+  77.1%  U+E830..U+E88F  PUA (CSUR/UCSUR): D'ni
 
-   0.0%  U+E890..U+E8DF  PUA (CSUR/UCSUR): Aurebesh
+  73.8%  U+E890..U+E8DF  PUA (CSUR/UCSUR): Aurebesh
 
  100.0%  U+E8E0..U+E8FF  PUA (CSUR/UCSUR): Tonal
 
-   0.0%  U+E900..U+E97F  PUA (CSUR/UCSUR): Glaitha-A
+  95.3%  U+E900..U+E97F  PUA (CSUR/UCSUR): Glaitha-A
 
-   0.0%  U+E980..U+E9DF  PUA (CSUR/UCSUR): Glaitha-B
+ 100.0%  U+E980..U+E9DF  PUA (CSUR/UCSUR): Glaitha-B
 
-   0.0%  U+EA00..U+EA9F  PUA (CSUR/UCSUR): Lhenazi
+  20.0%  U+EA00..U+EA9F  PUA (CSUR/UCSUR): Lhenazi
 
-   0.0%  U+EAA0..U+EAFF  PUA (CSUR/UCSUR): Wanya
+  85.4%  U+EAA0..U+EAFF  PUA (CSUR/UCSUR): Wanya
 
-   0.0%  U+ED00..U+ED3F  PUA (CSUR/UCSUR): Deini
+ 164.1%  U+ED00..U+ED3F  PUA (CSUR/UCSUR): Deini
 
- 100.0%  U+F8A0..U+F8CF  PUA (CSUR/UCSUR): Aiha
+ 179.2%  U+F8A0..U+F8CF  PUA (CSUR/UCSUR): Aiha
 
  100.0%  U+F8D0..U+F8FF  PUA (CSUR/UCSUR): Klingon
 

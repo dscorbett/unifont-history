@@ -16,7 +16,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 12.0.01
+VERSION = 12.1.01
 
 COPYRIGHT = "Copyright (C) 1998-2019 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
@@ -28,8 +28,8 @@ with the GNU Font Embedding Exception."
 # use GNU's version of "make", use the first BINDIR definition.
 # If using GNU's "make", use the second BINDIR definition.
 #
-# BINDIR = ../bin
-BINDIR = $(CURDIR)/../bin
+BINDIR = ../bin
+# BINDIR = $(CURDIR)/../bin
 #
 # The top-level directory for installing fonts on the system,
 # and the installation directories for PCF and TrueType fonts.
@@ -124,7 +124,13 @@ all: compiled
 compiled: $(UNIFILES) $(COMBINING) $(UPPER_FILES) $(UPPER_COMBINING)
 	$(MAKE) compiled-files
 
-compiled-files: pcf psf $(GRAPHICS) ttf csurttf upperttf bigpic coverage
+#
+# Only use PSF target if on GNU/Linux, not on BSD, because
+# a BSD console font only allows 256 code points, not 512.
+#
+PSF = psf
+# PSF =
+compiled-files: pcf $(PSF) $(GRAPHICS) ttf csurttf upperttf bigpic coverage
 	install -p index.html $(COMPILED_DIR)/index.html
 
 #

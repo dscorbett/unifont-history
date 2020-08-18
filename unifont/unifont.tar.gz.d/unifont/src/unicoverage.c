@@ -32,6 +32,9 @@
    "-p" option and empty example from help printout.
 
    2018 (Paul Hardy): Modified to cover entire Unicode range, not just Plane 0.
+
+   11 May 2019: [Paul Hardy] changed strcpy function call to strlcpy
+   for better error handling.
 */
 
 #include <stdio.h>
@@ -173,7 +176,7 @@ nextrange (FILE *coveragefp,
             i = 0;
             while (inbuf[i] != ' ') i++;  /* find first blank */
             while (inbuf[i] == ' ') i++;  /* find next non-blank */
-            strcpy (coverstring, &inbuf[i]);
+            strlcpy (coverstring, &inbuf[i], MAXBUF);
          }
          else retval = 0;
       }

@@ -58,18 +58,6 @@ the call to "make" in the top-level directory with a command such as:
      make UNASSIGNED="plane00/unassigned.hex" PUA="plane00/pua.hex"
 
 
-The "alt" Directory
--------------------
-The "alt" directory contains alternative glyphs in .hex format
-that can replace glyphs in the main font/plane00 directory.
-
-The "-vertical" glyphs are alternative orientations for rendering
-in a vertical font.
-
-The quad-width CJK ideographs are 31 pixels wide.  They are
-experimental variants and not intended for ordinary use.
-
-
 Historical Note on wqy.hex
 --------------------------
 The file "wqy.hex" includes glyphs from the BDF version of Wen Quan Yi
@@ -83,7 +71,5 @@ script in Unifont continue to be added to wqy.hex even though they were
 not part of the original Wen Quan Yi font.  This allows keeping the whole
 CJK Unified Ideographs script in one file.
 
-Unicode 12.0.0 modified a number of glyphs that are in wqy.hex.
 
-
-Paul Hardy, 2014, 2016, 2018, 2019
+Paul Hardy, 2014, 2016, 2018

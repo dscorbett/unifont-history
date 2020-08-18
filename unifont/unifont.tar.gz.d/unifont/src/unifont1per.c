@@ -38,12 +38,23 @@
 
 */
 
+/*
+   11 May 2019 [Paul Hardy]:
+      - Changed sprintf function call to snprintf for writing
+	"filename" character string.
+      - Defined MAXFILENAME to hold size of "filename" array
+	for snprintf function call.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 /* Maximum size of an input line in a Unifont .hex file */
 #define MAXSTRING 266
+
+/* Maximum size of a filename of the form "U+%06X.bmp" */
+#define MAXFILENAME 20
 
 int
 main () {
@@ -92,7 +103,7 @@ main () {
    char glyph[MAXSTRING];    /* bitmap string for this glyph        */
    int  glyph_height=16;     /* for now, fixed at 16 pixels high    */
    int  glyph_width;         /* 8, 16, 24, or 32 pixels wide        */
-   char filename[20];        /* name of current output file         */
+   char filename[MAXFILENAME];/* name of current output file        */
    FILE *outfp;              /* file pointer to current output file */
 
    int string_index;  /* pointer into hexadecimal glyph string */
@@ -104,7 +115,7 @@ main () {
       sscanf (instring, "%X:%s", &code_point, glyph);
       /* Calculate width of a glyph in pixels; 4 bits per ASCII hex digit */
       glyph_width = strlen (glyph) / (glyph_height / 4);
-      sprintf (filename, "U+%06X.bmp", code_point);
+      snprintf (filename, MAXFILENAME, "U+%06X.bmp", code_point);
       header [18] =  glyph_width;  /* bitmap width */
       header [22] = -glyph_height; /* negative height --> draw top to bottom */
       if ((outfp = fopen (filename, "w")) != NULL) {
