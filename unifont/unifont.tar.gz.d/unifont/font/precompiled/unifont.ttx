@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="6.29999"/>
-    <checkSumAdjustment value="0x827536ad"/>
+    <checkSumAdjustment value="0x8262f319"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 10001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Mon Dec 16 15:01:40 2013"/>
-    <modified value="Mon Dec 16 15:01:40 2013"/>
+    <created value="Wed Dec 18 03:57:58 2013"/>
+    <modified value="Wed Dec 18 03:57:58 2013"/>
     <xMin value="0"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -125,13 +125,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont : 16-12-2013
+      FontForge 2.0 : Unifont : 17-12-2013
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 6.3.20131215 
+      Version 6.3.20131217 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontMedium
@@ -146,13 +146,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont : 16-12-2013
+      FontForge 2.0 : Unifont : 17-12-2013
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 6.3.20131215 
+      Version 6.3.20131217 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontMedium
@@ -57279,8 +57279,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Feb 22 13:48:33 2011"/>
-    <sourceCreated value="Mon Dec 16 14:54:47 2013"/>
-    <sourceModified value="Mon Dec 16 14:55:28 2013"/>
+    <sourceCreated value="Wed Dec 18 03:51:06 2013"/>
+    <sourceModified value="Wed Dec 18 03:51:46 2013"/>
   </FFTM>
 
 </ttFont>
