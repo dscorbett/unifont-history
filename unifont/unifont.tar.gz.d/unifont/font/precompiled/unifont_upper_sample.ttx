@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="9.0"/>
-    <checkSumAdjustment value="0xc00129a"/>
+    <checkSumAdjustment value="0x5018122a"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1000"/>
-    <created value="Sat Jul  2 05:41:22 2016"/>
-    <modified value="Sat Jul  2 05:41:22 2016"/>
+    <created value="Sat Aug 27 16:05:00 2016"/>
+    <modified value="Sat Aug 27 16:05:00 2016"/>
     <xMin value="33"/>
     <yMin value="-200"/>
     <xMax value="298"/>
@@ -116,7 +116,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (C) 2015 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+      Copyright (C) 2016 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper Sample
@@ -125,19 +125,19 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper Sample Medium : 1-7-2016
+      FontForge 2.0 : Unifont Upper Sample Medium : 27-8-2016
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 9.0.01 
+      Version 9.0.02 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperSampleMedium
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright (C) 2015 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
+      Copyright (C) 2016 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, et al. Licensed under the GNU General Public License; either version 2, or (at your option) a later version, with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper Sample
@@ -146,13 +146,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper Sample Medium : 1-7-2016
+      FontForge 2.0 : Unifont Upper Sample Medium : 27-8-2016
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 9.0.01 
+      Version 9.0.02 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperSampleMedium
@@ -8816,7 +8816,7 @@
       31362037 35203735 00464f4e 54424f55
       4e44494e 47424f58 00313620 31362030
       202d3200 434f5059 52494748 5400436f
-      70797269 67687420 28432920 32303135
+      70797269 67687420 28432920 32303136
       20526f6d 616e2043 7a79626f 7272612c
       20506175 6c204861 7264792c 20516961
       6e716961 6e204661 6e672c20 416e6472
@@ -8831,7 +8831,7 @@
       20474e55 20466f6e 7420456d 62656464
       696e6720 45786365 7074696f 6e2e0046
       4f4e545f 56455253 494f4e00 392e302e
-      30310046 4f4e545f 54595045 00426974
+      30320046 4f4e545f 54595045 00426974
       6d617000 464f554e 44525900 474e5500
       46414d49 4c595f4e 414d4500 556e6966
       6f6e7420 55707065 72205361 6d706c65
@@ -15754,210 +15754,91 @@
           10c0   
         </rawimagedata>
       </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A0">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      <ebdt_bitmap_format_5 name="U+0104A0">
         <rawimagedata>
-          38891418 3060a244 70 
+          00000000 1c222241 41414122 221c0000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A1">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="5"/>
-          <BearingX value="3"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A1">
         <rawimagedata>
-          3a108210 421700  
+          00000000 07080808 04040202 021c0000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A2">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A2">
         <rawimagedata>
-          388a0406 1020c144 70 
+          00000000 1c224040 30404141 221c0000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A3">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A3">
         <rawimagedata>
-          fc410206 12244993 18 
+          00000000 7e102020 30484849 49460000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A4">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A4">
         <rawimagedata>
-          44504144 5060c144 70 
+          00000000 22140814 22414141 221c0000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A5">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A5">
         <rawimagedata>
-          184891c4 1020c144 70 
+          00000000 0c12121c 20404141 221c0000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A6">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="5"/>
-          <BearingX value="2"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A6">
         <rawimagedata>
-          8c62e108 842600  
+          00000000 2222221c 04040808 08300000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A7">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A7">
         <rawimagedata>
-          38880810 20810288 e0 
+          00000000 1c220101 01020202 44380000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A8">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A8">
         <rawimagedata>
-          1c450204 10204044 70 
+          00000000 0e112020 20404040 221c0000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104A9">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104A9">
         <rawimagedata>
-          22448a24 48a24488 e0 
+          00000000 11111122 22224444 44380000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104B0">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104B0">
         <rawimagedata>
-          1020a144 48914183 04 
+          00000000 08081414 22222241 41410000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104B1">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104B1">
         <rawimagedata>
-          1020a144 48954993 24 
+          00000000 08081414 22222a49 49490000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104B2">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104B2">
         <rawimagedata>
-          1020a144 48914983 04 
+          00000000 08081414 22222249 41410000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104B3">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104B3">
         <rawimagedata>
-          10204081 05112283 04 
+          00000000 08080808 08142222 41410000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104B4">
-        <SmallGlyphMetrics>
-          <height value="12"/>
-          <width value="7"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104B4">
         <rawimagedata>
-          8103e428 50a17c91 101010 
+          00000000 40407c42 4242427c 48440201
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104B5">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="6"/>
-          <BearingX value="1"/>
-          <BearingY value="10"/>
-          <Advance value="8"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104B5">
         <rawimagedata>
-          3918208a 5969a590  
+          00000000 1c224040 444a4a52 52320000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
-      <ebdt_bitmap_format_2 name="U+0104B6">
-        <SmallGlyphMetrics>
-          <height value="10"/>
-          <width value="7"/>
-          <BearingX value="2"/>
-          <BearingY value="10"/>
-          <Advance value="16"/>
-        </SmallGlyphMetrics>
+      </ebdt_bitmap_format_5>
+      <ebdt_bitmap_format_5 name="U+0104B6">
         <rawimagedata>
-          388a0408 92a552ae c8 
+          00000000 1c224040 444a4a52 57320000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
+      </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104B7">
         <rawimagedata>
           00000000 3a464444 44444444 463a0000
@@ -16133,18 +16014,11 @@
           00000000 00001c22 40444a52 52320000
         </rawimagedata>
       </ebdt_bitmap_format_5>
-      <ebdt_bitmap_format_2 name="U+0104DE">
-        <SmallGlyphMetrics>
-          <height value="8"/>
-          <width value="7"/>
-          <BearingX value="2"/>
-          <BearingY value="8"/>
-          <Advance value="16"/>
-        </SmallGlyphMetrics>
+      <ebdt_bitmap_format_5 name="U+0104DE">
         <rawimagedata>
-          388a0449 54abb2  
+          00000000 00001c22 40444a52 57320000
         </rawimagedata>
-      </ebdt_bitmap_format_2>
+      </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+0104DF">
         <rawimagedata>
           00000000 00003a46 44444444 463a0000
@@ -55510,18 +55384,11 @@
           00000000 7f083e49 49494949 49210101
         </rawimagedata>
       </ebdt_bitmap_format_5>
-      <ebdt_bitmap_format_2 name="U+01E95F">
-        <SmallGlyphMetrics>
-          <height value="12"/>
-          <width value="7"/>
-          <BearingX value="2"/>
-          <BearingY value="10"/>
-          <Advance value="16"/>
-        </SmallGlyphMetrics>
+      <ebdt_bitmap_format_5 name="U+01E95F">
         <rawimagedata>
-          7d0608e2 2860c182 c40810 
+          00000000 7c82821c 22428282 82620202
         </rawimagedata>
-      </ebdt_bitmap_format_2>
+      </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+01EE00">
         <rawimagedata>
           00000008 08080808 08080800 00000000
@@ -64486,8 +64353,8 @@
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+01F67F">
         <rawimagedata>
-          00ff00ff 00ff00ff 00ff00ff 00ff00ff
           ff00ff00 ff00ff00 ff00ff00 ff00ff00
+          00ff00ff 00ff00ff 00ff00ff 00ff00ff
         </rawimagedata>
       </ebdt_bitmap_format_5>
       <ebdt_bitmap_format_5 name="U+01F680">
@@ -71256,7 +71123,7 @@
         <glyphLoc id="832" name="U+010482"/>
         <glyphLoc id="833" name="U+010483"/>
       </eblc_index_sub_table_2>
-      <eblc_index_sub_table_1 imageFormat="2" firstGlyphIndex="834" lastGlyphIndex="876">
+      <eblc_index_sub_table_1 imageFormat="2" firstGlyphIndex="834" lastGlyphIndex="859">
         <glyphLoc id="834" name="U+010484"/>
         <glyphLoc id="835" name="U+010485"/>
         <glyphLoc id="836" name="U+010486"/>
@@ -71283,6 +71150,19 @@
         <glyphLoc id="857" name="U+01049B"/>
         <glyphLoc id="858" name="U+01049C"/>
         <glyphLoc id="859" name="U+01049D"/>
+      </eblc_index_sub_table_1>
+      <eblc_index_sub_table_2 imageFormat="5" firstGlyphIndex="860" lastGlyphIndex="981">
+        <imageSize value="16"/>
+        <BigGlyphMetrics>
+          <height value="16"/>
+          <width value="8"/>
+          <horiBearingX value="0"/>
+          <horiBearingY value="14"/>
+          <horiAdvance value="8"/>
+          <vertBearingX value="-4"/>
+          <vertBearingY value="0"/>
+          <vertAdvance value="16"/>
+        </BigGlyphMetrics>
         <glyphLoc id="860" name="U+0104A0"/>
         <glyphLoc id="861" name="U+0104A1"/>
         <glyphLoc id="862" name="U+0104A2"/>
@@ -71300,19 +71180,6 @@
         <glyphLoc id="874" name="U+0104B4"/>
         <glyphLoc id="875" name="U+0104B5"/>
         <glyphLoc id="876" name="U+0104B6"/>
-      </eblc_index_sub_table_1>
-      <eblc_index_sub_table_2 imageFormat="5" firstGlyphIndex="877" lastGlyphIndex="911">
-        <imageSize value="16"/>
-        <BigGlyphMetrics>
-          <height value="16"/>
-          <width value="8"/>
-          <horiBearingX value="0"/>
-          <horiBearingY value="14"/>
-          <horiAdvance value="8"/>
-          <vertBearingX value="-4"/>
-          <vertBearingY value="0"/>
-          <vertAdvance value="16"/>
-        </BigGlyphMetrics>
         <glyphLoc id="877" name="U+0104B7"/>
         <glyphLoc id="878" name="U+0104B8"/>
         <glyphLoc id="879" name="U+0104B9"/>
@@ -71348,22 +71215,7 @@
         <glyphLoc id="909" name="U+0104DB"/>
         <glyphLoc id="910" name="U+0104DC"/>
         <glyphLoc id="911" name="U+0104DD"/>
-      </eblc_index_sub_table_2>
-      <eblc_index_sub_table_1 imageFormat="2" firstGlyphIndex="912" lastGlyphIndex="912">
         <glyphLoc id="912" name="U+0104DE"/>
-      </eblc_index_sub_table_1>
-      <eblc_index_sub_table_2 imageFormat="5" firstGlyphIndex="913" lastGlyphIndex="981">
-        <imageSize value="16"/>
-        <BigGlyphMetrics>
-          <height value="16"/>
-          <width value="8"/>
-          <horiBearingX value="0"/>
-          <horiBearingY value="14"/>
-          <horiAdvance value="8"/>
-          <vertBearingX value="-4"/>
-          <vertBearingY value="0"/>
-          <vertAdvance value="16"/>
-        </BigGlyphMetrics>
         <glyphLoc id="913" name="U+0104DF"/>
         <glyphLoc id="914" name="U+0104E0"/>
         <glyphLoc id="915" name="U+0104E1"/>
@@ -77156,7 +77008,7 @@
         <glyphLoc id="6134" name="U+01E8D5"/>
         <glyphLoc id="6135" name="U+01E8D6"/>
       </eblc_index_sub_table_2>
-      <eblc_index_sub_table_2 imageFormat="5" firstGlyphIndex="6136" lastGlyphIndex="6221">
+      <eblc_index_sub_table_2 imageFormat="5" firstGlyphIndex="6136" lastGlyphIndex="6290">
         <imageSize value="16"/>
         <BigGlyphMetrics>
           <height value="16"/>
@@ -77254,22 +77106,7 @@
         <glyphLoc id="6219" name="U+01E958"/>
         <glyphLoc id="6220" name="U+01E959"/>
         <glyphLoc id="6221" name="U+01E95E"/>
-      </eblc_index_sub_table_2>
-      <eblc_index_sub_table_1 imageFormat="2" firstGlyphIndex="6222" lastGlyphIndex="6222">
         <glyphLoc id="6222" name="U+01E95F"/>
-      </eblc_index_sub_table_1>
-      <eblc_index_sub_table_2 imageFormat="5" firstGlyphIndex="6223" lastGlyphIndex="6290">
-        <imageSize value="16"/>
-        <BigGlyphMetrics>
-          <height value="16"/>
-          <width value="8"/>
-          <horiBearingX value="0"/>
-          <horiBearingY value="14"/>
-          <horiAdvance value="8"/>
-          <vertBearingX value="-4"/>
-          <vertBearingY value="0"/>
-          <vertAdvance value="16"/>
-        </BigGlyphMetrics>
         <glyphLoc id="6223" name="U+01EE00"/>
         <glyphLoc id="6224" name="U+01EE01"/>
         <glyphLoc id="6225" name="U+01EE02"/>
@@ -79925,8 +79762,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sat Jul  2 05:41:22 2016"/>
-    <sourceModified value="Sat Jul  2 05:41:22 2016"/>
+    <sourceCreated value="Sat Aug 27 16:05:00 2016"/>
+    <sourceModified value="Sat Aug 27 16:05:00 2016"/>
   </FFTM>
 
 </ttFont>
