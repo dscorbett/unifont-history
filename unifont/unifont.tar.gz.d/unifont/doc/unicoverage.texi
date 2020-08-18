@@ -24,7 +24,7 @@
 @subsection unicoverage NAME
 @c DEBUG: print_menu("unicoverage NAME")
 
-unicoverage @minus{} Print coverage of each Unicode BMP Script
+unicoverage @minus{} Print coverage of each Unicode Script
 @comment TROFF INPUT: .SH SYNOPSIS
 
 @node unicoverage SYNOPSIS
@@ -48,7 +48,9 @@ reads a GNU Unifont .hex font and uses data in
 @comment TROFF INPUT: .B coverage.dat
 @b{coverage.dat}
 (which must reside in the current directory).  The output is
-the percent coverage of each script in the Unicode Basic Multilingual Plane.
+the percent coverage of each script listed in the coverage.dat
+file.  The Unicode code points in the input .hex file must be
+in ascending order.
 @comment TROFF INPUT: .SH OPTIONS
 
 @node unicoverage OPTIONS

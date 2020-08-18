@@ -10,7 +10,7 @@
 This manual describes Unifont, a bitmap-based font covering the Unicode
 Basic Multilingual Plane and beyond, along with Unifont's utility programs.
 
-Copyright @copyright{} 2008--2017 Paul Hardy
+Copyright @copyright{} 2008--2018 Paul Hardy
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -24,7 +24,7 @@ Invariant Sections, with no Front-Cover Texts and no Back-Cover Texts.
 @dircategory Fonts
 
 @direntry
-* Unifont (unifont).  A bitmap-based font covering the Unicode BMP.
+* Unifont: (unifont).  A bitmap-based font covering the Unicode BMP.
 @end direntry
 
 @titlepage

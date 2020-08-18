@@ -11,9 +11,6 @@
    
    Copyright (C) 2008, 2013 Paul Hardy
 
-   2016: Modified in Unifont 9.0.01 release to remove non-existent "-p" option
-   and empty example from help printout.
-
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -28,6 +25,13 @@
 
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+   2016 (Paul Hardy): Modified in Unifont 9.0.01 release to remove non-existent
+   "-p" option and empty example from help printout.
+
+   2018 (Paul Hardy): Modified to cover entire Unicode range, not just Plane 0.
 */
 
 #include <stdio.h>
@@ -119,20 +123,26 @@ main (int argc, char *argv[])
          /* start new range total */
          slen = nextrange (coveragefp, &cstart, &cend, coverstring);
          /*
-            Count Non-characters as existing for totals counts
+            Count Non-characters as existing for totals counts.
+            The last two code points of each Unicode plane
+            (U+*FFFE and U+*FFFF) are reserved.
          */
          nglyphs = 0;
          if (cstart <= 0xFDD0 && cend >= 0xFDEF && nglyphs == 0)
             nglyphs += 32;
-         else if (cstart <= 0xFFFE && cend >= 0xFFFF && nglyphs == 0)
+         else if ((cstart & 0xFFFF) <= 0xFFFE &&
+                  (cend   & 0xFFFF) >= 0xFFFF && nglyphs == 0)
             nglyphs += 2;
       }
       /*
          If we read in a noncharacter, don't count it -- we already
          counted it once above.
       */
-      if (thischar < 0xFDD0 || (thischar > 0xFDEF && thischar < 0xFFFE))
+      if ( thischar < 0xFDD0 ||
+          (thischar > 0xFDEF && thischar < 0xFFFE) ||
+           thischar > 0xFFFF) {
          nglyphs++;
+      }
    }
    /* print last range total */
    fprintf (outfp, " %5.1f%%  U+%04X..U+%04X  %s\n",
@@ -153,21 +163,22 @@ nextrange (FILE *coveragefp,
    static char inbuf[MAXBUF];
    int retval;         /* the return value */
 
-   if (fgets (inbuf, MAXBUF-1, coveragefp) != NULL) {
-      retval = strlen (inbuf);
-      if ((inbuf[0] >= '0' && inbuf[0] <= '9') ||
-          (inbuf[0] >= 'A' && inbuf[0] <= 'F') ||
-          (inbuf[0] >= 'a' && inbuf[0] <= 'f')) {
-         sscanf (inbuf, "%x-%x", cstart, cend);
-         i = 0;
-         while (inbuf[i] != ' ') i++;  /* find first blank */
-         while (inbuf[i] == ' ') i++;  /* find next non-blank */
-         strcpy (coverstring, &inbuf[i]);
+   do {
+      if (fgets (inbuf, MAXBUF-1, coveragefp) != NULL) {
+         retval = strlen (inbuf);
+         if ((inbuf[0] >= '0' && inbuf[0] <= '9') ||
+             (inbuf[0] >= 'A' && inbuf[0] <= 'F') ||
+             (inbuf[0] >= 'a' && inbuf[0] <= 'f')) {
+            sscanf (inbuf, "%x-%x", cstart, cend);
+            i = 0;
+            while (inbuf[i] != ' ') i++;  /* find first blank */
+            while (inbuf[i] == ' ') i++;  /* find next non-blank */
+            strcpy (coverstring, &inbuf[i]);
+         }
+         else retval = 0;
       }
-   }
-   else {
-      retval = 0;
-   }
+      else retval = 0;
+   } while (retval == 0 && !feof (coveragefp));
 
    return (retval);
 }

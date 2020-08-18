@@ -11,7 +11,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 11.0.01
+VERSION = 11.0.02
 
 #
 # The settings below will install software, man pages, and documentation
@@ -121,10 +121,10 @@ install: bindir libdir docdir
 	$(MAKE) -C man install PREFIX=$(PREFIX) COMPRESS=$(COMPRESS)
 	$(MAKE) -C font install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
 	install -m0755 -d $(PKGDEST)
-	install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info $(PKGDEST)
-	for i in $(TEXTFILES) unifont.txt unifont.info ; do \
-	   gzip $(GZFLAGS) $(PKGDEST)/$$i ; \
-	done
+	# install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info $(PKGDEST)
+	# for i in $(TEXTFILES) unifont.txt unifont.info ; do \
+	#    gzip $(GZFLAGS) $(PKGDEST)/$$i ; \
+	# done
 	install -m0644 -p lib/wchardata.c $(PKGDEST)
 	install -m0644 -p font/plane00/plane00-combining.txt $(PKGDEST)
 	# If "make" wasn't run before, font/compiled won't exist.
@@ -135,6 +135,7 @@ install: bindir libdir docdir
 	   install -m0644 -p font/compiled/unifont-$(VERSION).hex   $(PKGDEST)/unifont.hex && \
 	   install -m0644 -p font/compiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
 	fi
+	gzip $(GZFLAGS) $(PKGDEST)/unifont.bmp
 
 clean:
 	$(MAKE) -C src  clean

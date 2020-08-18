@@ -16,7 +16,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 11.0.01
+VERSION = 11.0.02
 
 COPYRIGHT = "Copyright (C) 1998-2018 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
@@ -237,12 +237,25 @@ psf: bdf
 	gzip $(GZFLAGS) $(COMPILED_DIR)/Unifont-APL8x16-$(VERSION).psf
 
 #
-# Print coverage of scripts in Basic Multilingual Plane in .txt file.
+# Print coverage of all scripts in Unifont.  Combine all Plane 0
+# directories first to keep everything ordered properly.  Only keep
+# the space glyph from the Plane 0 Unifont source hex file; it is
+# duplicated in other files used to create separate fonts.  Don't
+# use plane00/pua.hex (U+E000..U+F8FF) because we are including
+# Plane 0 CSUR glyphs.  The built unifont_csur_lower-$(VERSION).hex
+# includes all non-Private Use Area Plane 0 glyphs, so start with it
+# as a baseline.  Remove the Plane 1 Copyleft glyph from the Plane 0
+# set of hex files.
 #
 coverage:
-	sort $(HEXDIR)/*.hex | \
-		$(BINDIR)/unicoverage > $(COMPILED_DIR)/coverage.txt
-
+	grep -v "^01F12F" $(COMPILED_DIR)/unifont_csur_lower-$(VERSION).hex \
+	   > $(COMPILED_DIR)/unifont_all-$(VERSION).hex
+	sort plane0[1-E]/*.hex plane0Fcsur/*.hex | grep -v "^0020:" \
+	   >> $(COMPILED_DIR)/unifont_all-$(VERSION).hex
+	$(BINDIR)/unicoverage \
+	   -i$(COMPILED_DIR)/unifont_all-$(VERSION).hex \
+	   -o$(COMPILED_DIR)/coverage.txt
+	\rm -f $(COMPILED_DIR)/unifont_all-$(VERSION).hex
 #
 # Print HTML page coverage in Basic Multilingual Plane in .txt file.
 #
@@ -390,6 +403,9 @@ bmp: hex $(BINDIR)/unihex2bmp
 bigpic: hex
 	cat $(HEXDIR)/*.hex plane00csur/*.hex | \
 	   $(BINDIR)/unifontpic -d120 > $(COMPILED_DIR)/unifont-$(VERSION).bmp
+	$(BINDIR)/unifontpic -d120 -P1 \
+	   < $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
+	   > $(COMPILED_DIR)/unifont_upper-$(VERSION).bmp
 
 #
 # Note that $(TTFSRC) must exist, because it contains some source files

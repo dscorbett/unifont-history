@@ -56,12 +56,17 @@
       - Added Miao script back as wide, because combining glyphs are
         added back to font/plane01/plane01-combining.txt.
 
-   05 June 2017 Paul Hardy:
+   05 June 2018 Paul Hardy:
       - Made U+2329] and U+232A wide.
       - Added to wide settings for CJK Compatibility Forms over entire range.
       - Made Kayah Li script double-width.
       - Made U+232A (Right-pointing Angle Bracket) double-width.
       - Made U+01F5E7 (Three Rays Right) double-width.
+
+   xx July 2018 Paul Hardy:
+      - Changed 2017 to 2018 in previous change entry.
+      - Added Dogra (U+011800..U+01184F) as double width.
+      - Added Makasar (U+011EE0..U+011EFF) as dobule width.
 */
 
 #include <stdio.h>
@@ -235,11 +240,13 @@ main (int argc, char *argv[])
    for (i = 0x011660; i <= 0x01167F; i++) wide[i] = 1; /* Mongolian Suppl.   */
    for (i = 0x011680; i <= 0x0116CF; i++) wide[i] = 1; /* Takri              */
    for (i = 0x011700; i <= 0x01173F; i++) wide[i] = 1; /* Ahom               */
+   for (i = 0x011800; i <= 0x01184F; i++) wide[i] = 1; /* Dogra              */
    for (i = 0x011A00; i <= 0x011A4F; i++) wide[i] = 1; /* Zanabazar Square   */
    for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo            */
    for (i = 0x011C00; i <= 0x011C6F; i++) wide[i] = 1; /* Bhaiksuki          */
    for (i = 0x011C70; i <= 0x011CBF; i++) wide[i] = 1; /* Marchen            */
    for (i = 0x011D00; i <= 0x011D5F; i++) wide[i] = 1; /* Masaram Gondi      */
+   for (i = 0x011EE0; i <= 0x011EFF; i++) wide[i] = 1; /* Makasar            */
    /* Make Bassa Vah all single width or all double width */
    for (i = 0x016AD0; i <= 0x016AFF; i++) wide[i] = 1; /* Bassa Vah          */
    for (i = 0x016B00; i <= 0x016B8F; i++) wide[i] = 1; /* Pahawh Hmong       */

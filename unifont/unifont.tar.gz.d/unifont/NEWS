@@ -1,3 +1,6 @@
+2018-08-10: Release 11.0.02
+   Adds Sutton SignWriting glyphs.  Miscellaneous patches to other glyphs.
+
 2018-06-05: Release 11.0.01
    Update for Unicode 11.0.0 release.  Modifications maintain complete
    coverage of the Unicode Basic Multilingual Plane (BMP).  Also includes

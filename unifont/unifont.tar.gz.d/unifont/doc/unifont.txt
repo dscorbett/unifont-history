@@ -1692,7 +1692,7 @@ preserves the graphics as they are drawn.
 3.11.1 unicoverage NAME
 -----------------------
 
-unicoverage - Print coverage of each Unicode BMP Script
+unicoverage - Print coverage of each Unicode Script
 
 3.11.2 unicoverage SYNOPSIS
 ---------------------------
@@ -1704,7 +1704,8 @@ unicoverage [-iinput-file] [-ooutput-file]
 
 unicoverage reads a GNU Unifont .hex font and uses data in coverage.dat
 (which must reside in the current directory).  The output is the percent
-coverage of each script in the Unicode Basic Multilingual Plane.
+coverage of each script listed in the coverage.dat file.  The Unicode
+code points in the input .hex file must be in ascending order.
 
 3.11.4 unicoverage OPTIONS
 --------------------------

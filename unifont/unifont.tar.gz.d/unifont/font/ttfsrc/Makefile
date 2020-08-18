@@ -28,7 +28,7 @@ Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
 License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
 
-VERSION = 11.0.01
+VERSION = 11.0.02
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex

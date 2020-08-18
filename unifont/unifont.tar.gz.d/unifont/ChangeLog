@@ -1,3 +1,102 @@
+2018-08-10 Paul Hardy <unifoundry@unifoundry.com>
+	* Version: 11.0.02
+	* Makefile:
+	  - No longer install text files in package directory; Debian
+	    installs them in the /usr/share/doc/unifont directory.
+	* doc/unicoverage.texi: Updated to reflect new ability to handle
+	  all of Unicode, not just Plane 0.  Also updated man/unicoverage.1.
+	* doc/unifont.texi:
+	  - Added ':' after "Unifont" direntry name.
+	  - Updated copyright for 2018.
+	* doc/unifont.pdf: Regenerated to include changes in the above
+	  two files.
+	* font/Makefile:
+	  - Create font/compiled/unifont_upper-$(VERSION).bmp in addition to
+	    font/compiled/unifont-$(VERSION).bmp.
+	  - Updated generation of compiled/coverage.txt to cover all glyphs
+	    in Unifont, extending beyone Plane 0 and including the ConScript
+	    Unicode Registry (CSUR) Private Use Area glyphs.
+	* font/coverage.dat:
+	  - Updated for Unicode 11.0.0 and included unassigned ranges (Savannah
+	    bug 54163).
+	  - Uncommented previously commented-out lines above Plane 0 for
+	    new version of unicoverage to use.
+	  - Added ConScript Unicode Registry (CSUR) scripts and Under CSUR
+	    (UCSUR) script, removing the previous entry "E000-F8FF Private
+	    Use Area" to show completion status of those scripts.
+	* font/compiled/coverage.txt: Now contains counts of all scripts
+	  drawn in Unifont, including glyphs in Plane 1, Plane 14, and
+	  ConScript Unicode Registry (CSUR) glyphs in Planes 0 and 15 using
+	  the revised font/coverage.dat file.
+	* font/plane00/plane00-nonprinting.hex:
+	  - Paul Hardy redrew the 'S' in U+180E, U+FE00..U+FE0F, and U+FFFA
+	    to be more consistent with each other (Savannah bug 54177).
+	* font/plane00/unifont-base.hex:
+	  - Addressed Unicode 11.0.0 errata in glyphs U+1CF5 & U+1CF6 (Savannah
+	    bug 54113).
+	  - U+0590..U+05FF Hebrew - repositioned cantillation marks.
+	  - U+140A corrected; it was flipped horizontally (Savannah bug 54119).
+	  - U+1BFF moved to the left a few columns (Savannah bug 54207).
+	  - Changes for relative sizes of mathematical geometrical shapes
+	    to better align with Unicode Technical Report 25 (Savannah bug
+	    51971):
+	    + U+00B7 left as is, because of its common use in non-mathematical
+	      contexts.
+	    + U+2981 changed from 4 by 4 to 6 by 6
+	    + U+25FE changed from 4 by 4 to 5 by 5
+	    + Vertical positioning of U+25A0, U+25AA, U+25FC, U+25FE, adjusted.
+	    + Used U+25EF and U+2B24 from David Corbett.
+	  - Removed extra vertical line from U+1C90 (Savannah bug 54085).
+	  - Added most changes contributed by David Corbett for mathematical
+	    characters as reported in Savannah bug 51995.
+	* font/plane00csur/plane00csur-nonprinting.hex: Created this file for
+	  accurate script completion counts with unicoverage program.
+	* font/plane00csur/plane00csur-unassigned.hex: Added this file, which
+	  is empty for now.
+	* font/plane00csur/space.hex: removed file, because the CSUR fonts
+	  already include the baseline Plane 0 Unifont glyphs including U+0020.
+	* font/plane01/plane01.hex:
+	  - Modified U+108AC and U+108AD, as per David Corbett (Savannah
+	    bug 51870).
+	  - Addressed Unicode 11.0.0 errata in glyphs U+1105D & U+1105E
+	    (Savannah bug 54113).
+	  - Touched up Sharada U+111BB glyph.
+	  - Adjusted vertical positioning of three Old Sogdian letters
+	    (Savannah bug 54145) and Gunjala Gondi digit seven (Savannah
+	    bug 54149).
+	  - Adjusted Dogra glyphs (U+11800..U+1183B) (Savannah bug 54133).
+	  - U+1B000..U+1B0FF (Kana Supplement) - Paul Hardy added glyphs as
+	    copies of original CJK glyphs as placeholders until better
+	    replacements exist for the entire block.
+	  - Modified U+1E947 from Johnnie Weaver (Savannah bug 54215).
+	* font/plane01-combining.txt:
+	  - Changed Khudawadi U+112E1 offset from -8 to -16 (Savannah bug
+	    54172).
+	  - Changed offsets of combining characters in Hanifi Rohingya and
+	    Sogdian to 0, because they are right-to-left scripts (Savannah
+	    bug 54125).
+	  - Added Dogra vowel U+11832 (omitted in initial release) (Savannah
+	    bug 54133).
+	  - Added David Corbett's Sutton SignWriting glyphs (U+1D800..U+1DAAF).
+	  - Changed offset of combining glyphs in Makasar (U+11EF3..U+11EF6)
+	    from -8 to -16 (Savannah bug 54134).
+	* font/plane0E/plane0E-nonprinting.hex: Added placeholder glyphs for
+	  U+E0000, U+E0002..U+E001F.
+	* font/plane0Fcsur/plane0Fcsur-nonprinting.hex: Created this file for
+	  accurate script completion counts with unicoverage program.
+	* man/unicoverage.1: Updated to reflect new ability to handle
+	  all of Unicode, not just Plane 0.  Also updated doc/unicoverate.texi.
+	* src/hexkinya: fixed comments; made script executable (Savannah bug
+	  54377).
+	* src/unibmp2hex.c:
+	  - Added Dogra (U+11800..U+1184F) as double width.
+	  - Added Makasar (U+11EE0..U+11EFF) as dobule width.
+	* src/unicoverage.c: Added support for coverage checking beyond
+	  Unicode Plane 0.
+	* src/unifont-viewer: added GPL 2 license header
+	* src/unihexfill: added GPL 2 license header
+	* src/unipagecount.c: Changed "Private Use" to "Private Use Area"
+	  in output HTML table.
 2018-06-05 Paul Hardy <unifoundry@unifoundry.com>
 	* Version: 11.0.01
 	* Contains the Copyleft glyph added in Unicode 11.0 (U+01F12F)

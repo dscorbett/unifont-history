@@ -29,6 +29,11 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/*
+   2018, Paul Hardy: Changed "Private Use" to "Private Use Area" in
+   output HTML file.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -185,14 +190,14 @@ mkftable (unsigned plane, int pagecount[256], int links)
          else if (i == 0xe) {
             if (j == 0x0) {
                printf ("    <td align=\"center\" colspan=\"16\" bgcolor=\"#cccccc\">");
-               printf ("<b>Private Use</b>");
+               printf ("<b>Private Use Area</b>");
                printf ("</td>\n");
             }  /* otherwise don't print any more columns in this row */
          }
          else if (i == 0xf) {
             if (j == 0x0) {
                printf ("    <td align=\"center\" colspan=\"9\" bgcolor=\"#cccccc\">");
-               printf ("<b>Private Use</b>");
+               printf ("<b>Private Use Area</b>");
                printf ("</td>\n");
             }
          }
