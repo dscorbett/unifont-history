@@ -1,3 +1,12 @@
+2018-12-08: Release 11.0.03
+   This release contains two significant contributions in the Unicode
+   Supplementary Multilingual Plane (Plane 1):
+
+     - Nushu glyphs (U+16FE1 and U+1B170..U+1B2FB) from David Corbett.
+
+     - Kana Supplement glyphs (U+1B000..U+1B0FF) and Kana Extended-A
+       glyphs (U+1B100..U+1B12F) from Johnnie Weaver.
+
 2018-08-10: Release 11.0.02
    Adds Sutton SignWriting glyphs.  Miscellaneous patches to other glyphs.
 

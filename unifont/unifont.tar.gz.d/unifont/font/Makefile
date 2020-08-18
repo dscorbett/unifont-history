@@ -16,7 +16,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 #
-VERSION = 11.0.02
+VERSION = 11.0.03
 
 COPYRIGHT = "Copyright (C) 1998-2018 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, et al. \
@@ -405,7 +405,7 @@ bigpic: hex
 	   $(BINDIR)/unifontpic -d120 > $(COMPILED_DIR)/unifont-$(VERSION).bmp
 	$(BINDIR)/unifontpic -d120 -P1 \
 	   < $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
-	   > $(COMPILED_DIR)/unifont_upper-$(VERSION).bmp
+	   > $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp
 
 #
 # Note that $(TTFSRC) must exist, because it contains some source files
@@ -509,6 +509,7 @@ precompiled: all
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/coverage.txt \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).bmp \
+	                  $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp \
 	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \

@@ -1,3 +1,21 @@
+2018-12-08 Paul Hardy <unifoundry@unifoundry.com>
+	* Version 11.0.03
+	* font/Makefile:
+	  - Change name of unifont_upper BMP image to unifont_plane1.
+	  - Add unifont_plane1 BMP image to precompiled directory.
+	* font/plane00/unifont-base.hex:
+	  - Johnnie Weaver modified U+20AA (New Sheqel Sign).
+	  - Paul Hardy: Superscripts - lowered U+00B9 by one pixel;
+	    shortened U+1DBB by two rows.
+	* font/plane01/plane01.hex:
+	  - Johnnie Weaver contributed Kana Supplement glyphs,
+	    U+1B000..U+1B0FF, and Kana Extended-A glyphs, U+1B100..U+1B12F.
+	  - David Corbett contributed Nushu glyphs: U+16FE1 and
+	    U+1B170..U+1B2FB).
+	  - Johnnie Weaver lowered Warang Citi glyph U+118DA by two rows.
+	  - Paul Hardy horizontally flipped U+1F4DE to match code chart
+	    (phone handset).
+
 2018-08-10 Paul Hardy <unifoundry@unifoundry.com>
 	* Version: 11.0.02
 	* Makefile:
@@ -97,6 +115,7 @@
 	* src/unihexfill: added GPL 2 license header
 	* src/unipagecount.c: Changed "Private Use" to "Private Use Area"
 	  in output HTML table.
+
 2018-06-05 Paul Hardy <unifoundry@unifoundry.com>
 	* Version: 11.0.01
 	* Contains the Copyleft glyph added in Unicode 11.0 (U+01F12F)
