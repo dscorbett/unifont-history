@@ -1,3 +1,11 @@
+unifont (1:9.0.03-1) unstable; urgency=medium
+
+  * Unifont 9.0.03 release.
+  * Added 3 CSUR scripts, notably Pikto in Plane 15.
+  * Other changes as noted in the ChangeLog file.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Sun, 28 Aug 2016 23:43:17 -0700
+
 unifont (1:9.0.02-1) unstable; urgency=medium
 
   * Added 3 CSUR scripts.

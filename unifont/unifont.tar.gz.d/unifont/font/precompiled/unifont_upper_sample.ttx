@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="9.0"/>
-    <checkSumAdjustment value="0x5018122a"/>
+    <checkSumAdjustment value="0x936f0ea7"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1000"/>
-    <created value="Sat Aug 27 16:05:00 2016"/>
-    <modified value="Sat Aug 27 16:05:00 2016"/>
+    <created value="Fri Oct 21 12:01:30 2016"/>
+    <modified value="Fri Oct 21 12:01:30 2016"/>
     <xMin value="33"/>
     <yMin value="-200"/>
     <xMax value="298"/>
@@ -125,13 +125,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper Sample Medium : 27-8-2016
+      FontForge 2.0 : Unifont Upper Sample Medium : 21-10-2016
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 9.0.02 
+      Version 9.0.03 
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperSampleMedium
@@ -146,13 +146,13 @@
       Medium
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper Sample Medium : 27-8-2016
+      FontForge 2.0 : Unifont Upper Sample Medium : 21-10-2016
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper Sample Medium
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 9.0.02 
+      Version 9.0.03 
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperSampleMedium
@@ -8831,7 +8831,7 @@
       20474e55 20466f6e 7420456d 62656464
       696e6720 45786365 7074696f 6e2e0046
       4f4e545f 56455253 494f4e00 392e302e
-      30320046 4f4e545f 54595045 00426974
+      30330046 4f4e545f 54595045 00426974
       6d617000 464f554e 44525900 474e5500
       46414d49 4c595f4e 414d4500 556e6966
       6f6e7420 55707065 72205361 6d706c65
@@ -79762,8 +79762,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sat Aug 27 16:05:00 2016"/>
-    <sourceModified value="Sat Aug 27 16:05:00 2016"/>
+    <sourceCreated value="Fri Oct 21 12:01:29 2016"/>
+    <sourceModified value="Fri Oct 21 12:01:29 2016"/>
   </FFTM>
 
 </ttFont>
