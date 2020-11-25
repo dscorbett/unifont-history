@@ -18,13 +18,13 @@
 if [ $# -ne 1 ]
 then
     echo "Usage: $0 UNIFONT_VERSION" >&2
-    return 1
+    exit 1
 fi
 
 if ! which -s ttx
 then
     echo "ttx not found" >&2
-    return 1
+    exit 1
 fi
 
 SED=gsed
