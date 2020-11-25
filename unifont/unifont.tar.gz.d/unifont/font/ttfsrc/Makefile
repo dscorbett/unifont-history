@@ -32,7 +32,7 @@ COPYRIGHT = "Copyright © 1998-2020 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Rebecca Bettencourt, et al."
 
-VERSION = 13.0.03
+VERSION = 13.0.04
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex
@@ -82,8 +82,8 @@ outline: $(FONTFILE).hex $(BINDIR)/hex2sfd
 	    SetTTFName($(TTF_LANG),  2, "Regular"); \
 	    SetTTFName($(TTF_LANG),  5, "Version $(VERSION)"); \
 	    SetTTFName($(TTF_LANG), 11, "https://unifoundry.com/unifont/"); \
-	    SetTTFName($(TTF_LANG), 13, "License GPLv2+: GNU GPL version 2 or later with the GNU Font Embedding Exception."); \
-	    SetTTFName($(TTF_LANG), 14, "<http://gnu.org/licenses/gpl.html>"); \
+	    SetTTFName($(TTF_LANG), 13, "Dual license: SIL Open Font License version 1.1, and GNU GPL version 2 or later with the GNU Font Embedding Exception."); \
+	    SetTTFName($(TTF_LANG), 14, "http://gnu.org/licenses/gpl.html"); \
 	    SelectAll(); \
 	    RemoveOverlap(); \
 	    Simplify(64,1); \

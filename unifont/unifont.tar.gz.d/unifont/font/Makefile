@@ -15,13 +15,15 @@ SHELL = /bin/sh
 INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
+PERL = 
 #
-VERSION = 13.0.03
+VERSION = 13.0.04
 
 COPYRIGHT = "Copyright (C) 1998-2020 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Rebecca Bettencourt, et al. \
-License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
+License: SIL Open Font License version 1.1 and GPLv2+: \
+GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
 
 #
@@ -324,7 +326,7 @@ png: hex $(BINDIR)/unihex2png
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      $(BINDIR)/unihex2png -p 00$$i$$j \
+	      $(PERL) $(BINDIR)/unihex2png -p 00$$i$$j \
 	         -i $(COMPILED_DIR)/unifont_sample-$(VERSION).hex \
 	         -o $(PNGDIR)/plane00/uni00$$i$$j.png ; \
 	   done ; \
@@ -334,7 +336,7 @@ png: hex $(BINDIR)/unihex2png
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      $(BINDIR)/unihex2png -p 00$$i$$j \
+	      $(PERL) $(BINDIR)/unihex2png -p 00$$i$$j \
 	         -i $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex \
 	         -o $(PNGDIR)/plane00-jp/uni00$$i$$j-jp.png ; \
 	   done ; \
@@ -344,7 +346,7 @@ png: hex $(BINDIR)/unihex2png
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      $(BINDIR)/unihex2png -p 01$$i$$j \
+	      $(PERL) $(BINDIR)/unihex2png -p 01$$i$$j \
 	         -i $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	         -o $(PNGDIR)/plane01/uni01$$i$$j.png ; \
 	   done ; \
@@ -354,7 +356,7 @@ png: hex $(BINDIR)/unihex2png
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      $(BINDIR)/unihex2png -p 02$$i$$j \
+	      $(PERL) $(BINDIR)/unihex2png -p 02$$i$$j \
 	         -i $(PLANE_2_HEX) \
 	         -o $(PNGDIR)/plane02-jp/uni02$$i$$j-jp.png ; \
 	   done ; \
@@ -364,7 +366,7 @@ png: hex $(BINDIR)/unihex2png
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      $(BINDIR)/unihex2png -p 0E$$i$$j \
+	      $(PERL) $(BINDIR)/unihex2png -p 0E$$i$$j \
 	         -i $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	         -o $(PNGDIR)/plane0E/uni0E$$i$$j.png ; \
 	   done ; \
@@ -374,13 +376,13 @@ png: hex $(BINDIR)/unihex2png
 	fi
 	for i in E0 E1 E2 E3 E4 E5 E6 E7 E8 E9 EA EB EC ED EE EF \
 	         F0 F1 F2 F3 F4 F5 F6 F7 F8 ; do \
-	      $(BINDIR)/unihex2png -p 00$$i \
+	      $(PERL) $(BINDIR)/unihex2png -p 00$$i \
 	         -i $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex \
 	         -o $(PNGDIR)/csur/uni00$$i.png ; \
 	done
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      $(BINDIR)/unihex2png -p 0F$$i$$j \
+	      $(PERL) $(BINDIR)/unihex2png -p 0F$$i$$j \
 	         -i $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex \
 	         -o $(PNGDIR)/csur/uni0F$$i$$j.png ; \
 	   done ; \

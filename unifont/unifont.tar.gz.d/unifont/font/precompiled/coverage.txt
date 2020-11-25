@@ -395,7 +395,7 @@ Covered      Range       Script
 
  100.0%  U+EAA0..U+EAFF  PUA (CSUR/UCSUR): Wanya
 
- 200.0%  U+ED00..U+ED3F  PUA (CSUR/UCSUR): Deini
+ 450.0%  U+ED00..U+ED3F  PUA (CSUR/UCSUR): Deini
 
  210.4%  U+F8A0..U+F8CF  PUA (CSUR/UCSUR): Aiha
 

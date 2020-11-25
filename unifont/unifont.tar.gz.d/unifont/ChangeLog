@@ -1,3 +1,76 @@
+2020-11-21  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 13.0.04
+	* COPYING: added SIL Open Font License version 1.1 for dual-
+	  licensing of glyphs.  Thanks to all contributors (including
+	  Unifont's creator, Roman Czyborra), who agreed to the dual
+	  font licensing for Unifont under the SIL OFL 1.1 and the
+	  GNU GPL 2+ with GNU Font Embedding Exception.
+	* OFL-1.1.txt: added SIL Open Font License version 1.1 text file.
+	* font/Makefile:
+	  - Added PERL variable for using unihex2png with an alternate
+	    Perl installation specified on the command line as
+	    "PERL=/alternate/perl/binary" for experimentation with
+	    an alternate GD library.  Not specifying a value for PERL
+	    (the default) runs unihex2png as it has in previous builds.
+	  - Added mention of SIL OFL 1.1 for dual-licensing of font.
+	* font/plane00/unifont-base.hex:
+	  - David Corbett provided updates for U+08AD, U+1467, U+1468,
+	    U+1D24, U+23B7, U+2E49, U+A789, U+FBD9, U+FBDA, and FC05 (Savannah
+	    Bugs 58787, 58839, 58843, 58882, 58967, 59046, and 59175).
+	  - Numerous changes to re-align glyphs vertically for improved
+	    line drawing, as described in the remainder of this seciton
+	    (Savannah service request 110281).
+	  - Paul Hardy modified the Arrows range (U+2190..U+21FF) to
+	    align dominant middle horizontal lines on row 7, counting
+	    from the bottom.
+	  - Paul Hardy modified the Mathematical Operators range
+	    (U+2200..U+22FF) as follows:
+	    o Aligned dominant middle horizontal lines on row 7, counting
+	      from the bottom, but leaving U+2218 (the APL "jot" operator)
+	      alone so as not to interfere with APL glyph alignment.
+	    o Changed slashes for symbol negation from horizontal lines
+	      to slanted lines.
+	  - Paul Hardy modified the Miscellaneous Technical range
+	    (U+2300..U+23FF) as follows:
+	    o For glyphs U+230C..U+2332 and U+2393..U+23FF, aligned the
+	      dominant middle horizontal lines on row 7, counting from
+	      the bottom, except for the APL operators U+2308, U+230A,
+	      U+2336..U+237A, and U+2395 [APL "quad" symbol] unmodified
+	      so as not to interfere with APL glyph alignment, and except
+	      for some User Interface Symbols in the range U+23E9..U+23FA
+	      that would naturally have their bottom row of pixels on the
+	      baseline (which is the third row, counting from the bottom).
+	    o U+23B0 and U+23B1: extend curly bracket glyphs from top
+	      row down to bottom row for combining in either vertical
+	      order with each other.
+	    o U+23DC..U+23E1: adjusted vertically to be nearer to the
+	      top or bottom according to the glyph.
+	    o U+2315 and U+2316: corrected glyphs.
+	  - Paul Hardy modified the Geometric Shapes range (U+25A0..U+25FF)
+	    to align the vertical center at row 7, counting from the
+	    bottom, to allow use in forming arrows:
+	    o U+25B6..U+25BB: adjusted vertical positioning.
+	    o U+25C0..U+25C5: adjusted vertical positioning.
+	    o Note -- the following glyphs can be used in APL character
+	      sets if not substituted for ordinary APL characters and so
+	      were not realigned: U+25AF, U+25CA, U+25CB, and U+25E6.
+	* font/plane00csur:
+	  - Paul Hardy added to plane00csur.hex, unassigned-ranges.txt,
+	    and plane00csur-combining.txt:
+	    o U+EB40..U+EB5F Standard Galactic
+	    o U+EB60..U+EB9F Braille Extended
+	    o U+EBA0..U+EBDF Cistercian Numerals:
+	      - Digits 0-9 are non-combining;
+	      - Digits 10-90, 100-900, and 1000-9000 are combining.
+                A vertical staff for zero, U+EBA0, can be used as
+                the non-combining base for digits higher than 9.
+	* font/plane01/plane01.hex:
+	  - Johnnie Weaver redrew Elbasan (U+10500..U+1052F) and
+	    Caucasian Albanian (U+10530..U+1056F).
+	* font/ttfsrc/Makefile:
+	  - Removed "<>" delimiters from TrueType License URL.
+	  - Added mention of SIL OFL 1.1 for dual-licensing of font.
+
 2020-07-03  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 13.0.03
 	* font/Makefile:

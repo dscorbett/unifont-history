@@ -1,3 +1,25 @@
+2020-11-21: Release 13.0.04
+   * Font glyphs are now dual-licensed under the SIL Open Font
+     License version 1.1, in addition to the GNU GPL version 2+
+     with the GNU Font Embedding Exception.
+   * Many glyphs in these ranges were re-aligned so the dominant
+     horizontal line would be positioned in row 7, counting from
+     the bottom.  Some glyphs were redrawn.
+     - U+2190..U+21FF Arrows
+     - U+2200..U+23FF Mathematical Operators
+     - U+2400..U+24FF Miscellaneous Technical
+     - U+25A0..U+25FF Geometric Shapes
+     - APL operators such as the tacks and jot were not modified,
+       so as not to alter alignments of glyphs that APL superimposes
+       on each other.
+   * U+2200..U+23FF Mathematical Operators: redrew slashes for
+     negated operators from vertical lines to slanted lines.
+   * Added three new Under ConScript Unicode Registry (UCSUR) Scripts:
+     - U+EB40..U+EB5F Standard Galactic
+     - U+EB60..U+EB9F Braille Extended
+     - U+EBA0..U+EBDF Cistercian Numerals
+   * Other changes listed in the ChangeLog file.
+
 2020-07-03: Release 13.0.03
    * Redrawn glyphs for all of Thaana, two updated Tamil glyphs,
      and some Canadian Aboriginal glyphs (David Corbett).
