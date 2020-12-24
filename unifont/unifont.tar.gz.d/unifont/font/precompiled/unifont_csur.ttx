@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.17">
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.18">
 
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="13.0"/>
-    <checkSumAdjustment value="0x3c95ef43"/>
+    <checkSumAdjustment value="0x98e4d9a5"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sat Nov 21 23:56:30 2020"/>
-    <modified value="Sat Nov 21 23:56:30 2020"/>
+    <created value="Thu Dec 24 12:03:05 2020"/>
+    <modified value="Thu Dec 24 12:03:05 2020"/>
     <xMin value="-768"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -65,7 +65,7 @@
     <!-- The fields 'usFirstCharIndex' and 'usLastCharIndex'
          will be recalculated by the compiler -->
     <version value="1"/>
-    <xAvgCharWidth value="690"/>
+    <xAvgCharWidth value="689"/>
     <usWeightClass value="500"/>
     <usWidthClass value="5"/>
     <fsType value="00000000 00000000"/>
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 21-11-2020
+      FontForge 2.0 : Unifont CSUR : 24-12-2020
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 13.0.04
+      Version 13.0.05
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 21-11-2020
+      FontForge 2.0 : Unifont CSUR : 24-12-2020
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 13.0.04
+      Version 13.0.05
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -8463,8 +8463,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sat Nov 21 23:56:18 2020"/>
-    <sourceModified value="Sat Nov 21 23:56:29 2020"/>
+    <sourceCreated value="Thu Dec 24 12:02:53 2020"/>
+    <sourceModified value="Thu Dec 24 12:03:04 2020"/>
   </FFTM>
 
   <GDEF>

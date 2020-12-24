@@ -1,3 +1,15 @@
+2020-12-24  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 13.0.05
+	* font/plane00/unifont-base.hex:
+	  - Raised dentistry symbols U+23C0..U+23CA up one row, as they
+	    were in Unifont 13.0.03, per recommendation of David Corbett
+	    (Savannah Bug 59541).
+	* font/plane00csur/plane00csur.hex:
+	  - U+EB60..U+EB9C (Braille Extended): added missing glyphs.
+	* font/plane01/plane01.hex:
+	  - David Corbett contributed adjusted glyphs for arrow symbols
+	    U+1D9A2..U+1D9A4 and U+1D9DF..U+1D9E1 (Savannah Bug 59629)..
+
 2020-11-21  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 13.0.04
 	* COPYING: added SIL Open Font License version 1.1 for dual-

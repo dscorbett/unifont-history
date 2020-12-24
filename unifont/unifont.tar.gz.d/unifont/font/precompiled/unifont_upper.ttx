@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.17">
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.18">
 
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="13.0"/>
-    <checkSumAdjustment value="0x9a0b7d64"/>
+    <checkSumAdjustment value="0xf16ab244"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sat Nov 21 23:56:44 2020"/>
-    <modified value="Sat Nov 21 23:56:44 2020"/>
+    <created value="Thu Dec 24 12:03:20 2020"/>
+    <modified value="Thu Dec 24 12:03:20 2020"/>
     <xMin value="-1024"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper : 21-11-2020
+      FontForge 2.0 : Unifont Upper : 24-12-2020
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 13.0.04
+      Version 13.0.05
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperMedium
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper : 21-11-2020
+      FontForge 2.0 : Unifont Upper : 24-12-2020
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 13.0.04
+      Version 13.0.05
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperMedium
@@ -12785,8 +12785,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sat Nov 21 23:56:33 2020"/>
-    <sourceModified value="Sat Nov 21 23:56:43 2020"/>
+    <sourceCreated value="Thu Dec 24 12:03:08 2020"/>
+    <sourceModified value="Thu Dec 24 12:03:19 2020"/>
   </FFTM>
 
   <GDEF>

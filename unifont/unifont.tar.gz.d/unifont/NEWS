@@ -1,3 +1,7 @@
+2020-12-24: Release 13.0.05
+   * U+EB60..U+EB9F (Braille Extended): added missing UCSUR glyphs.
+   * Adjustments of several other glyphs; details in ChangeLog file.
+
 2020-11-21: Release 13.0.04
    * Font glyphs are now dual-licensed under the SIL Open Font
      License version 1.1, in addition to the GNU GPL version 2+
