@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.18">
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.19">
 
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="13.0"/>
-    <checkSumAdjustment value="0xf16ab244"/>
+    <checkSumAdjustment value="0xc9523df"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Thu Dec 24 12:03:20 2020"/>
-    <modified value="Thu Dec 24 12:03:20 2020"/>
+    <created value="Sat Feb 13 12:07:26 2021"/>
+    <modified value="Sat Feb 13 12:07:26 2021"/>
     <xMin value="-1024"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -111,7 +111,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright © 1998-2020 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Rebecca Bettencourt, et al.
+      Copyright © 1998-2021 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper : 24-12-2020
+      FontForge 2.0 : Unifont Upper : 13-2-2021
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 13.0.05
+      Version 13.0.06
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperMedium
@@ -141,7 +141,7 @@
       http://gnu.org/licenses/gpl.html
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright © 1998-2020 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Rebecca Bettencourt, et al.
+      Copyright © 1998-2021 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper : 24-12-2020
+      FontForge 2.0 : Unifont Upper : 13-2-2021
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 13.0.05
+      Version 13.0.06
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperMedium
@@ -12785,8 +12785,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Thu Dec 24 12:03:08 2020"/>
-    <sourceModified value="Thu Dec 24 12:03:19 2020"/>
+    <sourceCreated value="Sat Feb 13 12:07:15 2021"/>
+    <sourceModified value="Sat Feb 13 12:07:25 2021"/>
   </FFTM>
 
   <GDEF>

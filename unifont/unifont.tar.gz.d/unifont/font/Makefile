@@ -17,11 +17,11 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 13.0.05
+VERSION = 13.0.06
 
-COPYRIGHT = "Copyright (C) 1998-2020 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2021 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Rebecca Bettencourt, et al. \
+Nils Moskopp, Rebecca Bettencourt, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \
 GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
@@ -511,8 +511,11 @@ bmp: hex $(BINDIR)/unihex2bmp
 # files rather than the main unifont font files.
 #
 bigpic: hex
-	cat $(HEXDIR)/*.hex plane00csur/*.hex | \
-	   $(BINDIR)/unifontpic -d120 > $(COMPILED_DIR)/unifont-$(VERSION).bmp
+	cat $(COMPILED_DIR)/unifont_sample-$(VERSION).hex \
+	    $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex | \
+	    grep -v "^01F12F" | \
+	    $(BINDIR)/unifontpic -d120 \
+	       > $(COMPILED_DIR)/unifont-$(VERSION).bmp
 	$(BINDIR)/unifontpic -d120 -P1 \
 	   < $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	   > $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp

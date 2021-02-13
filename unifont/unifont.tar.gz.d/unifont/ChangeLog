@@ -1,3 +1,13 @@
+2021-02-13  Paul Hardy <unifoundry@unifoundry.com>
+	* 210205_Unifoundry_Memorandum.pdf: added legal memorandum.
+	* font/Makefile:
+	  - Updated copyright for 2021.
+	  - Changed unifontpic input to Unifont sample set glyphs.
+	* font/plane00csur/
+	  - plane00csur-spaces.hex: Added U+0020 space glyph.
+	  - plane00csur.hex: Fixed U+EB63 (Savannah bug 59763).
+	* font/ttfsrc/Makefile: updated copyright for 2021.
+
 2020-12-24  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 13.0.05
 	* font/plane00/unifont-base.hex:

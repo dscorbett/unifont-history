@@ -1,3 +1,7 @@
+2021-02-13: Release 13.0.06
+   * Minor glyph fixes.
+   * Added 210205_Unifoundry_Memorandum.pdf legal memorandum.
+
 2020-12-24: Release 13.0.05
    * U+EB60..U+EB9F (Braille Extended): added missing UCSUR glyphs.
    * Adjustments of several other glyphs; details in ChangeLog file.

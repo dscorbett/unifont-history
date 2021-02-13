@@ -1,7 +1,7 @@
 Covered      Range       Script
 -------      -----       ------
 
- 100.0%  U+0000..U+007F  C0 Controls and Basic Latin
+ 100.8%  U+0000..U+007F  C0 Controls and Basic Latin
 
  100.0%  U+0080..U+00FF  C1 Controls and Latin-1 Supplement
 
