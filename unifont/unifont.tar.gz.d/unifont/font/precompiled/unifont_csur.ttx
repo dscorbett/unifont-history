@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.19">
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.29">
 
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
-    <fontRevision value="13.0"/>
-    <checkSumAdjustment value="0xa0e9799a"/>
+    <fontRevision value="14.0"/>
+    <checkSumAdjustment value="0x940de8a4"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sat Feb 13 12:07:12 2021"/>
-    <modified value="Sat Feb 13 12:07:12 2021"/>
+    <created value="Tue Sep 14 14:33:52 2021"/>
+    <modified value="Tue Sep 14 14:33:52 2021"/>
     <xMin value="-768"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 13-2-2021
+      FontForge 2.0 : Unifont CSUR : 14-9-2021
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 13.0.06
+      Version 14.0.01
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 13-2-2021
+      FontForge 2.0 : Unifont CSUR : 14-9-2021
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 13.0.06
+      Version 14.0.01
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -8464,13 +8464,13 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sat Feb 13 12:07:01 2021"/>
-    <sourceModified value="Sat Feb 13 12:07:11 2021"/>
+    <sourceCreated value="Tue Sep 14 14:33:40 2021"/>
+    <sourceModified value="Tue Sep 14 14:33:51 2021"/>
   </FFTM>
 
   <GDEF>
     <Version value="0x00010000"/>
-    <GlyphClassDef Format="2">
+    <GlyphClassDef>
       <ClassDef glyph=".null" class="1"/>
       <ClassDef glyph="nonmarkingreturn" class="1"/>
       <ClassDef glyph="uni000020" class="1"/>
@@ -16735,7 +16735,7 @@
       <ClassDef glyph="uni0F16AF" class="1"/>
     </GlyphClassDef>
     <LigCaretList>
-      <Coverage Format="2">
+      <Coverage>
       </Coverage>
       <!-- LigGlyphCount=0 -->
     </LigCaretList>
