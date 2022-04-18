@@ -123,7 +123,7 @@ main (int argc, char *argv[])
    else {  /* Otherwise, print plain text table */
       if (plane > 0) fprintf (stdout, "  ");
       fprintf (stdout,
-         "   0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F\n");
+         "     0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F\n");
       for (i=0; i<0x10; i++) {
          fprintf (stdout,"%02X%X ", plane, i); /* row header */
          for (j=0; j<0x10; j++) {

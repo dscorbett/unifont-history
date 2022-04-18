@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="14.0"/>
-    <checkSumAdjustment value="0xe31d2889"/>
+    <checkSumAdjustment value="0xdca95cbe"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000010 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Tue Sep 14 14:34:07 2021"/>
-    <modified value="Tue Sep 14 14:34:07 2021"/>
+    <created value="Sun Mar  6 22:18:37 2022"/>
+    <modified value="Sun Mar  6 22:18:37 2022"/>
     <xMin value="-1024"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont Upper : 14-9-2021
+      FontForge 2.0 : Unifont Upper : 6-3-2022
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 14.0.01
+      Version 14.0.02
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontUpperMedium
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont Upper : 14-9-2021
+      FontForge 2.0 : Unifont Upper : 6-3-2022
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Upper
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 14.0.01
+      Version 14.0.02
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontUpperMedium
@@ -13488,8 +13488,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Tue Sep 14 14:33:54 2021"/>
-    <sourceModified value="Tue Sep 14 14:34:05 2021"/>
+    <sourceCreated value="Sun Mar  6 22:18:26 2022"/>
+    <sourceModified value="Sun Mar  6 22:18:36 2022"/>
   </FFTM>
 
   <GDEF>

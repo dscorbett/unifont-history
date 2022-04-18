@@ -17,7 +17,7 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 14.0.01
+VERSION = 14.0.02
 
 COPYRIGHT = "Copyright (C) 1998-2021 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
@@ -516,6 +516,11 @@ bigpic: hex
 	    grep -v "^01F12F" | \
 	    $(BINDIR)/unifontpic -d120 \
 	       > $(COMPILED_DIR)/unifont-$(VERSION).bmp
+	cat $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex \
+	    $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex | \
+	    grep -v "^01F12F" | \
+	    $(BINDIR)/unifontpic -d120 \
+	       > $(COMPILED_DIR)/unifont_jp-$(VERSION).bmp
 	$(BINDIR)/unifontpic -d120 -P1 \
 	   < $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	   > $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp
@@ -642,6 +647,7 @@ precompiled: all
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/coverage.txt \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).bmp \
+	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).bmp \
 	                  $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp \
 	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).ttf \

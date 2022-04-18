@@ -1,4 +1,61 @@
+2022-03-06  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 14.0.02.
+	* font/Makefile: added creation of unifont_jp-14.0.02.bmp.
+	* font/plane00/unifont-base.hex:
+	  - Modified glyphs U+017F, U+A7D6, and U+A7D7 to have similar shapes.
+	  - David Corbett contributed these modified Hebrew glyphs:
+	    U+05BA, U+05EF, U+05F3, U+05F4, U+FB21, U+FB22, U+FB23,
+	    U+FB24, U+FB25, U+FB26, U+FB27, U+FB28, U+FB2E, U+FB4C,
+	    U+FB4D, and U+FB4E.
+	  - Johnnie Weaver modified Cherokee letter Quo (Ꮙ, ꮙ)
+	    (U+13C9, U+AB99) so that it less-closely resembles
+            Cherokee letter Tse (Ꮴ, ꮴ) (U+13E4, U+ABB4).
+	  - Modified Tagalog glyph U+1705 and changed U+1707 to resemble
+	    the new U+170D glyph.
+	  - Modified U+203A to be symmetrical to U+2039 (Savannah bug 62108).
+	  - Lowered U+20A0 (Won sign) by one row.
+	  - Modified U+25E2..U+25E5 so glyphs extend to far corners for
+	    Teletext rendering, and modified U+25F8..U+25FF to match
+	    the enlarged outlines of U+25E2..U+25E5 for compatibility
+	    in non-Teletext use.
+	  - Corrected U+29A2 angle direction (Savannah bug 61260).
+	  - Modified Supplemental Punctuation code points U+2E55..U+2E5C.
+	  - Johnnie Weaver modified Latin Extended-E DZ and TS digraphs
+	    with retroflex hooks (U+AB66 and U+AB67) so that they match up
+	    with their counterparts (U+02A3 and U+02A6, respectively).
+	  - Modified U+FB01 to look like a more traditional "fi" ligature.
+	* font/plane01/noscript-ranges.txt:
+	  - Removed U+1AFF0..U+1AFFF for Kana Extended-B (Savannah bug 61181).
+	* font/plane01/plane01.hex:
+	  - Modified Cypro-Minoan glyph U+12FDB (reported by David Corbett).
+	  - Adjusted several Brahmi glyphs (U+11000..U+1107F).
+	  - David Corbett modified Miao glyphs U+16F50, U+16F51, U+16F52,
+	    U+16F53, U+16F87, U+16F8F, U+16F90, U+16F91, and U+16F92.
+	  - Modified Znamenny glyphs (U+1CF00..U+1CF09).
+	  - Modified U+1FB3C..U+1FB6F for better Teletext rendering.
+	    Glyphs extend to far corners, 1/2-width guideline, and
+	    at least to 1/3-height and 2/3-height guidelines matching
+	    Block Sextant (U+1FB00..U+1FB3B) guidelines.  Some overlap
+	    between paired glyphs exists so that:
+	      o Adjacent glyphs with slope greater than 1 never shift
+	        2 pixels at once along the x-axis, and
+	      o Adjacent glyphs with slope less than 1 never shift
+	        2 pixels at once along the y-axis.
+	    The aspect ratios between Unifont and Teletext differ and
+	    Unifont glyphs cannot be divided vertically into exact thirds,
+	    so any result is a matter of balancing tradeoffs.  Thanks to
+	    Rebecca Bettencourt for her feedback and insight on this, and
+	    for the part she played in helping to get these code points
+	    into Unicode.
+	* font/plane01/plane01-combining.txt:
+	  - Patched widths for Old Uyghur glyphs U+10F82, U+10F83, U+10F84,
+	    and U+10F85 to have offsets of 0 (Reported by David Corbett).
+	  - Patched widths for Brahmi glyphs U+11070, U+11073, U+11074,
+	    and U+1107F to have offsets of -16 (reported by David Corbett).
+	* src/unipagecount.c: moved top row labels 2 spaces to the right.
+
 2021-09-14  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 14.0.01.
 	* font/plane00/plane00-combining.txt: Updated for Unicode 14.0.0.
 	* font/plane00/plane00-nonprinting.hex: Updated for Unicode 14.0.0.
 	* font/plane00/unifont-base.hex:
@@ -71,6 +128,7 @@
 	* font/plane01/unassigned-ranges.txt: Updated for Unicode 14.0.0.
 
 2021-02-13  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 13.0.06
 	* 210205_Unifoundry_Memorandum.pdf: added legal memorandum.
 	* font/Makefile:
 	  - Updated copyright for 2021.
