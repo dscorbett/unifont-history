@@ -17,9 +17,9 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 14.0.02
+VERSION = 14.0.03
 
-COPYRIGHT = "Copyright (C) 1998-2021 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \
@@ -551,6 +551,8 @@ ttf: hex
 	mv $(TTFSRC)/unifont.sfd $(COMPILED_DIR)/unifont-$(VERSION).sfd 
 	mv $(TTFSRC)/unifont.ttf \
 		$(COMPILED_DIR)/unifont-$(VERSION).ttf 
+	mv $(TTFSRC)/unifont.otf \
+		$(COMPILED_DIR)/unifont-$(VERSION).otf 
 	# Second, copy unifont_sample.bdf, to make an SBIT font.
 	install -p \
 		$(COMPILED_DIR)/unifont_sample-$(VERSION).bdf \
@@ -566,13 +568,15 @@ ttf: hex
 		> $(TTFSRC)/unifont_jp.hex
 	install -p \
 		$(HEXDIR)/plane00-combining.txt \
-		$(TTFSRC)/combining.txt
+		$(TTFSRC)/combining-jp.txt
 	cd $(TTFSRC) && \
-	   $(MAKE) FONTFILE="unifont_jp" COMBINING="combining" \
+	   $(MAKE) FONTFILE="unifont_jp" COMBINING="combining-jp" \
 		FONTNAME="Unifont-JP" PSNAME="Unifont-JP"
 	mv $(TTFSRC)/unifont_jp.sfd $(COMPILED_DIR)/unifont_jp-$(VERSION).sfd 
 	mv $(TTFSRC)/unifont_jp.ttf \
 		$(COMPILED_DIR)/unifont_jp-$(VERSION).ttf 
+	mv $(TTFSRC)/unifont_jp.otf \
+		$(COMPILED_DIR)/unifont_jp-$(VERSION).otf 
 
 #
 # Now build the ConScript Unicode Registry PUA font.
@@ -586,12 +590,14 @@ csurttf: hex
 	sort -u plane0[1-F]csur/plane0[1-F]csur-combining.txt \
 		>> $(TTFSRC)/combining_csur.txt
 	cd $(TTFSRC) && \
-	   $(MAKE) outline FONTFILE="unifont_csur" COMBINING="combining_csur" \
+	   $(MAKE) FONTFILE="unifont_csur" COMBINING="combining_csur" \
 		FONTNAME="Unifont CSUR" PSNAME="UnifontCSUR"
 	mv $(TTFSRC)/unifont_csur.sfd \
 		$(COMPILED_DIR)/unifont_csur-$(VERSION).sfd 
 	mv $(TTFSRC)/unifont_csur.ttf \
 		$(COMPILED_DIR)/unifont_csur-$(VERSION).ttf 
+	mv $(TTFSRC)/unifont_csur.otf \
+		$(COMPILED_DIR)/unifont_csur-$(VERSION).otf 
 	gzip $(GZFLAGS) $(COMPILED_DIR)/unifont_csur-$(VERSION).sfd 
 
 #
@@ -604,12 +610,14 @@ upperttf: hex
 		$(TTFSRC)/unifont_upper.hex
 	sort -u $(UPPER_COMBINING) > $(TTFSRC)/combining_upper.txt
 	cd $(TTFSRC) && \
-	   $(MAKE) outline FONTFILE="unifont_upper" COMBINING="combining_upper" \
+	   $(MAKE) FONTFILE="unifont_upper" COMBINING="combining_upper" \
 		FONTNAME="Unifont Upper" PSNAME="UnifontUpper"
 	mv $(TTFSRC)/unifont_upper.sfd \
 		$(COMPILED_DIR)/unifont_upper-$(VERSION).sfd 
 	mv $(TTFSRC)/unifont_upper.ttf \
 		$(COMPILED_DIR)/unifont_upper-$(VERSION).ttf 
+	mv $(TTFSRC)/unifont_upper.otf \
+		$(COMPILED_DIR)/unifont_upper-$(VERSION).otf 
 	gzip $(GZFLAGS) $(COMPILED_DIR)/unifont_upper-$(VERSION).sfd 
 	# Second, copy unifont_upper_sample.bdf, to make an SBIT font.
 	install -p \
@@ -653,6 +661,7 @@ precompiled: all
 	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).ttf \
+	                  $(COMPILED_DIR)/*.otf \
 	   precompiled
 
 #

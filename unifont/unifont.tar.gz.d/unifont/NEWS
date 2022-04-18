@@ -1,3 +1,14 @@
+2022-04-17: Release 14.0.03
+   * Added new program hex2otf by 何志翔 (He Zhixiang) to produce
+     OpenType Unifont files.
+   * Added several Under ConScript Unicode Registry (UCSUR) scripts:
+     - U+E2D0..U+E2FF    Xaîni
+     - U+E5E0..U+E5FF    Ophidian
+     - U+ED40..U+ED5F    Niji
+     - U+F1900..U+F19FF  Sitelen Pon
+     - U+F1B00..U+F1C3F  Shidinn
+   * Added support for 24-bit RGB .bmp files to unibmp2hex.
+
 2022-03-06: Release 14.0.02
    * Minor glyph fixes.
    * Added creation of unifont_jp-14.0.02.bmp, showing the Japanese

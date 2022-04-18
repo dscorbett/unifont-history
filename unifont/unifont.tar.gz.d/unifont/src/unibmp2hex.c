@@ -8,7 +8,7 @@
    Author: Paul Hardy, unifoundry <at> unifoundry.com, December 2007
    
    
-   Copyright (C) 2007, 2008, 2013, 2017 Paul Hardy
+   Copyright (C) 2007, 2008, 2013, 2017, 2019, 2022 Paul Hardy
 
    LICENSE:
 
@@ -84,6 +84,9 @@
         or bottom to top.
       - Add DEBUG compile flag to print header information, to ease
         adding support for additional bitmap formats in the future.
+
+   13 March 2022 [Paul Hardy]:
+      - Added support for 24 bits per pixel RGB file.
 */
 
 #include <stdio.h>
@@ -481,14 +484,17 @@ main (int argc, char *argv[])
                next_pixels = fgetc (infp);
             }
             /* Read a 32 bit per pixel RGB image; convert to monochrome */
-            else if (bmp_header.bits_per_pixel == 32) {
+            else if ( bmp_header.bits_per_pixel == 24 ||
+                      bmp_header.bits_per_pixel == 32) {
                next_pixels = 0;
                for (k = 0; k < 8; k++) {  /* get next 8 pixels */
                   this_pixel = (fgetc (infp) & 0xFF) +
                                (fgetc (infp) & 0xFF) +
                                (fgetc (infp) & 0xFF);
 
-                  (void) fgetc (infp);  /* ignore alpha value */
+                  if (bmp_header.bits_per_pixel == 32) {
+                     (void) fgetc (infp);  /* ignore alpha value */
+                  }
 
                   /* convert RGB color space to monochrome */
                   if (this_pixel >= (128 * 3))

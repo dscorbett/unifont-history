@@ -321,9 +321,9 @@ Covered      Range       Script
 
   79.2%  U+E2A0..U+E2CF  PUA (CSUR/UCSUR): Amman-Iar
 
-   6.2%  U+E2D0..U+E2DF  PUA (CSUR/UCSUR): Streich
+ 100.0%  U+E2D0..U+E2DF  PUA (CSUR/UCSUR): Streich
 
-  12.5%  U+E2E0..U+E2FF  PUA (CSUR/UCSUR): Xaîni
+ 100.0%  U+E2E0..U+E2FF  PUA (CSUR/UCSUR): Xaîni
 
  100.0%  U+E300..U+E33F  PUA (CSUR/UCSUR): Mizarian
 
@@ -361,7 +361,7 @@ Covered      Range       Script
 
  100.0%  U+E5C0..U+E5DF  PUA (CSUR/UCSUR): Gargoyle
 
-  18.8%  U+E5E0..U+E5FF  PUA (CSUR/UCSUR): Ophidian
+ 100.0%  U+E5E0..U+E5FF  PUA (CSUR/UCSUR): Ophidian
 
    0.0%  U+E600..U+E62F  PUA (CSUR/UCSUR): Ferengi
 
@@ -373,7 +373,7 @@ Covered      Range       Script
 
   33.3%  U+E6D0..U+E6FF  PUA (CSUR/UCSUR): Amlin
 
- 225.0%  U+E740..U+E76F  PUA (CSUR/UCSUR): Unifon
+ 233.3%  U+E740..U+E76F  PUA (CSUR/UCSUR): Unifon
 
  100.0%  U+E770..U+E77F  PUA (CSUR/UCSUR): Solresol
 
@@ -397,7 +397,7 @@ Covered      Range       Script
 
  450.0%  U+ED00..U+ED3F  PUA (CSUR/UCSUR): Deini
 
- 210.4%  U+F8A0..U+F8CF  PUA (CSUR/UCSUR): Aiha
+ 266.7%  U+F8A0..U+F8CF  PUA (CSUR/UCSUR): Aiha
 
  100.0%  U+F8D0..U+F8FF  PUA (CSUR/UCSUR): Klingon
 
@@ -801,5 +801,7 @@ Covered      Range       Script
 
  100.0%  U+F0000..U+F0E6F  PUA (CSUR/UCSUR): Kinya Syllables
 
- 114.3%  U+F0E70..U+F16AF  PUA (CSUR/UCSUR): Pikto
+ 100.0%  U+F0E70..U+F16AF  PUA (CSUR/UCSUR): Pikto
+
+   0.0%  U+F0E70..U+F16AF  PUA (CSUR/UCSUR): Pikto
 

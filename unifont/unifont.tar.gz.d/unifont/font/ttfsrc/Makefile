@@ -13,10 +13,10 @@ FONTFORGE = fontforge
 # PSNAME:    PostScript name of the font inside a TTF file; can't have spaces.
 # COMBINING: Prefix of the file containing a list of combining characters.
 #
-FONTFILE="unifont"
-FONTNAME="Unifont"
-PSNAME="Unifont"
-COMBINING="combining"
+FONTFILE=unifont
+FONTNAME=Unifont
+PSNAME=Unifont
+COMBINING=combining
 
 #
 # Designate language for TrueType text as American English.
@@ -28,11 +28,11 @@ TTF_LANG = 0x409
 # Could also use bash string replacement if you know you're using bash.
 #
 
-COPYRIGHT = "Copyright © 1998-2021 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright © 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, et al."
 
-VERSION = 14.0.02
+VERSION = 14.0.03
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex
@@ -57,7 +57,7 @@ VERSION = 14.0.02
 # a .sfd generated from the whole unifont.hex would be too big to
 # process all at once.
 
-all: outline
+all: ttf otf clean
 
 #
 # Commented out this operation on SFD file because not all applications
@@ -71,7 +71,7 @@ all: outline
 #
 # SetFontNames(fontname[, family[, fullname[, weight[, copyright-notice[, fontversion]]]]])
 #
-outline: $(FONTFILE).hex $(BINDIR)/hex2sfd
+ttf: $(FONTFILE).hex $(BINDIR)/hex2sfd
 	@echo "Converting font as a single file."
 	$(BINDIR)/hex2sfd $(COMBINING).txt < $(FONTFILE).hex > $(FONTFILE).sfd
 	$(FONTFORGE) -lang=ff -c \
@@ -83,7 +83,7 @@ outline: $(FONTFILE).hex $(BINDIR)/hex2sfd
 	    SetTTFName($(TTF_LANG),  5, "Version $(VERSION)"); \
 	    SetTTFName($(TTF_LANG), 11, "https://unifoundry.com/unifont/"); \
 	    SetTTFName($(TTF_LANG), 13, "Dual license: SIL Open Font License version 1.1, and GNU GPL version 2 or later with the GNU Font Embedding Exception."); \
-	    SetTTFName($(TTF_LANG), 14, "http://gnu.org/licenses/gpl.html"); \
+	    SetTTFName($(TTF_LANG), 14, "https://gnu.org/licenses/gpl.html, https://scripts.sil.org/OFL"); \
 	    SelectAll(); \
 	    RemoveOverlap(); \
 	    Simplify(64,1); \
@@ -93,7 +93,6 @@ outline: $(FONTFILE).hex $(BINDIR)/hex2sfd
 	$(FONTFORGE) -lang=ff -c \
 	   'Open($$1); \
 	    Generate($$2)' $(FONTFILE).sfd $(FONTFILE).ttf
-	\rm -f $(FONTFILE).hex $(COMBINING).txt
 
 #
 # This fontforge script reads a BDF font file and generates an SBIT font file.
@@ -128,16 +127,45 @@ sbit: $(FONTFILE).bdf
 	   $(FONTFILE).bdf $(FONTFILE).ttf
 	\rm -f $(FONTFILE).bdf
 
+
+#
+# Set the location of the hex2otf binary executable.
+#
+HEX2OTF = $(BINDIR)/hex2otf
+
+#
+# Create the OpenType font file.  In case $(COMBINING).txt does not
+# exist, touch the filename.  Then run hex2otf.
+#	$(HEX2OTF) hex=$(FONTFILE).hex pos=otf-$(COMBINING).txt \
+#	touch otf-$(COMBINING).txt
+#
+otf: $(FONTFILE).hex $(HEX2OTF)
+	@echo "Creating OpenType font."
+	$(HEX2OTF) \
+	   hex=$(FONTFILE).hex \
+	   pos=$(COMBINING).txt \
+	   format=cff,gpos,gsub \
+	   0=$(COPYRIGHT) \
+	   1="$(FONTNAME)" \
+	   2="Regular" \
+	   3="$(PSNAME)-$(VERSION).otf" \
+	   4="$(FONTNAME)" \
+	   5="Version $(VERSION)" 6="$(PSNAME)" \
+	   11="https://unifoundry.com/unifont/" \
+	   13="Dual license: SIL Open Font License version 1.1, and GNU GPL version 2 or later with the GNU Font Embedding Exception." \
+	   14="https://gnu.org/licenses/gpl.html, https://scripts.sil.org/OFL" \
+	   out=$(FONTFILE).otf
+
 #
 # Delete files copied into this directory to build TTF fonts.
 #
 clean:
-	\rm -f *.bdf *.hex *.txt
+	\rm -f $(FONTFILE).bdf $(FONTFILE).hex $(COMBINING).txt
 
 #
 # Delete files created within this directory while building TTF fonts.
 #
 distclean: clean
-	\rm -f *.sfd *.ttf
+	\rm -f $(FONTFILE).sfd $(FONTFILE).ttf $(FONTFILE).otf
 
 .PHONY: all outline sbit clean distclean

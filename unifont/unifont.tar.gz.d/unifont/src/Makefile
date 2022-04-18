@@ -3,7 +3,7 @@ SHELL = /bin/sh
 
 CC = gcc
 
-CFLAGS   = -g -O2 -Wall
+CFLAGS = -g -O2 -Wall
 
 LOCALBINDIR = ../bin
 
@@ -25,9 +25,9 @@ INSTALLDIR = $(PREFIX)/bin
 #
 # Programs written in C.
 #
-CPROGS = unibmp2hex unicoverage unidup unibdf2hex unibmpbump \
-	 unifont1per unifontpic unigencircles unigenwidth \
-	 unihex2bmp unihexgen unipagecount
+CPROGS = hex2otf unibmp2hex unicoverage unidup unibdf2hex unibmpbump \
+	 unifont1per unifontpic unigencircles unigenwidth unihex2bmp \
+	 unihexgen unipagecount
 
 #
 # Programs written in Perl.
@@ -43,6 +43,17 @@ PROGS = $(CPROGS) $(PPROGS)
 
 
 all: $(CPROGS) bin
+
+#
+# Earlier Unifont C programs written before hex2otf follow C89 syntax.
+# hex2otf follows C99 syntax, so compile with a C99 flag for older gcc
+# versions.   Notably, several platforms have remained with gcc 4.2.1
+# because it was the last version of gcc licensed under GPLv2.  In
+# the future, the "-std=c99" flag could be added to the global CFLAGS
+# declaration at the beginning of this file.
+#
+hex2otf: hex2otf.c hex2otf.h
+	$(CC) $(CFLAGS) -std=c99 hex2otf.c -o hex2otf
 
 # .c:
 

@@ -119,60 +119,62 @@ unipng2hex @minus{}i my@t{_}input@t{_}file.png @minus{}o my@t{_}output@t{_}file.
 @subsection unipng2hex SEE ALSO
 @c DEBUG: print_menu("unipng2hex SEE ALSO")
 
-@comment TROFF INPUT: .BR bdfimplode(1),
-@b{bdfimplode(1),}
-@comment TROFF INPUT: .BR hex2bdf(1),
-@b{hex2bdf(1),}
-@comment TROFF INPUT: .BR hex2sfd(1),
-@b{hex2sfd(1),}
-@comment TROFF INPUT: .BR hexbraille(1),
-@b{hexbraille(1),}
-@comment TROFF INPUT: .BR hexdraw(1),
-@b{hexdraw(1),}
-@comment TROFF INPUT: .BR hexkinya(1),
-@b{hexkinya(1),}
-@comment TROFF INPUT: .BR hexmerge(1),
-@b{hexmerge(1),}
-@comment TROFF INPUT: .BR johab2ucs2(1),
-@b{johab2ucs2(1),}
-@comment TROFF INPUT: .BR unibdf2hex(1),
-@b{unibdf2hex(1),}
-@comment TROFF INPUT: .BR unibmp2hex(1),
-@b{unibmp2hex(1),}
-@comment TROFF INPUT: .BR unibmpbump(1),
-@b{unibmpbump(1),}
-@comment TROFF INPUT: .BR unicoverage(1),
-@b{unicoverage(1),}
-@comment TROFF INPUT: .BR unidup(1),
-@b{unidup(1),}
-@comment TROFF INPUT: .BR unifont(5),
-@b{unifont(5),}
-@comment TROFF INPUT: .BR unifont-viewer(1),
-@b{unifont-viewer(1),}
-@comment TROFF INPUT: .BR unifont1per(1),
-@b{unifont1per(1),}
-@comment TROFF INPUT: .BR unifontchojung(1),
-@b{unifontchojung(1),}
-@comment TROFF INPUT: .BR unifontksx(1),
-@b{unifontksx(1),}
-@comment TROFF INPUT: .BR unifontpic(1),
-@b{unifontpic(1),}
-@comment TROFF INPUT: .BR unigencircles(1),
-@b{unigencircles(1),}
-@comment TROFF INPUT: .BR unigenwidth(1),
-@b{unigenwidth(1),}
-@comment TROFF INPUT: .BR unihex2bmp(1),
-@b{unihex2bmp(1),}
-@comment TROFF INPUT: .BR unihex2png(1),
-@b{unihex2png(1),}
-@comment TROFF INPUT: .BR unihexfill(1),
-@b{unihexfill(1),}
-@comment TROFF INPUT: .BR unihexgen(1),
-@b{unihexgen(1),}
-@comment TROFF INPUT: .BR unihexrotate(1),
-@b{unihexrotate(1),}
-@comment TROFF INPUT: .BR unipagecount(1)
-@b{unipagecount(1)}
+@comment TROFF INPUT: .BR bdfimplode (1),
+@b{bdfimplode}@r{(1),}
+@comment TROFF INPUT: .BR hex2bdf (1),
+@b{hex2bdf}@r{(1),}
+@comment TROFF INPUT: .BR hex2otf (1),
+@b{hex2otf}@r{(1),}
+@comment TROFF INPUT: .BR hex2sfd (1),
+@b{hex2sfd}@r{(1),}
+@comment TROFF INPUT: .BR hexbraille (1),
+@b{hexbraille}@r{(1),}
+@comment TROFF INPUT: .BR hexdraw (1),
+@b{hexdraw}@r{(1),}
+@comment TROFF INPUT: .BR hexkinya (1),
+@b{hexkinya}@r{(1),}
+@comment TROFF INPUT: .BR hexmerge (1),
+@b{hexmerge}@r{(1),}
+@comment TROFF INPUT: .BR johab2ucs2 (1),
+@b{johab2ucs2}@r{(1),}
+@comment TROFF INPUT: .BR unibdf2hex (1),
+@b{unibdf2hex}@r{(1),}
+@comment TROFF INPUT: .BR unibmp2hex (1),
+@b{unibmp2hex}@r{(1),}
+@comment TROFF INPUT: .BR unibmpbump (1),
+@b{unibmpbump}@r{(1),}
+@comment TROFF INPUT: .BR unicoverage (1),
+@b{unicoverage}@r{(1),}
+@comment TROFF INPUT: .BR unidup (1),
+@b{unidup}@r{(1),}
+@comment TROFF INPUT: .BR unifont (5),
+@b{unifont}@r{(5),}
+@comment TROFF INPUT: .BR unifont-viewer (1),
+@b{unifont-viewer}@r{(1),}
+@comment TROFF INPUT: .BR unifont1per (1),
+@b{unifont1per}@r{(1),}
+@comment TROFF INPUT: .BR unifontchojung (1),
+@b{unifontchojung}@r{(1),}
+@comment TROFF INPUT: .BR unifontksx (1),
+@b{unifontksx}@r{(1),}
+@comment TROFF INPUT: .BR unifontpic (1),
+@b{unifontpic}@r{(1),}
+@comment TROFF INPUT: .BR unigencircles (1),
+@b{unigencircles}@r{(1),}
+@comment TROFF INPUT: .BR unigenwidth (1),
+@b{unigenwidth}@r{(1),}
+@comment TROFF INPUT: .BR unihex2bmp (1),
+@b{unihex2bmp}@r{(1),}
+@comment TROFF INPUT: .BR unihex2png (1),
+@b{unihex2png}@r{(1),}
+@comment TROFF INPUT: .BR unihexfill (1),
+@b{unihexfill}@r{(1),}
+@comment TROFF INPUT: .BR unihexgen (1),
+@b{unihexgen}@r{(1),}
+@comment TROFF INPUT: .BR unihexrotate (1),
+@b{unihexrotate}@r{(1),}
+@comment TROFF INPUT: .BR unipagecount (1)
+@b{unipagecount}@r{(1)}
 @comment TROFF INPUT: .SH AUTHOR
 
 @node unipng2hex AUTHOR

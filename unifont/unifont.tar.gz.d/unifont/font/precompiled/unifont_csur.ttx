@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="14.0"/>
-    <checkSumAdjustment value="0xed2b61d3"/>
+    <checkSumAdjustment value="0x4dedc6c"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sun Mar  6 22:18:24 2022"/>
-    <modified value="Sun Mar  6 22:18:24 2022"/>
+    <created value="Sun Apr 17 13:56:21 2022"/>
+    <modified value="Sun Apr 17 13:56:21 2022"/>
     <xMin value="-768"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -39,15 +39,15 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="7029"/>
+    <numberOfHMetrics value="8920"/>
   </hhea>
 
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="8263"/>
+    <numGlyphs value="8939"/>
     <maxPoints value="192"/>
-    <maxContours value="23"/>
+    <maxContours value="26"/>
     <maxCompositePoints value="0"/>
     <maxCompositeContours value="0"/>
     <maxZones value="2"/>
@@ -65,7 +65,7 @@
     <!-- The fields 'usFirstCharIndex' and 'usLastCharIndex'
          will be recalculated by the compiler -->
     <version value="1"/>
-    <xAvgCharWidth value="689"/>
+    <xAvgCharWidth value="694"/>
     <usWeightClass value="500"/>
     <usWidthClass value="5"/>
     <fsType value="00000000 00000000"/>
@@ -111,7 +111,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright © 1998-2021 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
+      Copyright © 1998-2022 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 6-3-2022
+      FontForge 2.0 : Unifont CSUR : 17-4-2022
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 14.0.02
+      Version 14.0.03
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -138,10 +138,10 @@
       Dual license: SIL Open Font License version 1.1, and GNU GPL version 2 or later with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="14" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      http://gnu.org/licenses/gpl.html
+      https://gnu.org/licenses/gpl.html, https://scripts.sil.org/OFL
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright © 1998-2021 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
+      Copyright © 1998-2022 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 6-3-2022
+      FontForge 2.0 : Unifont CSUR : 17-4-2022
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 14.0.02
+      Version 14.0.03
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -168,7 +168,7 @@
       Dual license: SIL Open Font License version 1.1, and GNU GPL version 2 or later with the GNU Font Embedding Exception.
     </namerecord>
     <namerecord nameID="14" platformID="3" platEncID="1" langID="0x409">
-      http://gnu.org/licenses/gpl.html
+      https://gnu.org/licenses/gpl.html, https://scripts.sil.org/OFL
     </namerecord>
   </name>
 
@@ -787,7 +787,50 @@
       <psName name="uni00E2CD"/>
       <psName name="uni00E2CE"/>
       <psName name="uni00E2CF"/>
+      <psName name="uni00E2D0"/>
+      <psName name="uni00E2D1"/>
+      <psName name="uni00E2D2"/>
+      <psName name="uni00E2D3"/>
+      <psName name="uni00E2D4"/>
+      <psName name="uni00E2D5"/>
+      <psName name="uni00E2D6"/>
+      <psName name="uni00E2D7"/>
+      <psName name="uni00E2D8"/>
+      <psName name="uni00E2D9"/>
+      <psName name="uni00E2DA"/>
+      <psName name="uni00E2DB"/>
+      <psName name="uni00E2DC"/>
+      <psName name="uni00E2DD"/>
+      <psName name="uni00E2DE"/>
       <psName name="uni00E2DF"/>
+      <psName name="uni00E2E0"/>
+      <psName name="uni00E2E1"/>
+      <psName name="uni00E2E2"/>
+      <psName name="uni00E2E3"/>
+      <psName name="uni00E2E4"/>
+      <psName name="uni00E2E5"/>
+      <psName name="uni00E2E6"/>
+      <psName name="uni00E2E7"/>
+      <psName name="uni00E2E8"/>
+      <psName name="uni00E2E9"/>
+      <psName name="uni00E2EA"/>
+      <psName name="uni00E2EB"/>
+      <psName name="uni00E2EC"/>
+      <psName name="uni00E2ED"/>
+      <psName name="uni00E2EE"/>
+      <psName name="uni00E2EF"/>
+      <psName name="uni00E2F0"/>
+      <psName name="uni00E2F1"/>
+      <psName name="uni00E2F2"/>
+      <psName name="uni00E2F3"/>
+      <psName name="uni00E2F4"/>
+      <psName name="uni00E2F5"/>
+      <psName name="uni00E2F6"/>
+      <psName name="uni00E2F7"/>
+      <psName name="uni00E2F8"/>
+      <psName name="uni00E2F9"/>
+      <psName name="uni00E2FA"/>
+      <psName name="uni00E2FB"/>
       <psName name="uni00E2FC"/>
       <psName name="uni00E2FD"/>
       <psName name="uni00E2FE"/>
@@ -1108,6 +1151,32 @@
       <psName name="uni00E5DD"/>
       <psName name="uni00E5DE"/>
       <psName name="uni00E5DF"/>
+      <psName name="uni00E5E0"/>
+      <psName name="uni00E5E1"/>
+      <psName name="uni00E5E2"/>
+      <psName name="uni00E5E3"/>
+      <psName name="uni00E5E4"/>
+      <psName name="uni00E5E5"/>
+      <psName name="uni00E5E6"/>
+      <psName name="uni00E5E7"/>
+      <psName name="uni00E5E8"/>
+      <psName name="uni00E5E9"/>
+      <psName name="uni00E5EA"/>
+      <psName name="uni00E5EB"/>
+      <psName name="uni00E5EC"/>
+      <psName name="uni00E5ED"/>
+      <psName name="uni00E5EE"/>
+      <psName name="uni00E5EF"/>
+      <psName name="uni00E5F0"/>
+      <psName name="uni00E5F1"/>
+      <psName name="uni00E5F2"/>
+      <psName name="uni00E5F3"/>
+      <psName name="uni00E5F4"/>
+      <psName name="uni00E5F5"/>
+      <psName name="uni00E5F6"/>
+      <psName name="uni00E5F7"/>
+      <psName name="uni00E5F8"/>
+      <psName name="uni00E5F9"/>
       <psName name="uni00E5FA"/>
       <psName name="uni00E5FB"/>
       <psName name="uni00E5FC"/>
@@ -1394,6 +1463,10 @@
       <psName name="uni00E765"/>
       <psName name="uni00E766"/>
       <psName name="uni00E767"/>
+      <psName name="uni00E768"/>
+      <psName name="uni00E769"/>
+      <psName name="uni00E76A"/>
+      <psName name="uni00E76B"/>
       <psName name="uni00E76C"/>
       <psName name="uni00E76D"/>
       <psName name="uni00E76E"/>
@@ -2496,11 +2569,38 @@
       <psName name="uni00ED3D"/>
       <psName name="uni00ED3E"/>
       <psName name="uni00ED3F"/>
+      <psName name="uni00ED40"/>
+      <psName name="uni00ED41"/>
+      <psName name="uni00ED42"/>
+      <psName name="uni00ED43"/>
+      <psName name="uni00ED44"/>
+      <psName name="uni00ED45"/>
+      <psName name="uni00ED46"/>
+      <psName name="uni00ED47"/>
+      <psName name="uni00ED48"/>
+      <psName name="uni00ED49"/>
+      <psName name="uni00ED4A"/>
       <psName name="uni00ED4B"/>
+      <psName name="uni00ED4C"/>
+      <psName name="uni00ED4D"/>
+      <psName name="uni00ED4E"/>
+      <psName name="uni00ED4F"/>
+      <psName name="uni00ED50"/>
       <psName name="uni00ED51"/>
+      <psName name="uni00ED52"/>
+      <psName name="uni00ED53"/>
+      <psName name="uni00ED54"/>
+      <psName name="uni00ED55"/>
+      <psName name="uni00ED56"/>
+      <psName name="uni00ED57"/>
+      <psName name="uni00ED58"/>
+      <psName name="uni00ED59"/>
+      <psName name="uni00ED5A"/>
+      <psName name="uni00ED5B"/>
       <psName name="uni00ED5C"/>
       <psName name="uni00ED5D"/>
       <psName name="uni00ED5E"/>
+      <psName name="uni00ED5F"/>
       <psName name="uni00F4C0"/>
       <psName name="uni00F4C1"/>
       <psName name="uni00F4C2"/>
@@ -8453,6 +8553,582 @@
       <psName name="uni0F16AD"/>
       <psName name="uni0F16AE"/>
       <psName name="uni0F16AF"/>
+      <psName name="uni0F1900"/>
+      <psName name="uni0F1901"/>
+      <psName name="uni0F1902"/>
+      <psName name="uni0F1903"/>
+      <psName name="uni0F1904"/>
+      <psName name="uni0F1905"/>
+      <psName name="uni0F1906"/>
+      <psName name="uni0F1907"/>
+      <psName name="uni0F1908"/>
+      <psName name="uni0F1909"/>
+      <psName name="uni0F190A"/>
+      <psName name="uni0F190B"/>
+      <psName name="uni0F190C"/>
+      <psName name="uni0F190D"/>
+      <psName name="uni0F190E"/>
+      <psName name="uni0F190F"/>
+      <psName name="uni0F1910"/>
+      <psName name="uni0F1911"/>
+      <psName name="uni0F1912"/>
+      <psName name="uni0F1913"/>
+      <psName name="uni0F1914"/>
+      <psName name="uni0F1915"/>
+      <psName name="uni0F1916"/>
+      <psName name="uni0F1917"/>
+      <psName name="uni0F1918"/>
+      <psName name="uni0F1919"/>
+      <psName name="uni0F191A"/>
+      <psName name="uni0F191B"/>
+      <psName name="uni0F191C"/>
+      <psName name="uni0F191D"/>
+      <psName name="uni0F191E"/>
+      <psName name="uni0F191F"/>
+      <psName name="uni0F1920"/>
+      <psName name="uni0F1921"/>
+      <psName name="uni0F1922"/>
+      <psName name="uni0F1923"/>
+      <psName name="uni0F1924"/>
+      <psName name="uni0F1925"/>
+      <psName name="uni0F1926"/>
+      <psName name="uni0F1927"/>
+      <psName name="uni0F1928"/>
+      <psName name="uni0F1929"/>
+      <psName name="uni0F192A"/>
+      <psName name="uni0F192B"/>
+      <psName name="uni0F192C"/>
+      <psName name="uni0F192D"/>
+      <psName name="uni0F192E"/>
+      <psName name="uni0F192F"/>
+      <psName name="uni0F1930"/>
+      <psName name="uni0F1931"/>
+      <psName name="uni0F1932"/>
+      <psName name="uni0F1933"/>
+      <psName name="uni0F1934"/>
+      <psName name="uni0F1935"/>
+      <psName name="uni0F1936"/>
+      <psName name="uni0F1937"/>
+      <psName name="uni0F1938"/>
+      <psName name="uni0F1939"/>
+      <psName name="uni0F193A"/>
+      <psName name="uni0F193B"/>
+      <psName name="uni0F193C"/>
+      <psName name="uni0F193D"/>
+      <psName name="uni0F193E"/>
+      <psName name="uni0F193F"/>
+      <psName name="uni0F1940"/>
+      <psName name="uni0F1941"/>
+      <psName name="uni0F1942"/>
+      <psName name="uni0F1943"/>
+      <psName name="uni0F1944"/>
+      <psName name="uni0F1945"/>
+      <psName name="uni0F1946"/>
+      <psName name="uni0F1947"/>
+      <psName name="uni0F1948"/>
+      <psName name="uni0F1949"/>
+      <psName name="uni0F194A"/>
+      <psName name="uni0F194B"/>
+      <psName name="uni0F194C"/>
+      <psName name="uni0F194D"/>
+      <psName name="uni0F194E"/>
+      <psName name="uni0F194F"/>
+      <psName name="uni0F1950"/>
+      <psName name="uni0F1951"/>
+      <psName name="uni0F1952"/>
+      <psName name="uni0F1953"/>
+      <psName name="uni0F1954"/>
+      <psName name="uni0F1955"/>
+      <psName name="uni0F1956"/>
+      <psName name="uni0F1957"/>
+      <psName name="uni0F1958"/>
+      <psName name="uni0F1959"/>
+      <psName name="uni0F195A"/>
+      <psName name="uni0F195B"/>
+      <psName name="uni0F195C"/>
+      <psName name="uni0F195D"/>
+      <psName name="uni0F195E"/>
+      <psName name="uni0F195F"/>
+      <psName name="uni0F1960"/>
+      <psName name="uni0F1961"/>
+      <psName name="uni0F1962"/>
+      <psName name="uni0F1963"/>
+      <psName name="uni0F1964"/>
+      <psName name="uni0F1965"/>
+      <psName name="uni0F1966"/>
+      <psName name="uni0F1967"/>
+      <psName name="uni0F1968"/>
+      <psName name="uni0F1969"/>
+      <psName name="uni0F196A"/>
+      <psName name="uni0F196B"/>
+      <psName name="uni0F196C"/>
+      <psName name="uni0F196D"/>
+      <psName name="uni0F196E"/>
+      <psName name="uni0F196F"/>
+      <psName name="uni0F1970"/>
+      <psName name="uni0F1971"/>
+      <psName name="uni0F1972"/>
+      <psName name="uni0F1973"/>
+      <psName name="uni0F1974"/>
+      <psName name="uni0F1975"/>
+      <psName name="uni0F1976"/>
+      <psName name="uni0F1977"/>
+      <psName name="uni0F1978"/>
+      <psName name="uni0F1979"/>
+      <psName name="uni0F197A"/>
+      <psName name="uni0F197B"/>
+      <psName name="uni0F197C"/>
+      <psName name="uni0F197D"/>
+      <psName name="uni0F197E"/>
+      <psName name="uni0F197F"/>
+      <psName name="uni0F1980"/>
+      <psName name="uni0F1981"/>
+      <psName name="uni0F1982"/>
+      <psName name="uni0F1983"/>
+      <psName name="uni0F1984"/>
+      <psName name="uni0F1985"/>
+      <psName name="uni0F1986"/>
+      <psName name="uni0F1987"/>
+      <psName name="uni0F1988"/>
+      <psName name="uni0F1989"/>
+      <psName name="uni0F198A"/>
+      <psName name="uni0F198B"/>
+      <psName name="uni0F198C"/>
+      <psName name="uni0F198D"/>
+      <psName name="uni0F198E"/>
+      <psName name="uni0F198F"/>
+      <psName name="uni0F1990"/>
+      <psName name="uni0F1991"/>
+      <psName name="uni0F1992"/>
+      <psName name="uni0F1993"/>
+      <psName name="uni0F1994"/>
+      <psName name="uni0F1995"/>
+      <psName name="uni0F1996"/>
+      <psName name="uni0F1997"/>
+      <psName name="uni0F1998"/>
+      <psName name="uni0F1999"/>
+      <psName name="uni0F199A"/>
+      <psName name="uni0F199B"/>
+      <psName name="uni0F199C"/>
+      <psName name="uni0F199D"/>
+      <psName name="uni0F199E"/>
+      <psName name="uni0F199F"/>
+      <psName name="uni0F19A0"/>
+      <psName name="uni0F19A1"/>
+      <psName name="uni0F19A2"/>
+      <psName name="uni0F19A3"/>
+      <psName name="uni0F19A4"/>
+      <psName name="uni0F19A5"/>
+      <psName name="uni0F19A6"/>
+      <psName name="uni0F19A7"/>
+      <psName name="uni0F19A8"/>
+      <psName name="uni0F19A9"/>
+      <psName name="uni0F19AA"/>
+      <psName name="uni0F19AB"/>
+      <psName name="uni0F19AC"/>
+      <psName name="uni0F19AD"/>
+      <psName name="uni0F19AE"/>
+      <psName name="uni0F19AF"/>
+      <psName name="uni0F19B0"/>
+      <psName name="uni0F19B1"/>
+      <psName name="uni0F19B2"/>
+      <psName name="uni0F19B3"/>
+      <psName name="uni0F19B4"/>
+      <psName name="uni0F19B5"/>
+      <psName name="uni0F19B6"/>
+      <psName name="uni0F19B7"/>
+      <psName name="uni0F19B8"/>
+      <psName name="uni0F19B9"/>
+      <psName name="uni0F19BA"/>
+      <psName name="uni0F19BB"/>
+      <psName name="uni0F19BC"/>
+      <psName name="uni0F19BD"/>
+      <psName name="uni0F19BE"/>
+      <psName name="uni0F19BF"/>
+      <psName name="uni0F19C0"/>
+      <psName name="uni0F19C1"/>
+      <psName name="uni0F19C2"/>
+      <psName name="uni0F19C3"/>
+      <psName name="uni0F19C4"/>
+      <psName name="uni0F19C5"/>
+      <psName name="uni0F19C6"/>
+      <psName name="uni0F19C7"/>
+      <psName name="uni0F19C8"/>
+      <psName name="uni0F19C9"/>
+      <psName name="uni0F19CA"/>
+      <psName name="uni0F19CB"/>
+      <psName name="uni0F19CC"/>
+      <psName name="uni0F19CD"/>
+      <psName name="uni0F19CE"/>
+      <psName name="uni0F19CF"/>
+      <psName name="uni0F19D0"/>
+      <psName name="uni0F19D1"/>
+      <psName name="uni0F19D2"/>
+      <psName name="uni0F19D3"/>
+      <psName name="uni0F19D4"/>
+      <psName name="uni0F19D5"/>
+      <psName name="uni0F19D6"/>
+      <psName name="uni0F19D7"/>
+      <psName name="uni0F19D8"/>
+      <psName name="uni0F19D9"/>
+      <psName name="uni0F19DA"/>
+      <psName name="uni0F19DB"/>
+      <psName name="uni0F19DC"/>
+      <psName name="uni0F19DD"/>
+      <psName name="uni0F19DE"/>
+      <psName name="uni0F19DF"/>
+      <psName name="uni0F19E0"/>
+      <psName name="uni0F19E1"/>
+      <psName name="uni0F19E2"/>
+      <psName name="uni0F19E3"/>
+      <psName name="uni0F19E4"/>
+      <psName name="uni0F19E5"/>
+      <psName name="uni0F19E6"/>
+      <psName name="uni0F19E7"/>
+      <psName name="uni0F19E8"/>
+      <psName name="uni0F19E9"/>
+      <psName name="uni0F19EA"/>
+      <psName name="uni0F19EB"/>
+      <psName name="uni0F19EC"/>
+      <psName name="uni0F19ED"/>
+      <psName name="uni0F19EE"/>
+      <psName name="uni0F19EF"/>
+      <psName name="uni0F19F0"/>
+      <psName name="uni0F19F1"/>
+      <psName name="uni0F19F2"/>
+      <psName name="uni0F19F3"/>
+      <psName name="uni0F19F4"/>
+      <psName name="uni0F19F5"/>
+      <psName name="uni0F19F6"/>
+      <psName name="uni0F19F7"/>
+      <psName name="uni0F19F8"/>
+      <psName name="uni0F19F9"/>
+      <psName name="uni0F19FA"/>
+      <psName name="uni0F19FB"/>
+      <psName name="uni0F19FC"/>
+      <psName name="uni0F19FD"/>
+      <psName name="uni0F19FE"/>
+      <psName name="uni0F19FF"/>
+      <psName name="uni0F1B00"/>
+      <psName name="uni0F1B01"/>
+      <psName name="uni0F1B02"/>
+      <psName name="uni0F1B03"/>
+      <psName name="uni0F1B04"/>
+      <psName name="uni0F1B05"/>
+      <psName name="uni0F1B06"/>
+      <psName name="uni0F1B07"/>
+      <psName name="uni0F1B08"/>
+      <psName name="uni0F1B09"/>
+      <psName name="uni0F1B0A"/>
+      <psName name="uni0F1B0B"/>
+      <psName name="uni0F1B0C"/>
+      <psName name="uni0F1B0D"/>
+      <psName name="uni0F1B0E"/>
+      <psName name="uni0F1B0F"/>
+      <psName name="uni0F1B10"/>
+      <psName name="uni0F1B11"/>
+      <psName name="uni0F1B12"/>
+      <psName name="uni0F1B13"/>
+      <psName name="uni0F1B14"/>
+      <psName name="uni0F1B15"/>
+      <psName name="uni0F1B16"/>
+      <psName name="uni0F1B17"/>
+      <psName name="uni0F1B18"/>
+      <psName name="uni0F1B19"/>
+      <psName name="uni0F1B1A"/>
+      <psName name="uni0F1B1B"/>
+      <psName name="uni0F1B1C"/>
+      <psName name="uni0F1B1D"/>
+      <psName name="uni0F1B1E"/>
+      <psName name="uni0F1B1F"/>
+      <psName name="uni0F1B20"/>
+      <psName name="uni0F1B21"/>
+      <psName name="uni0F1B22"/>
+      <psName name="uni0F1B23"/>
+      <psName name="uni0F1B24"/>
+      <psName name="uni0F1B25"/>
+      <psName name="uni0F1B26"/>
+      <psName name="uni0F1B27"/>
+      <psName name="uni0F1B28"/>
+      <psName name="uni0F1B29"/>
+      <psName name="uni0F1B2A"/>
+      <psName name="uni0F1B2B"/>
+      <psName name="uni0F1B2C"/>
+      <psName name="uni0F1B2D"/>
+      <psName name="uni0F1B2E"/>
+      <psName name="uni0F1B2F"/>
+      <psName name="uni0F1B30"/>
+      <psName name="uni0F1B31"/>
+      <psName name="uni0F1B32"/>
+      <psName name="uni0F1B33"/>
+      <psName name="uni0F1B34"/>
+      <psName name="uni0F1B35"/>
+      <psName name="uni0F1B36"/>
+      <psName name="uni0F1B37"/>
+      <psName name="uni0F1B38"/>
+      <psName name="uni0F1B39"/>
+      <psName name="uni0F1B3A"/>
+      <psName name="uni0F1B3B"/>
+      <psName name="uni0F1B3C"/>
+      <psName name="uni0F1B3D"/>
+      <psName name="uni0F1B3E"/>
+      <psName name="uni0F1B3F"/>
+      <psName name="uni0F1B40"/>
+      <psName name="uni0F1B41"/>
+      <psName name="uni0F1B42"/>
+      <psName name="uni0F1B43"/>
+      <psName name="uni0F1B44"/>
+      <psName name="uni0F1B45"/>
+      <psName name="uni0F1B46"/>
+      <psName name="uni0F1B47"/>
+      <psName name="uni0F1B48"/>
+      <psName name="uni0F1B49"/>
+      <psName name="uni0F1B4A"/>
+      <psName name="uni0F1B4B"/>
+      <psName name="uni0F1B4C"/>
+      <psName name="uni0F1B4D"/>
+      <psName name="uni0F1B4E"/>
+      <psName name="uni0F1B4F"/>
+      <psName name="uni0F1B50"/>
+      <psName name="uni0F1B51"/>
+      <psName name="uni0F1B52"/>
+      <psName name="uni0F1B53"/>
+      <psName name="uni0F1B54"/>
+      <psName name="uni0F1B55"/>
+      <psName name="uni0F1B56"/>
+      <psName name="uni0F1B57"/>
+      <psName name="uni0F1B58"/>
+      <psName name="uni0F1B59"/>
+      <psName name="uni0F1B5A"/>
+      <psName name="uni0F1B5B"/>
+      <psName name="uni0F1B5C"/>
+      <psName name="uni0F1B5D"/>
+      <psName name="uni0F1B5E"/>
+      <psName name="uni0F1B5F"/>
+      <psName name="uni0F1B60"/>
+      <psName name="uni0F1B61"/>
+      <psName name="uni0F1B62"/>
+      <psName name="uni0F1B63"/>
+      <psName name="uni0F1B64"/>
+      <psName name="uni0F1B65"/>
+      <psName name="uni0F1B66"/>
+      <psName name="uni0F1B67"/>
+      <psName name="uni0F1B68"/>
+      <psName name="uni0F1B69"/>
+      <psName name="uni0F1B6A"/>
+      <psName name="uni0F1B6B"/>
+      <psName name="uni0F1B6C"/>
+      <psName name="uni0F1B6D"/>
+      <psName name="uni0F1B6E"/>
+      <psName name="uni0F1B6F"/>
+      <psName name="uni0F1B70"/>
+      <psName name="uni0F1B71"/>
+      <psName name="uni0F1B72"/>
+      <psName name="uni0F1B73"/>
+      <psName name="uni0F1B74"/>
+      <psName name="uni0F1B75"/>
+      <psName name="uni0F1B76"/>
+      <psName name="uni0F1B77"/>
+      <psName name="uni0F1B78"/>
+      <psName name="uni0F1B79"/>
+      <psName name="uni0F1B7A"/>
+      <psName name="uni0F1B7B"/>
+      <psName name="uni0F1B7C"/>
+      <psName name="uni0F1B7D"/>
+      <psName name="uni0F1B7E"/>
+      <psName name="uni0F1B7F"/>
+      <psName name="uni0F1B80"/>
+      <psName name="uni0F1B81"/>
+      <psName name="uni0F1B82"/>
+      <psName name="uni0F1B83"/>
+      <psName name="uni0F1B84"/>
+      <psName name="uni0F1B85"/>
+      <psName name="uni0F1B86"/>
+      <psName name="uni0F1B87"/>
+      <psName name="uni0F1B88"/>
+      <psName name="uni0F1B89"/>
+      <psName name="uni0F1B8A"/>
+      <psName name="uni0F1B8B"/>
+      <psName name="uni0F1B8C"/>
+      <psName name="uni0F1B8D"/>
+      <psName name="uni0F1B8E"/>
+      <psName name="uni0F1B8F"/>
+      <psName name="uni0F1B90"/>
+      <psName name="uni0F1B91"/>
+      <psName name="uni0F1B92"/>
+      <psName name="uni0F1B93"/>
+      <psName name="uni0F1B94"/>
+      <psName name="uni0F1B95"/>
+      <psName name="uni0F1B96"/>
+      <psName name="uni0F1B97"/>
+      <psName name="uni0F1B98"/>
+      <psName name="uni0F1B99"/>
+      <psName name="uni0F1B9A"/>
+      <psName name="uni0F1B9B"/>
+      <psName name="uni0F1B9C"/>
+      <psName name="uni0F1B9D"/>
+      <psName name="uni0F1B9E"/>
+      <psName name="uni0F1B9F"/>
+      <psName name="uni0F1BA0"/>
+      <psName name="uni0F1BA1"/>
+      <psName name="uni0F1BA2"/>
+      <psName name="uni0F1BA3"/>
+      <psName name="uni0F1BA4"/>
+      <psName name="uni0F1BA5"/>
+      <psName name="uni0F1BA6"/>
+      <psName name="uni0F1BA7"/>
+      <psName name="uni0F1BA8"/>
+      <psName name="uni0F1BA9"/>
+      <psName name="uni0F1BAA"/>
+      <psName name="uni0F1BAB"/>
+      <psName name="uni0F1BAC"/>
+      <psName name="uni0F1BAD"/>
+      <psName name="uni0F1BAE"/>
+      <psName name="uni0F1BAF"/>
+      <psName name="uni0F1BB0"/>
+      <psName name="uni0F1BB1"/>
+      <psName name="uni0F1BB2"/>
+      <psName name="uni0F1BB3"/>
+      <psName name="uni0F1BB4"/>
+      <psName name="uni0F1BB5"/>
+      <psName name="uni0F1BB6"/>
+      <psName name="uni0F1BB7"/>
+      <psName name="uni0F1BB8"/>
+      <psName name="uni0F1BB9"/>
+      <psName name="uni0F1BBA"/>
+      <psName name="uni0F1BBB"/>
+      <psName name="uni0F1BBC"/>
+      <psName name="uni0F1BBD"/>
+      <psName name="uni0F1BBE"/>
+      <psName name="uni0F1BBF"/>
+      <psName name="uni0F1BC0"/>
+      <psName name="uni0F1BC1"/>
+      <psName name="uni0F1BC2"/>
+      <psName name="uni0F1BC3"/>
+      <psName name="uni0F1BC4"/>
+      <psName name="uni0F1BC5"/>
+      <psName name="uni0F1BC6"/>
+      <psName name="uni0F1BC7"/>
+      <psName name="uni0F1BC8"/>
+      <psName name="uni0F1BC9"/>
+      <psName name="uni0F1BCA"/>
+      <psName name="uni0F1BCB"/>
+      <psName name="uni0F1BCC"/>
+      <psName name="uni0F1BCD"/>
+      <psName name="uni0F1BCE"/>
+      <psName name="uni0F1BCF"/>
+      <psName name="uni0F1BD0"/>
+      <psName name="uni0F1BD1"/>
+      <psName name="uni0F1BD2"/>
+      <psName name="uni0F1BD3"/>
+      <psName name="uni0F1BD4"/>
+      <psName name="uni0F1BD5"/>
+      <psName name="uni0F1BD6"/>
+      <psName name="uni0F1BD7"/>
+      <psName name="uni0F1BD8"/>
+      <psName name="uni0F1BD9"/>
+      <psName name="uni0F1BDA"/>
+      <psName name="uni0F1BDB"/>
+      <psName name="uni0F1BDC"/>
+      <psName name="uni0F1BDD"/>
+      <psName name="uni0F1BDE"/>
+      <psName name="uni0F1BDF"/>
+      <psName name="uni0F1BE0"/>
+      <psName name="uni0F1BE1"/>
+      <psName name="uni0F1BE2"/>
+      <psName name="uni0F1BE3"/>
+      <psName name="uni0F1BE4"/>
+      <psName name="uni0F1BE5"/>
+      <psName name="uni0F1BE6"/>
+      <psName name="uni0F1BE7"/>
+      <psName name="uni0F1BE8"/>
+      <psName name="uni0F1BE9"/>
+      <psName name="uni0F1BEA"/>
+      <psName name="uni0F1BEB"/>
+      <psName name="uni0F1BEC"/>
+      <psName name="uni0F1BED"/>
+      <psName name="uni0F1BEE"/>
+      <psName name="uni0F1BEF"/>
+      <psName name="uni0F1BF0"/>
+      <psName name="uni0F1BF1"/>
+      <psName name="uni0F1BF2"/>
+      <psName name="uni0F1BF3"/>
+      <psName name="uni0F1BF4"/>
+      <psName name="uni0F1BF5"/>
+      <psName name="uni0F1BF6"/>
+      <psName name="uni0F1BF7"/>
+      <psName name="uni0F1BF8"/>
+      <psName name="uni0F1BF9"/>
+      <psName name="uni0F1BFA"/>
+      <psName name="uni0F1BFB"/>
+      <psName name="uni0F1BFC"/>
+      <psName name="uni0F1BFD"/>
+      <psName name="uni0F1BFE"/>
+      <psName name="uni0F1BFF"/>
+      <psName name="uni0F1C00"/>
+      <psName name="uni0F1C01"/>
+      <psName name="uni0F1C02"/>
+      <psName name="uni0F1C03"/>
+      <psName name="uni0F1C04"/>
+      <psName name="uni0F1C05"/>
+      <psName name="uni0F1C06"/>
+      <psName name="uni0F1C07"/>
+      <psName name="uni0F1C08"/>
+      <psName name="uni0F1C09"/>
+      <psName name="uni0F1C0A"/>
+      <psName name="uni0F1C0B"/>
+      <psName name="uni0F1C0C"/>
+      <psName name="uni0F1C0D"/>
+      <psName name="uni0F1C0E"/>
+      <psName name="uni0F1C0F"/>
+      <psName name="uni0F1C10"/>
+      <psName name="uni0F1C11"/>
+      <psName name="uni0F1C12"/>
+      <psName name="uni0F1C13"/>
+      <psName name="uni0F1C14"/>
+      <psName name="uni0F1C15"/>
+      <psName name="uni0F1C16"/>
+      <psName name="uni0F1C17"/>
+      <psName name="uni0F1C18"/>
+      <psName name="uni0F1C19"/>
+      <psName name="uni0F1C1A"/>
+      <psName name="uni0F1C1B"/>
+      <psName name="uni0F1C1C"/>
+      <psName name="uni0F1C1D"/>
+      <psName name="uni0F1C1E"/>
+      <psName name="uni0F1C1F"/>
+      <psName name="uni0F1C20"/>
+      <psName name="uni0F1C21"/>
+      <psName name="uni0F1C22"/>
+      <psName name="uni0F1C23"/>
+      <psName name="uni0F1C24"/>
+      <psName name="uni0F1C25"/>
+      <psName name="uni0F1C26"/>
+      <psName name="uni0F1C27"/>
+      <psName name="uni0F1C28"/>
+      <psName name="uni0F1C29"/>
+      <psName name="uni0F1C2A"/>
+      <psName name="uni0F1C2B"/>
+      <psName name="uni0F1C2C"/>
+      <psName name="uni0F1C2D"/>
+      <psName name="uni0F1C2E"/>
+      <psName name="uni0F1C2F"/>
+      <psName name="uni0F1C30"/>
+      <psName name="uni0F1C31"/>
+      <psName name="uni0F1C32"/>
+      <psName name="uni0F1C33"/>
+      <psName name="uni0F1C34"/>
+      <psName name="uni0F1C35"/>
+      <psName name="uni0F1C36"/>
+      <psName name="uni0F1C37"/>
+      <psName name="uni0F1C38"/>
+      <psName name="uni0F1C39"/>
+      <psName name="uni0F1C3A"/>
+      <psName name="uni0F1C3B"/>
+      <psName name="uni0F1C3C"/>
+      <psName name="uni0F1C3D"/>
+      <psName name="uni0F1C3E"/>
+      <psName name="uni0F1C3F"/>
     </extraNames>
   </post>
 
@@ -8464,8 +9140,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sun Mar  6 22:18:13 2022"/>
-    <sourceModified value="Sun Mar  6 22:18:23 2022"/>
+    <sourceCreated value="Sun Apr 17 13:56:09 2022"/>
+    <sourceModified value="Sun Apr 17 13:56:20 2022"/>
   </FFTM>
 
   <GDEF>
@@ -9067,7 +9743,50 @@
       <ClassDef glyph="uni00E2CD" class="1"/>
       <ClassDef glyph="uni00E2CE" class="1"/>
       <ClassDef glyph="uni00E2CF" class="1"/>
+      <ClassDef glyph="uni00E2D0" class="1"/>
+      <ClassDef glyph="uni00E2D1" class="1"/>
+      <ClassDef glyph="uni00E2D2" class="1"/>
+      <ClassDef glyph="uni00E2D3" class="1"/>
+      <ClassDef glyph="uni00E2D4" class="1"/>
+      <ClassDef glyph="uni00E2D5" class="1"/>
+      <ClassDef glyph="uni00E2D6" class="1"/>
+      <ClassDef glyph="uni00E2D7" class="1"/>
+      <ClassDef glyph="uni00E2D8" class="1"/>
+      <ClassDef glyph="uni00E2D9" class="1"/>
+      <ClassDef glyph="uni00E2DA" class="1"/>
+      <ClassDef glyph="uni00E2DB" class="1"/>
+      <ClassDef glyph="uni00E2DC" class="1"/>
+      <ClassDef glyph="uni00E2DD" class="1"/>
+      <ClassDef glyph="uni00E2DE" class="1"/>
       <ClassDef glyph="uni00E2DF" class="1"/>
+      <ClassDef glyph="uni00E2E0" class="1"/>
+      <ClassDef glyph="uni00E2E1" class="1"/>
+      <ClassDef glyph="uni00E2E2" class="1"/>
+      <ClassDef glyph="uni00E2E3" class="1"/>
+      <ClassDef glyph="uni00E2E4" class="1"/>
+      <ClassDef glyph="uni00E2E5" class="1"/>
+      <ClassDef glyph="uni00E2E6" class="1"/>
+      <ClassDef glyph="uni00E2E7" class="1"/>
+      <ClassDef glyph="uni00E2E8" class="1"/>
+      <ClassDef glyph="uni00E2E9" class="1"/>
+      <ClassDef glyph="uni00E2EA" class="1"/>
+      <ClassDef glyph="uni00E2EB" class="1"/>
+      <ClassDef glyph="uni00E2EC" class="1"/>
+      <ClassDef glyph="uni00E2ED" class="1"/>
+      <ClassDef glyph="uni00E2EE" class="1"/>
+      <ClassDef glyph="uni00E2EF" class="1"/>
+      <ClassDef glyph="uni00E2F0" class="1"/>
+      <ClassDef glyph="uni00E2F1" class="1"/>
+      <ClassDef glyph="uni00E2F2" class="1"/>
+      <ClassDef glyph="uni00E2F3" class="1"/>
+      <ClassDef glyph="uni00E2F4" class="1"/>
+      <ClassDef glyph="uni00E2F5" class="1"/>
+      <ClassDef glyph="uni00E2F6" class="1"/>
+      <ClassDef glyph="uni00E2F7" class="1"/>
+      <ClassDef glyph="uni00E2F8" class="1"/>
+      <ClassDef glyph="uni00E2F9" class="1"/>
+      <ClassDef glyph="uni00E2FA" class="1"/>
+      <ClassDef glyph="uni00E2FB" class="1"/>
       <ClassDef glyph="uni00E2FC" class="1"/>
       <ClassDef glyph="uni00E2FD" class="1"/>
       <ClassDef glyph="uni00E2FE" class="1"/>
@@ -9388,6 +10107,32 @@
       <ClassDef glyph="uni00E5DD" class="1"/>
       <ClassDef glyph="uni00E5DE" class="1"/>
       <ClassDef glyph="uni00E5DF" class="1"/>
+      <ClassDef glyph="uni00E5E0" class="1"/>
+      <ClassDef glyph="uni00E5E1" class="1"/>
+      <ClassDef glyph="uni00E5E2" class="1"/>
+      <ClassDef glyph="uni00E5E3" class="1"/>
+      <ClassDef glyph="uni00E5E4" class="1"/>
+      <ClassDef glyph="uni00E5E5" class="1"/>
+      <ClassDef glyph="uni00E5E6" class="1"/>
+      <ClassDef glyph="uni00E5E7" class="1"/>
+      <ClassDef glyph="uni00E5E8" class="1"/>
+      <ClassDef glyph="uni00E5E9" class="1"/>
+      <ClassDef glyph="uni00E5EA" class="1"/>
+      <ClassDef glyph="uni00E5EB" class="1"/>
+      <ClassDef glyph="uni00E5EC" class="1"/>
+      <ClassDef glyph="uni00E5ED" class="1"/>
+      <ClassDef glyph="uni00E5EE" class="1"/>
+      <ClassDef glyph="uni00E5EF" class="1"/>
+      <ClassDef glyph="uni00E5F0" class="1"/>
+      <ClassDef glyph="uni00E5F1" class="1"/>
+      <ClassDef glyph="uni00E5F2" class="1"/>
+      <ClassDef glyph="uni00E5F3" class="1"/>
+      <ClassDef glyph="uni00E5F4" class="1"/>
+      <ClassDef glyph="uni00E5F5" class="1"/>
+      <ClassDef glyph="uni00E5F6" class="1"/>
+      <ClassDef glyph="uni00E5F7" class="1"/>
+      <ClassDef glyph="uni00E5F8" class="1"/>
+      <ClassDef glyph="uni00E5F9" class="1"/>
       <ClassDef glyph="uni00E5FA" class="1"/>
       <ClassDef glyph="uni00E5FB" class="1"/>
       <ClassDef glyph="uni00E5FC" class="1"/>
@@ -9674,6 +10419,10 @@
       <ClassDef glyph="uni00E765" class="1"/>
       <ClassDef glyph="uni00E766" class="1"/>
       <ClassDef glyph="uni00E767" class="1"/>
+      <ClassDef glyph="uni00E768" class="1"/>
+      <ClassDef glyph="uni00E769" class="1"/>
+      <ClassDef glyph="uni00E76A" class="1"/>
+      <ClassDef glyph="uni00E76B" class="1"/>
       <ClassDef glyph="uni00E76C" class="1"/>
       <ClassDef glyph="uni00E76D" class="1"/>
       <ClassDef glyph="uni00E76E" class="1"/>
@@ -10776,11 +11525,38 @@
       <ClassDef glyph="uni00ED3D" class="1"/>
       <ClassDef glyph="uni00ED3E" class="1"/>
       <ClassDef glyph="uni00ED3F" class="1"/>
+      <ClassDef glyph="uni00ED40" class="1"/>
+      <ClassDef glyph="uni00ED41" class="1"/>
+      <ClassDef glyph="uni00ED42" class="1"/>
+      <ClassDef glyph="uni00ED43" class="1"/>
+      <ClassDef glyph="uni00ED44" class="1"/>
+      <ClassDef glyph="uni00ED45" class="1"/>
+      <ClassDef glyph="uni00ED46" class="1"/>
+      <ClassDef glyph="uni00ED47" class="1"/>
+      <ClassDef glyph="uni00ED48" class="1"/>
+      <ClassDef glyph="uni00ED49" class="1"/>
+      <ClassDef glyph="uni00ED4A" class="1"/>
       <ClassDef glyph="uni00ED4B" class="1"/>
+      <ClassDef glyph="uni00ED4C" class="1"/>
+      <ClassDef glyph="uni00ED4D" class="1"/>
+      <ClassDef glyph="uni00ED4E" class="1"/>
+      <ClassDef glyph="uni00ED4F" class="1"/>
+      <ClassDef glyph="uni00ED50" class="1"/>
       <ClassDef glyph="uni00ED51" class="1"/>
+      <ClassDef glyph="uni00ED52" class="1"/>
+      <ClassDef glyph="uni00ED53" class="1"/>
+      <ClassDef glyph="uni00ED54" class="1"/>
+      <ClassDef glyph="uni00ED55" class="1"/>
+      <ClassDef glyph="uni00ED56" class="1"/>
+      <ClassDef glyph="uni00ED57" class="1"/>
+      <ClassDef glyph="uni00ED58" class="1"/>
+      <ClassDef glyph="uni00ED59" class="1"/>
+      <ClassDef glyph="uni00ED5A" class="1"/>
+      <ClassDef glyph="uni00ED5B" class="1"/>
       <ClassDef glyph="uni00ED5C" class="1"/>
       <ClassDef glyph="uni00ED5D" class="1"/>
       <ClassDef glyph="uni00ED5E" class="1"/>
+      <ClassDef glyph="uni00ED5F" class="1"/>
       <ClassDef glyph="uni00F4C0" class="1"/>
       <ClassDef glyph="uni00F4C1" class="1"/>
       <ClassDef glyph="uni00F4C2" class="1"/>
@@ -16733,6 +17509,582 @@
       <ClassDef glyph="uni0F16AD" class="1"/>
       <ClassDef glyph="uni0F16AE" class="1"/>
       <ClassDef glyph="uni0F16AF" class="1"/>
+      <ClassDef glyph="uni0F1900" class="1"/>
+      <ClassDef glyph="uni0F1901" class="1"/>
+      <ClassDef glyph="uni0F1902" class="1"/>
+      <ClassDef glyph="uni0F1903" class="1"/>
+      <ClassDef glyph="uni0F1904" class="1"/>
+      <ClassDef glyph="uni0F1905" class="1"/>
+      <ClassDef glyph="uni0F1906" class="1"/>
+      <ClassDef glyph="uni0F1907" class="1"/>
+      <ClassDef glyph="uni0F1908" class="1"/>
+      <ClassDef glyph="uni0F1909" class="1"/>
+      <ClassDef glyph="uni0F190A" class="1"/>
+      <ClassDef glyph="uni0F190B" class="1"/>
+      <ClassDef glyph="uni0F190C" class="1"/>
+      <ClassDef glyph="uni0F190D" class="1"/>
+      <ClassDef glyph="uni0F190E" class="1"/>
+      <ClassDef glyph="uni0F190F" class="1"/>
+      <ClassDef glyph="uni0F1910" class="1"/>
+      <ClassDef glyph="uni0F1911" class="1"/>
+      <ClassDef glyph="uni0F1912" class="1"/>
+      <ClassDef glyph="uni0F1913" class="1"/>
+      <ClassDef glyph="uni0F1914" class="1"/>
+      <ClassDef glyph="uni0F1915" class="1"/>
+      <ClassDef glyph="uni0F1916" class="1"/>
+      <ClassDef glyph="uni0F1917" class="1"/>
+      <ClassDef glyph="uni0F1918" class="1"/>
+      <ClassDef glyph="uni0F1919" class="1"/>
+      <ClassDef glyph="uni0F191A" class="1"/>
+      <ClassDef glyph="uni0F191B" class="1"/>
+      <ClassDef glyph="uni0F191C" class="1"/>
+      <ClassDef glyph="uni0F191D" class="1"/>
+      <ClassDef glyph="uni0F191E" class="1"/>
+      <ClassDef glyph="uni0F191F" class="1"/>
+      <ClassDef glyph="uni0F1920" class="1"/>
+      <ClassDef glyph="uni0F1921" class="1"/>
+      <ClassDef glyph="uni0F1922" class="1"/>
+      <ClassDef glyph="uni0F1923" class="1"/>
+      <ClassDef glyph="uni0F1924" class="1"/>
+      <ClassDef glyph="uni0F1925" class="1"/>
+      <ClassDef glyph="uni0F1926" class="1"/>
+      <ClassDef glyph="uni0F1927" class="1"/>
+      <ClassDef glyph="uni0F1928" class="1"/>
+      <ClassDef glyph="uni0F1929" class="1"/>
+      <ClassDef glyph="uni0F192A" class="1"/>
+      <ClassDef glyph="uni0F192B" class="1"/>
+      <ClassDef glyph="uni0F192C" class="1"/>
+      <ClassDef glyph="uni0F192D" class="1"/>
+      <ClassDef glyph="uni0F192E" class="1"/>
+      <ClassDef glyph="uni0F192F" class="1"/>
+      <ClassDef glyph="uni0F1930" class="1"/>
+      <ClassDef glyph="uni0F1931" class="1"/>
+      <ClassDef glyph="uni0F1932" class="1"/>
+      <ClassDef glyph="uni0F1933" class="1"/>
+      <ClassDef glyph="uni0F1934" class="1"/>
+      <ClassDef glyph="uni0F1935" class="1"/>
+      <ClassDef glyph="uni0F1936" class="1"/>
+      <ClassDef glyph="uni0F1937" class="1"/>
+      <ClassDef glyph="uni0F1938" class="1"/>
+      <ClassDef glyph="uni0F1939" class="1"/>
+      <ClassDef glyph="uni0F193A" class="1"/>
+      <ClassDef glyph="uni0F193B" class="1"/>
+      <ClassDef glyph="uni0F193C" class="1"/>
+      <ClassDef glyph="uni0F193D" class="1"/>
+      <ClassDef glyph="uni0F193E" class="1"/>
+      <ClassDef glyph="uni0F193F" class="1"/>
+      <ClassDef glyph="uni0F1940" class="1"/>
+      <ClassDef glyph="uni0F1941" class="1"/>
+      <ClassDef glyph="uni0F1942" class="1"/>
+      <ClassDef glyph="uni0F1943" class="1"/>
+      <ClassDef glyph="uni0F1944" class="1"/>
+      <ClassDef glyph="uni0F1945" class="1"/>
+      <ClassDef glyph="uni0F1946" class="1"/>
+      <ClassDef glyph="uni0F1947" class="1"/>
+      <ClassDef glyph="uni0F1948" class="1"/>
+      <ClassDef glyph="uni0F1949" class="1"/>
+      <ClassDef glyph="uni0F194A" class="1"/>
+      <ClassDef glyph="uni0F194B" class="1"/>
+      <ClassDef glyph="uni0F194C" class="1"/>
+      <ClassDef glyph="uni0F194D" class="1"/>
+      <ClassDef glyph="uni0F194E" class="1"/>
+      <ClassDef glyph="uni0F194F" class="1"/>
+      <ClassDef glyph="uni0F1950" class="1"/>
+      <ClassDef glyph="uni0F1951" class="1"/>
+      <ClassDef glyph="uni0F1952" class="1"/>
+      <ClassDef glyph="uni0F1953" class="1"/>
+      <ClassDef glyph="uni0F1954" class="1"/>
+      <ClassDef glyph="uni0F1955" class="1"/>
+      <ClassDef glyph="uni0F1956" class="1"/>
+      <ClassDef glyph="uni0F1957" class="1"/>
+      <ClassDef glyph="uni0F1958" class="1"/>
+      <ClassDef glyph="uni0F1959" class="1"/>
+      <ClassDef glyph="uni0F195A" class="1"/>
+      <ClassDef glyph="uni0F195B" class="1"/>
+      <ClassDef glyph="uni0F195C" class="1"/>
+      <ClassDef glyph="uni0F195D" class="1"/>
+      <ClassDef glyph="uni0F195E" class="1"/>
+      <ClassDef glyph="uni0F195F" class="1"/>
+      <ClassDef glyph="uni0F1960" class="1"/>
+      <ClassDef glyph="uni0F1961" class="1"/>
+      <ClassDef glyph="uni0F1962" class="1"/>
+      <ClassDef glyph="uni0F1963" class="1"/>
+      <ClassDef glyph="uni0F1964" class="1"/>
+      <ClassDef glyph="uni0F1965" class="1"/>
+      <ClassDef glyph="uni0F1966" class="1"/>
+      <ClassDef glyph="uni0F1967" class="1"/>
+      <ClassDef glyph="uni0F1968" class="1"/>
+      <ClassDef glyph="uni0F1969" class="1"/>
+      <ClassDef glyph="uni0F196A" class="1"/>
+      <ClassDef glyph="uni0F196B" class="1"/>
+      <ClassDef glyph="uni0F196C" class="1"/>
+      <ClassDef glyph="uni0F196D" class="1"/>
+      <ClassDef glyph="uni0F196E" class="1"/>
+      <ClassDef glyph="uni0F196F" class="1"/>
+      <ClassDef glyph="uni0F1970" class="1"/>
+      <ClassDef glyph="uni0F1971" class="1"/>
+      <ClassDef glyph="uni0F1972" class="1"/>
+      <ClassDef glyph="uni0F1973" class="1"/>
+      <ClassDef glyph="uni0F1974" class="1"/>
+      <ClassDef glyph="uni0F1975" class="1"/>
+      <ClassDef glyph="uni0F1976" class="1"/>
+      <ClassDef glyph="uni0F1977" class="1"/>
+      <ClassDef glyph="uni0F1978" class="1"/>
+      <ClassDef glyph="uni0F1979" class="1"/>
+      <ClassDef glyph="uni0F197A" class="1"/>
+      <ClassDef glyph="uni0F197B" class="1"/>
+      <ClassDef glyph="uni0F197C" class="1"/>
+      <ClassDef glyph="uni0F197D" class="1"/>
+      <ClassDef glyph="uni0F197E" class="1"/>
+      <ClassDef glyph="uni0F197F" class="1"/>
+      <ClassDef glyph="uni0F1980" class="1"/>
+      <ClassDef glyph="uni0F1981" class="1"/>
+      <ClassDef glyph="uni0F1982" class="1"/>
+      <ClassDef glyph="uni0F1983" class="1"/>
+      <ClassDef glyph="uni0F1984" class="1"/>
+      <ClassDef glyph="uni0F1985" class="1"/>
+      <ClassDef glyph="uni0F1986" class="1"/>
+      <ClassDef glyph="uni0F1987" class="1"/>
+      <ClassDef glyph="uni0F1988" class="1"/>
+      <ClassDef glyph="uni0F1989" class="1"/>
+      <ClassDef glyph="uni0F198A" class="1"/>
+      <ClassDef glyph="uni0F198B" class="1"/>
+      <ClassDef glyph="uni0F198C" class="1"/>
+      <ClassDef glyph="uni0F198D" class="1"/>
+      <ClassDef glyph="uni0F198E" class="1"/>
+      <ClassDef glyph="uni0F198F" class="1"/>
+      <ClassDef glyph="uni0F1990" class="1"/>
+      <ClassDef glyph="uni0F1991" class="1"/>
+      <ClassDef glyph="uni0F1992" class="1"/>
+      <ClassDef glyph="uni0F1993" class="1"/>
+      <ClassDef glyph="uni0F1994" class="1"/>
+      <ClassDef glyph="uni0F1995" class="1"/>
+      <ClassDef glyph="uni0F1996" class="1"/>
+      <ClassDef glyph="uni0F1997" class="1"/>
+      <ClassDef glyph="uni0F1998" class="1"/>
+      <ClassDef glyph="uni0F1999" class="1"/>
+      <ClassDef glyph="uni0F199A" class="1"/>
+      <ClassDef glyph="uni0F199B" class="1"/>
+      <ClassDef glyph="uni0F199C" class="1"/>
+      <ClassDef glyph="uni0F199D" class="1"/>
+      <ClassDef glyph="uni0F199E" class="1"/>
+      <ClassDef glyph="uni0F199F" class="1"/>
+      <ClassDef glyph="uni0F19A0" class="1"/>
+      <ClassDef glyph="uni0F19A1" class="1"/>
+      <ClassDef glyph="uni0F19A2" class="1"/>
+      <ClassDef glyph="uni0F19A3" class="1"/>
+      <ClassDef glyph="uni0F19A4" class="1"/>
+      <ClassDef glyph="uni0F19A5" class="1"/>
+      <ClassDef glyph="uni0F19A6" class="1"/>
+      <ClassDef glyph="uni0F19A7" class="1"/>
+      <ClassDef glyph="uni0F19A8" class="1"/>
+      <ClassDef glyph="uni0F19A9" class="1"/>
+      <ClassDef glyph="uni0F19AA" class="1"/>
+      <ClassDef glyph="uni0F19AB" class="1"/>
+      <ClassDef glyph="uni0F19AC" class="1"/>
+      <ClassDef glyph="uni0F19AD" class="1"/>
+      <ClassDef glyph="uni0F19AE" class="1"/>
+      <ClassDef glyph="uni0F19AF" class="1"/>
+      <ClassDef glyph="uni0F19B0" class="1"/>
+      <ClassDef glyph="uni0F19B1" class="1"/>
+      <ClassDef glyph="uni0F19B2" class="1"/>
+      <ClassDef glyph="uni0F19B3" class="1"/>
+      <ClassDef glyph="uni0F19B4" class="1"/>
+      <ClassDef glyph="uni0F19B5" class="1"/>
+      <ClassDef glyph="uni0F19B6" class="1"/>
+      <ClassDef glyph="uni0F19B7" class="1"/>
+      <ClassDef glyph="uni0F19B8" class="1"/>
+      <ClassDef glyph="uni0F19B9" class="1"/>
+      <ClassDef glyph="uni0F19BA" class="1"/>
+      <ClassDef glyph="uni0F19BB" class="1"/>
+      <ClassDef glyph="uni0F19BC" class="1"/>
+      <ClassDef glyph="uni0F19BD" class="1"/>
+      <ClassDef glyph="uni0F19BE" class="1"/>
+      <ClassDef glyph="uni0F19BF" class="1"/>
+      <ClassDef glyph="uni0F19C0" class="1"/>
+      <ClassDef glyph="uni0F19C1" class="1"/>
+      <ClassDef glyph="uni0F19C2" class="1"/>
+      <ClassDef glyph="uni0F19C3" class="1"/>
+      <ClassDef glyph="uni0F19C4" class="1"/>
+      <ClassDef glyph="uni0F19C5" class="1"/>
+      <ClassDef glyph="uni0F19C6" class="1"/>
+      <ClassDef glyph="uni0F19C7" class="1"/>
+      <ClassDef glyph="uni0F19C8" class="1"/>
+      <ClassDef glyph="uni0F19C9" class="1"/>
+      <ClassDef glyph="uni0F19CA" class="1"/>
+      <ClassDef glyph="uni0F19CB" class="1"/>
+      <ClassDef glyph="uni0F19CC" class="1"/>
+      <ClassDef glyph="uni0F19CD" class="1"/>
+      <ClassDef glyph="uni0F19CE" class="1"/>
+      <ClassDef glyph="uni0F19CF" class="1"/>
+      <ClassDef glyph="uni0F19D0" class="1"/>
+      <ClassDef glyph="uni0F19D1" class="1"/>
+      <ClassDef glyph="uni0F19D2" class="1"/>
+      <ClassDef glyph="uni0F19D3" class="1"/>
+      <ClassDef glyph="uni0F19D4" class="1"/>
+      <ClassDef glyph="uni0F19D5" class="1"/>
+      <ClassDef glyph="uni0F19D6" class="1"/>
+      <ClassDef glyph="uni0F19D7" class="1"/>
+      <ClassDef glyph="uni0F19D8" class="1"/>
+      <ClassDef glyph="uni0F19D9" class="1"/>
+      <ClassDef glyph="uni0F19DA" class="1"/>
+      <ClassDef glyph="uni0F19DB" class="1"/>
+      <ClassDef glyph="uni0F19DC" class="1"/>
+      <ClassDef glyph="uni0F19DD" class="1"/>
+      <ClassDef glyph="uni0F19DE" class="1"/>
+      <ClassDef glyph="uni0F19DF" class="1"/>
+      <ClassDef glyph="uni0F19E0" class="1"/>
+      <ClassDef glyph="uni0F19E1" class="1"/>
+      <ClassDef glyph="uni0F19E2" class="1"/>
+      <ClassDef glyph="uni0F19E3" class="1"/>
+      <ClassDef glyph="uni0F19E4" class="1"/>
+      <ClassDef glyph="uni0F19E5" class="1"/>
+      <ClassDef glyph="uni0F19E6" class="1"/>
+      <ClassDef glyph="uni0F19E7" class="1"/>
+      <ClassDef glyph="uni0F19E8" class="1"/>
+      <ClassDef glyph="uni0F19E9" class="1"/>
+      <ClassDef glyph="uni0F19EA" class="1"/>
+      <ClassDef glyph="uni0F19EB" class="1"/>
+      <ClassDef glyph="uni0F19EC" class="1"/>
+      <ClassDef glyph="uni0F19ED" class="1"/>
+      <ClassDef glyph="uni0F19EE" class="1"/>
+      <ClassDef glyph="uni0F19EF" class="1"/>
+      <ClassDef glyph="uni0F19F0" class="1"/>
+      <ClassDef glyph="uni0F19F1" class="1"/>
+      <ClassDef glyph="uni0F19F2" class="1"/>
+      <ClassDef glyph="uni0F19F3" class="1"/>
+      <ClassDef glyph="uni0F19F4" class="1"/>
+      <ClassDef glyph="uni0F19F5" class="1"/>
+      <ClassDef glyph="uni0F19F6" class="1"/>
+      <ClassDef glyph="uni0F19F7" class="1"/>
+      <ClassDef glyph="uni0F19F8" class="1"/>
+      <ClassDef glyph="uni0F19F9" class="1"/>
+      <ClassDef glyph="uni0F19FA" class="1"/>
+      <ClassDef glyph="uni0F19FB" class="1"/>
+      <ClassDef glyph="uni0F19FC" class="1"/>
+      <ClassDef glyph="uni0F19FD" class="1"/>
+      <ClassDef glyph="uni0F19FE" class="1"/>
+      <ClassDef glyph="uni0F19FF" class="1"/>
+      <ClassDef glyph="uni0F1B00" class="1"/>
+      <ClassDef glyph="uni0F1B01" class="1"/>
+      <ClassDef glyph="uni0F1B02" class="1"/>
+      <ClassDef glyph="uni0F1B03" class="1"/>
+      <ClassDef glyph="uni0F1B04" class="1"/>
+      <ClassDef glyph="uni0F1B05" class="1"/>
+      <ClassDef glyph="uni0F1B06" class="1"/>
+      <ClassDef glyph="uni0F1B07" class="1"/>
+      <ClassDef glyph="uni0F1B08" class="1"/>
+      <ClassDef glyph="uni0F1B09" class="1"/>
+      <ClassDef glyph="uni0F1B0A" class="1"/>
+      <ClassDef glyph="uni0F1B0B" class="1"/>
+      <ClassDef glyph="uni0F1B0C" class="1"/>
+      <ClassDef glyph="uni0F1B0D" class="1"/>
+      <ClassDef glyph="uni0F1B0E" class="1"/>
+      <ClassDef glyph="uni0F1B0F" class="1"/>
+      <ClassDef glyph="uni0F1B10" class="1"/>
+      <ClassDef glyph="uni0F1B11" class="1"/>
+      <ClassDef glyph="uni0F1B12" class="1"/>
+      <ClassDef glyph="uni0F1B13" class="1"/>
+      <ClassDef glyph="uni0F1B14" class="1"/>
+      <ClassDef glyph="uni0F1B15" class="1"/>
+      <ClassDef glyph="uni0F1B16" class="1"/>
+      <ClassDef glyph="uni0F1B17" class="1"/>
+      <ClassDef glyph="uni0F1B18" class="1"/>
+      <ClassDef glyph="uni0F1B19" class="1"/>
+      <ClassDef glyph="uni0F1B1A" class="1"/>
+      <ClassDef glyph="uni0F1B1B" class="1"/>
+      <ClassDef glyph="uni0F1B1C" class="1"/>
+      <ClassDef glyph="uni0F1B1D" class="1"/>
+      <ClassDef glyph="uni0F1B1E" class="1"/>
+      <ClassDef glyph="uni0F1B1F" class="1"/>
+      <ClassDef glyph="uni0F1B20" class="1"/>
+      <ClassDef glyph="uni0F1B21" class="1"/>
+      <ClassDef glyph="uni0F1B22" class="1"/>
+      <ClassDef glyph="uni0F1B23" class="1"/>
+      <ClassDef glyph="uni0F1B24" class="1"/>
+      <ClassDef glyph="uni0F1B25" class="1"/>
+      <ClassDef glyph="uni0F1B26" class="1"/>
+      <ClassDef glyph="uni0F1B27" class="1"/>
+      <ClassDef glyph="uni0F1B28" class="1"/>
+      <ClassDef glyph="uni0F1B29" class="1"/>
+      <ClassDef glyph="uni0F1B2A" class="1"/>
+      <ClassDef glyph="uni0F1B2B" class="1"/>
+      <ClassDef glyph="uni0F1B2C" class="1"/>
+      <ClassDef glyph="uni0F1B2D" class="1"/>
+      <ClassDef glyph="uni0F1B2E" class="1"/>
+      <ClassDef glyph="uni0F1B2F" class="1"/>
+      <ClassDef glyph="uni0F1B30" class="1"/>
+      <ClassDef glyph="uni0F1B31" class="1"/>
+      <ClassDef glyph="uni0F1B32" class="1"/>
+      <ClassDef glyph="uni0F1B33" class="1"/>
+      <ClassDef glyph="uni0F1B34" class="1"/>
+      <ClassDef glyph="uni0F1B35" class="1"/>
+      <ClassDef glyph="uni0F1B36" class="1"/>
+      <ClassDef glyph="uni0F1B37" class="1"/>
+      <ClassDef glyph="uni0F1B38" class="1"/>
+      <ClassDef glyph="uni0F1B39" class="1"/>
+      <ClassDef glyph="uni0F1B3A" class="1"/>
+      <ClassDef glyph="uni0F1B3B" class="1"/>
+      <ClassDef glyph="uni0F1B3C" class="1"/>
+      <ClassDef glyph="uni0F1B3D" class="1"/>
+      <ClassDef glyph="uni0F1B3E" class="1"/>
+      <ClassDef glyph="uni0F1B3F" class="1"/>
+      <ClassDef glyph="uni0F1B40" class="1"/>
+      <ClassDef glyph="uni0F1B41" class="1"/>
+      <ClassDef glyph="uni0F1B42" class="1"/>
+      <ClassDef glyph="uni0F1B43" class="1"/>
+      <ClassDef glyph="uni0F1B44" class="1"/>
+      <ClassDef glyph="uni0F1B45" class="1"/>
+      <ClassDef glyph="uni0F1B46" class="1"/>
+      <ClassDef glyph="uni0F1B47" class="1"/>
+      <ClassDef glyph="uni0F1B48" class="1"/>
+      <ClassDef glyph="uni0F1B49" class="1"/>
+      <ClassDef glyph="uni0F1B4A" class="1"/>
+      <ClassDef glyph="uni0F1B4B" class="1"/>
+      <ClassDef glyph="uni0F1B4C" class="1"/>
+      <ClassDef glyph="uni0F1B4D" class="1"/>
+      <ClassDef glyph="uni0F1B4E" class="1"/>
+      <ClassDef glyph="uni0F1B4F" class="1"/>
+      <ClassDef glyph="uni0F1B50" class="1"/>
+      <ClassDef glyph="uni0F1B51" class="1"/>
+      <ClassDef glyph="uni0F1B52" class="1"/>
+      <ClassDef glyph="uni0F1B53" class="1"/>
+      <ClassDef glyph="uni0F1B54" class="1"/>
+      <ClassDef glyph="uni0F1B55" class="1"/>
+      <ClassDef glyph="uni0F1B56" class="1"/>
+      <ClassDef glyph="uni0F1B57" class="1"/>
+      <ClassDef glyph="uni0F1B58" class="1"/>
+      <ClassDef glyph="uni0F1B59" class="1"/>
+      <ClassDef glyph="uni0F1B5A" class="1"/>
+      <ClassDef glyph="uni0F1B5B" class="1"/>
+      <ClassDef glyph="uni0F1B5C" class="1"/>
+      <ClassDef glyph="uni0F1B5D" class="1"/>
+      <ClassDef glyph="uni0F1B5E" class="1"/>
+      <ClassDef glyph="uni0F1B5F" class="1"/>
+      <ClassDef glyph="uni0F1B60" class="1"/>
+      <ClassDef glyph="uni0F1B61" class="1"/>
+      <ClassDef glyph="uni0F1B62" class="1"/>
+      <ClassDef glyph="uni0F1B63" class="1"/>
+      <ClassDef glyph="uni0F1B64" class="1"/>
+      <ClassDef glyph="uni0F1B65" class="1"/>
+      <ClassDef glyph="uni0F1B66" class="1"/>
+      <ClassDef glyph="uni0F1B67" class="1"/>
+      <ClassDef glyph="uni0F1B68" class="1"/>
+      <ClassDef glyph="uni0F1B69" class="1"/>
+      <ClassDef glyph="uni0F1B6A" class="1"/>
+      <ClassDef glyph="uni0F1B6B" class="1"/>
+      <ClassDef glyph="uni0F1B6C" class="1"/>
+      <ClassDef glyph="uni0F1B6D" class="1"/>
+      <ClassDef glyph="uni0F1B6E" class="1"/>
+      <ClassDef glyph="uni0F1B6F" class="1"/>
+      <ClassDef glyph="uni0F1B70" class="1"/>
+      <ClassDef glyph="uni0F1B71" class="1"/>
+      <ClassDef glyph="uni0F1B72" class="1"/>
+      <ClassDef glyph="uni0F1B73" class="1"/>
+      <ClassDef glyph="uni0F1B74" class="1"/>
+      <ClassDef glyph="uni0F1B75" class="1"/>
+      <ClassDef glyph="uni0F1B76" class="1"/>
+      <ClassDef glyph="uni0F1B77" class="1"/>
+      <ClassDef glyph="uni0F1B78" class="1"/>
+      <ClassDef glyph="uni0F1B79" class="1"/>
+      <ClassDef glyph="uni0F1B7A" class="1"/>
+      <ClassDef glyph="uni0F1B7B" class="1"/>
+      <ClassDef glyph="uni0F1B7C" class="1"/>
+      <ClassDef glyph="uni0F1B7D" class="1"/>
+      <ClassDef glyph="uni0F1B7E" class="1"/>
+      <ClassDef glyph="uni0F1B7F" class="1"/>
+      <ClassDef glyph="uni0F1B80" class="1"/>
+      <ClassDef glyph="uni0F1B81" class="1"/>
+      <ClassDef glyph="uni0F1B82" class="1"/>
+      <ClassDef glyph="uni0F1B83" class="1"/>
+      <ClassDef glyph="uni0F1B84" class="1"/>
+      <ClassDef glyph="uni0F1B85" class="1"/>
+      <ClassDef glyph="uni0F1B86" class="1"/>
+      <ClassDef glyph="uni0F1B87" class="1"/>
+      <ClassDef glyph="uni0F1B88" class="1"/>
+      <ClassDef glyph="uni0F1B89" class="1"/>
+      <ClassDef glyph="uni0F1B8A" class="1"/>
+      <ClassDef glyph="uni0F1B8B" class="1"/>
+      <ClassDef glyph="uni0F1B8C" class="1"/>
+      <ClassDef glyph="uni0F1B8D" class="1"/>
+      <ClassDef glyph="uni0F1B8E" class="1"/>
+      <ClassDef glyph="uni0F1B8F" class="1"/>
+      <ClassDef glyph="uni0F1B90" class="1"/>
+      <ClassDef glyph="uni0F1B91" class="1"/>
+      <ClassDef glyph="uni0F1B92" class="1"/>
+      <ClassDef glyph="uni0F1B93" class="1"/>
+      <ClassDef glyph="uni0F1B94" class="1"/>
+      <ClassDef glyph="uni0F1B95" class="1"/>
+      <ClassDef glyph="uni0F1B96" class="1"/>
+      <ClassDef glyph="uni0F1B97" class="1"/>
+      <ClassDef glyph="uni0F1B98" class="1"/>
+      <ClassDef glyph="uni0F1B99" class="1"/>
+      <ClassDef glyph="uni0F1B9A" class="1"/>
+      <ClassDef glyph="uni0F1B9B" class="1"/>
+      <ClassDef glyph="uni0F1B9C" class="1"/>
+      <ClassDef glyph="uni0F1B9D" class="1"/>
+      <ClassDef glyph="uni0F1B9E" class="1"/>
+      <ClassDef glyph="uni0F1B9F" class="1"/>
+      <ClassDef glyph="uni0F1BA0" class="1"/>
+      <ClassDef glyph="uni0F1BA1" class="1"/>
+      <ClassDef glyph="uni0F1BA2" class="1"/>
+      <ClassDef glyph="uni0F1BA3" class="1"/>
+      <ClassDef glyph="uni0F1BA4" class="1"/>
+      <ClassDef glyph="uni0F1BA5" class="1"/>
+      <ClassDef glyph="uni0F1BA6" class="1"/>
+      <ClassDef glyph="uni0F1BA7" class="1"/>
+      <ClassDef glyph="uni0F1BA8" class="1"/>
+      <ClassDef glyph="uni0F1BA9" class="1"/>
+      <ClassDef glyph="uni0F1BAA" class="1"/>
+      <ClassDef glyph="uni0F1BAB" class="1"/>
+      <ClassDef glyph="uni0F1BAC" class="1"/>
+      <ClassDef glyph="uni0F1BAD" class="1"/>
+      <ClassDef glyph="uni0F1BAE" class="1"/>
+      <ClassDef glyph="uni0F1BAF" class="1"/>
+      <ClassDef glyph="uni0F1BB0" class="1"/>
+      <ClassDef glyph="uni0F1BB1" class="1"/>
+      <ClassDef glyph="uni0F1BB2" class="1"/>
+      <ClassDef glyph="uni0F1BB3" class="1"/>
+      <ClassDef glyph="uni0F1BB4" class="1"/>
+      <ClassDef glyph="uni0F1BB5" class="1"/>
+      <ClassDef glyph="uni0F1BB6" class="1"/>
+      <ClassDef glyph="uni0F1BB7" class="1"/>
+      <ClassDef glyph="uni0F1BB8" class="1"/>
+      <ClassDef glyph="uni0F1BB9" class="1"/>
+      <ClassDef glyph="uni0F1BBA" class="1"/>
+      <ClassDef glyph="uni0F1BBB" class="1"/>
+      <ClassDef glyph="uni0F1BBC" class="1"/>
+      <ClassDef glyph="uni0F1BBD" class="1"/>
+      <ClassDef glyph="uni0F1BBE" class="1"/>
+      <ClassDef glyph="uni0F1BBF" class="1"/>
+      <ClassDef glyph="uni0F1BC0" class="1"/>
+      <ClassDef glyph="uni0F1BC1" class="1"/>
+      <ClassDef glyph="uni0F1BC2" class="1"/>
+      <ClassDef glyph="uni0F1BC3" class="1"/>
+      <ClassDef glyph="uni0F1BC4" class="1"/>
+      <ClassDef glyph="uni0F1BC5" class="1"/>
+      <ClassDef glyph="uni0F1BC6" class="1"/>
+      <ClassDef glyph="uni0F1BC7" class="1"/>
+      <ClassDef glyph="uni0F1BC8" class="1"/>
+      <ClassDef glyph="uni0F1BC9" class="1"/>
+      <ClassDef glyph="uni0F1BCA" class="1"/>
+      <ClassDef glyph="uni0F1BCB" class="1"/>
+      <ClassDef glyph="uni0F1BCC" class="1"/>
+      <ClassDef glyph="uni0F1BCD" class="1"/>
+      <ClassDef glyph="uni0F1BCE" class="1"/>
+      <ClassDef glyph="uni0F1BCF" class="1"/>
+      <ClassDef glyph="uni0F1BD0" class="1"/>
+      <ClassDef glyph="uni0F1BD1" class="1"/>
+      <ClassDef glyph="uni0F1BD2" class="1"/>
+      <ClassDef glyph="uni0F1BD3" class="1"/>
+      <ClassDef glyph="uni0F1BD4" class="1"/>
+      <ClassDef glyph="uni0F1BD5" class="1"/>
+      <ClassDef glyph="uni0F1BD6" class="1"/>
+      <ClassDef glyph="uni0F1BD7" class="1"/>
+      <ClassDef glyph="uni0F1BD8" class="1"/>
+      <ClassDef glyph="uni0F1BD9" class="1"/>
+      <ClassDef glyph="uni0F1BDA" class="1"/>
+      <ClassDef glyph="uni0F1BDB" class="1"/>
+      <ClassDef glyph="uni0F1BDC" class="1"/>
+      <ClassDef glyph="uni0F1BDD" class="1"/>
+      <ClassDef glyph="uni0F1BDE" class="1"/>
+      <ClassDef glyph="uni0F1BDF" class="1"/>
+      <ClassDef glyph="uni0F1BE0" class="1"/>
+      <ClassDef glyph="uni0F1BE1" class="1"/>
+      <ClassDef glyph="uni0F1BE2" class="1"/>
+      <ClassDef glyph="uni0F1BE3" class="1"/>
+      <ClassDef glyph="uni0F1BE4" class="1"/>
+      <ClassDef glyph="uni0F1BE5" class="1"/>
+      <ClassDef glyph="uni0F1BE6" class="1"/>
+      <ClassDef glyph="uni0F1BE7" class="1"/>
+      <ClassDef glyph="uni0F1BE8" class="1"/>
+      <ClassDef glyph="uni0F1BE9" class="1"/>
+      <ClassDef glyph="uni0F1BEA" class="1"/>
+      <ClassDef glyph="uni0F1BEB" class="1"/>
+      <ClassDef glyph="uni0F1BEC" class="1"/>
+      <ClassDef glyph="uni0F1BED" class="1"/>
+      <ClassDef glyph="uni0F1BEE" class="1"/>
+      <ClassDef glyph="uni0F1BEF" class="1"/>
+      <ClassDef glyph="uni0F1BF0" class="1"/>
+      <ClassDef glyph="uni0F1BF1" class="1"/>
+      <ClassDef glyph="uni0F1BF2" class="1"/>
+      <ClassDef glyph="uni0F1BF3" class="1"/>
+      <ClassDef glyph="uni0F1BF4" class="1"/>
+      <ClassDef glyph="uni0F1BF5" class="1"/>
+      <ClassDef glyph="uni0F1BF6" class="1"/>
+      <ClassDef glyph="uni0F1BF7" class="1"/>
+      <ClassDef glyph="uni0F1BF8" class="1"/>
+      <ClassDef glyph="uni0F1BF9" class="1"/>
+      <ClassDef glyph="uni0F1BFA" class="1"/>
+      <ClassDef glyph="uni0F1BFB" class="1"/>
+      <ClassDef glyph="uni0F1BFC" class="1"/>
+      <ClassDef glyph="uni0F1BFD" class="1"/>
+      <ClassDef glyph="uni0F1BFE" class="1"/>
+      <ClassDef glyph="uni0F1BFF" class="1"/>
+      <ClassDef glyph="uni0F1C00" class="1"/>
+      <ClassDef glyph="uni0F1C01" class="1"/>
+      <ClassDef glyph="uni0F1C02" class="1"/>
+      <ClassDef glyph="uni0F1C03" class="1"/>
+      <ClassDef glyph="uni0F1C04" class="1"/>
+      <ClassDef glyph="uni0F1C05" class="1"/>
+      <ClassDef glyph="uni0F1C06" class="1"/>
+      <ClassDef glyph="uni0F1C07" class="1"/>
+      <ClassDef glyph="uni0F1C08" class="1"/>
+      <ClassDef glyph="uni0F1C09" class="1"/>
+      <ClassDef glyph="uni0F1C0A" class="1"/>
+      <ClassDef glyph="uni0F1C0B" class="1"/>
+      <ClassDef glyph="uni0F1C0C" class="1"/>
+      <ClassDef glyph="uni0F1C0D" class="1"/>
+      <ClassDef glyph="uni0F1C0E" class="1"/>
+      <ClassDef glyph="uni0F1C0F" class="1"/>
+      <ClassDef glyph="uni0F1C10" class="1"/>
+      <ClassDef glyph="uni0F1C11" class="1"/>
+      <ClassDef glyph="uni0F1C12" class="1"/>
+      <ClassDef glyph="uni0F1C13" class="1"/>
+      <ClassDef glyph="uni0F1C14" class="1"/>
+      <ClassDef glyph="uni0F1C15" class="1"/>
+      <ClassDef glyph="uni0F1C16" class="1"/>
+      <ClassDef glyph="uni0F1C17" class="1"/>
+      <ClassDef glyph="uni0F1C18" class="1"/>
+      <ClassDef glyph="uni0F1C19" class="1"/>
+      <ClassDef glyph="uni0F1C1A" class="1"/>
+      <ClassDef glyph="uni0F1C1B" class="1"/>
+      <ClassDef glyph="uni0F1C1C" class="1"/>
+      <ClassDef glyph="uni0F1C1D" class="1"/>
+      <ClassDef glyph="uni0F1C1E" class="1"/>
+      <ClassDef glyph="uni0F1C1F" class="1"/>
+      <ClassDef glyph="uni0F1C20" class="1"/>
+      <ClassDef glyph="uni0F1C21" class="1"/>
+      <ClassDef glyph="uni0F1C22" class="1"/>
+      <ClassDef glyph="uni0F1C23" class="1"/>
+      <ClassDef glyph="uni0F1C24" class="1"/>
+      <ClassDef glyph="uni0F1C25" class="1"/>
+      <ClassDef glyph="uni0F1C26" class="1"/>
+      <ClassDef glyph="uni0F1C27" class="1"/>
+      <ClassDef glyph="uni0F1C28" class="1"/>
+      <ClassDef glyph="uni0F1C29" class="1"/>
+      <ClassDef glyph="uni0F1C2A" class="1"/>
+      <ClassDef glyph="uni0F1C2B" class="1"/>
+      <ClassDef glyph="uni0F1C2C" class="1"/>
+      <ClassDef glyph="uni0F1C2D" class="1"/>
+      <ClassDef glyph="uni0F1C2E" class="1"/>
+      <ClassDef glyph="uni0F1C2F" class="1"/>
+      <ClassDef glyph="uni0F1C30" class="1"/>
+      <ClassDef glyph="uni0F1C31" class="1"/>
+      <ClassDef glyph="uni0F1C32" class="1"/>
+      <ClassDef glyph="uni0F1C33" class="1"/>
+      <ClassDef glyph="uni0F1C34" class="1"/>
+      <ClassDef glyph="uni0F1C35" class="1"/>
+      <ClassDef glyph="uni0F1C36" class="1"/>
+      <ClassDef glyph="uni0F1C37" class="1"/>
+      <ClassDef glyph="uni0F1C38" class="1"/>
+      <ClassDef glyph="uni0F1C39" class="1"/>
+      <ClassDef glyph="uni0F1C3A" class="1"/>
+      <ClassDef glyph="uni0F1C3B" class="1"/>
+      <ClassDef glyph="uni0F1C3C" class="1"/>
+      <ClassDef glyph="uni0F1C3D" class="1"/>
+      <ClassDef glyph="uni0F1C3E" class="1"/>
+      <ClassDef glyph="uni0F1C3F" class="1"/>
     </GlyphClassDef>
     <LigCaretList>
       <Coverage>
