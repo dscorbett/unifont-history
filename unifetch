@@ -50,7 +50,7 @@ find unifont-* '(' -name '*.tar.gz' -o -name '*.tar.xz' ')' -exec sh -c '
         rm "{}"
     ' -delete ';'
 find "unifont-$VERSION" -name '*.gz' -exec gunzip {} ';'
-find "unifont-$VERSION" -name '*.ttf' -exec ttx -x GlyphOrder -x cmap -x glyf -x hmtx -x loca {} ';' -delete
+find "unifont-$VERSION" '(' -name '*.otf' -o -name '*.ttf' ')' -exec ttx -x CFF -x CFF2 -x GlyphOrder -x cmap -x glyf -x hmtx -x loca {} ';' -delete
 find -d "unifont-$VERSION" -name "*[-_]$SHORT_VERSION*" -exec sh -c '
         mv "{}" "$(dirname "{}")/$(basename "{}" | '"$SED"' "s/[-_]\('"$VERSION"'\|'"$SHORT_VERSION"'\)//")"
     ' ';'
