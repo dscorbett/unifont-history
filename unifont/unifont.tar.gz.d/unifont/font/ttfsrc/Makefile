@@ -32,7 +32,7 @@ COPYRIGHT = "Copyright © 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, et al."
 
-VERSION = 14.0.03
+VERSION = 14.0.04
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex
@@ -57,7 +57,7 @@ VERSION = 14.0.03
 # a .sfd generated from the whole unifont.hex would be too big to
 # process all at once.
 
-all: ttf otf clean
+all: ttf otf
 
 #
 # Commented out this operation on SFD file because not all applications
@@ -160,12 +160,12 @@ otf: $(FONTFILE).hex $(HEX2OTF)
 # Delete files copied into this directory to build TTF fonts.
 #
 clean:
-	\rm -f $(FONTFILE).bdf $(FONTFILE).hex $(COMBINING).txt
+	\rm -f *.hex *.txt
 
 #
 # Delete files created within this directory while building TTF fonts.
 #
 distclean: clean
-	\rm -f $(FONTFILE).sfd $(FONTFILE).ttf $(FONTFILE).otf
+	\rm -f *.sfd *.ttf *.otf
 
 .PHONY: all outline sbit clean distclean

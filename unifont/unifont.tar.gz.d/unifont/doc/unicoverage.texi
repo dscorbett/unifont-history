@@ -32,7 +32,7 @@ unicoverage @minus{} Print coverage of each Unicode Script
 @subsection unicoverage SYNOPSIS
 @c DEBUG: print_menu("unicoverage SYNOPSIS")
 
-@b{unicoverage }[@minus{}i@i{input-file}] [@minus{}o@i{output-file}]
+@b{unicoverage }[@minus{}i@i{input-file}] [@minus{}o@i{output-file}] [@minus{}n]
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node unicoverage DESCRIPTION
@@ -60,6 +60,10 @@ in ascending order.
 @table @code
 @item @b{@minus{}i}
 Specify the input file. The default is STDIN.
+@comment TROFF INPUT: .TP
+
+@item @b{@minus{}n}
+Print the number of glyphs in each range instead of a percentage count.
 @comment TROFF INPUT: .TP
 
 @item @b{@minus{}o}

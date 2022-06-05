@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.29">
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.33">
 
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="14.0"/>
-    <checkSumAdjustment value="0x4dedc6c"/>
+    <checkSumAdjustment value="0xf9e3a5a5"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sun Apr 17 13:56:21 2022"/>
-    <modified value="Sun Apr 17 13:56:21 2022"/>
+    <created value="Sat Jun  4 16:54:30 2022"/>
+    <modified value="Sat Jun  4 16:54:30 2022"/>
     <xMin value="-768"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -45,7 +45,7 @@
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="8939"/>
+    <numGlyphs value="8941"/>
     <maxPoints value="192"/>
     <maxContours value="26"/>
     <maxCompositePoints value="0"/>
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 17-4-2022
+      FontForge 2.0 : Unifont CSUR : 4-6-2022
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 14.0.03
+      Version 14.0.04
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 17-4-2022
+      FontForge 2.0 : Unifont CSUR : 4-6-2022
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 14.0.03
+      Version 14.0.04
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -9129,6 +9129,8 @@
       <psName name="uni0F1C3D"/>
       <psName name="uni0F1C3E"/>
       <psName name="uni0F1C3F"/>
+      <psName name="uni0FFFFE"/>
+      <psName name="uni0FFFFF"/>
     </extraNames>
   </post>
 
@@ -9140,8 +9142,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Sun Apr 17 13:56:09 2022"/>
-    <sourceModified value="Sun Apr 17 13:56:20 2022"/>
+    <sourceCreated value="Sat Jun  4 16:54:17 2022"/>
+    <sourceModified value="Sat Jun  4 16:54:29 2022"/>
   </FFTM>
 
   <GDEF>
@@ -18085,6 +18087,8 @@
       <ClassDef glyph="uni0F1C3D" class="1"/>
       <ClassDef glyph="uni0F1C3E" class="1"/>
       <ClassDef glyph="uni0F1C3F" class="1"/>
+      <ClassDef glyph="uni0FFFFE" class="1"/>
+      <ClassDef glyph="uni0FFFFF" class="1"/>
     </GlyphClassDef>
     <LigCaretList>
       <Coverage>

@@ -1,7 +1,10 @@
-0000-007F C0 Controls and Basic Latin
-0080-00FF C1 Controls and Latin-1 Supplement
-0100-017F Latin Extended - A
-0180-024F Latin Extended - B
+0000-001F C0 Controls
+0020-007E Basic Latin
+007F-007F Delete Character
+0080-009F C1 Controls
+00A0-00FF Latin-1 Supplement
+0100-017F Latin Extended-A
+0180-024F Latin Extended-B
 0250-02AF IPA Extensions
 02B0-02FF Spacing Modifier Letters
 0300-036F Combining Diacritical Marks
@@ -18,8 +21,8 @@
 0800-083F Samaritan
 0840-085F Mandaic
 0860-086F Syriac Supplement
-0870-089F Unassigned
-08A0-08FF Arabic Extended - A
+0870-089F Arabic Extended-B
+08A0-08FF Arabic Extended-A
 0900-097F Devanagari
 0980-09FF Bengali
 0A00-0A7F Gurmukhi
@@ -61,7 +64,7 @@
 1BC0-1BFF Batak
 1C00-1C4F Lepcha
 1C50-1C7F Ol Chiki
-1C80-1C8F Cyrillic Extended - C
+1C80-1C8F Cyrillic Extended-C
 1C90-1CBF Georgian Extended
 1CC0-1CCF Sundanese Supplement
 1CD0-1CFF Vedic Extensions
@@ -87,20 +90,20 @@
 25A0-25FF Geometric Shapes
 2600-26FF Miscellaneous Symbols
 2700-27BF Dingbats
-27C0-27EF Miscellaneous Mathematical Symbols - A
-27F0-27FF Supplemental Arrows - A
+27C0-27EF Miscellaneous Mathematical Symbols-A
+27F0-27FF Supplemental Arrows-A
 2800-28FF Braille Patterns
-2900-297F Supplemental Arrows - B
-2980-29FF Miscellaneous Mathematical Symbols - B
+2900-297F Supplemental Arrows-B
+2980-29FF Miscellaneous Mathematical Symbols-B
 2A00-2AFF Supplemental Mathematical Operators
 2B00-2BFF Miscellaneous Symbols and Arrows
 2C00-2C5F Glagolitic
-2C60-2C7F Latin Extended - C
+2C60-2C7F Latin Extended-C
 2C80-2CFF Coptic
 2D00-2D2F Georgian Supplement
 2D30-2D7F Tifinagh
 2D80-2DDF Ethiopic Extended
-2DE0-2DFF Cyrillic Extended - A
+2DE0-2DFF Cyrillic Extended-A
 2E00-2E7F Supplemental Punctuation
 2E80-2EFF CJK Radicals Supplement
 2F00-2FDF Kangxi Radicals
@@ -124,10 +127,10 @@ A000-A48F Yi Syllables
 A490-A4CF Yi Radicals
 A4D0-A4FF Lisu
 A500-A63F Vai
-A640-A69F Cyrillic Extended - B
+A640-A69F Cyrillic Extended-B
 A6A0-A6FF Bamum
 A700-A71F Modifier Tone Letters
-A720-A7FF Latin Extended - D
+A720-A7FF Latin Extended-D
 A800-A82F Syloti Nagri
 A830-A83F Common Indic Number Forms
 A840-A87F Phags-pa
@@ -135,20 +138,20 @@ A880-A8DF Saurashtra
 A8E0-A8FF Devanagari Extended
 A900-A92F Kayah Li
 A930-A95F Rejang
-A960-A97F Hangul Jamo Extended - A
+A960-A97F Hangul Jamo Extended-A
 A980-A9DF Javanese
-A9E0-A9FF Myanmar Extended - B
+A9E0-A9FF Myanmar Extended-B
 AA00-AA5F Cham
-AA60-AA7F Myanmar Extended - A
+AA60-AA7F Myanmar Extended-A
 AA80-AADF Tai Viet
 AAE0-AAFF Meetei Mayek Extensions
-AB00-AB2F Ethiopic Extended - A
-AB30-AB6F Latin Extended - E
+AB00-AB2F Ethiopic Extended-A
+AB30-AB6F Latin Extended-E
 AB70-ABBF Cherokee Supplement
 ABC0-ABFF Meetei Mayek
 AC00-D7AF Hangul Syllables
-D7B0-D7FF Hangul Jamo Extended - B
-D800-DFFF Surrogate Pairs - Not Used
+D7B0-D7FF Hangul Jamo Extended-B
+D800-DFFF Surrogate Pairs-Not Used
 E000-E07F PUA (CSUR/UCSUR): Tengwar
 E080-E0FF PUA (CSUR/UCSUR): Cirth
 E100-E14F PUA (CSUR/UCSUR): Engsvanyáli
@@ -184,6 +187,7 @@ E630-E64F PUA (CSUR/UCSUR): Seussian Latin Extenstions
 E650-E67F PUA (CSUR/UCSUR): Sylabica
 E680-E6CF PUA (CSUR/UCSUR): Ewellic
 E6D0-E6FF PUA (CSUR/UCSUR): Amlin
+E700-E73F PUA (CSUR/UCSUR): Unifon Extended
 E740-E76F PUA (CSUR/UCSUR): Unifon
 E770-E77F PUA (CSUR/UCSUR): Solresol
 E780-E7FF PUA (CSUR/UCSUR): Visible Speech
@@ -193,22 +197,41 @@ E890-E8DF PUA (CSUR/UCSUR): Aurebesh
 E8E0-E8FF PUA (CSUR/UCSUR): Tonal
 E900-E97F PUA (CSUR/UCSUR): Glaitha-A
 E980-E9DF PUA (CSUR/UCSUR): Glaitha-B
+E9E0-E9FF PUA (CSUR/UCSUR): Glaitha-B Reserved
 EA00-EA9F PUA (CSUR/UCSUR): Lhenazi
 EAA0-EAFF PUA (CSUR/UCSUR): Wanya
+EB00-EB3F PUA (CSUR/UCSUR): Orokin
+EB40-EB5F PUA (CSUR/UCSUR): Standard Galactic
+EB60-EB9F PUA (CSUR/UCSUR): Braille Extended
+EBA0-EBDF PUA (CSUR/UCSUR): Cistercian Numerals
+EBE0-EBFF PUA (CSUR/UCSUR): Unassigned
+EC00-EC2F PUA (CSUR/UCSUR): Cylenian
+EC30-EC6F PUA (CSUR/UCSUR): Syrrin
+EC70-ECFF PUA (CSUR/UCSUR): Unassigned
 ED00-ED3F PUA (CSUR/UCSUR): Deini
-F8A0-F8CF PUA (CSUR/UCSUR): Aiha
+ED40-ED7F PUA (CSUR/UCSUR): Niji
+ED80-EDFF PUA (CSUR/UCSUR): Unassigned
+EE00-EEFF PUA (CSUR/UCSUR): Unassigned
+EF00-EF7F PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
+EF80-EFFF PUA (CSUR/UCSUR): Unassigned; Reserved for Encoding Hacks
+F000-F4BF PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
+F4C0-F4EF PUA (CSUR/UCSUR): Ath (compatible with Nishiki-teki and Fairfax HD)
+F4F0-F7FF PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
+F800-F89F PUA (CSUR/UCSUR): Unassigned; Reserved for Apple Hacks
+F8A0-F8CF PUA (CSUR/UCSUR): Aiha (Kesh)
 F8D0-F8FF PUA (CSUR/UCSUR): Klingon
 F900-FAFF CJK Compatibility Ideographs
 FB00-FB4F Alphabetic Presentation Forms
-FB50-FDFF Arabic Presentation Forms - A
+FB50-FDFF Arabic Presentation Forms-A
 FE00-FE0F Variation Selectors
 FE10-FE1F Vertical Forms
 FE20-FE2F Combining Half Marks
 FE30-FE4F CJK Compatibility Forms
 FE50-FE6F Small Form Variants
-FE70-FEFF Arabic Presentation Forms - B
+FE70-FEFF Arabic Presentation Forms-B
 FF00-FFEF Halfwidth and Fullwidth Forms
-FFF0-FFFF Specials
+FFF0-FFFD Specials
+FFFE-FFFF Noncharacters
 ;
 ; ===== PLANE 01 =====
 ;
@@ -234,9 +257,11 @@ FFF0-FFFF Specials
 0104B0-0104FF Osage
 010500-01052F Elbasan
 010530-01056F Caucasian Albanian
-010570-0105FF Unassigned
+010570-0105BF Vithkuqi
+0105C0-0105FF Unassigned
 010600-01077F Linear A
-010780-0107FF Unassigned
+010780-0107BF Latin Extended-F
+0107C0-0107FF Unassigned
 010800-01083F Cypriot Syllabary
 010840-01085F Imperial Aramaic
 010860-01087F Palmyrene
@@ -268,7 +293,7 @@ FFF0-FFFF Specials
 010EC0-010EFF Unassigned
 010F00-010F2F Old Sogdian
 010F30-010F6F Sogdian
-010F70-010FAF Unassigned
+010F70-010FAF Old Uyghur
 010FB0-010FDF Chorasmian
 010FE0-010FFF Elymaic
 011000-01107F Brahmi
@@ -292,8 +317,8 @@ FFF0-FFFF Specials
 011660-01167F Mongolian Supplement
 011680-0116CF Takri
 0116D0-0116FF Unassigned
-011700-01173F Ahom
-011740-0117FF Unassigned
+011700-01174F Ahom
+011750-0117FF Unassigned
 011800-01184F Dogra
 011850-01189F Unassigned
 0118A0-0118FF Warang Citi
@@ -302,7 +327,7 @@ FFF0-FFFF Specials
 0119A0-0119FF Nandinagari
 011A00-011A4F Zanabazar Square
 011A50-011AAF Soyombo
-011AB0-011ABF Unassigned
+011AB0-011ABF Unified Canadian Aboriginal Syllabics Extended-A
 011AC0-011AFF Pau Cin Hau
 011B00-011BFF Unassigned
 011C00-011C6F Bhaiksuki
@@ -318,7 +343,8 @@ FFF0-FFFF Specials
 012000-0123FF Cuneiform
 012400-01247F Cuneiform Numbers and Punctuation
 012480-01254F Early Dynastic Cuneiform
-012550-012FFF Unassigned
+012550-012F8F Unassigned
+012F90-012FFF Cypro-Minoan
 013000-01342F Egyptian Hieroglyphs
 013430-01343F Egyptian Hieroglyph Format Controls
 013440-0143FF Unassigned
@@ -326,7 +352,7 @@ FFF0-FFFF Specials
 014680-0167FF Unassigned
 016800-016A3F Bamum Supplement
 016A40-016A6F Mro
-016A70-016ACF Unassigned
+016A70-016ACF Tangsa
 016AD0-016AFF Bassa Vah
 016B00-016B8F Pahawh Hmong
 016B90-016E3F Unassigned
@@ -339,15 +365,18 @@ FFF0-FFFF Specials
 018800-018AFF Tangut Components
 018B00-018CFF Khitan Small Script
 018D00-018D0F Tangut Supplement
-018D10-01AFFF Unassigned
+018D10-01AFEF Unassigned
+01AFF0-01AFFF Kana Extended-B
 01B000-01B0FF Kana Supplement
-01B100-01B12F Kana Extended - A
+01B100-01B12F Kana Extended-A
 01B130-01B16F Small Kana Extension
 01B170-01B2FF Nushu
 01B300-01BBFF Unassigned
 01BC00-01BC9F Duployan
 01BCA0-01BCAF Shorthand Format Controls
-01BCB0-01CFFF Unassigned
+01BCB0-01CEFF Unassigned
+01CF00-01CFCF Znamenny Musical Notation
+01CFD0-01CFFF Unassigned
 01D000-01D0FF Byzantine Musical Symbols
 01D100-01D1FF Musical Symbols
 01D200-01D24F Ancient Greek Musical Notation
@@ -358,13 +387,16 @@ FFF0-FFFF Specials
 01D380-01D3FF Unassigned
 01D400-01D7FF Mathematical Alphanumeric Symbols
 01D800-01DAAF Sutton Sign Writing
-01DAB0-01DFFF Unassigned
+01DAB0-01DEFF Unassigned
+01DF00-01DFFF Latin Extended-G
 01E000-01E02F Glagolitic Supplement
 01E030-01E0FF Unassigned
 01E100-01E14F Nyiakeng Puachue Hmong
-01E150-01E2BF Unassigned
+01E150-01E28F Unassigned
+01E290-01E2BF Toto
 01E2C0-01E2FF Wancho
-01E300-01E7FF Unassigned
+01E300-01E7DF Unassigned
+01E7E0-01E7FF Ethiopic Extended-B
 01E800-01E8DF Mende Kikakui
 01E8E0-01E8FF Unassigned
 01E900-01E95F Adlam
@@ -386,12 +418,13 @@ FFF0-FFFF Specials
 01F680-01F6FF Transport and Map Symbols
 01F700-01F77F Alchemical Symbols
 01F780-01F7FF Geometric Shapes Extended
-01F800-01F8FF Supplemental Arrows - C
+01F800-01F8FF Supplemental Arrows-C
 01F900-01F9FF Supplemental Symbols and Pictographs
 01FA00-01FA6F Chess Symbols
-01FA70-01FAFF Symbols and Pictographs Extended - A
+01FA70-01FAFF Symbols and Pictographs Extended-A
 01FB00-01FBFF Symbols for Legacy Computing
-01FC00-01FFFF Unassigned
+01FC00-01FFFD Unassigned
+01FFFE-01FFFF Noncharacters
 ;
 ; ===== PLANE 02 =====
 ;
@@ -401,11 +434,15 @@ FFF0-FFFF Specials
 02B820-02CEAF CJK Unified Ideographs Extension E
 02CEB0-02F7FF CJK Unified Ideographs Extension F
 02F800-02FF7F CJK Compatibility Ideographs Supplement
+02FF80-02FFFD Unassigned
+02FFFE-02FFFF Noncharacters
 ;
 ; ===== PLANE 0E =====
 ;
 0E0000-0E007F Tags
 0E0100-0E01EF Variation Selectors Supplement
+0EFF80-0EFFFD Unassigned
+0EFFFE-0EFFFF Noncharacters
 ;
 ;    (check rendering of all of these)
 ; 10A01-10A03
@@ -423,3 +460,9 @@ FFF0-FFFF Specials
 ;
 0F0000-0F0E6F PUA (CSUR/UCSUR): Kinya Syllables
 0F0E70-0F16AF PUA (CSUR/UCSUR): Pikto
+0F16B0-0F18FF Unassigned
+0F1900-0F19FF PUA (CSUR/UCSUR): Sitelen Pona
+0F1A00-0F1AFF Unassigned
+0F1B00-0F1C3F PUA (CSUR/UCSUR): Shidinn
+0F1C40-0FFFFD Unassigned
+0FFFFE-0FFFFF Noncharacters

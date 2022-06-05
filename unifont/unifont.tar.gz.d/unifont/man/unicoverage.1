@@ -2,7 +2,7 @@
 .SH NAME
 unicoverage \- Print coverage of each Unicode Script
 .SH SYNOPSIS
-\fBunicoverage \fP[\-i\fIinput-file\fP] [\-o\fIoutput-file\fP]
+\fBunicoverage \fP[\-i\fIinput-file\fP] [\-o\fIoutput-file\fP] [\-n]
 .SH DESCRIPTION
 .B unicoverage
 reads a GNU Unifont .hex font and uses data in
@@ -15,6 +15,10 @@ in ascending order.
 .TP 12
 \fB\-i\fP
 Specify the input file. The default is STDIN.
+.TP
+\fB\-n\fP
+Print the number of glyphs in each range instead of
+a percentage count.
 .TP
 \fB\-o\fP
 Specify the output file. The default is STDOUT.

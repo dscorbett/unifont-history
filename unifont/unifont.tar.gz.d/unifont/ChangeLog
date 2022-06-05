@@ -1,3 +1,33 @@
+2022-06-04  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 14.0.04.
+	* doc/unicoverage.texi:
+	  - Documented new "-n" option.
+	* font/coverage.dat:
+	  - Added 0F1900-0F19FF PUA (CSUR/UCSUR): Sitelen Pona.
+	* font/plane00/unifont-base.hex:
+	  - U+16A0..U+16FF (Runic) David Corbett adjusted several glyphs
+	    (Savannah bug 62500).
+	  - U+A99A (Javanese) David Corbett removed a stray dot
+	    (Savannah bug 62499).
+	  - U+FC33 David Corbett corrected this Arabic glyph
+	    (Savannah bug 62359).
+	* font/plane01/noscript-ranges.txt:
+	  - Adjusted ranges in U+11700..U+1174F for Ahom glyphs in Unicode
+	    14.0.0 (Savannah bug 62331).
+	* font/ttfsrc/Makefile:
+	  - Removed "clean" from target "all" to support parallel builds,
+	    as reported by Hideki Yamane (Savannah bug 62537).
+	  - Changed "clean" target to remove *.hex and *.txt; no *.bdf
+            files are copied to that directory now, so *.bdf was removed
+	    from the "clean" target.
+	  - Changed "distclean" target to remove *.sfd, *.ttf, and *.otf.
+	* man/unicoverage.1:
+	  - Documented new "-n" option.
+	* src/unicoverage.c:
+	  - Adjusted column spacing for better listing of Planes 1-15.
+	  - Added "-n" option to print number of glyphs in each range
+	    instead of percent coverage.
+
 2022-04-17  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 14.0.03.
 	* ChangeLog: fixed lines that do not begin with <TAB> character.

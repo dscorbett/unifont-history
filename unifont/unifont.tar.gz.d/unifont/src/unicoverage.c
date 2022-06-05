@@ -38,6 +38,10 @@
 
    31 May 2019: [Paul Hardy] replaced strlcpy call with strncpy
    for compilation on more systems.
+
+   4 June 2022: [Paul Hardy] Adjusted column spacing for better alignment
+   of Unicode Plane 1-15 scripts.  Added "-n" option to print number of
+   glyphs in each range instead of percent coverage.
 */
 
 #include <stdio.h>
@@ -52,9 +56,10 @@ int
 main (int argc, char *argv[])
 {
 
+   int      print_n=0;        /* print # of glyphs, not percentage   */
    unsigned i;                /* loop variable                       */
    unsigned slen;             /* string length of coverage file line */
-   char inbuf[256];           /* input buffer                        */
+   char     inbuf[256];       /* input buffer                        */
    unsigned thischar;         /* the current character               */
 
    char *infile="", *outfile="";  /* names of input and output files        */
@@ -64,6 +69,9 @@ main (int argc, char *argv[])
    char coverstring[MAXBUF];  /* description of current coverage range      */
    int nglyphs;               /* number of glyphs in this section           */
    int nextrange();           /* to get next range & name of Unicode glyphs */
+
+   void print_subtotal (FILE *outfp, int print_n, int nglyphs,
+                        int cstart, int cend, char *coverstring);
 
    if ((coveragefp = fopen ("coverage.dat", "r")) == NULL) {
       fprintf (stderr, "\nError: data file \"coverage.dat\" not found.\n\n");
@@ -77,6 +85,8 @@ main (int argc, char *argv[])
                case 'i':  /* name of input file */
                   infile = &argv[i][2];
                   break;
+               case 'n':  /* print number of glyphs instead of percentage */
+                  print_n = 1;
                case 'o':  /* name of output file */
                   outfile = &argv[i][2];
                   break;
@@ -111,49 +121,41 @@ main (int argc, char *argv[])
    else {
       outfp = stdout;
    }
-   slen = nextrange (coveragefp, &cstart, &cend, coverstring);
-   nglyphs = 0;
+
    /*
       Print header row.
    */
-   fprintf (outfp, "Covered      Range       Script\n");
-   fprintf (outfp, "-------      -----       ------\n\n");
+   if (print_n) {
+      fprintf (outfp, "# Glyphs      Range        Script\n");
+      fprintf (outfp, "--------      -----        ------\n");
+   }
+   else {
+      fprintf (outfp, "Covered      Range        Script\n");
+      fprintf (outfp, "-------      -----        ------\n\n");
+   }
+
+   slen = nextrange (coveragefp, &cstart, &cend, coverstring);
+   nglyphs = 0;
+
    /*
       Read in the glyphs in the file
    */
    while (slen != 0 && fgets (inbuf, MAXBUF-1, infp) != NULL) {
       sscanf (inbuf, "%x", &thischar);
+
+      /* Read a character beyond end of current script. */
       while (cend < thischar && slen != 0) {
-         /* print old range total */
-         fprintf (outfp, " %5.1f%%  U+%04X..U+%04X  %s\n",
-                 100.0*nglyphs/(1+cend-cstart), cstart, cend, coverstring);
+         print_subtotal (outfp, print_n, nglyphs, cstart, cend, coverstring);
+
          /* start new range total */
          slen = nextrange (coveragefp, &cstart, &cend, coverstring);
-         /*
-            Count Non-characters as existing for totals counts.
-            The last two code points of each Unicode plane
-            (U+*FFFE and U+*FFFF) are reserved.
-         */
          nglyphs = 0;
-         if (cstart <= 0xFDD0 && cend >= 0xFDEF && nglyphs == 0)
-            nglyphs += 32;
-         else if ((cstart & 0xFFFF) <= 0xFFFE &&
-                  (cend   & 0xFFFF) >= 0xFFFF && nglyphs == 0)
-            nglyphs += 2;
       }
-      /*
-         If we read in a noncharacter, don't count it -- we already
-         counted it once above.
-      */
-      if ( thischar < 0xFDD0 ||
-          (thischar > 0xFDEF && thischar < 0xFFFE) ||
-           thischar > 0xFFFF) {
-         nglyphs++;
-      }
+      nglyphs++;
    }
-   /* print last range total */
-   fprintf (outfp, " %5.1f%%  U+%04X..U+%04X  %s\n",
-           100.0*nglyphs/(1+cend-cstart), cstart, cend, coverstring);
+
+   print_subtotal (outfp, print_n, nglyphs, cstart, cend, coverstring);
+
    exit (0);
 }
 
@@ -188,4 +190,26 @@ nextrange (FILE *coveragefp,
    } while (retval == 0 && !feof (coveragefp));
 
    return (retval);
+}
+
+
+void print_subtotal (FILE *outfp, int print_n, int nglyphs,
+                     int cstart, int cend, char *coverstring) {
+
+   /* print old range total */
+   if (print_n) {  /* Print number of glyphs, not percentage */
+      fprintf (outfp, " %6d ", nglyphs);
+   }
+   else {
+      fprintf (outfp, " %5.1f%%", 100.0*nglyphs/(1+cend-cstart));
+   }
+
+   if (cend < 0x10000)
+      fprintf (outfp, "  U+%04X..U+%04X   %s",
+               cstart, cend, coverstring);
+   else
+      fprintf (outfp, " U+%05X..U+%05X  %s",
+               cstart, cend, coverstring);
+
+   return;
 }

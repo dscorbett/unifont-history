@@ -1,3 +1,8 @@
+2022-06-04: Release 14.0.04
+   * Fix to font/ttfsrc/Makefile for TrueType & OpenType parallel builds.
+   * Minor updates for some glyphs, notably Runic (U+16A0..U+16FF).
+   * All Ahom glyphs (U+11700..U+1174F) are now rendered properly.
+
 2022-04-17: Release 14.0.03
    * Added new program hex2otf by 何志翔 (He Zhixiang) to produce
      OpenType Unifont files.

@@ -2167,7 +2167,7 @@ unicoverage - Print coverage of each Unicode Script
 3.13.2 unicoverage SYNOPSIS
 ---------------------------
 
-unicoverage [-iinput-file] [-ooutput-file]
+unicoverage [-iinput-file] [-ooutput-file] [-n]
 
 3.13.3 unicoverage DESCRIPTION
 ------------------------------
@@ -2182,6 +2182,10 @@ code points in the input .hex file must be in ascending order.
 
 '-i'
      Specify the input file.  The default is STDIN.
+
+'-n'
+     Print the number of glyphs in each range instead of a percentage
+     count.
 
 '-o'
      Specify the output file.  The default is STDOUT.
