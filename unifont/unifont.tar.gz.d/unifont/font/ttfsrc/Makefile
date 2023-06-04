@@ -28,11 +28,11 @@ TTF_LANG = 0x409
 # Could also use bash string replacement if you know you're using bash.
 #
 
-COPYRIGHT = "Copyright © 1998-2022 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright © 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, et al."
+Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al."
 
-VERSION = 15.0.04
+VERSION = 15.0.05
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex

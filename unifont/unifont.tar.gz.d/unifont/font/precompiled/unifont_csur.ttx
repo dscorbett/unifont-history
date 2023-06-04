@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="15.0"/>
-    <checkSumAdjustment value="0x94cf01e2"/>
+    <checkSumAdjustment value="0xad08e551"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sun May 28 14:13:00 2023"/>
-    <modified value="Sun May 28 14:13:09 2023"/>
+    <created value="Sun Jun  4 01:47:25 2023"/>
+    <modified value="Sun Jun  4 01:47:34 2023"/>
     <xMin value="-960"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -111,7 +111,7 @@
 
   <name>
     <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright © 1998-2022 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
+      Copyright © 1998-2023 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al.
     </namerecord>
     <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 28-5-2023
+      FontForge 2.0 : Unifont CSUR : 4-6-2023
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 15.0.04
+      Version 15.0.05
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -141,7 +141,7 @@
       https://gnu.org/licenses/gpl.html, https://scripts.sil.org/OFL
     </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright © 1998-2022 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, et al.
+      Copyright © 1998-2023 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 28-5-2023
+      FontForge 2.0 : Unifont CSUR : 4-6-2023
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 15.0.04
+      Version 15.0.05
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -9383,8 +9383,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sat May  2 00:00:00 2020"/>
-    <sourceCreated value="Sun May 28 14:13:00 2023"/>
-    <sourceModified value="Sun May 28 14:13:09 2023"/>
+    <sourceCreated value="Sun Jun  4 01:47:25 2023"/>
+    <sourceModified value="Sun Jun  4 01:47:34 2023"/>
   </FFTM>
 
   <GDEF>

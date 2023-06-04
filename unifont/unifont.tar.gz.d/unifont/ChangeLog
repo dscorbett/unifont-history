@@ -1,3 +1,35 @@
+2023-06-03  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 15.0.05.
+	* Doxyfile:
+	  - Corrected MATHJAX_VERSION to "MathJax_2", although MathJax
+	    is not invoked.
+	  - Left PROJECT_NUMBER at "15.0.04" because C source programs
+	    did not change.
+	* font/Makefile:
+	  - Changed copyright string to extend to 2023 and added Minseo Lee.
+	  - Added new directory plane00/hangul to list of directories for
+	    performing "make clean" and "make distclean".
+	* font/plane00/alt/hangul: Added directory for building the
+	  old Hangul Syllables block, with the old version of johab2ucs2.
+	* font/plane00/wqy-orig.hex: Created file to hold replaced Wen
+	  Quan Yi glyphs.
+	* font/plane00/hangul: Added directory with sample Makefile for
+	  building Hangul syllables from scratch, using three .bmp images
+	  as initial input.
+	* font/plane00/hangul-syllables.hex: New Hangul Syllables block
+	  contributed by Minseo Lee.  The old hangul-syllables.hex file
+	  has been removed and replace with the much smaller hangul-base.hex
+	  file in font/plane00/alt directory, from which it can be recreated
+	  (see font/plane00/hangul/README for more information).
+	* font/plane00/wqy.hex: Modified U+5829 and U+6FF9.
+	* font/otfsrc/Makefile:
+	  - Changed copyright string to extend to 2023 and added Minseo Lee.
+	* font/ttfsrc/Makefile:
+	  - Changed copyright string to extend to 2023 and added Minseo Lee.
+	* src/johab2ucs2:
+	  - Minseo Lee changed some letter mapping combinations.
+	  - Paul Hardy changed test conditions for ..."or die" statement.
+
 2023-05-28  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 15.0.04.
 	* Doxygen LaTeX output verified not to trigger tabu.sty bug in tables

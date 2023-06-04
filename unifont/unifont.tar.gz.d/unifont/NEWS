@@ -1,3 +1,10 @@
+2023-06-03: Release 15.0.05
+   * New Hangul Syllables block (U+AC00..U+D7A3) contributed
+     by Minseo Lee.  Generated with his modifications of three
+     combining patters in the johab2ucs2 Perl script.
+   * Modified U+5829 and U+6FF9 Chinese glyphs.
+   * Full details in ChangeLog file.
+
 2023-05-28: Release 15.0.04
    * Adjustments to Greek and Coptic letters.
    * Adjustments to two heart glyphs.

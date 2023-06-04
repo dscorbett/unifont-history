@@ -17,11 +17,11 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.0.04
+VERSION = 15.0.05
 
-COPYRIGHT = "Copyright (C) 1998-2022 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, et al. \
+Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \
 GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
@@ -948,6 +948,7 @@ clean:
 	# \rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf
 	# \rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf.gz
 	# \rm -f $(COMPILED_DIR)/unifont-$(VERSION).sfd.gz
+	$(MAKE) -C plane00/hangul clean
 
 #
 # Note that distclean leaves precompiled/ alone.  This is intentional.
@@ -955,6 +956,7 @@ clean:
 #
 distclean:
 	\rm -rf $(COMPILED_DIR)
+	$(MAKE) -C plane00/hangul distclean
 	$(MAKE) -C plane00csur distclean
 	$(MAKE) -C plane01 distclean
 	$(MAKE) -C ttfsrc distclean
