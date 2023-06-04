@@ -17,7 +17,7 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 14.0.04
+VERSION = 15.0.01
 
 COPYRIGHT = "Copyright (C) 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
@@ -41,6 +41,7 @@ CONSOLEDEST = $(DESTDIR)/usr/share/consolefonts
 FONTDEST    = $(DESTDIR)/usr/share/fonts
 PCFDEST     = $(FONTDEST)/X11/misc
 TTFDEST     = $(FONTDEST)/truetype/unifont
+OTFDEST     = $(FONTDEST)/truetype/unifont
 #
 # destination directory for compiled fonts
 #
@@ -299,14 +300,15 @@ psf: bdf
 # set of hex files.
 #
 coverage: bdf
-	grep -v "^01F12F" $(COMPILED_DIR)/unifont_csur_lower-$(VERSION).hex \
+	grep -v "^01F12F" $(COMPILED_DIR)/unifont_csur_lower-$(VERSION).hex | \
+	   sort -u \
 	   > $(COMPILED_DIR)/unifont_all-$(VERSION).hex
 	sort plane0[1-E]/*.hex plane0Fcsur/*.hex | grep -v "^0020:" \
 	   >> $(COMPILED_DIR)/unifont_all-$(VERSION).hex
 	$(BINDIR)/unicoverage \
 	   -i$(COMPILED_DIR)/unifont_all-$(VERSION).hex \
 	   -o$(COMPILED_DIR)/coverage.txt
-	\rm -f $(COMPILED_DIR)/unifont_all-$(VERSION).hex
+#	\rm -f $(COMPILED_DIR)/unifont_all-$(VERSION).hex
 #
 # Print HTML page coverage in Basic Multilingual Plane in .txt file.
 #
@@ -690,23 +692,31 @@ install:
 	$(INSTALL) -m0755 -d $(PCFDEST)
 	$(INSTALL) -m0755 -d $(TTFDEST)
 	if [ ! -d $(COMPILED_DIR) ] ; then \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/Unifont-APL8x16-$(VERSION).psf.gz $(CONSOLEDEST)/Unifont-APL8x16.psf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).pcf.gz         $(PCFDEST)/unifont.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_sample-$(VERSION).pcf.gz  $(PCFDEST)/unifont_sample.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).pcf.gz    $(PCFDEST)/unifont_csur.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).ttf            $(TTFDEST)/unifont.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_sample-$(VERSION).ttf     $(TTFDEST)/unifont_sample.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).ttf       $(TTFDEST)/unifont_csur.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_upper-$(VERSION).ttf      $(TTFDEST)/unifont_upper.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/Unifont-APL8x16-$(VERSION).psf.gz   $(CONSOLEDEST)/Unifont-APL8x16.psf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).pcf.gz           $(PCFDEST)/unifont.pcf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_sample-$(VERSION).pcf.gz    $(PCFDEST)/unifont_sample.pcf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).pcf.gz      $(PCFDEST)/unifont_csur.pcf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).ttf              $(TTFDEST)/unifont.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_sample-$(VERSION).ttf       $(TTFDEST)/unifont_sample.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).ttf         $(TTFDEST)/unifont_csur.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_upper-$(VERSION).ttf        $(TTFDEST)/unifont_upper.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).otf              $(OTFDEST)/unifont.otf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_jp-$(VERSION).otf           $(OTFDEST)/unifont_jp.otf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).otf         $(OTFDEST)/unifont_csur.otf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_upper-$(VERSION).otf        $(OTFDEST)/unifont_upper.otf ; \
 	else \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/Unifont-APL8x16-$(VERSION).psf.gz $(CONSOLEDEST)/Unifont-APL8x16.psf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).pcf.gz         $(PCFDEST)/unifont.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_sample-$(VERSION).pcf.gz  $(PCFDEST)/unifont_sample.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).pcf.gz    $(PCFDEST)/unifont_csur.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).ttf            $(TTFDEST)/unifont.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_sample-$(VERSION).ttf     $(TTFDEST)/unifont_sample.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).ttf       $(TTFDEST)/unifont_csur.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_upper-$(VERSION).ttf      $(TTFDEST)/unifont_upper.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/Unifont-APL8x16-$(VERSION).psf.gz   $(CONSOLEDEST)/Unifont-APL8x16.psf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).pcf.gz           $(PCFDEST)/unifont.pcf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_sample-$(VERSION).pcf.gz    $(PCFDEST)/unifont_sample.pcf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).pcf.gz      $(PCFDEST)/unifont_csur.pcf.gz ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).ttf              $(TTFDEST)/unifont.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_sample-$(VERSION).ttf       $(TTFDEST)/unifont_sample.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).ttf         $(TTFDEST)/unifont_csur.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_upper-$(VERSION).ttf        $(TTFDEST)/unifont_upper.ttf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).otf              $(OTFDEST)/unifont.otf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_jp-$(VERSION).otf           $(OTFDEST)/unifont_jp.otf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).otf         $(OTFDEST)/unifont_csur.otf ; \
+	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_upper-$(VERSION).otf        $(OTFDEST)/unifont_upper.otf ; \
 	fi
 
 clean:

@@ -58,7 +58,7 @@
 010D40 010E5F
 ; Rumi Numeral Symbols
 ; Yezidi
-010EC0 010EFF 
+; Arabic Extended-C
 ; Old Sogdian
 ; Sogdian
 ; Old Uyghur
@@ -86,9 +86,7 @@
 ; Takri
 0116D0 0116FF
 ; Ahom
-01771B 01771C
-01772C 01772F
-011747 0117FF
+011750 0117FF
 ; Dogra
 011850 01189F
 ; Warang Citi
@@ -99,7 +97,8 @@
 ; Soyombo
 ; Unified Canadian Aboriginal Syllables Extended-A
 ; Pau Cin Hau
-011B00 011AFF
+; Devanagari Extended-A
+011B60 011AFF
 ; Bhaiksuki
 ' Marchen
 011CC0 011CFF
@@ -107,7 +106,8 @@
 ; Gunjala Gondi
 011DB0 011EDF
 ; Makasar
-011F00 011FAF
+; Kawi
+011F60 011FAF
 ; Lisu Supplement
 ; Tamil Supplement
 ; Cuneiform
@@ -150,7 +150,7 @@
 ; Byzantine Musical Symbols
 ; Musical Symbols
 ; Ancient Greek Musical Notation
-01D250 01D2DF
+01D250 01D2BF
 ; Mayan Numerals
 ; Tai Xuan Jing Symbols
 ; Counting Rod Numerals
@@ -160,12 +160,15 @@
 01DAB0 01DEFF
 ; Latin Extended-G
 ; Glagolitic Supplement
-01E030 01E0FF
+; Cyrillic Extended-D
+01E090 01E0FF
 ; Nyiakeng Puachue Hmong
 01E150 01E28F
 ; Toto
 ; Wancho
-01E300 01E7DF
+01E300 01E4CF
+; Nag Mundari
+01E500 01E7DF
 ; Ethiopic Extended-B
 ; Mende Kikakui
 01E8E0 01E8FF

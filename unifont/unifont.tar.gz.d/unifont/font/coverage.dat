@@ -290,7 +290,7 @@ FFFE-FFFF Noncharacters
 010D40-010E5F Unassigned
 010E60-010E7F Rumi Numeral Symbols
 010E80-010EBF Yezidi
-010EC0-010EFF Unassigned
+010EC0-010EFF Arabic Extended-C
 010F00-010F2F Old Sogdian
 010F30-010F6F Sogdian
 010F70-010FAF Old Uyghur
@@ -329,7 +329,8 @@ FFFE-FFFF Noncharacters
 011A50-011AAF Soyombo
 011AB0-011ABF Unified Canadian Aboriginal Syllabics Extended-A
 011AC0-011AFF Pau Cin Hau
-011B00-011BFF Unassigned
+011B00-011B5F Devanagari Extended-A
+011B60-011BFF Unassigned
 011C00-011C6F Bhaiksuki
 011C70-011CBF Marchen
 011CC0-011CFF Unassigned
@@ -337,7 +338,8 @@ FFFE-FFFF Noncharacters
 011D60-011DAF Gunjala Gondi
 011DB0-011EDF Unassigned
 011EE0-011EFF Makasar
-011F00-011FAF Unassigned
+011F00-011F5F Kawi
+011F60-011FAF Unassigned
 011FB0-011FBF Lisu Supplement
 011FC0-011FFF Tamil Supplement
 012000-0123FF Cuneiform
@@ -380,7 +382,8 @@ FFFE-FFFF Noncharacters
 01D000-01D0FF Byzantine Musical Symbols
 01D100-01D1FF Musical Symbols
 01D200-01D24F Ancient Greek Musical Notation
-01D250-01D2DF Unassigned
+01D250-01D2BF Unassigned
+01D2C0-01D2DF Kaktovik Numerals
 01D2E0-01D2FF Mayan Numerals
 01D300-01D35F Tai Xuan Jing Symbols
 01D360-01D37F Counting Rod Numerals
@@ -390,12 +393,15 @@ FFFE-FFFF Noncharacters
 01DAB0-01DEFF Unassigned
 01DF00-01DFFF Latin Extended-G
 01E000-01E02F Glagolitic Supplement
-01E030-01E0FF Unassigned
+01E030-01E08F Cyrillic Extended-D
+01E090-01E0FF Unassigned
 01E100-01E14F Nyiakeng Puachue Hmong
 01E150-01E28F Unassigned
 01E290-01E2BF Toto
 01E2C0-01E2FF Wancho
-01E300-01E7DF Unassigned
+01E300-01E4CF Unassigned
+01E4D0-01E4FF Nag Mundari
+01E500-01E7DF Unassigned
 01E7E0-01E7FF Ethiopic Extended-B
 01E800-01E8DF Mende Kikakui
 01E8E0-01E8FF Unassigned

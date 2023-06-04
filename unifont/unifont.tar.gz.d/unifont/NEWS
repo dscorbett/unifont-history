@@ -1,3 +1,22 @@
+2022-09-13: Release 15.0.01
+   * Update for Unicode 15.0.0 release.
+   * "make install" now installs Unifont OpenType font files in the
+     same directory as TrueType fonts by default.  The intention is
+     to remove TrueType fonts file from the "install" target for the
+     Unicode 16.0.0 release unless there is a reason to keep them.
+   * Existing Unicode scripts in Unifont maintain complete coverage.
+   * Under ConScript Unicode Registry (UCSUR) scripts added:
+     - U+E1D0..U+E1FF Syai
+     - U+E360..U+E37F Sarkai
+     - U+ED80..U+EDAF Iranic.
+   * New Unicode 15.0.0 Plane 1 scripts:
+     - U+10EFD..U+10EFF Arabic Extended-C
+     - U+11B00..U+11B5F Devanagari Extended-A
+     - U+11F00..U+11F5F Kawi
+     - U+1D2C0..U+1D2DF Kaktovik Numerals
+     - U+1E030..U+1E08F Cyrillic Exntended-D
+     - U+1E4D0..U+1E4FF Nag Mundari.
+
 2022-06-04: Release 14.0.04
    * Fix to font/ttfsrc/Makefile for TrueType & OpenType parallel builds.
    * Minor updates for some glyphs, notably Runic (U+16A0..U+16FF).

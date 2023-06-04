@@ -2,7 +2,7 @@ Covered      Range        Script
 -------      -----        ------
 
  100.0%  U+0000..U+001F   C0 Controls
- 101.1%  U+0020..U+007E   Basic Latin
+ 100.0%  U+0020..U+007E   Basic Latin
  100.0%  U+007F..U+007F   Delete Character
  100.0%  U+0080..U+009F   C1 Controls
  100.0%  U+00A0..U+00FF   Latin-1 Supplement
@@ -160,15 +160,15 @@ Covered      Range        Script
   11.2%  U+E100..U+E14F   PUA (CSUR/UCSUR): Engsvanyáli
  100.0%  U+E150..U+E1AF   PUA (CSUR/UCSUR): Kinya
  100.0%  U+E1B0..U+E1CF   PUA (CSUR/UCSUR): Ilianóre
-   6.2%  U+E1D0..U+E1FF   PUA (CSUR/UCSUR): Syai
+ 100.0%  U+E1D0..U+E1FF   PUA (CSUR/UCSUR): Syai
  100.0%  U+E200..U+E26F   PUA (CSUR/UCSUR): Verdurian
-  97.9%  U+E270..U+E29F   PUA (CSUR/UCSUR): aUI
-  79.2%  U+E2A0..U+E2CF   PUA (CSUR/UCSUR): Amman-Iar
+ 100.0%  U+E270..U+E29F   PUA (CSUR/UCSUR): aUI
+  68.8%  U+E2A0..U+E2CF   PUA (CSUR/UCSUR): Amman-Iar
  100.0%  U+E2D0..U+E2DF   PUA (CSUR/UCSUR): Streich
  100.0%  U+E2E0..U+E2FF   PUA (CSUR/UCSUR): Xaîni
  100.0%  U+E300..U+E33F   PUA (CSUR/UCSUR): Mizarian
  100.0%  U+E340..U+E35F   PUA (CSUR/UCSUR): Zírí:Nka
-  34.4%  U+E360..U+E37F   PUA (CSUR/UCSUR): Sarkai
+ 100.0%  U+E360..U+E37F   PUA (CSUR/UCSUR): Sarkai
   25.0%  U+E380..U+E3AF   PUA (CSUR/UCSUR): Thelwik
  100.0%  U+E3B0..U+E3FF   PUA (CSUR/UCSUR): Olaetyan
   25.0%  U+E400..U+E42F   PUA (CSUR/UCSUR): Nísklôz
@@ -212,8 +212,8 @@ Covered      Range        Script
    0.0%  U+EC30..U+EC6F   PUA (CSUR/UCSUR): Syrrin
    0.0%  U+EC70..U+ECFF   PUA (CSUR/UCSUR): Unassigned
  100.0%  U+ED00..U+ED3F   PUA (CSUR/UCSUR): Deini
-  50.0%  U+ED40..U+ED7F   PUA (CSUR/UCSUR): Niji
-   0.0%  U+ED80..U+EDFF   PUA (CSUR/UCSUR): Unassigned
+ 100.0%  U+ED40..U+ED7F   PUA (CSUR/UCSUR): Niji
+  27.3%  U+ED80..U+EDFF   PUA (CSUR/UCSUR): Unassigned
    0.0%  U+EE00..U+EEFF   PUA (CSUR/UCSUR): Unassigned
    0.0%  U+EF00..U+EF7F   PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
    0.0%  U+EF80..U+EFFF   PUA (CSUR/UCSUR): Unassigned; Reserved for Encoding Hacks
@@ -290,7 +290,7 @@ Covered      Range        Script
  100.0% U+10D40..U+10E5F  Unassigned
  100.0% U+10E60..U+10E7F  Rumi Numeral Symbols
  100.0% U+10E80..U+10EBF  Yezidi
- 100.0% U+10EC0..U+10EFF  Unassigned
+ 100.0% U+10EC0..U+10EFF  Arabic Extended-C
  100.0% U+10F00..U+10F2F  Old Sogdian
  100.0% U+10F30..U+10F6F  Sogdian
  100.0% U+10F70..U+10FAF  Old Uyghur
@@ -317,7 +317,7 @@ Covered      Range        Script
  100.0% U+11660..U+1167F  Mongolian Supplement
  100.0% U+11680..U+116CF  Takri
  100.0% U+116D0..U+116FF  Unassigned
- 111.2% U+11700..U+1174F  Ahom
+ 100.0% U+11700..U+1174F  Ahom
  100.0% U+11750..U+117FF  Unassigned
  100.0% U+11800..U+1184F  Dogra
  100.0% U+11850..U+1189F  Unassigned
@@ -329,7 +329,8 @@ Covered      Range        Script
  100.0% U+11A50..U+11AAF  Soyombo
  100.0% U+11AB0..U+11ABF  Unified Canadian Aboriginal Syllabics Extended-A
  100.0% U+11AC0..U+11AFF  Pau Cin Hau
- 100.0% U+11B00..U+11BFF  Unassigned
+ 100.0% U+11B00..U+11B5F  Devanagari Extended-A
+   0.0% U+11B60..U+11BFF  Unassigned
  100.0% U+11C00..U+11C6F  Bhaiksuki
  100.0% U+11C70..U+11CBF  Marchen
  100.0% U+11CC0..U+11CFF  Unassigned
@@ -337,7 +338,8 @@ Covered      Range        Script
  100.0% U+11D60..U+11DAF  Gunjala Gondi
  100.0% U+11DB0..U+11EDF  Unassigned
  100.0% U+11EE0..U+11EFF  Makasar
- 100.0% U+11F00..U+11FAF  Unassigned
+ 100.0% U+11F00..U+11F5F  Kawi
+ 100.0% U+11F60..U+11FAF  Unassigned
  100.0% U+11FB0..U+11FBF  Lisu Supplement
  100.0% U+11FC0..U+11FFF  Tamil Supplement
   10.0% U+12000..U+123FF  Cuneiform
@@ -361,7 +363,7 @@ Covered      Range        Script
  100.0% U+16F00..U+16F9F  Miao
  100.0% U+16FA0..U+16FDF  Unassigned
  100.0% U+16FE0..U+16FFF  Ideographic Symbols and Punctuation
-   0.2% U+17000..U+187FF  Tangut
+   0.1% U+17000..U+187FF  Tangut
    0.0% U+18800..U+18AFF  Tangut Components
  100.0% U+18B00..U+18CFF  Khitan Small Script
   43.8% U+18D00..U+18D0F  Tangut Supplement
@@ -380,7 +382,8 @@ Covered      Range        Script
  100.0% U+1D000..U+1D0FF  Byzantine Musical Symbols
  100.0% U+1D100..U+1D1FF  Musical Symbols
  100.0% U+1D200..U+1D24F  Ancient Greek Musical Notation
- 100.0% U+1D250..U+1D2DF  Unassigned
+ 100.0% U+1D250..U+1D2BF  Unassigned
+ 100.0% U+1D2C0..U+1D2DF  Kaktovik Numerals
  100.0% U+1D2E0..U+1D2FF  Mayan Numerals
  100.0% U+1D300..U+1D35F  Tai Xuan Jing Symbols
  100.0% U+1D360..U+1D37F  Counting Rod Numerals
@@ -390,12 +393,15 @@ Covered      Range        Script
  100.0% U+1DAB0..U+1DEFF  Unassigned
  100.0% U+1DF00..U+1DFFF  Latin Extended-G
  100.0% U+1E000..U+1E02F  Glagolitic Supplement
- 100.0% U+1E030..U+1E0FF  Unassigned
+ 100.0% U+1E030..U+1E08F  Cyrillic Extended-D
+ 100.0% U+1E090..U+1E0FF  Unassigned
  100.0% U+1E100..U+1E14F  Nyiakeng Puachue Hmong
  100.0% U+1E150..U+1E28F  Unassigned
  100.0% U+1E290..U+1E2BF  Toto
  100.0% U+1E2C0..U+1E2FF  Wancho
- 100.0% U+1E300..U+1E7DF  Unassigned
+ 100.0% U+1E300..U+1E4CF  Unassigned
+ 100.0% U+1E4D0..U+1E4FF  Nag Mundari
+ 100.0% U+1E500..U+1E7DF  Unassigned
  100.0% U+1E7E0..U+1E7FF  Ethiopic Extended-B
  100.0% U+1E800..U+1E8DF  Mende Kikakui
  100.0% U+1E8E0..U+1E8FF  Unassigned
@@ -421,7 +427,7 @@ Covered      Range        Script
  100.0% U+1F800..U+1F8FF  Supplemental Arrows-C
  100.0% U+1F900..U+1F9FF  Supplemental Symbols and Pictographs
  100.0% U+1FA00..U+1FA6F  Chess Symbols
- 102.1% U+1FA70..U+1FAFF  Symbols and Pictographs Extended-A
+ 100.0% U+1FA70..U+1FAFF  Symbols and Pictographs Extended-A
  100.0% U+1FB00..U+1FBFF  Symbols for Legacy Computing
  100.0% U+1FC00..U+1FFFD  Unassigned
    0.0% U+1FFFE..U+1FFFF  Noncharacters

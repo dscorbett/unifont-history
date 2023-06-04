@@ -24,7 +24,7 @@
 
 #define MAXSTRING 256  /* Maximum input string allowed */
 
-#define HEADER_STRING "GNU Unifont 14.0.04" /* to be printed as chart title */
+#define HEADER_STRING "GNU Unifont 15.0.01" /* to be printed as chart title */
 
 /*
      Define the array of Unifont ASCII glyphs, code points 0 through 127.

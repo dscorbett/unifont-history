@@ -87,6 +87,12 @@
 
    13 March 2022 [Paul Hardy]:
       - Added support for 24 bits per pixel RGB file.
+
+   12 June 2022 [Paul Hardy]:
+      - Set U+11B00..U+11B5F (Devanagari Extended-A) to be wide.
+      - Set U+11F00..U+11F5F (Kawi) to be wide.
+
+
 */
 
 #include <stdio.h>
@@ -291,6 +297,8 @@ main (int argc, char *argv[])
    for (i = 0x0119A0; i <= 0x0119FF; i++) wide[i] = 1; /* Nandinagari        */
    for (i = 0x011A00; i <= 0x011A4F; i++) wide[i] = 1; /* Zanabazar Square   */
    for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo            */
+   for (i = 0x011B00; i <= 0x011B5F; i++) wide[i] = 1; /* Devanagari Extended-A*/
+   for (i = 0x011F00; i <= 0x011F5F; i++) wide[i] = 1; /* Kawi               */
    for (i = 0x011C00; i <= 0x011C6F; i++) wide[i] = 1; /* Bhaiksuki          */
    for (i = 0x011C70; i <= 0x011CBF; i++) wide[i] = 1; /* Marchen            */
    for (i = 0x011D00; i <= 0x011D5F; i++) wide[i] = 1; /* Masaram Gondi      */

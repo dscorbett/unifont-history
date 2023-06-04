@@ -8,7 +8,7 @@
 #ifndef _HEX2OTF_H_
 #define _HEX2OTF_H_
 
-#define UNIFONT_VERSION "14.0.04"
+#define UNIFONT_VERSION "15.0.01"
 
 #define DEFAULT_ID0 "Copyright © 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \

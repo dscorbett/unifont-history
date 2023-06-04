@@ -1,3 +1,53 @@
+2022-09-13  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 15.0.01.
+	* font/Makefile:
+	  - Added OTFDEST definition for installing OpenType fonts.
+	  - Install OpenType font files alongside TrueType font files,
+	    tentatively in preparation for replacing TrueType font files
+	    for the Unicode 16.0.0 release unless there is a reason to
+	    install both.
+	* font/plane00/plane00-unassigned.hex:
+	  - Removed filler glyphs for two new Kannada and Lao glyphs.
+	* font/plane00/unifont-base.hex:
+	  - Paul Hardy:
+	    o Added new Unicode 15.0.0 Kannada glyph U+0CF3.
+	    o Added new Unicode 15.0.0 Lao glyph U+0ECE.
+	    o Modified U+0264 (Latin Small Letter Ram's Horn) to more
+	      closely  resemble its revised form, by request.
+	  - David Corbett:
+	    o Moved Arabic glyph U+08AC up.
+	  - Johnnie Weaver adjusted U+26CA (Turned Black Shogi Piece).
+	* font/plane00csur/plane00csur.hex:
+	  - Added Syai (U+E1D0..U+E1FF).
+	  - Added Sarkai (U+E360..U+E37F).
+	  - David Corbett contributed Iranic (U+ED80..U+EDAF).
+	* font/plane01/noscript-ranges.txt:
+	  - Removed ranges for new Unicode 15.0.0 blocks.
+	* font/plane00/unassigned-ranges.txt:
+	  - Added unassigned ranges for newly-added glyph blocks and
+	    filled in missing places in existing glyph blocks.
+	* font/plane01/plane01.hex:
+	  - Paul Hardy added new glyphs in these ranges:
+	    o Khojki (U+1123F..U+11241).
+	    o Devanagari Extended-A (U+11B00..U+11B5F).
+	    o Kawi (U+11F00..U+11F5F).
+	    o Kaktovik Numerals (U+1D2C0..U+1D2DF).
+	    o Cyrillic Exntended-D (U+1E030..U+1E08F).
+	    o Transport and Map Symbol glyph U+1F6DC.
+	    o Alchemical Symbols (U+1F700..U+1F77F).
+	    o Geometric Shapes Extended glyph U+1F7D9.
+	    o Symbols and Pictographs Extended-A (U+1FA70..U+1FAFF).
+	  - David Corbett added new glyphs in these ranges:
+	    o Arabic Extended-C (U+10EFD..U+10EFF), new in Unicode 15.0.0.
+	    o Latin Extended-G (U+1DF25..U+1DF2A).
+	  - Johnnie Weaver added new glyphs in these ranges:
+	    o Small Kana Extension (U+1B132 and U+1B155).
+	    o Nag Mundari (U+1E4D0..U+1E4FF).
+	* src/unibmp2hex.c:
+	  - Added as double-width scripts:
+	    o Devanagari Extended-A (U+11B00..U+11B5F).
+	    o Kawi (U+11F00..U+11F5F).
+
 2022-06-04  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 14.0.04.
 	* doc/unicoverage.texi:
