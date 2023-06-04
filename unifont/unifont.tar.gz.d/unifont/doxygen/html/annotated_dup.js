@@ -1,10 +1,10 @@
 var annotated_dup =
 [
-    [ "Buffer", "d6/de4/struct_buffer.html", null ],
-    [ "Font", "d8/d8d/struct_font.html", null ],
-    [ "Glyph", "db/db4/struct_glyph.html", "db/db4/struct_glyph" ],
-    [ "NamePair", "d1/d63/struct_name_pair.html", null ],
-    [ "Options", "da/d87/struct_options.html", null ],
-    [ "Table", "d5/d0d/struct_table.html", null ],
-    [ "TableRecord", "db/d36/struct_table_record.html", null ]
+    [ "Buffer", "d6/d3a/structBuffer.html", "d6/d3a/structBuffer" ],
+    [ "Font", "dd/dba/structFont.html", "dd/dba/structFont" ],
+    [ "Glyph", "db/dde/structGlyph.html", "db/dde/structGlyph" ],
+    [ "NamePair", "da/d05/structNamePair.html", "da/d05/structNamePair" ],
+    [ "Options", "db/d4f/structOptions.html", "db/d4f/structOptions" ],
+    [ "Table", "dc/dcb/structTable.html", "dc/dcb/structTable" ],
+    [ "TableRecord", "dd/d28/structTableRecord.html", "dd/d28/structTableRecord" ]
 ];

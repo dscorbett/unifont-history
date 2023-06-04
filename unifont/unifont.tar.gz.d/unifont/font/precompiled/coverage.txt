@@ -157,7 +157,7 @@ Covered      Range        Script
    0.0%  U+D800..U+DFFF   Surrogate Pairs-Not Used
  100.0%  U+E000..U+E07F   PUA (CSUR/UCSUR): Tengwar
  100.0%  U+E080..U+E0FF   PUA (CSUR/UCSUR): Cirth
-  11.2%  U+E100..U+E14F   PUA (CSUR/UCSUR): Engsvanyáli
+ 100.0%  U+E100..U+E14F   PUA (CSUR/UCSUR): Engsvanyáli
  100.0%  U+E150..U+E1AF   PUA (CSUR/UCSUR): Kinya
  100.0%  U+E1B0..U+E1CF   PUA (CSUR/UCSUR): Ilianóre
  100.0%  U+E1D0..U+E1FF   PUA (CSUR/UCSUR): Syai

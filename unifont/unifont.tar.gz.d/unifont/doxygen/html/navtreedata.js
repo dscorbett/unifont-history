@@ -55,7 +55,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"de/ddf/unibmp2hex_8c.html#aeac67cf686cea9cb1d69661714767244"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

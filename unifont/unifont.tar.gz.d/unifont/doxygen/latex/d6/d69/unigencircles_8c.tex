@@ -14,13 +14,14 @@ Include dependency graph for unigencircles.\+c\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=327pt]{d6/daa/unigencircles_8c__incl}
+\includegraphics[width=344pt]{d6/daa/unigencircles_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}~256
+\mbox{\Hypertarget{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}\label{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}} 
+\#define \mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{M\+A\+X\+S\+T\+R\+I\+NG}}~256
 \begin{DoxyCompactList}\small\item\em Maximum input line length -\/ 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -44,27 +45,6 @@ Copyright (C) 2013, Paul Hardy.
 \end{DoxyCopyright}
 
 
-Definition in file \mbox{\hyperlink{unigencircles_8c_source}{unigencircles.\+c}}.
-
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}\label{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}} 
-\index{unigencircles.c@{unigencircles.c}!MAXSTRING@{MAXSTRING}}
-\index{MAXSTRING@{MAXSTRING}!unigencircles.c@{unigencircles.c}}
-\doxysubsubsection{\texorpdfstring{MAXSTRING}{MAXSTRING}}
-{\footnotesize\ttfamily \#define MAXSTRING~256}
-
-
-
-Maximum input line length -\/ 1. 
-
-
-
-Definition at line \mbox{\hyperlink{unigencircles_8c_source_l00062}{62}} of file \mbox{\hyperlink{unigencircles_8c_source}{unigencircles.\+c}}.
-
-
-
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda}\label{unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda}} 
 \index{unigencircles.c@{unigencircles.c}!add\_double\_circle@{add\_double\_circle}}
@@ -83,90 +63,90 @@ Superimpose a double-\/width dashed combining circle on a glyph bitmap.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{unigencircles_8c_source_l00221}{221}} of file \mbox{\hyperlink{unigencircles_8c_source}{unigencircles.\+c}}.
+Definition at line 221 of file unigencircles.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00222 \{}
-\DoxyCodeLine{00223 }
-\DoxyCodeLine{00224    \textcolor{keywordtype}{char} newstring[256];}
-\DoxyCodeLine{00225    \textcolor{comment}{/* Circle hex string pattern is "{}00000008000024004200240000000000"{} */}}
-\DoxyCodeLine{00226 }
-\DoxyCodeLine{00227    \textcolor{comment}{/* For double diacritical glyphs (offset = -\/8) */}}
-\DoxyCodeLine{00228    \textcolor{comment}{/* Combining circle is left-\/justified.         */}}
-\DoxyCodeLine{00229    \textcolor{keywordtype}{char} circle08[64]=\{0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  1 */}}
-\DoxyCodeLine{00230                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  2 */}}
-\DoxyCodeLine{00231                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  3 */}}
-\DoxyCodeLine{00232                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  4 */}}
-\DoxyCodeLine{00233                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  5 */}}
-\DoxyCodeLine{00234                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  6 */}}
-\DoxyCodeLine{00235                       0x2,0x4,0x0,0x0,  \textcolor{comment}{/* row  7 */}}
-\DoxyCodeLine{00236                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  8 */}}
-\DoxyCodeLine{00237                       0x4,0x2,0x0,0x0,  \textcolor{comment}{/* row  9 */}}
-\DoxyCodeLine{00238                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 10 */}}
-\DoxyCodeLine{00239                       0x2,0x4,0x0,0x0,  \textcolor{comment}{/* row 11 */}}
-\DoxyCodeLine{00240                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 12 */}}
-\DoxyCodeLine{00241                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 13 */}}
-\DoxyCodeLine{00242                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 14 */}}
-\DoxyCodeLine{00243                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 15 */}}
-\DoxyCodeLine{00244                       0x0,0x0,0x0,0x0\}; \textcolor{comment}{/* row 16 */}}
-\DoxyCodeLine{00245 }
-\DoxyCodeLine{00246    \textcolor{comment}{/* For all other combining glyphs (offset = -\/16) */}}
-\DoxyCodeLine{00247    \textcolor{comment}{/* Combining circle is centered in 16 columns.   */}}
-\DoxyCodeLine{00248    \textcolor{keywordtype}{char} circle16[64]=\{0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  1 */}}
-\DoxyCodeLine{00249                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  2 */}}
-\DoxyCodeLine{00250                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  3 */}}
-\DoxyCodeLine{00251                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  4 */}}
-\DoxyCodeLine{00252                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  5 */}}
-\DoxyCodeLine{00253                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  6 */}}
-\DoxyCodeLine{00254                       0x0,0x2,0x4,0x0,  \textcolor{comment}{/* row  7 */}}
-\DoxyCodeLine{00255                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  8 */}}
-\DoxyCodeLine{00256                       0x0,0x4,0x2,0x0,  \textcolor{comment}{/* row  9 */}}
-\DoxyCodeLine{00257                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 10 */}}
-\DoxyCodeLine{00258                       0x0,0x2,0x4,0x0,  \textcolor{comment}{/* row 11 */}}
-\DoxyCodeLine{00259                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 12 */}}
-\DoxyCodeLine{00260                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 13 */}}
-\DoxyCodeLine{00261                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 14 */}}
-\DoxyCodeLine{00262                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 15 */}}
-\DoxyCodeLine{00263                       0x0,0x0,0x0,0x0\}; \textcolor{comment}{/* row 16 */}}
-\DoxyCodeLine{00264 }
-\DoxyCodeLine{00265    \textcolor{keywordtype}{char} *circle; \textcolor{comment}{/* points into circle16 or circle08 */}}
-\DoxyCodeLine{00266 }
-\DoxyCodeLine{00267    \textcolor{keywordtype}{int} digit1, digit2; \textcolor{comment}{/* corresponding digits in each string */}}
-\DoxyCodeLine{00268 }
-\DoxyCodeLine{00269    \textcolor{keywordtype}{int} i; \textcolor{comment}{/* index variables */}}
-\DoxyCodeLine{00270 }
-\DoxyCodeLine{00271 }
-\DoxyCodeLine{00272    \textcolor{comment}{/*}}
-\DoxyCodeLine{00273 \textcolor{comment}{      Determine if combining circle is left-\/justified (offset = -\/8)}}
-\DoxyCodeLine{00274 \textcolor{comment}{      or centered (offset = -\/16).}}
-\DoxyCodeLine{00275 \textcolor{comment}{   */}}
-\DoxyCodeLine{00276    circle = (offset >= -\/8) ? circle08 : circle16;}
-\DoxyCodeLine{00277 }
-\DoxyCodeLine{00278    \textcolor{comment}{/* for each character position, OR the corresponding circle glyph value */}}
-\DoxyCodeLine{00279    \textcolor{keywordflow}{for} (i = 0; i < 64; i++) \{}
-\DoxyCodeLine{00280       glyphstring[i] = toupper (glyphstring[i]);}
-\DoxyCodeLine{00281 }
-\DoxyCodeLine{00282       \textcolor{comment}{/* Convert ASCII character to a hexadecimal integer */}}
-\DoxyCodeLine{00283       digit1 = (glyphstring[i] <= \textcolor{charliteral}{'9'}) ?}
-\DoxyCodeLine{00284                (glyphstring[i] -\/ \textcolor{charliteral}{'0'}) : (glyphstring[i] -\/ \textcolor{charliteral}{'A'} + 0xA);}
-\DoxyCodeLine{00285 }
-\DoxyCodeLine{00286       \textcolor{comment}{/* Superimpose dashed circle */}}
-\DoxyCodeLine{00287       digit2 = digit1 | circle[i];}
-\DoxyCodeLine{00288 }
-\DoxyCodeLine{00289       \textcolor{comment}{/* Convert hexadecimal integer to an ASCII character */}}
-\DoxyCodeLine{00290       newstring[i] = (digit2 <= 9) ?}
-\DoxyCodeLine{00291                      (\textcolor{charliteral}{'0'} + digit2) : (\textcolor{charliteral}{'A'} + digit2 -\/ 0xA);}
-\DoxyCodeLine{00292    \}}
-\DoxyCodeLine{00293 }
-\DoxyCodeLine{00294    \textcolor{comment}{/* Terminate string for output */}}
-\DoxyCodeLine{00295    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00296    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00297 }
-\DoxyCodeLine{00298    memcpy (glyphstring, newstring, i);}
-\DoxyCodeLine{00299 }
-\DoxyCodeLine{00300    \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00301 \}}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224    \textcolor{keywordtype}{char} newstring[256];}
+\DoxyCodeLine{225    \textcolor{comment}{/* Circle hex string pattern is "{}00000008000024004200240000000000"{} */}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227    \textcolor{comment}{/* For double diacritical glyphs (offset = -\/8) */}}
+\DoxyCodeLine{228    \textcolor{comment}{/* Combining circle is left-\/justified.         */}}
+\DoxyCodeLine{229    \textcolor{keywordtype}{char} circle08[64]=\{0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  1 */}}
+\DoxyCodeLine{230                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  2 */}}
+\DoxyCodeLine{231                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  3 */}}
+\DoxyCodeLine{232                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  4 */}}
+\DoxyCodeLine{233                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  5 */}}
+\DoxyCodeLine{234                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  6 */}}
+\DoxyCodeLine{235                       0x2,0x4,0x0,0x0,  \textcolor{comment}{/* row  7 */}}
+\DoxyCodeLine{236                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  8 */}}
+\DoxyCodeLine{237                       0x4,0x2,0x0,0x0,  \textcolor{comment}{/* row  9 */}}
+\DoxyCodeLine{238                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 10 */}}
+\DoxyCodeLine{239                       0x2,0x4,0x0,0x0,  \textcolor{comment}{/* row 11 */}}
+\DoxyCodeLine{240                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 12 */}}
+\DoxyCodeLine{241                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 13 */}}
+\DoxyCodeLine{242                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 14 */}}
+\DoxyCodeLine{243                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 15 */}}
+\DoxyCodeLine{244                       0x0,0x0,0x0,0x0\}; \textcolor{comment}{/* row 16 */}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246    \textcolor{comment}{/* For all other combining glyphs (offset = -\/16) */}}
+\DoxyCodeLine{247    \textcolor{comment}{/* Combining circle is centered in 16 columns.   */}}
+\DoxyCodeLine{248    \textcolor{keywordtype}{char} circle16[64]=\{0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  1 */}}
+\DoxyCodeLine{249                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  2 */}}
+\DoxyCodeLine{250                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  3 */}}
+\DoxyCodeLine{251                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  4 */}}
+\DoxyCodeLine{252                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  5 */}}
+\DoxyCodeLine{253                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  6 */}}
+\DoxyCodeLine{254                       0x0,0x2,0x4,0x0,  \textcolor{comment}{/* row  7 */}}
+\DoxyCodeLine{255                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row  8 */}}
+\DoxyCodeLine{256                       0x0,0x4,0x2,0x0,  \textcolor{comment}{/* row  9 */}}
+\DoxyCodeLine{257                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 10 */}}
+\DoxyCodeLine{258                       0x0,0x2,0x4,0x0,  \textcolor{comment}{/* row 11 */}}
+\DoxyCodeLine{259                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 12 */}}
+\DoxyCodeLine{260                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 13 */}}
+\DoxyCodeLine{261                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 14 */}}
+\DoxyCodeLine{262                       0x0,0x0,0x0,0x0,  \textcolor{comment}{/* row 15 */}}
+\DoxyCodeLine{263                       0x0,0x0,0x0,0x0\}; \textcolor{comment}{/* row 16 */}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265    \textcolor{keywordtype}{char} *circle; \textcolor{comment}{/* points into circle16 or circle08 */}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267    \textcolor{keywordtype}{int} digit1, digit2; \textcolor{comment}{/* corresponding digits in each string */}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269    \textcolor{keywordtype}{int} i; \textcolor{comment}{/* index variables */}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272    \textcolor{comment}{/*}}
+\DoxyCodeLine{273 \textcolor{comment}{      Determine if combining circle is left-\/justified (offset = -\/8)}}
+\DoxyCodeLine{274 \textcolor{comment}{      or centered (offset = -\/16).}}
+\DoxyCodeLine{275 \textcolor{comment}{   */}}
+\DoxyCodeLine{276    circle = (offset >= -\/8) ? circle08 : circle16;}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278    \textcolor{comment}{/* for each character position, OR the corresponding circle glyph value */}}
+\DoxyCodeLine{279    \textcolor{keywordflow}{for} (i = 0; i < 64; i++) \{}
+\DoxyCodeLine{280       glyphstring[i] = toupper (glyphstring[i]);}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282       \textcolor{comment}{/* Convert ASCII character to a hexadecimal integer */}}
+\DoxyCodeLine{283       digit1 = (glyphstring[i] <= \textcolor{charliteral}{'9'}) ?}
+\DoxyCodeLine{284                (glyphstring[i] -\/ \textcolor{charliteral}{'0'}) : (glyphstring[i] -\/ \textcolor{charliteral}{'A'} + 0xA);}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286       \textcolor{comment}{/* Superimpose dashed circle */}}
+\DoxyCodeLine{287       digit2 = digit1 | circle[i];}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289       \textcolor{comment}{/* Convert hexadecimal integer to an ASCII character */}}
+\DoxyCodeLine{290       newstring[i] = (digit2 <= 9) ?}
+\DoxyCodeLine{291                      (\textcolor{charliteral}{'0'} + digit2) : (\textcolor{charliteral}{'A'} + digit2 -\/ 0xA);}
+\DoxyCodeLine{292    \}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294    \textcolor{comment}{/* Terminate string for output */}}
+\DoxyCodeLine{295    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{296    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298    memcpy (glyphstring, newstring, i);}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{301 \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -174,7 +154,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=249pt]{d6/d69/unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda_icgraph}
+\includegraphics[width=261pt]{d6/d69/unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe}\label{unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe}} 
@@ -194,59 +174,59 @@ Superimpose a single-\/width dashed combining circle on a glyph bitmap.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{unigencircles_8c_source_l00163}{163}} of file \mbox{\hyperlink{unigencircles_8c_source}{unigencircles.\+c}}.
+Definition at line 163 of file unigencircles.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00164 \{}
-\DoxyCodeLine{00165 }
-\DoxyCodeLine{00166    \textcolor{keywordtype}{char} newstring[256];}
-\DoxyCodeLine{00167    \textcolor{comment}{/* Circle hex string pattern is "{}00000008000024004200240000000000"{} */}}
-\DoxyCodeLine{00168    \textcolor{keywordtype}{char} circle[32]=\{0x0,0x0,  \textcolor{comment}{/* row  1 */}}
-\DoxyCodeLine{00169                     0x0,0x0,  \textcolor{comment}{/* row  2 */}}
-\DoxyCodeLine{00170                     0x0,0x0,  \textcolor{comment}{/* row  3 */}}
-\DoxyCodeLine{00171                     0x0,0x0,  \textcolor{comment}{/* row  4 */}}
-\DoxyCodeLine{00172                     0x0,0x0,  \textcolor{comment}{/* row  5 */}}
-\DoxyCodeLine{00173                     0x0,0x0,  \textcolor{comment}{/* row  6 */}}
-\DoxyCodeLine{00174                     0x2,0x4,  \textcolor{comment}{/* row  7 */}}
-\DoxyCodeLine{00175                     0x0,0x0,  \textcolor{comment}{/* row  8 */}}
-\DoxyCodeLine{00176                     0x4,0x2,  \textcolor{comment}{/* row  9 */}}
-\DoxyCodeLine{00177                     0x0,0x0,  \textcolor{comment}{/* row 10 */}}
-\DoxyCodeLine{00178                     0x2,0x4,  \textcolor{comment}{/* row 11 */}}
-\DoxyCodeLine{00179                     0x0,0x0,  \textcolor{comment}{/* row 12 */}}
-\DoxyCodeLine{00180                     0x0,0x0,  \textcolor{comment}{/* row 13 */}}
-\DoxyCodeLine{00181                     0x0,0x0,  \textcolor{comment}{/* row 14 */}}
-\DoxyCodeLine{00182                     0x0,0x0,  \textcolor{comment}{/* row 15 */}}
-\DoxyCodeLine{00183                     0x0,0x0\}; \textcolor{comment}{/* row 16 */}}
-\DoxyCodeLine{00184 }
-\DoxyCodeLine{00185    \textcolor{keywordtype}{int} digit1, digit2; \textcolor{comment}{/* corresponding digits in each string */}}
-\DoxyCodeLine{00186 }
-\DoxyCodeLine{00187    \textcolor{keywordtype}{int} i; \textcolor{comment}{/* index variables */}}
-\DoxyCodeLine{00188 }
-\DoxyCodeLine{00189    \textcolor{comment}{/* for each character position, OR the corresponding circle glyph value */}}
-\DoxyCodeLine{00190    \textcolor{keywordflow}{for} (i = 0; i < 32; i++) \{}
-\DoxyCodeLine{00191       glyphstring[i] = toupper (glyphstring[i]);}
-\DoxyCodeLine{00192 }
-\DoxyCodeLine{00193       \textcolor{comment}{/* Convert ASCII character to a hexadecimal integer */}}
-\DoxyCodeLine{00194       digit1 = (glyphstring[i] <= \textcolor{charliteral}{'9'}) ?}
-\DoxyCodeLine{00195                (glyphstring[i] -\/ \textcolor{charliteral}{'0'}) : (glyphstring[i] -\/ \textcolor{charliteral}{'A'} + 0xA);}
-\DoxyCodeLine{00196 }
-\DoxyCodeLine{00197       \textcolor{comment}{/* Superimpose dashed circle */}}
-\DoxyCodeLine{00198       digit2 = digit1 | circle[i];}
-\DoxyCodeLine{00199 }
-\DoxyCodeLine{00200       \textcolor{comment}{/* Convert hexadecimal integer to an ASCII character */}}
-\DoxyCodeLine{00201       newstring[i] = (digit2 <= 9) ?}
-\DoxyCodeLine{00202                      (\textcolor{charliteral}{'0'} + digit2) : (\textcolor{charliteral}{'A'} + digit2 -\/ 0xA);}
-\DoxyCodeLine{00203    \}}
-\DoxyCodeLine{00204 }
-\DoxyCodeLine{00205    \textcolor{comment}{/* Terminate string for output */}}
-\DoxyCodeLine{00206    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00207    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00208 }
-\DoxyCodeLine{00209    memcpy (glyphstring, newstring, i);}
-\DoxyCodeLine{00210 }
-\DoxyCodeLine{00211    \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00212 \}}
+\DoxyCodeLine{164 \{}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166    \textcolor{keywordtype}{char} newstring[256];}
+\DoxyCodeLine{167    \textcolor{comment}{/* Circle hex string pattern is "{}00000008000024004200240000000000"{} */}}
+\DoxyCodeLine{168    \textcolor{keywordtype}{char} circle[32]=\{0x0,0x0,  \textcolor{comment}{/* row  1 */}}
+\DoxyCodeLine{169                     0x0,0x0,  \textcolor{comment}{/* row  2 */}}
+\DoxyCodeLine{170                     0x0,0x0,  \textcolor{comment}{/* row  3 */}}
+\DoxyCodeLine{171                     0x0,0x0,  \textcolor{comment}{/* row  4 */}}
+\DoxyCodeLine{172                     0x0,0x0,  \textcolor{comment}{/* row  5 */}}
+\DoxyCodeLine{173                     0x0,0x0,  \textcolor{comment}{/* row  6 */}}
+\DoxyCodeLine{174                     0x2,0x4,  \textcolor{comment}{/* row  7 */}}
+\DoxyCodeLine{175                     0x0,0x0,  \textcolor{comment}{/* row  8 */}}
+\DoxyCodeLine{176                     0x4,0x2,  \textcolor{comment}{/* row  9 */}}
+\DoxyCodeLine{177                     0x0,0x0,  \textcolor{comment}{/* row 10 */}}
+\DoxyCodeLine{178                     0x2,0x4,  \textcolor{comment}{/* row 11 */}}
+\DoxyCodeLine{179                     0x0,0x0,  \textcolor{comment}{/* row 12 */}}
+\DoxyCodeLine{180                     0x0,0x0,  \textcolor{comment}{/* row 13 */}}
+\DoxyCodeLine{181                     0x0,0x0,  \textcolor{comment}{/* row 14 */}}
+\DoxyCodeLine{182                     0x0,0x0,  \textcolor{comment}{/* row 15 */}}
+\DoxyCodeLine{183                     0x0,0x0\}; \textcolor{comment}{/* row 16 */}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185    \textcolor{keywordtype}{int} digit1, digit2; \textcolor{comment}{/* corresponding digits in each string */}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187    \textcolor{keywordtype}{int} i; \textcolor{comment}{/* index variables */}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189    \textcolor{comment}{/* for each character position, OR the corresponding circle glyph value */}}
+\DoxyCodeLine{190    \textcolor{keywordflow}{for} (i = 0; i < 32; i++) \{}
+\DoxyCodeLine{191       glyphstring[i] = toupper (glyphstring[i]);}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193       \textcolor{comment}{/* Convert ASCII character to a hexadecimal integer */}}
+\DoxyCodeLine{194       digit1 = (glyphstring[i] <= \textcolor{charliteral}{'9'}) ?}
+\DoxyCodeLine{195                (glyphstring[i] -\/ \textcolor{charliteral}{'0'}) : (glyphstring[i] -\/ \textcolor{charliteral}{'A'} + 0xA);}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197       \textcolor{comment}{/* Superimpose dashed circle */}}
+\DoxyCodeLine{198       digit2 = digit1 | circle[i];}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200       \textcolor{comment}{/* Convert hexadecimal integer to an ASCII character */}}
+\DoxyCodeLine{201       newstring[i] = (digit2 <= 9) ?}
+\DoxyCodeLine{202                      (\textcolor{charliteral}{'0'} + digit2) : (\textcolor{charliteral}{'A'} + digit2 -\/ 0xA);}
+\DoxyCodeLine{203    \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205    \textcolor{comment}{/* Terminate string for output */}}
+\DoxyCodeLine{206    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{207    newstring[i++] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209    memcpy (glyphstring, newstring, i);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{212 \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -254,7 +234,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=246pt]{d6/d69/unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe_icgraph}
+\includegraphics[width=258pt]{d6/d69/unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{unigencircles_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{unigencircles_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
@@ -275,95 +255,95 @@ The main function.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This program exits with status EXIT\+\_\+\+SUCCESS. 
+This program exits with status E\+X\+I\+T\+\_\+\+S\+U\+C\+C\+E\+SS. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{unigencircles_8c_source_l00073}{73}} of file \mbox{\hyperlink{unigencircles_8c_source}{unigencircles.\+c}}.
+Definition at line 73 of file unigencircles.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00074 \{}
-\DoxyCodeLine{00075 }
-\DoxyCodeLine{00076    \textcolor{keywordtype}{char} teststring[\mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}];  \textcolor{comment}{/* current input line                       */}}
-\DoxyCodeLine{00077    \textcolor{keywordtype}{int}  loc;                    \textcolor{comment}{/* Unicode code point of current input line */}}
-\DoxyCodeLine{00078    \textcolor{keywordtype}{int}  offset;                 \textcolor{comment}{/* offset value of a combining character    */}}
-\DoxyCodeLine{00079    \textcolor{keywordtype}{char} *gstart;                \textcolor{comment}{/* glyph start, pointing into teststring    */}}
-\DoxyCodeLine{00080 }
-\DoxyCodeLine{00081    \textcolor{keywordtype}{char} combining[0x110000];    \textcolor{comment}{/* 1 -\/-\/> combining glyph; 0 -\/-\/> non-\/combining */}}
-\DoxyCodeLine{00082    \textcolor{keywordtype}{char} x\_offset [0x110000];    \textcolor{comment}{/* second value in *combining.txt files       */}}
-\DoxyCodeLine{00083 }
-\DoxyCodeLine{00084    \textcolor{keywordtype}{void} \mbox{\hyperlink{unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe}{add\_single\_circle}}(\textcolor{keywordtype}{char} *);      \textcolor{comment}{/* add a single-\/width dashed circle */}}
-\DoxyCodeLine{00085    \textcolor{keywordtype}{void} \mbox{\hyperlink{unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda}{add\_double\_circle}}(\textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int}); \textcolor{comment}{/* add a double-\/width dashed circle */}}
-\DoxyCodeLine{00086 }
-\DoxyCodeLine{00087    FILE *infilefp;}
-\DoxyCodeLine{00088 }
-\DoxyCodeLine{00089    \textcolor{comment}{/*}}
-\DoxyCodeLine{00090 \textcolor{comment}{      if (argc != 3) \{}}
-\DoxyCodeLine{00091 \textcolor{comment}{         fprintf (stderr,}}
-\DoxyCodeLine{00092 \textcolor{comment}{                "{}\(\backslash\)n\(\backslash\)nUsage: \%s combining.txt nonprinting.hex < unifont.hex > unifontfull.hex\(\backslash\)n\(\backslash\)n"{});}}
-\DoxyCodeLine{00093 \textcolor{comment}{         exit (EXIT\_FAILURE);}}
-\DoxyCodeLine{00094 \textcolor{comment}{      \}}}
-\DoxyCodeLine{00095 \textcolor{comment}{   */}}
-\DoxyCodeLine{00096 }
-\DoxyCodeLine{00097    \textcolor{comment}{/*}}
-\DoxyCodeLine{00098 \textcolor{comment}{      Read the combining characters list.}}
-\DoxyCodeLine{00099 \textcolor{comment}{   */}}
-\DoxyCodeLine{00100    \textcolor{comment}{/* Start with no combining code points flagged */}}
-\DoxyCodeLine{00101    memset (combining, 0, 0x110000 * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
-\DoxyCodeLine{00102    memset (x\_offset , 0, 0x110000 * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
-\DoxyCodeLine{00103 }
-\DoxyCodeLine{00104    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[1],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
-\DoxyCodeLine{00105       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ combining characters file \%s not found.\(\backslash\)n\(\backslash\)n"{}},}
-\DoxyCodeLine{00106               argv[1]);}
-\DoxyCodeLine{00107       exit (EXIT\_FAILURE);}
-\DoxyCodeLine{00108    \}}
-\DoxyCodeLine{00109 }
-\DoxyCodeLine{00110    \textcolor{comment}{/* Flag list of combining characters to add a dashed circle. */}}
-\DoxyCodeLine{00111    \textcolor{keywordflow}{while} (fscanf (infilefp, \textcolor{stringliteral}{"{}\%X:\%d"{}}, \&loc, \&offset) != EOF) \{}
-\DoxyCodeLine{00112       \textcolor{comment}{/*}}
-\DoxyCodeLine{00113 \textcolor{comment}{         U+01107F and U+01D1A0 are not defined as combining characters}}
-\DoxyCodeLine{00114 \textcolor{comment}{         in Unicode; they were added in a combining.txt file as the}}
-\DoxyCodeLine{00115 \textcolor{comment}{         only way to make them look acceptable in proximity to other}}
-\DoxyCodeLine{00116 \textcolor{comment}{         glyphs in their script.}}
-\DoxyCodeLine{00117 \textcolor{comment}{      */}}
-\DoxyCodeLine{00118       \textcolor{keywordflow}{if} (loc != 0x01107F \&\& loc != 0x01D1A0) \{}
-\DoxyCodeLine{00119          combining[loc] = 1;}
-\DoxyCodeLine{00120          x\_offset [loc] = offset;}
-\DoxyCodeLine{00121       \}}
-\DoxyCodeLine{00122    \}}
-\DoxyCodeLine{00123    fclose (infilefp); \textcolor{comment}{/* all done reading combining.txt */}}
-\DoxyCodeLine{00124 }
-\DoxyCodeLine{00125    \textcolor{comment}{/* Now read the non-\/printing glyphs; they never have dashed circles */}}
-\DoxyCodeLine{00126    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[2],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
-\DoxyCodeLine{00127       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ nonprinting characters file \%s not found.\(\backslash\)n\(\backslash\)n"{}},}
-\DoxyCodeLine{00128               argv[1]);}
-\DoxyCodeLine{00129       exit (EXIT\_FAILURE);}
-\DoxyCodeLine{00130    \}}
-\DoxyCodeLine{00131 }
-\DoxyCodeLine{00132    \textcolor{comment}{/* Reset list of nonprinting characters to avoid adding a dashed circle. */}}
-\DoxyCodeLine{00133    \textcolor{keywordflow}{while} (fscanf (infilefp, \textcolor{stringliteral}{"{}\%X:\%*s"{}}, \&loc) != EOF) combining[loc] = 0;}
-\DoxyCodeLine{00134 }
-\DoxyCodeLine{00135    fclose (infilefp); \textcolor{comment}{/* all done reading nonprinting.hex */}}
-\DoxyCodeLine{00136 }
-\DoxyCodeLine{00137    \textcolor{comment}{/*}}
-\DoxyCodeLine{00138 \textcolor{comment}{      Read the hex glyphs.}}
-\DoxyCodeLine{00139 \textcolor{comment}{   */}}
-\DoxyCodeLine{00140    teststring[\mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}} -\/ 1] = \textcolor{charliteral}{'\(\backslash\)0'};   \textcolor{comment}{/* so there's no chance we leave array  */}}
-\DoxyCodeLine{00141    \textcolor{keywordflow}{while} (fgets (teststring, \mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1, stdin) != NULL) \{}
-\DoxyCodeLine{00142       sscanf (teststring, \textcolor{stringliteral}{"{}\%X"{}}, \&loc);     \textcolor{comment}{/* loc == the Uniocde code point    */}}
-\DoxyCodeLine{00143       gstart = strchr (teststring,\textcolor{charliteral}{':'}) + 1; \textcolor{comment}{/* start of glyph bitmap            */}}
-\DoxyCodeLine{00144       \textcolor{keywordflow}{if} (combining[loc]) \{                \textcolor{comment}{/* if a combining character         */}}
-\DoxyCodeLine{00145          \textcolor{keywordflow}{if} (strlen (gstart) < 35)}
-\DoxyCodeLine{00146             \mbox{\hyperlink{unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe}{add\_single\_circle}} (gstart);                 \textcolor{comment}{/* single-\/width */}}
-\DoxyCodeLine{00147          \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00148             \mbox{\hyperlink{unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda}{add\_double\_circle}} (gstart, x\_offset[loc]);  \textcolor{comment}{/* double-\/width */}}
-\DoxyCodeLine{00149       \}}
-\DoxyCodeLine{00150       printf (\textcolor{stringliteral}{"{}\%s"{}}, teststring); \textcolor{comment}{/* output the new character .hex string */}}
-\DoxyCodeLine{00151    \}}
-\DoxyCodeLine{00152 }
-\DoxyCodeLine{00153    exit (EXIT\_SUCCESS);}
-\DoxyCodeLine{00154 \}}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76    \textcolor{keywordtype}{char} teststring[\mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}];  \textcolor{comment}{/* current input line                       */}}
+\DoxyCodeLine{77    \textcolor{keywordtype}{int}  loc;                    \textcolor{comment}{/* Unicode code point of current input line */}}
+\DoxyCodeLine{78    \textcolor{keywordtype}{int}  offset;                 \textcolor{comment}{/* offset value of a combining character    */}}
+\DoxyCodeLine{79    \textcolor{keywordtype}{char} *gstart;                \textcolor{comment}{/* glyph start, pointing into teststring    */}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81    \textcolor{keywordtype}{char} combining[0x110000];    \textcolor{comment}{/* 1 -\/-\/> combining glyph; 0 -\/-\/> non-\/combining */}}
+\DoxyCodeLine{82    \textcolor{keywordtype}{char} x\_offset [0x110000];    \textcolor{comment}{/* second value in *combining.txt files       */}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84    \textcolor{keywordtype}{void} \mbox{\hyperlink{unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe}{add\_single\_circle}}(\textcolor{keywordtype}{char} *);      \textcolor{comment}{/* add a single-\/width dashed circle */}}
+\DoxyCodeLine{85    \textcolor{keywordtype}{void} \mbox{\hyperlink{unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda}{add\_double\_circle}}(\textcolor{keywordtype}{char} *, \textcolor{keywordtype}{int}); \textcolor{comment}{/* add a double-\/width dashed circle */}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87    FILE *infilefp;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89    \textcolor{comment}{/*}}
+\DoxyCodeLine{90 \textcolor{comment}{      if (argc != 3) \{}}
+\DoxyCodeLine{91 \textcolor{comment}{         fprintf (stderr,}}
+\DoxyCodeLine{92 \textcolor{comment}{                "{}\(\backslash\)n\(\backslash\)nUsage: \%s combining.txt nonprinting.hex < unifont.hex > unifontfull.hex\(\backslash\)n\(\backslash\)n"{});}}
+\DoxyCodeLine{93 \textcolor{comment}{         exit (EXIT\_FAILURE);}}
+\DoxyCodeLine{94 \textcolor{comment}{      \}}}
+\DoxyCodeLine{95 \textcolor{comment}{   */}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97    \textcolor{comment}{/*}}
+\DoxyCodeLine{98 \textcolor{comment}{      Read the combining characters list.}}
+\DoxyCodeLine{99 \textcolor{comment}{   */}}
+\DoxyCodeLine{100    \textcolor{comment}{/* Start with no combining code points flagged */}}
+\DoxyCodeLine{101    memset (combining, 0, 0x110000 * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{102    memset (x\_offset , 0, 0x110000 * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[1],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
+\DoxyCodeLine{105       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ combining characters file \%s not found.\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{106               argv[1]);}
+\DoxyCodeLine{107       exit (EXIT\_FAILURE);}
+\DoxyCodeLine{108    \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110    \textcolor{comment}{/* Flag list of combining characters to add a dashed circle. */}}
+\DoxyCodeLine{111    \textcolor{keywordflow}{while} (fscanf (infilefp, \textcolor{stringliteral}{"{}\%X:\%d"{}}, \&loc, \&offset) != EOF) \{}
+\DoxyCodeLine{112       \textcolor{comment}{/*}}
+\DoxyCodeLine{113 \textcolor{comment}{         U+01107F and U+01D1A0 are not defined as combining characters}}
+\DoxyCodeLine{114 \textcolor{comment}{         in Unicode; they were added in a combining.txt file as the}}
+\DoxyCodeLine{115 \textcolor{comment}{         only way to make them look acceptable in proximity to other}}
+\DoxyCodeLine{116 \textcolor{comment}{         glyphs in their script.}}
+\DoxyCodeLine{117 \textcolor{comment}{      */}}
+\DoxyCodeLine{118       \textcolor{keywordflow}{if} (loc != 0x01107F \&\& loc != 0x01D1A0) \{}
+\DoxyCodeLine{119          combining[loc] = 1;}
+\DoxyCodeLine{120          x\_offset [loc] = offset;}
+\DoxyCodeLine{121       \}}
+\DoxyCodeLine{122    \}}
+\DoxyCodeLine{123    fclose (infilefp); \textcolor{comment}{/* all done reading combining.txt */}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125    \textcolor{comment}{/* Now read the non-\/printing glyphs; they never have dashed circles */}}
+\DoxyCodeLine{126    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[2],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
+\DoxyCodeLine{127       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ nonprinting characters file \%s not found.\(\backslash\)n\(\backslash\)n"{}},}
+\DoxyCodeLine{128               argv[1]);}
+\DoxyCodeLine{129       exit (EXIT\_FAILURE);}
+\DoxyCodeLine{130    \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132    \textcolor{comment}{/* Reset list of nonprinting characters to avoid adding a dashed circle. */}}
+\DoxyCodeLine{133    \textcolor{keywordflow}{while} (fscanf (infilefp, \textcolor{stringliteral}{"{}\%X:\%*s"{}}, \&loc) != EOF) combining[loc] = 0;}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135    fclose (infilefp); \textcolor{comment}{/* all done reading nonprinting.hex */}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137    \textcolor{comment}{/*}}
+\DoxyCodeLine{138 \textcolor{comment}{      Read the hex glyphs.}}
+\DoxyCodeLine{139 \textcolor{comment}{   */}}
+\DoxyCodeLine{140    teststring[\mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}} -\/ 1] = \textcolor{charliteral}{'\(\backslash\)0'};   \textcolor{comment}{/* so there's no chance we leave array  */}}
+\DoxyCodeLine{141    \textcolor{keywordflow}{while} (fgets (teststring, \mbox{\hyperlink{unigencircles_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1, stdin) != NULL) \{}
+\DoxyCodeLine{142       sscanf (teststring, \textcolor{stringliteral}{"{}\%X"{}}, \&loc);     \textcolor{comment}{/* loc == the Uniocde code point    */}}
+\DoxyCodeLine{143       gstart = strchr (teststring,\textcolor{charliteral}{':'}) + 1; \textcolor{comment}{/* start of glyph bitmap            */}}
+\DoxyCodeLine{144       \textcolor{keywordflow}{if} (combining[loc]) \{                \textcolor{comment}{/* if a combining character         */}}
+\DoxyCodeLine{145          \textcolor{keywordflow}{if} (strlen (gstart) < 35)}
+\DoxyCodeLine{146             \mbox{\hyperlink{unigencircles_8c_a88eb1195637a2f1fe03d339f99582cfe}{add\_single\_circle}} (gstart);                 \textcolor{comment}{/* single-\/width */}}
+\DoxyCodeLine{147          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{148             \mbox{\hyperlink{unigencircles_8c_a2e8aac93a2a490025d3653467cf40eda}{add\_double\_circle}} (gstart, x\_offset[loc]);  \textcolor{comment}{/* double-\/width */}}
+\DoxyCodeLine{149       \}}
+\DoxyCodeLine{150       printf (\textcolor{stringliteral}{"{}\%s"{}}, teststring); \textcolor{comment}{/* output the new character .hex string */}}
+\DoxyCodeLine{151    \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153    exit (EXIT\_SUCCESS);}
+\DoxyCodeLine{154 \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -371,6 +351,6 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=249pt]{d6/d69/unigencircles_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\includegraphics[width=261pt]{d6/d69/unigencircles_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
 \end{center}
 \end{figure}

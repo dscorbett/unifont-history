@@ -1,7 +1,7 @@
 <map id="fillNameTable" name="fillNameTable">
-<area shape="rect" id="node1" title="Fill a &quot;name&quot; font table." alt="" coords="5,56,107,83"/>
-<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a1fab24bb2d2b38b68a38ec871afc3f9c" title="Add a TrueType or OpenType table to the font." alt="" coords="158,5,233,32"/>
-<area shape="rect" id="node3" href="$da/dce/hex2otf_8c.html#a07b29528c561e5852a228c98391225f7" title="Append two unsigned bytes to the end of a byte array." alt="" coords="155,56,236,83"/>
-<area shape="rect" id="node4" href="$da/dce/hex2otf_8c.html#ae8310060f5a9b7cefb84d0bb1b459b64" title="Create a new buffer." alt="" coords="155,107,236,133"/>
-<area shape="rect" id="node5" href="$da/dce/hex2otf_8c.html#a2f5976201b1e630a94045f04a0348572" title="Print an error message on stderr, then exit." alt="" coords="284,107,323,133"/>
+<area shape="rect" id="node1" title="Fill a &quot;name&quot; font table." alt="" coords="5,56,116,83"/>
+<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a1fab24bb2d2b38b68a38ec871afc3f9c" title="Add a TrueType or OpenType table to the font." alt="" coords="168,5,248,32"/>
+<area shape="rect" id="node3" href="$da/dce/hex2otf_8c.html#a07b29528c561e5852a228c98391225f7" title="Append two unsigned bytes to the end of a byte array." alt="" coords="165,56,251,83"/>
+<area shape="rect" id="node4" href="$da/dce/hex2otf_8c.html#aefca579e9f2fec4fa23f9907e9633548" title="Create a new buffer." alt="" coords="164,107,252,133"/>
+<area shape="rect" id="node5" href="$da/dce/hex2otf_8c.html#a2f5976201b1e630a94045f04a0348572" title="Print an error message on stderr, then exit." alt="" coords="300,107,343,133"/>
 </map>

@@ -30,7 +30,7 @@ COPYRIGHT = "Copyright © 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, et al."
 
-VERSION = 15.0.03
+VERSION = 15.0.04
 
 all: otf
 

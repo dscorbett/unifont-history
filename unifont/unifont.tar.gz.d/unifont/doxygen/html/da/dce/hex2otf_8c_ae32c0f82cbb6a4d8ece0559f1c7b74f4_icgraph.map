@@ -1,9 +1,9 @@
 <map id="ensureBuffer" name="ensureBuffer">
-<area shape="rect" id="node1" title="Ensure that the buffer has at least the specified minimum size." alt="" coords="388,81,484,108"/>
-<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a927c31a7e187d15a70667ce6b0ef296a" title="Append a string of bytes to a buffer." alt="" coords="249,56,340,83"/>
-<area shape="rect" id="node6" href="$da/dce/hex2otf_8c.html#a0d4560c5d562d31a33f092bb579f8397" title="Append 1 to 4 bytes of zeroes to a buffer, for padding." alt="" coords="249,107,340,133"/>
-<area shape="rect" id="node3" href="$da/dce/hex2otf_8c.html#a06b8121dea15c8117b7c951ffb22fb7e" title="Fill a &quot;GSUB&quot; font table." alt="" coords="104,5,201,32"/>
-<area shape="rect" id="node5" href="$da/dce/hex2otf_8c.html#ab6e3bb110dc3e55193c344cb7b56e328" title="Fill an &quot;OS/2&quot; font table." alt="" coords="107,56,199,83"/>
-<area shape="rect" id="node4" href="$da/dce/hex2otf_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="The main function." alt="" coords="5,56,56,83"/>
-<area shape="rect" id="node7" href="$da/dce/hex2otf_8c.html#a4ac0c02117b703a71bee3dd34e2eb306" title="Fill a &quot;head&quot; font table." alt="" coords="104,107,201,133"/>
+<area shape="rect" id="node1" title="Ensure that the buffer has at least the specified minimum size." alt="" coords="408,81,513,108"/>
+<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a927c31a7e187d15a70667ce6b0ef296a" title="Append a string of bytes to a buffer." alt="" coords="263,56,360,83"/>
+<area shape="rect" id="node6" href="$da/dce/hex2otf_8c.html#a0d4560c5d562d31a33f092bb579f8397" title="Append 1 to 4 bytes of zeroes to a buffer, for padding." alt="" coords="263,107,360,133"/>
+<area shape="rect" id="node3" href="$da/dce/hex2otf_8c.html#a06b8121dea15c8117b7c951ffb22fb7e" title="Fill a &quot;GSUB&quot; font table." alt="" coords="109,5,214,32"/>
+<area shape="rect" id="node5" href="$da/dce/hex2otf_8c.html#ab6e3bb110dc3e55193c344cb7b56e328" title="Fill an &quot;OS/2&quot; font table." alt="" coords="112,56,211,83"/>
+<area shape="rect" id="node4" href="$da/dce/hex2otf_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="The main function." alt="" coords="5,56,60,83"/>
+<area shape="rect" id="node7" href="$da/dce/hex2otf_8c.html#a4ac0c02117b703a71bee3dd34e2eb306" title="Fill a &quot;head&quot; font table." alt="" coords="108,107,215,133"/>
 </map>

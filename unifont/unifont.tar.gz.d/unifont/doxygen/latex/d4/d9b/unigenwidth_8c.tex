@@ -2,7 +2,7 @@
 \label{unigenwidth_8c}\index{src/unigenwidth.c@{src/unigenwidth.c}}
 
 
-unigenwidth -\/ IEEE 1003.\+1-\/2008 setup to calculate wchar\+\_\+t string widths  
+unigenwidth -\/ I\+E\+EE 1003.\+1-\/2008 setup to calculate wchar\+\_\+t string widths  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -13,19 +13,22 @@ Include dependency graph for unigenwidth.\+c\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=260pt]{d0/d63/unigenwidth_8c__incl}
+\includegraphics[width=273pt]{d0/d63/unigenwidth_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}~256
+\mbox{\Hypertarget{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}\label{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}} 
+\#define \mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{M\+A\+X\+S\+T\+R\+I\+NG}}~256
 \begin{DoxyCompactList}\small\item\em Maximum input line length -\/ 1. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\+\_\+\+START}}~0x0\+F0\+E70
+\mbox{\Hypertarget{unigenwidth_8c_a9f55227949663244f18644f19a579d73}\label{unigenwidth_8c_a9f55227949663244f18644f19a579d73}} 
+\#define \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{P\+I\+K\+T\+O\+\_\+\+S\+T\+A\+RT}}~0x0\+F0\+E70
 \begin{DoxyCompactList}\small\item\em Start of Pikto code point range. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\+\_\+\+END}}~0x0\+F11\+EF
+\mbox{\Hypertarget{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}\label{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}} 
+\#define \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{P\+I\+K\+T\+O\+\_\+\+E\+ND}}~0x0\+F11\+EF
 \begin{DoxyCompactList}\small\item\em End of Pikto code point range. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{PIKTO\+\_\+\+SIZE}}~(\mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\+\_\+\+END}} -\/ \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\+\_\+\+START}} + 1)
+\#define \mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{P\+I\+K\+T\+O\+\_\+\+S\+I\+ZE}}~(\mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{P\+I\+K\+T\+O\+\_\+\+E\+ND}} -\/ \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{P\+I\+K\+T\+O\+\_\+\+S\+T\+A\+RT}} + 1)
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -35,7 +38,7 @@ int \mbox{\hyperlink{unigenwidth_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (i
 
 
 \doxysubsection{Detailed Description}
-unigenwidth -\/ IEEE 1003.\+1-\/2008 setup to calculate wchar\+\_\+t string widths 
+unigenwidth -\/ I\+E\+EE 1003.\+1-\/2008 setup to calculate wchar\+\_\+t string widths 
 
 \begin{DoxyAuthor}{Author}
 Paul Hardy.
@@ -45,62 +48,16 @@ Copyright (C) 2013, 2017 Paul Hardy.
 \end{DoxyCopyright}
 All glyphs are treated as 16 pixels high, and can be 8, 16, 24, or 32 pixels wide (resulting in widths of 1, 2, 3, or 4, respectively). 
 
-Definition in file \mbox{\hyperlink{unigenwidth_8c_source}{unigenwidth.\+c}}.
-
-
-
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}\label{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}} 
-\index{unigenwidth.c@{unigenwidth.c}!MAXSTRING@{MAXSTRING}}
-\index{MAXSTRING@{MAXSTRING}!unigenwidth.c@{unigenwidth.c}}
-\doxysubsubsection{\texorpdfstring{MAXSTRING}{MAXSTRING}}
-{\footnotesize\ttfamily \#define MAXSTRING~256}
-
-
-
-Maximum input line length -\/ 1. 
-
-
-
-Definition at line \mbox{\hyperlink{unigenwidth_8c_source_l00046}{46}} of file \mbox{\hyperlink{unigenwidth_8c_source}{unigenwidth.\+c}}.
-
-\mbox{\Hypertarget{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}\label{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}} 
-\index{unigenwidth.c@{unigenwidth.c}!PIKTO\_END@{PIKTO\_END}}
-\index{PIKTO\_END@{PIKTO\_END}!unigenwidth.c@{unigenwidth.c}}
-\doxysubsubsection{\texorpdfstring{PIKTO\_END}{PIKTO\_END}}
-{\footnotesize\ttfamily \#define PIKTO\+\_\+\+END~0x0\+F11\+EF}
-
-
-
-End of Pikto code point range. 
-
-
-
-Definition at line \mbox{\hyperlink{unigenwidth_8c_source_l00050}{50}} of file \mbox{\hyperlink{unigenwidth_8c_source}{unigenwidth.\+c}}.
-
 \mbox{\Hypertarget{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}\label{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}} 
 \index{unigenwidth.c@{unigenwidth.c}!PIKTO\_SIZE@{PIKTO\_SIZE}}
 \index{PIKTO\_SIZE@{PIKTO\_SIZE}!unigenwidth.c@{unigenwidth.c}}
 \doxysubsubsection{\texorpdfstring{PIKTO\_SIZE}{PIKTO\_SIZE}}
-{\footnotesize\ttfamily \#define PIKTO\+\_\+\+SIZE~(\mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\+\_\+\+END}} -\/ \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\+\_\+\+START}} + 1)}
+{\footnotesize\ttfamily \#define P\+I\+K\+T\+O\+\_\+\+S\+I\+ZE~(\mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{P\+I\+K\+T\+O\+\_\+\+E\+ND}} -\/ \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{P\+I\+K\+T\+O\+\_\+\+S\+T\+A\+RT}} + 1)}
 
 Number of code points in Pikto range. 
 
-Definition at line \mbox{\hyperlink{unigenwidth_8c_source_l00052}{52}} of file \mbox{\hyperlink{unigenwidth_8c_source}{unigenwidth.\+c}}.
-
-\mbox{\Hypertarget{unigenwidth_8c_a9f55227949663244f18644f19a579d73}\label{unigenwidth_8c_a9f55227949663244f18644f19a579d73}} 
-\index{unigenwidth.c@{unigenwidth.c}!PIKTO\_START@{PIKTO\_START}}
-\index{PIKTO\_START@{PIKTO\_START}!unigenwidth.c@{unigenwidth.c}}
-\doxysubsubsection{\texorpdfstring{PIKTO\_START}{PIKTO\_START}}
-{\footnotesize\ttfamily \#define PIKTO\+\_\+\+START~0x0\+F0\+E70}
-
-
-
-Start of Pikto code point range. 
-
-
-
-Definition at line \mbox{\hyperlink{unigenwidth_8c_source_l00049}{49}} of file \mbox{\hyperlink{unigenwidth_8c_source}{unigenwidth.\+c}}.
+Definition at line 52 of file unigenwidth.\+c.
 
 
 
@@ -123,307 +80,307 @@ The main function.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This program exits with status EXIT\+\_\+\+SUCCESS. 
+This program exits with status E\+X\+I\+T\+\_\+\+S\+U\+C\+C\+E\+SS. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{unigenwidth_8c_source_l00063}{63}} of file \mbox{\hyperlink{unigenwidth_8c_source}{unigenwidth.\+c}}.
+Definition at line 63 of file unigenwidth.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064 \{}
-\DoxyCodeLine{00065 }
-\DoxyCodeLine{00066    \textcolor{keywordtype}{int} i; \textcolor{comment}{/* loop variable */}}
-\DoxyCodeLine{00067 }
-\DoxyCodeLine{00068    \textcolor{keywordtype}{char} teststring[\mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}];}
-\DoxyCodeLine{00069    \textcolor{keywordtype}{int}  loc;}
-\DoxyCodeLine{00070    \textcolor{keywordtype}{char} *gstart;}
-\DoxyCodeLine{00071 }
-\DoxyCodeLine{00072    \textcolor{keywordtype}{char} glyph\_width[0x20000];}
-\DoxyCodeLine{00073    \textcolor{keywordtype}{char} pikto\_width[\mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{PIKTO\_SIZE}}];}
-\DoxyCodeLine{00074 }
-\DoxyCodeLine{00075    FILE *infilefp;}
-\DoxyCodeLine{00076 }
-\DoxyCodeLine{00077    \textcolor{keywordflow}{if} (argc != 3) \{}
-\DoxyCodeLine{00078       fprintf (stderr, \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nUsage: \%s <unifont.hex> <combining.txt>\(\backslash\)n\(\backslash\)n"{}}, argv[0]);}
-\DoxyCodeLine{00079       exit (EXIT\_FAILURE);}
-\DoxyCodeLine{00080    \}}
-\DoxyCodeLine{00081 }
-\DoxyCodeLine{00082    \textcolor{comment}{/*}}
-\DoxyCodeLine{00083 \textcolor{comment}{      Read the collection of hex glyphs.}}
-\DoxyCodeLine{00084 \textcolor{comment}{   */}}
-\DoxyCodeLine{00085    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[1],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
-\DoxyCodeLine{00086       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ hex input file \%s not found.\(\backslash\)n\(\backslash\)n"{}}, argv[1]);}
-\DoxyCodeLine{00087       exit (EXIT\_FAILURE);}
-\DoxyCodeLine{00088    \}}
-\DoxyCodeLine{00089 }
-\DoxyCodeLine{00090    \textcolor{comment}{/* Flag glyph as non-\/existent until found. */}}
-\DoxyCodeLine{00091    memset (glyph\_width, -\/1, 0x20000 * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
-\DoxyCodeLine{00092    memset (pikto\_width, -\/1, (\mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{PIKTO\_SIZE}}) * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
-\DoxyCodeLine{00093 }
-\DoxyCodeLine{00094    teststring[\mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00095    \textcolor{keywordflow}{while} (fgets (teststring, \mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1, infilefp) != NULL) \{}
-\DoxyCodeLine{00096       sscanf (teststring, \textcolor{stringliteral}{"{}\%X:\%*s"{}}, \&loc);}
-\DoxyCodeLine{00097       \textcolor{keywordflow}{if} (loc < 0x20000) \{}
-\DoxyCodeLine{00098          gstart = strchr (teststring,\textcolor{charliteral}{':'}) + 1;}
-\DoxyCodeLine{00099          \textcolor{comment}{/*}}
-\DoxyCodeLine{00100 \textcolor{comment}{            16 rows per glyph, 2 ASCII hexadecimal digits per byte,}}
-\DoxyCodeLine{00101 \textcolor{comment}{            so divide number of digits by 32 (shift right 5 bits).}}
-\DoxyCodeLine{00102 \textcolor{comment}{         */}}
-\DoxyCodeLine{00103          glyph\_width[loc] = (strlen (gstart) -\/ 1) >> 5;}
-\DoxyCodeLine{00104       \}}
-\DoxyCodeLine{00105       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((loc >= \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}}) \&\& (loc <= \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\_END}})) \{}
-\DoxyCodeLine{00106          gstart = strchr (teststring,\textcolor{charliteral}{':'}) + 1;}
-\DoxyCodeLine{00107          pikto\_width[loc -\/ \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}}] = strlen (gstart) <= 34 ? 1 : 2;}
-\DoxyCodeLine{00108       \}}
-\DoxyCodeLine{00109    \}}
-\DoxyCodeLine{00110 }
-\DoxyCodeLine{00111    fclose (infilefp);}
-\DoxyCodeLine{00112 }
-\DoxyCodeLine{00113    \textcolor{comment}{/*}}
-\DoxyCodeLine{00114 \textcolor{comment}{      Now read the combining character code points.  These have width of 0.}}
-\DoxyCodeLine{00115 \textcolor{comment}{   */}}
-\DoxyCodeLine{00116    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[2],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
-\DoxyCodeLine{00117       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ combining characters file \%s not found.\(\backslash\)n\(\backslash\)n"{}}, argv[2]);}
-\DoxyCodeLine{00118       exit (EXIT\_FAILURE);}
-\DoxyCodeLine{00119    \}}
-\DoxyCodeLine{00120 }
-\DoxyCodeLine{00121    \textcolor{keywordflow}{while} (fgets (teststring, \mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1, infilefp) != NULL) \{}
-\DoxyCodeLine{00122       sscanf (teststring, \textcolor{stringliteral}{"{}\%X:\%*s"{}}, \&loc);}
-\DoxyCodeLine{00123       \textcolor{keywordflow}{if} (loc < 0x20000) glyph\_width[loc] = 0;}
-\DoxyCodeLine{00124    \}}
-\DoxyCodeLine{00125 }
-\DoxyCodeLine{00126    fclose (infilefp);}
-\DoxyCodeLine{00127 }
-\DoxyCodeLine{00128    \textcolor{comment}{/*}}
-\DoxyCodeLine{00129 \textcolor{comment}{      Code Points with Unusual Properties (Unicode Standard, Chapter 4).}}
-\DoxyCodeLine{00130 \textcolor{comment}{}}
-\DoxyCodeLine{00131 \textcolor{comment}{      As of Unifont 10.0.04, use the widths in the "{}*-\/nonprinting.hex"{}}}
-\DoxyCodeLine{00132 \textcolor{comment}{      files.  If an application is smart enough to know how to handle}}
-\DoxyCodeLine{00133 \textcolor{comment}{      these special cases, it will not render the "{}nonprinting"{} glyph}}
-\DoxyCodeLine{00134 \textcolor{comment}{      and will treat the code point as being zero-\/width.}}
-\DoxyCodeLine{00135 \textcolor{comment}{   */}}
-\DoxyCodeLine{00136 \textcolor{comment}{// glyph\_width[0]=0; /* NULL character */}}
-\DoxyCodeLine{00137 \textcolor{comment}{// for (i = 0x0001; i <= 0x001F; i++) glyph\_width[i]=-\/1; /* Control Characters */}}
-\DoxyCodeLine{00138 \textcolor{comment}{// for (i = 0x007F; i <= 0x009F; i++) glyph\_width[i]=-\/1; /* Control Characters */}}
-\DoxyCodeLine{00139 }
-\DoxyCodeLine{00140 \textcolor{comment}{// glyph\_width[0x034F]=0; /* combining grapheme joiner               */}}
-\DoxyCodeLine{00141 \textcolor{comment}{// glyph\_width[0x180B]=0; /* Mongolian free variation selector one   */}}
-\DoxyCodeLine{00142 \textcolor{comment}{// glyph\_width[0x180C]=0; /* Mongolian free variation selector two   */}}
-\DoxyCodeLine{00143 \textcolor{comment}{// glyph\_width[0x180D]=0; /* Mongolian free variation selector three */}}
-\DoxyCodeLine{00144 \textcolor{comment}{// glyph\_width[0x180E]=0; /* Mongolian vowel separator               */}}
-\DoxyCodeLine{00145 \textcolor{comment}{// glyph\_width[0x200B]=0; /* zero width space                        */}}
-\DoxyCodeLine{00146 \textcolor{comment}{// glyph\_width[0x200C]=0; /* zero width non-\/joiner                   */}}
-\DoxyCodeLine{00147 \textcolor{comment}{// glyph\_width[0x200D]=0; /* zero width joiner                       */}}
-\DoxyCodeLine{00148 \textcolor{comment}{// glyph\_width[0x200E]=0; /* left-\/to-\/right mark                      */}}
-\DoxyCodeLine{00149 \textcolor{comment}{// glyph\_width[0x200F]=0; /* right-\/to-\/left mark                      */}}
-\DoxyCodeLine{00150 \textcolor{comment}{// glyph\_width[0x202A]=0; /* left-\/to-\/right embedding                 */}}
-\DoxyCodeLine{00151 \textcolor{comment}{// glyph\_width[0x202B]=0; /* right-\/to-\/left embedding                 */}}
-\DoxyCodeLine{00152 \textcolor{comment}{// glyph\_width[0x202C]=0; /* pop directional formatting              */}}
-\DoxyCodeLine{00153 \textcolor{comment}{// glyph\_width[0x202D]=0; /* left-\/to-\/right override                  */}}
-\DoxyCodeLine{00154 \textcolor{comment}{// glyph\_width[0x202E]=0; /* right-\/to-\/left override                  */}}
-\DoxyCodeLine{00155 \textcolor{comment}{// glyph\_width[0x2060]=0; /* word joiner                             */}}
-\DoxyCodeLine{00156 \textcolor{comment}{// glyph\_width[0x2061]=0; /* function application                    */}}
-\DoxyCodeLine{00157 \textcolor{comment}{// glyph\_width[0x2062]=0; /* invisible times                         */}}
-\DoxyCodeLine{00158 \textcolor{comment}{// glyph\_width[0x2063]=0; /* invisible separator                     */}}
-\DoxyCodeLine{00159 \textcolor{comment}{// glyph\_width[0x2064]=0; /* invisible plus                          */}}
-\DoxyCodeLine{00160 \textcolor{comment}{// glyph\_width[0x206A]=0; /* inhibit symmetric swapping              */}}
-\DoxyCodeLine{00161 \textcolor{comment}{// glyph\_width[0x206B]=0; /* activate symmetric swapping             */}}
-\DoxyCodeLine{00162 \textcolor{comment}{// glyph\_width[0x206C]=0; /* inhibit arabic form shaping             */}}
-\DoxyCodeLine{00163 \textcolor{comment}{// glyph\_width[0x206D]=0; /* activate arabic form shaping            */}}
-\DoxyCodeLine{00164 \textcolor{comment}{// glyph\_width[0x206E]=0; /* national digit shapes                   */}}
-\DoxyCodeLine{00165 \textcolor{comment}{// glyph\_width[0x206F]=0; /* nominal digit shapes                    */}}
-\DoxyCodeLine{00166 }
-\DoxyCodeLine{00167 \textcolor{comment}{// /* Variation Selector-\/1 to Variation Selector-\/16 */}}
-\DoxyCodeLine{00168 \textcolor{comment}{// for (i = 0xFE00; i <= 0xFE0F; i++) glyph\_width[i] = 0;}}
-\DoxyCodeLine{00169 }
-\DoxyCodeLine{00170 \textcolor{comment}{// glyph\_width[0xFEFF]=0; /* zero width no-\/break space         */}}
-\DoxyCodeLine{00171 \textcolor{comment}{// glyph\_width[0xFFF9]=0; /* interlinear annotation anchor     */}}
-\DoxyCodeLine{00172 \textcolor{comment}{// glyph\_width[0xFFFA]=0; /* interlinear annotation separator  */}}
-\DoxyCodeLine{00173 \textcolor{comment}{// glyph\_width[0xFFFB]=0; /* interlinear annotation terminator */}}
-\DoxyCodeLine{00174    \textcolor{comment}{/*}}
-\DoxyCodeLine{00175 \textcolor{comment}{      Let glyph widths represent 0xFFFC (object replacement character)}}
-\DoxyCodeLine{00176 \textcolor{comment}{      and 0xFFFD (replacement character).}}
-\DoxyCodeLine{00177 \textcolor{comment}{   */}}
-\DoxyCodeLine{00178 }
-\DoxyCodeLine{00179    \textcolor{comment}{/*}}
-\DoxyCodeLine{00180 \textcolor{comment}{      Hangul Jamo:}}
-\DoxyCodeLine{00181 \textcolor{comment}{}}
-\DoxyCodeLine{00182 \textcolor{comment}{         Leading Consonant (Choseong): leave spacing as is.}}
-\DoxyCodeLine{00183 \textcolor{comment}{}}
-\DoxyCodeLine{00184 \textcolor{comment}{         Hangul Choseong Filler (U+115F): set width to 2.}}
-\DoxyCodeLine{00185 \textcolor{comment}{}}
-\DoxyCodeLine{00186 \textcolor{comment}{         Hangul Jungseong Filler, Hangul Vowel (Jungseong), and}}
-\DoxyCodeLine{00187 \textcolor{comment}{         Final Consonant (Jongseong): set width to 0, because these}}
-\DoxyCodeLine{00188 \textcolor{comment}{         combine with the leading consonant as one composite syllabic}}
-\DoxyCodeLine{00189 \textcolor{comment}{         glyph.  As of Unicode 5.2, the Hangul Jamo block (U+1100..U+11FF)}}
-\DoxyCodeLine{00190 \textcolor{comment}{         is completely filled.}}
-\DoxyCodeLine{00191 \textcolor{comment}{   */}}
-\DoxyCodeLine{00192    \textcolor{comment}{// for (i = 0x1160; i <= 0x11FF; i++) glyph\_width[i]=0; /* Vowels \& Final Consonants */}}
-\DoxyCodeLine{00193 }
-\DoxyCodeLine{00194    \textcolor{comment}{/*}}
-\DoxyCodeLine{00195 \textcolor{comment}{      Private Use Area -\/-\/ the width is undefined, but likely}}
-\DoxyCodeLine{00196 \textcolor{comment}{      to be 2 charcells wide either from a graphic glyph or}}
-\DoxyCodeLine{00197 \textcolor{comment}{      from a four-\/digit hexadecimal glyph representing the}}
-\DoxyCodeLine{00198 \textcolor{comment}{      code point.  Therefore if any PUA glyph does not have}}
-\DoxyCodeLine{00199 \textcolor{comment}{      a non-\/zero width yet, assign it a default width of 2.}}
-\DoxyCodeLine{00200 \textcolor{comment}{      The Unicode Standard allows giving PUA characters}}
-\DoxyCodeLine{00201 \textcolor{comment}{      default property values; see for example The Unicode}}
-\DoxyCodeLine{00202 \textcolor{comment}{      Standard Version 5.0, p. 91.  This same default is}}
-\DoxyCodeLine{00203 \textcolor{comment}{      used for higher plane PUA code points below.}}
-\DoxyCodeLine{00204 \textcolor{comment}{   */}}
-\DoxyCodeLine{00205    \textcolor{comment}{// for (i = 0xE000; i <= 0xF8FF; i++) \{}}
-\DoxyCodeLine{00206    \textcolor{comment}{//    if (glyph\_width[i] == 0) glyph\_width[i]=2;}}
-\DoxyCodeLine{00207    \textcolor{comment}{// \}}}
-\DoxyCodeLine{00208 }
-\DoxyCodeLine{00209    \textcolor{comment}{/*}}
-\DoxyCodeLine{00210 \textcolor{comment}{      <not a character>}}
-\DoxyCodeLine{00211 \textcolor{comment}{   */}}
-\DoxyCodeLine{00212    \textcolor{keywordflow}{for} (i = 0xFDD0; i <= 0xFDEF; i++) glyph\_width[i] = -\/1;}
-\DoxyCodeLine{00213    glyph\_width[0xFFFE] = -\/1; \textcolor{comment}{/* Byte Order Mark */}}
-\DoxyCodeLine{00214    glyph\_width[0xFFFF] = -\/1; \textcolor{comment}{/* Byte Order Mark */}}
-\DoxyCodeLine{00215 }
-\DoxyCodeLine{00216    \textcolor{comment}{/* Surrogate Code Points */}}
-\DoxyCodeLine{00217    \textcolor{keywordflow}{for} (i = 0xD800; i <= 0xDFFF; i++) glyph\_width[i]=-\/1;}
-\DoxyCodeLine{00218 }
-\DoxyCodeLine{00219    \textcolor{comment}{/* CJK Code Points */}}
-\DoxyCodeLine{00220    \textcolor{keywordflow}{for} (i = 0x4E00; i <= 0x9FFF; i++) \textcolor{keywordflow}{if} (glyph\_width[i] < 0) glyph\_width[i] = 2;}
-\DoxyCodeLine{00221    \textcolor{keywordflow}{for} (i = 0x3400; i <= 0x4DBF; i++) \textcolor{keywordflow}{if} (glyph\_width[i] < 0) glyph\_width[i] = 2;}
-\DoxyCodeLine{00222    \textcolor{keywordflow}{for} (i = 0xF900; i <= 0xFAFF; i++) \textcolor{keywordflow}{if} (glyph\_width[i] < 0) glyph\_width[i] = 2;}
-\DoxyCodeLine{00223 }
-\DoxyCodeLine{00224    \textcolor{comment}{/*}}
-\DoxyCodeLine{00225 \textcolor{comment}{      Now generate the output file.}}
-\DoxyCodeLine{00226 \textcolor{comment}{   */}}
-\DoxyCodeLine{00227    printf (\textcolor{stringliteral}{"{}/*\(\backslash\)n"{}});}
-\DoxyCodeLine{00228    printf (\textcolor{stringliteral}{"{}   wcwidth and wcswidth functions, as per IEEE 1003.1-\/2008\(\backslash\)n"{}});}
-\DoxyCodeLine{00229    printf (\textcolor{stringliteral}{"{}   System Interfaces, pp. 2241 and 2251.\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00230    printf (\textcolor{stringliteral}{"{}   Author: Paul Hardy, 2013\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00231    printf (\textcolor{stringliteral}{"{}   Copyright (c) 2013 Paul Hardy\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00232    printf (\textcolor{stringliteral}{"{}   LICENSE:\(\backslash\)n"{}});}
-\DoxyCodeLine{00233    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00234    printf (\textcolor{stringliteral}{"{}      This program is free software: you can redistribute it and/or modify\(\backslash\)n"{}});}
-\DoxyCodeLine{00235    printf (\textcolor{stringliteral}{"{}      it under the terms of the GNU General Public License as published by\(\backslash\)n"{}});}
-\DoxyCodeLine{00236    printf (\textcolor{stringliteral}{"{}      the Free Software Foundation, either version 2 of the License, or\(\backslash\)n"{}});}
-\DoxyCodeLine{00237    printf (\textcolor{stringliteral}{"{}      (at your option) any later version.\(\backslash\)n"{}});}
-\DoxyCodeLine{00238    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00239    printf (\textcolor{stringliteral}{"{}      This program is distributed in the hope that it will be useful,\(\backslash\)n"{}});}
-\DoxyCodeLine{00240    printf (\textcolor{stringliteral}{"{}      but WITHOUT ANY WARRANTY; without even the implied warranty of\(\backslash\)n"{}});}
-\DoxyCodeLine{00241    printf (\textcolor{stringliteral}{"{}      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\(\backslash\)n"{}});}
-\DoxyCodeLine{00242    printf (\textcolor{stringliteral}{"{}      GNU General Public License for more details.\(\backslash\)n"{}});}
-\DoxyCodeLine{00243    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00244    printf (\textcolor{stringliteral}{"{}      You should have received a copy of the GNU General Public License\(\backslash\)n"{}});}
-\DoxyCodeLine{00245    printf (\textcolor{stringliteral}{"{}      along with this program.  If not, see <http://www.gnu.org/licenses/>.\(\backslash\)n"{}});}
-\DoxyCodeLine{00246    printf (\textcolor{stringliteral}{"{}*/\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00247 }
-\DoxyCodeLine{00248    printf (\textcolor{stringliteral}{"{}\#include <wchar.h>\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00249    printf (\textcolor{stringliteral}{"{}/* Definitions for Pikto CSUR Private Use Area glyphs */\(\backslash\)n"{}});}
-\DoxyCodeLine{00250    printf (\textcolor{stringliteral}{"{}\#define PIKTO\_START\(\backslash\)t0x\%06X\(\backslash\)n"{}}, \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}});}
-\DoxyCodeLine{00251    printf (\textcolor{stringliteral}{"{}\#define PIKTO\_END\(\backslash\)t0x\%06X\(\backslash\)n"{}}, \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\_END}});}
-\DoxyCodeLine{00252    printf (\textcolor{stringliteral}{"{}\#define PIKTO\_SIZE\(\backslash\)t(PIKTO\_END -\/ PIKTO\_START + 1)\(\backslash\)n"{}});}
-\DoxyCodeLine{00253    printf (\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00254    printf (\textcolor{stringliteral}{"{}/* wcwidth -\/-\/ return charcell positions of one code point */\(\backslash\)n"{}});}
-\DoxyCodeLine{00255    printf (\textcolor{stringliteral}{"{}inline int\(\backslash\)nwcwidth (wchar\_t wc)\(\backslash\)n\{\(\backslash\)n"{}});}
-\DoxyCodeLine{00256    printf (\textcolor{stringliteral}{"{}   return (wcswidth (\&wc, 1));\(\backslash\)n"{}});}
-\DoxyCodeLine{00257    printf (\textcolor{stringliteral}{"{}\}\(\backslash\)n"{}});}
-\DoxyCodeLine{00258    printf (\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00259    printf (\textcolor{stringliteral}{"{}int\(\backslash\)nwcswidth (const wchar\_t *pwcs, size\_t n)\(\backslash\)n\{\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00260    printf (\textcolor{stringliteral}{"{}   int i;                    /* loop variable                                      */\(\backslash\)n"{}});}
-\DoxyCodeLine{00261    printf (\textcolor{stringliteral}{"{}   unsigned codept;          /* Unicode code point of current character            */\(\backslash\)n"{}});}
-\DoxyCodeLine{00262    printf (\textcolor{stringliteral}{"{}   unsigned plane;           /* Unicode plane, 0x00..0x10                          */\(\backslash\)n"{}});}
-\DoxyCodeLine{00263    printf (\textcolor{stringliteral}{"{}   unsigned lower17;         /* lower 17 bits of Unicode code point                */\(\backslash\)n"{}});}
-\DoxyCodeLine{00264    printf (\textcolor{stringliteral}{"{}   unsigned lower16;         /* lower 16 bits of Unicode code point                */\(\backslash\)n"{}});}
-\DoxyCodeLine{00265    printf (\textcolor{stringliteral}{"{}   int lowpt, midpt, highpt; /* for binary searching in plane1zeroes[]             */\(\backslash\)n"{}});}
-\DoxyCodeLine{00266    printf (\textcolor{stringliteral}{"{}   int found;                /* for binary searching in plane1zeroes[]             */\(\backslash\)n"{}});}
-\DoxyCodeLine{00267    printf (\textcolor{stringliteral}{"{}   int totalwidth;           /* total width of string, in charcells (1 or 2/glyph) */\(\backslash\)n"{}});}
-\DoxyCodeLine{00268    printf (\textcolor{stringliteral}{"{}   int illegalchar;          /* Whether or not this code point is illegal          */\(\backslash\)n"{}});}
-\DoxyCodeLine{00269    putchar (\textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{00270 }
-\DoxyCodeLine{00271    \textcolor{comment}{/*}}
-\DoxyCodeLine{00272 \textcolor{comment}{      Print the glyph\_width[] array for glyphs widths in the}}
-\DoxyCodeLine{00273 \textcolor{comment}{      Basic Multilingual Plane (Plane 0).}}
-\DoxyCodeLine{00274 \textcolor{comment}{   */}}
-\DoxyCodeLine{00275    printf (\textcolor{stringliteral}{"{}   char glyph\_width[0x20000] = \{"{}});}
-\DoxyCodeLine{00276    \textcolor{keywordflow}{for} (i = 0; i < 0x10000; i++) \{}
-\DoxyCodeLine{00277       \textcolor{keywordflow}{if} ((i \& 0x1F) == 0)}
-\DoxyCodeLine{00278          printf (\textcolor{stringliteral}{"{}\(\backslash\)n      /* U+\%04X */ "{}}, i);}
-\DoxyCodeLine{00279       printf (\textcolor{stringliteral}{"{}\%d,"{}}, glyph\_width[i]);}
-\DoxyCodeLine{00280    \}}
-\DoxyCodeLine{00281    \textcolor{keywordflow}{for} (i = 0x10000; i < 0x20000; i++) \{}
-\DoxyCodeLine{00282       \textcolor{keywordflow}{if} ((i \& 0x1F) == 0)}
-\DoxyCodeLine{00283          printf (\textcolor{stringliteral}{"{}\(\backslash\)n      /* U+\%06X */ "{}}, i);}
-\DoxyCodeLine{00284       printf (\textcolor{stringliteral}{"{}\%d"{}}, glyph\_width[i]);}
-\DoxyCodeLine{00285       \textcolor{keywordflow}{if} (i < 0x1FFFF) putchar (\textcolor{charliteral}{','});}
-\DoxyCodeLine{00286    \}}
-\DoxyCodeLine{00287    printf (\textcolor{stringliteral}{"{}\(\backslash\)n   \};\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00288 }
-\DoxyCodeLine{00289    \textcolor{comment}{/*}}
-\DoxyCodeLine{00290 \textcolor{comment}{      Print the pikto\_width[] array for Pikto glyph widths.}}
-\DoxyCodeLine{00291 \textcolor{comment}{   */}}
-\DoxyCodeLine{00292    printf (\textcolor{stringliteral}{"{}   char pikto\_width[PIKTO\_SIZE] = \{"{}});}
-\DoxyCodeLine{00293    \textcolor{keywordflow}{for} (i = 0; i < \mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{PIKTO\_SIZE}}; i++) \{}
-\DoxyCodeLine{00294       \textcolor{keywordflow}{if} ((i \& 0x1F) == 0)}
-\DoxyCodeLine{00295          printf (\textcolor{stringliteral}{"{}\(\backslash\)n      /* U+\%06X */ "{}}, \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}} + i);}
-\DoxyCodeLine{00296       printf (\textcolor{stringliteral}{"{}\%d"{}}, pikto\_width[i]);}
-\DoxyCodeLine{00297       \textcolor{keywordflow}{if} ((\mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}} + i) < \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\_END}}) putchar (\textcolor{charliteral}{','});}
-\DoxyCodeLine{00298    \}}
-\DoxyCodeLine{00299    printf (\textcolor{stringliteral}{"{}\(\backslash\)n   \};\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00300 }
-\DoxyCodeLine{00301    \textcolor{comment}{/*}}
-\DoxyCodeLine{00302 \textcolor{comment}{      Execution part of wcswidth.}}
-\DoxyCodeLine{00303 \textcolor{comment}{   */}}
-\DoxyCodeLine{00304    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00305    printf (\textcolor{stringliteral}{"{}   illegalchar = totalwidth = 0;\(\backslash\)n"{}});}
-\DoxyCodeLine{00306    printf (\textcolor{stringliteral}{"{}   for (i = 0; !illegalchar \&\& i < n; i++) \{\(\backslash\)n"{}});}
-\DoxyCodeLine{00307    printf (\textcolor{stringliteral}{"{}      codept  = pwcs[i];\(\backslash\)n"{}});}
-\DoxyCodeLine{00308    printf (\textcolor{stringliteral}{"{}      plane   = codept >> 16;\(\backslash\)n"{}});}
-\DoxyCodeLine{00309    printf (\textcolor{stringliteral}{"{}      lower17 = codept \& 0x1FFFF;\(\backslash\)n"{}});}
-\DoxyCodeLine{00310    printf (\textcolor{stringliteral}{"{}      lower16 = codept \& 0xFFFF;\(\backslash\)n"{}});}
-\DoxyCodeLine{00311    printf (\textcolor{stringliteral}{"{}      if (plane < 2) \{ /* the most common case */\(\backslash\)n"{}});}
-\DoxyCodeLine{00312    printf (\textcolor{stringliteral}{"{}         if (glyph\_width[lower17] < 0) illegalchar = 1;\(\backslash\)n"{}});}
-\DoxyCodeLine{00313    printf (\textcolor{stringliteral}{"{}         else totalwidth += glyph\_width[lower17];\(\backslash\)n"{}});}
-\DoxyCodeLine{00314    printf (\textcolor{stringliteral}{"{}      \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00315    printf (\textcolor{stringliteral}{"{}      else \{ /* a higher plane or beyond Unicode range */\(\backslash\)n"{}});}
-\DoxyCodeLine{00316    printf (\textcolor{stringliteral}{"{}         if  ((lower16 == 0xFFFE) || (lower16 == 0xFFFF)) \{\(\backslash\)n"{}});}
-\DoxyCodeLine{00317    printf (\textcolor{stringliteral}{"{}            illegalchar = 1;\(\backslash\)n"{}});}
-\DoxyCodeLine{00318    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00319    printf (\textcolor{stringliteral}{"{}         else if (plane < 4) \{  /* Ideographic Plane */\(\backslash\)n"{}});}
-\DoxyCodeLine{00320    printf (\textcolor{stringliteral}{"{}            totalwidth += 2; /* Default ideographic width */\(\backslash\)n"{}});}
-\DoxyCodeLine{00321    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00322    printf (\textcolor{stringliteral}{"{}         else if (plane == 0x0F) \{  /* CSUR Private Use Area */\(\backslash\)n"{}});}
-\DoxyCodeLine{00323    printf (\textcolor{stringliteral}{"{}            if (lower16 <= 0x0E6F) \{ /* Kinya */\(\backslash\)n"{}});}
-\DoxyCodeLine{00324    printf (\textcolor{stringliteral}{"{}               totalwidth++; /* all Kinya syllables have width 1 */\(\backslash\)n"{}});}
-\DoxyCodeLine{00325    printf (\textcolor{stringliteral}{"{}            \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00326    printf (\textcolor{stringliteral}{"{}            else if (lower16 <= (PIKTO\_END \& 0xFFFF)) \{ /* Pikto */\(\backslash\)n"{}});}
-\DoxyCodeLine{00327    printf (\textcolor{stringliteral}{"{}               if (pikto\_width[lower16 -\/ (PIKTO\_START \& 0xFFFF)] < 0) illegalchar = 1;\(\backslash\)n"{}});}
-\DoxyCodeLine{00328    printf (\textcolor{stringliteral}{"{}               else totalwidth += pikto\_width[lower16 -\/ (PIKTO\_START \& 0xFFFF)];\(\backslash\)n"{}});}
-\DoxyCodeLine{00329    printf (\textcolor{stringliteral}{"{}            \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00330    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00331    printf (\textcolor{stringliteral}{"{}         else if (plane > 0x10) \{\(\backslash\)n"{}});}
-\DoxyCodeLine{00332    printf (\textcolor{stringliteral}{"{}            illegalchar = 1;\(\backslash\)n"{}});}
-\DoxyCodeLine{00333    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00334    printf (\textcolor{stringliteral}{"{}         /* Other non-\/printing in higher planes; return -\/1 as per IEEE 1003.1-\/2008. */\(\backslash\)n"{}});}
-\DoxyCodeLine{00335    printf (\textcolor{stringliteral}{"{}         else if (/* language tags */\(\backslash\)n"{}});}
-\DoxyCodeLine{00336    printf (\textcolor{stringliteral}{"{}                  codept == 0x0E0001 || (codept >= 0x0E0020 \&\& codept <= 0x0E007F) ||\(\backslash\)n"{}});}
-\DoxyCodeLine{00337    printf (\textcolor{stringliteral}{"{}                  /* variation selectors, 0x0E0100..0x0E01EF */\(\backslash\)n"{}});}
-\DoxyCodeLine{00338    printf (\textcolor{stringliteral}{"{}                  (codept >= 0x0E0100 \&\& codept <= 0x0E01EF)) \{\(\backslash\)n"{}});}
-\DoxyCodeLine{00339    printf (\textcolor{stringliteral}{"{}            illegalchar = 1;\(\backslash\)n"{}});}
-\DoxyCodeLine{00340    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00341    printf (\textcolor{stringliteral}{"{}         /*\(\backslash\)n"{}});}
-\DoxyCodeLine{00342    printf (\textcolor{stringliteral}{"{}            Unicode plane 0x02..0x10 printing character\(\backslash\)n"{}});}
-\DoxyCodeLine{00343    printf (\textcolor{stringliteral}{"{}         */\(\backslash\)n"{}});}
-\DoxyCodeLine{00344    printf (\textcolor{stringliteral}{"{}         else \{\(\backslash\)n"{}});}
-\DoxyCodeLine{00345    printf (\textcolor{stringliteral}{"{}            illegalchar = 1; /* code is not in font */\(\backslash\)n"{}});}
-\DoxyCodeLine{00346    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00347    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00348    printf (\textcolor{stringliteral}{"{}      \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00349    printf (\textcolor{stringliteral}{"{}   \}\(\backslash\)n"{}});}
-\DoxyCodeLine{00350    printf (\textcolor{stringliteral}{"{}   if (illegalchar) totalwidth = -\/1;\(\backslash\)n"{}});}
-\DoxyCodeLine{00351    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00352    printf (\textcolor{stringliteral}{"{}   return (totalwidth);\(\backslash\)n"{}});}
-\DoxyCodeLine{00353    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00354    printf (\textcolor{stringliteral}{"{}\}\(\backslash\)n"{}});}
-\DoxyCodeLine{00355 }
-\DoxyCodeLine{00356    exit (EXIT\_SUCCESS);}
-\DoxyCodeLine{00357 \}}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66    \textcolor{keywordtype}{int} i; \textcolor{comment}{/* loop variable */}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68    \textcolor{keywordtype}{char} teststring[\mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}];}
+\DoxyCodeLine{69    \textcolor{keywordtype}{int}  loc;}
+\DoxyCodeLine{70    \textcolor{keywordtype}{char} *gstart;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72    \textcolor{keywordtype}{char} glyph\_width[0x20000];}
+\DoxyCodeLine{73    \textcolor{keywordtype}{char} pikto\_width[\mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{PIKTO\_SIZE}}];}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75    FILE *infilefp;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77    \textcolor{keywordflow}{if} (argc != 3) \{}
+\DoxyCodeLine{78       fprintf (stderr, \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)nUsage: \%s <unifont.hex> <combining.txt>\(\backslash\)n\(\backslash\)n"{}}, argv[0]);}
+\DoxyCodeLine{79       exit (EXIT\_FAILURE);}
+\DoxyCodeLine{80    \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82    \textcolor{comment}{/*}}
+\DoxyCodeLine{83 \textcolor{comment}{      Read the collection of hex glyphs.}}
+\DoxyCodeLine{84 \textcolor{comment}{   */}}
+\DoxyCodeLine{85    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[1],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
+\DoxyCodeLine{86       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ hex input file \%s not found.\(\backslash\)n\(\backslash\)n"{}}, argv[1]);}
+\DoxyCodeLine{87       exit (EXIT\_FAILURE);}
+\DoxyCodeLine{88    \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90    \textcolor{comment}{/* Flag glyph as non-\/existent until found. */}}
+\DoxyCodeLine{91    memset (glyph\_width, -\/1, 0x20000 * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{92    memset (pikto\_width, -\/1, (\mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{PIKTO\_SIZE}}) * \textcolor{keyword}{sizeof} (\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94    teststring[\mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{95    \textcolor{keywordflow}{while} (fgets (teststring, \mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1, infilefp) != NULL) \{}
+\DoxyCodeLine{96       sscanf (teststring, \textcolor{stringliteral}{"{}\%X:\%*s"{}}, \&loc);}
+\DoxyCodeLine{97       \textcolor{keywordflow}{if} (loc < 0x20000) \{}
+\DoxyCodeLine{98          gstart = strchr (teststring,\textcolor{charliteral}{':'}) + 1;}
+\DoxyCodeLine{99          \textcolor{comment}{/*}}
+\DoxyCodeLine{100 \textcolor{comment}{            16 rows per glyph, 2 ASCII hexadecimal digits per byte,}}
+\DoxyCodeLine{101 \textcolor{comment}{            so divide number of digits by 32 (shift right 5 bits).}}
+\DoxyCodeLine{102 \textcolor{comment}{         */}}
+\DoxyCodeLine{103          glyph\_width[loc] = (strlen (gstart) -\/ 1) >> 5;}
+\DoxyCodeLine{104       \}}
+\DoxyCodeLine{105       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((loc >= \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}}) \&\& (loc <= \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\_END}})) \{}
+\DoxyCodeLine{106          gstart = strchr (teststring,\textcolor{charliteral}{':'}) + 1;}
+\DoxyCodeLine{107          pikto\_width[loc -\/ \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}}] = strlen (gstart) <= 34 ? 1 : 2;}
+\DoxyCodeLine{108       \}}
+\DoxyCodeLine{109    \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111    fclose (infilefp);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113    \textcolor{comment}{/*}}
+\DoxyCodeLine{114 \textcolor{comment}{      Now read the combining character code points.  These have width of 0.}}
+\DoxyCodeLine{115 \textcolor{comment}{   */}}
+\DoxyCodeLine{116    \textcolor{keywordflow}{if} ((infilefp = fopen (argv[2],\textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
+\DoxyCodeLine{117       fprintf (stderr,\textcolor{stringliteral}{"{}ERROR -\/ combining characters file \%s not found.\(\backslash\)n\(\backslash\)n"{}}, argv[2]);}
+\DoxyCodeLine{118       exit (EXIT\_FAILURE);}
+\DoxyCodeLine{119    \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121    \textcolor{keywordflow}{while} (fgets (teststring, \mbox{\hyperlink{unigenwidth_8c_a2ff420a6c6a2d1effc47a81e37327985}{MAXSTRING}}-\/1, infilefp) != NULL) \{}
+\DoxyCodeLine{122       sscanf (teststring, \textcolor{stringliteral}{"{}\%X:\%*s"{}}, \&loc);}
+\DoxyCodeLine{123       \textcolor{keywordflow}{if} (loc < 0x20000) glyph\_width[loc] = 0;}
+\DoxyCodeLine{124    \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126    fclose (infilefp);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128    \textcolor{comment}{/*}}
+\DoxyCodeLine{129 \textcolor{comment}{      Code Points with Unusual Properties (Unicode Standard, Chapter 4).}}
+\DoxyCodeLine{130 \textcolor{comment}{}}
+\DoxyCodeLine{131 \textcolor{comment}{      As of Unifont 10.0.04, use the widths in the "{}*-\/nonprinting.hex"{}}}
+\DoxyCodeLine{132 \textcolor{comment}{      files.  If an application is smart enough to know how to handle}}
+\DoxyCodeLine{133 \textcolor{comment}{      these special cases, it will not render the "{}nonprinting"{} glyph}}
+\DoxyCodeLine{134 \textcolor{comment}{      and will treat the code point as being zero-\/width.}}
+\DoxyCodeLine{135 \textcolor{comment}{   */}}
+\DoxyCodeLine{136 \textcolor{comment}{// glyph\_width[0]=0; /* NULL character */}}
+\DoxyCodeLine{137 \textcolor{comment}{// for (i = 0x0001; i <= 0x001F; i++) glyph\_width[i]=-\/1; /* Control Characters */}}
+\DoxyCodeLine{138 \textcolor{comment}{// for (i = 0x007F; i <= 0x009F; i++) glyph\_width[i]=-\/1; /* Control Characters */}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{comment}{// glyph\_width[0x034F]=0; /* combining grapheme joiner               */}}
+\DoxyCodeLine{141 \textcolor{comment}{// glyph\_width[0x180B]=0; /* Mongolian free variation selector one   */}}
+\DoxyCodeLine{142 \textcolor{comment}{// glyph\_width[0x180C]=0; /* Mongolian free variation selector two   */}}
+\DoxyCodeLine{143 \textcolor{comment}{// glyph\_width[0x180D]=0; /* Mongolian free variation selector three */}}
+\DoxyCodeLine{144 \textcolor{comment}{// glyph\_width[0x180E]=0; /* Mongolian vowel separator               */}}
+\DoxyCodeLine{145 \textcolor{comment}{// glyph\_width[0x200B]=0; /* zero width space                        */}}
+\DoxyCodeLine{146 \textcolor{comment}{// glyph\_width[0x200C]=0; /* zero width non-\/joiner                   */}}
+\DoxyCodeLine{147 \textcolor{comment}{// glyph\_width[0x200D]=0; /* zero width joiner                       */}}
+\DoxyCodeLine{148 \textcolor{comment}{// glyph\_width[0x200E]=0; /* left-\/to-\/right mark                      */}}
+\DoxyCodeLine{149 \textcolor{comment}{// glyph\_width[0x200F]=0; /* right-\/to-\/left mark                      */}}
+\DoxyCodeLine{150 \textcolor{comment}{// glyph\_width[0x202A]=0; /* left-\/to-\/right embedding                 */}}
+\DoxyCodeLine{151 \textcolor{comment}{// glyph\_width[0x202B]=0; /* right-\/to-\/left embedding                 */}}
+\DoxyCodeLine{152 \textcolor{comment}{// glyph\_width[0x202C]=0; /* pop directional formatting              */}}
+\DoxyCodeLine{153 \textcolor{comment}{// glyph\_width[0x202D]=0; /* left-\/to-\/right override                  */}}
+\DoxyCodeLine{154 \textcolor{comment}{// glyph\_width[0x202E]=0; /* right-\/to-\/left override                  */}}
+\DoxyCodeLine{155 \textcolor{comment}{// glyph\_width[0x2060]=0; /* word joiner                             */}}
+\DoxyCodeLine{156 \textcolor{comment}{// glyph\_width[0x2061]=0; /* function application                    */}}
+\DoxyCodeLine{157 \textcolor{comment}{// glyph\_width[0x2062]=0; /* invisible times                         */}}
+\DoxyCodeLine{158 \textcolor{comment}{// glyph\_width[0x2063]=0; /* invisible separator                     */}}
+\DoxyCodeLine{159 \textcolor{comment}{// glyph\_width[0x2064]=0; /* invisible plus                          */}}
+\DoxyCodeLine{160 \textcolor{comment}{// glyph\_width[0x206A]=0; /* inhibit symmetric swapping              */}}
+\DoxyCodeLine{161 \textcolor{comment}{// glyph\_width[0x206B]=0; /* activate symmetric swapping             */}}
+\DoxyCodeLine{162 \textcolor{comment}{// glyph\_width[0x206C]=0; /* inhibit arabic form shaping             */}}
+\DoxyCodeLine{163 \textcolor{comment}{// glyph\_width[0x206D]=0; /* activate arabic form shaping            */}}
+\DoxyCodeLine{164 \textcolor{comment}{// glyph\_width[0x206E]=0; /* national digit shapes                   */}}
+\DoxyCodeLine{165 \textcolor{comment}{// glyph\_width[0x206F]=0; /* nominal digit shapes                    */}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{comment}{// /* Variation Selector-\/1 to Variation Selector-\/16 */}}
+\DoxyCodeLine{168 \textcolor{comment}{// for (i = 0xFE00; i <= 0xFE0F; i++) glyph\_width[i] = 0;}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{comment}{// glyph\_width[0xFEFF]=0; /* zero width no-\/break space         */}}
+\DoxyCodeLine{171 \textcolor{comment}{// glyph\_width[0xFFF9]=0; /* interlinear annotation anchor     */}}
+\DoxyCodeLine{172 \textcolor{comment}{// glyph\_width[0xFFFA]=0; /* interlinear annotation separator  */}}
+\DoxyCodeLine{173 \textcolor{comment}{// glyph\_width[0xFFFB]=0; /* interlinear annotation terminator */}}
+\DoxyCodeLine{174    \textcolor{comment}{/*}}
+\DoxyCodeLine{175 \textcolor{comment}{      Let glyph widths represent 0xFFFC (object replacement character)}}
+\DoxyCodeLine{176 \textcolor{comment}{      and 0xFFFD (replacement character).}}
+\DoxyCodeLine{177 \textcolor{comment}{   */}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179    \textcolor{comment}{/*}}
+\DoxyCodeLine{180 \textcolor{comment}{      Hangul Jamo:}}
+\DoxyCodeLine{181 \textcolor{comment}{}}
+\DoxyCodeLine{182 \textcolor{comment}{         Leading Consonant (Choseong): leave spacing as is.}}
+\DoxyCodeLine{183 \textcolor{comment}{}}
+\DoxyCodeLine{184 \textcolor{comment}{         Hangul Choseong Filler (U+115F): set width to 2.}}
+\DoxyCodeLine{185 \textcolor{comment}{}}
+\DoxyCodeLine{186 \textcolor{comment}{         Hangul Jungseong Filler, Hangul Vowel (Jungseong), and}}
+\DoxyCodeLine{187 \textcolor{comment}{         Final Consonant (Jongseong): set width to 0, because these}}
+\DoxyCodeLine{188 \textcolor{comment}{         combine with the leading consonant as one composite syllabic}}
+\DoxyCodeLine{189 \textcolor{comment}{         glyph.  As of Unicode 5.2, the Hangul Jamo block (U+1100..U+11FF)}}
+\DoxyCodeLine{190 \textcolor{comment}{         is completely filled.}}
+\DoxyCodeLine{191 \textcolor{comment}{   */}}
+\DoxyCodeLine{192    \textcolor{comment}{// for (i = 0x1160; i <= 0x11FF; i++) glyph\_width[i]=0; /* Vowels \& Final Consonants */}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194    \textcolor{comment}{/*}}
+\DoxyCodeLine{195 \textcolor{comment}{      Private Use Area -\/-\/ the width is undefined, but likely}}
+\DoxyCodeLine{196 \textcolor{comment}{      to be 2 charcells wide either from a graphic glyph or}}
+\DoxyCodeLine{197 \textcolor{comment}{      from a four-\/digit hexadecimal glyph representing the}}
+\DoxyCodeLine{198 \textcolor{comment}{      code point.  Therefore if any PUA glyph does not have}}
+\DoxyCodeLine{199 \textcolor{comment}{      a non-\/zero width yet, assign it a default width of 2.}}
+\DoxyCodeLine{200 \textcolor{comment}{      The Unicode Standard allows giving PUA characters}}
+\DoxyCodeLine{201 \textcolor{comment}{      default property values; see for example The Unicode}}
+\DoxyCodeLine{202 \textcolor{comment}{      Standard Version 5.0, p. 91.  This same default is}}
+\DoxyCodeLine{203 \textcolor{comment}{      used for higher plane PUA code points below.}}
+\DoxyCodeLine{204 \textcolor{comment}{   */}}
+\DoxyCodeLine{205    \textcolor{comment}{// for (i = 0xE000; i <= 0xF8FF; i++) \{}}
+\DoxyCodeLine{206    \textcolor{comment}{//    if (glyph\_width[i] == 0) glyph\_width[i]=2;}}
+\DoxyCodeLine{207    \textcolor{comment}{// \}}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209    \textcolor{comment}{/*}}
+\DoxyCodeLine{210 \textcolor{comment}{      <not a character>}}
+\DoxyCodeLine{211 \textcolor{comment}{   */}}
+\DoxyCodeLine{212    \textcolor{keywordflow}{for} (i = 0xFDD0; i <= 0xFDEF; i++) glyph\_width[i] = -\/1;}
+\DoxyCodeLine{213    glyph\_width[0xFFFE] = -\/1; \textcolor{comment}{/* Byte Order Mark */}}
+\DoxyCodeLine{214    glyph\_width[0xFFFF] = -\/1; \textcolor{comment}{/* Byte Order Mark */}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216    \textcolor{comment}{/* Surrogate Code Points */}}
+\DoxyCodeLine{217    \textcolor{keywordflow}{for} (i = 0xD800; i <= 0xDFFF; i++) glyph\_width[i]=-\/1;}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219    \textcolor{comment}{/* CJK Code Points */}}
+\DoxyCodeLine{220    \textcolor{keywordflow}{for} (i = 0x4E00; i <= 0x9FFF; i++) \textcolor{keywordflow}{if} (glyph\_width[i] < 0) glyph\_width[i] = 2;}
+\DoxyCodeLine{221    \textcolor{keywordflow}{for} (i = 0x3400; i <= 0x4DBF; i++) \textcolor{keywordflow}{if} (glyph\_width[i] < 0) glyph\_width[i] = 2;}
+\DoxyCodeLine{222    \textcolor{keywordflow}{for} (i = 0xF900; i <= 0xFAFF; i++) \textcolor{keywordflow}{if} (glyph\_width[i] < 0) glyph\_width[i] = 2;}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224    \textcolor{comment}{/*}}
+\DoxyCodeLine{225 \textcolor{comment}{      Now generate the output file.}}
+\DoxyCodeLine{226 \textcolor{comment}{   */}}
+\DoxyCodeLine{227    printf (\textcolor{stringliteral}{"{}/*\(\backslash\)n"{}});}
+\DoxyCodeLine{228    printf (\textcolor{stringliteral}{"{}   wcwidth and wcswidth functions, as per IEEE 1003.1-\/2008\(\backslash\)n"{}});}
+\DoxyCodeLine{229    printf (\textcolor{stringliteral}{"{}   System Interfaces, pp. 2241 and 2251.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{230    printf (\textcolor{stringliteral}{"{}   Author: Paul Hardy, 2013\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{231    printf (\textcolor{stringliteral}{"{}   Copyright (c) 2013 Paul Hardy\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{232    printf (\textcolor{stringliteral}{"{}   LICENSE:\(\backslash\)n"{}});}
+\DoxyCodeLine{233    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{234    printf (\textcolor{stringliteral}{"{}      This program is free software: you can redistribute it and/or modify\(\backslash\)n"{}});}
+\DoxyCodeLine{235    printf (\textcolor{stringliteral}{"{}      it under the terms of the GNU General Public License as published by\(\backslash\)n"{}});}
+\DoxyCodeLine{236    printf (\textcolor{stringliteral}{"{}      the Free Software Foundation, either version 2 of the License, or\(\backslash\)n"{}});}
+\DoxyCodeLine{237    printf (\textcolor{stringliteral}{"{}      (at your option) any later version.\(\backslash\)n"{}});}
+\DoxyCodeLine{238    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{239    printf (\textcolor{stringliteral}{"{}      This program is distributed in the hope that it will be useful,\(\backslash\)n"{}});}
+\DoxyCodeLine{240    printf (\textcolor{stringliteral}{"{}      but WITHOUT ANY WARRANTY; without even the implied warranty of\(\backslash\)n"{}});}
+\DoxyCodeLine{241    printf (\textcolor{stringliteral}{"{}      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\(\backslash\)n"{}});}
+\DoxyCodeLine{242    printf (\textcolor{stringliteral}{"{}      GNU General Public License for more details.\(\backslash\)n"{}});}
+\DoxyCodeLine{243    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{244    printf (\textcolor{stringliteral}{"{}      You should have received a copy of the GNU General Public License\(\backslash\)n"{}});}
+\DoxyCodeLine{245    printf (\textcolor{stringliteral}{"{}      along with this program.  If not, see <http://www.gnu.org/licenses/>.\(\backslash\)n"{}});}
+\DoxyCodeLine{246    printf (\textcolor{stringliteral}{"{}*/\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248    printf (\textcolor{stringliteral}{"{}\#include <wchar.h>\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{249    printf (\textcolor{stringliteral}{"{}/* Definitions for Pikto CSUR Private Use Area glyphs */\(\backslash\)n"{}});}
+\DoxyCodeLine{250    printf (\textcolor{stringliteral}{"{}\#define PIKTO\_START\(\backslash\)t0x\%06X\(\backslash\)n"{}}, \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}});}
+\DoxyCodeLine{251    printf (\textcolor{stringliteral}{"{}\#define PIKTO\_END\(\backslash\)t0x\%06X\(\backslash\)n"{}}, \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\_END}});}
+\DoxyCodeLine{252    printf (\textcolor{stringliteral}{"{}\#define PIKTO\_SIZE\(\backslash\)t(PIKTO\_END -\/ PIKTO\_START + 1)\(\backslash\)n"{}});}
+\DoxyCodeLine{253    printf (\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{254    printf (\textcolor{stringliteral}{"{}/* wcwidth -\/-\/ return charcell positions of one code point */\(\backslash\)n"{}});}
+\DoxyCodeLine{255    printf (\textcolor{stringliteral}{"{}inline int\(\backslash\)nwcwidth (wchar\_t wc)\(\backslash\)n\{\(\backslash\)n"{}});}
+\DoxyCodeLine{256    printf (\textcolor{stringliteral}{"{}   return (wcswidth (\&wc, 1));\(\backslash\)n"{}});}
+\DoxyCodeLine{257    printf (\textcolor{stringliteral}{"{}\}\(\backslash\)n"{}});}
+\DoxyCodeLine{258    printf (\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{259    printf (\textcolor{stringliteral}{"{}int\(\backslash\)nwcswidth (const wchar\_t *pwcs, size\_t n)\(\backslash\)n\{\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{260    printf (\textcolor{stringliteral}{"{}   int i;                    /* loop variable                                      */\(\backslash\)n"{}});}
+\DoxyCodeLine{261    printf (\textcolor{stringliteral}{"{}   unsigned codept;          /* Unicode code point of current character            */\(\backslash\)n"{}});}
+\DoxyCodeLine{262    printf (\textcolor{stringliteral}{"{}   unsigned plane;           /* Unicode plane, 0x00..0x10                          */\(\backslash\)n"{}});}
+\DoxyCodeLine{263    printf (\textcolor{stringliteral}{"{}   unsigned lower17;         /* lower 17 bits of Unicode code point                */\(\backslash\)n"{}});}
+\DoxyCodeLine{264    printf (\textcolor{stringliteral}{"{}   unsigned lower16;         /* lower 16 bits of Unicode code point                */\(\backslash\)n"{}});}
+\DoxyCodeLine{265    printf (\textcolor{stringliteral}{"{}   int lowpt, midpt, highpt; /* for binary searching in plane1zeroes[]             */\(\backslash\)n"{}});}
+\DoxyCodeLine{266    printf (\textcolor{stringliteral}{"{}   int found;                /* for binary searching in plane1zeroes[]             */\(\backslash\)n"{}});}
+\DoxyCodeLine{267    printf (\textcolor{stringliteral}{"{}   int totalwidth;           /* total width of string, in charcells (1 or 2/glyph) */\(\backslash\)n"{}});}
+\DoxyCodeLine{268    printf (\textcolor{stringliteral}{"{}   int illegalchar;          /* Whether or not this code point is illegal          */\(\backslash\)n"{}});}
+\DoxyCodeLine{269    putchar (\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271    \textcolor{comment}{/*}}
+\DoxyCodeLine{272 \textcolor{comment}{      Print the glyph\_width[] array for glyphs widths in the}}
+\DoxyCodeLine{273 \textcolor{comment}{      Basic Multilingual Plane (Plane 0).}}
+\DoxyCodeLine{274 \textcolor{comment}{   */}}
+\DoxyCodeLine{275    printf (\textcolor{stringliteral}{"{}   char glyph\_width[0x20000] = \{"{}});}
+\DoxyCodeLine{276    \textcolor{keywordflow}{for} (i = 0; i < 0x10000; i++) \{}
+\DoxyCodeLine{277       \textcolor{keywordflow}{if} ((i \& 0x1F) == 0)}
+\DoxyCodeLine{278          printf (\textcolor{stringliteral}{"{}\(\backslash\)n      /* U+\%04X */ "{}}, i);}
+\DoxyCodeLine{279       printf (\textcolor{stringliteral}{"{}\%d,"{}}, glyph\_width[i]);}
+\DoxyCodeLine{280    \}}
+\DoxyCodeLine{281    \textcolor{keywordflow}{for} (i = 0x10000; i < 0x20000; i++) \{}
+\DoxyCodeLine{282       \textcolor{keywordflow}{if} ((i \& 0x1F) == 0)}
+\DoxyCodeLine{283          printf (\textcolor{stringliteral}{"{}\(\backslash\)n      /* U+\%06X */ "{}}, i);}
+\DoxyCodeLine{284       printf (\textcolor{stringliteral}{"{}\%d"{}}, glyph\_width[i]);}
+\DoxyCodeLine{285       \textcolor{keywordflow}{if} (i < 0x1FFFF) putchar (\textcolor{charliteral}{','});}
+\DoxyCodeLine{286    \}}
+\DoxyCodeLine{287    printf (\textcolor{stringliteral}{"{}\(\backslash\)n   \};\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289    \textcolor{comment}{/*}}
+\DoxyCodeLine{290 \textcolor{comment}{      Print the pikto\_width[] array for Pikto glyph widths.}}
+\DoxyCodeLine{291 \textcolor{comment}{   */}}
+\DoxyCodeLine{292    printf (\textcolor{stringliteral}{"{}   char pikto\_width[PIKTO\_SIZE] = \{"{}});}
+\DoxyCodeLine{293    \textcolor{keywordflow}{for} (i = 0; i < \mbox{\hyperlink{unigenwidth_8c_ab75ee2d70f889fe3e3a9c50cc78d7edd}{PIKTO\_SIZE}}; i++) \{}
+\DoxyCodeLine{294       \textcolor{keywordflow}{if} ((i \& 0x1F) == 0)}
+\DoxyCodeLine{295          printf (\textcolor{stringliteral}{"{}\(\backslash\)n      /* U+\%06X */ "{}}, \mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}} + i);}
+\DoxyCodeLine{296       printf (\textcolor{stringliteral}{"{}\%d"{}}, pikto\_width[i]);}
+\DoxyCodeLine{297       \textcolor{keywordflow}{if} ((\mbox{\hyperlink{unigenwidth_8c_a9f55227949663244f18644f19a579d73}{PIKTO\_START}} + i) < \mbox{\hyperlink{unigenwidth_8c_ad8d1b3891a7a6b0f5562df91eb07b772}{PIKTO\_END}}) putchar (\textcolor{charliteral}{','});}
+\DoxyCodeLine{298    \}}
+\DoxyCodeLine{299    printf (\textcolor{stringliteral}{"{}\(\backslash\)n   \};\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301    \textcolor{comment}{/*}}
+\DoxyCodeLine{302 \textcolor{comment}{      Execution part of wcswidth.}}
+\DoxyCodeLine{303 \textcolor{comment}{   */}}
+\DoxyCodeLine{304    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{305    printf (\textcolor{stringliteral}{"{}   illegalchar = totalwidth = 0;\(\backslash\)n"{}});}
+\DoxyCodeLine{306    printf (\textcolor{stringliteral}{"{}   for (i = 0; !illegalchar \&\& i < n; i++) \{\(\backslash\)n"{}});}
+\DoxyCodeLine{307    printf (\textcolor{stringliteral}{"{}      codept  = pwcs[i];\(\backslash\)n"{}});}
+\DoxyCodeLine{308    printf (\textcolor{stringliteral}{"{}      plane   = codept >> 16;\(\backslash\)n"{}});}
+\DoxyCodeLine{309    printf (\textcolor{stringliteral}{"{}      lower17 = codept \& 0x1FFFF;\(\backslash\)n"{}});}
+\DoxyCodeLine{310    printf (\textcolor{stringliteral}{"{}      lower16 = codept \& 0xFFFF;\(\backslash\)n"{}});}
+\DoxyCodeLine{311    printf (\textcolor{stringliteral}{"{}      if (plane < 2) \{ /* the most common case */\(\backslash\)n"{}});}
+\DoxyCodeLine{312    printf (\textcolor{stringliteral}{"{}         if (glyph\_width[lower17] < 0) illegalchar = 1;\(\backslash\)n"{}});}
+\DoxyCodeLine{313    printf (\textcolor{stringliteral}{"{}         else totalwidth += glyph\_width[lower17];\(\backslash\)n"{}});}
+\DoxyCodeLine{314    printf (\textcolor{stringliteral}{"{}      \}\(\backslash\)n"{}});}
+\DoxyCodeLine{315    printf (\textcolor{stringliteral}{"{}      else \{ /* a higher plane or beyond Unicode range */\(\backslash\)n"{}});}
+\DoxyCodeLine{316    printf (\textcolor{stringliteral}{"{}         if  ((lower16 == 0xFFFE) || (lower16 == 0xFFFF)) \{\(\backslash\)n"{}});}
+\DoxyCodeLine{317    printf (\textcolor{stringliteral}{"{}            illegalchar = 1;\(\backslash\)n"{}});}
+\DoxyCodeLine{318    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
+\DoxyCodeLine{319    printf (\textcolor{stringliteral}{"{}         else if (plane < 4) \{  /* Ideographic Plane */\(\backslash\)n"{}});}
+\DoxyCodeLine{320    printf (\textcolor{stringliteral}{"{}            totalwidth += 2; /* Default ideographic width */\(\backslash\)n"{}});}
+\DoxyCodeLine{321    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
+\DoxyCodeLine{322    printf (\textcolor{stringliteral}{"{}         else if (plane == 0x0F) \{  /* CSUR Private Use Area */\(\backslash\)n"{}});}
+\DoxyCodeLine{323    printf (\textcolor{stringliteral}{"{}            if (lower16 <= 0x0E6F) \{ /* Kinya */\(\backslash\)n"{}});}
+\DoxyCodeLine{324    printf (\textcolor{stringliteral}{"{}               totalwidth++; /* all Kinya syllables have width 1 */\(\backslash\)n"{}});}
+\DoxyCodeLine{325    printf (\textcolor{stringliteral}{"{}            \}\(\backslash\)n"{}});}
+\DoxyCodeLine{326    printf (\textcolor{stringliteral}{"{}            else if (lower16 <= (PIKTO\_END \& 0xFFFF)) \{ /* Pikto */\(\backslash\)n"{}});}
+\DoxyCodeLine{327    printf (\textcolor{stringliteral}{"{}               if (pikto\_width[lower16 -\/ (PIKTO\_START \& 0xFFFF)] < 0) illegalchar = 1;\(\backslash\)n"{}});}
+\DoxyCodeLine{328    printf (\textcolor{stringliteral}{"{}               else totalwidth += pikto\_width[lower16 -\/ (PIKTO\_START \& 0xFFFF)];\(\backslash\)n"{}});}
+\DoxyCodeLine{329    printf (\textcolor{stringliteral}{"{}            \}\(\backslash\)n"{}});}
+\DoxyCodeLine{330    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
+\DoxyCodeLine{331    printf (\textcolor{stringliteral}{"{}         else if (plane > 0x10) \{\(\backslash\)n"{}});}
+\DoxyCodeLine{332    printf (\textcolor{stringliteral}{"{}            illegalchar = 1;\(\backslash\)n"{}});}
+\DoxyCodeLine{333    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
+\DoxyCodeLine{334    printf (\textcolor{stringliteral}{"{}         /* Other non-\/printing in higher planes; return -\/1 as per IEEE 1003.1-\/2008. */\(\backslash\)n"{}});}
+\DoxyCodeLine{335    printf (\textcolor{stringliteral}{"{}         else if (/* language tags */\(\backslash\)n"{}});}
+\DoxyCodeLine{336    printf (\textcolor{stringliteral}{"{}                  codept == 0x0E0001 || (codept >= 0x0E0020 \&\& codept <= 0x0E007F) ||\(\backslash\)n"{}});}
+\DoxyCodeLine{337    printf (\textcolor{stringliteral}{"{}                  /* variation selectors, 0x0E0100..0x0E01EF */\(\backslash\)n"{}});}
+\DoxyCodeLine{338    printf (\textcolor{stringliteral}{"{}                  (codept >= 0x0E0100 \&\& codept <= 0x0E01EF)) \{\(\backslash\)n"{}});}
+\DoxyCodeLine{339    printf (\textcolor{stringliteral}{"{}            illegalchar = 1;\(\backslash\)n"{}});}
+\DoxyCodeLine{340    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
+\DoxyCodeLine{341    printf (\textcolor{stringliteral}{"{}         /*\(\backslash\)n"{}});}
+\DoxyCodeLine{342    printf (\textcolor{stringliteral}{"{}            Unicode plane 0x02..0x10 printing character\(\backslash\)n"{}});}
+\DoxyCodeLine{343    printf (\textcolor{stringliteral}{"{}         */\(\backslash\)n"{}});}
+\DoxyCodeLine{344    printf (\textcolor{stringliteral}{"{}         else \{\(\backslash\)n"{}});}
+\DoxyCodeLine{345    printf (\textcolor{stringliteral}{"{}            illegalchar = 1; /* code is not in font */\(\backslash\)n"{}});}
+\DoxyCodeLine{346    printf (\textcolor{stringliteral}{"{}         \}\(\backslash\)n"{}});}
+\DoxyCodeLine{347    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{348    printf (\textcolor{stringliteral}{"{}      \}\(\backslash\)n"{}});}
+\DoxyCodeLine{349    printf (\textcolor{stringliteral}{"{}   \}\(\backslash\)n"{}});}
+\DoxyCodeLine{350    printf (\textcolor{stringliteral}{"{}   if (illegalchar) totalwidth = -\/1;\(\backslash\)n"{}});}
+\DoxyCodeLine{351    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{352    printf (\textcolor{stringliteral}{"{}   return (totalwidth);\(\backslash\)n"{}});}
+\DoxyCodeLine{353    printf (\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{354    printf (\textcolor{stringliteral}{"{}\}\(\backslash\)n"{}});}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356    exit (EXIT\_SUCCESS);}
+\DoxyCodeLine{357 \}}
 
 \end{DoxyCode}

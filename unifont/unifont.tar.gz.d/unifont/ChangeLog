@@ -1,3 +1,19 @@
+2023-05-28  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 15.0.04.
+	* Doxygen LaTeX output verified not to trigger tabu.sty bug in tables
+	  when built using doxygen 1.8.20 and texlive-20230311.
+	* font/plane00/unifont-base.hex:
+	  - Modified several Greek and Coptic letters in the range U+0370..
+	    U+03FF: tonos moved down and to the left of capital vowels,
+	    some baselines and x-heights changed for consistency, etc.
+	* font/plane00csur:
+	  - Added Engsvanáli (U+E100..U+E14F) to plane00csur.hex.
+	  - Added Engsvanáli (U+E100..U+E14F) combining marks to
+	    plane00csur-combining.hex.
+	  - Removed U+E13F from unassigned-ranges.txt.
+	* font/plane01/plane01.hex:
+	  - Modified U+1F494 (Broken Heart) and U+1F498 (Heart with Arrow).
+
 2023-05-21  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 15.0.03.
 	* Makefile:
@@ -11,7 +27,7 @@
 	  - Changed temporary 15.0.02 test coding to $(VERSION).
 	  - Fixed generation of compiled/plane00.html.
 	  - No longer compress unifont_all-$(VERSION).hex, given that
-	    unifont_jp-$(VERSION).hex is not compressed..
+	    unifont_jp-$(VERSION).hex is not compressed.
 	  - Install unifont_all.hex in the $(PKGDEST) directory.
 	* src/Makefile: Fixed a typo that could cause "make install" to fail
 	  [Savannah bug #64228].
