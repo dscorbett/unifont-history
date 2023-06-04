@@ -1,3 +1,9 @@
+2023-05-21: Release 15.0.03
+   * Fixed a typo in src/Makefile that could affect
+     "make install".
+   * Install unifont_all.hex in $(PKGDEST) directory.
+   * Other minor changes; see ChangeLog file for details.
+
 2023-05-20: Release 15.0.02
    * N.B.: This is the last planned version to build TrueType
      font files as part of the standard font build with

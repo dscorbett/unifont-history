@@ -1,3 +1,21 @@
+2023-05-21  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 15.0.03.
+	* Makefile:
+	  - Moved the "doxygen" target.
+	  - Install unifont_all-$(VERSION).hex as $(PKGDEST)/unifont_all.hex.
+	  - Install unifont.pdf Texinfo file in $(PKGDEST) directory.
+	  - No longer install doxygen LaTeX build files in $(PKGDEST).
+	* font/Makefile:
+	  - Added Unicode Plane 3 glyphs (Chinese biang at U+30EDD and U+30EDE,
+	    and Japanese Taito at U+3106C) to unifont_jp-$(VERSION).hex.
+	  - Changed temporary 15.0.02 test coding to $(VERSION).
+	  - Fixed generation of compiled/plane00.html.
+	  - No longer compress unifont_all-$(VERSION).hex, given that
+	    unifont_jp-$(VERSION).hex is not compressed..
+	  - Install unifont_all.hex in the $(PKGDEST) directory.
+	* src/Makefile: Fixed a typo that could cause "make install" to fail
+	  [Savannah bug #64228].
+
 2023-05-20  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 15.0.02.
 	* Doxyfile: added for Doxygen annotation of C sources.
@@ -8,7 +26,8 @@
 	  - Uncommented "install" target lines that install text files
 	    in $(PKGDEST).
 	  - "install" target now installs Doxygen files in $(PKGDEST).
-	  - "install" target installs unifont_jp.hex in $(PKGDEST).
+	  - "install" target installs unifont_jp.hex in $(PKGDEST)
+	    [Savannah bug #63134].
 	  - Removed VPATH, as it is not needed.  It could be needed in the
 	    future if any files from the "lib" directory are required.
 	* doxygen:
@@ -35,7 +54,7 @@
 	    with combining circles.  This is in preparation for eventually
 	    removing TrueType font builds from the default build.
 	  - Changed "OTFDEST" variable from "$(FONTDEST)/truetype/unifont"
-	    to "$(FONTDEST)/opentype/unifont".
+	    to "$(FONTDEST)/opentype/unifont" [Savannah bug #63072].
 	  - Set "OTFSRC" variable to point to new "font/otfsrc" directory.
 	  - Added "hex-stamp" target so the now separate OpenType and
 	    TrueType font builds do not invoke the "hex" target redundantly.

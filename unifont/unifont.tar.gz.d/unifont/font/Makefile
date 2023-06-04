@@ -17,7 +17,7 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.0.02
+VERSION = 15.0.03
 
 COPYRIGHT = "Copyright (C) 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
@@ -188,8 +188,7 @@ compiled: $(UNIFILES) $(COMBINING) $(UPPER_FILES) $(UPPER_COMBINING)
 #
 PSF = psf
 # PSF =
-compiled-files: pcf $(PSF) $(GRAPHICS) opentype truetype bigpic coverage \
-	        $(COMPILED_DIR)/unifont_all-$(VERSION).hex.gz
+compiled-files: pcf $(PSF) $(GRAPHICS) opentype truetype bigpic coverage
 	sed -e 's/<a /<a target="blank" /g' index.html | \
 	   sed -e 's/png/$(GRAPHICS)/g' > $(COMPILED_DIR)/index.html
 
@@ -246,7 +245,7 @@ hex-stamp:
 	   tee $(COMPILED_DIR)/unifont_jp-$(VERSION).hex | \
 	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
               > $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex
-	sort $(PLANE_2_JP_HEX) \
+	sort $(PLANE_2_JP_HEX) $(PLANE_3_ZH_HEX) \
 	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
 	touch $@
 
@@ -354,6 +353,9 @@ $(COMPILED_DIR)/unifont_all-$(VERSION).hex: $(ALL_HEX_LOWER) $(ALL_HEX_UPPER)
 	   sort -u -k 1,1 -t ':' \
 	      >> $(COMPILED_DIR)/unifont_all-$(VERSION).hex
 
+#
+# This is not invoked; unifont_all.hex is installed uncompressed.
+#
 $(COMPILED_DIR)/unifont_all-$(VERSION).hex.gz: \
 		$(COMPILED_DIR)/unifont_all-$(VERSION).hex
 	gzip -9 $(COMPILED_DIR)/unifont_all-$(VERSION).hex
@@ -476,7 +478,7 @@ png: hex $(BINDIR)/unihex2png
 	done
 	# Create HTML table showing color-coded percent coverage in Plane 0.
 	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont-$(VERSION).hex | \
-	   sed -e 's/<a /<a target="blank" /g' \
+	   sed -e 's/<a /<a target="blank" /g' | \
 	      sed -e 's/png/$(GRAPHICS)/g' | \
 	                          > $(COMPILED_DIR)/plane00.html
 	# Create HTML table showing color-coded percent coverage in Japanese Plane 0.
@@ -847,7 +849,7 @@ precompiled: compiled
 	\rm -rf precompiled
 	install -m0755 -d precompiled
 	install -m0644 -p $(COMPILED_DIR)/unifont-$(VERSION).hex \
-	                  $(COMPILED_DIR)/unifont_all-$(VERSION).hex.gz \
+	                  $(COMPILED_DIR)/unifont_all-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).bdf.gz \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).pcf.gz \
 	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
@@ -870,13 +872,13 @@ precompiled: compiled
 	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).ttf \
-			  $(COMPILED_DIR)/unifont-15.0.02.otf \
-			  $(COMPILED_DIR)/unifont_csur-15.0.02.otf \
-			  $(COMPILED_DIR)/unifont_jp-15.0.02.otf \
-			  $(COMPILED_DIR)/unifont_upper-15.0.02.otf \
-			  $(COMPILED_DIR)/unifont_sample-15.0.02.otf \
-			  $(COMPILED_DIR)/unifont_jp_sample-15.0.02.otf \
-			  $(COMPILED_DIR)/unifont_upper_sample-15.0.02.otf \
+			  $(COMPILED_DIR)/unifont-$(VERSION).otf \
+			  $(COMPILED_DIR)/unifont_csur-$(VERSION).otf \
+			  $(COMPILED_DIR)/unifont_jp-$(VERSION).otf \
+			  $(COMPILED_DIR)/unifont_upper-$(VERSION).otf \
+			  $(COMPILED_DIR)/unifont_sample-$(VERSION).otf \
+			  $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).otf \
+			  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).otf \
 	   	precompiled
 	touch $@
 

@@ -13,7 +13,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 15.0.02
+VERSION = 15.0.03
 
 #
 # The settings below will install software, man pages, and documentation
@@ -103,6 +103,15 @@ docdir:
 
 doxdir: doxygen
 
+#
+# Generate doxygen/html/* and doxygen/latex/refman.pdf
+#
+doxygen: Doxyfile src/*.c src/*.h src/*.dox
+	doxygen Doxyfile
+	(cd doxygen/latex ; make && mv refman.pdf ../unifont-doxy.pdf && \
+	 make clean)
+	touch $@
+
 mandir:
 	set -e && $(MAKE) -C man
 
@@ -126,22 +135,26 @@ install: bindir libdir docdir doxdir
 	$(MAKE) -C man install PREFIX=$(PREFIX) COMPRESS=$(COMPRESS)
 	$(MAKE) -C font install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
 	install -m0755 -d $(PKGDEST)
-	install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info $(PKGDEST)
+	install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info \
+	                               doc/unifont.pdf $(PKGDEST)
 	for i in $(TEXTFILES) unifont.txt unifont.info ; do \
 	    gzip $(GZFLAGS) $(PKGDEST)/$$i ; \
 	done
 	install -m0644 -p lib/wchardata.c $(PKGDEST)
 	install -m0644 -p font/plane00/plane00-combining.txt $(PKGDEST)
-	(cd doxygen ; tar cf - .) | (cd $(PKGDEST) ; tar xpf -)
+	(cd doxygen ; tar cf - html unifont-doxy.pdf) | \
+	   (cd $(PKGDEST) ; tar xpf -)
 	# If "make" wasn't run before, font/compiled won't exist.
 	if [ ! -d font/compiled ] ; then \
-	   install -m0644 -p font/precompiled/unifont-$(VERSION).hex    $(PKGDEST)/unifont.hex && \
-	   install -m0644 -p font/precompiled/unifont_jp-$(VERSION).hex $(PKGDEST)/unifont_jp.hex && \
-	   install -m0644 -p font/precompiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
+	   install -m0644 -p font/precompiled/unifont-$(VERSION).hex     $(PKGDEST)/unifont.hex     && \
+	   install -m0644 -p font/precompiled/unifont_jp-$(VERSION).hex  $(PKGDEST)/unifont_jp.hex  && \
+	   install -m0644 -p font/precompiled/unifont_all-$(VERSION).hex $(PKGDEST)/unifont_all.hex && \
+	   install -m0644 -p font/precompiled/unifont-$(VERSION).bmp     $(PKGDEST)/unifont.bmp ; \
 	else \
-	   install -m0644 -p font/compiled/unifont-$(VERSION).hex    $(PKGDEST)/unifont.hex && \
-	   install -m0644 -p font/compiled/unifont_jp-$(VERSION).hex $(PKGDEST)/unifont_jp.hex && \
-	   install -m0644 -p font/compiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
+	   install -m0644 -p font/compiled/unifont-$(VERSION).hex        $(PKGDEST)/unifont.hex     && \
+	   install -m0644 -p font/compiled/unifont_jp-$(VERSION).hex     $(PKGDEST)/unifont_jp.hex  && \
+	   install -m0644 -p font/compiled/unifont_all-$(VERSION).hex    $(PKGDEST)/unifont_all.hex && \
+	   install -m0644 -p font/compiled/unifont-$(VERSION).bmp        $(PKGDEST)/unifont.bmp ; \
 	fi
 	gzip $(GZFLAGS) $(PKGDEST)/unifont.bmp
 
@@ -151,15 +164,6 @@ clean:
 	$(MAKE) -C man  clean
 	$(MAKE) -C font clean
 	\rm -rf *~
-
-#
-# Generate doxygen/html/* and doxygen/latex/refman.pdf
-#
-doxygen: Doxyfile src/*.c src/*.h src/*.dox
-	doxygen Doxyfile
-	(cd doxygen/latex ; make && mv refman.pdf ../unifont-doxy.pdf && \
-	 make clean)
-	touch $@
 
 #
 # The .DS files are created under Mac OS X

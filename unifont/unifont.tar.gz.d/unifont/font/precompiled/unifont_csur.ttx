@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="15.0"/>
-    <checkSumAdjustment value="0xc7753f00"/>
+    <checkSumAdjustment value="0xc568a86e"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sat May 20 21:26:03 2023"/>
-    <modified value="Sat May 20 21:26:12 2023"/>
+    <created value="Sun May 21 21:30:37 2023"/>
+    <modified value="Sun May 21 21:30:46 2023"/>
     <xMin value="-768"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 20-5-2023
+      FontForge 2.0 : Unifont CSUR : 21-5-2023
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 15.0.02
+      Version 15.0.03
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 20-5-2023
+      FontForge 2.0 : Unifont CSUR : 21-5-2023
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 15.0.02
+      Version 15.0.03
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -9312,8 +9312,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sun Jul 30 19:05:48 2017"/>
-    <sourceCreated value="Sat May 20 21:26:03 2023"/>
-    <sourceModified value="Sat May 20 21:26:12 2023"/>
+    <sourceCreated value="Sun May 21 21:30:37 2023"/>
+    <sourceModified value="Sun May 21 21:30:46 2023"/>
   </FFTM>
 
   <GDEF>
