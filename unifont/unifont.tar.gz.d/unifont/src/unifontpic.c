@@ -1,10 +1,14 @@
+/**
+   @file unifontpic.c
+
+   @brief unifontpic - See the "Big Picture": the entire Unifont
+                       in one BMP bitmap
+
+   @author Paul Hardy, 2013
+
+   @copyright Copyright (C) 2013, 2017 Paul Hardy
+*/
 /*
-   unifontpic.c - see the "Big Picture": the entire Unifont in one BMP bitmap.
-
-   Author: Paul Hardy, 2013
-
-   Copyright (C) 2013, 2017 Paul Hardy
-
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -59,7 +63,7 @@
 #include <string.h>
 #include "unifontpic.h"
 
-/* Define length of header string for top of chart. */
+/** Define length of header string for top of chart. */
 #define HDR_LEN 33
 
 
@@ -72,6 +76,13 @@
    Windows Bitmap Graphics spec.
 */
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status EXIT_SUCCESS.
+*/
 int
 main (int argc, char **argv)
 {
@@ -156,6 +167,11 @@ main (int argc, char **argv)
 }
 
 
+/**
+   @brief Output a 4-byte integer in little-endian order.
+
+   @param[in] thisword The 4-byte integer to output as binary data.
+*/
 void
 output4 (int thisword)
 {
@@ -169,6 +185,11 @@ output4 (int thisword)
 }
 
 
+/**
+   @brief Output a 2-byte integer in little-endian order.
+
+   @param[in] thisword The 2-byte integer to output as binary data.
+*/
 void
 output2 (int thisword)
 {
@@ -180,13 +201,15 @@ output2 (int thisword)
 }
 
 
-/*
-   gethex reads a Unifont .hex-format input file from stdin.
+/**
+   @brief Read a Unifont .hex-format input file from stdin.
 
    Each glyph can be 2, 4, 6, or 8 ASCII hexadecimal digits wide.
    Glyph height is fixed at 16 pixels.
 
-   plane is the Unicode plane, 0..17.
+   @param[in] instring One line from a Unifont .hex-format file.
+   @param[in,out] plane_array Bitmap for this plane, one bitmap row per element.
+   @param[in] plane The Unicode plane, 0..17.
 */
 void
 gethex (char *instring, int plane_array[0x10000][16], int plane)
@@ -256,9 +279,16 @@ gethex (char *instring, int plane_array[0x10000][16], int plane)
 }
 
 
-/*
-   genlongbmp generates the BMP output file from a bitmap parameter.
+/**
+   @brief Generate the BMP output file in long format.
+
+   This function generates the BMP output file from a bitmap parameter.
    This is a long bitmap, 16 glyphs wide by 4,096 glyphs tall.
+
+   @param[in] plane_array The array of glyph bitmaps for a plane.
+   @param[in] dpi Dots per inch, for encoding in the BMP output file header.
+   @param[in] tinynum Whether to generate tiny numbers in wide grid (unused).
+   @param[in] plane The Unicode plane, 0..17.
 */
 void
 genlongbmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
@@ -536,10 +566,16 @@ genlongbmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)
 }
 
 
+/**
+   @brief Generate the BMP output file in wide format.
 
-/*
-   genwidebmp generates the BMP output file from a bitmap parameter.
+   This function generates the BMP output file from a bitmap parameter.
    This is a wide bitmap, 256 glyphs wide by 256 glyphs tall.
+
+   @param[in] plane_array The array of glyph bitmaps for a plane.
+   @param[in] dpi Dots per inch, for encoding in the BMP output file header.
+   @param[in] tinynum Whether to generate tiny numbers in 256x256 grid.
+   @param[in] plane The Unicode plane, 0..17.
 */
 void
 genwidebmp (int plane_array[0x10000][16], int dpi, int tinynum, int plane)

@@ -1,15 +1,21 @@
-/*
-   unihex2bmp - program to turn a GNU Unifont hex glyph page of 256 code
-                points into a Microsoft Bitmap (.bmp) or Wireless Bitmap file
+/**
+   @file unihex2bmp.c
+
+   @brief unihex2bmp - Turn a GNU Unifont hex glyph page of 256 code points
+                       into a bitmap for editing
+
+   @author Paul Hardy, unifoundry <at> unifoundry.com, December 2007
+   
+   @copyright Copyright (C) 2007, 2008, 2013, 2017 Paul Hardy
+
+   This program reads in a GNU Unifont .hex file, extracts a range of
+   256 code points, and converts it a Microsoft Bitmap (.bmp) or Wireless
+   Bitmap file.
 
    Synopsis: unihex2bmp [-iin_file.hex] [-oout_file.bmp]
                 [-f] [-phex_page_num] [-w]
-
-
-   Author: Paul Hardy, unifoundry <at> unifoundry.com, December 2007
-   
-   Copyright (C) 2007, 2008, 2013, 2017 Paul Hardy
-
+*/
+/*
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -41,7 +47,9 @@
 #define MAXBUF 256
 
 
-/*
+/**
+   @brief GNU Unifont bitmaps for hexadecimal digits.
+
    These are the GNU Unifont hex strings for '0'-'9' and 'A'-'F',
    for encoding as bit strings in row and column headers.
 
@@ -71,13 +79,19 @@ char *hex[18]= {
       "0055:000000004242424242424242423C0000",  /* Unicode 'U' */
       "002B:0000000000000808087F080808000000"   /* Unicode '+' */
    };
-unsigned char hexbits[18][32]; /* The above digits converted into bitmap */
+unsigned char hexbits[18][32]; ///< The digits converted into bitmaps.
 
-unsigned unipage=0;        /* Unicode page number, 0x00..0xff */
-int flip=1;                /* transpose entire matrix as in Unicode book */
+unsigned unipage=0;   ///< Unicode page number, 0x00..0xff.
+int flip=1;           ///< Transpose entire matrix as in Unicode book.
 
 
+/**
+   @brief The main function.
 
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status 0.
+*/
 int
 main (int argc, char *argv[])
 {
@@ -329,12 +343,19 @@ main (int argc, char *argv[])
    exit (0);
 }
 
-/*
+
+/**
+   @brief Generate a bitmap for one glyph.
+
    Convert the portion of a hex string after the ':' into a character bitmap.
 
    If string is >= 128 characters, it will fill all 4 bytes per row.
    If string is >= 64 characters and < 128, it will fill 2 bytes per row.
    Otherwise, it will fill 1 byte per row.
+
+   @param[in] instring The character array containing the glyph bitmap.
+   @param[out] character Glyph bitmap, 8, 16, or 32 columns by 16 rows tall.
+   @return Always returns 0.
 */
 int
 hex2bit (char *instring, unsigned char character[32][4])
@@ -380,6 +401,13 @@ hex2bit (char *instring, unsigned char character[32][4])
    return (0);
 }
 
+
+/**
+   @brief Initialize the bitmap grid.
+
+   @param[out] bitmap The bitmap to generate, with 32x32 pixel glyph areas.
+   @return Always returns 0.
+*/
 int
 init (unsigned char bitmap[17*32][18*4])
 {

@@ -1,14 +1,20 @@
-/*
-   unidup - check for duplicate code points in sorted unifont.hex file.
+/**
+   @file unidup.c
+
+   @brief unidup - Check for duplicate code points in sorted unifont.hex file
+
+   @author Paul Hardy, unifoundry <at> unifoundry.com, December 2007
+
+   @copyright Copyright (C) 2007, 2008, 2013 Paul Hardy
+
+   This program reads a sorted list of glyphs in Unifont .hex format
+   and prints duplicate code points on stderr if any were detected.
 
    Synopsis: unidup < unifont_file.hex
 
              [Hopefully there won't be any output!]
-
-   Author: Paul Hardy, unifoundry <at> unifoundry.com, December 2007
-
-   Copyright (C) 2007, 2008, 2013 Paul Hardy
-
+*/
+/*
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -28,9 +34,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXBUF 256
+#define MAXBUF 256   ///< Maximum input line length - 1
 
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status 0.
+*/
 int
 main (int argc, char **argv)
 {

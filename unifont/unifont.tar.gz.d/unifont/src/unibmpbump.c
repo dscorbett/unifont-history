@@ -1,18 +1,21 @@
-/*
-   unibmpbump.c - adjust a Microsoft bitmap (.bmp) file that
-                  was created by unihex2png but converted to .bmp,
-                  so it matches the format of a unihex2bmp image.
-                  This conversion then lets unibmp2hex decode it.
+/**
+   @file unibmpbump.c
 
+   @brief unibmpbump - Adjust a Microsoft bitmap (.bmp) file that
+                       was created by unihex2png but converted to .bmp
+
+   @author Paul Hardy, unifoundry <at> unifoundry.com
+   
+   @copyright Copyright (C) 2019 Paul Hardy
+
+   This program shifts the glyphs in a bitmap file to adjust an
+   original PNG file that was saved in BMP format.  This is so the
+   result matches the format of a unihex2bmp image.  This conversion
+   then lets unibmp2hex decode the result.
 
    Synopsis: unibmpbump [-iin_file.bmp] [-oout_file.bmp]
-
-
-   Author: Paul Hardy, unifoundry <at> unifoundry.com
-   
-   
-   Copyright (C) 2019 Paul Hardy
-
+*/
+/*
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -32,11 +35,18 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define VERSION "1.0"
+#define VERSION "1.0"	///< Version of this program
 
-#define MAX_COMPRESSION_METHOD 13
+#define MAX_COMPRESSION_METHOD 13   ///< Maximum supported compression method
 
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status EXIT_SUCCESS.
+*/
 int main (int argc, char *argv[]) {
 
    /*
@@ -467,7 +477,13 @@ int main (int argc, char *argv[]) {
 }
 
 
-/* Get from 1 to 4 bytes, inclusive. */
+/**
+   @brief Get from 1 to 4 bytes, inclusive, from input file.
+
+   @param[in] infp Pointer to input file.
+   @param[in] nbytes Number of bytes to read, from 1 to 4, inclusive.
+   @return The unsigned 1 to 4 bytes in machine native endian format.
+*/
 unsigned get_bytes (FILE *infp, int nbytes) {
    int i;
    unsigned char inchar[4];
@@ -487,8 +503,13 @@ unsigned get_bytes (FILE *infp, int nbytes) {
 }
 
 
-/*
-   After reading in a PNG image, change to match unihex2bmp.c format.
+/**
+   @brief After reading in the image, shift it.
+
+   This function adjusts the input image from an original PNG file
+   to match unihex2bmp.c format.
+
+   @param[in,out] image_bytes The pixels in an image.
 */
 void regrid (unsigned *image_bytes) {
    int i, j, k;  /* loop variables */

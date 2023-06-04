@@ -1,14 +1,16 @@
-/*
-   unibmp2hex - program to turn a .bmp or .wbmp glyph matrix into a
-                GNU Unifont hex glyph set of 256 characters
+/**
+   @file unibmp2hex.c
+
+   @brief unibmp2hex - Turn a .bmp or .wbmp glyph matrix into a
+                       GNU Unifont hex glyph set of 256 characters
+
+   @author Paul Hardy, unifoundry <at> unifoundry.com, December 2007
+   
+   @copyright Copyright (C) 2007, 2008, 2013, 2017, 2019, 2022 Paul Hardy
 
    Synopsis: unibmp2hex [-iin_file.bmp] [-oout_file.hex] [-phex_page_num] [-w]
-
-
-   Author: Paul Hardy, unifoundry <at> unifoundry.com, December 2007
-   
-   
-   Copyright (C) 2007, 2008, 2013, 2017, 2019, 2022 Paul Hardy
+*/
+/*
 
    LICENSE:
 
@@ -99,21 +101,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXBUF 256
+#define MAXBUF 256	///< Maximum input file line length - 1
 
 
-unsigned hexdigit[16][4]; /* 32 bit representation of 16x8 0..F bitmap   */
+unsigned hexdigit[16][4]; ///< 32 bit representation of 16x8 0..F bitmap
 
-unsigned uniplane=0;        /* Unicode plane number, 0..0xff ff ff       */
-unsigned planeset=0;        /* =1: use plane specified with -p parameter */
-unsigned flip=0;            /* =1 if we're transposing glyph matrix      */
-unsigned forcewide=0;       /* =1 to set each glyph to 16 pixels wide    */
+unsigned uniplane=0;      ///< Unicode plane number, 0..0xff ff ff
+unsigned planeset=0;      ///< =1: use plane specified with -p parameter
+unsigned flip=0;          ///< =1 if we're transposing glyph matrix
+unsigned forcewide=0;     ///< =1 to set each glyph to 16 pixels wide
 
-/* The six Unicode plane digits, from left-most (0) to right-most (5)    */
+/** The six Unicode plane digits, from left-most (0) to right-most (5) */
 unsigned unidigit[6][4];
 
 
-/* Bitmap Header parameters */
+/** Bitmap Header parameters */
 struct {
    char filetype[2];
    int file_size;
@@ -131,11 +133,18 @@ struct {
    int important_colors;
 } bmp_header;
 
-/* Bitmap Color Table -- maximum of 256 colors in a BMP file */
+/** Bitmap Color Table -- maximum of 256 colors in a BMP file */
 unsigned char color_table[256][4];  /* R, G, B, alpha for up to 256 colors */
 
 // #define DEBUG
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status 0.
+*/
 int
 main (int argc, char *argv[])
 {

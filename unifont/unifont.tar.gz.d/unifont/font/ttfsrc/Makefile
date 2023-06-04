@@ -32,7 +32,7 @@ COPYRIGHT = "Copyright © 1998-2022 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, et al."
 
-VERSION = 15.0.01
+VERSION = 15.0.02
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex
@@ -57,7 +57,7 @@ VERSION = 15.0.01
 # a .sfd generated from the whole unifont.hex would be too big to
 # process all at once.
 
-all: ttf otf
+all: ttf
 
 #
 # Commented out this operation on SFD file because not all applications
@@ -127,35 +127,6 @@ sbit: $(FONTFILE).bdf
 	   $(FONTFILE).bdf $(FONTFILE).ttf
 	\rm -f $(FONTFILE).bdf
 
-
-#
-# Set the location of the hex2otf binary executable.
-#
-HEX2OTF = $(BINDIR)/hex2otf
-
-#
-# Create the OpenType font file.  In case $(COMBINING).txt does not
-# exist, touch the filename.  Then run hex2otf.
-#	$(HEX2OTF) hex=$(FONTFILE).hex pos=otf-$(COMBINING).txt \
-#	touch otf-$(COMBINING).txt
-#
-otf: $(FONTFILE).hex $(HEX2OTF)
-	@echo "Creating OpenType font."
-	$(HEX2OTF) \
-	   hex=$(FONTFILE).hex \
-	   pos=$(COMBINING).txt \
-	   format=cff,gpos,gsub \
-	   0=$(COPYRIGHT) \
-	   1="$(FONTNAME)" \
-	   2="Regular" \
-	   3="$(PSNAME)-$(VERSION).otf" \
-	   4="$(FONTNAME)" \
-	   5="Version $(VERSION)" 6="$(PSNAME)" \
-	   11="https://unifoundry.com/unifont/" \
-	   13="Dual license: SIL Open Font License version 1.1, and GNU GPL version 2 or later with the GNU Font Embedding Exception." \
-	   14="https://gnu.org/licenses/gpl.html, https://scripts.sil.org/OFL" \
-	   out=$(FONTFILE).otf
-
 #
 # Delete files copied into this directory to build TTF fonts.
 #
@@ -166,6 +137,6 @@ clean:
 # Delete files created within this directory while building TTF fonts.
 #
 distclean: clean
-	\rm -f *.sfd *.ttf *.otf
+	\rm -f *.sfd *.ttf
 
-.PHONY: all outline sbit clean distclean
+.PHONY: all ttf sbit clean distclean

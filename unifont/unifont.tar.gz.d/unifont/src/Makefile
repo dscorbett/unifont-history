@@ -7,8 +7,6 @@ CFLAGS = -g -O2 -Wall
 
 LOCALBINDIR = ../bin
 
-VPATH = . $(LOCALBINDIR)
-
 #
 # INSTALL can be defined on the command line to override
 # the next definition.  This is only applied to C programs
@@ -55,18 +53,18 @@ all: $(CPROGS) bin
 hex2otf: hex2otf.c hex2otf.h
 	$(CC) $(CFLAGS) -std=c99 hex2otf.c -o hex2otf
 
-# .c:
-
 bin: bin-stamp
 
-bin-stamp: $(CPROGS) $(PPROGS) $(PNGPROGS)
+bin-stamp: $(CPROGS) $(PPROGS)
 	install -m0755 -d $(LOCALBINDIR)
 	$(INSTALL) -m0755 $(CPROGS) $(LOCALBINDIR)
-	install    -m0755 $(PPROGS) $(LOCALBINDIR)
-	\rm -f $(CPROGS)
+	$(INSTALL) -m0755 $(PPROGS) $(LOCALBINDIR)
+	# \rm -f $(CPROGS)
 	touch $@
 
-install:
+# install: $(CPROGS)
+
+install: bin
 	if [ x$(PREFIX) = x ] ; \
 	then \
 	   @echo "Fatal error: PREFIX directory is not defined." && \
@@ -78,8 +76,8 @@ install:
 	   cd $(LOCALBINDIR) && \
 	   $(INSTALL) -m0755 $(CPROGS) $(INSTALLDIR)
 	set -e && \
-	   cd ../bin && \
-	   install    -m0755 $(PPROGS) $(INSTALLDIR)
+	   cd $(LOCALBINDIR) && \
+	   INSTALL -m0755 $(PPROGS) $(INSTALLDIR)
 
 #
 # The *.exe is for cygwin; it does nothing elsewhere.

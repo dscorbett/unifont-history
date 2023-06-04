@@ -1,29 +1,35 @@
-/*
-   unihexgen.c - generate a series of four- or six-digit hexadecimal
-                 numbers within a 16x16 glyph, rendered as white digits
-                 on a black background.
+/**
+   @file unihexgen.c
 
-                 argv[1] is the starting code point (as a hexadecimal
-                 string, with no leading "0x".
+   @brief unihexgen - Generate a series of glyphs containing
+                      hexadecimal code points
 
-                 argv[2] is the ending code point (as a hexadecimal
-                 string, with no leading "0x".
+   @author Paul Hardy
 
-                 For example:
+   @copyright Copyright (C) 2013 Paul Hardy
 
-                    unihexgen e000 f8ff > pua.hex
+   This program generates glyphs in Unifont .hex format that contain
+   four- or six-digit hexadecimal numbers in a 16x16 pixel area.  These
+   are rendered as white digits on a black background.
 
-                 This generates the Private Use Area glyph file.
+   argv[1] is the starting code point (as a hexadecimal
+   string, with no leading "0x".
+
+   argv[2] is the ending code point (as a hexadecimal
+   string, with no leading "0x".
+
+       For example:
+
+          unihexgen e000 f8ff > pua.hex
+
+       This generates the Private Use Area glyph file.
 
    This utility program works in Roman Czyborra's unifont.hex file
    format, the basis of the GNU Unifont package.
-
+*/
+/*
    This program is released under the terms of the GNU General Public
    License version 2, or (at your option) a later version.
-
-   Author: Paul Hardy, 2013
-
-   Copyright (C) 2013 Paul Hardy
 
    LICENSE:
 
@@ -45,7 +51,9 @@
 #include <stdlib.h>
 
 
-/*
+/**
+   @brief Bitmap pattern for each hexadecimal digit.
+
    hexdigit[][] definition: the bitmap pattern for
    each hexadecimal digit.
 
@@ -93,6 +101,13 @@ char hexdigit[16][5] = {
 };
 
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments (code point range).
+   @return This program exits with status EXIT_SUCCESS.
+*/
 int
 main (int argc, char *argv[])
 {
@@ -133,9 +148,13 @@ main (int argc, char *argv[])
 }
 
 
-/*
+/**
+   @brief Generate a bitmap containing a 4-digit Unicode code point.
+
    Takes a 4-digit Unicode code point as an argument
    and prints a unifont.hex string for it to stdout.
+
+   @param[in] thiscp The current code point for which to generate a glyph.
 */
 void
 hexprint4 (int thiscp)
@@ -192,9 +211,13 @@ hexprint4 (int thiscp)
 }
 
 
-/*
+/**
+   @brief Generate a bitmap containing a 6-digit Unicode code point.
+
    Takes a 6-digit Unicode code point as an argument
    and prints a unifont.hex string for it to stdout.
+
+   @param[in] thiscp The current code point for which to generate a glyph.
 */
 void
 hexprint6 (int thiscp)

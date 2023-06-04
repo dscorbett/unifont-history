@@ -1,13 +1,16 @@
-/*
-   unibdf2hex - program to convert a BDF file into a unifont.hex file.
+/**
+   @file unibdf2hex.c
 
-   Author: Paul Hardy, January 2008
+   @brief unibdf2hex - Convert a BDF file into a unifont.hex file
+
+   @author Paul Hardy, January 2008
+
+   @copyright Copyright (C) 2008, 2013 Paul Hardy
 
    Note: currently this has hard-coded code points for glyphs extracted
    from Wen Quan Yi to create the Unifont source file "wqy.hex".
-
-   Copyright (C) 2008, 2013 Paul Hardy
-
+*/
+/*
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -28,12 +31,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define UNISTART 0x3400
-#define UNISTOP 0x4DBF
+#define UNISTART 0x3400	///< First Unicode code point to examine
+#define UNISTOP 0x4DBF	///< Last Unicode code point to examine
 
-#define MAXBUF 256
+#define MAXBUF 256	///< Maximum allowable input file line length - 1
 
 
+/**
+   @brief The main function.
+
+   @return Exit status is always 0 (successful termination).
+*/
 int
 main()
 {

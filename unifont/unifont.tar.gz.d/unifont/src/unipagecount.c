@@ -1,18 +1,34 @@
-/*
-   unipagecount - program to count the number of glyphs defined in each page
-                  of 256 bytes, and print them in an 8 x 8 grid.  Input is
-                  from stdin.  Output is to stdout.
+/**
+   @file unipagecount.c
 
-   Synopsis: unipagecount < font_file.hex > count.txt
+   @brief unipagecount - Count the number of glyphs defined in each page
+                         of 256 code points
+
+   @author Paul Hardy, unifoundry <at> unifoundry.com, December 2007
+   
+   @copyright Copyright (C) 2007, 2008, 2013, 2014 Paul Hardy
+
+   This program counts the number of glyphs that are defined in each
+   "page" of 256 code points, and prints the counts in an 8 x 8 grid.
+   Input is from stdin.  Output is to stdout.
+
+   The background color of each cell in a 16-by-16 grid of 256 code points
+   is shaded to indicate percentage coverage.  Red indicates 0% coverage,
+   green represents 100% coverage, and colors in between pure red and pure
+   green indicate partial coverage on a scale.
+
+   Each code point range number can be a hyperlink to a PNG file for
+   that 256-code point range's corresponding bitmap glyph image.
+
+   Synopsis:
+
+             unipagecount < font_file.hex > count.txt
              unipagecount -phex_page_num < font_file.hex  -- just 256 points
              unipagecount -h < font_file.hex              -- HTML table
              unipagecount -P1 -h < font.hex > count.html  -- Plane 1, HTML out
              unipagecount -l < font_file.hex              -- linked HTML table
-
-   Author: Paul Hardy, unifoundry <at> unifoundry.com, December 2007
-   
-   Copyright (C) 2007, 2008, 2013, 2014 Paul Hardy
-
+*/
+/*
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -37,8 +53,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXBUF 256 /* maximum input line size */
+#define MAXBUF 256 ///< Maximum input line size - 1.
 
+
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status 0.
+*/
 int
 main (int argc, char *argv[])
 {
@@ -145,11 +169,18 @@ main (int argc, char *argv[])
 }
 
 
-/*
-   mkftable - function to create an HTML table to show PNG files
-              in a 16 by 16 grid.
-*/
+/**
+   @brief Create an HTML table linked to PNG images.
 
+   This function creates an HTML table to show PNG files
+   in a 16 by 16 grid.  The background color of each "page"
+   of 256 code points is shaded from red (for 0% coverage)
+   to green (for 100% coverage).
+
+   @param[in] plane The Unicode plane, 0..17.
+   @param[in] pagecount Array with count of glyphs in each 256 code point range.
+   @param[in] links 1 = generate hyperlinks, 0 = do not generate hyperlinks.
+*/
 void
 mkftable (unsigned plane, int pagecount[256], int links)
 {

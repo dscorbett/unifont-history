@@ -1,28 +1,39 @@
+/**
+    @file hex2otf.c
+
+    @brief hex2otf - Convert GNU Unifont .hex file to OpenType font
+
+    This program reads a Unifont .hex format file and a file containing
+    combining mark offset information, and produces an OpenType font file.
+
+    @copyright Copyright © 2022 何志翔 (He Zhixiang)
+
+    @author 何志翔 (He Zhixiang)
+*/
+
 /*
-hex2otf - Convert GNU Unifont .hex file to OpenType font
+    LICENSE:
 
-Copyright © 2022 何志翔 (He Zhixiang)
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
 
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301, USA.
 
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-02110-1301, USA.
-
-NOTE: It is a violation of the license terms of this software
-to delete or override license and copyright information contained
-in the hex2otf.h file if creating a font derived from Unifont glyphs.
-Fonts derived from Unifont can add names to the copyright notice
-for creators of new or modified glyphs.
+    NOTE: It is a violation of the license terms of this software
+    to delete or override license and copyright information contained
+    in the hex2otf.h file if creating a font derived from Unifont glyphs.
+    Fonts derived from Unifont can add names to the copyright notice
+    for creators of new or modified glyphs.
 */
 
 #include <assert.h>
@@ -37,52 +48,67 @@ for creators of new or modified glyphs.
 
 #include "hex2otf.h"
 
-#define VERSION "1.0"  // Program version, for "--version" option.
+#define VERSION "1.0.1"  ///< Program version, for "--version" option.
 
 // This program assumes the execution character set is compatible with ASCII.
 
-#define U16MAX 0xffff
-#define U32MAX 0xffffffff
+#define U16MAX 0xffff		///< Maximum UTF-16 code point value.
+#define U32MAX 0xffffffff	///< Maximum UTF-32 code point value.
 
-#define PRI_CP "U+%.4"PRIXFAST32
+#define PRI_CP "U+%.4"PRIXFAST32 ///< Format string to print Unicode code point.
 
 #ifndef static_assert
-#define static_assert(a, b) (assert(a))
+#define static_assert(a, b) (assert(a)) ///< If "a" is true, return string "b".
 #endif
 
 // Set or clear a particular bit.
-#define BX(shift, x) ((uintmax_t)(!!(x)) << (shift))
-#define B0(shift) BX((shift), 0)
-#define B1(shift) BX((shift), 1)
+#define BX(shift, x) ((uintmax_t)(!!(x)) << (shift)) ///< Truncate & shift word.
+#define B0(shift) BX((shift), 0)	///< Clear a given bit in a word.
+#define B1(shift) BX((shift), 1)	///< Set   a given bit in a word.
 
-#define GLYPH_MAX_WIDTH 16
-#define GLYPH_HEIGHT 16
+#define GLYPH_MAX_WIDTH 16	///< Maximum glyph width, in pixels.
+#define GLYPH_HEIGHT 16		///< Maximum glyph height, in pixels.
+
+/// Number of bytes to represent one bitmap glyph as a binary array.
 #define GLYPH_MAX_BYTE_COUNT (GLYPH_HEIGHT * GLYPH_MAX_WIDTH / 8)
 
-// Count of pixels below baseline.
+/// Count of pixels below baseline.
 #define DESCENDER 2
+
+/// Count of pixels above baseline.
 #define ASCENDER (GLYPH_HEIGHT - DESCENDER)
 
-// Font units per em.
+/// Font units per em.
 #define FUPEM 64
 
-// An OpenType font has at most 65536 glyphs.
+/// An OpenType font has at most 65536 glyphs.
 #define MAX_GLYPHS 65536
 
-// Name IDs 0-255 are used for standard names.
+/// Name IDs 0-255 are used for standard names.
 #define MAX_NAME_IDS 256
 
-// Convert pixels to font units.
+/// Convert pixels to font units.
 #define FU(x) ((x) * FUPEM / GLYPH_HEIGHT)
 
-// Convert glyph byte count to pixel width.
+/// Convert glyph byte count to pixel width.
 #define PW(x) ((x) / (GLYPH_HEIGHT / 8))
 
+/// Definition of "byte" type as an unsigned char.
 typedef unsigned char byte;
 
-// This type must be able to represent max(GLYPH_MAX_WIDTH, GLYPH_HEIGHT).
+/// This type must be able to represent max(GLYPH_MAX_WIDTH, GLYPH_HEIGHT).
 typedef int_least8_t pixels_t;
 
+/**
+    @brief Print an error message on stderr, then exit.
+
+    This function prints the provided error string and optional
+    following arguments to stderr, and then exits with a status
+    of EXIT_FAILURE.
+
+    @param[in] reason The output string to describe the error.
+    @param[in] ... Optional following arguments to output.
+*/
 void
 fail (const char *reason, ...)
 {
@@ -95,20 +121,33 @@ fail (const char *reason, ...)
     exit (EXIT_FAILURE);
 }
 
-// A buffer can act as a vector (when filled with 'store*' functions),
-// or a temporary output area (when filled with 'cache*' functions).
-// The 'store*' functions use native endian.
-// The 'cache*' functions use big endian or other formats in OpenType.
-// Beware of memory alignment.
+/**
+    @brief Generic data structure for a linked list of buffer elements.
+
+    A buffer can act as a vector (when filled with 'store*' functions),
+    or a temporary output area (when filled with 'cache*' functions).
+    The 'store*' functions use native endian.
+    The 'cache*' functions use big endian or other formats in OpenType.
+    Beware of memory alignment.
+*/
 typedef struct Buffer
 {
     size_t capacity; // = 0 iff this buffer is free
     byte *begin, *next, *end;
 } Buffer;
 
-Buffer *allBuffers;
-size_t bufferCount, nextBufferIndex;
+Buffer *allBuffers; ///< Initial allocation of empty array of buffer pointers.
+size_t bufferCount;	///< Number of buffers in a Buffer * array.
+size_t nextBufferIndex; ///< Index number to tail element of Buffer * array.
 
+/**
+    @brief Initialize an array of buffer pointers to all zeroes.
+
+    This function initializes the "allBuffers" array of buffer
+    pointers to all zeroes.
+
+    @param[in] count The number of buffer array pointers to allocate.
+*/
 void
 initBuffers (size_t count)
 {
@@ -120,6 +159,13 @@ initBuffers (size_t count)
     bufferCount = count;
     nextBufferIndex = 0;
 }
+
+/**
+    @brief Free all allocated buffer pointers.
+
+    This function frees all buffer pointers previously allocated
+    in the initBuffers function.
+*/
 void
 cleanBuffers ()
 {
@@ -129,6 +175,15 @@ cleanBuffers ()
     free (allBuffers);
     bufferCount = 0;
 }
+
+/**
+    @brief Create a new buffer.
+
+    This function creates a new buffer array of type Buffer,
+    with an initial size of initialCapacity elements.
+
+    @param[in] initialCapacity The initial number of elements in the buffer.
+*/
 Buffer *
 newBuffer (size_t initialCapacity)
 {
@@ -165,6 +220,21 @@ newBuffer (size_t initialCapacity)
     buf->end = buf->begin + initialCapacity;
     return buf;
 }
+
+/**
+    @brief Ensure that the buffer has at least the specified minimum size.
+
+    This function takes a buffer array of type Buffer and the
+    necessary minimum number of elements as inputs, and attempts
+    to increase the size of the buffer if it must be larger.
+
+    If the buffer is too small and cannot be resized, the program
+    will terminate with an error message and an exit status of
+    EXIT_FAILURE.
+
+    @param[in,out] buf The buffer to check.
+    @param[in] needed The required minimum number of elements in the buffer.
+*/
 void
 ensureBuffer (Buffer *buf, size_t needed)
 {
@@ -185,21 +255,53 @@ ensureBuffer (Buffer *buf, size_t needed)
     buf->next = buf->begin + occupied;
     buf->end = buf->begin + buf->capacity;
 }
+
+/**
+    @brief Count the number of elements in a buffer.
+
+    @param[in] buf The buffer to be examined.
+    @return The number of elements in the buffer.
+*/
 static inline size_t
 countBufferedBytes (const Buffer *buf)
 {
     return buf->next - buf->begin;
 }
+
+/**
+    @brief Get the start of the buffer array.
+
+    @param[in] buf The buffer to be examined.
+    @return A pointer of type Buffer * to the start of the buffer.
+*/
 static inline void *
 getBufferHead (const Buffer *buf)
 {
     return buf->begin;
 }
+
+/**
+    @brief Get the end of the buffer array.
+
+    @param[in] buf The buffer to be examined.
+    @return A pointer of type Buffer * to the end of the buffer.
+*/
 static inline void *
 getBufferTail (const Buffer *buf)
 {
     return buf->next;
 }
+
+/**
+    @brief Add a slot to the end of a buffer.
+
+    This function ensures that the buffer can grow by one slot,
+    and then returns a pointer to the new slot within the buffer.
+
+    @param[in] buf The pointer to an array of type Buffer *.
+    @param[in] slotSize The new slot number.
+    @return A pointer to the new slot within the buffer.
+*/
 static inline void *
 getBufferSlot (Buffer *buf, size_t slotSize)
 {
@@ -208,11 +310,29 @@ getBufferSlot (Buffer *buf, size_t slotSize)
     buf->next += slotSize;
     return slot;
 }
+
+/**
+    @brief Reset a buffer pointer to the buffer's beginning.
+
+    This function resets an array of type Buffer * to point
+    its tail to the start of the array.
+
+    @param[in] buf The pointer to an array of type Buffer *.
+*/
 static inline void
 resetBuffer (Buffer *buf)
 {
     buf->next = buf->begin;
 }
+
+/**
+    @brief Free the memory previously allocated for a buffer.
+
+    This function frees the memory allocated to an array
+    of type Buffer *.
+
+    @param[in] buf The pointer to an array of type Buffer *.
+*/
 void
 freeBuffer (Buffer *buf)
 {
@@ -220,6 +340,13 @@ freeBuffer (Buffer *buf)
     buf->capacity = 0;
 }
 
+/**
+    @brief Temporary define to look up an element in an array of given type.
+
+    This defintion is used to create lookup functions to return
+    a given element in unsigned arrays of size 8, 16, and 32 bytes,
+    and in an array of pixels.
+*/
 #define defineStore(name, type) \
 void name (Buffer *buf, type value) \
 { \
@@ -232,6 +359,17 @@ defineStore (storeU32, uint_least32_t)
 defineStore (storePixels, pixels_t)
 #undef defineStore
 
+/**
+    @brief Cache bytes in a big-endian format.
+
+    This function adds from 1, 2, 3, or 4 bytes to the end of
+    a byte array in big-endian order.  The buffer is updated
+    to account for the newly-added bytes.
+
+    @param[in,out] buf The array of bytes to which to append new bytes.
+    @param[in] value The bytes to add, passed as a 32-bit unsigned word.
+    @param[in] bytes The number of bytes to append to the buffer.
+*/
 void
 cacheU (Buffer *buf, uint_fast32_t value, int bytes)
 {
@@ -245,22 +383,79 @@ cacheU (Buffer *buf, uint_fast32_t value, int bytes)
         case 1: *buf->next++ = value       & 0xff;
     }
 }
+
+/**
+    @brief Append one unsigned byte to the end of a byte array.
+
+    This function adds one byte to the end of a byte array.
+    The buffer is updated to account for the newly-added byte.
+
+    @param[in,out] buf The array of bytes to which to append a new byte.
+    @param[in] value The 8-bit unsigned value to append to the buf array.
+*/
 void
 cacheU8 (Buffer *buf, uint_fast8_t value)
 {
     storeU8 (buf, value & 0xff);
 }
+
+/**
+    @brief Append two unsigned bytes to the end of a byte array.
+
+    This function adds two bytes to the end of a byte array.
+    The buffer is updated to account for the newly-added bytes.
+
+    @param[in,out] buf The array of bytes to which to append two new bytes.
+    @param[in] value The 16-bit unsigned value to append to the buf array.
+*/
 void
 cacheU16 (Buffer *buf, uint_fast16_t value)
 {
     cacheU (buf, value, 2);
 }
+
+/**
+    @brief Append four unsigned bytes to the end of a byte array.
+
+    This function adds four bytes to the end of a byte array.
+    The buffer is updated to account for the newly-added bytes.
+
+    @param[in,out] buf The array of bytes to which to append four new bytes.
+    @param[in] value The 32-bit unsigned value to append to the buf array.
+*/
 void
 cacheU32 (Buffer *buf, uint_fast32_t value)
 {
     cacheU (buf, value, 4);
 }
 
+/**
+    @brief Cache charstring number encoding in a CFF buffer.
+
+    This function caches two's complement 8-, 16-, and 32-bit
+    words as per Adobe's Type 2 Charstring encoding for operands.
+    These operands are used in Compact Font Format data structures.
+
+    Byte values can have offsets, for which this function
+    compensates, optionally followed by additional bytes:
+
+        Byte Range   Offset   Bytes   Adjusted Range
+        ----------   ------   -----   --------------
+          0 to 11        0      1     0 to 11 (operators)
+            12           0      2     Next byte is 8-bit op code
+         13 to 18        0      1     13 to 18 (operators)
+         19 to 20        0      2+    hintmask and cntrmask operators
+         21 to 27        0      1     21 to 27 (operators)
+            28           0      3     16-bit 2's complement number
+         29 to 31        0      1     29 to 31 (operators)
+         32 to 246    -139      1     -107 to +107
+        247 to 250    +108      2     +108 to +1131
+        251 to 254    -108      2     -108 to -1131
+           255           0      5     16-bit integer and 16-bit fraction
+
+    @param[in,out] buf The buffer to which the operand value is appended.
+    @param[in] value The operand value.
+*/
 void
 cacheCFFOperand (Buffer *buf, int_fast32_t value)
 {
@@ -286,6 +481,12 @@ cacheCFFOperand (Buffer *buf, int_fast32_t value)
     static_assert (GLYPH_MAX_WIDTH <= 107, "More encodings are needed.");
 }
 
+/**
+    @brief Append 1 to 4 bytes of zeroes to a buffer, for padding.
+
+    @param[in,out] buf The buffer to which the operand value is appended.
+    @param[in] count The number of bytes containing zeroes to append.
+*/
 void
 cacheZeros (Buffer *buf, size_t count)
 {
@@ -294,6 +495,16 @@ cacheZeros (Buffer *buf, size_t count)
     buf->next += count;
 }
 
+/**
+    @brief Append a string of bytes to a buffer.
+
+    This function appends an array of 1 to 4 bytes to the end of 
+    a buffer.
+
+    @param[in,out] buf The buffer to which the bytes are appended.
+    @param[in] src The array of bytes to append to the buffer.
+    @param[in] count The number of bytes containing zeroes to append.
+*/
 void
 cacheBytes (Buffer *restrict buf, const void *restrict src, size_t count)
 {
@@ -302,6 +513,12 @@ cacheBytes (Buffer *restrict buf, const void *restrict src, size_t count)
     buf->next += count;
 }
 
+/**
+    @brief Append bytes of a table to a byte buffer.
+
+    @param[in,out] bufDest The buffer to which the new bytes are appended.
+    @param[in] bufSrc The bytes to append to the buffer array.
+*/
 void
 cacheBuffer (Buffer *restrict bufDest, const Buffer *restrict bufSrc)
 {
@@ -311,6 +528,12 @@ cacheBuffer (Buffer *restrict bufDest, const Buffer *restrict bufSrc)
     bufDest->next += length;
 }
 
+/**
+    @brief Write an array of bytes to an output file.
+
+    @param[in] bytes An array of unsigned bytes to write.
+    @param[in] file The file pointer for writing, of type FILE *.
+*/
 void
 writeBytes (const byte bytes[], size_t count, FILE *file)
 {
@@ -318,6 +541,15 @@ writeBytes (const byte bytes[], size_t count, FILE *file)
         fail ("Failed to write %zu bytes to output file.", count);
 }
 
+/**
+    @brief Write an unsigned 16-bit value to an output file.
+
+    This function writes a 16-bit unsigned value in big-endian order
+    to an output file specified with a file pointer.
+
+    @param[in] value The 16-bit value to write.
+    @param[in] file The file pointer for writing, of type FILE *.
+*/
 void
 writeU16 (uint_fast16_t value, FILE *file)
 {
@@ -328,6 +560,16 @@ writeU16 (uint_fast16_t value, FILE *file)
     };
     writeBytes (bytes, sizeof bytes, file);
 }
+
+/**
+    @brief Write an unsigned 32-bit value to an output file.
+
+    This function writes a 32-bit unsigned value in big-endian order
+    to an output file specified with a file pointer.
+
+    @param[in] value The 32-bit value to write.
+    @param[in] file The file pointer for writing, of type FILE *.
+*/
 void
 writeU32 (uint_fast32_t value, FILE *file)
 {
@@ -341,26 +583,48 @@ writeU32 (uint_fast32_t value, FILE *file)
     writeBytes (bytes, sizeof bytes, file);
 }
 
+/**
+    @brief Write an entire buffer array of bytes to an output file.
+
+    This function determines the size of a buffer of bytes and
+    writes that number of bytes to an output file specified with
+    a file pointer.  The number of bytes is determined from the
+    length information stored as part of the Buffer * data structure.
+
+    @param[in] buf An array containing unsigned bytes to write.
+    @param[in] file The file pointer for writing, of type FILE *.
+*/
 static inline void
 writeBuffer (const Buffer *buf, FILE *file)
 {
     writeBytes (getBufferHead (buf), countBufferedBytes (buf), file);
 }
 
-
+/// Array of OpenType names indexed directly by Name IDs.
 typedef const char *NameStrings[MAX_NAME_IDS];
 
+/**
+   @brief Data structure to hold data for one bitmap glyph.
+
+   This data structure holds data to represent one Unifont bitmap
+   glyph: Unicode code point, number of bytes in its bitmap array,
+   whether or not it is a combining character, and an offset from
+   the glyph origin to the start of the bitmap.
+*/
 typedef struct Glyph
 {
-    uint_least32_t codePoint; // undefined for glyph 0
-    byte bitmap[GLYPH_MAX_BYTE_COUNT];
-    uint_least8_t byteCount; // length of bitmap data
-    bool combining; // whether this is a combining glyph
-    pixels_t pos; // number of pixels the glyph should be moved to the right
-                  // (negative number means moving to the left)
-    pixels_t lsb; // left side bearing (x position of leftmost contour point)
+    uint_least32_t codePoint; ///< undefined for glyph 0
+    byte bitmap[GLYPH_MAX_BYTE_COUNT]; ///< hexadecimal bitmap character array
+    uint_least8_t byteCount; ///< length of bitmap data
+    bool combining; ///< whether this is a combining glyph
+    pixels_t pos; ///< number of pixels the glyph should be moved to the right
+                  ///< (negative number means moving to the left)
+    pixels_t lsb; ///< left side bearing (x position of leftmost contour point)
 } Glyph;
 
+/**
+   @brief Data structure to hold information for one font.
+*/
 typedef struct Font
 {
     Buffer *tables;
@@ -369,16 +633,42 @@ typedef struct Font
     pixels_t maxWidth;
 } Font;
 
-// An OpenType table.
-// (https://docs.microsoft.com/en-us/typography/opentype/spec/otff#font-tables)
+/**
+   @brief Data structure for an OpenType table.
+
+   This data structure contains a table tag and a pointer to the
+   start of the buffer that holds data for this OpenType table.
+
+   For information on the OpenType tables and their structure, see
+   https://docs.microsoft.com/en-us/typography/opentype/spec/otff#font-tables.
+*/
 typedef struct Table
 {
     uint_fast32_t tag;
     Buffer *content;
 } Table;
 
-enum LocaFormat {LOCA_OFFSET16 = 0, LOCA_OFFSET32 = 1};
+/**
+    @brief Index to Location ("loca") offset information.
 
+    This enumerated type encodes the type of offset to locations
+    in a table.  It denotes Offset16 (16-bit) and Offset32 (32-bit)
+    offset types.
+*/
+enum LocaFormat {
+    LOCA_OFFSET16 = 0,    ///< Offset to location is a 16-bit Offset16 value
+    LOCA_OFFSET32 = 1     ///< Offset to location is a 32-bit Offset32 value
+};
+
+/**
+    @brief Convert a 4-byte array to the machine's native 32-bit endian order.
+
+    This function takes an array of 4 bytes in big-endian order and
+    converts it to a 32-bit word in the endian order of the native machine.
+
+    @param[in] tag The array of 4 bytes in big-endian order.
+    @return The 32-bit unsigned word in a machine's native endian order.
+*/
 static inline uint_fast32_t tagAsU32 (const char tag[static 4])
 {
     uint_fast32_t r = 0;
@@ -389,6 +679,17 @@ static inline uint_fast32_t tagAsU32 (const char tag[static 4])
     return r;
 }
 
+/**
+    @brief Add a TrueType or OpenType table to the font.
+
+    This function adds a TrueType or OpenType table to a font.
+    The 4-byte table tag is passed as an unsigned 32-bit integer
+    in big-endian format.
+
+    @param[in,out] font The font to which a font table will be added.
+    @param[in] tag The 4-byte table name.
+    @param[in] content The table bytes to add, of type Buffer *.
+*/
 void
 addTable (Font *font, const char tag[static 4], Buffer *content)
 {
@@ -397,7 +698,15 @@ addTable (Font *font, const char tag[static 4], Buffer *content)
     table->content = content;
 }
 
-// Sort tables according to OpenType recommendations.
+/**
+    @brief  Sort tables according to OpenType recommendations.
+
+    The various tables in a font are sorted in an order recommended
+    for TrueType font files.
+
+    @param[in,out] font The font in which to sort tables.
+    @param[in] isCFF True iff Compact Font Format (CFF) is being used.
+*/
 void
 organizeTables (Font *font, bool isCFF)
 {
@@ -428,10 +737,32 @@ organizeTables (Font *font, bool isCFF)
     }
 }
 
+/**
+   @brief Data structure for data associated with one OpenType table.
+
+   This data structure contains an OpenType table's tag, start within
+   an OpenType font file, length in bytes, and checksum at the end of
+   the table.
+*/
 struct TableRecord
 {
     uint_least32_t tag, offset, length, checksum;
 };
+
+/**
+    @brief Compare tables by 4-byte unsigned table tag value.
+
+    This function takes two pointers to a TableRecord data structure
+    and extracts the four-byte tag structure element for each.  The
+    two 32-bit numbers are then compared.  If the first tag is greater
+    than the first, then gt = 1 and lt = 0, and so 1 - 0 = 1 is
+    returned.  If the first is less than the second, then gt = 0 and
+    lt = 1, and so 0 - 1 = -1 is returned.
+
+    @param[in] a Pointer to the first TableRecord structure.
+    @param[in] b Pointer to the second TableRecord structure.
+    @return 1 if the tag in "a" is greater, -1 if less, 0 if equal.
+*/
 int
 byTableTag (const void *a, const void *b)
 {
@@ -440,6 +771,17 @@ byTableTag (const void *a, const void *b)
     int lt = ra->tag < rb->tag;
     return gt - lt;
 }
+
+/**
+   @brief Write OpenType font to output file.
+
+   This function writes the constructed OpenType font to the
+   output file named "filename".
+
+   @param[in] font Pointer to the font, of type Font *.
+   @param[in] isCFF Boolean indicating whether the font has CFF data.
+   @param[in] filename The name of the font file to create.
+*/
 void
 writeFont (Font *font, bool isCFF, const char *fileName)
 {
@@ -470,10 +812,13 @@ writeFont (Font *font, bool isCFF, const char *fileName)
         record->checksum = 0;
         const byte *p = getBufferHead (tables[i].content);
         const byte *const end = getBufferTail (tables[i].content);
+
+        /// Add a byte shifted by 24, 16, 8, or 0 bits.
         #define addByte(shift) \
             if (p == end) \
                 break; \
             record->checksum += (uint_fast32_t)*p++ << (shift);
+
         for (;;)
         {
             addByte (24)
@@ -536,6 +881,16 @@ writeFont (Font *font, bool isCFF, const char *fileName)
     fclose (file);
 }
 
+/**
+    @brief Convert a hexadecimal digit character to a 4-bit number.
+
+    This function takes a character that contains one hexadecimal digit
+    and returns the 4-bit value (as an unsigned 8-bit value) corresponding
+    to the hexadecimal digit.
+
+    @param[in] nibble The character containing one hexadecimal digit.
+    @return The hexadecimal digit value, 0 through 15, inclusive.
+*/
 static inline byte
 nibbleValue (char nibble)
 {
@@ -545,8 +900,21 @@ nibbleValue (char nibble)
     return nibble - 'A' + 10;
 }
 
-// Read up to 6 hex digits and a colon from file.
-// Return true if end of file is reached.
+/**
+    @brief Read up to 6 hexadecimal digits and a colon from file.
+
+    This function reads up to 6 hexadecimal digits followed by
+    a colon from a file.
+
+    If the end of the file is reached, the function returns true.
+    The file name is provided to include in an error message if
+    the end of file was reached unexpectedly.
+
+    @param[out] codePoint The Unicode code point.
+    @param[in] fileName The name of the input file.
+    @param[in] file Pointer to the input file stream.
+    @return true if at end of file, false otherwise.
+*/
 bool
 readCodePoint (uint_fast32_t *codePoint, const char *fileName, FILE *file)
 {
@@ -575,6 +943,25 @@ readCodePoint (uint_fast32_t *codePoint, const char *fileName, FILE *file)
     }
 }
 
+/**
+    @brief Read glyph definitions from a Unifont .hex format file.
+
+    This function reads in the glyph bitmaps contained in a Unifont
+    .hex format file.  These input files contain one glyph bitmap
+    per line.  Each line is of the form
+
+        <hexadecimal code point> ':' <hexadecimal bitmap sequence>
+
+    The code point field typically consists of 4 hexadecimal digits
+    for a code point in Unicode Plane 0, and 6 hexadecimal digits for
+    code points above Plane 0.  The hexadecimal bitmap sequence is
+    32 hexadecimal digits long for a glyph that is 8 pixels wide by
+    16 pixels high, and 64 hexadecimal digits long for a glyph that
+    is 16 pixels wide by 16 pixels high.
+
+    @param[in,out] font The font data structure to update with new glyphs.
+    @param[in] fileName The name of the Unifont .hex format input file.
+*/
 void
 readGlyphs (Font *font, const char *fileName)
 {
@@ -638,6 +1025,17 @@ readGlyphs (Font *font, const char *fileName)
     fclose (file);
 }
 
+/**
+    @brief Compare two Unicode code points to determine which is greater.
+
+    This function compares the Unicode code points contained within
+    two Glyph data structures.  The function returns 1 if the first
+    code point is greater, and -1 if the second is greater.
+
+    @param[in] a A Glyph data structure containing the first code point.
+    @param[in] b A Glyph data structure containing the second code point.
+    @return 1 if the code point a is greater, -1 if less, 0 if equal.
+*/
 int
 byCodePoint (const void *a, const void *b)
 {
@@ -647,7 +1045,18 @@ byCodePoint (const void *a, const void *b)
     return gt - lt;
 }
 
-// Glyphs must be sorted by code point before calling this function.
+/**
+    @brief Position a glyph within a 16-by-16 pixel bounding box.
+
+    Position a glyph within the 16-by-16 pixel drawing area and
+    note whether or not the glyph is a combining character.
+
+    N.B.: Glyphs must be sorted by code point before calling this function.
+
+    @param[in,out] font Font data structure pointer to store glyphs.
+    @param[in] fileName Name of glyph file to read.
+    @param[in] xMin Minimum x-axis value (for left side bearing).
+*/
 void
 positionGlyphs (Font *font, const char *fileName, pixels_t *xMin)
 {
@@ -697,6 +1106,15 @@ positionGlyphs (Font *font, const char *fileName, pixels_t *xMin)
     fclose (file);
 }
 
+/**
+    @brief Sort the glyphs in a font by Unicode code point.
+
+    This function reads in an array of glyphs and sorts them
+    by Unicode code point.  If a duplicate code point is encountered,
+    that will result in a fatal error with an error message to stderr.
+
+    @param[in,out] font Pointer to a Font structure with glyphs to sort.
+*/
 void
 sortGlyphs (Font *font)
 {
@@ -712,9 +1130,32 @@ sortGlyphs (Font *font)
     }
 }
 
-enum ContourOp {OP_CLOSE, OP_POINT};
-enum FillSide {FILL_LEFT, FILL_RIGHT};
+/**
+    @brief Specify the current contour drawing operation.
+*/
+enum ContourOp {
+    OP_CLOSE,    ///< Close the current contour path that was being drawn.
+    OP_POINT     ///< Add one more (x,y) point to the contor being drawn.
+};
 
+/**
+    @brief Fill to the left side (CFF) or right side (TrueType) of a contour.
+*/
+enum FillSide {
+    FILL_LEFT,    ///< Draw outline counter-clockwise (CFF, PostScript).
+    FILL_RIGHT    ///< Draw outline clockwise (TrueType).
+};
+
+/**
+    @brief Build a glyph outline.
+
+    This function builds a glyph outline from a Unifont glyph bitmap.
+
+    @param[out] result The resulting glyph outline.
+    @param[in] bitmap A bitmap array.
+    @param[in] byteCount the number of bytes in the input bitmap array.
+    @param[in] fillSide Enumerated indicator to fill left or right side.
+*/
 void
 buildOutline (Buffer *result, const byte bitmap[], const size_t byteCount,
     const enum FillSide fillSide)
@@ -728,6 +1169,7 @@ buildOutline (Buffer *result, const byte bitmap[], const size_t byteCount,
     const uint_fast8_t bytesPerRow = byteCount / GLYPH_HEIGHT;
     const pixels_t glyphWidth = bytesPerRow * 8;
     assert (glyphWidth <= GLYPH_MAX_WIDTH);
+
     #if GLYPH_MAX_WIDTH < 32
         typedef uint_fast32_t row_t;
     #elif GLYPH_MAX_WIDTH < 64
@@ -735,6 +1177,7 @@ buildOutline (Buffer *result, const byte bitmap[], const size_t byteCount,
     #else
         #error GLYPH_MAX_WIDTH is too large.
     #endif
+
     row_t pixels[GLYPH_HEIGHT + 2] = {0};
     for (pixels_t row = GLYPH_HEIGHT; row > 0; row--)
         for (pixels_t b = 0; b < bytesPerRow; b++)
@@ -754,8 +1197,13 @@ buildOutline (Buffer *result, const byte bitmap[], const size_t byteCount,
     }
     graph_t selection = {0};
     const row_t x0 = (row_t)1 << glyphWidth;
+
+    /// Get the value of a given bit that is in a given row.
     #define getRowBit(rows, x, y)  ((rows)[(y)] &  x0 >> (x))
+
+    /// Invert the value of a given bit that is in a given row.
     #define flipRowBit(rows, x, y) ((rows)[(y)] ^= x0 >> (x))
+
     for (pixels_t y = GLYPH_HEIGHT; y >= 0; y--)
     {
         for (pixels_t x = 0; x <= glyphWidth; x++)
@@ -763,14 +1211,17 @@ buildOutline (Buffer *result, const byte bitmap[], const size_t byteCount,
             assert (!getRowBit (vectors[LEFT], x, y));
             assert (!getRowBit (vectors[UP], x, y));
             enum Direction initial;
+
             if (getRowBit (vectors[RIGHT], x, y))
                 initial = RIGHT;
             else if (getRowBit (vectors[DOWN], x, y))
                 initial = DOWN;
             else
                 continue;
+
             static_assert ((GLYPH_MAX_WIDTH + 1) * (GLYPH_HEIGHT + 1) * 2 <=
                 U16MAX, "potential overflow");
+
             uint_fast16_t lastPointCount = 0;
             for (bool converged = false;;)
             {
@@ -807,6 +1258,7 @@ buildOutline (Buffer *result, const byte bitmap[], const size_t byteCount,
                 converged = pointCount == lastPointCount;
                 lastPointCount = pointCount;
             }
+
             storePixels (result, OP_CLOSE);
         }
     }
@@ -814,6 +1266,11 @@ buildOutline (Buffer *result, const byte bitmap[], const size_t byteCount,
     #undef flipRowBit
 }
 
+/**
+    @brief Prepare 32-bit glyph offsets in a font table.
+
+    @param[in] sizes Array of glyph sizes, for offset calculations.
+*/
 void
 prepareOffsets (size_t *sizes)
 {
@@ -823,12 +1280,20 @@ prepareOffsets (size_t *sizes)
     if (*p > 2147483647U) // offset not representable
         fail ("CFF table is too large.");
 }
+
+/**
+    @brief Prepare a font name string index.
+
+    @param[in] names List of name strings.
+    @return Pointer to a Buffer struct containing the string names.
+*/
 Buffer *
 prepareStringIndex (const NameStrings names)
 {
     Buffer *buf = newBuffer (256);
     assert (names[6]);
     const char *strings[] = {"Adobe", "Identity", names[6]};
+    /// Get the number of elements in array char *strings[].
     #define stringCount (sizeof strings / sizeof *strings)
     static_assert (stringCount <= U16MAX, "too many strings");
     size_t offset = 1;
@@ -852,6 +1317,14 @@ prepareStringIndex (const NameStrings names)
     #undef stringCount
     return buf;
 }
+
+/**
+    @brief Add a CFF table to a font.
+
+    @param[in,out] font Pointer to a Font struct to contain the CFF table.
+    @param[in] version Version of CFF table, with value 1 or 2.
+    @param[in] names List of NameStrings.
+*/
 void
 fillCFF (Font *font, int version, const NameStrings names)
 {
@@ -859,8 +1332,10 @@ fillCFF (Font *font, int version, const NameStrings names)
     assert (0 < version && version <= 2);
     Buffer *cff = newBuffer (65536);
     addTable (font, version == 1 ? "CFF " : "CFF2", cff);
-    // Use fixed width integer for variables to simplify offset calculation.
+
+    /// Use fixed width integer for variables to simplify offset calculation.
     #define cacheCFF32(buf, x) (cacheU8 ((buf), 29), cacheU32 ((buf), (x)))
+
     // In Unifont, 16px glyphs are more common. This is used by CFF1 only.
     const pixels_t defaultWidth = 16, nominalWidth = 8;
     if (version == 1)
@@ -1111,6 +1586,13 @@ fillCFF (Font *font, int version, const NameStrings names)
     #undef cacheCFF32
 }
 
+/**
+    @brief Add a TrueType table to a font.
+
+    @param[in,out] font Pointer to a Font struct to contain the TrueType table.
+    @param[in] format The TrueType "loca" table format, Offset16 or Offset32.
+    @param[in] names List of NameStrings.
+*/
 void
 fillTrueType (Font *font, enum LocaFormat *format,
     uint_fast16_t *maxPoints, uint_fast16_t *maxContours)
@@ -1206,6 +1688,11 @@ fillTrueType (Font *font, enum LocaFormat *format,
     freeBuffer (outline);
 }
 
+/**
+    @brief Create a dummy blank outline in a font table.
+
+    @param[in,out] font Pointer to a Font struct to insert a blank outline.
+*/
 void
 fillBlankOutline (Font *font)
 {
@@ -1226,6 +1713,17 @@ fillBlankOutline (Font *font)
         cacheU16 (loca, countBufferedBytes (glyf) / 2); // offsets[i]
 }
 
+/**
+    @brief Fill OpenType bitmap data and location tables.
+
+    This function fills an Embedded Bitmap Data (EBDT) Table
+    and an Embedded Bitmap Location (EBLC) Table with glyph
+    bitmap information.  These tables enable embedding bitmaps
+    in OpenType fonts.  No Embedded Bitmap Scaling (EBSC) table
+    is used for the bitmap glyphs, only EBDT and EBLC.
+
+    @param[in,out] font Pointer to a Font struct in which to add bitmaps.
+*/
 void
 fillBitmap (Font *font)
 {
@@ -1341,6 +1839,16 @@ fillBitmap (Font *font)
     freeBuffer (offsets);
 }
 
+/**
+    @brief Fill a "head" font table.
+
+    The "head" table contains font header information common to the
+    whole font.
+
+    @param[in,out] font The Font struct to which to add the table.
+    @param[in] locaFormat The "loca" offset index location table.
+    @param[in] xMin The minimum x-coordinate for a glyph.
+*/
 void
 fillHeadTable (Font *font, enum LocaFormat locaFormat, pixels_t xMin)
 {
@@ -1397,6 +1905,15 @@ fillHeadTable (Font *font, enum LocaFormat locaFormat, pixels_t xMin)
     cacheU16 (head, 0); // glyphDataFormat
 }
 
+/**
+    @brief Fill a "hhea" font table.
+
+    The "hhea" table contains horizontal header information,
+    for example left and right side bearings.
+
+    @param[in,out] font The Font struct to which to add the table.
+    @param[in] xMin The minimum x-coordinate for a glyph.
+*/
 void
 fillHheaTable (Font *font, pixels_t xMin)
 {
@@ -1422,6 +1939,17 @@ fillHheaTable (Font *font, pixels_t xMin)
     cacheU16 (hhea, font->glyphCount); // numberOfHMetrics
 }
 
+/**
+    @brief Fill a "maxp" font table.
+
+    The "maxp" table contains maximum profile information,
+    such as the memory required to contain the font.
+
+    @param[in,out] font The Font struct to which to add the table.
+    @param[in] isCFF true if a CFF font is included, false otherwise.
+    @param[in] maxPoints Maximum points in a non-composite glyph.
+    @param[in] maxContours Maximum contours in a non-composite glyph.
+*/
 void
 fillMaxpTable (Font *font, bool isCFF, uint_fast16_t maxPoints,
     uint_fast16_t maxContours)
@@ -1447,6 +1975,13 @@ fillMaxpTable (Font *font, bool isCFF, uint_fast16_t maxPoints,
     cacheU16 (maxp, 0); // maxComponentDepth
 }
 
+/**
+    @brief Fill an "OS/2" font table.
+
+    The "OS/2" table contains OS/2 and Windows font metrics information.
+
+    @param[in,out] font The Font struct to which to add the table.
+*/
 void
 fillOS2Table (Font *font)
 {
@@ -1541,6 +2076,13 @@ fillOS2Table (Font *font)
     cacheU16 (os2, 0xffff); // usUpperOpticalPointSize
 }
 
+/**
+    @brief Fill an "hmtx" font table.
+
+    The "hmtx" table contains horizontal metrics information.
+
+    @param[in,out] font The Font struct to which to add the table.
+*/
 void
 fillHmtxTable (Font *font)
 {
@@ -1556,6 +2098,13 @@ fillHmtxTable (Font *font)
     }
 }
 
+/**
+    @brief Fill a "cmap" font table.
+
+    The "cmap" table contains character to glyph index mapping information.
+
+    @param[in,out] font The Font struct to which to add the table.
+*/
 void
 fillCmapTable (Font *font)
 {
@@ -1658,6 +2207,13 @@ fillCmapTable (Font *font)
     freeBuffer (rangeHeads);
 }
 
+/**
+    @brief Fill a "post" font table.
+
+    The "post" table contains information for PostScript printers.
+
+    @param[in,out] font The Font struct to which to add the table.
+*/
 void
 fillPostTable (Font *font)
 {
@@ -1674,6 +2230,13 @@ fillPostTable (Font *font)
     cacheU32 (post, 0); // maxMemType1
 }
 
+/**
+    @brief Fill a "GPOS" font table.
+
+    The "GPOS" table contains information for glyph positioning.
+
+    @param[in,out] font The Font struct to which to add the table.
+*/
 void
 fillGposTable (Font *font)
 {
@@ -1695,6 +2258,13 @@ fillGposTable (Font *font)
     }
 }
 
+/**
+    @brief Fill a "GSUB" font table.
+
+    The "GSUB" table contains information for glyph substitution.
+
+    @param[in,out] font The Font struct to which to add the table.
+*/
 void
 fillGsubTable (Font *font)
 {
@@ -1733,6 +2303,15 @@ fillGsubTable (Font *font)
     }
 }
 
+/**
+    @brief Cache a string as a big-ending UTF-16 surrogate pair.
+
+    This function encodes a UTF-8 string as a big-endian UTF-16
+    surrogate pair.
+
+    @param[in,out] buf Pointer to a Buffer struct to update.
+    @param[in] str The character array to encode.
+*/
 void
 cacheStringAsUTF16BE (Buffer *buf, const char *str)
 {
@@ -1774,6 +2353,15 @@ cacheStringAsUTF16BE (Buffer *buf, const char *str)
             cacheU16 (buf, codePoint);
     }
 }
+
+/**
+    @brief Fill a "name" font table.
+
+    The "name" table contains name information, for example for Name IDs.
+
+    @param[in,out] font The Font struct to which to add the table.
+    @param[in] names List of NameStrings.
+*/
 void
 fillNameTable (Font *font, NameStrings nameStrings)
 {
@@ -1809,14 +2397,16 @@ fillNameTable (Font *font, NameStrings nameStrings)
     freeBuffer (stringData);
 }
 
-/*
+/**
+    @brief Print program version string on stdout.
+
     Print program version if invoked with the "--version" option,
     and then exit successfully.
 */
 void
 printVersion () {
     printf ("hex2otf (GNU Unifont) %s\n", VERSION);
-    printf ("Copyright © 2022 何志翔 (He Zhixiang)\n");
+    printf ("Copyright \u00A9 2022 \u4F55\u5FD7\u7FD4 (He Zhixiang)\n");
     printf ("License GPLv2+: GNU GPL version 2 or later\n");
     printf ("<https://gnu.org/licenses/gpl.html>\n");
     printf ("This is free software: you are free to change and\n");
@@ -1826,7 +2416,9 @@ printVersion () {
     exit (EXIT_SUCCESS);
 }
 
-/*
+/**
+    @brief Print help message to stdout and then exit.
+
     Print help message if invoked with the "--help" option,
     and then exit successfully.
 */
@@ -1851,6 +2443,13 @@ printHelp () {
     exit (EXIT_SUCCESS);
 }
 
+/**
+   @brief Data structure to hold options for OpenType font output.
+
+   This data structure holds the status of options that can be
+   specified as command line arguments for creating the output
+   OpenType font file.
+*/
 typedef struct Options
 {
     bool truetype, blankOutline, bitmap, gpos, gsub;
@@ -1859,6 +2458,14 @@ typedef struct Options
     NameStrings nameStrings; // indexed directly by Name IDs
 } Options;
 
+/**
+    @brief Match a command line option with its key for enabling.
+
+    @param[in] operand A pointer to the specified operand.
+    @param[in] key Pointer to the option structure.
+    @param[in] delimeter The delimiter to end searching.
+    @return Pointer to the first character of the desired option.
+*/
 const char *
 matchToken (const char *operand, const char *key, char delimiter)
 {
@@ -1870,6 +2477,25 @@ matchToken (const char *operand, const char *key, char delimiter)
     return NULL;
 }
 
+/**
+    @brief Parse command line options.
+
+        Option         Data Type      Description
+        ------         ---------      -----------
+        truetype       bool           Generate TrueType outlines
+        blankOutline   bool           Generate blank outlines
+        bitmap         bool           Generate embedded bitmap
+        gpos           bool           Generate a dummy GPOS table
+        gsub           bool           Generate a dummy GSUB table
+        cff            int            Generate CFF 1 or CFF 2 outlines
+        hex            const char *   Name of Unifont .hex file
+        pos            const char *   Name of Unifont combining data file
+        out            const char *   Name of output font file
+        nameStrings    NameStrings    Array of TrueType font Name IDs
+
+    @param[in] argv Pointer to array of command line options.
+    @return Data structure to hold requested command line options.
+*/
 Options
 parseOptions (char *const argv[const])
 {
@@ -1966,6 +2592,13 @@ parseOptions (char *const argv[const])
     return opt;
 }
 
+/**
+   @brief The main function.
+
+   @param[in] argc The number of command-line arguments.
+   @param[in] argv The array of command-line arguments.
+   @return EXIT_FAILURE upon fatal error, EXIT_SUCCESS otherwise.
+*/
 int
 main (int argc, char *argv[])
 {

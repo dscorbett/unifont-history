@@ -1,10 +1,13 @@
+/**
+   @file unifontpic.h
+
+   @brief unifontpic.h - Header file for unifontpic.c
+
+   @author Paul Hardy, July 2017
+
+   @copyright Copyright (C) 2017 Paul Hardy
+*/
 /*
-   unifontpic.h - header file for unifontpic.c.
-
-   Author: Paul Hardy, July 2017
-
-   Copyright (C) 2017 Paul Hardy
-
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -22,15 +25,17 @@
 */
 
 
-#define MAXSTRING 256  /* Maximum input string allowed */
+#define MAXSTRING 256  ///< Maximum input string allowed.
 
-#define HEADER_STRING "GNU Unifont 15.0.01" /* to be printed as chart title */
+#define HEADER_STRING "GNU Unifont 15.0.02" ///< To be printed as chart title.
 
-/*
-     Define the array of Unifont ASCII glyphs, code points 0 through 127.
-     This allows using unifontpic to print charts of glyphs above Unicode
-     Plane 0.  These were copied from font/plane00/unifont-base.hex, plus
-     U+0020 (ASCII space character).
+/**
+   @brief Array of Unifont ASCII glyphs for chart row & column headings.
+
+   Define the array of Unifont ASCII glyphs, code points 0 through 127.
+   This allows using unifontpic to print charts of glyphs above Unicode
+   Plane 0.  These were copied from font/plane00/unifont-base.hex, plus
+   U+0020 (ASCII space character).
 */
 const char *ascii_hex [128] = {
    "0000:AAAA00018000000180004A51EA505A51C99E0001800000018000000180005555",
@@ -164,16 +169,19 @@ const char *ascii_hex [128] = {
 };
 
 
-/*
-   Array to hold ASCII bitmaps for chart title.  This
-   will be created from the strings in ascii_hex[] above.
+/**
+   @brief Array to hold ASCII bitmaps for chart title.
+
+   This array will be created from the strings in ascii_hex[] above.
 */
 int ascii_bits[128][16];
 
 
-/*
-   hexdigit contains 4x5 pixel arrays of tiny digits for legend.
-   See unihexgen.c for more detailed description in comments.
+/**
+   @brief Array of 4x5 hexadecimal digits for legend.
+
+   hexdigit contains 4x5 pixel arrays of tiny digits for the legend.
+   See unihexgen.c for a more detailed description in the comments.
 */
 char hexdigit[16][5] = {
    {0x6,0x9,0x9,0x9,0x6},  /* 0x0 */

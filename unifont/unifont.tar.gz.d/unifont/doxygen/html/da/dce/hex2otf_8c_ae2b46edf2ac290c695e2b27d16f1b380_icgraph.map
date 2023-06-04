@@ -1,0 +1,5 @@
+<map id="writeBytes" name="writeBytes">
+<area shape="rect" id="node1" title="Write an array of bytes to an output file." alt="" coords="128,31,212,57"/>
+<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a83aece82aa1fe815fc24a12be34a24b1" title="Write an unsigned 16&#45;bit value to an output file." alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node3" href="$da/dce/hex2otf_8c.html#a941153850cde042e39ce40d47d5aac5f" title="Write an unsigned 32&#45;bit value to an output file." alt="" coords="5,56,80,83"/>
+</map>

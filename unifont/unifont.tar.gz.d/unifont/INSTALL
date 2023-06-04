@@ -73,6 +73,14 @@ these files from scratch (with texinfo, texi2pdf, etc. installed), type
 
 The "make clean" command removes intermediate files that texi2pdf creates.
 
+The files in the "doxygen" directory are also pre-generated as part
+of the distribution.  This is for the convenience of systems that
+do not have texlive, doxygen, and graphviz installed.  To rebuild
+these files from scratch, from the top-level directory type
+
+     rm -rf doxygen
+     make doxygen
+
 To install the binaries, man pages, and Unifont, review the
 destination directories in the Makefiles to verify that the files
 will be installed where you want, and then type

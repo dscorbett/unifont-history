@@ -1,20 +1,23 @@
-/*
-   unifont1per.c - read a Unifont .hex file from standard input and
-                   produce one glyph per ".bmp" bitmap file as output.
+/**
+   @file unifont1per.c
 
-                   Each glyph is 16 pixels tall, and can be 8, 16, 24,
-                   or 32 pixels wide.  The width of each output graphic
-                   file is determined automatically by the width of each
-                   Unifont hex representation..
+   @brief unifont1per - Read a Unifont .hex file from standard input and
+          produce one glyph per ".bmp" bitmap file as output
 
-                   Creates files of the form "U+<codepoint>.bmp", 1 per glyph.
+   @author Paul Hardy, unifoundry <at> unifoundry.com, December 2016
+   
+   @copyright Copyright (C) 2016, 2017 Paul Hardy
+
+   Each glyph is 16 pixels tall, and can be 8, 16, 24,
+   or 32 pixels wide.  The width of each output graphic
+   file is determined automatically by the width of each
+   Unifont hex representation.
+
+   This program creates files of the form "U+<codepoint>.bmp", 1 per glyph.
 
    Synopsis: unifont1per < unifont.hex
-
-   Author: Paul Hardy, unifoundry <at> unifoundry.com, December 2016
-   
-   Copyright (C) 2016, 2017 Paul Hardy
-
+*/
+/*
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -50,12 +53,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Maximum size of an input line in a Unifont .hex file */
+/** Maximum size of an input line in a Unifont .hex file - 1. */
 #define MAXSTRING 266
 
-/* Maximum size of a filename of the form "U+%06X.bmp" */
+/** Maximum size of a filename of the form "U+%06X.bmp". */
 #define MAXFILENAME 20
 
+
+/**
+   @brief The main function.
+
+   @return This program exits with status EXIT_SUCCESS.
+*/
 int
 main () {
 

@@ -1,11 +1,18 @@
+/**
+   @file unigenwidth.c
+
+   @brief unigenwidth - IEEE 1003.1-2008 setup to calculate
+                        wchar_t string widths
+
+   @author Paul Hardy.
+
+   @copyright Copyright (C) 2013, 2017 Paul Hardy.
+
+   All glyphs are treated as 16 pixels high, and can be
+   8, 16, 24, or 32 pixels wide (resulting in widths of
+   1, 2, 3, or 4, respectively).
+*/
 /*
-   unigenwidth - IEEE 1003.1-2008 setup to calculate wchar_t string widths.
-                 All glyphs are treated as 16 pixels high, and can be
-                 8, 16, 24, or 32 pixels wide (resulting in widths of
-                 1, 2, 3, or 4, respectively).
-
-   Author: Paul Hardy, 2013, 2017
-
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -36,14 +43,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXSTRING	256
+#define MAXSTRING	256   ///< Maximum input line length - 1.
 
 /* Definitions for Pikto in Plane 15 */
-#define PIKTO_START	0x0F0E70
-#define PIKTO_END	0x0F11EF
+#define PIKTO_START	0x0F0E70   ///< Start of Pikto code point range.
+#define PIKTO_END	0x0F11EF   ///< End of Pikto code point range.
+/** Number of code points in Pikto range. */
 #define PIKTO_SIZE	(PIKTO_END - PIKTO_START + 1)
 
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status EXIT_SUCCESS.
+*/
 int
 main (int argc, char **argv)
 {

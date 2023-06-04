@@ -1,3 +1,134 @@
+2023-05-20  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 15.0.02.
+	* Doxyfile: added for Doxygen annotation of C sources.
+	* INSTALL: updated with doxygen documentation build instructions.
+	* Makefile:
+	  - Added support for Doxygen documentation generation with
+	    the command "make doxygen".
+	  - Uncommented "install" target lines that install text files
+	    in $(PKGDEST).
+	  - "install" target now installs Doxygen files in $(PKGDEST).
+	  - "install" target installs unifont_jp.hex in $(PKGDEST).
+	  - Removed VPATH, as it is not needed.  It could be needed in the
+	    future if any files from the "lib" directory are required.
+	* doxygen:
+	  - Created new output directory for Doxygen documentation.
+	  - doxygen/html/index.html contains browsable web documentation.
+	  - doxygen/unifont-doxy.pdf contains hyperlinked PDF documentation.
+	  - Building the Doxygen output requires the doxygen, graphviz,
+	    and texlive packages.
+	  - The PDF output uses XeLaTeX with the "xeCJK" and "times" packages.
+	* font/Makefile:
+	  - Defined USRDIR variable as "usr" by default and employed this
+	    definition in console font and PCF font installation.  The
+	    definition can be overridden in a calling Makefile or on the
+	    command line to "usr/local" or other desired alternate path.
+	  - Defined PREFIX variable as $(DESTDIR)/$(USRDIR) and used it
+	    in path for font installation locations.
+	  - Created "truetype" and "opentype" targets to allow building
+	    TrueType and OpenType font files separately.
+	  - Moved OpenType font creation from "ttf", "csurttf", and
+	    "upperttf" targets to "otf", "csurotf", and "upperotf"
+	    targets, respectively.
+	  - Added "sampleotf" target to make Plane 0 non-Japanese,
+	    Plane 0 Japanese, and Plane 1 sample book type OpenType fonts
+	    with combining circles.  This is in preparation for eventually
+	    removing TrueType font builds from the default build.
+	  - Changed "OTFDEST" variable from "$(FONTDEST)/truetype/unifont"
+	    to "$(FONTDEST)/opentype/unifont".
+	  - Set "OTFSRC" variable to point to new "font/otfsrc" directory.
+	  - Added "hex-stamp" target so the now separate OpenType and
+	    TrueType font builds do not invoke the "hex" target redundantly.
+	  - Removed VPATH definition, with paths now being more explicit.
+	  - Updated "precompiled" and "install" targets to reflect new
+	    OpenType font files.
+	  - Modified building of unifont_all-$(VERSION).hex to include
+	    Plane 2 and Plane 3 Chinese glyphs, and gzip it.
+	  - Updated "distclean" to remove new "hex-stamp" file with
+	    "\rm -f *-stamp".
+	  - "clean" target no longer removes font files under "font/compiled".
+	  - Updated ".PHONY" target, removing "compiled" and "precompiled";
+	    touch "font/compiled" and "font/precompiled" directories when
+	    updated, to determine modification of their build dependencies.
+	  - Added creation of unifont_jp-$(VERSION).bdf and
+	    unifont_jp-$(VERSION).pcf upon request.
+	  - Added Unicode Plane 2 and Plane 3 support for additional
+	    Chinese ideographs.
+	  - Created subdirectories for Plane 2 and Plane 3 Chinese glyphs.
+	* font/coverage.dat:
+	  - Updated ranges for CSUR/UCSUR scripts Amman-Iar, Streich,
+	    and Xaîni.
+	  - Updated for Plane 3 and above.
+	* font/otfsrc/Makefile: New file in new "font/otfsrc" directory
+	  to build OpenType fonts.
+	* font/plane00/unifont-base.hex:
+	  - Modified U+0123 to look more like the Latvian 'g' with cedilla.
+	  - Modified U+0369, U+1DD4, and U+1DE7 from proposed changes by
+	    Richard Becker.
+	  - Johnnie Weaver modified Czech and Slovak glyphs U+010F,
+	    U+013E, and U+0165.
+	  - Johnnie Weaver adjusted U+26CA TURNED BLACK SHOGI PIECE.
+	  - Adjusted heights of U+3001 and U+3002.
+	  - Modified U+FE35 and U+FE36 to be vertical parentheses instead of
+	    tortoise shell brackets.
+	  - Incorporated Wen Quan Yi double-width glyphs into U+FFxx
+	    with some modifications.
+	  - Moved U+FFFC to plane00-nonprinting.hex and changed its
+	    dotted outline to match the others.
+	* font/plane00/wqy.hex:
+	  - 湖 远星 modified U+9FC4, U+9FC6, U+9FCA, U+9FFA, and U+9FFF.
+	* font/plane00csur/Makefile:
+	  - Updated so individually built component .hex files remain
+	    after distclean.
+	  - No longer create "all" temporary subdirectory.
+	  - No longer have an "all" "phony" target.
+	* font/plane00csur/plane00csur-combining.txt:
+	  - Removed unnecessary entries E05C, E05D, E06D, and E06E.
+	* font/plane00csur/plane00csur.hex:
+	  - Added Thelwik (U+E380..U+E3AF).
+	* font/plane01/Makefile:
+	  - Updated so individually built component .hex files remain
+	    after distclean.
+	  - No longer have an "all" "phony" target.
+	* font/plane00csur/plane00csur-nonprinting.hex: Created empty file
+	  as a placeholder.
+	* font/plane01/plane01-space.hex: Renamed from font/plane01/space.hex.
+	* font/plane01/plane01.hex:
+	  - New skunk glyph (U+1F9A8) contributed by Curtis Mackie.
+	  - Johnnie Weaver modified Cypro-Minoan glyph U+12FDF.
+	* font/plane02/izmg16-plane02.hex
+	  - Inserted preceding '0' so all code points are six digits long.
+	* font/plane02/zh-plane02.hex:
+	  - Created file with ideographs contributed by 湖 远星.
+	* font/plane03/zh-plane03.hex:
+	  - Created file with ideographs contributed by 湖 远星.
+	  - Added biang ideographs with permission of their creator, Ming Fan.
+	* font/plane0E:
+	  - Makefile no longer creates "all" temporary subdirectory.
+	  - Removed Tags from plane0E-nonprinting.hex.
+	  - Added plane0E-unassigned.hex.
+	* font/ttfsrc/Makefile:
+	  - No longer invokes OpenType font builds, only TrueType font
+	    builds.  OpenType fonts are now built in the newly-created
+	    "font/otfsrc" directory.
+	  - Updated "distclean" target to no longer check for "*.otf" files.
+	  - Updated ".PHONY" target.
+	* src:
+	  - Annotated .c and .h files for Doxygen support.
+	  - Added mainpage.dox file for Doxygen support.
+	* src/Makefile:
+	  - Removed PNGPROGS variable, as it was empty.
+	  - Use LOCALBINDIR value for location of C and Perl program binaries.
+	  - Removed VPATH, as it is not needed.  It could be needed in the
+	    future if any files from the "lib" directory are required.
+	* src/hex2otf.c, src/hex2otf.h:
+	  - Extensive Doxygen annotations added.
+	  - Temporary workarounds to the Doxygen LaTeX build handling Chinese:.
+	    o Changed "何志翔 (He Zhixiang)" to "He Zhixiang" in comments.
+	    o Changed UTF-8 characters in --version message to "\uxxxx" form.
+	* src/hexmerge: Extended for use above Plane 0 by Paul Hardy;
+	  bug reported by Curtis Mackie.
+
 2022-09-13  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 15.0.01.
 	* font/Makefile:

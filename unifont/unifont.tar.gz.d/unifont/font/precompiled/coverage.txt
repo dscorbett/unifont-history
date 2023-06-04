@@ -163,13 +163,13 @@ Covered      Range        Script
  100.0%  U+E1D0..U+E1FF   PUA (CSUR/UCSUR): Syai
  100.0%  U+E200..U+E26F   PUA (CSUR/UCSUR): Verdurian
  100.0%  U+E270..U+E29F   PUA (CSUR/UCSUR): aUI
-  68.8%  U+E2A0..U+E2CF   PUA (CSUR/UCSUR): Amman-Iar
- 100.0%  U+E2D0..U+E2DF   PUA (CSUR/UCSUR): Streich
- 100.0%  U+E2E0..U+E2FF   PUA (CSUR/UCSUR): Xaîni
+ 100.0%  U+E2A0..U+E2BF   PUA (CSUR/UCSUR): Amman-Iar
+  37.5%  U+E2C0..U+E2CF   PUA (CSUR/UCSUR): Streich
+ 100.0%  U+E2D0..U+E2FF   PUA (CSUR/UCSUR): Xaîni
  100.0%  U+E300..U+E33F   PUA (CSUR/UCSUR): Mizarian
  100.0%  U+E340..U+E35F   PUA (CSUR/UCSUR): Zírí:Nka
  100.0%  U+E360..U+E37F   PUA (CSUR/UCSUR): Sarkai
-  25.0%  U+E380..U+E3AF   PUA (CSUR/UCSUR): Thelwik
+ 100.0%  U+E380..U+E3AF   PUA (CSUR/UCSUR): Thelwik
  100.0%  U+E3B0..U+E3FF   PUA (CSUR/UCSUR): Olaetyan
   25.0%  U+E400..U+E42F   PUA (CSUR/UCSUR): Nísklôz
    0.0%  U+E430..U+E44F   PUA (CSUR/UCSUR): Kazat ?Akkorou
@@ -431,17 +431,42 @@ Covered      Range        Script
  100.0% U+1FB00..U+1FBFF  Symbols for Legacy Computing
  100.0% U+1FC00..U+1FFFD  Unassigned
    0.0% U+1FFFE..U+1FFFF  Noncharacters
-   0.0% U+20000..U+2A6FF  CJK Unified Ideographs Extension B
-   0.0% U+2A700..U+2B73F  CJK Unified Ideographs Extension C
-   0.0% U+2B740..U+2B81F  CJK Unified Ideographs Extension D
-   0.0% U+2B820..U+2CEAF  CJK Unified Ideographs Extension E
+   0.8% U+20000..U+2A6FF  CJK Unified Ideographs Extension B
+   1.1% U+2A700..U+2B73F  CJK Unified Ideographs Extension C
+   4.0% U+2B740..U+2B81F  CJK Unified Ideographs Extension D
+   2.0% U+2B820..U+2CEAF  CJK Unified Ideographs Extension E
    0.0% U+2CEB0..U+2F7FF  CJK Unified Ideographs Extension F
-   0.0% U+2F800..U+2FF7F  CJK Compatibility Ideographs Supplement
+   0.1% U+2F800..U+2FF7F  CJK Compatibility Ideographs Supplement
    0.0% U+2FF80..U+2FFFD  Unassigned
    0.0% U+2FFFE..U+2FFFF  Noncharacters
+   0.1% U+30000..U+3134F  CJK Unified Ideographs Extension G
+   0.0% U+31350..U+323AF  CJK Unified Ideographs Extension H
+   0.0% U+323B0..U+3FFFD  Unassigned
+   0.0% U+3FFFE..U+3FFFF  Noncharacters
+   0.0% U+40000..U+4FFFD  Unassigned
+   0.0% U+4FFFE..U+4FFFF  Noncharacters
+   0.0% U+50000..U+5FFFD  Unassigned
+   0.0% U+5FFFE..U+5FFFF  Noncharacters
+   0.0% U+60000..U+6FFFD  Unassigned
+   0.0% U+6FFFE..U+6FFFF  Noncharacters
+   0.0% U+70000..U+7FFFD  Unassigned
+   0.0% U+7FFFE..U+7FFFF  Noncharacters
+   0.0% U+80000..U+8FFFD  Unassigned
+   0.0% U+8FFFE..U+8FFFF  Noncharacters
+   0.0% U+90000..U+9FFFD  Unassigned
+   0.0% U+9FFFE..U+9FFFF  Noncharacters
+   0.0% U+A0000..U+AFFFD  Unassigned
+   0.0% U+AFFFE..U+AFFFF  Noncharacters
+   0.0% U+B0000..U+BFFFD  Unassigned
+   0.0% U+BFFFE..U+BFFFF  Noncharacters
+   0.0% U+C0000..U+CFFFD  Unassigned
+   0.0% U+CFFFE..U+CFFFF  Noncharacters
+   0.0% U+D0000..U+DFFFD  Unassigned
+   0.0% U+DFFFE..U+DFFFF  Noncharacters
  100.0% U+E0000..U+E007F  Tags
+   0.0% U+E0080..U+E00FF  Unassigned
  100.0% U+E0100..U+E01EF  Variation Selectors Supplement
-   0.0% U+EFF80..U+EFFFD  Unassigned
+   0.0% U+E01F0..U+EFFFD  Unassigned
    0.0% U+EFFFE..U+EFFFF  Noncharacters
  100.0% U+F0000..U+F0E6F  PUA (CSUR/UCSUR): Kinya Syllables
  100.0% U+F0E70..U+F16AF  PUA (CSUR/UCSUR): Pikto
@@ -450,4 +475,4 @@ Covered      Range        Script
    0.0% U+F1A00..U+F1AFF  Unassigned
  100.0% U+F1B00..U+F1C3F  PUA (CSUR/UCSUR): Shidinn
    0.0% U+F1C40..U+FFFFD  Unassigned
- 15250.0% U+FFFFE..U+FFFFF  Noncharacters
+ 100.0% U+FFFFE..U+FFFFF  Noncharacters

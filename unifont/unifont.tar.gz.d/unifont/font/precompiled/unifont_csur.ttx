@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="15.0"/>
-    <checkSumAdjustment value="0x5c12d960"/>
+    <checkSumAdjustment value="0xc7753f00"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Tue Sep 13 13:49:22 2022"/>
-    <modified value="Tue Sep 13 13:49:22 2022"/>
+    <created value="Sat May 20 21:26:03 2023"/>
+    <modified value="Sat May 20 21:26:12 2023"/>
     <xMin value="-768"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -29,7 +29,7 @@
     <lineGap value="72"/>
     <advanceWidthMax value="1024"/>
     <minLeftSideBearing value="-768"/>
-    <minRightSideBearing value="-448"/>
+    <minRightSideBearing value="0"/>
     <xMaxExtent value="1024"/>
     <caretSlopeRise value="1"/>
     <caretSlopeRun value="0"/>
@@ -39,13 +39,13 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="9049"/>
+    <numberOfHMetrics value="9090"/>
   </hhea>
 
   <maxp>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="0x10000"/>
-    <numGlyphs value="9070"/>
+    <numGlyphs value="9111"/>
     <maxPoints value="192"/>
     <maxContours value="26"/>
     <maxCompositePoints value="0"/>
@@ -65,7 +65,7 @@
     <!-- The fields 'usFirstCharIndex' and 'usLastCharIndex'
          will be recalculated by the compiler -->
     <version value="1"/>
-    <xAvgCharWidth value="693"/>
+    <xAvgCharWidth value="692"/>
     <usWeightClass value="500"/>
     <usWidthClass value="5"/>
     <fsType value="00000000 00000000"/>
@@ -97,7 +97,7 @@
     <ulUnicodeRange3 value="00000100 00000000 00000000 00000000"/>
     <ulUnicodeRange4 value="00000000 00000000 00000000 00000000"/>
     <achVendID value="PfEd"/>
-    <fsSelection value="00000000 01000000"/>
+    <fsSelection value="00000000 00000000"/>
     <usFirstCharIndex value="32"/>
     <usLastCharIndex value="65535"/>
     <sTypoAscender value="896"/>
@@ -120,13 +120,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : Unifont CSUR : 13-9-2022
+      FontForge 2.0 : Unifont CSUR : 20-5-2023
     </namerecord>
     <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 15.0.01
+      Version 15.0.02
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -150,13 +150,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      FontForge 2.0 : Unifont CSUR : 13-9-2022
+      FontForge 2.0 : Unifont CSUR : 20-5-2023
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 15.0.01
+      Version 15.0.02
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -816,6 +816,11 @@
       <psName name="uni00E2B2"/>
       <psName name="uni00E2B3"/>
       <psName name="uni00E2B4"/>
+      <psName name="uni00E2B5"/>
+      <psName name="uni00E2B6"/>
+      <psName name="uni00E2B7"/>
+      <psName name="uni00E2B8"/>
+      <psName name="uni00E2B9"/>
       <psName name="uni00E2BA"/>
       <psName name="uni00E2BB"/>
       <psName name="uni00E2BC"/>
@@ -1004,6 +1009,42 @@
       <psName name="uni00E37D"/>
       <psName name="uni00E37E"/>
       <psName name="uni00E37F"/>
+      <psName name="uni00E380"/>
+      <psName name="uni00E381"/>
+      <psName name="uni00E382"/>
+      <psName name="uni00E383"/>
+      <psName name="uni00E384"/>
+      <psName name="uni00E385"/>
+      <psName name="uni00E386"/>
+      <psName name="uni00E387"/>
+      <psName name="uni00E388"/>
+      <psName name="uni00E389"/>
+      <psName name="uni00E38A"/>
+      <psName name="uni00E38B"/>
+      <psName name="uni00E38C"/>
+      <psName name="uni00E38D"/>
+      <psName name="uni00E38E"/>
+      <psName name="uni00E38F"/>
+      <psName name="uni00E390"/>
+      <psName name="uni00E391"/>
+      <psName name="uni00E392"/>
+      <psName name="uni00E393"/>
+      <psName name="uni00E394"/>
+      <psName name="uni00E395"/>
+      <psName name="uni00E396"/>
+      <psName name="uni00E397"/>
+      <psName name="uni00E398"/>
+      <psName name="uni00E399"/>
+      <psName name="uni00E39A"/>
+      <psName name="uni00E39B"/>
+      <psName name="uni00E39C"/>
+      <psName name="uni00E39D"/>
+      <psName name="uni00E39E"/>
+      <psName name="uni00E39F"/>
+      <psName name="uni00E3A0"/>
+      <psName name="uni00E3A1"/>
+      <psName name="uni00E3A2"/>
+      <psName name="uni00E3A3"/>
       <psName name="uni00E3A4"/>
       <psName name="uni00E3A5"/>
       <psName name="uni00E3A6"/>
@@ -9270,9 +9311,9 @@
   <FFTM>
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
-    <FFTimeStamp value="Tue Jul 31 14:57:19 2012"/>
-    <sourceCreated value="Tue Sep 13 13:49:09 2022"/>
-    <sourceModified value="Tue Sep 13 13:49:21 2022"/>
+    <FFTimeStamp value="Sun Jul 30 19:05:48 2017"/>
+    <sourceCreated value="Sat May 20 21:26:03 2023"/>
+    <sourceModified value="Sat May 20 21:26:12 2023"/>
   </FFTM>
 
   <GDEF>
@@ -9903,6 +9944,11 @@
       <ClassDef glyph="uni00E2B2" class="1"/>
       <ClassDef glyph="uni00E2B3" class="1"/>
       <ClassDef glyph="uni00E2B4" class="1"/>
+      <ClassDef glyph="uni00E2B5" class="1"/>
+      <ClassDef glyph="uni00E2B6" class="1"/>
+      <ClassDef glyph="uni00E2B7" class="1"/>
+      <ClassDef glyph="uni00E2B8" class="1"/>
+      <ClassDef glyph="uni00E2B9" class="1"/>
       <ClassDef glyph="uni00E2BA" class="1"/>
       <ClassDef glyph="uni00E2BB" class="1"/>
       <ClassDef glyph="uni00E2BC" class="1"/>
@@ -10091,6 +10137,42 @@
       <ClassDef glyph="uni00E37D" class="1"/>
       <ClassDef glyph="uni00E37E" class="1"/>
       <ClassDef glyph="uni00E37F" class="1"/>
+      <ClassDef glyph="uni00E380" class="1"/>
+      <ClassDef glyph="uni00E381" class="1"/>
+      <ClassDef glyph="uni00E382" class="1"/>
+      <ClassDef glyph="uni00E383" class="1"/>
+      <ClassDef glyph="uni00E384" class="1"/>
+      <ClassDef glyph="uni00E385" class="1"/>
+      <ClassDef glyph="uni00E386" class="1"/>
+      <ClassDef glyph="uni00E387" class="1"/>
+      <ClassDef glyph="uni00E388" class="1"/>
+      <ClassDef glyph="uni00E389" class="1"/>
+      <ClassDef glyph="uni00E38A" class="1"/>
+      <ClassDef glyph="uni00E38B" class="1"/>
+      <ClassDef glyph="uni00E38C" class="1"/>
+      <ClassDef glyph="uni00E38D" class="1"/>
+      <ClassDef glyph="uni00E38E" class="1"/>
+      <ClassDef glyph="uni00E38F" class="1"/>
+      <ClassDef glyph="uni00E390" class="1"/>
+      <ClassDef glyph="uni00E391" class="1"/>
+      <ClassDef glyph="uni00E392" class="1"/>
+      <ClassDef glyph="uni00E393" class="1"/>
+      <ClassDef glyph="uni00E394" class="1"/>
+      <ClassDef glyph="uni00E395" class="1"/>
+      <ClassDef glyph="uni00E396" class="1"/>
+      <ClassDef glyph="uni00E397" class="1"/>
+      <ClassDef glyph="uni00E398" class="1"/>
+      <ClassDef glyph="uni00E399" class="1"/>
+      <ClassDef glyph="uni00E39A" class="1"/>
+      <ClassDef glyph="uni00E39B" class="1"/>
+      <ClassDef glyph="uni00E39C" class="1"/>
+      <ClassDef glyph="uni00E39D" class="1"/>
+      <ClassDef glyph="uni00E39E" class="1"/>
+      <ClassDef glyph="uni00E39F" class="1"/>
+      <ClassDef glyph="uni00E3A0" class="1"/>
+      <ClassDef glyph="uni00E3A1" class="1"/>
+      <ClassDef glyph="uni00E3A2" class="1"/>
+      <ClassDef glyph="uni00E3A3" class="1"/>
       <ClassDef glyph="uni00E3A4" class="1"/>
       <ClassDef glyph="uni00E3A5" class="1"/>
       <ClassDef glyph="uni00E3A6" class="1"/>

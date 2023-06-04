@@ -1,8 +1,10 @@
 #
-# unifoundry.com utilities for the GNU Unifont
+# unifoundry.com utilities for GNU Unifont
 #
 # Typing "make && make install" will make and
-# install the binary programs and man pages.
+# install the binary programs, man pages, and
+# documentation files.
+#
 # To build only the font from scratch, use
 # "cd font ; make"
 #
@@ -11,19 +13,18 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 15.0.01
+VERSION = 15.0.02
 
 #
 # The settings below will install software, man pages, and documentation
-# in /usr/local.  To install in a different location, modify USRDIR to
-# your liking.
+# in /usr.  To install in a different location, modify USRDIR to your
+# liking.  The commented-out example for USRDIR installs files in
+# subdirectories under /usr/local instead.
 #
 USRDIR = usr
 # USRDIR = usr/local
 PREFIX = $(DESTDIR)/$(USRDIR)
 PKGDEST = $(PREFIX)/share/unifont
-
-VPATH = lib font/plane00 font/ttfsrc
 
 HEXFILES = hangul-syllables.hex plane00-nonprinting.hex pua.hex spaces.hex \
 	   plane00-unassigned.hex unifont-base.hex wqy.hex
@@ -53,7 +54,7 @@ TEXTFILES = ChangeLog INSTALL NEWS README
 
 #
 # Whether to build the font or not (default is not).
-# Set to non-null value to build font.
+# Set to non-null value to build font files.
 #
 BUILDFONT=
 
@@ -63,7 +64,7 @@ BUILDFONT=
 #
 COMPRESS = 1
 
-all: bindir libdir docdir buildfont
+all: bindir libdir docdir doxdir buildfont
 	@echo "Make is done."
 
 #
@@ -73,7 +74,9 @@ dist: distclean
 	(cd .. && tar cf $(PACKAGE)-$(VERSION).tar $(PACKAGE)-$(VERSION) && \
 		gzip $(GZFLAGS) $(PACKAGE)-$(VERSION).tar)
 
-bindir:
+bindir: bin
+
+bin: src/*
 	set -e && $(MAKE) -C src
 
 #
@@ -98,17 +101,19 @@ libdir: lib/wchardata.c
 docdir:
 	set -e && $(MAKE) -C doc
 
+doxdir: doxygen
+
 mandir:
 	set -e && $(MAKE) -C man
 
 precompiled:
-	set -e && $(MAKE) precompiled -C font
+	set -e && $(MAKE) -C font precompiled
 
 #
 # Create lib/wchardata.c.  If you want to also build the object file
 # wchardata.o, uncomment the last line
 #
-lib/wchardata.c: $(HEXWIDTH) $(ZEROWIDTH) bindir
+lib/wchardata.c: $(HEXWIDTH) $(ZEROWIDTH) bin
 	install -m0755 -d lib
 	sort $(HEXWIDTH) > unifonttemp.hex
 	sort $(ZEROWIDTH) > combiningtemp.txt
@@ -116,23 +121,26 @@ lib/wchardata.c: $(HEXWIDTH) $(ZEROWIDTH) bindir
 	\rm -f unifonttemp.hex combiningtemp.txt
 #	(cd lib && $(CC) $(CFLAGS) -c wchardata.c && chmod 644 wchardata.o )
 
-install: bindir libdir docdir
+install: bindir libdir docdir doxdir
 	$(MAKE) -C src install PREFIX=$(PREFIX)
 	$(MAKE) -C man install PREFIX=$(PREFIX) COMPRESS=$(COMPRESS)
 	$(MAKE) -C font install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
 	install -m0755 -d $(PKGDEST)
-	# install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info $(PKGDEST)
-	# for i in $(TEXTFILES) unifont.txt unifont.info ; do \
-	#    gzip $(GZFLAGS) $(PKGDEST)/$$i ; \
-	# done
+	install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info $(PKGDEST)
+	for i in $(TEXTFILES) unifont.txt unifont.info ; do \
+	    gzip $(GZFLAGS) $(PKGDEST)/$$i ; \
+	done
 	install -m0644 -p lib/wchardata.c $(PKGDEST)
 	install -m0644 -p font/plane00/plane00-combining.txt $(PKGDEST)
+	(cd doxygen ; tar cf - .) | (cd $(PKGDEST) ; tar xpf -)
 	# If "make" wasn't run before, font/compiled won't exist.
 	if [ ! -d font/compiled ] ; then \
-	   install -m0644 -p font/precompiled/unifont-$(VERSION).hex   $(PKGDEST)/unifont.hex && \
+	   install -m0644 -p font/precompiled/unifont-$(VERSION).hex    $(PKGDEST)/unifont.hex && \
+	   install -m0644 -p font/precompiled/unifont_jp-$(VERSION).hex $(PKGDEST)/unifont_jp.hex && \
 	   install -m0644 -p font/precompiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
 	else \
-	   install -m0644 -p font/compiled/unifont-$(VERSION).hex   $(PKGDEST)/unifont.hex && \
+	   install -m0644 -p font/compiled/unifont-$(VERSION).hex    $(PKGDEST)/unifont.hex && \
+	   install -m0644 -p font/compiled/unifont_jp-$(VERSION).hex $(PKGDEST)/unifont_jp.hex && \
 	   install -m0644 -p font/compiled/unifont-$(VERSION).bmp $(PKGDEST)/unifont.bmp ; \
 	fi
 	gzip $(GZFLAGS) $(PKGDEST)/unifont.bmp
@@ -143,6 +151,15 @@ clean:
 	$(MAKE) -C man  clean
 	$(MAKE) -C font clean
 	\rm -rf *~
+
+#
+# Generate doxygen/html/* and doxygen/latex/refman.pdf
+#
+doxygen: Doxyfile src/*.c src/*.h src/*.dox
+	doxygen Doxyfile
+	(cd doxygen/latex ; make && mv refman.pdf ../unifont-doxy.pdf && \
+	 make clean)
+	touch $@
 
 #
 # The .DS files are created under Mac OS X
@@ -157,4 +174,5 @@ distclean:
 	\rm -rf *~
 	\rm -rf .DS* ._.DS*
 
-.PHONY: all dist bindir buildfont fontdir libdir docdir mandir precompiled install clean distclean
+.PHONY: all dist buildfont fontdir libdir docdir doxdir mandir \
+	precompiled install clean distclean

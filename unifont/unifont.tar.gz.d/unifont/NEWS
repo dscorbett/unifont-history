@@ -1,3 +1,37 @@
+2023-05-20: Release 15.0.02
+   * N.B.: This is the last planned version to build TrueType
+     font files as part of the standard font build with
+
+           make BUILDFONT=1
+
+     In the future, only OpenType font files will be part of
+     the ordinary font building using the hex2otf program.
+     TrueType fonts will have to be built manually using
+
+           cd font
+           make truetype
+
+   * Minor update to allow for separate building of TrueType
+     and OpenType fonts.  This is in preparation for the future
+     removal of TrueType font files from default font builds,
+     in preference for OpenType font files.  That change is
+     planned for the release of Unifont 15.1.01, which will
+     correspond to the release of the Unicode 15.1.0 standard
+     scheduled for September 2023.
+   * Added Doxygen annotation to C programs and corresponding
+     ".h" header files.  Annotated output is generated in a
+     new "doxygen" subdirectory.  Doxygen output consists of
+     a browsable set of HTML pages and a hyperlinked PDF document.
+   * Updates to make files to fix issues with redundant building
+     under some circumstances.
+   * Added 196 Plane 2 and Plane 3 Chinese ideographs drawn by
+     湖 远星 to the basic Unifont font files for coverage of
+     the General Standard Chinese Characters set.  Also added
+     biang glyphs drawn by Ming Fan.
+   * Fullwidth CJK characters that appeared to be boldface in
+     the range U+FF00..U+FFEF were updated using glyphs from
+     Wen Quan Yi, with some modifications.
+
 2022-09-13: Release 15.0.01
    * Update for Unicode 15.0.0 release.
    * "make install" now installs Unifont OpenType font files in the

@@ -1,9 +1,14 @@
+/**
+   @file unigencircles.c
+
+   @brief unigencircles - Superimpose dashed combining circles
+                          on combining glyphs
+
+   @author Paul Hardy
+
+   @copyright Copyright (C) 2013, Paul Hardy.
+*/
 /*
-   unigencircles.c -- program to superimpose dashed combining circles
-                      on combining glyphs.
-
-   Author: Paul Hardy, 2013.
-
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -54,9 +59,16 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAXSTRING	256
+#define MAXSTRING	256   ///< Maximum input line length - 1.
 
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status EXIT_SUCCESS.
+*/
 int
 main (int argc, char **argv)
 {
@@ -142,8 +154,10 @@ main (int argc, char **argv)
 }
 
 
-/*
-   add_single_circle - superimpose a single-width dashed combining circle.
+/**
+   @brief Superimpose a single-width dashed combining circle on a glyph bitmap.
+
+   @param[in,out] glyphstring A single-width glyph, 8x16 pixels.
 */
 void
 add_single_circle (char *glyphstring)
@@ -198,8 +212,10 @@ add_single_circle (char *glyphstring)
 }
 
 
-/*
-   add_double_circle - superimpose a double-width dashed combining circle.
+/**
+   @brief Superimpose a double-width dashed combining circle on a glyph bitmap.
+
+   @param[in,out] glyphstring A double-width glyph, 16x16 pixels.
 */
 void
 add_double_circle (char *glyphstring, int offset)

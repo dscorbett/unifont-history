@@ -1,16 +1,19 @@
-/*
-   unicoverage - Show the coverage of Unicode Basic Multilingual
-                 Plane scripts for a GNU Unifont hex glyph file
+/**
+   @file unicoverage.c
+
+   @brief unicoverage - Show the coverage of Unicode plane scripts
+                        for a GNU Unifont hex glyph file
+
+   @author Paul Hardy, unifoundry <at> unifoundry.com, 6 January 2008
+   
+   @copyright Copyright (C) 2008, 2013 Paul Hardy
 
    Synopsis: unicoverage [-ifont_file.hex] [-ocoverage_file.txt]
 
    This program requires the file "coverage.dat" to be present
    in the directory from which it is run.
-
-   Author: Paul Hardy, unifoundry <at> unifoundry.com, 6 January 2008
-   
-   Copyright (C) 2008, 2013 Paul Hardy
-
+*/
+/*
    LICENSE:
 
       This program is free software: you can redistribute it and/or modify
@@ -42,6 +45,8 @@
    4 June 2022: [Paul Hardy] Adjusted column spacing for better alignment
    of Unicode Plane 1-15 scripts.  Added "-n" option to print number of
    glyphs in each range instead of percent coverage.
+
+   18 September 2022: [Paul Hardy] in nextrange function, initialize retval.
 */
 
 #include <stdio.h>
@@ -49,9 +54,16 @@
 #include <string.h>
 
 
-#define MAXBUF 256
+#define MAXBUF 256   ///< Maximum input line length - 1
 
 
+/**
+   @brief The main function.
+
+   @param[in] argc The count of command line arguments.
+   @param[in] argv Pointer to array of command line arguments.
+   @return This program exits with status 0.
+*/
 int
 main (int argc, char *argv[])
 {
@@ -159,18 +171,28 @@ main (int argc, char *argv[])
    exit (0);
 }
 
-/*
-   nextrange - get next Unicode range
+/**
+   @brief Get next Unicode range.
+
+   This function reads the next Unicode script range to count its
+   glyph coverage.
+
+   @param[in] coveragefp File pointer to Unicode script range data file.
+   @param[in] cstart Starting code point in current Unicode script range.
+   @param[in] cend Ending code point in current Unicode script range.
+   @param[out] coverstring String containing <cstart>-<cend> substring.
+   @return Length of the last string read, or 0 for end of file.
 */
 int
 nextrange (FILE *coveragefp,
               int *cstart, int *cend,
               char *coverstring)
 {
-
    int i;
    static char inbuf[MAXBUF];
    int retval;         /* the return value */
+
+   retval = 0;
 
    do {
       if (fgets (inbuf, MAXBUF-1, coveragefp) != NULL) {
@@ -193,6 +215,16 @@ nextrange (FILE *coveragefp,
 }
 
 
+/**
+   @brief Print the subtotal for one Unicode script range.
+
+   @param[in] outfp Pointer to output file.
+   @param[in] print_n 1 = print number of glyphs, 0 = print percentage.
+   @param[in] nglyphs Number of glyphs in current range.
+   @param[in] cstart Starting code point for current range.
+   @param[in] cend Ending code point for current range.
+   @param[in] coverstring Character string of "<cstart>-<cend>".
+*/
 void print_subtotal (FILE *outfp, int print_n, int nglyphs,
                      int cstart, int cend, char *coverstring) {
 

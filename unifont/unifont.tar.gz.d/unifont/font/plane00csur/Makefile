@@ -5,27 +5,25 @@
 # these are placed in directory "all/" so they are not included with
 # the main font build, which can read "plane00csur/*.hex" as an alternate.
 #
-all: plane00csur.hex plane00csur-spaces.hex plane00csur-nonprinting.hex \
-	unassigned-ranges.txt
-	if [ ! -d all ]; then \
-		mkdir all; \
-	fi
-	set -e && \
-	   grep "^[0-9A-Fa-f]" unassigned-ranges.txt | \
-	   awk 'NF == 1 {print "../../bin/unihexgen " $$1 " " $$1;} \
-		NF == 2 {print "../../bin/unihexgen " $$1 " " $$2;}' | \
-	   /bin/sh -s > plane00csur-unassigned.hex
+plane00csur-all.hex: plane00csur.hex plane00csur-spaces.hex \
+	             plane00csur-nonprinting.hex plane00csur-unassigned.hex
 	set -e && \
 	   grep "^[0-9A-Fa-f]" noscript-ranges.txt | \
 	   awk 'NF == 1 {print "../../bin/unihexgen " $$1 " " $$1;} \
 		NF == 2 {print "../../bin/unihexgen " $$1 " " $$2;}' | \
 	   /bin/sh -s > noscript.hex
-	sort -u *.hex > all/plane00csur-all.hex
+	sort -u *.hex > plane00csur-all.hex
+
+plane00csur-unassigned.hex: unassigned-ranges.txt
+	set -e && \
+	   grep "^[0-9A-Fa-f]" unassigned-ranges.txt | \
+	   awk 'NF == 1 {print "../../bin/unihexgen " $$1 " " $$1;} \
+		NF == 2 {print "../../bin/unihexgen " $$1 " " $$2;}' | \
+	   /bin/sh -s > plane00csur-unassigned.hex
 
 clean:
-	\rm -f noscript.hex plane00csur-unassigned.hex
 
 distclean: clean
-	\rm -rf all *.log
+	\rm -f plane00csur-all.hex
 
-.PHONY: all clean distclean
+.PHONY: clean distclean
