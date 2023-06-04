@@ -32,7 +32,7 @@ COPYRIGHT = "Copyright © 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al."
 
-VERSION = 15.0.05
+VERSION = 15.0.06
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex

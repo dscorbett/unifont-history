@@ -5,12 +5,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="15.0"/>
-    <checkSumAdjustment value="0xad08e551"/>
+    <checkSumAdjustment value="0xaafee02d"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00001011"/>
     <unitsPerEm value="1024"/>
-    <created value="Sun Jun  4 01:47:25 2023"/>
-    <modified value="Sun Jun  4 01:47:34 2023"/>
+    <created value="Sun Jun  4 20:02:26 2023"/>
+    <modified value="Sun Jun  4 20:02:34 2023"/>
     <xMin value="-960"/>
     <yMin value="-128"/>
     <xMax value="1024"/>
@@ -126,7 +126,7 @@
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 15.0.05
+      Version 15.0.06
     </namerecord>
     <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
       UnifontCSURMedium
@@ -156,7 +156,7 @@
       Unifont CSUR
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 15.0.05
+      Version 15.0.06
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontCSURMedium
@@ -9383,8 +9383,8 @@
     <!-- FontForge's timestamp, font source creation and modification dates -->
     <version value="1"/>
     <FFTimeStamp value="Sat May  2 00:00:00 2020"/>
-    <sourceCreated value="Sun Jun  4 01:47:25 2023"/>
-    <sourceModified value="Sun Jun  4 01:47:34 2023"/>
+    <sourceCreated value="Sun Jun  4 20:02:26 2023"/>
+    <sourceModified value="Sun Jun  4 20:02:34 2023"/>
   </FFTM>
 
   <GDEF>

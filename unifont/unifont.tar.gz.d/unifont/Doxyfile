@@ -1734,7 +1734,7 @@ USE_MATHJAX            = NO
 # The default value is: MathJax_2.
 # This tag requires that the tag USE_MATHJAX is set to YES.
 
-MATHJAX_VERSION = 15.0.05
+MATHJAX_VERSION = 15.0.06
 
 # When MathJax is enabled you can set the default output format to be used for
 # the MathJax output. For more details about the output format see MathJax

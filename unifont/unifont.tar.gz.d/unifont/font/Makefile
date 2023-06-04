@@ -17,7 +17,7 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.0.05
+VERSION = 15.0.06
 
 COPYRIGHT = "Copyright (C) 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \

@@ -1,3 +1,12 @@
+2023-06-04  Paul Hardy <unifoundry@unifoundry.com>
+	* Version 15.0.06
+	* font/plane00/hangul/hanbase-*.bmp: Minseo Lee made adjustments
+	  to some component glyphs used to generate the Hangul Syllables
+	  (U+AC00..U+D7A3) range.
+	* font/plane00/unifont-base.hex: Minseo Lee contributed Hangul glyphs
+	  in the ranges U+3131..U+318E, U+3200..U+321E, and U+3260..U+327F
+	  for consistency with the new Hangul Syllables glyphs.
+
 2023-06-03  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 15.0.05.
 	* Doxyfile:
