@@ -10,9 +10,10 @@
 This manual describes Unifont, a bitmap-based font covering the Unicode
 Basic Multilingual Plane and beyond, along with Unifont's utility programs.
 
-Copyright @copyright{} 2022 Paul Hardy.
+Copyright @copyright{} 2023 Paul Hardy.
 
-@code{hex2otf} section Copyright @copyright{} 2022 He Zhixiang.
+@code{hex2otf} section Copyright @copyright{} 2023 
+@image{he-zhixiang, 35pt, 10pt, He Zhixiang, .png}(He Zhixiang)
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
@@ -253,8 +254,11 @@ Let's look at an example.  Suppose you want to modify the Coptic letters
 in the range U+2C80..U+2CFF (``U+'' is Unicode shorthand).  These
 letters are in the upper half of the block U+2C00..U+2CFF.  The
 Unicode utilities in this package refer to this as ``page'' 2C.
-(``Page'' is not a Unicode term --- it is just a term unique to this
-package to refer to a block of 256 code points/characters).
+``Page'' is not a Unicode term --- it is just a term unique to this
+package to refer to a block of 256 code points/characters.  The
+equivalent Unicode term is ``row''; however, that term could cause
+confusion with a row being 16 code points in a code chart;
+hopefully the term ``page'' is less ambiguous.
 
 The steps to follow will be:
 
@@ -1121,6 +1125,7 @@ Enjoy!
 * hexdraw::
 * hexkinya::
 * hexmerge::
+* johab2syllables::
 * johab2ucs2::
 * unibdf2hex::
 * unibmp2hex::
@@ -1132,13 +1137,16 @@ Enjoy!
 * unifontchojung::
 * unifontksx::
 * unifontpic::
+* unigen-hangul::
 * unigencircles::
 * unigenwidth::
 * unihex2bmp::
 * unihex2png::
 * unihexfill::
 * unihexgen::
+* unihexpose::
 * unihexrotate::
+* unijohab2html::
 * unipagecount::
 * unipng2hex::
 @end menu
@@ -1151,6 +1159,7 @@ Enjoy!
 @include hexdraw.texi
 @include hexkinya.texi
 @include hexmerge.texi
+@include johab2syllables.texi
 @include johab2ucs2.texi
 @include unibdf2hex.texi
 @include unibmp2hex.texi
@@ -1162,13 +1171,16 @@ Enjoy!
 @include unifontchojung.texi
 @include unifontksx.texi
 @include unifontpic.texi
+@include unigen-hangul.texi
 @include unigencircles.texi
 @include unigenwidth.texi
 @include unihex2bmp.texi
 @include unihex2png.texi
 @include unihexfill.texi
 @include unihexgen.texi
+@include unihexpose.texi
 @include unihexrotate.texi
+@include unijohab2html.texi
 @include unipagecount.texi
 @include unipng2hex.texi
 

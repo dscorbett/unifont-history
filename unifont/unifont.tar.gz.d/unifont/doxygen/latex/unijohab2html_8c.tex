@@ -1,0 +1,155 @@
+\hypertarget{unijohab2html_8c}{}\doxysection{src/unijohab2html.c File Reference}
+\label{unijohab2html_8c}\index{src/unijohab2html.c@{src/unijohab2html.c}}
+
+
+Display overalpped Hangul letter combinations in a grid.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hangul.\+h\char`\"{}}\newline
+Include dependency graph for unijohab2html.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{unijohab2html_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{unijohab2html_8c_a0947c0a3d28c188caa4497cce08539c9}\label{unijohab2html_8c_a0947c0a3d28c188caa4497cce08539c9}} 
+\#define {\bfseries MAXFILENAME}~1024
+\item 
+\mbox{\Hypertarget{unijohab2html_8c_a33117bbfbedd06585bc3c4ab55e95b2f}\label{unijohab2html_8c_a33117bbfbedd06585bc3c4ab55e95b2f}} 
+\#define \mbox{\hyperlink{unijohab2html_8c_a33117bbfbedd06585bc3c4ab55e95b2f}{START\+\_\+\+JUNG}}~0
+\begin{DoxyCompactList}\small\item\em Vowel index of first vowel with which to begin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unijohab2html_8c_a8d23feea868a983c8c2b661e1e16972f}\label{unijohab2html_8c_a8d23feea868a983c8c2b661e1e16972f}} 
+\#define \mbox{\hyperlink{unijohab2html_8c_a8d23feea868a983c8c2b661e1e16972f}{RED}}~0x\+CC0000
+\begin{DoxyCompactList}\small\item\em Color code for slightly unsaturated HTML red. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unijohab2html_8c_acfbc006ea433ad708fdee3e82996e721}\label{unijohab2html_8c_acfbc006ea433ad708fdee3e82996e721}} 
+\#define \mbox{\hyperlink{unijohab2html_8c_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~0x00\+CC00
+\begin{DoxyCompactList}\small\item\em Color code for slightly unsaturated HTML green. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unijohab2html_8c_a79d10e672abb49ad63eeaa8aaef57c38}\label{unijohab2html_8c_a79d10e672abb49ad63eeaa8aaef57c38}} 
+\#define \mbox{\hyperlink{unijohab2html_8c_a79d10e672abb49ad63eeaa8aaef57c38}{BLUE}}~0x0000\+CC
+\begin{DoxyCompactList}\small\item\em Color code for slightly unsaturated HTML blue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unijohab2html_8c_a7b3b25cba33b07c303f3060fe41887f6}\label{unijohab2html_8c_a7b3b25cba33b07c303f3060fe41887f6}} 
+\#define \mbox{\hyperlink{unijohab2html_8c_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}~0x000000
+\begin{DoxyCompactList}\small\item\em Color code for HTML black. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unijohab2html_8c_a87b537f5fa5c109d3c05c13d6b18f382}\label{unijohab2html_8c_a87b537f5fa5c109d3c05c13d6b18f382}} 
+\#define \mbox{\hyperlink{unijohab2html_8c_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}}~0x\+FFFFFF
+\begin{DoxyCompactList}\small\item\em Color code for HTML white. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{unijohab2html_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{unijohab2html_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int \mbox{\hyperlink{unijohab2html_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em The main function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{unijohab2html_8c_af0ae5e62b21f6205cc500a75ec788413}{parse\+\_\+args}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, int $\ast$inindex, int $\ast$outindex, int $\ast$modern\+\_\+only)
+\begin{DoxyCompactList}\small\item\em Parse command line arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Display overalpped Hangul letter combinations in a grid. 
+
+This displays overlapped letters that form Unicode Hangul Syllables combinations, as a tool to determine bounding boxes for all combinations. It works with both modern and archaic Hangul letters.
+
+Input is a Unifont .hex file such as the \char`\"{}hangul-\/base.\+hex\char`\"{} file that is part of the Unifont package. Glyphs are all processed as being 16 pixels wide and 16 pixels tall.
+
+Output is an HTML file containing 16 by 16 pixel grids shwoing overlaps in table format, arranged by variation of the initial consonant (choseong).
+
+Initial consonants (choseong) have 6 variations. In general, the first three are for combining with vowels (jungseong) that are vertical, horizontal, or vertical and horizontal, respectively; the second set of three variations are for combinations with a final consonant.
+
+The output HTML file can be viewed in a web browser.
+
+\begin{DoxyAuthor}{Author}
+Paul Hardy
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2023 Paul Hardy 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{unijohab2html_8c_af0ae5e62b21f6205cc500a75ec788413}\label{unijohab2html_8c_af0ae5e62b21f6205cc500a75ec788413}} 
+\index{unijohab2html.c@{unijohab2html.c}!parse\_args@{parse\_args}}
+\index{parse\_args@{parse\_args}!unijohab2html.c@{unijohab2html.c}}
+\doxysubsubsection{\texorpdfstring{parse\_args()}{parse\_args()}}
+{\footnotesize\ttfamily void parse\+\_\+args (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{inindex,  }\item[{int $\ast$}]{outindex,  }\item[{int $\ast$}]{modern\+\_\+only }\end{DoxyParamCaption})}
+
+
+
+Parse command line arguments. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & The argc parameter to the main function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & The argv command line arguments to the main function. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em infile} & The input filename; defaults to NULL. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em outfile} & The output filename; defaults to NULL. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 608 of file unijohab2html.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{609                                    \{}
+\DoxyCodeLine{610    \textcolor{keywordtype}{int} arg\_count;  \textcolor{comment}{/* Current index into argv[]. */}}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612    \textcolor{keywordtype}{int} strncmp (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *s1, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *s2, \textcolor{keywordtype}{size\_t} n);}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614 }
+\DoxyCodeLine{615    arg\_count = 1;}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617    \textcolor{keywordflow}{while} (arg\_count < argc) \{}
+\DoxyCodeLine{618       \textcolor{comment}{/* If input file is specified, open it for read access. */}}
+\DoxyCodeLine{619       \textcolor{keywordflow}{if} (strncmp (argv [arg\_count], \textcolor{stringliteral}{"{}-\/i"{}}, 2) == 0) \{}
+\DoxyCodeLine{620          arg\_count++;}
+\DoxyCodeLine{621          \textcolor{keywordflow}{if} (arg\_count < argc) \{}
+\DoxyCodeLine{622             *inindex = arg\_count;}
+\DoxyCodeLine{623          \}}
+\DoxyCodeLine{624       \}}
+\DoxyCodeLine{625       \textcolor{comment}{/* If only modern Hangul is desired, set modern\_only flag. */}}
+\DoxyCodeLine{626       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp (argv [arg\_count], \textcolor{stringliteral}{"{}-\/m"{}}, 2) == 0 ||}
+\DoxyCodeLine{627                strncmp (argv [arg\_count], \textcolor{stringliteral}{"{}-\/-\/modern"{}}, 8) == 0) \{}
+\DoxyCodeLine{628          *modern\_only = 1;}
+\DoxyCodeLine{629       \}}
+\DoxyCodeLine{630       \textcolor{comment}{/* If output file is specified, open it for write access. */}}
+\DoxyCodeLine{631       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp (argv [arg\_count], \textcolor{stringliteral}{"{}-\/o"{}}, 2) == 0) \{}
+\DoxyCodeLine{632          arg\_count++;}
+\DoxyCodeLine{633          \textcolor{keywordflow}{if} (arg\_count < argc) \{}
+\DoxyCodeLine{634             *outindex = arg\_count;}
+\DoxyCodeLine{635          \}}
+\DoxyCodeLine{636       \}}
+\DoxyCodeLine{637       \textcolor{comment}{/* If help is requested, print help message and exit. */}}
+\DoxyCodeLine{638       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strncmp (argv [arg\_count], \textcolor{stringliteral}{"{}-\/h"{}},     2) == 0 ||}
+\DoxyCodeLine{639                strncmp (argv [arg\_count], \textcolor{stringliteral}{"{}-\/-\/help"{}}, 6) == 0) \{}
+\DoxyCodeLine{640          printf (\textcolor{stringliteral}{"{}\(\backslash\)nunijohab2html [options]\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{641          printf (\textcolor{stringliteral}{"{}     Generates an HTML page of overlapping Hangul letters from an input\(\backslash\)n"{}});}
+\DoxyCodeLine{642          printf (\textcolor{stringliteral}{"{}     Unifont .hex file encoded in Johab 6/3/1 format.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644          printf (\textcolor{stringliteral}{"{}     Option        Parameters   Function\(\backslash\)n"{}});}
+\DoxyCodeLine{645          printf (\textcolor{stringliteral}{"{}     -\/-\/-\/-\/-\/-\/        -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/   -\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{646          printf (\textcolor{stringliteral}{"{}     -\/h, -\/-\/help                 Print this message and exit.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{647          printf (\textcolor{stringliteral}{"{}     -\/i            input\_file   Unifont hangul-\/base.hex formatted input file.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{648          printf (\textcolor{stringliteral}{"{}     -\/o            output\_file  HTML output file showing overlapping letters.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{649          printf (\textcolor{stringliteral}{"{}     -\/m, -\/-\/modern               Only examine modern Hangul letters.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{650          printf (\textcolor{stringliteral}{"{}     Example:\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{651          printf (\textcolor{stringliteral}{"{}          unijohab2html -\/i hangul-\/base.hex -\/o hangul-\/syllables.html\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{652 }
+\DoxyCodeLine{653          exit (EXIT\_SUCCESS);}
+\DoxyCodeLine{654       \}}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656       arg\_count++;}
+\DoxyCodeLine{657    \}}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{659    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{660 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,100 @@
+\hypertarget{unidup_8c}{}\doxysection{src/unidup.c File Reference}
+\label{unidup_8c}\index{src/unidup.c@{src/unidup.c}}
+
+
+unidup -\/ Check for duplicate code points in sorted unifont.\+hex file  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for unidup.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{unidup_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{unidup_8c_ad7871643c05865c80f5d8050aead2b57}\label{unidup_8c_ad7871643c05865c80f5d8050aead2b57}} 
+\#define \mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}~256
+\begin{DoxyCompactList}\small\item\em Maximum input line length -\/ 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{unidup_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em The main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+unidup -\/ Check for duplicate code points in sorted unifont.\+hex file 
+
+\begin{DoxyAuthor}{Author}
+Paul Hardy, unifoundry $<$at$>$ unifoundry.\+com, December 2007
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) 2007, 2008, 2013 Paul Hardy
+\end{DoxyCopyright}
+This program reads a sorted list of glyphs in Unifont .hex format and prints duplicate code points on stderr if any were detected.
+
+Synopsis\+: unidup $<$ unifont\+\_\+file.\+hex \begin{DoxyVerb}      [Hopefully there won't be any output!]
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{unidup_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{unidup_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{unidup.c@{unidup.c}!main@{main}}
+\index{main@{main}!unidup.c@{unidup.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+The main function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & The count of command line arguments. \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & Pointer to array of command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This program exits with status 0. 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file unidup.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51    \textcolor{keywordtype}{int} ix, iy;}
+\DoxyCodeLine{52    \textcolor{keywordtype}{char} inbuf[\mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}];}
+\DoxyCodeLine{53    \textcolor{keywordtype}{char} *infile;   \textcolor{comment}{/* the input file name */}}
+\DoxyCodeLine{54    FILE *infilefp; \textcolor{comment}{/* file pointer to input file */}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56    \textcolor{keywordflow}{if} (argc > 1) \{}
+\DoxyCodeLine{57       infile = argv[1];}
+\DoxyCodeLine{58       \textcolor{keywordflow}{if} ((infilefp = fopen (infile, \textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
+\DoxyCodeLine{59          fprintf (stderr, \textcolor{stringliteral}{"{}\(\backslash\)nERROR: Can't open file \%s\(\backslash\)n\(\backslash\)n"{}}, infile);}
+\DoxyCodeLine{60          exit (EXIT\_FAILURE);}
+\DoxyCodeLine{61       \}}
+\DoxyCodeLine{62    \}}
+\DoxyCodeLine{63    \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{64       infilefp = stdin;}
+\DoxyCodeLine{65    \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67    ix = -\/1;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69    \textcolor{keywordflow}{while} (fgets (inbuf, \mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}-\/1, infilefp) != NULL) \{}
+\DoxyCodeLine{70       sscanf (inbuf, \textcolor{stringliteral}{"{}\%X"{}}, \&iy);}
+\DoxyCodeLine{71       \textcolor{keywordflow}{if} (ix == iy) fprintf (stderr, \textcolor{stringliteral}{"{}Duplicate code point: \%04X\(\backslash\)n"{}}, ix);}
+\DoxyCodeLine{72       \textcolor{keywordflow}{else} ix = iy;}
+\DoxyCodeLine{73    \}}
+\DoxyCodeLine{74    exit (0);}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}

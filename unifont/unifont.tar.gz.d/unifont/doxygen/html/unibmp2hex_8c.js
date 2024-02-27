@@ -1,0 +1,27 @@
+var unibmp2hex_8c =
+[
+    [ "MAXBUF", "unibmp2hex_8c.html#ad7871643c05865c80f5d8050aead2b57", null ],
+    [ "main", "unibmp2hex_8c.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
+    [ "bits_per_pixel", "unibmp2hex_8c.html#ad61ad0d2af12c84996d1edf78ac9ee1c", null ],
+    [ "bmp_header", "unibmp2hex_8c.html#a8b1d9ca32eaf9f66c2a2d2d7761b8526", null ],
+    [ "color_table", "unibmp2hex_8c.html#aa2196ad512cd5cffe3c54f7798f1b286", null ],
+    [ "compression", "unibmp2hex_8c.html#a08ab33a48474b8c74426c82413bde98e", null ],
+    [ "file_size", "unibmp2hex_8c.html#a8bc95708c758a6400d8692f2d0fcbaeb", null ],
+    [ "filetype", "unibmp2hex_8c.html#a302e295f63562b3cde509543f55e8b40", null ],
+    [ "flip", "unibmp2hex_8c.html#af7ab3cd5a9f70af7701580cdf283636c", null ],
+    [ "forcewide", "unibmp2hex_8c.html#a77fe45bfa888a90761ae6dc8627fdd5e", null ],
+    [ "height", "unibmp2hex_8c.html#ad12fc34ce789bce6c8a05d8a17138534", null ],
+    [ "hexdigit", "unibmp2hex_8c.html#a8e50648544568f9274781c2c90acdd78", null ],
+    [ "image_offset", "unibmp2hex_8c.html#a5e717370aa45ce88b5aab4b3ee9a229c", null ],
+    [ "image_size", "unibmp2hex_8c.html#a98c9a8ca94afbc85988b2fc030e50048", null ],
+    [ "important_colors", "unibmp2hex_8c.html#a4f274c9be8642f200b0eab9250f773c2", null ],
+    [ "info_size", "unibmp2hex_8c.html#a9887067178ee219532f0deed18b9830a", null ],
+    [ "ncolors", "unibmp2hex_8c.html#aeac67cf686cea9cb1d69661714767244", null ],
+    [ "nplanes", "unibmp2hex_8c.html#a09feee87e1a744e9fde5ec34236ec2d7", null ],
+    [ "planeset", "unibmp2hex_8c.html#a23c536e061c3387fee66c7f6250f2b58", null ],
+    [ "unidigit", "unibmp2hex_8c.html#a4000465b001e714b0bfa857e4956a76c", null ],
+    [ "uniplane", "unibmp2hex_8c.html#a6ab9015718d2f37f1420e7a0b53713ec", null ],
+    [ "width", "unibmp2hex_8c.html#a2474a5474cbff19523a51eb1de01cda4", null ],
+    [ "x_ppm", "unibmp2hex_8c.html#a21e28a58c23e42d93b09ca10d433f218", null ],
+    [ "y_ppm", "unibmp2hex_8c.html#a12ee22c87bcca357c98490a4419e39f1", null ]
+];

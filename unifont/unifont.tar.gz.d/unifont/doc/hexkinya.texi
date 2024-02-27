@@ -74,6 +74,8 @@ None.
 @b{hexdraw}@r{(1),}
 @comment TROFF INPUT: .BR hexmerge (1),
 @b{hexmerge}@r{(1),}
+@comment TROFF INPUT: .BR johab2syllables (1),
+@b{johab2syllables}@r{(1),}
 @comment TROFF INPUT: .BR johab2ucs2 (1),
 @b{johab2ucs2}@r{(1),}
 @comment TROFF INPUT: .BR unibdf2hex (1),
@@ -98,6 +100,8 @@ None.
 @b{unifontksx}@r{(1),}
 @comment TROFF INPUT: .BR unifontpic (1),
 @b{unifontpic}@r{(1),}
+@comment TROFF INPUT: .BR unigen-hangul (1),
+@b{unigen-hangul}@r{(1),}
 @comment TROFF INPUT: .BR unigencircles (1),
 @b{unigencircles}@r{(1),}
 @comment TROFF INPUT: .BR unigenwidth (1),
@@ -110,8 +114,12 @@ None.
 @b{unihexfill}@r{(1),}
 @comment TROFF INPUT: .BR unihexgen (1),
 @b{unihexgen}@r{(1),}
+@comment TROFF INPUT: .BR unihexpose (1),
+@b{unihexpose}@r{(1),}
 @comment TROFF INPUT: .BR unihexrotate (1),
 @b{unihexrotate}@r{(1),}
+@comment TROFF INPUT: .BR unijohab2html (1),
+@b{unijohab2html}@r{(1),}
 @comment TROFF INPUT: .BR unipagecount (1),
 @b{unipagecount}@r{(1),}
 @comment TROFF INPUT: .BR unipng2hex (1)

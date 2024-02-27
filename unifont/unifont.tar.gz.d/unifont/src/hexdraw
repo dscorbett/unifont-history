@@ -1,4 +1,4 @@
-#!/usr/bin/perl -p
+#!/usr/bin/env perl
 #
 # Copyright (C) 1998, 2013 Roman Czyborra
 #
@@ -29,7 +29,7 @@ sub unpack {
 	$_;
 };
 
-sub pack { 
+sub pack {
 	local ($_) = @_; 
 	y/-#/01/;
 	$_= unpack ("H*", pack ("B*", $_));
@@ -41,18 +41,27 @@ $result = GetOptions (
 	"height|h=i" => \$charheight
 );
 
+
 if (not $charheight) {
-	$charheight = 16;
-} elsif (!($charheight == 16 || $charheight == 24 || $charheight == 32)) {
-	die ("Invalid height\n");
+   $charheight = 16;
+} elsif (!($charheight == 16 || $charheight == 24 ||
+           $charheight == 32 || $charheight == 64)) {
+   die ("Invalid height\n");
 }
 
-s/([0-9A-F]{256})/&unpack($1)/ie ||
-s/([0-9A-F]{192})/&unpack($1)/ie ||
-s/([0-9A-F]{144})/&unpack($1)/ie ||
-s/([0-9A-F]{128})/&unpack($1)/ie ||
-s/([0-9A-F]{96})/&unpack($1)/ie ||
-s/([0-9A-F]{64})/&unpack($1)/ie ||
-s/([0-9A-F]{48})/&unpack($1)/ie ||
-s/([0-9A-F]{32})/&unpack($1)/ie ||
-s/\t([-#]+)\n/&pack($1)/e;
+# Handle dimensions of up to 64 tall by 128 wide.
+while (<>) {
+   s/([0-9A-F]{2048})/&unpack($1)/ie ||
+   s/([0-9A-F]{1024})/&unpack($1)/ie ||
+   s/([0-9A-F]{512})/&unpack($1)/ie ||
+   s/([0-9A-F]{256})/&unpack($1)/ie ||
+   s/([0-9A-F]{192})/&unpack($1)/ie ||
+   s/([0-9A-F]{144})/&unpack($1)/ie ||
+   s/([0-9A-F]{128})/&unpack($1)/ie ||
+   s/([0-9A-F]{96})/&unpack($1)/ie ||
+   s/([0-9A-F]{64})/&unpack($1)/ie ||
+   s/([0-9A-F]{48})/&unpack($1)/ie ||
+   s/([0-9A-F]{32})/&unpack($1)/ie ||
+   s/\t([-#]+)\n/&pack($1)/e;
+   print;
+}

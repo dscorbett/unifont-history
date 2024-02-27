@@ -1,0 +1,172 @@
+\hypertarget{unigen-hangul_8c}{}\doxysection{src/unigen-\/hangul.c File Reference}
+\label{unigen-hangul_8c}\index{src/unigen-\/hangul.c@{src/unigen-\/hangul.c}}
+
+
+Generate arbitrary hangul syllables.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hangul.\+h\char`\"{}}\newline
+Include dependency graph for unigen-\/hangul.c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{unigen-hangul_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPARAMS}{PARAMS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{unigen-hangul_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Program entry point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unigen-hangul_8c_af21f77b695eb80e4d88265be6647978e}\label{unigen-hangul_8c_af21f77b695eb80e4d88265be6647978e}} 
+void \mbox{\hyperlink{unigen-hangul_8c_af21f77b695eb80e4d88265be6647978e}{parse\+\_\+args}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, struct \mbox{\hyperlink{structPARAMS}{PARAMS}} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Parse command line arguments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unigen-hangul_8c_a97cb9bdd18abd681712b192f5729ad56}\label{unigen-hangul_8c_a97cb9bdd18abd681712b192f5729ad56}} 
+void \mbox{\hyperlink{unigen-hangul_8c_a97cb9bdd18abd681712b192f5729ad56}{get\+\_\+hex\+\_\+range}} (char $\ast$instring, unsigned $\ast$start, unsigned $\ast$end)
+\begin{DoxyCompactList}\small\item\em Scan a hexadecimal range from a character string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generate arbitrary hangul syllables. 
+
+Input is a Unifont .hex file such as the \char`\"{}hangul-\/base.\+hex\char`\"{} file that is included in the Unifont package.
+
+The default program parameters will generate the Unicode Hangul Syllables range of U+\+AC00..U+\+D7\+A3. The syllables will appear in this order\+: \begin{DoxyVerb} For each modern choseong {
+    For each modern jungseong {
+       Output syllable of choseong and jungseong
+       For each modern jongseong {
+          Output syllable of choseong + jungseong + jongseong
+       }
+    }
+ }
+\end{DoxyVerb}
+ By starting the jongseong code point at one before the first valid jongseong, the first inner loop iteration will add a blank glyph for the jongseong portion of the syllable, so only the current choseong and jungseong will be output first.
+
+\begin{DoxyAuthor}{Author}
+Paul Hardy
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2023 Paul Hardy 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{unigen-hangul_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{unigen-hangul_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{unigen-\/hangul.c@{unigen-\/hangul.c}!main@{main}}
+\index{main@{main}!unigen-\/hangul.c@{unigen-\/hangul.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Program entry point. 
+
+Default parameters for Hangul syllable generation.
+
+Definition at line 69 of file unigen-\/hangul.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69                               \{}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71    \textcolor{keywordtype}{int} i;  \textcolor{comment}{/* loop variable */}}
+\DoxyCodeLine{72    \textcolor{keywordtype}{unsigned} codept;}
+\DoxyCodeLine{73    \textcolor{keywordtype}{unsigned} max\_codept;}
+\DoxyCodeLine{74    \textcolor{keywordtype}{unsigned} glyph[\mbox{\hyperlink{hex2otf_8c_a1a1d1da8a5f6da54d749399b173c9bfc}{MAX\_GLYPHS}}][16];}
+\DoxyCodeLine{75    \textcolor{keywordtype}{unsigned} tmp\_glyph [16];  \textcolor{comment}{/* To build one combined glyph at a time. */}}
+\DoxyCodeLine{76    \textcolor{keywordtype}{int} cho, jung, jong;      \textcolor{comment}{/* The 3 components in a Hangul syllable. */}}
+\DoxyCodeLine{77 \textcolor{comment}{}}
+\DoxyCodeLine{78 \textcolor{comment}{   /// Default parameters for Hangul syllable generation.}}
+\DoxyCodeLine{79 \textcolor{comment}{}   \textcolor{keyword}{struct }\mbox{\hyperlink{structPARAMS}{PARAMS}} params = \{ 0xAC00,  \textcolor{comment}{/* Starting output Unicode code point */}}
+\DoxyCodeLine{80                             0x1100,  \textcolor{comment}{/* First modern choseong              */}}
+\DoxyCodeLine{81                             0x1112,  \textcolor{comment}{/* Last modern choseong               */}}
+\DoxyCodeLine{82                             0x1161,  \textcolor{comment}{/* First modern jungseong             */}}
+\DoxyCodeLine{83                             0x1175,  \textcolor{comment}{/* Last modern jungseong              */}}
+\DoxyCodeLine{84                             0x11A7,  \textcolor{comment}{/* One before first modern jongseong  */}}
+\DoxyCodeLine{85                             0x11C2,  \textcolor{comment}{/* Last modern jongseong              */}}
+\DoxyCodeLine{86                             stdin,   \textcolor{comment}{/* Default input file pointer         */}}
+\DoxyCodeLine{87                             stdout   \textcolor{comment}{/* Default output file pointer        */}}
+\DoxyCodeLine{88                           \};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90    \textcolor{keywordtype}{void} \mbox{\hyperlink{unigen-hangul_8c_af21f77b695eb80e4d88265be6647978e}{parse\_args}} (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[], \textcolor{keyword}{struct} \mbox{\hyperlink{structPARAMS}{PARAMS}} *params);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92    \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{hangul_8h_afd372e1a400e28d1b61410187f038eec}{hangul\_read\_base16}} (FILE *infp, \textcolor{keywordtype}{unsigned} glyph[][16]);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94    \textcolor{keywordtype}{void} \mbox{\hyperlink{hangul_8h_a056fdfdb02eeccd48026c05ccb200435}{print\_glyph\_hex}} (FILE *fp, \textcolor{keywordtype}{unsigned} codept, \textcolor{keywordtype}{unsigned} *this\_glyph);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96    \textcolor{keywordtype}{void} \mbox{\hyperlink{hangul_8h_a07b8c0163dd9e9b6f2560f09e0f3e570}{combined\_jamo}} (\textcolor{keywordtype}{unsigned} glyph [\mbox{\hyperlink{hex2otf_8c_a1a1d1da8a5f6da54d749399b173c9bfc}{MAX\_GLYPHS}}][16],}
+\DoxyCodeLine{97                        \textcolor{keywordtype}{unsigned} cho, \textcolor{keywordtype}{unsigned} jung, \textcolor{keywordtype}{unsigned} jong,}
+\DoxyCodeLine{98                        \textcolor{keywordtype}{unsigned} *combined\_glyph);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101    \textcolor{keywordflow}{if} (argc > 1) \{}
+\DoxyCodeLine{102       \mbox{\hyperlink{unigen-hangul_8c_af21f77b695eb80e4d88265be6647978e}{parse\_args}} (argc, argv, \&params);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifdef DEBUG}}
+\DoxyCodeLine{105       fprintf (stderr,}
+\DoxyCodeLine{106                \textcolor{stringliteral}{"{}Range: (U+\%04X, U+\%04X, U+\%04X) to (U+\%04X, U+\%04X, U+\%04X)\(\backslash\)n"{}},}
+\DoxyCodeLine{107                params.cho\_start, params.jung\_start, params.jong\_start,}
+\DoxyCodeLine{108                params.cho\_end,   params.jung\_end,   params.jong\_end);}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110    \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112    \textcolor{comment}{/*}}
+\DoxyCodeLine{113 \textcolor{comment}{      Initialize glyph array to all zeroes.}}
+\DoxyCodeLine{114 \textcolor{comment}{   */}}
+\DoxyCodeLine{115    \textcolor{keywordflow}{for} (codept = 0; codept < \mbox{\hyperlink{hex2otf_8c_a1a1d1da8a5f6da54d749399b173c9bfc}{MAX\_GLYPHS}}; codept++) \{}
+\DoxyCodeLine{116       \textcolor{keywordflow}{for} (i = 0; i < 16; i++) glyph[codept][i] = 0x0000;}
+\DoxyCodeLine{117    \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119    \textcolor{comment}{/*}}
+\DoxyCodeLine{120 \textcolor{comment}{      Read Hangul base glyph file.}}
+\DoxyCodeLine{121 \textcolor{comment}{   */}}
+\DoxyCodeLine{122    max\_codept = \mbox{\hyperlink{hangul_8h_afd372e1a400e28d1b61410187f038eec}{hangul\_read\_base16}} (params.infp, glyph);}
+\DoxyCodeLine{123    \textcolor{keywordflow}{if} (max\_codept > 0x8FF) \{}
+\DoxyCodeLine{124       fprintf (stderr, \textcolor{stringliteral}{"{}\(\backslash\)nWARNING: Hangul glyph range exceeds PUA space.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{125    \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127    codept = params.starting\_codept;  \textcolor{comment}{/* First code point to output */}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129    \textcolor{keywordflow}{for} (cho = params.cho\_start; cho <= params.cho\_end; cho++) \{}
+\DoxyCodeLine{130       \textcolor{keywordflow}{for} (jung = params.jung\_start; jung <= params.jung\_end; jung++) \{}
+\DoxyCodeLine{131          \textcolor{keywordflow}{for} (jong = params.jong\_start; jong <= params.jong\_end; jong++) \{}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#ifdef DEBUG}}
+\DoxyCodeLine{134             fprintf (params.outfp,}
+\DoxyCodeLine{135                      \textcolor{stringliteral}{"{}(U+\%04X, U+\%04X, U+\%04X)\(\backslash\)n"{}},}
+\DoxyCodeLine{136                      cho, jung, jong);}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{138             \mbox{\hyperlink{hangul_8h_a07b8c0163dd9e9b6f2560f09e0f3e570}{combined\_jamo}} (glyph, cho, jung, jong, tmp\_glyph);}
+\DoxyCodeLine{139             \mbox{\hyperlink{hangul_8h_a056fdfdb02eeccd48026c05ccb200435}{print\_glyph\_hex}} (params.outfp, codept, tmp\_glyph);}
+\DoxyCodeLine{140             codept++;}
+\DoxyCodeLine{141             \textcolor{keywordflow}{if} (jong == \mbox{\hyperlink{hangul_8h_a15a192336db645af3e42a330bc5758c8}{JONG\_UNICODE\_END}})}
+\DoxyCodeLine{142                jong = \mbox{\hyperlink{hangul_8h_abc5d018ac60a7dff7dd90ed98a738089}{JONG\_EXTB\_UNICODE\_START}} -\/ 1; \textcolor{comment}{/* Start Extended-\/B range */}}
+\DoxyCodeLine{143          \}}
+\DoxyCodeLine{144          \textcolor{keywordflow}{if} (jung == \mbox{\hyperlink{hangul_8h_ac5e9b3d850d9664e702e8cd330cbfa4b}{JUNG\_UNICODE\_END}})}
+\DoxyCodeLine{145             jung = \mbox{\hyperlink{hangul_8h_a204baf063de1c6418bcf31a3834fe16a}{JUNG\_EXTB\_UNICODE\_START}} -\/ 1;  \textcolor{comment}{/* Start Extended-\/B range */}}
+\DoxyCodeLine{146       \}}
+\DoxyCodeLine{147       \textcolor{keywordflow}{if} (cho == \mbox{\hyperlink{hangul_8h_a616c08a55df29fe0956c66c15705bc5f}{CHO\_UNICODE\_END}})}
+\DoxyCodeLine{148          cho = \mbox{\hyperlink{hangul_8h_a4153618c22f94f11eeb75834a5c0729d}{CHO\_EXTA\_UNICODE\_START}} -\/ 1;  \textcolor{comment}{/* Start Extended-\/A range */}}
+\DoxyCodeLine{149    \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151    \textcolor{keywordflow}{if} (params.infp  != stdin)  fclose (params.infp);}
+\DoxyCodeLine{152    \textcolor{keywordflow}{if} (params.outfp != stdout) fclose (params.outfp);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154    exit (EXIT\_SUCCESS);}
+\DoxyCodeLine{155 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{unigen-hangul_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

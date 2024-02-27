@@ -8,6 +8,7 @@
 * hexdraw NAME::
 * hexdraw SYNOPSIS::
 * hexdraw DESCRIPTION::
+* hexdraw OPTIONS::
 * hexdraw FILES::
 * hexdraw SEE ALSO::
 * hexdraw AUTHOR::
@@ -30,10 +31,11 @@ hexdraw @minus{} Convert a GNU Unifont .hex file to and from an ASCII text file
 @subsection hexdraw SYNOPSIS
 @c DEBUG: print_menu("hexdraw SYNOPSIS")
 
-@b{hexdraw }< @i{input-font.hex }> @i{output-font.txt}
+@b{hexdraw }[@minus{}@minus{}height @i{height}] < @i{input-font.hex }> @i{output-font.txt}
 @comment TROFF INPUT: .br
 @comment .br
-@b{hexdraw }< @i{input-font.txt }> @i{output-font.hex}
+@*
+@b{hexdraw }[@minus{}@minus{}height @i{height}] < @i{input-font.txt }> @i{output-font.hex}
 @comment TROFF INPUT: .SH DESCRIPTION
 
 @node hexdraw DESCRIPTION
@@ -48,6 +50,33 @@ output file can be edited with any text editor, then converted
 back into a .hex file.
 Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 8, 16, 24, or 32 pixels wide.
+@comment TROFF INPUT: .SH OPTIONS
+
+@node hexdraw OPTIONS
+@subsection hexdraw OPTIONS
+@c DEBUG: print_menu("hexdraw OPTIONS")
+
+@comment TROFF INPUT: .RS
+
+@c ---------------------------------------------------------------------
+@quotation
+@comment TROFF INPUT: .TP 10
+
+@c ---------------------------------------------------------------------
+@table @code
+@item @minus{}@minus{}height
+By default, hexdraw expects glyphs to be 16 rows high.  Alternatively,
+a different height of 24, 32, or 64 can be specified, for glyphs that
+are up to 128 columns wide by 64 rows high.
+@comment TROFF INPUT: .RE
+
+@end table
+
+@c ---------------------------------------------------------------------
+
+@end quotation
+
+@c ---------------------------------------------------------------------
 @comment TROFF INPUT: .SH FILES
 
 @node hexdraw FILES
@@ -75,6 +104,8 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 @b{hexkinya}@r{(1),}
 @comment TROFF INPUT: .BR hexmerge (1),
 @b{hexmerge}@r{(1),}
+@comment TROFF INPUT: .BR johab2syllables (1),
+@b{johab2syllables}@r{(1),}
 @comment TROFF INPUT: .BR johab2ucs2 (1),
 @b{johab2ucs2}@r{(1),}
 @comment TROFF INPUT: .BR unibdf2hex (1),
@@ -89,6 +120,8 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 @b{unidup}@r{(1),}
 @comment TROFF INPUT: .BR unifont (5),
 @b{unifont}@r{(5),}
+@comment TROFF INPUT: .BR unifont-johab631 (5),
+@b{unifont-johab631}@r{(5),}
 @comment TROFF INPUT: .BR unifont-viewer (1),
 @b{unifont-viewer}@r{(1),}
 @comment TROFF INPUT: .BR unifont1per (1),
@@ -99,6 +132,8 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 @b{unifontksx}@r{(1),}
 @comment TROFF INPUT: .BR unifontpic (1),
 @b{unifontpic}@r{(1),}
+@comment TROFF INPUT: .BR unigen-hangul (1),
+@b{unigen-hangul}@r{(1),}
 @comment TROFF INPUT: .BR unigencircles (1),
 @b{unigencircles}@r{(1),}
 @comment TROFF INPUT: .BR unigenwidth (1),
@@ -111,8 +146,12 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 @b{unihexfill}@r{(1),}
 @comment TROFF INPUT: .BR unihexgen (1),
 @b{unihexgen}@r{(1),}
+@comment TROFF INPUT: .BR unihexpose (1),
+@b{unihexpose}@r{(1),}
 @comment TROFF INPUT: .BR unihexrotate (1),
 @b{unihexrotate}@r{(1),}
+@comment TROFF INPUT: .BR unijohab2html (1),
+@b{unijohab2html}@r{(1),}
 @comment TROFF INPUT: .BR unipagecount (1),
 @b{unipagecount}@r{(1),}
 @comment TROFF INPUT: .BR unipng2hex (1)

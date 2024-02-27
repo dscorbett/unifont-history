@@ -24,10 +24,12 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef _UNIFONTPIC_H_
+#define _UNIFONTPIC_H_
 
 #define MAXSTRING 256  ///< Maximum input string allowed.
 
-#define HEADER_STRING "GNU Unifont 15.0.06" ///< To be printed as chart title.
+#define HEADER_STRING "GNU Unifont 15.1.01" ///< To be printed as chart title.
 
 /**
    @brief Array of Unifont ASCII glyphs for chart row & column headings.
@@ -202,3 +204,4 @@ char hexdigit[16][5] = {
    {0xF,0x8,0xE,0x8,0x8}   /* 0xF */
 };
 
+#endif

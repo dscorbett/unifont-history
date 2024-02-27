@@ -1,0 +1,6 @@
+<map id="cacheCFFOperand" name="cacheCFFOperand">
+<area shape="rect" id="node1" title="Cache charstring number encoding in a CFF buffer." alt="" coords="5,56,137,83"/>
+<area shape="rect" id="node2" href="$hex2otf_8c.html#a07b29528c561e5852a228c98391225f7" title="Append two unsigned bytes to the end of a byte array." alt="" coords="185,5,267,32"/>
+<area shape="rect" id="node3" href="$hex2otf_8c.html#a051a88b0ac4eb063945b84e2242408ea" title="Append four unsigned bytes to the end of a byte array." alt="" coords="185,56,267,83"/>
+<area shape="rect" id="node4" href="$hex2otf_8c.html#a84d7310553d31f4ec587dc001f472834" title="Append one unsigned byte to the end of a byte array." alt="" coords="189,107,263,133"/>
+</map>

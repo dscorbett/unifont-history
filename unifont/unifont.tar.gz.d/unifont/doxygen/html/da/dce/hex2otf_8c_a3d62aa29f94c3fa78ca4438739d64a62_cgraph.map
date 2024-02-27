@@ -1,7 +1,0 @@
-<map id="fillCFF" name="fillCFF">
-<area shape="rect" id="node1" title="Add a CFF table to a font." alt="" coords="5,56,68,83"/>
-<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a1fab24bb2d2b38b68a38ec871afc3f9c" title="Add a TrueType or OpenType table to the font." alt="" coords="149,5,229,32"/>
-<area shape="rect" id="node3" href="$da/dce/hex2otf_8c.html#aefca579e9f2fec4fa23f9907e9633548" title="Create a new buffer." alt="" coords="311,81,399,108"/>
-<area shape="rect" id="node5" href="$da/dce/hex2otf_8c.html#aa47cc913bb5b8dd3b3665ee5a587d6f7" title="Prepare a font name string index." alt="" coords="116,107,263,133"/>
-<area shape="rect" id="node4" href="$da/dce/hex2otf_8c.html#a2f5976201b1e630a94045f04a0348572" title="Print an error message on stderr, then exit." alt="" coords="447,81,489,108"/>
-</map>

@@ -2,9 +2,9 @@
 .SH NAME
 hexdraw \- Convert a GNU Unifont .hex file to and from an ASCII text file
 .SH SYNOPSIS
-\fBhexdraw \fP< \fIinput-font.hex \fP> \fIoutput-font.txt\fP
+\fBhexdraw \fP[\-\-height \fIheight\fP] < \fIinput-font.hex \fP> \fIoutput-font.txt\fP
 .br
-\fBhexdraw \fP< \fIinput-font.txt \fP> \fIoutput-font.hex\fP
+\fBhexdraw \fP[\-\-height \fIheight\fP] < \fIinput-font.txt \fP> \fIoutput-font.hex\fP
 .SH DESCRIPTION
 .B hexdraw
 reads a sorted GNU Unifont .hex file from STDIN and writes a two
@@ -13,6 +13,14 @@ output file can be edited with any text editor, then converted
 back into a .hex file.
 Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 8, 16, 24, or 32 pixels wide.
+.SH OPTIONS
+.RS
+.TP 10
+\-\-height
+By default, hexdraw expects glyphs to be 16 rows high.  Alternatively,
+a different height of 24, 32, or 64 can be specified, for glyphs that
+are up to 128 columns wide by 64 rows high.
+.RE
 .SH FILES
 *.hex GNU Unifont font files
 .SH SEE ALSO
@@ -23,6 +31,7 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 .BR hexbraille (1),
 .BR hexkinya (1),
 .BR hexmerge (1),
+.BR johab2syllables (1),
 .BR johab2ucs2 (1),
 .BR unibdf2hex (1),
 .BR unibmp2hex (1),
@@ -30,18 +39,22 @@ Unifont ASCII hexadecimal glyphs are 16 pixels high and can be
 .BR unicoverage (1),
 .BR unidup (1),
 .BR unifont (5),
+.BR unifont-johab631 (5),
 .BR unifont-viewer (1),
 .BR unifont1per (1),
 .BR unifontchojung (1),
 .BR unifontksx (1),
 .BR unifontpic (1),
+.BR unigen-hangul (1),
 .BR unigencircles (1),
 .BR unigenwidth (1),
 .BR unihex2bmp (1),
 .BR unihex2png (1),
 .BR unihexfill (1),
 .BR unihexgen (1),
+.BR unihexpose (1),
 .BR unihexrotate (1),
+.BR unijohab2html (1),
 .BR unipagecount (1),
 .BR unipng2hex (1)
 .SH AUTHOR

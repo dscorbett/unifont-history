@@ -30,9 +30,9 @@ TTF_LANG = 0x409
 
 COPYRIGHT = "Copyright © 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al."
+Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al."
 
-VERSION = 15.0.06
+VERSION = 15.1.01
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex
@@ -125,18 +125,18 @@ sbit: $(FONTFILE).bdf
 	    Generate($$2, "ttf"); \
 	    Close()' \
 	   $(FONTFILE).bdf $(FONTFILE).ttf
-	\rm -f $(FONTFILE).bdf
+	rm -f $(FONTFILE).bdf
 
 #
 # Delete files copied into this directory to build TTF fonts.
 #
 clean:
-	\rm -f *.hex *.txt
+	rm -f *.hex *.txt
 
 #
 # Delete files created within this directory while building TTF fonts.
 #
 distclean: clean
-	\rm -f *.sfd *.ttf
+	rm -f *.sfd *.ttf
 
 .PHONY: all ttf sbit clean distclean

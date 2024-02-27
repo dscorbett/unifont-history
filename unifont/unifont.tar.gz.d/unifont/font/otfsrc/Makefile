@@ -28,9 +28,9 @@ TTF_LANG = 0x409
 
 COPYRIGHT = "Copyright © 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al."
+Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al."
 
-VERSION = 15.0.06
+VERSION = 15.1.01
 
 all: otf
 
@@ -50,7 +50,7 @@ otf: $(FONTFILE).hex $(HEX2OTF)
 	$(HEX2OTF) \
 	   hex=$(FONTFILE).hex \
 	   pos=$(COMBINING).txt \
-	   format=cff,gpos,gsub,bitmap \
+	   format=cff,gpos,gsub \
 	   0=$(COPYRIGHT) \
 	   1="$(FONTNAME)" \
 	   2="Regular" \
@@ -66,12 +66,12 @@ otf: $(FONTFILE).hex $(HEX2OTF)
 # Delete files copied into this directory to build OpenType fonts.
 #
 clean:
-	\rm -f *.hex *.txt
+	rm -f *.hex *.txt
 
 #
 # Delete files created within this directory while building OpenType fonts.
 #
 distclean: clean
-	\rm -f *.otf
+	rm -f *.otf
 
 .PHONY: all otf clean distclean

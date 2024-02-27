@@ -236,7 +236,9 @@ See the ``GPOS RATIONALE'' section above.
 
 @item @b{gsub}
 Generate generic GSUB table with two entries: ``DFLT'' and ``thai''.
-This improves glyph positioning in HarfBuzz.
+``DFLT'' improves glyph positioning in HarfBuzz, especially as
+relates to glyph reordering.  ``thai'' directs HarfBuzz @i{not}
+to obtain Thai glyphs from the Unicode Private Use Area.
 @comment TROFF INPUT: .RE
 
 @end table
@@ -430,7 +432,8 @@ the state of the output font file will be undefined.
 
 @comment TROFF INPUT: .B hex2otf
 @b{hex2otf}
-was written by He Zhixiang.
+was written by
+@image{he-zhixiang, 28pt, 8pt, He Zhixiang, .png}(He Zhixiang).
 @comment TROFF INPUT: .SH LICENSE
 
 @node hex2otf LICENSE
@@ -439,7 +442,8 @@ was written by He Zhixiang.
 
 @comment TROFF INPUT: .B hex2otf
 @b{hex2otf}
-is Copyright @copyright{} 2022 He Zhixiang.
+is Copyright @copyright{} 2022
+@image{he-zhixiang, 28pt, 8pt, He Zhixiang, .png}(He Zhixiang).
 @comment TROFF INPUT: .PP
 
 This program is free software; you can redistribute it and/or modify

@@ -1,0 +1,9 @@
+<map id="cacheU32" name="cacheU32">
+<area shape="rect" id="node1" title="Append four unsigned bytes to the end of a byte array." alt="" coords="284,107,365,133"/>
+<area shape="rect" id="node2" href="$hex2otf_8c.html#a51be7f69e0f6053772b3ddacf215df84" title="Cache charstring number encoding in a CFF buffer." alt="" coords="104,5,236,32"/>
+<area shape="rect" id="node3" href="$hex2otf_8c.html#a4ac0c02117b703a71bee3dd34e2eb306" title="Fill a &quot;head&quot; font table." alt="" coords="121,56,219,83"/>
+<area shape="rect" id="node5" href="$hex2otf_8c.html#aff4f28ce178c84c7365245ec10034433" title="Fill a &quot;maxp&quot; font table." alt="" coords="121,107,219,133"/>
+<area shape="rect" id="node6" href="$hex2otf_8c.html#ab6e3bb110dc3e55193c344cb7b56e328" title="Fill an &quot;OS/2&quot; font table." alt="" coords="124,157,216,184"/>
+<area shape="rect" id="node7" href="$hex2otf_8c.html#a0ddc03905c4918e04aa1e54a7c1716b1" title="Fill a &quot;post&quot; font table." alt="" coords="123,208,217,235"/>
+<area shape="rect" id="node4" href="$hex2otf_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="The main function." alt="" coords="5,132,56,159"/>
+</map>

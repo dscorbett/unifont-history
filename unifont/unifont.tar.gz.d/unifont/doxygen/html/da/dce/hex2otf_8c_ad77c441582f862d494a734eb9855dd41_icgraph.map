@@ -1,4 +1,0 @@
-<map id="readGlyphs" name="readGlyphs">
-<area shape="rect" id="node1" title="Read glyph definitions from a Unifont .hex format file." alt="" coords="108,5,204,32"/>
-<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="The main function." alt="" coords="5,5,60,32"/>
-</map>

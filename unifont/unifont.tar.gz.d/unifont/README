@@ -100,6 +100,36 @@ BUILDING
 See the "INSTALL" file in this directory for building instructions.
 
 
+PRIVATE USE AREA (PUA)
+----------------------
+The "pua.hex" file contains a four-digit hexadecimal representation of
+each code point, rendered as white on black.  The new program "hexgen.c"
+generated these glyphs.  A four-digit hexadecimal code point is suggested
+as one possible rendering of PUA glyphs in The Unicode Standard, Version
+5.0, Section 5.3.  Another possible rendering suggested in that same
+section is a pencil glyph.  A pencil glyph was used originally in Unifont
+Version 5.1.
+
+The glyphs in "pua.hex" are not compiled into the final font.  To do
+so, modify font/Makefile by adding "pua.hex" to the list of hex source
+files.  Alternatively, someone could use their own pua.hex file for
+various Private Use Area assignments.
+
+To use these glyphs in the PUA, use the command
+
+     make BUILDFONT=1 PUA=plane00/pua.hex
+
+The glyphs in font/plane00/hangul/hangul-base.hex begin at 0xE000,
+and so can also be used as PUA glyphs.  To use these glyphs in the
+PUA, use the command
+
+     make BUILDFONT=1 PUA=plane00/hangul/hangul-base.hex
+
+The unifont_all-$(VERSION).hex will contain Unicode Plane 0 PUA
+glyphs from Michael Everson's ConScript Unicode Registry (CSUR)
+plus Rebecca Bettencourt's Under CSUR (UCSUR) additions.
+
+
 src/ AUTHORS
 ------------
 Roman Czyborra wrote all the Perl files in the src directory except
@@ -127,7 +157,7 @@ hex file dynamically.
 
 David Corbett contributed the font/unipatch-hex.awk script, used
 to replace glyphs in an existing Unifont .hex file with new glyphs.
-This script is used to replace Chinese variation ideographs wtih
+This script is used to replace Chinese variation ideographs with
 Japanese versions for the "unifont_jp*" font files.  He also wrote
 src/hexrotate to simplify rotating some glyphs such as Mongolian,
 which can be written vertically or horizontally.
@@ -441,20 +471,6 @@ However, now there is complete coverage of the entire BMP, with only
 about 2,300 BMP code points remaining out of 65,536 that could potentially
 be given assignments in the future, so the great bulk of work on the
 BMP is done.
-
-The "pua.hex" file contains a four-digit hexadecimal representation of
-each code point, rendered as white on black.  The new program "hexgen.c"
-generated these glyphs.  A four-digit hexadecimal code point is suggested
-as one possible rendering of PUA glyphs in The Unicode Standard, Version
-5.0, Section 5.3.  Another possible rendering suggested in that same
-section is a pencil glyph.  A pencil glyph was used originally in Unifont
-Version 5.1.
-
-The glyphs in "pua.hex" are not compiled into the final font.  To do
-so, modify font/Makefile by adding "pua.hex" to the list of hex source
-files.  Alternatively, someone could use their own pua.hex file for
-various Private Use Area assignments.
-
 
 UNIFONT VERSION 5.1
 -------------------

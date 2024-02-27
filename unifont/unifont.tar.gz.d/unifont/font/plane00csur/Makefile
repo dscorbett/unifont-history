@@ -24,6 +24,6 @@ plane00csur-unassigned.hex: unassigned-ranges.txt
 clean:
 
 distclean: clean
-	\rm -f plane00csur-all.hex
+	rm -f plane00csur-all.hex
 
 .PHONY: clean distclean

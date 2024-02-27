@@ -13,7 +13,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 15.0.06
+VERSION = 15.1.01
 
 #
 # The settings below will install software, man pages, and documentation
@@ -71,7 +71,7 @@ all: bindir libdir docdir doxdir buildfont
 # Build a distribution tarball.
 #
 dist: distclean
-	(cd .. && tar cf $(PACKAGE)-$(VERSION).tar $(PACKAGE)-$(VERSION) && \
+	(cd .. && tar chf $(PACKAGE)-$(VERSION).tar $(PACKAGE)-$(VERSION) && \
 		gzip $(GZFLAGS) $(PACKAGE)-$(VERSION).tar)
 
 bindir: bin
@@ -96,11 +96,21 @@ buildfont: bindir
 fontdir:
 	set -e && $(MAKE) -C font
 
+#
+# Library directory, which only contains wchardata.c with
+# functions for determining string and letter widths.
+#
 libdir: lib/wchardata.c
 
+#
+# texinfo documentation files.
+#
 docdir:
 	set -e && $(MAKE) -C doc
 
+#
+# Doxygen HTML and LaTeX/PDF source code documentation.
+#
 doxdir: doxygen
 
 #
@@ -142,7 +152,7 @@ install: bindir libdir docdir doxdir
 	done
 	install -m0644 -p lib/wchardata.c $(PKGDEST)
 	install -m0644 -p font/plane00/plane00-combining.txt $(PKGDEST)
-	(cd doxygen ; tar cf - html unifont-doxy.pdf) | \
+	(cd doxygen ; tar chf - html unifont-doxy.pdf) | \
 	   (cd $(PKGDEST) ; tar xpf -)
 	# If "make" wasn't run before, font/compiled won't exist.
 	if [ ! -d font/compiled ] ; then \
@@ -179,4 +189,4 @@ distclean:
 	\rm -rf .DS* ._.DS*
 
 .PHONY: all dist buildfont fontdir libdir docdir doxdir mandir \
-	precompiled install clean distclean
+	truetype precompiled install clean distclean

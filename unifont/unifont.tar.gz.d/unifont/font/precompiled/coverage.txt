@@ -207,8 +207,8 @@ Covered      Range        Script
  100.0%  U+EB40..U+EB5F   PUA (CSUR/UCSUR): Standard Galactic
  100.0%  U+EB60..U+EB9F   PUA (CSUR/UCSUR): Braille Extended
  100.0%  U+EBA0..U+EBDF   PUA (CSUR/UCSUR): Cistercian Numerals
-   0.0%  U+EBE0..U+EBFF   PUA (CSUR/UCSUR): Unassigned
-   0.0%  U+EC00..U+EC2F   PUA (CSUR/UCSUR): Cylenian
+ 100.0%  U+EBE0..U+EBFF   PUA (CSUR/UCSUR): Unassigned
+  33.3%  U+EC00..U+EC2F   PUA (CSUR/UCSUR): Cylenian
    0.0%  U+EC30..U+EC6F   PUA (CSUR/UCSUR): Syrrin
    0.0%  U+EC70..U+ECFF   PUA (CSUR/UCSUR): Unassigned
  100.0%  U+ED00..U+ED3F   PUA (CSUR/UCSUR): Deini

@@ -17,11 +17,11 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.0.06
+VERSION = 15.1.01
 
 COPYRIGHT = "Copyright (C) 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, Minseo Lee, et al. \
+Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \
 GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
@@ -71,9 +71,6 @@ HEXDIR = plane00
 # If you don't want to include blank glyphs in unassigned code points,
 # uncomment the UNASSIGNED definition or override from the make command line.
 #
-# Likewise, uncomment the PUA definition if you want to use Private
-# Use Area glyphs.
-#
 UNASSIGNED = $(HEXDIR)/plane00-unassigned.hex
 # UNASSIGNED =
 
@@ -86,10 +83,20 @@ NONPRINTING = $(HEXDIR)/plane00-nonprinting.hex
 # NONPRINTING =
 
 #
-# Private Use Area glyphs.  Uncomment to include four-digit hexadecimal glyphs
-# or override from the make command line.
+# Private Use Area glyphs.  Uncomment one of the lines below to include:
+#
+#   - Four-digit hexadecimal glyphs "pua.hex"
+#   - Hangul Johab 6/3/1 glyphs in "hangul-base.hex", or
+#   - Override PUA definition from the make command line.
+#
+# Note that selecting any of these options will override the use
+# of the ConScript Unicode Registry (CSUR) and Under CSUR (UCSUR)
+# glyphs from being part of a Unifont PUA section in a font.
+#
+HANGUL_PUA = $(HEXDIR)/hangul/hangul-base.hex
 #
 # PUA = $(HEXDIR)/pua.hex
+# PUA = $(HANGUL_PUA)
 PUA = 
 
 # The remaining .hex files will be constant unless a customized font
@@ -178,7 +185,7 @@ TTFSRC = ttfsrc
 
 all: compiled
 
-compiled: $(UNIFILES) $(COMBINING) $(UPPER_FILES) $(UPPER_COMBINING)
+compiled: $(HANGUL) $(UNIFILES) $(COMBINING) $(UPPER_FILES) $(UPPER_COMBINING)
 	$(MAKE) compiled-files
 	touch $@
 
@@ -188,7 +195,8 @@ compiled: $(UNIFILES) $(COMBINING) $(UPPER_FILES) $(UPPER_COMBINING)
 #
 PSF = psf
 # PSF =
-compiled-files: pcf $(PSF) $(GRAPHICS) opentype truetype bigpic coverage
+# compiled-files: pcf $(PSF) $(GRAPHICS) opentype truetype bigpic coverage
+compiled-files: pcf $(PSF) $(GRAPHICS) opentype bigpic coverage
 	sed -e 's/<a /<a target="blank" /g' index.html | \
 	   sed -e 's/png/$(GRAPHICS)/g' > $(COMPILED_DIR)/index.html
 
@@ -197,7 +205,16 @@ compiled-files: pcf $(PSF) $(GRAPHICS) opentype truetype bigpic coverage
 #
 hex: hex-stamp
 
+$(HANGUL): $(HANGUL_PUA)
+	(cd $(HEXDIR)/hangul && make && install -m 0644 hangul-syllables ..)
+
+$(HANGUL): $(HANGUL_SYL)
+	install -m 0644 $(HANGUL_SYL) $(HANGUL) 
+
 hex-stamp:
+	if [ ! -d $(BINDIR) ] ; then \
+	   (cd .. ; make) ; \
+	fi
 	if [ ! -d $(COMPILED_DIR) ] ; then \
 	   mkdir -p $(COMPILED_DIR) ; \
 	fi
@@ -252,7 +269,9 @@ hex-stamp:
 #
 # Build a BDF font file from the final .hex files.
 #
-bdf: hex
+bdf: hex bdf-stamp
+
+bdf-stamp:
 	# First make the default BDF font.  The font name will be "unifont".
 	$(BINDIR)/hex2bdf --version "$(VERSION)" --copyright $(COPYRIGHT) \
 	   $(COMPILED_DIR)/unifont-$(VERSION).hex \
@@ -303,6 +322,7 @@ bdf: hex
 	      > $(COMPILED_DIR)/unifont_jp-$(VERSION).bdf
 	gzip $(GZFLAGS) <$(COMPILED_DIR)/unifont_jp-$(VERSION).bdf \
 	           >$(COMPILED_DIR)/unifont_jp-$(VERSION).bdf.gz
+	touch $@
 
 #
 # Build a PCF font file from the final .hex file.
@@ -479,8 +499,7 @@ png: hex $(BINDIR)/unihex2png
 	# Create HTML table showing color-coded percent coverage in Plane 0.
 	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont-$(VERSION).hex | \
 	   sed -e 's/<a /<a target="blank" /g' | \
-	      sed -e 's/png/$(GRAPHICS)/g' | \
-	                          > $(COMPILED_DIR)/plane00.html
+	      sed -e 's/png/$(GRAPHICS)/g' > $(COMPILED_DIR)/plane00.html
 	# Create HTML table showing color-coded percent coverage in Japanese Plane 0.
 	$(BINDIR)/unipagecount -h < $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex | \
 	   sed -e 's/Glyphs/Glyphs \&mdash; Japanese Version/' | \
@@ -491,7 +510,7 @@ png: hex $(BINDIR)/unihex2png
 	# Create HTML table showing color-coded percent coverage in Plane 1.
 	../bin/unipagecount -P1 -h < plane01/plane01-all.hex | \
 	   sed -e 's/<a /<a target="blank" /g' | \
-	      sed -e 's/png/$(GRAPHICS)/g' | > $(COMPILED_DIR)/plane01.html
+	      sed -e 's/png/$(GRAPHICS)/g' > $(COMPILED_DIR)/plane01.html
 	# Copy Plane 2 HTML table, specially formatted to show empty
 	# ranges as gray because there are so many empty ranges.
 	install -p plane02-jp.html $(COMPILED_DIR)
@@ -655,9 +674,9 @@ bigpic: hex
 # over 200 Megabytes if left around.  The .sfd file is about 100 Megabytes,
 # and it is created from merging "[0-F].sfd", which take up another 100 MB.
 #
-truetype: ttf csurttf upperttf
+truetype: hex bdf ttf csurttf upperttf
 
-opentype: otf csurotf upperotf sampleotf
+opentype: hex bdf otf csurotf upperotf sampleotf
 
 otf: hex
 	# First, copy the ordinary version, to make an OpenType font.
@@ -753,11 +772,14 @@ sampleotf: hex
 	mv $(OTFSRC)/unifont_upper_sample.otf \
 		$(COMPILED_DIR)/unifont_upper_sample-$(VERSION).otf 
 
-ttf: hex
+ttf: hex bdf
+	#   $(COMPILED_DIR)/unifont-$(VERSION).ttf \
+	#   $(COMPILED_DIR)/unifont_sample-$(VERSION).ttf \
+	#   $(COMPILED_DIR)/unifont_jp-$(VERSION).ttf
 	# First, copy the ordinary version, to make a TrueType font.
 	install -p \
-		$(COMPILED_DIR)/unifont-$(VERSION).hex \
-		$(TTFSRC)/unifont.hex
+	 	$(COMPILED_DIR)/unifont-$(VERSION).hex \
+	 	$(TTFSRC)/unifont.hex
 	# Add the Copyleft symbol to the Plane 0 Unifont TrueType font
 	cat $(COPYLEFT) >> $(TTFSRC)/unifont.hex
 	install -p \
@@ -791,6 +813,7 @@ ttf: hex
 	mv $(TTFSRC)/unifont_jp.sfd $(COMPILED_DIR)/unifont_jp-$(VERSION).sfd 
 	mv $(TTFSRC)/unifont_jp.ttf \
 		$(COMPILED_DIR)/unifont_jp-$(VERSION).ttf 
+	touch $@
 
 #
 # Now build the ConScript Unicode Registry PUA font.
@@ -846,7 +869,7 @@ upperttf: hex
 # directory usually remains untouched.
 #
 precompiled: compiled
-	\rm -rf precompiled
+	rm -rf precompiled
 	install -m0755 -d precompiled
 	install -m0644 -p $(COMPILED_DIR)/unifont-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_all-$(VERSION).hex \
@@ -855,23 +878,17 @@ precompiled: compiled
 	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex \
 	                  $(COMPILED_DIR)/Unifont-APL8x16-$(VERSION).psf.gz \
-	                  $(COMPILED_DIR)/unifont-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_csur-$(VERSION).pcf.gz \
-	                  $(COMPILED_DIR)/unifont_csur-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).bdf.gz \
-	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).hex \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).bdf.gz \
 	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).pcf.gz \
-	                  $(COMPILED_DIR)/unifont_sample-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/coverage.txt \
 	                  $(COMPILED_DIR)/unifont-$(VERSION).bmp \
 	                  $(COMPILED_DIR)/unifont_jp-$(VERSION).bmp \
 	                  $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp \
 	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).hex \
-	                  $(COMPILED_DIR)/unifont_upper-$(VERSION).ttf \
 	                  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
-	                  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).ttf \
 			  $(COMPILED_DIR)/unifont-$(VERSION).otf \
 			  $(COMPILED_DIR)/unifont_csur-$(VERSION).otf \
 			  $(COMPILED_DIR)/unifont_jp-$(VERSION).otf \
@@ -906,16 +923,12 @@ install:
 	fi
 	$(INSTALL) -m0755 -d $(CONSOLEDEST)
 	$(INSTALL) -m0755 -d $(PCFDEST)
-	$(INSTALL) -m0755 -d $(TTFDEST) $(OTFDEST)
+	$(INSTALL) -m0755 -d $(OTFDEST)
 	if [ ! -d $(COMPILED_DIR) ] ; then \
 	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/Unifont-APL8x16-$(VERSION).psf.gz   $(CONSOLEDEST)/Unifont-APL8x16.psf.gz ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).pcf.gz           $(PCFDEST)/unifont.pcf.gz ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_sample-$(VERSION).pcf.gz    $(PCFDEST)/unifont_sample.pcf.gz ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).pcf.gz      $(PCFDEST)/unifont_csur.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).ttf              $(TTFDEST)/unifont.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_sample-$(VERSION).ttf       $(TTFDEST)/unifont_sample.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).ttf         $(TTFDEST)/unifont_csur.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_upper-$(VERSION).ttf        $(TTFDEST)/unifont_upper.ttf ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont-$(VERSION).otf              $(OTFDEST)/unifont.otf ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_jp-$(VERSION).otf           $(OTFDEST)/unifont_jp.otf ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/precompiled/unifont_csur-$(VERSION).otf         $(OTFDEST)/unifont_csur.otf ; \
@@ -928,10 +941,6 @@ install:
 	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).pcf.gz           $(PCFDEST)/unifont.pcf.gz ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_sample-$(VERSION).pcf.gz    $(PCFDEST)/unifont_sample.pcf.gz ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).pcf.gz      $(PCFDEST)/unifont_csur.pcf.gz ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).ttf              $(TTFDEST)/unifont.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_sample-$(VERSION).ttf       $(TTFDEST)/unifont_sample.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).ttf         $(TTFDEST)/unifont_csur.ttf ; \
-	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_upper-$(VERSION).ttf        $(TTFDEST)/unifont_upper.ttf ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont-$(VERSION).otf              $(OTFDEST)/unifont.otf ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_jp-$(VERSION).otf           $(OTFDEST)/unifont_jp.otf ; \
 	   $(INSTALL) -m0644 -p $(CURDIR)/$(COMPILED_DIR)/unifont_csur-$(VERSION).otf         $(OTFDEST)/unifont_csur.otf ; \
@@ -942,12 +951,12 @@ install:
 	fi
 
 clean:
-	\rm -f *~
-	# \rm -rf $(COMPILED_DIR)/png
-	# \rm -f $(COMPILED_DIR)/unifont-$(VERSION).hex
-	# \rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf
-	# \rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf.gz
-	# \rm -f $(COMPILED_DIR)/unifont-$(VERSION).sfd.gz
+	rm -f *~
+	# rm -rf $(COMPILED_DIR)/png
+	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).hex
+	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf
+	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf.gz
+	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).sfd.gz
 	$(MAKE) -C plane00/hangul clean
 
 #
@@ -955,15 +964,15 @@ clean:
 # The .DS files are created under Mac OS X.
 #
 distclean:
-	\rm -rf $(COMPILED_DIR)
+	rm -rf $(COMPILED_DIR)
 	$(MAKE) -C plane00/hangul distclean
 	$(MAKE) -C plane00csur distclean
 	$(MAKE) -C plane01 distclean
 	$(MAKE) -C ttfsrc distclean
 	$(MAKE) -C otfsrc distclean
-	\rm -f *-stamp
-	\rm -f *~
-	\rm -rf .DS* ._.DS*
+	rm -f *-stamp
+	rm -f *~
+	rm -rf .DS* ._.DS*
 
 .PHONY: all compiled-files \
 	hex bdf pcf psf \

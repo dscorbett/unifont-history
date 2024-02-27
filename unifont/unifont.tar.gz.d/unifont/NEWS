@@ -1,10 +1,35 @@
+2023-09-12: Release 15.1.01
+   * Glyphs updated for Unicode 15.1.0 release.
+   * OpenType fonts are now built by default, replacing TrueType fonts.
+     TrueType fonts can be built manually by invoking "make truetype"
+     in the font directory.
+   * New Hangul Johab 6/3/1 encoding devised by Ho-Seok Ee for building
+     the Hangul Syllables block (U+AC00..U+D7A3), with new supporting
+     programs johab2syllables, unigen-hangul, and unijohab2html.  This
+     encoding replaces Unifont's original Hanterm-derived encoding.
+     New source files hangul.h and unihangul-support.c provide support
+     for rendering syllable bitmaps with all Unicode Hangul letters,
+     including all ancient Hangul, through the new unigen-hangul program.
+     These functions also can support user-written Hangul syllable rendering
+     programs, for example on embedded systems using graphics displays.
+   * Added three hexadecimal digit representation CSUR/UCSUR scripts:
+     - U+EBE0..U+EBEF: Boby Lapointe's "bibi-binary" notation
+     - U+EBF0..U+EBFF: Bruce Alan Martin's bit location notation
+     - U+ECF0..U+ECFF: Ronald O. Whitaker's triangular notation.
+   * Modified hexdraw to support bitmap manipulation of up to 64 rows
+     by 128 columns for 64-by-128 graphics display screen drawing support.
+     Added the unihexpose program to transpose Unifont glyphs, for use
+     with graphics display controller chips that encode each byte as
+     8 rows by 1 column, left to right.
+   * Other minor updates; see ChangeLog for details.
+
 2023-06-04: Release 15.0.06
    * Further adjustments to Hangul glyphs in the Basic Multilingual Plane.
 
 2023-06-03: Release 15.0.05
    * New Hangul Syllables block (U+AC00..U+D7A3) contributed
      by Minseo Lee.  Generated with his modifications of three
-     combining patters in the johab2ucs2 Perl script.
+     combining patterns in the johab2ucs2 Perl script.
    * Modified U+5829 and U+6FF9 Chinese glyphs.
    * Full details in ChangeLog file.
 

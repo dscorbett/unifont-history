@@ -2,6 +2,7 @@
 SHELL = /bin/sh
 
 CC = gcc
+C99 = $(CC) -std=c99
 
 CFLAGS = -g -O2 -Wall
 
@@ -23,9 +24,10 @@ INSTALLDIR = $(PREFIX)/bin
 #
 # Programs written in C.
 #
-CPROGS = hex2otf unibmp2hex unicoverage unidup unibdf2hex unibmpbump \
-	 unifont1per unifontpic unigencircles unigenwidth unihex2bmp \
-	 unihexgen unipagecount
+CPROGS = hex2otf johab2syllables unibmp2hex unicoverage unidup \
+	 unibdf2hex unibmpbump unifont1per unifontpic unigen-hangul \
+	 unigencircles unigenwidth unihex2bmp unihexgen unihexpose \
+	 unijohab2html unipagecount
 
 #
 # Programs written in Perl.
@@ -51,7 +53,18 @@ all: $(CPROGS) bin
 # declaration at the beginning of this file.
 #
 hex2otf: hex2otf.c hex2otf.h
-	$(CC) $(CFLAGS) -std=c99 hex2otf.c -o hex2otf
+	$(C99) $(CFLAGS) hex2otf.c -o hex2otf
+
+unihexpose: unihexpose.o unifont-support.o
+
+unijohab2html: hangul.h unihangul-support.o unijohab2html.o
+	$(CC) $(CFLAGS) unijohab2html.o unihangul-support.o -o unijohab2html
+
+johab2syllables: hangul.h unihangul-support.o johab2syllables.o
+	$(CC) $(CFLAGS) johab2syllables.o unihangul-support.o -o johab2syllables
+
+unigen-hangul: hangul.h unihangul-support.o unigen-hangul.o
+	$(CC) $(CFLAGS) unigen-hangul.o unihangul-support.o -o unigen-hangul
 
 bin: bin-stamp
 

@@ -26,6 +26,6 @@ plane01-noscript.hex: noscript-ranges.txt
 clean:
 
 distclean: clean
-	\rm -rf plane01-all.hex
+	rm -rf plane01-all.hex
 
 .PHONY: clean distclean

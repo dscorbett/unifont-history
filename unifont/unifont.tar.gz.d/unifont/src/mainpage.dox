@@ -68,6 +68,11 @@ of the same Unicode code point in a unifont.hex file.
 何志翔 (He Zhixiang) wrote a program to convert Unifont files into
 OpenType fonts, hex2otf.c.
 
+Minseo Lee created new Hangul glyphs for the original Unifont
+Johab 10/3 or 4/4 encoding.  This was followed immediately after
+by Ho-Seok Ee, who created Hangul glyphs for a new, simpler
+Johab 6/3/1 encoding that are now in Unifont.
+
 @section Programs The C Programs
 
 This documentation only covers C programs and their header files.
@@ -80,6 +85,8 @@ The C programs are, in alphabetical order:
     <tr><th>Program</th><th>Description</th></tr>
     <tr><td>hex2otf.c</td>
         <td>Convert a GNU Unifont .hex file to an OpenType font</td></tr>
+    <tr><td>johab2syllables.c</td>
+        <td>Generate Hangul Syllables range with simple positioning</td></tr>
     <tr><td>unibdf2hex.c</td>
         <td>Convert a BDF file into a unifont.hex file</td></tr>
     <tr><td>unibmp2hex.c</td>
@@ -100,6 +107,10 @@ The C programs are, in alphabetical order:
     <tr><td>unifontpic.c</td>
         <td>See the "Big Picture": the entire Unifont
             in one BMP bitmap</td></tr>
+    <tr><td>unigen-hangul.c</td>
+        <td>Generate modern and ancient Hangul syllables with
+            shifting of final consonants combined with diphthongs
+            having two long vertical strokes on the right</td></tr>
     <tr><td>unigencircles.c</td>
         <td>Superimpose dashed combining circles
             on combining glyphs</td></tr>
@@ -112,6 +123,15 @@ The C programs are, in alphabetical order:
     <tr><td>unihexgen.c</td>
         <td>Generate a series of glyphs containing
             hexadecimal code points</td></tr>
+    <tr><td>unihexpose.c</td>
+        <td>Transpose Unifont .hex glyph bitmaps to simplify sending
+            to graphics display controller chips that read bitmaps
+            as a series of columns 8 rows (one byte) high</td></tr>
+    <tr><td>unijohab2html.c</td>
+        <td>Read a <code>hangul-base.hex</code> file and produce
+            an HTML page as output showing juxtaposition and overlapping
+            of all letter combinations in modern and ancient Hangul
+            syllables</td></tr>
     <tr><td>unipagecount.c</td>
         <td>Count the number of glyphs defined in each page
             of 256 code points</td></tr>

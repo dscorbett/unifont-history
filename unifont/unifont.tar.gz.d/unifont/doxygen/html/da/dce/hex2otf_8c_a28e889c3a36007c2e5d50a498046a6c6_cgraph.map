@@ -1,7 +1,0 @@
-<map id="fillHheaTable" name="fillHheaTable">
-<area shape="rect" id="node1" title="Fill a &quot;hhea&quot; font table." alt="" coords="5,56,112,83"/>
-<area shape="rect" id="node2" href="$da/dce/hex2otf_8c.html#a1fab24bb2d2b38b68a38ec871afc3f9c" title="Add a TrueType or OpenType table to the font." alt="" coords="164,5,244,32"/>
-<area shape="rect" id="node3" href="$da/dce/hex2otf_8c.html#a07b29528c561e5852a228c98391225f7" title="Append two unsigned bytes to the end of a byte array." alt="" coords="161,56,247,83"/>
-<area shape="rect" id="node4" href="$da/dce/hex2otf_8c.html#aefca579e9f2fec4fa23f9907e9633548" title="Create a new buffer." alt="" coords="160,107,248,133"/>
-<area shape="rect" id="node5" href="$da/dce/hex2otf_8c.html#a2f5976201b1e630a94045f04a0348572" title="Print an error message on stderr, then exit." alt="" coords="296,107,339,133"/>
-</map>
