@@ -5,7 +5,7 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="0.0"/>
-    <checkSumAdjustment value="0x7ee25878"/>
+    <checkSumAdjustment value="0x5e152966"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="64"/>
@@ -39,12 +39,12 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="59005"/>
+    <numberOfHMetrics value="59576"/>
   </hhea>
 
   <maxp>
     <tableVersion value="0x5000"/>
-    <numGlyphs value="59005"/>
+    <numGlyphs value="59576"/>
   </maxp>
 
   <OS_2>
@@ -104,7 +104,7 @@
 
   <name>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
-      Copyright © 1998-2023 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al.
+      Copyright © 1998-2024 Roman Czyborra, Paul Hardy, Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, Nils Moskopp, Rebecca Bettencourt, Ho-Seok Ee, et al.
     </namerecord>
     <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
       Unifont-JP
@@ -113,13 +113,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      Unifont-JP-15.1.04.otf
+      Unifont-JP-15.1.05.otf
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont-JP
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 15.1.04
+      Version 15.1.05
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       Unifont-JP

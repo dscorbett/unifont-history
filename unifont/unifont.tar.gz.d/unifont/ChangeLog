@@ -1,3 +1,38 @@
+2024-02-24  Paul Hardy <unifoundry@gmail.com>
+	* Version 15.1.05.
+	* font/plane00/unifont-base.hex:
+	  - Ho-seok Ee contributed replacement Hangul glyphs to match
+	    the style of the Hangul Syllables range in these ranges:
+	    o U+1100..U+11FF Hangul Jamo
+	    o U+3130..U+318F Hangul Compatibility Jamo
+	    o U+A960..U+A97F Hangul Jamo Extended-A
+	    o U+D7B0..U+D7FF Hangul Jamo Extended-B
+	  - Hayden Wong contributed 11 redrawn Letterlike Symbols:
+	    U+210A, U+210B, U+2110, U+2112, U+211B, U+212C, U+212F,
+	    U+2130, U+2131, U+2133, and U+2134.
+	  - Johnnie Weaver contributed U+013D LATIN CAPITAL LETTER L WITH
+	    CARON, to more closely resemble the glyphs he drew for better
+	    Czech and Slovak support.  He also redrew Miscellaneous Symbols
+	    musical notation glyphs U+266D, U+266E, U+266F, and the
+	    glyph U+26BC, SESQUIQUADRATE.
+	* font/plane02/zh-plane02.hex:
+	  - Added 529 new glyphs contributed by 湖 远星, Boris Zhang, and
+	    Yzy32767, including:
+	    o 281 Cantonese ideographs from 湖 远星.
+	    o The 222 CJK Unified Ideographs Extension D, U+2B740..U+2B81D
+	      from Boris Zhang and Yzy32767.
+	    o Improvements to CJK Unified Ideographs Extension I by Boris
+	      Zhang and Yzy32767.
+	* font/plane03/zh-plane02.hex:
+	  - 54 Cantonese ideographs from 湖 远星.
+	* font/plane0Fcsur: Sitelen Pona modified to match the latest chart
+	  updates at https://www.kreativekorp.com/ucsur/charts/sitelen.html
+	  (thanks to kije Enki for mentioning the discrepancies):
+	  - U+F1992..U+F199B changed to be combining glyphs.
+	  - U+F1995..U+F199B nonprinting code points modified.
+	  - Added U+F199C SITELEN PONA MIDDLE DOT and U+F199D SITELEN
+	    PONA COLON.
+
 2023-10-29  Paul Hardy <unifoundry@gmail.com>
 	* Version 15.1.04
 	* Makefile: ignore error in Doxygen building.

@@ -17,11 +17,11 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.1.04
+VERSION = 15.1.05
 
-COPYRIGHT = "Copyright (C) 1998-2023 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2024 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al. \
+Nils Moskopp, Rebecca Bettencourt, Ho-Seok Ee, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \
 GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."

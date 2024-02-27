@@ -2,7 +2,7 @@ CC=gcc
 
 CFLAGS = -g -O2
 
-VERSION = 15.1.04
+VERSION = 15.1.05
 
 BINDIR=../../../bin
 

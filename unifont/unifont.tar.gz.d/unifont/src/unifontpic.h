@@ -29,7 +29,7 @@
 
 #define MAXSTRING 256  ///< Maximum input string allowed.
 
-#define HEADER_STRING "GNU Unifont 15.1.04" ///< To be printed as chart title.
+#define HEADER_STRING "GNU Unifont 15.1.05" ///< To be printed as chart title.
 
 /**
    @brief Array of Unifont ASCII glyphs for chart row & column headings.
