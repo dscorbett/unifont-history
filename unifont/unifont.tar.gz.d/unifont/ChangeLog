@@ -1,3 +1,19 @@
+2023-09-21  Paul Hardy <unifoundry@gmail.com>
+	* Version 15.1.02.
+	* font/Makefile: commented out duplicate $(HANGUL) target.
+	* font/plane00/wqy.hex: 湖 远星 updated glyphs for U+3B9D,
+	  U+49C8, U+4C41, U+4DB8, U+4DBA, U+4DBB, U+4DBC, U+4DBD,
+	  U+4DBE, U+4DBF, U+517B, U+54C8, U+5A92, U+5C16, U+5F3A,
+	  U+5F73, U+5FD7, U+636E, U+64C5, U+6B89, U+6E05, U+7070,
+	  U+7EA6, U+809E, U+891D, U+8D4C, U+8F9E, U+9001, U+9EC4,
+	  U+9FD0, U+9FEC, U+9FED, U+9FEE, U+9FF0, U+9FF2, U+9FF3,
+	  U+9FF4, U+9FF5, U+9FF6, U+9FF7, U+9FF8, U+9FF9, U+9FFB,
+	  U+9FFC, U+9FFD, and U+9FFE.
+	* font/plane03/zh-plane03.hex: 湖 远星 contributed glyphs
+	  U+30000..U+3017F.
+	* man/Makefile: added new man pages to MAN1PAGES & MAN5PAGES
+	  definitions.
+
 2023-09-12  Paul Hardy <unifoundry@unifoundry.com>
 	* Version 15.1.01.
 	* All Makefile files: changed "\rm" to "rm" for Cygwin.

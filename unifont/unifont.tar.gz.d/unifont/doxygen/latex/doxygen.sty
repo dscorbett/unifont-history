@@ -20,7 +20,10 @@
 \RequirePackage{adjustbox}
 \RequirePackage{amssymb}
 \RequirePackage{stackengine}
+\RequirePackage{enumitem}
+\RequirePackage{alphalph}
 \RequirePackage[normalem]{ulem} % for strikeout, but don't modify emphasis
+\RequirePackage{enumitem}
 
 %---------- Internal commands used in this style file ----------------
 
@@ -163,18 +166,30 @@
 }
 
 % Used by numbered lists (using '-#' or <ol> ... </ol>)
-\newenvironment{DoxyEnumerate}{%
-  \enumerate%
-}{%
-  \endenumerate%
-}
+\setlistdepth{12}
+\newlist{DoxyEnumerate}{enumerate}{12}
+\setlist[DoxyEnumerate,1]{label=\arabic*.}
+\setlist[DoxyEnumerate,2]{label=(\enumalphalphcnt*)}
+\setlist[DoxyEnumerate,3]{label=\roman*.}
+\setlist[DoxyEnumerate,4]{label=\enumAlphAlphcnt*.}
+\setlist[DoxyEnumerate,5]{label=\arabic*.}
+\setlist[DoxyEnumerate,6]{label=(\enumalphalphcnt*)}
+\setlist[DoxyEnumerate,7]{label=\roman*.}
+\setlist[DoxyEnumerate,8]{label=\enumAlphAlphcnt*.}
+\setlist[DoxyEnumerate,9]{label=\arabic*.}
+\setlist[DoxyEnumerate,10]{label=(\enumalphalphcnt*)}
+\setlist[DoxyEnumerate,11]{label=\roman*.}
+\setlist[DoxyEnumerate,12]{label=\enumAlphAlphcnt*.}
 
 % Used by bullet lists (using '-', @li, @arg, or <ul> ... </ul>)
-\newenvironment{DoxyItemize}{%
-  \itemize%
-}{%
-  \enditemize%
-}
+\setlistdepth{12}
+\newlist{DoxyItemize}{itemize}{12}
+\setlist[DoxyItemize]{label=\textperiodcentered}
+
+\setlist[DoxyItemize,1]{label=\textbullet}
+\setlist[DoxyItemize,2]{label=\normalfont\bfseries \textendash}
+\setlist[DoxyItemize,3]{label=\textasteriskcentered}
+\setlist[DoxyItemize,4]{label=\textperiodcentered}
 
 % Used by description lists (using <dl> ... </dl>)
 \newenvironment{DoxyDescription}{%
@@ -322,10 +337,10 @@
     \tabulinesep=1mm%
     \par%
     \ifthenelse{\equal{#1}{}}%
-      {\begin{longtabu*}spread 0pt [l]{|X[-1,l]|X[-1,l]|}}% name + description
+      {\begin{longtabu*}spread 0pt [l]{|c|p{1cm}|}}% name + description
     {\ifthenelse{\equal{#1}{1}}%
-      {\begin{longtabu*}spread 0pt [l]{|X[-1,l]|X[-1,l]|X[-1,l]|}}% in/out + name + desc
-      {\begin{longtabu*}spread 0pt [l]{|X[-1,l]|X[-1,l]|X[-1,l]|X[-1,l]|}}% in/out + type + name + desc
+      {\begin{longtabu*}spread 0pt [l]{|c|c|p{1cm}|}}% in/out + name + desc
+      {\begin{longtabu*}spread 0pt [l]{|c|c|c|p{1cm}|}}% in/out + type + name + desc
     }
     \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #2}\\[1ex]%
     \hline%
@@ -342,7 +357,7 @@
 \newenvironment{DoxyFields}[1]{%
     \tabulinesep=1mm%
     \par%
-    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|X[-1,l]|}%
+    \begin{longtabu*}spread 0pt [l]{|c|c|c|}%
     \multicolumn{3}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
     \hline%
     \endfirsthead%
@@ -358,7 +373,7 @@
 \newenvironment{DoxyEnumFields}[1]{%
     \tabulinesep=1mm%
     \par%
-    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}%
+    \begin{longtabu*}spread 0pt [l]{|c|p{1cm}|}%
     \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
     \hline%
     \endfirsthead%
@@ -380,7 +395,7 @@
 \newenvironment{DoxyRetVals}[1]{%
     \tabulinesep=1mm%
     \par%
-    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}%
+    \begin{longtabu*}spread 0pt [l]{|c|c|}%
     \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
     \hline%
     \endfirsthead%
@@ -396,7 +411,7 @@
 \newenvironment{DoxyExceptions}[1]{%
     \tabulinesep=1mm%
     \par%
-    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}%
+    \begin{longtabu*}spread 0pt [l]{|c|c|}%
     \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
     \hline%
     \endfirsthead%
@@ -412,7 +427,7 @@
 \newenvironment{DoxyTemplParams}[1]{%
     \tabulinesep=1mm%
     \par%
-    \begin{longtabu*}spread 0pt [l]{|X[-1,r]|X[-1,l]|}%
+    \begin{longtabu*}spread 0pt [l]{|c|c|}%
     \multicolumn{2}{l}{\hspace{-6pt}\bfseries\fontseries{bc}\selectfont\color{darkgray} #1}\\[1ex]%
     \hline%
     \endfirsthead%
@@ -488,11 +503,11 @@
 \newcommand{\PBS}[1]{\let\temp=\\#1\let\\=\temp}%
 \newenvironment{TabularC}[1]%
 {\tabulinesep=1mm
-\begin{longtabu*}spread 0pt [c]{*#1{|X[-1]}|}}%
+\begin{longtabu*}spread 0pt [c]{*#1{|c}|}}%
 {\end{longtabu*}\par}%
 
 \newenvironment{TabularNC}[1]%
-{\begin{tabu}spread 0pt [l]{*#1{|X[-1]}|}}%
+{\begin{tabu}spread 0pt [l]{*#1{|c}|}}%
 {\end{tabu}\par}%
 
 % Used for member group headers
@@ -574,3 +589,13 @@
 \H@refstepcounter{figure}%
 \@dblarg{\@caption{figure}}}
 \makeatother
+
+% Define alpha enumarative names for counters > 26
+\makeatletter
+\def\enumalphalphcnt#1{\expandafter\@enumalphalphcnt\csname c@#1\endcsname}
+\def\@enumalphalphcnt#1{\alphalph{#1}}
+\def\enumAlphAlphcnt#1{\expandafter\@enumAlphAlphcnt\csname c@#1\endcsname}
+\def\@enumAlphAlphcnt#1{\AlphAlph{#1}}
+\makeatother
+\AddEnumerateCounter{\enumalphalphcnt}{\@enumalphalphcnt}{aa}
+\AddEnumerateCounter{\enumAlphAlphcnt}{\@enumAlphAlphcnt}{AA}

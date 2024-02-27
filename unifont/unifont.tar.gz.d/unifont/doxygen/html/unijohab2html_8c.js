@@ -3,7 +3,6 @@ var unijohab2html_8c =
     [ "BLACK", "unijohab2html_8c.html#a7b3b25cba33b07c303f3060fe41887f6", null ],
     [ "BLUE", "unijohab2html_8c.html#a79d10e672abb49ad63eeaa8aaef57c38", null ],
     [ "GREEN", "unijohab2html_8c.html#acfbc006ea433ad708fdee3e82996e721", null ],
-    [ "MAXFILENAME", "unijohab2html_8c.html#a0947c0a3d28c188caa4497cce08539c9", null ],
     [ "RED", "unijohab2html_8c.html#a8d23feea868a983c8c2b661e1e16972f", null ],
     [ "START_JUNG", "unijohab2html_8c.html#a33117bbfbedd06585bc3c4ab55e95b2f", null ],
     [ "WHITE", "unijohab2html_8c.html#a87b537f5fa5c109d3c05c13d6b18f382", null ],

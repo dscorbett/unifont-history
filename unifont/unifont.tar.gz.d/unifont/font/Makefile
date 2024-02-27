@@ -17,7 +17,7 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.1.01
+VERSION = 15.1.02
 
 COPYRIGHT = "Copyright (C) 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
@@ -208,8 +208,8 @@ hex: hex-stamp
 $(HANGUL): $(HANGUL_PUA)
 	(cd $(HEXDIR)/hangul && make && install -m 0644 hangul-syllables ..)
 
-$(HANGUL): $(HANGUL_SYL)
-	install -m 0644 $(HANGUL_SYL) $(HANGUL) 
+# $(HANGUL): $(HANGUL_SYL)
+# 	install -m 0644 $(HANGUL_SYL) $(HANGUL) 
 
 hex-stamp:
 	if [ ! -d $(BINDIR) ] ; then \

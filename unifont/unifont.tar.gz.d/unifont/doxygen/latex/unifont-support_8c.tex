@@ -41,6 +41,10 @@ Copyright © 2023 Paul Hardy
 \end{DoxyCopyright}
 
 
+Definition in file \mbox{\hyperlink{unifont-support_8c_source}{unifont-\/support.\+c}}.
+
+
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{unifont-support_8c_a2eeb053259792aa3fb7ff53813f7d7e4}\label{unifont-support_8c_a2eeb053259792aa3fb7ff53813f7d7e4}} 
 \index{unifont-\/support.c@{unifont-\/support.c}!glyph2bits@{glyph2bits}}
@@ -65,39 +69,39 @@ This function takes a Unifont 16-\/row by 1-\/ or 2-\/byte wide binary glyph and
 \end{DoxyParams}
 
 
-Definition at line 91 of file unifont-\/support.\+c.
+Definition at line \mbox{\hyperlink{unifont-support_8c_source_l00091}{91}} of file \mbox{\hyperlink{unifont-support_8c_source}{unifont-\/support.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{93                                               \{}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} tmp\_byte;}
-\DoxyCodeLine{96    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} mask;}
-\DoxyCodeLine{97    \textcolor{keywordtype}{int} row, column;}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{99    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) \{}
-\DoxyCodeLine{100       tmp\_byte = glyph [row][0];}
-\DoxyCodeLine{101       mask = 0x80;}
-\DoxyCodeLine{102       \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
-\DoxyCodeLine{103          glyphbits [row][column] = tmp\_byte \& mask ? 1 : 0;}
-\DoxyCodeLine{104          mask >>= 1;}
-\DoxyCodeLine{105       \}}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107       \textcolor{keywordflow}{if} (width > 8)}
-\DoxyCodeLine{108          tmp\_byte = glyph [row][1];}
-\DoxyCodeLine{109       \textcolor{keywordflow}{else}}
-\DoxyCodeLine{110          tmp\_byte = 0x00;}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112       mask = 0x80;}
-\DoxyCodeLine{113       \textcolor{keywordflow}{for} (column = 8; column < 16; column++) \{}
-\DoxyCodeLine{114          glyphbits [row][column] = tmp\_byte \& mask ? 1 : 0;}
-\DoxyCodeLine{115          mask >>= 1;}
-\DoxyCodeLine{116       \}}
-\DoxyCodeLine{117    \}}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120    \textcolor{keywordflow}{return};}
-\DoxyCodeLine{121 \}}
+\DoxyCodeLine{00093                                               \{}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} tmp\_byte;}
+\DoxyCodeLine{00096    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} mask;}
+\DoxyCodeLine{00097    \textcolor{keywordtype}{int} row, column;}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) \{}
+\DoxyCodeLine{00100       tmp\_byte = glyph [row][0];}
+\DoxyCodeLine{00101       mask = 0x80;}
+\DoxyCodeLine{00102       \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
+\DoxyCodeLine{00103          glyphbits [row][column] = tmp\_byte \& mask ? 1 : 0;}
+\DoxyCodeLine{00104          mask >>= 1;}
+\DoxyCodeLine{00105       \}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107       \textcolor{keywordflow}{if} (width > 8)}
+\DoxyCodeLine{00108          tmp\_byte = glyph [row][1];}
+\DoxyCodeLine{00109       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00110          tmp\_byte = 0x00;}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112       mask = 0x80;}
+\DoxyCodeLine{00113       \textcolor{keywordflow}{for} (column = 8; column < 16; column++) \{}
+\DoxyCodeLine{00114          glyphbits [row][column] = tmp\_byte \& mask ? 1 : 0;}
+\DoxyCodeLine{00115          mask >>= 1;}
+\DoxyCodeLine{00116       \}}
+\DoxyCodeLine{00117    \}}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00121 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{unifont-support_8c_ad5e42b72976f20fc70b2a837d3f2d654}\label{unifont-support_8c_ad5e42b72976f20fc70b2a837d3f2d654}} 
@@ -125,39 +129,39 @@ This function takes a code point and a 16-\/row by 1-\/ or 2-\/byte binary glyph
 \end{DoxyParams}
 
 
-Definition at line 221 of file unifont-\/support.\+c.
+Definition at line \mbox{\hyperlink{unifont-support_8c_source_l00221}{221}} of file \mbox{\hyperlink{unifont-support_8c_source}{unifont-\/support.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{223                                \{}
-\DoxyCodeLine{224 }
-\DoxyCodeLine{225    \textcolor{keywordtype}{int} i;            \textcolor{comment}{/* index into outstring array */}}
-\DoxyCodeLine{226    \textcolor{keywordtype}{int} row;}
-\DoxyCodeLine{227 }
-\DoxyCodeLine{228    \textcolor{keywordflow}{if} (codept <= 0xFFFF) \{}
-\DoxyCodeLine{229       sprintf (outstring, \textcolor{stringliteral}{"{}\%04X:"{}}, codept);}
-\DoxyCodeLine{230       i = 5;}
-\DoxyCodeLine{231    \}}
-\DoxyCodeLine{232    \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{233       sprintf (outstring, \textcolor{stringliteral}{"{}\%06X:"{}}, codept);}
-\DoxyCodeLine{234       i = 7;}
-\DoxyCodeLine{235    \}}
-\DoxyCodeLine{236 }
-\DoxyCodeLine{237    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) \{}
-\DoxyCodeLine{238       sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, glyph [row][0]);}
-\DoxyCodeLine{239       i += 2;}
-\DoxyCodeLine{240 }
-\DoxyCodeLine{241       \textcolor{keywordflow}{if} (width > 8) \{}
-\DoxyCodeLine{242          sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, glyph [row][1]);}
-\DoxyCodeLine{243          i += 2;}
-\DoxyCodeLine{244       \}}
-\DoxyCodeLine{245    \}}
-\DoxyCodeLine{246 }
-\DoxyCodeLine{247    outstring[i] = \textcolor{charliteral}{'\(\backslash\)0'};  \textcolor{comment}{/* terminate output string */}}
-\DoxyCodeLine{248   }
-\DoxyCodeLine{249 }
-\DoxyCodeLine{250    \textcolor{keywordflow}{return};}
-\DoxyCodeLine{251 \}}
+\DoxyCodeLine{00223                                \{}
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225    \textcolor{keywordtype}{int} i;            \textcolor{comment}{/* index into outstring array */}}
+\DoxyCodeLine{00226    \textcolor{keywordtype}{int} row;}
+\DoxyCodeLine{00227 }
+\DoxyCodeLine{00228    \textcolor{keywordflow}{if} (codept <= 0xFFFF) \{}
+\DoxyCodeLine{00229       sprintf (outstring, \textcolor{stringliteral}{"{}\%04X:"{}}, codept);}
+\DoxyCodeLine{00230       i = 5;}
+\DoxyCodeLine{00231    \}}
+\DoxyCodeLine{00232    \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00233       sprintf (outstring, \textcolor{stringliteral}{"{}\%06X:"{}}, codept);}
+\DoxyCodeLine{00234       i = 7;}
+\DoxyCodeLine{00235    \}}
+\DoxyCodeLine{00236 }
+\DoxyCodeLine{00237    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) \{}
+\DoxyCodeLine{00238       sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, glyph [row][0]);}
+\DoxyCodeLine{00239       i += 2;}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241       \textcolor{keywordflow}{if} (width > 8) \{}
+\DoxyCodeLine{00242          sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, glyph [row][1]);}
+\DoxyCodeLine{00243          i += 2;}
+\DoxyCodeLine{00244       \}}
+\DoxyCodeLine{00245    \}}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247    outstring[i] = \textcolor{charliteral}{'\(\backslash\)0'};  \textcolor{comment}{/* terminate output string */}}
+\DoxyCodeLine{00248   }
+\DoxyCodeLine{00249 }
+\DoxyCodeLine{00250    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00251 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{unifont-support_8c_a0156000204eb606b3288854b0a38acf0}\label{unifont-support_8c_a0156000204eb606b3288854b0a38acf0}} 
@@ -187,65 +191,65 @@ The glyphbits array contains a \textquotesingle{}1\textquotesingle{} in each cel
 \end{DoxyParams}
 
 
-Definition at line 150 of file unifont-\/support.\+c.
+Definition at line \mbox{\hyperlink{unifont-support_8c_source_l00150}{150}} of file \mbox{\hyperlink{unifont-support_8c_source}{unifont-\/support.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{152                                           \{}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154    \textcolor{keywordtype}{int} column;}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156 }
-\DoxyCodeLine{157    \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
-\DoxyCodeLine{158       transpose [0][column] =}
-\DoxyCodeLine{159                (glyphbits [ 0][column] << 7) |}
-\DoxyCodeLine{160                (glyphbits [ 1][column] << 6) |}
-\DoxyCodeLine{161                (glyphbits [ 2][column] << 5) |}
-\DoxyCodeLine{162                (glyphbits [ 3][column] << 4) |}
-\DoxyCodeLine{163                (glyphbits [ 4][column] << 3) |}
-\DoxyCodeLine{164                (glyphbits [ 5][column] << 2) |}
-\DoxyCodeLine{165                (glyphbits [ 6][column] << 1) |}
-\DoxyCodeLine{166                (glyphbits [ 7][column]     );}
-\DoxyCodeLine{167       transpose [1][column] =}
-\DoxyCodeLine{168                (glyphbits [ 8][column] << 7) |}
-\DoxyCodeLine{169                (glyphbits [ 9][column] << 6) |}
-\DoxyCodeLine{170                (glyphbits [10][column] << 5) |}
-\DoxyCodeLine{171                (glyphbits [11][column] << 4) |}
-\DoxyCodeLine{172                (glyphbits [12][column] << 3) |}
-\DoxyCodeLine{173                (glyphbits [13][column] << 2) |}
-\DoxyCodeLine{174                (glyphbits [14][column] << 1) |}
-\DoxyCodeLine{175                (glyphbits [15][column]     );}
-\DoxyCodeLine{176    \}}
-\DoxyCodeLine{177    \textcolor{keywordflow}{if} (width > 8) \{}
-\DoxyCodeLine{178       \textcolor{keywordflow}{for} (column = 8; column < width; column++) \{}
-\DoxyCodeLine{179          transpose [0][column] =}
-\DoxyCodeLine{180                   (glyphbits [0][column] << 7) |}
-\DoxyCodeLine{181                   (glyphbits [1][column] << 6) |}
-\DoxyCodeLine{182                   (glyphbits [2][column] << 5) |}
-\DoxyCodeLine{183                   (glyphbits [3][column] << 4) |}
-\DoxyCodeLine{184                   (glyphbits [4][column] << 3) |}
-\DoxyCodeLine{185                   (glyphbits [5][column] << 2) |}
-\DoxyCodeLine{186                   (glyphbits [6][column] << 1) |}
-\DoxyCodeLine{187                   (glyphbits [7][column]     );}
-\DoxyCodeLine{188          transpose [1][column] =}
-\DoxyCodeLine{189                   (glyphbits [ 8][column] << 7) |}
-\DoxyCodeLine{190                   (glyphbits [ 9][column] << 6) |}
-\DoxyCodeLine{191                   (glyphbits [10][column] << 5) |}
-\DoxyCodeLine{192                   (glyphbits [11][column] << 4) |}
-\DoxyCodeLine{193                   (glyphbits [12][column] << 3) |}
-\DoxyCodeLine{194                   (glyphbits [13][column] << 2) |}
-\DoxyCodeLine{195                   (glyphbits [14][column] << 1) |}
-\DoxyCodeLine{196                   (glyphbits [15][column]     );}
-\DoxyCodeLine{197       \}}
-\DoxyCodeLine{198    \}}
-\DoxyCodeLine{199    \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{200       \textcolor{keywordflow}{for} (column = 8; column < width; column++)}
-\DoxyCodeLine{201          transpose [0][column] = transpose [1][column] = 0x00;}
-\DoxyCodeLine{202    \}}
-\DoxyCodeLine{203 }
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205    \textcolor{keywordflow}{return};}
-\DoxyCodeLine{206 \}}
+\DoxyCodeLine{00152                                           \{}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154    \textcolor{keywordtype}{int} column;}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157    \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
+\DoxyCodeLine{00158       transpose [0][column] =}
+\DoxyCodeLine{00159                (glyphbits [ 0][column] << 7) |}
+\DoxyCodeLine{00160                (glyphbits [ 1][column] << 6) |}
+\DoxyCodeLine{00161                (glyphbits [ 2][column] << 5) |}
+\DoxyCodeLine{00162                (glyphbits [ 3][column] << 4) |}
+\DoxyCodeLine{00163                (glyphbits [ 4][column] << 3) |}
+\DoxyCodeLine{00164                (glyphbits [ 5][column] << 2) |}
+\DoxyCodeLine{00165                (glyphbits [ 6][column] << 1) |}
+\DoxyCodeLine{00166                (glyphbits [ 7][column]     );}
+\DoxyCodeLine{00167       transpose [1][column] =}
+\DoxyCodeLine{00168                (glyphbits [ 8][column] << 7) |}
+\DoxyCodeLine{00169                (glyphbits [ 9][column] << 6) |}
+\DoxyCodeLine{00170                (glyphbits [10][column] << 5) |}
+\DoxyCodeLine{00171                (glyphbits [11][column] << 4) |}
+\DoxyCodeLine{00172                (glyphbits [12][column] << 3) |}
+\DoxyCodeLine{00173                (glyphbits [13][column] << 2) |}
+\DoxyCodeLine{00174                (glyphbits [14][column] << 1) |}
+\DoxyCodeLine{00175                (glyphbits [15][column]     );}
+\DoxyCodeLine{00176    \}}
+\DoxyCodeLine{00177    \textcolor{keywordflow}{if} (width > 8) \{}
+\DoxyCodeLine{00178       \textcolor{keywordflow}{for} (column = 8; column < width; column++) \{}
+\DoxyCodeLine{00179          transpose [0][column] =}
+\DoxyCodeLine{00180                   (glyphbits [0][column] << 7) |}
+\DoxyCodeLine{00181                   (glyphbits [1][column] << 6) |}
+\DoxyCodeLine{00182                   (glyphbits [2][column] << 5) |}
+\DoxyCodeLine{00183                   (glyphbits [3][column] << 4) |}
+\DoxyCodeLine{00184                   (glyphbits [4][column] << 3) |}
+\DoxyCodeLine{00185                   (glyphbits [5][column] << 2) |}
+\DoxyCodeLine{00186                   (glyphbits [6][column] << 1) |}
+\DoxyCodeLine{00187                   (glyphbits [7][column]     );}
+\DoxyCodeLine{00188          transpose [1][column] =}
+\DoxyCodeLine{00189                   (glyphbits [ 8][column] << 7) |}
+\DoxyCodeLine{00190                   (glyphbits [ 9][column] << 6) |}
+\DoxyCodeLine{00191                   (glyphbits [10][column] << 5) |}
+\DoxyCodeLine{00192                   (glyphbits [11][column] << 4) |}
+\DoxyCodeLine{00193                   (glyphbits [12][column] << 3) |}
+\DoxyCodeLine{00194                   (glyphbits [13][column] << 2) |}
+\DoxyCodeLine{00195                   (glyphbits [14][column] << 1) |}
+\DoxyCodeLine{00196                   (glyphbits [15][column]     );}
+\DoxyCodeLine{00197       \}}
+\DoxyCodeLine{00198    \}}
+\DoxyCodeLine{00199    \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00200       \textcolor{keywordflow}{for} (column = 8; column < width; column++)}
+\DoxyCodeLine{00201          transpose [0][column] = transpose [1][column] = 0x00;}
+\DoxyCodeLine{00202    \}}
+\DoxyCodeLine{00203 }
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00206 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{unifont-support_8c_ac9dc2e18133dd52df3d7a09122f63c5f}\label{unifont-support_8c_ac9dc2e18133dd52df3d7a09122f63c5f}} 
@@ -273,39 +277,39 @@ This function takes one line from a Unifont .hex file and decodes it into a code
 \end{DoxyParams}
 
 
-Definition at line 44 of file unifont-\/support.\+c.
+Definition at line \mbox{\hyperlink{unifont-support_8c_source_l00044}{44}} of file \mbox{\hyperlink{unifont-support_8c_source}{unifont-\/support.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{47                                        \{}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49    \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{50    \textcolor{keywordtype}{int} row;}
-\DoxyCodeLine{51    \textcolor{keywordtype}{int} length;}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53    sscanf (hexstring, \textcolor{stringliteral}{"{}\%X"{}}, codept);}
-\DoxyCodeLine{54    length = strlen (hexstring);}
-\DoxyCodeLine{55    \textcolor{keywordflow}{for} (i = length -\/ 1; i > 0 \&\& hexstring[i] != \textcolor{charliteral}{'\(\backslash\)n'}; i-\/-\/);}
-\DoxyCodeLine{56    hexstring[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{57    \textcolor{keywordflow}{for} (i = 0; i < 9 \&\& hexstring[i] != \textcolor{charliteral}{':'}; i++);}
-\DoxyCodeLine{58    i++;  \textcolor{comment}{/* Skip over ':' */}}
-\DoxyCodeLine{59    *width = (length -\/ i) * 4 / 16;  \textcolor{comment}{/* 16 rows per glyphbits */}}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) \{}
-\DoxyCodeLine{62       sscanf (\&hexstring[i], \textcolor{stringliteral}{"{}\%2hhX"{}}, \&glyph [row][0]);}
-\DoxyCodeLine{63       i += 2;}
-\DoxyCodeLine{64       \textcolor{keywordflow}{if} (*width > 8) \{}
-\DoxyCodeLine{65         sscanf (\&hexstring[i], \textcolor{stringliteral}{"{}\%2hhX"{}}, \&glyph [row][1]);}
-\DoxyCodeLine{66         i += 2;}
-\DoxyCodeLine{67       \}}
-\DoxyCodeLine{68       \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{69          glyph [row][1] = 0x00;}
-\DoxyCodeLine{70       \}}
-\DoxyCodeLine{71    \}}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74    \textcolor{keywordflow}{return};}
-\DoxyCodeLine{75 \}}
+\DoxyCodeLine{00047                                        \{}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049    \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{00050    \textcolor{keywordtype}{int} row;}
+\DoxyCodeLine{00051    \textcolor{keywordtype}{int} length;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053    sscanf (hexstring, \textcolor{stringliteral}{"{}\%X"{}}, codept);}
+\DoxyCodeLine{00054    length = strlen (hexstring);}
+\DoxyCodeLine{00055    \textcolor{keywordflow}{for} (i = length -\/ 1; i > 0 \&\& hexstring[i] != \textcolor{charliteral}{'\(\backslash\)n'}; i-\/-\/);}
+\DoxyCodeLine{00056    hexstring[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00057    \textcolor{keywordflow}{for} (i = 0; i < 9 \&\& hexstring[i] != \textcolor{charliteral}{':'}; i++);}
+\DoxyCodeLine{00058    i++;  \textcolor{comment}{/* Skip over ':' */}}
+\DoxyCodeLine{00059    *width = (length -\/ i) * 4 / 16;  \textcolor{comment}{/* 16 rows per glyphbits */}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) \{}
+\DoxyCodeLine{00062       sscanf (\&hexstring[i], \textcolor{stringliteral}{"{}\%2hhX"{}}, \&glyph [row][0]);}
+\DoxyCodeLine{00063       i += 2;}
+\DoxyCodeLine{00064       \textcolor{keywordflow}{if} (*width > 8) \{}
+\DoxyCodeLine{00065         sscanf (\&hexstring[i], \textcolor{stringliteral}{"{}\%2hhX"{}}, \&glyph [row][1]);}
+\DoxyCodeLine{00066         i += 2;}
+\DoxyCodeLine{00067       \}}
+\DoxyCodeLine{00068       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00069          glyph [row][1] = 0x00;}
+\DoxyCodeLine{00070       \}}
+\DoxyCodeLine{00071    \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00075 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{unifont-support_8c_a9292d6df99f93635cc891baaf8f66346}\label{unifont-support_8c_a9292d6df99f93635cc891baaf8f66346}} 
@@ -333,49 +337,49 @@ This function takes a code point and a transposed Unifont glyph of 2 rows of 8 p
 \end{DoxyParams}
 
 
-Definition at line 267 of file unifont-\/support.\+c.
+Definition at line \mbox{\hyperlink{unifont-support_8c_source_l00267}{267}} of file \mbox{\hyperlink{unifont-support_8c_source}{unifont-\/support.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{269                                 \{}
-\DoxyCodeLine{270 }
-\DoxyCodeLine{271    \textcolor{keywordtype}{int} i;            \textcolor{comment}{/* index into outstring array */}}
-\DoxyCodeLine{272    \textcolor{keywordtype}{int}  column;}
-\DoxyCodeLine{273 }
-\DoxyCodeLine{274    \textcolor{keywordflow}{if} (codept <= 0xFFFF) \{}
-\DoxyCodeLine{275       sprintf (outstring, \textcolor{stringliteral}{"{}\%04X:"{}}, codept);}
-\DoxyCodeLine{276       i = 5;}
-\DoxyCodeLine{277    \}}
-\DoxyCodeLine{278    \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{279       sprintf (outstring, \textcolor{stringliteral}{"{}\%06X:"{}}, codept);}
-\DoxyCodeLine{280       i = 7;}
-\DoxyCodeLine{281    \}}
-\DoxyCodeLine{282 }
-\DoxyCodeLine{283    \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
-\DoxyCodeLine{284       sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [0][column]);}
-\DoxyCodeLine{285       i += 2;}
-\DoxyCodeLine{286    \}}
-\DoxyCodeLine{287    \textcolor{keywordflow}{if} (width > 8) \{}
-\DoxyCodeLine{288       \textcolor{keywordflow}{for} (column = 8; column < 16; column++) \{}
-\DoxyCodeLine{289          sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [0][column]);}
-\DoxyCodeLine{290          i += 2;}
-\DoxyCodeLine{291       \}}
-\DoxyCodeLine{292    \}}
-\DoxyCodeLine{293    \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
-\DoxyCodeLine{294       sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [1][column]);}
-\DoxyCodeLine{295       i += 2;}
-\DoxyCodeLine{296    \}}
-\DoxyCodeLine{297    \textcolor{keywordflow}{if} (width > 8) \{}
-\DoxyCodeLine{298       \textcolor{keywordflow}{for} (column = 8; column < 16; column++) \{}
-\DoxyCodeLine{299          sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [1][column]);}
-\DoxyCodeLine{300          i += 2;}
-\DoxyCodeLine{301       \}}
-\DoxyCodeLine{302    \}}
-\DoxyCodeLine{303 }
-\DoxyCodeLine{304    outstring[i] = \textcolor{charliteral}{'\(\backslash\)0'};  \textcolor{comment}{/* terminate output string */}}
-\DoxyCodeLine{305   }
-\DoxyCodeLine{306 }
-\DoxyCodeLine{307    \textcolor{keywordflow}{return};}
-\DoxyCodeLine{308 \}}
+\DoxyCodeLine{00269                                 \{}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271    \textcolor{keywordtype}{int} i;            \textcolor{comment}{/* index into outstring array */}}
+\DoxyCodeLine{00272    \textcolor{keywordtype}{int}  column;}
+\DoxyCodeLine{00273 }
+\DoxyCodeLine{00274    \textcolor{keywordflow}{if} (codept <= 0xFFFF) \{}
+\DoxyCodeLine{00275       sprintf (outstring, \textcolor{stringliteral}{"{}\%04X:"{}}, codept);}
+\DoxyCodeLine{00276       i = 5;}
+\DoxyCodeLine{00277    \}}
+\DoxyCodeLine{00278    \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00279       sprintf (outstring, \textcolor{stringliteral}{"{}\%06X:"{}}, codept);}
+\DoxyCodeLine{00280       i = 7;}
+\DoxyCodeLine{00281    \}}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283    \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
+\DoxyCodeLine{00284       sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [0][column]);}
+\DoxyCodeLine{00285       i += 2;}
+\DoxyCodeLine{00286    \}}
+\DoxyCodeLine{00287    \textcolor{keywordflow}{if} (width > 8) \{}
+\DoxyCodeLine{00288       \textcolor{keywordflow}{for} (column = 8; column < 16; column++) \{}
+\DoxyCodeLine{00289          sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [0][column]);}
+\DoxyCodeLine{00290          i += 2;}
+\DoxyCodeLine{00291       \}}
+\DoxyCodeLine{00292    \}}
+\DoxyCodeLine{00293    \textcolor{keywordflow}{for} (column = 0; column < 8; column++) \{}
+\DoxyCodeLine{00294       sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [1][column]);}
+\DoxyCodeLine{00295       i += 2;}
+\DoxyCodeLine{00296    \}}
+\DoxyCodeLine{00297    \textcolor{keywordflow}{if} (width > 8) \{}
+\DoxyCodeLine{00298       \textcolor{keywordflow}{for} (column = 8; column < 16; column++) \{}
+\DoxyCodeLine{00299          sprintf (\&outstring[i], \textcolor{stringliteral}{"{}\%02X"{}}, transpose [1][column]);}
+\DoxyCodeLine{00300          i += 2;}
+\DoxyCodeLine{00301       \}}
+\DoxyCodeLine{00302    \}}
+\DoxyCodeLine{00303 }
+\DoxyCodeLine{00304    outstring[i] = \textcolor{charliteral}{'\(\backslash\)0'};  \textcolor{comment}{/* terminate output string */}}
+\DoxyCodeLine{00305   }
+\DoxyCodeLine{00306 }
+\DoxyCodeLine{00307    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00308 \}}
 
 \end{DoxyCode}

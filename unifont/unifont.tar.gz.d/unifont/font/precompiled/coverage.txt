@@ -439,7 +439,7 @@ Covered      Range        Script
    0.1% U+2F800..U+2FF7F  CJK Compatibility Ideographs Supplement
    0.0% U+2FF80..U+2FFFD  Unassigned
    0.0% U+2FFFE..U+2FFFF  Noncharacters
-   0.1% U+30000..U+3134F  CJK Unified Ideographs Extension G
+   7.8% U+30000..U+3134F  CJK Unified Ideographs Extension G
    0.0% U+31350..U+323AF  CJK Unified Ideographs Extension H
    0.0% U+323B0..U+3FFFD  Unassigned
    0.0% U+3FFFE..U+3FFFF  Noncharacters

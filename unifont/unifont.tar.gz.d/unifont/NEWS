@@ -1,3 +1,8 @@
+2023-09-21: Release 15.1.02
+   * 湖 远星 adjusted 46 glyphs in the Wen Quan Yi range, U+2F00..U+9FFF, and
+     contributed CJK Unified Ideographs Extension G glyphs U+30000..U+3017F.
+   * Added new man pages to MAN1PAGES & MAN5PAGES definitions for installation.
+
 2023-09-12: Release 15.1.01
    * Glyphs updated for Unicode 15.1.0 release.
    * OpenType fonts are now built by default, replacing TrueType fonts.

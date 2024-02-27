@@ -1,6 +1,5 @@
 var unihex2bmp_8c =
 [
-    [ "MAXBUF", "unihex2bmp_8c.html#ad7871643c05865c80f5d8050aead2b57", null ],
     [ "hex2bit", "unihex2bmp_8c.html#a62ecfabc9a441d36b570aae42755b232", null ],
     [ "init", "unihex2bmp_8c.html#a0ae74e74805cbaa4bf60ff3c8df15512", null ],
     [ "main", "unihex2bmp_8c.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
