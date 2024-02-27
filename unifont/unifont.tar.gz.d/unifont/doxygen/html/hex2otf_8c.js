@@ -1,11 +1,11 @@
 var hex2otf_8c =
 [
-    [ "Buffer", "struct_buffer.html", null ],
-    [ "Glyph", "struct_glyph.html", "struct_glyph" ],
-    [ "Font", "struct_font.html", null ],
-    [ "Table", "struct_table.html", null ],
-    [ "TableRecord", "struct_table_record.html", null ],
-    [ "Options", "struct_options.html", null ],
+    [ "Buffer", "structBuffer.html", null ],
+    [ "Glyph", "structGlyph.html", "structGlyph" ],
+    [ "Font", "structFont.html", null ],
+    [ "Table", "structTable.html", null ],
+    [ "TableRecord", "structTableRecord.html", null ],
+    [ "Options", "structOptions.html", null ],
     [ "ASCENDER", "hex2otf_8c.html#ad0d9350c8943e5550a14f1cff5580a6c", null ],
     [ "B0", "hex2otf_8c.html#a15c6f2a017088c5db6daac264f992a67", null ],
     [ "B1", "hex2otf_8c.html#a2177c1b55319bb7fd9015fb8b8629ead", null ],

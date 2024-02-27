@@ -48,6 +48,9 @@
 /*
    2018, Paul Hardy: Changed "Private Use" to "Private Use Area" in
    output HTML file.
+
+   21 October 2023 [Paul Hardy]:
+   - Added full prototype for mkftable function in main function.
 */
 
 #include <stdio.h>
@@ -77,7 +80,9 @@ main (int argc, char *argv[])
    int pageno=0; /* page number selected if only examining one page */
    int html=0;   /* =0: print plain text; =1: print HTML */
    int links=0;  /* =1: print HTML links; =0: don't print links */
-   void mkftable();  /* make (print) flipped HTML table */
+
+   /* make (print) flipped HTML table */
+   void mkftable (unsigned plane, int pagecount[256], int links);
 
    size_t strlen();
 

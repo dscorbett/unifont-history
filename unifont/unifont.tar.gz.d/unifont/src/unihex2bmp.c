@@ -38,6 +38,9 @@
      wide, not 32) glyphs.  The 32nd column in a glyph cell is occupied by
      the vertical cell border, so a quadruple-width glyph can only occupy
      the first 31 columns; the 32nd column is ignored.
+
+   21 October 2023 [Paul Hardy]:
+   - Added full prototypes in main function for init and hex2bit functions.
 */
 
 #include <stdio.h>
@@ -116,8 +119,11 @@ main (int argc, char *argv[])
    char *infile="", *outfile="";  /* names of input and output files */
    FILE *infp, *outfp;      /* file pointers of input and output files */
 
-   int init();                  /* initializes bitmap row/col labeling, &c. */
-   int hex2bit();               /* convert hex string --> bitmap */
+   /* initializes bitmap row/col labeling, &c. */
+   int init (unsigned char bitmap[17*32][18*4]);
+
+   /* convert hex string --> bitmap */
+   int hex2bit (char *instring, unsigned char character[32][4]);
 
    bitmapsize = 17*32*18*4;  /* 17 rows by 18 cols, each 4 bytes */
 

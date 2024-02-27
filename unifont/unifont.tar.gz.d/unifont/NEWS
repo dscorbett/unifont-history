@@ -1,3 +1,10 @@
+2023-10-21: Release 15.1.03
+  * Boris Zhang and Yzy32767 contributed CJK Unified Ideographs
+    Extension I glyphs (U+2EBF0..U+2EE5D).
+  * 湖 远星 contributed 14 glyph updates to CJK Unified Ideographs
+    Extension B and Extension C: U+2A6D7..U+2A6DF and
+    U+2B735..U+2B739.
+
 2023-09-21: Release 15.1.02
    * 湖 远星 adjusted 46 glyphs in the Wen Quan Yi range, U+2F00..U+9FFF, and
      contributed CJK Unified Ideographs Extension G glyphs U+30000..U+3017F.

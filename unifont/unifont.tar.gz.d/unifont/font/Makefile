@@ -17,7 +17,7 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.1.02
+VERSION = 15.1.03
 
 COPYRIGHT = "Copyright (C) 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
@@ -223,8 +223,11 @@ hex-stamp:
 	  egrep -v "^FFF[EF]" | grep -v "^01F12F:" | \
 	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
 	   > $(COMPILED_DIR)/unifont_sample-$(VERSION).hex
-	sort $(UPPER_FILES) \
-	   > $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	# Create separate Chinese and Japanese Plane 2 versions temporarily.
+	sort -u -t ':' -k 1,1 $(PLANE_2_ZH_HEX)  $(PLANE_2_JP_HEX) \
+	   -o $(COMPILED_DIR)/unifont_zh-plane02.hex
+	sort -u -t ':' -k 1,1 $(PLANE_2_JP_HEX) $(PLANE_2_ZH_HEX) \
+	   -o $(COMPILED_DIR)/unifont_jp-plane02.hex
 	sort $(UPPER_COMBINING) > $(COMPILED_DIR)/upper_combining.txt
 	sort plane0[1-E]/plane*-nonprinting.hex \
 	   > $(COMPILED_DIR)/upper_nonprinting.hex
@@ -232,19 +235,20 @@ hex-stamp:
 	(cd plane01 && make)
 	sort plane01/plane01-all.hex plane02/zh-plane02.hex \
 		plane0[3-E]/*.hex | \
-	   egrep -v "^..FFF[EF]" | \
+	   grep -v "^0020:"       | \
+	   egrep -v "^..FFF[EF]"  | \
 	   $(BINDIR)/unigencircles $(COMPILED_DIR)/upper_combining.txt \
 	   $(COMPILED_DIR)/upper_nonprinting.hex \
 	   > $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex
 	# Create a .hex file with CSUR glyphs, without combining circles
 	(cd plane00csur && make)
-	sort plane00csur/plane00csur-all.hex \
-	     $(COMPILED_DIR)/unifont-$(VERSION).hex \
-	   > $(COMPILED_DIR)/unifont_csur_lower-$(VERSION).hex
+	grep -v "^0020:" plane00csur/plane00csur-all.hex | \
+	   sort - $(COMPILED_DIR)/unifont-$(VERSION).hex \
+	      > $(COMPILED_DIR)/unifont_csur_lower-$(VERSION).hex
 	# Create a .hex file with only CSUR glyphs from all planes
 	sort plane00csur/plane00csur-all.hex | sed -e 's/^/00/' \
 	   > $(COMPILED_DIR)/unifont_csur-$(VERSION).hex
-	sort plane0[1-F]csur/*.hex \
+	sort plane0[1-F]csur/*.hex | grep -v "^0020:" \
 	   >> $(COMPILED_DIR)/unifont_csur-$(VERSION).hex
 	# Create a .hex file with all CSUR glyphs, with combining circles
 	sort plane00csur/plane00csur-combining.txt \
@@ -262,8 +266,21 @@ hex-stamp:
 	   tee $(COMPILED_DIR)/unifont_jp-$(VERSION).hex | \
 	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
               > $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex
-	sort $(PLANE_2_JP_HEX) $(PLANE_3_ZH_HEX) \
+	# Build upper plane hex files with Chinese & Japanese variants.
+	sort $(ALL_HEX_PLANE0E)      > $(COMPILED_DIR)/unifont-plane0E.hex
+	cp  plane01/plane01-all.hex    $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	cat $(PLANE_3_ZH_HEX)       >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	cat   $(COMPILED_DIR)/unifont-plane0E.hex \
+	   >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	grep -v "^0020:" plane01/plane01-all.hex | \
 	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	cat $(PLANE_3_ZH_HEX)       >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	cat   $(COMPILED_DIR)/unifont-plane0E.hex \
+	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	# Remove temporary files.
+	rm $(COMPILED_DIR)/unifont_zh-plane02.hex \
+	   $(COMPILED_DIR)/unifont_jp-plane02.hex \
+	   $(COMPILED_DIR)/unifont-plane0E.hex
 	touch $@
 
 #

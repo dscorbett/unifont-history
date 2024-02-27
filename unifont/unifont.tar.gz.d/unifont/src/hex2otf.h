@@ -33,7 +33,7 @@
 #ifndef _HEX2OTF_H_
 #define _HEX2OTF_H_
 
-#define UNIFONT_VERSION "15.0.06"	///< Current Unifont version.
+#define UNIFONT_VERSION "15.1.03"	///< Current Unifont version.
 
 /**
     Define default strings for some TrueType font NameID strings.

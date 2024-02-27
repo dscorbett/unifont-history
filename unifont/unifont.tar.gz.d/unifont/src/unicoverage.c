@@ -47,6 +47,9 @@
    glyphs in each range instead of percent coverage.
 
    18 September 2022: [Paul Hardy] in nextrange function, initialize retval.
+
+   21 October 2023: [Paul Hardy]
+   Added full function prototype for nextrange function in main function.
 */
 
 #include <stdio.h>
@@ -80,7 +83,9 @@ main (int argc, char *argv[])
    int cstart, cend;          /* current coverage start and end code points */
    char coverstring[MAXBUF];  /* description of current coverage range      */
    int nglyphs;               /* number of glyphs in this section           */
-   int nextrange();           /* to get next range & name of Unicode glyphs */
+
+   /* to get next range & name of Unicode glyphs */
+   int nextrange (FILE *coveragefp, int *cstart, int *cend, char *coverstring);
 
    void print_subtotal (FILE *outfp, int print_n, int nglyphs,
                         int cstart, int cend, char *coverstring);

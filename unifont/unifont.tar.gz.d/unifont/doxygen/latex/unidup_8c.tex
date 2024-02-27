@@ -7,13 +7,8 @@ unidup -\/ Check for duplicate code points in sorted unifont.\+hex file
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-Include dependency graph for unidup.\+c\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=192pt]{unidup_8c__incl}
-\end{center}
-\end{figure}
+Include dependency graph for unidup.\+c\+:
+% FIG 0
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -89,32 +84,32 @@ Definition at line \mbox{\hyperlink{unidup_8c_source_l00048}{48}} of file \mbox{
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00049 \{}
-\DoxyCodeLine{00050 }
-\DoxyCodeLine{00051    \textcolor{keywordtype}{int} ix, iy;}
-\DoxyCodeLine{00052    \textcolor{keywordtype}{char} inbuf[\mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}];}
-\DoxyCodeLine{00053    \textcolor{keywordtype}{char} *infile;   \textcolor{comment}{/* the input file name */}}
-\DoxyCodeLine{00054    FILE *infilefp; \textcolor{comment}{/* file pointer to input file */}}
-\DoxyCodeLine{00055 }
-\DoxyCodeLine{00056    \textcolor{keywordflow}{if} (argc > 1) \{}
-\DoxyCodeLine{00057       infile = argv[1];}
-\DoxyCodeLine{00058       \textcolor{keywordflow}{if} ((infilefp = fopen (infile, \textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
-\DoxyCodeLine{00059          fprintf (stderr, \textcolor{stringliteral}{"{}\(\backslash\)nERROR: Can't open file \%s\(\backslash\)n\(\backslash\)n"{}}, infile);}
-\DoxyCodeLine{00060          exit (EXIT\_FAILURE);}
-\DoxyCodeLine{00061       \}}
-\DoxyCodeLine{00062    \}}
-\DoxyCodeLine{00063    \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00064       infilefp = stdin;}
-\DoxyCodeLine{00065    \}}
-\DoxyCodeLine{00066 }
-\DoxyCodeLine{00067    ix = -\/1;}
-\DoxyCodeLine{00068 }
-\DoxyCodeLine{00069    \textcolor{keywordflow}{while} (fgets (inbuf, \mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}-\/1, infilefp) != NULL) \{}
-\DoxyCodeLine{00070       sscanf (inbuf, \textcolor{stringliteral}{"{}\%X"{}}, \&iy);}
-\DoxyCodeLine{00071       \textcolor{keywordflow}{if} (ix == iy) fprintf (stderr, \textcolor{stringliteral}{"{}Duplicate code point: \%04X\(\backslash\)n"{}}, ix);}
-\DoxyCodeLine{00072       \textcolor{keywordflow}{else} ix = iy;}
-\DoxyCodeLine{00073    \}}
-\DoxyCodeLine{00074    exit (0);}
-\DoxyCodeLine{00075 \}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \textcolor{keywordtype}{int}\ ix,\ iy;}
+\DoxyCodeLine{00052\ \ \ \ \textcolor{keywordtype}{char}\ inbuf[\mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}];}
+\DoxyCodeLine{00053\ \ \ \ \textcolor{keywordtype}{char}\ *infile;\ \ \ \textcolor{comment}{/*\ the\ input\ file\ name\ */}}
+\DoxyCodeLine{00054\ \ \ \ FILE\ *infilefp;\ \textcolor{comment}{/*\ file\ pointer\ to\ input\ file\ */}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \textcolor{keywordflow}{if}\ (argc\ >\ 1)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ infile\ =\ argv[1];}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((infilefp\ =\ fopen\ (infile,\ \textcolor{stringliteral}{"{}r"{}}))\ ==\ NULL)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ fprintf\ (stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)nERROR:\ Can't\ open\ file\ \%s\(\backslash\)n\(\backslash\)n"{}},\ infile);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ infilefp\ =\ stdin;}
+\DoxyCodeLine{00065\ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ ix\ =\ -\/1;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \textcolor{keywordflow}{while}\ (fgets\ (inbuf,\ \mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}-\/1,\ infilefp)\ !=\ NULL)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ sscanf\ (inbuf,\ \textcolor{stringliteral}{"{}\%X"{}},\ \&iy);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ix\ ==\ iy)\ fprintf\ (stderr,\ \textcolor{stringliteral}{"{}Duplicate\ code\ point:\ \%04X\(\backslash\)n"{}},\ ix);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ ix\ =\ iy;}
+\DoxyCodeLine{00073\ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ exit\ (0);}
+\DoxyCodeLine{00075\ \}}
 
 \end{DoxyCode}

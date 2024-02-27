@@ -431,11 +431,11 @@ Covered      Range        Script
  100.0% U+1FB00..U+1FBFF  Symbols for Legacy Computing
  100.0% U+1FC00..U+1FFFD  Unassigned
    0.0% U+1FFFE..U+1FFFF  Noncharacters
-   0.8% U+20000..U+2A6FF  CJK Unified Ideographs Extension B
-   1.1% U+2A700..U+2B73F  CJK Unified Ideographs Extension C
+   0.9% U+20000..U+2A6FF  CJK Unified Ideographs Extension B
+   1.2% U+2A700..U+2B73F  CJK Unified Ideographs Extension C
    4.0% U+2B740..U+2B81F  CJK Unified Ideographs Extension D
    2.0% U+2B820..U+2CEAF  CJK Unified Ideographs Extension E
-   0.0% U+2CEB0..U+2F7FF  CJK Unified Ideographs Extension F
+   5.9% U+2CEB0..U+2F7FF  CJK Unified Ideographs Extension F
    0.1% U+2F800..U+2FF7F  CJK Compatibility Ideographs Supplement
    0.0% U+2FF80..U+2FFFD  Unassigned
    0.0% U+2FFFE..U+2FFFF  Noncharacters

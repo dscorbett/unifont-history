@@ -55,6 +55,12 @@
 	  for use in snprintf function call.
 	- Changed sprintf function calls to snprintf function
 	  calls for writing chart header string.
+
+     21 October 2023 [Paul Hardy]:
+	- Added full function prototypes in main function for
+	  functions gethex, genlongbmp, and genwidebmp.
+	- Typecast ascii_hex[i] to char * in gethex function call
+	  to avoid warning about const char * conversion.
 */
 
 
@@ -100,9 +106,11 @@ main (int argc, char **argv)
    /* 16 pixel rows for each of 65,536 glyphs in a Unicode plane */
    int plane_array[0x10000][16];
 
-   void gethex();
-   void genlongbmp();
-   void genwidebmp();
+   void gethex     (char *instring, int plane_array[0x10000][16], int plane);
+   void genlongbmp (int plane_array[0x10000][16], int dpi, int tinynum,
+                    int plane);
+   void genwidebmp (int plane_array[0x10000][16], int dpi, int tinynum,
+                    int plane);
 
    if (argc > 1) {
       for (i = 1; i < argc; i++) {
@@ -139,7 +147,8 @@ main (int argc, char **argv)
       Initialize the ASCII bitmap array for chart titles
    */
    for (i = 0; i < 128; i++) {
-      gethex (ascii_hex[i], plane_array, 0); /* convert Unifont hexadecimal string to bitmap */
+      /* convert Unifont hexadecimal string to bitmap */
+      gethex ((char *)ascii_hex[i], plane_array, 0);
       for (j = 0; j < 16; j++) ascii_bits[i][j] = plane_array[i][j];
    }
 

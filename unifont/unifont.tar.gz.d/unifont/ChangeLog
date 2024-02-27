@@ -1,3 +1,27 @@
+2023-10-21  Paul Hardy <unifoundry@gmail.com>
+	* Version 15.1.03
+	* Doxyfile: set LATEX_HEADER to newly-made doxygen/new_header.tex.
+	* doxygen directory:
+	  - Used doxygen to generate default versions of new_footer.tex,
+	    new_header.tex, and new_stylesheet.sty.
+	  - Modified new_header.tex to undefine \+ command to avoid
+	    tabbing error bug.
+	* font/Makefile:
+	  - Updates to building .hex output files so CJK Unified Ideographs
+            Extension I glyphs and others would appear in the Japenese
+	    variation as well as the Chinese (default) variation, and
+	    removal of duplicate U+0020 space glyphs in some output .hex files.
+	* font/plane00/wqy.hex:
+	  - 湖 远星 contributed updates for U+5C81 and U+6708.
+	* font/plane02/zh-plane02.hex:
+	  - 湖 远星 contributed 14 glyph updates to CJK  Unified Ideographs
+	    Extension B and Extension C: U+2A6D7..U+2A6DF and
+	    U+2B735..U+2B739.
+	  - Boris Zhang and Yzy32767 contributed CJK Unified Ideographs
+	    Extension I glyphs (U+2EBF0..U+2EE5D).
+	* src: Full prototype and typecasting definitions in main functions
+	  in unicoverage.c, unifontpic.c, unihex2bmp.c, and unipagecount.c.
+
 2023-09-21  Paul Hardy <unifoundry@gmail.com>
 	* Version 15.1.02.
 	* font/Makefile: commented out duplicate $(HANGUL) target.
