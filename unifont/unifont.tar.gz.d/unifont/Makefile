@@ -13,7 +13,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 15.1.03
+VERSION = 15.1.04
 
 #
 # The settings below will install software, man pages, and documentation
@@ -118,7 +118,7 @@ doxdir: doxygen
 #
 doxygen: Doxyfile src/*.c src/*.h src/*.dox
 	doxygen Doxyfile
-	(cd doxygen/latex ; make && mv refman.pdf ../unifont-doxy.pdf && \
+	-(cd doxygen/latex ; make && mv refman.pdf ../unifont-doxy.pdf && \
 	 make clean)
 	touch $@
 

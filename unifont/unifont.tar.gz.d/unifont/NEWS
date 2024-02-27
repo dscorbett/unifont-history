@@ -1,3 +1,6 @@
+2023-10-29: Release 15.1.04
+  * Added larger Plane 2 supersets to default and Japanese font files.
+
 2023-10-21: Release 15.1.03
   * Boris Zhang and Yzy32767 contributed CJK Unified Ideographs
     Extension I glyphs (U+2EBF0..U+2EE5D).

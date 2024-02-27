@@ -1,3 +1,14 @@
+2023-10-29  Paul Hardy <unifoundry@gmail.com>
+	* Version 15.1.04
+	* Makefile: ignore error in Doxygen building.
+	* doxygen/new_header.tex: change to run LaTeX in non-stop mode.
+	* font/Makefile: Modified construction of unifont_upper and
+	  unifont_upper to have larger supersets of Plane 2 and Plane 3
+	  glyphs.
+	* font/plane00/unifont-base.hex:
+	  Johnnie Weaver updated U+266D, U+266E, U+266F, and U+26BC.
+	* src/Makefile: added flags for compilation of unihexpose.
+
 2023-10-21  Paul Hardy <unifoundry@gmail.com>
 	* Version 15.1.03
 	* Doxyfile: set LATEX_HEADER to newly-made doxygen/new_header.tex.

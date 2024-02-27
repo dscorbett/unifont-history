@@ -56,6 +56,7 @@ hex2otf: hex2otf.c hex2otf.h
 	$(C99) $(CFLAGS) hex2otf.c -o hex2otf
 
 unihexpose: unihexpose.o unifont-support.o
+	$(CC) $(CFLAGS) unihexpose.o unifont-support.o -o unihexpose
 
 unijohab2html: hangul.h unihangul-support.o unijohab2html.o
 	$(CC) $(CFLAGS) unijohab2html.o unihangul-support.o -o unijohab2html

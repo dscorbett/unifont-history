@@ -17,7 +17,7 @@ GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
 #
-VERSION = 15.1.03
+VERSION = 15.1.04
 
 COPYRIGHT = "Copyright (C) 1998-2023 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
@@ -233,8 +233,9 @@ hex-stamp:
 	   > $(COMPILED_DIR)/upper_nonprinting.hex
 	# Generate files in plane01/all directory to create font sample book.
 	(cd plane01 && make)
-	sort plane01/plane01-all.hex plane02/zh-plane02.hex \
-		plane0[3-E]/*.hex | \
+	sort plane01/plane01-all.hex \
+	     $(COMPILED_DIR)/unifont_zh-plane02.hex \
+	     plane0[3-E]/*.hex | \
 	   grep -v "^0020:"       | \
 	   egrep -v "^..FFF[EF]"  | \
 	   $(BINDIR)/unigencircles $(COMPILED_DIR)/upper_combining.txt \
@@ -268,19 +269,22 @@ hex-stamp:
               > $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex
 	# Build upper plane hex files with Chinese & Japanese variants.
 	sort $(ALL_HEX_PLANE0E)      > $(COMPILED_DIR)/unifont-plane0E.hex
-	cp  plane01/plane01-all.hex    $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
-	cat $(PLANE_3_ZH_HEX)       >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	cp  plane01/plane01-all.hex \
+	    $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	cat $(COMPILED_DIR)/unifont_zh-plane02.hex \
+	    >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	cat $(PLANE_3_ZH_HEX) \
+	    >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
 	cat   $(COMPILED_DIR)/unifont-plane0E.hex \
 	   >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
 	grep -v "^0020:" plane01/plane01-all.hex | \
 	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
-	cat $(PLANE_3_ZH_HEX)       >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	cat $(COMPILED_DIR)/unifont_jp-plane02.hex \
+	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	cat $(PLANE_3_ZH_HEX) \
+	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
 	cat   $(COMPILED_DIR)/unifont-plane0E.hex \
 	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
-	# Remove temporary files.
-	rm $(COMPILED_DIR)/unifont_zh-plane02.hex \
-	   $(COMPILED_DIR)/unifont_jp-plane02.hex \
-	   $(COMPILED_DIR)/unifont-plane0E.hex
 	touch $@
 
 #
@@ -463,7 +467,7 @@ png: hex $(BINDIR)/unihex2png
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(PERL) $(BINDIR)/unihex2png -p 02$$i$$j \
-	         -i $(PLANE_2_JP_HEX) \
+	         -i $(COMPILED_DIR)/unifont_jp-plane02.hex \
 	         -o $(PNGDIR)/plane02-jp/uni02$$i$$j-jp.png ; \
 	   done ; \
 	done
@@ -473,7 +477,7 @@ png: hex $(BINDIR)/unihex2png
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(PERL) $(BINDIR)/unihex2png -p 02$$i$$j \
-	         -i $(PLANE_2_ZH_HEX) \
+	         -i $(COMPILED_DIR)/unifont_zh-plane02.hex \
 	         -o $(PNGDIR)/plane02-zh/uni02$$i$$j-zh.png ; \
 	   done ; \
 	done
@@ -577,7 +581,7 @@ bmp: hex $(BINDIR)/unihex2bmp
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      sort $(PLANE_2_JP_HEX) | \
+	      sort $(COMPILED_DIR)/unifont_jp-plane02.hex | \
 		$(BINDIR)/unihex2bmp -p02$$i$$j \
 	         > $(BMPDIR)/plane02-jp/uni02$$i$$j-jp.bmp ; \
 	   done ; \
@@ -587,7 +591,7 @@ bmp: hex $(BINDIR)/unihex2bmp
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      sort $(PLANE_2_ZH_HEX) | \
+	      sort $(COMPILED_DIR)/unifont_zh-plane02.hex | \
 		$(BINDIR)/unihex2bmp -p02$$i$$j \
 	         > $(BMPDIR)/plane02-zh/uni02$$i$$j-zh.bmp ; \
 	   done ; \
@@ -713,8 +717,9 @@ otf: hex
 	# Second, copy unifont_sample.bdf, to make an SBIT font.
 	# Third, make a version with Japanese glyphs as drawn in
 	# JIS X 0213:2004, adding Copyleft symbol.
-	sort $(COPYLEFT) $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
-		> $(OTFSRC)/unifont_jp.hex
+	# sort $(COPYLEFT) $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
+	install $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
+	  	$(OTFSRC)/unifont_jp.hex
 	install -p \
 		$(HEXDIR)/plane00-combining.txt \
 		$(OTFSRC)/combining-jp.txt
@@ -974,6 +979,10 @@ clean:
 	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf
 	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf.gz
 	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).sfd.gz
+	# Remove temporary files.
+	rm -f $(COMPILED_DIR)/unifont_zh-plane02.hex \
+	      $(COMPILED_DIR)/unifont_jp-plane02.hex \
+	      $(COMPILED_DIR)/unifont-plane0E.hex
 	$(MAKE) -C plane00/hangul clean
 
 #
