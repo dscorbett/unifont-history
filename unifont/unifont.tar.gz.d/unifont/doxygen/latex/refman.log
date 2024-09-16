@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.25)  24 FEB 2024 15:10
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.25)  10 SEP 2024 07:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1892,17 +1892,17 @@ Underfull \hbox (badness 10000) detected at line 112
 
 [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140])
 (./unibmp2hex_8c_source.tex [141] [142] [143] [144] [145] [146] [147] [148]
-[149]) (./unibmpbump_8c.tex [150]
+[149] [150]) (./unibmpbump_8c.tex
 Underfull \hbox (badness 10000) detected at line 34
 [][][]
  []
 
-
+[151]
 Underfull \hbox (badness 10000) detected at line 37
 [][][]
  []
 
-[151]
+[152]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.50 on input line 96.
@@ -1912,7 +1912,6 @@ Underfull \hbox (badness 10000) detected at line 97
 [][][]
  []
 
-[152]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.51 on input line 143.
@@ -1948,26 +1947,27 @@ Underfull \hbox (badness 10000) detected at line 81
 [][][]
  []
 
-[169]
+[169] [170]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.54 on input line 222.
 
-[170]
+
 Underfull \hbox (badness 10000) detected at line 223
 [][][]
  []
 
+[171]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.55 on input line 286.
 
-[171]) (./unicoverage_8c_source.tex [172] [173] [174]) (./unidup_8c.tex
+) (./unicoverage_8c_source.tex [172] [173] [174]) (./unidup_8c.tex [175]
 Underfull \hbox (badness 10000) detected at line 27
 [][][]
  []
 
-[175]
+
 Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
@@ -1992,11 +1992,11 @@ Underfull \hbox (badness 10000) detected at line 34
 [][][]
  []
 
+[179]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.57 on input line 64.
 
-[179]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.58 on input line 124.
@@ -2006,22 +2006,17 @@ Package longtable Warning: Column widths have changed
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.59 on input line 186.
 
-[181]
+[181] [182]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.60 on input line 272.
 
 
-Overfull \vbox (23.51599pt too high) has occurred while \output is active []
-
-
-[182]
-
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.61 on input line 332.
 
 [183]) (./unifont-support_8c_source.tex [184] [185] [186] [187])
-(./unifont1per_8c.tex
+(./unifont1per_8c.tex [188]
 Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
@@ -2031,7 +2026,7 @@ Underfull \hbox (badness 10000) detected at line 33
 [][][]
  []
 
-[188]
+
 Underfull \hbox (badness 10000) detected at line 80
 [][][]
  []
@@ -2068,11 +2063,15 @@ Package longtable Warning: Column widths have changed
 (longtable)                in table 5.65 on input line 820.
 
 
+Overfull \vbox (1.9285pt too high) has occurred while \output is active []
+
+
+[204]
 Underfull \hbox (badness 10000) detected at line 821
 [][][]
  []
 
-[204] [205]
+[205]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.66 on input line 931.
@@ -2435,7 +2434,7 @@ Package rerunfilecheck Info: Checksums for `refman.out':
 Here is how much of TeX's memory you used:
  22584 strings out of 476760
  453969 string characters out of 5805258
- 1901482 words of memory out of 5000000
+ 1898482 words of memory out of 5000000
  42231 multiletter control sequences out of 15000+600000
  524120 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

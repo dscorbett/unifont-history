@@ -83,12 +83,11 @@ E680 E683
 E686
 E688 E68D
 E6AC E6AE
-; U+E6D0..U+E6EF Amlin (no data)
+; U+E6D0..U+E6EF Amlin
+E6E9 E6EF
 ; U+E6F0..U+E6FF Unifon Extended
-E6FD
 ; U+E700..U+E73F Unifon
 E728 E72B
-E73D
 E768 E76B
 ; U+E770..U+E77F Solresol
 E777 E77F
@@ -141,7 +140,18 @@ EBAA EBB0
 EBBA EBC0
 EBCA EBD0
 EBDA EBDF
-; U+EBE0..U+ECFF Unassigned
+; U+EBE0..U+EBEF Lapointe Hexadecimal Numerals
+; U+EBF0..U+EBFF Martin Hexadecimal Numerals
+; U+EC00..U+EC2F Cylenian
+EC24 EC27
+EC2F
+; U+EC30..U+EC6F Syrrin
+EC58 EC5F
+EC64 EC67
+EC6F
+; U+EC70..U+ECEF Graflect
+EC70
+; U+ECF0..U+ECFF Whitaker Hexadecimal Numerals
 ; U+ED00..U+ED3F Deini
 ED31 ED36
 ; U+ED40..U+ED7F Niji
@@ -149,7 +159,15 @@ ED4B
 ED51
 ED5C ED5E
 ED60 ED7F
-; U+ED80..U+EF7F Unassigned
+; U+ED40..U+EDAF Iranic
+EDA3 EDAF
+; U+EDB0..U+EDDF Tassarunese
+EDC0
+EDC8
+EDD4 EDDF
+; U+EDE0..U+EDEF Zese
+; U+EDF0..U+EDFF Grawlixes
+; U+EE00..U+EF7F Unassigned
 ; U+EF80..U+EFFF Reserved for encoding hacks
 ; U+F000..U+F7FF Reserved for font hacks
 ; U+F4C0..U+F4EF Ath

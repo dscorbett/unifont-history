@@ -1,6 +1,6 @@
 var hex2otf_8h =
 [
-    [ "NamePair", "structNamePair.html", null ],
+    [ "NamePair", "struct_name_pair.html", null ],
     [ "DEFAULT_ID0", "hex2otf_8h.html#a59ba14cafe02ba112aa260cb17affc45", null ],
     [ "DEFAULT_ID1", "hex2otf_8h.html#a80457952fba9de3914d0f44305236ef2", null ],
     [ "DEFAULT_ID11", "hex2otf_8h.html#af3ad95ac6274edc8333dcbd3706aa603", null ],

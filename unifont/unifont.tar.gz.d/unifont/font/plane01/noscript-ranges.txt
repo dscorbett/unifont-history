@@ -26,7 +26,7 @@
 ; Elbasan
 ; Caucasian Albanian
 ; Vithkuqi
-0105C0 0105FF
+; Todhri
 ; Linear A
 ; Latin Extended-F
 0107C0 0107FF
@@ -55,7 +55,8 @@
 010C50 010C7F
 ; Old Hungarian
 ; Hanifi Rohingya
-010D40 010E5F
+; Garay
+010D90 010E5F
 ; Rumi Numeral Symbols
 ; Yezidi
 ; Arabic Extended-C
@@ -76,7 +77,7 @@
 ; Multani
 ; Khudawadi
 ; Grantha
-011380 0113FF
+; Tulu-Tigalari
 ; Newa
 ; Tirhuta
 0114E0 01157F
@@ -84,7 +85,7 @@
 ; Modi
 ; Mongolian Supplement
 ; Takri
-0116D0 0116FF
+; Myanmar Extended-C
 ; Ahom
 011750 0117FF
 ; Dogra
@@ -98,7 +99,8 @@
 ; Unified Canadian Aboriginal Syllables Extended-A
 ; Pau Cin Hau
 ; Devanagari Extended-A
-011B60 011AFF
+011B60 011BBF
+; Sunuwar
 ; Bhaiksuki
 ' Marchen
 011CC0 011CFF
@@ -117,15 +119,20 @@
 ; Cypro-Minoan
 ; Egyptian Hieroglyphs
 ; Egyptian Hieroglyph Format Controls
-013440 0143FF
+013440 01345F
+; Egyptian Hieroglyphs Extended-A
 ; Anatolian Hieroglyphs
-014680 0167FF
+014680 0160FF
+; Gurung Khema
+016140 0167FF
 ; Bamum Supplement
 ; Mro
 ; Tangsa
 ; Bassa Vah
 ; Pahawh Hmong
-016B90 016E3F
+016B90 016D3F
+; Kirat Rai
+016D80 016E3F
 ; Medefaidrin
 016EA0 016EFF
 ; Miao
@@ -133,7 +140,7 @@
 ; Ideographic Symbols and Punctuation
 ; Tangut
 ; Tangut Components
-; Small Khitan Script
+; Khitan Small Script
 ; Tangut Supplement
 018D80 01AFEF
 ; Kana Extended - B
@@ -144,7 +151,9 @@
 01B300 01BBFF
 ; Duployan
 ; Shorthand Format Controls
-01BCB0 01CEFF
+01BCB0 01CBFF
+; Symbols for Legacy Computing Supplement
+01CEC0 01CEFF
 ; Znamenny Musical Notation
 01CFD0 01CFFF
 ; Byzantine Musical Symbols
@@ -168,7 +177,9 @@
 ; Wancho
 01E300 01E4CF
 ; Nag Mundari
-01E500 01E7DF
+01E500 01E5CF
+; Ol Onal
+01E600 01E7DF
 ; Ethiopic Extended-B
 ; Mende Kikakui
 01E8E0 01E8FF

@@ -1,4 +1,13 @@
-2024-02-24: Release 15.1.05<F2>
+2024-09-10: Release 16.0.01
+  * Updates to synchronize Unifont with Unicode 16.0.0 release.
+  * Many new upper-plane Chinese ideographs added.
+  * New "make" build dependency on ImageMagick's "convert" program
+    to build thumbnail images of the Unicode plane bitmaps.
+  * unifont-combining-$(VERSION).txt is now included in the
+    distribution set to provide spacing information on all
+    combining characters.
+
+2024-02-24: Release 15.1.05
   * Added almost 600 CJK ideographs, including:
     - The entire CJK Unified Ideographs Extension D range of 222 glyphs
     - 335 commonly used Cantonese ideographs in Plane 2 and Plane 3.
@@ -122,7 +131,7 @@
      - U+11B00..U+11B5F Devanagari Extended-A
      - U+11F00..U+11F5F Kawi
      - U+1D2C0..U+1D2DF Kaktovik Numerals
-     - U+1E030..U+1E08F Cyrillic Exntended-D
+     - U+1E030..U+1E08F Cyrillic Extended-D
      - U+1E4D0..U+1E4FF Nag Mundari.
 
 2022-06-04: Release 14.0.04

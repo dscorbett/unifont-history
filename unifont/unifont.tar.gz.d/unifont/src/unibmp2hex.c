@@ -29,6 +29,16 @@
 */
 
 /*
+   2 September 2024 [Paul Hardy] - Set these scripts to double width:
+      - U+10D40..U+10D8F (Garay)
+      - U+11380..U+113FF (Tulu-Tigalari)
+      - U+116D0..U+116FF (Myanmar Extended-C)
+      - U+11F00..U+11F5F (Kawi)
+      - U+16100..U+1613F (Gurung Khema)
+      - U+16D40..U+16D7F (Kirat Rai)
+      - U+18B00..U+18CFF (Khitan Small Script)
+      - U+1E5D0..U+1E5FF (Ol Onal)
+
    6 September 2021 [Paul Hardy]:
       - Set U+12F90..U+12FFF (Cypro-Minoan) to be double width.
       - Set U+1CF00..U+1CFCF (Znamenny Musical Notation) to be double width.
@@ -286,6 +296,7 @@ main (int argc, char *argv[])
    wide[0x303F] = 0; /* CJK half-space fill */
 
    /* Supplemental Multilingual Plane (Plane 01) */
+   for (i = 0x0105C0; i <= 0x0105FF; i++) wide[i] = 1; /* Todhri             */
    for (i = 0x010A00; i <= 0x010A5F; i++) wide[i] = 1; /* Kharoshthi         */
    for (i = 0x011000; i <= 0x01107F; i++) wide[i] = 1; /* Brahmi             */
    for (i = 0x011080; i <= 0x0110CF; i++) wide[i] = 1; /* Kaithi             */
@@ -294,32 +305,38 @@ main (int argc, char *argv[])
    for (i = 0x011200; i <= 0x01124F; i++) wide[i] = 1; /* Khojki             */
    for (i = 0x0112B0; i <= 0x0112FF; i++) wide[i] = 1; /* Khudawadi          */
    for (i = 0x011300; i <= 0x01137F; i++) wide[i] = 1; /* Grantha            */
+   for (i = 0x011380; i <= 0x0113FF; i++) wide[i] = 1; /* Tulu-Tigalari      */
    for (i = 0x011400; i <= 0x01147F; i++) wide[i] = 1; /* Newa               */
    for (i = 0x011480; i <= 0x0114DF; i++) wide[i] = 1; /* Tirhuta            */
    for (i = 0x011580; i <= 0x0115FF; i++) wide[i] = 1; /* Siddham            */
    for (i = 0x011600; i <= 0x01165F; i++) wide[i] = 1; /* Modi               */
    for (i = 0x011660; i <= 0x01167F; i++) wide[i] = 1; /* Mongolian Suppl.   */
    for (i = 0x011680; i <= 0x0116CF; i++) wide[i] = 1; /* Takri              */
+   for (i = 0x0116D0; i <= 0x0116FF; i++) wide[i] = 1; /* Myanmar Extended-C */
    for (i = 0x011700; i <= 0x01173F; i++) wide[i] = 1; /* Ahom               */
    for (i = 0x011800; i <= 0x01184F; i++) wide[i] = 1; /* Dogra              */
    for (i = 0x011900; i <= 0x01195F; i++) wide[i] = 1; /* Dives Akuru        */
    for (i = 0x0119A0; i <= 0x0119FF; i++) wide[i] = 1; /* Nandinagari        */
    for (i = 0x011A00; i <= 0x011A4F; i++) wide[i] = 1; /* Zanabazar Square   */
    for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo            */
-   for (i = 0x011B00; i <= 0x011B5F; i++) wide[i] = 1; /* Devanagari Extended-A*/
+   for (i = 0x011B00; i <= 0x011B5F; i++) wide[i] = 1;/*Devanagari Extended-A*/
    for (i = 0x011F00; i <= 0x011F5F; i++) wide[i] = 1; /* Kawi               */
    for (i = 0x011C00; i <= 0x011C6F; i++) wide[i] = 1; /* Bhaiksuki          */
    for (i = 0x011C70; i <= 0x011CBF; i++) wide[i] = 1; /* Marchen            */
    for (i = 0x011D00; i <= 0x011D5F; i++) wide[i] = 1; /* Masaram Gondi      */
    for (i = 0x011EE0; i <= 0x011EFF; i++) wide[i] = 1; /* Makasar            */
+   for (i = 0x011F00; i <= 0x011F5F; i++) wide[i] = 1; /* Kawi               */
    for (i = 0x012F90; i <= 0x012FFF; i++) wide[i] = 1; /* Cypro-Minoan       */
    /* Make Bassa Vah all single width or all double width */
+   for (i = 0x016100; i <= 0x01613F; i++) wide[i] = 1; /* Gurung Khema       */
    for (i = 0x016AD0; i <= 0x016AFF; i++) wide[i] = 1; /* Bassa Vah          */
    for (i = 0x016B00; i <= 0x016B8F; i++) wide[i] = 1; /* Pahawh Hmong       */
+   for (i = 0x016D40; i <= 0x016D7F; i++) wide[i] = 1; /* Kirat Rai          */
    for (i = 0x016F00; i <= 0x016F9F; i++) wide[i] = 1; /* Miao               */
    for (i = 0x016FE0; i <= 0x016FFF; i++) wide[i] = 1; /* Ideograph Sym/Punct*/
    for (i = 0x017000; i <= 0x0187FF; i++) wide[i] = 1; /* Tangut             */
    for (i = 0x018800; i <= 0x018AFF; i++) wide[i] = 1; /* Tangut Components  */
+   for (i = 0x018B00; i <= 0x018CFF; i++) wide[i] = 1; /* Khitan Small Script*/
    for (i = 0x01AFF0; i <= 0x01AFFF; i++) wide[i] = 1; /* Kana Extended-B    */
    for (i = 0x01B000; i <= 0x01B0FF; i++) wide[i] = 1; /* Kana Supplement    */
    for (i = 0x01B100; i <= 0x01B12F; i++) wide[i] = 1; /* Kana Extended-A    */
@@ -328,6 +345,7 @@ main (int argc, char *argv[])
    for (i = 0x01D100; i <= 0x01D1FF; i++) wide[i] = 1; /* Musical Symbols    */
    for (i = 0x01D800; i <= 0x01DAAF; i++) wide[i] = 1; /* Sutton SignWriting */
    for (i = 0x01E2C0; i <= 0x01E2FF; i++) wide[i] = 1; /* Wancho             */
+   for (i = 0x01E500; i <= 0x01E5FF; i++) wide[i] = 1; /* Ol Onal            */
    for (i = 0x01E800; i <= 0x01E8DF; i++) wide[i] = 1; /* Mende Kikakui      */
    for (i = 0x01F200; i <= 0x01F2FF; i++) wide[i] = 1; /* Encl Ideograp Suppl*/
    wide[0x01F5E7] = 1;                                 /* Three Rays Right   */

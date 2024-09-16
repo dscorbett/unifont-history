@@ -204,20 +204,25 @@ EB00-EB3F PUA (CSUR/UCSUR): Orokin
 EB40-EB5F PUA (CSUR/UCSUR): Standard Galactic
 EB60-EB9F PUA (CSUR/UCSUR): Braille Extended
 EBA0-EBDF PUA (CSUR/UCSUR): Cistercian Numerals
-EBE0-EBFF PUA (CSUR/UCSUR): Unassigned
+EBE0-EBEF PUA (CSUR/UCSUR): Lapointe Hexadecimal Numerals
+EBF0-EBFF PUA (CSUR/UCSUR): Martin Hexadecimal Numerals
 EC00-EC2F PUA (CSUR/UCSUR): Cylenian
 EC30-EC6F PUA (CSUR/UCSUR): Syrrin
-EC70-ECFF PUA (CSUR/UCSUR): Unassigned
-ED00-ED3F PUA (CSUR/UCSUR): Deini
+EC70-ECEF PUA (CSUR/UCSUR): Graflect
+ECF0-ECFF PUA (CSUR/UCSUR): Whitaker Hexadecimal Numerals
+ED00-ED3F PUA (CSUR/UCSUR): Dein
 ED40-ED7F PUA (CSUR/UCSUR): Niji
-ED80-EDFF PUA (CSUR/UCSUR): Unassigned
-EE00-EEFF PUA (CSUR/UCSUR): Unassigned
-EF00-EF7F PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
-EF80-EFFF PUA (CSUR/UCSUR): Unassigned; Reserved for Encoding Hacks
-F000-F4BF PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
+ED80-EDAF PUA (CSUR/UCSUR): Iranic
+EDB0-EDDF PUA (CSUR/UCSUR): Tassarunese
+EDE0-EDEF PUA (CSUR/UCSUR): Zese
+EDF0-EDFF PUA (CSUR/UCSUR): Grawlixes
+EE00-EEFF PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+EF00-EF7F PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+EF80-EFFF PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+F000-F4BF PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
 F4C0-F4EF PUA (CSUR/UCSUR): Ath (compatible with Nishiki-teki and Fairfax HD)
-F4F0-F7FF PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
-F800-F89F PUA (CSUR/UCSUR): Unassigned; Reserved for Apple Hacks
+F4F0-F7FF PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+F800-F89F PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
 F8A0-F8CF PUA (CSUR/UCSUR): Aiha (Kesh)
 F8D0-F8FF PUA (CSUR/UCSUR): Klingon
 F900-FAFF CJK Compatibility Ideographs
@@ -258,7 +263,7 @@ FFFE-FFFF Noncharacters
 010500-01052F Elbasan
 010530-01056F Caucasian Albanian
 010570-0105BF Vithkuqi
-0105C0-0105FF Unassigned
+0105C0-0105FF Todhri
 010600-01077F Linear A
 010780-0107BF Latin Extended-F
 0107C0-0107FF Unassigned
@@ -287,7 +292,8 @@ FFFE-FFFF Noncharacters
 010C50-010C7F Unassigned
 010C80-010CFF Old Hungarian
 010D00-010D3F Hanifi Rohingya
-010D40-010E5F Unassigned
+010D40-010D8F Garay
+010D90-010E5F Unassigned
 010E60-010E7F Rumi Numeral Symbols
 010E80-010EBF Yezidi
 010EC0-010EFF Arabic Extended-C
@@ -308,7 +314,7 @@ FFFE-FFFF Noncharacters
 011280-0112AF Multani
 0112B0-0112FF Khudawadi
 011300-01137F Grantha
-011380-0113FF Unassigned
+011380-0113FF Tulu-Tigalari
 011400-01147F Newa
 011480-0114DF Tirhuta
 0114E0-01157F Unassigned
@@ -316,7 +322,7 @@ FFFE-FFFF Noncharacters
 011600-01165F Modi
 011660-01167F Mongolian Supplement
 011680-0116CF Takri
-0116D0-0116FF Unassigned
+0116D0-0116FF Myanmar Extended-C
 011700-01174F Ahom
 011750-0117FF Unassigned
 011800-01184F Dogra
@@ -330,7 +336,8 @@ FFFE-FFFF Noncharacters
 011AB0-011ABF Unified Canadian Aboriginal Syllabics Extended-A
 011AC0-011AFF Pau Cin Hau
 011B00-011B5F Devanagari Extended-A
-011B60-011BFF Unassigned
+011B60-011BBF Unassigned
+011BC0-011BFF Sunuwar
 011C00-011C6F Bhaiksuki
 011C70-011CBF Marchen
 011CC0-011CFF Unassigned
@@ -349,15 +356,20 @@ FFFE-FFFF Noncharacters
 012F90-012FFF Cypro-Minoan
 013000-01342F Egyptian Hieroglyphs
 013430-01343F Egyptian Hieroglyph Format Controls
-013440-0143FF Unassigned
+013440-01345F Unassigned
+013460-0143FF Egyptian Hieroglyphics Extended-A
 014400-01467F Anatolian Hieroglyphs
-014680-0167FF Unassigned
+014680-0160FF Unassigned
+016100-01613F Gurung Khema
+016140-0167FF Unassigned
 016800-016A3F Bamum Supplement
 016A40-016A6F Mro
 016A70-016ACF Tangsa
 016AD0-016AFF Bassa Vah
 016B00-016B8F Pahawh Hmong
-016B90-016E3F Unassigned
+016B90-016D3F Unassigned
+016D40-016D7F Kirat Rai
+016D80-016E3F Unassigned
 016E40-016E9F Medefaidrin
 016EA0-016EFF Unassigned
 016F00-016F9F Miao
@@ -376,7 +388,9 @@ FFFE-FFFF Noncharacters
 01B300-01BBFF Unassigned
 01BC00-01BC9F Duployan
 01BCA0-01BCAF Shorthand Format Controls
-01BCB0-01CEFF Unassigned
+01BCB0-01CBFF Unassigned
+01CC00-01CEBF Symbols for Legacy Computing Supplement
+01CEC0-01CEFF Unassigned
 01CF00-01CFCF Znamenny Musical Notation
 01CFD0-01CFFF Unassigned
 01D000-01D0FF Byzantine Musical Symbols
@@ -401,7 +415,9 @@ FFFE-FFFF Noncharacters
 01E2C0-01E2FF Wancho
 01E300-01E4CF Unassigned
 01E4D0-01E4FF Nag Mundari
-01E500-01E7DF Unassigned
+01E500-01E5CF Unassigned
+01E5D0-01E5FF Ol Onal
+01E600-01E7DF Unassigned
 01E7E0-01E7FF Ethiopic Extended-B
 01E800-01E8DF Mende Kikakui
 01E8E0-01E8FF Unassigned
@@ -434,13 +450,20 @@ FFFE-FFFF Noncharacters
 ;
 ; ===== PLANE 02 =====
 ;
-020000-02A6FF CJK Unified Ideographs Extension B
-02A700-02B73F CJK Unified Ideographs Extension C
-02B740-02B81F CJK Unified Ideographs Extension D
-02B820-02CEAF CJK Unified Ideographs Extension E
-02CEB0-02F7FF CJK Unified Ideographs Extension F
-02F800-02FF7F CJK Compatibility Ideographs Supplement
-02FF80-02FFFD Unassigned
+020000-02A6DF CJK Unified Ideographs Extension B
+02A6E0-02A6FF Unassigned
+02A700-02B739 CJK Unified Ideographs Extension C
+02B73A-02B73F Unassigned
+02B740-02B81D CJK Unified Ideographs Extension D
+02B81E-02B81F Unassigned
+02B820-02CEA1 CJK Unified Ideographs Extension E
+02CEA2-02CEAF Unassigned
+02CEB0-02EBE0 CJK Unified Ideographs Extension F
+02EBE1-02EBEF Unassigned
+02EBF0-02EE5D CJK Unified Ideographs Extension I
+02EE5E-02F7FF Unassigned
+02F800-02FA1D CJK Compatibility Ideographs Supplement
+02FA1E-02FFFD Unassigned
 02FFFE-02FFFF Noncharacters
 ;
 ; ===== PLANE 03 =====
@@ -497,9 +520,15 @@ FFFE-FFFF Noncharacters
 ;
 0F0000-0F0E6F PUA (CSUR/UCSUR): Kinya Syllables
 0F0E70-0F16AF PUA (CSUR/UCSUR): Pikto
-0F16B0-0F18FF Unassigned
+0F16B0-0F16DF PUA (CSUR/UCSUR): Derani
+0F16E0-0F16FF Unassigned
+0F1700-0F18FF PUA (CSUR/UCSUR): Semtog
 0F1900-0F19FF PUA (CSUR/UCSUR): Sitelen Pona
-0F1A00-0F1AFF Unassigned
+0F1A00-0F1AFF Reserved
 0F1B00-0F1C3F PUA (CSUR/UCSUR): Shidinn
-0F1C40-0FFFFD Unassigned
+0F1C40-0F1C7F PUA (CSUR/UCSUR): Titi Pula
+0F1C80-0F1C9F PUA (CSUR/UCSUR): Sitelen Pona Radicals
+0F1CA0-0F1FFF Unassigned
+0F2000-0F267F PUA (CSUR/UCSUR): Sadalian
+0F2680-0FFFFD Unassigned
 0FFFFE-0FFFFF Noncharacters

@@ -204,32 +204,32 @@
 \contentsline {subsubsection}{\numberline {5.11.2.1}MAXBUF}{130}{subsubsection.5.11.2.1}%
 \contentsline {subsection}{\numberline {5.11.3}Function Documentation}{130}{subsection.5.11.3}%
 \contentsline {subsubsection}{\numberline {5.11.3.1}main()}{130}{subsubsection.5.11.3.1}%
-\contentsline {subsection}{\numberline {5.11.4}Variable Documentation}{137}{subsection.5.11.4}%
+\contentsline {subsection}{\numberline {5.11.4}Variable Documentation}{138}{subsection.5.11.4}%
 \contentsline {subsubsection}{\numberline {5.11.4.1}bits\_per\_pixel}{138}{subsubsection.5.11.4.1}%
 \contentsline {subsubsection}{\numberline {5.11.4.2}}{138}{subsubsection.5.11.4.2}%
 \contentsline {subsubsection}{\numberline {5.11.4.3}color\_table}{138}{subsubsection.5.11.4.3}%
 \contentsline {subsubsection}{\numberline {5.11.4.4}compression}{138}{subsubsection.5.11.4.4}%
 \contentsline {subsubsection}{\numberline {5.11.4.5}file\_size}{138}{subsubsection.5.11.4.5}%
-\contentsline {subsubsection}{\numberline {5.11.4.6}filetype}{138}{subsubsection.5.11.4.6}%
+\contentsline {subsubsection}{\numberline {5.11.4.6}filetype}{139}{subsubsection.5.11.4.6}%
 \contentsline {subsubsection}{\numberline {5.11.4.7}flip}{139}{subsubsection.5.11.4.7}%
 \contentsline {subsubsection}{\numberline {5.11.4.8}forcewide}{139}{subsubsection.5.11.4.8}%
 \contentsline {subsubsection}{\numberline {5.11.4.9}height}{139}{subsubsection.5.11.4.9}%
 \contentsline {subsubsection}{\numberline {5.11.4.10}hexdigit}{139}{subsubsection.5.11.4.10}%
-\contentsline {subsubsection}{\numberline {5.11.4.11}image\_offset}{139}{subsubsection.5.11.4.11}%
+\contentsline {subsubsection}{\numberline {5.11.4.11}image\_offset}{140}{subsubsection.5.11.4.11}%
 \contentsline {subsubsection}{\numberline {5.11.4.12}image\_size}{140}{subsubsection.5.11.4.12}%
 \contentsline {subsubsection}{\numberline {5.11.4.13}important\_colors}{140}{subsubsection.5.11.4.13}%
 \contentsline {subsubsection}{\numberline {5.11.4.14}info\_size}{140}{subsubsection.5.11.4.14}%
 \contentsline {subsubsection}{\numberline {5.11.4.15}ncolors}{140}{subsubsection.5.11.4.15}%
 \contentsline {subsubsection}{\numberline {5.11.4.16}nplanes}{140}{subsubsection.5.11.4.16}%
-\contentsline {subsubsection}{\numberline {5.11.4.17}planeset}{140}{subsubsection.5.11.4.17}%
+\contentsline {subsubsection}{\numberline {5.11.4.17}planeset}{141}{subsubsection.5.11.4.17}%
 \contentsline {subsubsection}{\numberline {5.11.4.18}unidigit}{141}{subsubsection.5.11.4.18}%
 \contentsline {subsubsection}{\numberline {5.11.4.19}uniplane}{141}{subsubsection.5.11.4.19}%
 \contentsline {subsubsection}{\numberline {5.11.4.20}width}{141}{subsubsection.5.11.4.20}%
 \contentsline {subsubsection}{\numberline {5.11.4.21}x\_ppm}{141}{subsubsection.5.11.4.21}%
-\contentsline {subsubsection}{\numberline {5.11.4.22}y\_ppm}{141}{subsubsection.5.11.4.22}%
+\contentsline {subsubsection}{\numberline {5.11.4.22}y\_ppm}{142}{subsubsection.5.11.4.22}%
 \contentsline {section}{\numberline {5.12}unibmp2hex.c}{142}{section.5.12}%
 \contentsline {section}{\numberline {5.13}src/unibmpbump.c File Reference}{151}{section.5.13}%
-\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{151}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{152}{subsection.5.13.1}%
 \contentsline {subsection}{\numberline {5.13.2}Macro Definition Documentation}{152}{subsection.5.13.2}%
 \contentsline {subsubsection}{\numberline {5.13.2.1}MAX\_COMPRESSION\_METHOD}{152}{subsubsection.5.13.2.1}%
 \contentsline {subsubsection}{\numberline {5.13.2.2}VERSION}{152}{subsubsection.5.13.2.2}%
@@ -238,23 +238,23 @@
 \contentsline {subsubsection}{\numberline {5.13.3.2}main()}{153}{subsubsection.5.13.3.2}%
 \contentsline {subsubsection}{\numberline {5.13.3.3}regrid()}{159}{subsubsection.5.13.3.3}%
 \contentsline {section}{\numberline {5.14}unibmpbump.c}{160}{section.5.14}%
-\contentsline {section}{\numberline {5.15}src/unicoverage.c File Reference}{167}{section.5.15}%
+\contentsline {section}{\numberline {5.15}src/unicoverage.c File Reference}{168}{section.5.15}%
 \contentsline {subsection}{\numberline {5.15.1}Detailed Description}{168}{subsection.5.15.1}%
 \contentsline {subsection}{\numberline {5.15.2}Macro Definition Documentation}{168}{subsection.5.15.2}%
-\contentsline {subsubsection}{\numberline {5.15.2.1}MAXBUF}{168}{subsubsection.5.15.2.1}%
-\contentsline {subsection}{\numberline {5.15.3}Function Documentation}{168}{subsection.5.15.3}%
-\contentsline {subsubsection}{\numberline {5.15.3.1}main()}{168}{subsubsection.5.15.3.1}%
-\contentsline {subsubsection}{\numberline {5.15.3.2}nextrange()}{170}{subsubsection.5.15.3.2}%
-\contentsline {subsubsection}{\numberline {5.15.3.3}print\_subtotal()}{171}{subsubsection.5.15.3.3}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}MAXBUF}{169}{subsubsection.5.15.2.1}%
+\contentsline {subsection}{\numberline {5.15.3}Function Documentation}{169}{subsection.5.15.3}%
+\contentsline {subsubsection}{\numberline {5.15.3.1}main()}{169}{subsubsection.5.15.3.1}%
+\contentsline {subsubsection}{\numberline {5.15.3.2}nextrange()}{171}{subsubsection.5.15.3.2}%
+\contentsline {subsubsection}{\numberline {5.15.3.3}print\_subtotal()}{172}{subsubsection.5.15.3.3}%
 \contentsline {section}{\numberline {5.16}unicoverage.c}{172}{section.5.16}%
-\contentsline {section}{\numberline {5.17}src/unidup.c File Reference}{175}{section.5.17}%
+\contentsline {section}{\numberline {5.17}src/unidup.c File Reference}{176}{section.5.17}%
 \contentsline {subsection}{\numberline {5.17.1}Detailed Description}{176}{subsection.5.17.1}%
 \contentsline {subsection}{\numberline {5.17.2}Macro Definition Documentation}{176}{subsection.5.17.2}%
-\contentsline {subsubsection}{\numberline {5.17.2.1}MAXBUF}{176}{subsubsection.5.17.2.1}%
-\contentsline {subsection}{\numberline {5.17.3}Function Documentation}{176}{subsection.5.17.3}%
-\contentsline {subsubsection}{\numberline {5.17.3.1}main()}{176}{subsubsection.5.17.3.1}%
-\contentsline {section}{\numberline {5.18}unidup.c}{177}{section.5.18}%
-\contentsline {section}{\numberline {5.19}src/unifont-\/support.c File Reference}{178}{section.5.19}%
+\contentsline {subsubsection}{\numberline {5.17.2.1}MAXBUF}{177}{subsubsection.5.17.2.1}%
+\contentsline {subsection}{\numberline {5.17.3}Function Documentation}{177}{subsection.5.17.3}%
+\contentsline {subsubsection}{\numberline {5.17.3.1}main()}{177}{subsubsection.5.17.3.1}%
+\contentsline {section}{\numberline {5.18}unidup.c}{178}{section.5.18}%
+\contentsline {section}{\numberline {5.19}src/unifont-\/support.c File Reference}{179}{section.5.19}%
 \contentsline {subsection}{\numberline {5.19.1}Detailed Description}{179}{subsection.5.19.1}%
 \contentsline {subsection}{\numberline {5.19.2}Function Documentation}{179}{subsection.5.19.2}%
 \contentsline {subsubsection}{\numberline {5.19.2.1}glyph2bits()}{179}{subsubsection.5.19.2.1}%
@@ -264,16 +264,16 @@
 \contentsline {subsubsection}{\numberline {5.19.2.5}xglyph2string()}{183}{subsubsection.5.19.2.5}%
 \contentsline {section}{\numberline {5.20}unifont-\/support.c}{184}{section.5.20}%
 \contentsline {section}{\numberline {5.21}src/unifont1per.c File Reference}{188}{section.5.21}%
-\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{188}{subsection.5.21.1}%
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{189}{subsection.5.21.1}%
 \contentsline {subsection}{\numberline {5.21.2}Macro Definition Documentation}{189}{subsection.5.21.2}%
 \contentsline {subsubsection}{\numberline {5.21.2.1}MAXFILENAME}{189}{subsubsection.5.21.2.1}%
 \contentsline {subsubsection}{\numberline {5.21.2.2}MAXSTRING}{189}{subsubsection.5.21.2.2}%
-\contentsline {subsection}{\numberline {5.21.3}Function Documentation}{189}{subsection.5.21.3}%
+\contentsline {subsection}{\numberline {5.21.3}Function Documentation}{190}{subsection.5.21.3}%
 \contentsline {subsubsection}{\numberline {5.21.3.1}main()}{190}{subsubsection.5.21.3.1}%
 \contentsline {section}{\numberline {5.22}unifont1per.c}{191}{section.5.22}%
-\contentsline {section}{\numberline {5.23}src/unifontpic.c File Reference}{193}{section.5.23}%
+\contentsline {section}{\numberline {5.23}src/unifontpic.c File Reference}{194}{section.5.23}%
 \contentsline {subsection}{\numberline {5.23.1}Detailed Description}{194}{subsection.5.23.1}%
-\contentsline {subsection}{\numberline {5.23.2}Macro Definition Documentation}{194}{subsection.5.23.2}%
+\contentsline {subsection}{\numberline {5.23.2}Macro Definition Documentation}{195}{subsection.5.23.2}%
 \contentsline {subsubsection}{\numberline {5.23.2.1}HDR\_LEN}{195}{subsubsection.5.23.2.1}%
 \contentsline {subsection}{\numberline {5.23.3}Function Documentation}{195}{subsection.5.23.3}%
 \contentsline {subsubsection}{\numberline {5.23.3.1}genlongbmp()}{195}{subsubsection.5.23.3.1}%

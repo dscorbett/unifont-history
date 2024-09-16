@@ -5,7 +5,7 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="0.0"/>
-    <checkSumAdjustment value="0x23a58c7"/>
+    <checkSumAdjustment value="0x22801cbf"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="64"/>
@@ -39,12 +39,12 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="57085"/>
+    <numberOfHMetrics value="57087"/>
   </hhea>
 
   <maxp>
     <tableVersion value="0x5000"/>
-    <numGlyphs value="57085"/>
+    <numGlyphs value="57087"/>
   </maxp>
 
   <OS_2>
@@ -113,13 +113,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      UnifontSample-15.1.05.otf
+      UnifontSample-16.0.01.otf
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont Sample
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 15.1.05
+      Version 16.0.01
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       UnifontSample

@@ -16,12 +16,14 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 FONTFORGE = fontforge
 PERL = 
-#
-VERSION = 15.1.05
+#compiled
+
+PACKAGE = "unifont"
+VERSION = 16.0.01
 
 COPYRIGHT = "Copyright (C) 1998-2024 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, Ho-Seok Ee, et al. \
+Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \
 GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
@@ -125,10 +127,18 @@ PLANE0 = copyleft.hex custom00.hex hangul-syllables.hex \
 # JIS X 0213 hex files for Japanese.  The plane00 file contains glyphs
 # that will replace those in the default Chinese version of Unifont.
 #
-JISHEX = plane00/izmg16-plane00.hex plane02/izmg16-plane02.hex
-PLANE_2_JP_HEX = plane02/izmg16-plane02.hex
-PLANE_2_ZH_HEX = plane02/zh-plane02.hex
-PLANE_3_ZH_HEX = plane03/zh-plane03.hex
+# JISHEX = plane00/izmg16-plane00.hex plane02/izmg16-plane02.hex
+# PLANE_2_JP_HEX = plane02/izmg16-plane02.hex
+# PLANE_2_ZH_HEX = plane02/zh-plane02.hex
+# PLANE_3_ZH_HEX = plane03/zh-plane03.hex
+#
+# Plane 2 and Plane 3 Japanese (JP_UPPER_SUBSET_HEX) and Chinese (ZH_UPPER_SUBSET_HEX)
+# collections.
+#
+JP_UPPER_SUBSET_HEX = $(COMPILED_DIR)/jp-upper-subset.hex
+ZH_UPPER_SUBSET_HEX = $(COMPILED_DIR)/zh-upper-subset.hex
+JP_UPPER_SUPERSET_HEX = $(COMPILED_DIR)/jp++.hex
+ZH_UPPER_SUPERSET_HEX = $(COMPILED_DIR)/zh++.hex
 
 #
 # Planes 1 through 14 (0x0E) are ordinary;
@@ -174,6 +184,14 @@ COMBINING = plane00/plane00-combining.txt
 
 UPPER_COMBINING = plane0[1-E]/*combining.txt
 
+#
+# All combining information files.
+#
+COMBINING_FILES = plane00/plane00-combining.txt \
+	          plane00csur/plane00csur-combining.txt \
+	          plane01/plane01-combining.txt \
+	          plane0E/plane0E-combining.txt \
+	          plane0Fcsur/plane0Fcsur-combining.txt
 
 #
 # Location of OpenType (OTF) & TrueType (TTF)  source directories,
@@ -196,9 +214,11 @@ compiled: $(HANGUL) $(UNIFILES) $(COMBINING) $(UPPER_FILES) $(UPPER_COMBINING)
 PSF = psf
 # PSF =
 # compiled-files: pcf $(PSF) $(GRAPHICS) opentype truetype bigpic coverage
-compiled-files: pcf $(PSF) $(GRAPHICS) opentype bigpic coverage
+compiled-files: pcf $(PSF) $(GRAPHICS) opentype bigpic thumbnails coverage
 	sed -e 's/<a /<a target="blank" /g' index.html | \
 	   sed -e 's/png/$(GRAPHICS)/g' > $(COMPILED_DIR)/index.html
+	cat $(COMBINING_FILES) \
+	    > $(COMPILED_DIR)/unifont-combining-$(VERSION).txt
 
 #
 # Build the aggregate .hex font files
@@ -208,9 +228,6 @@ hex: hex-stamp
 $(HANGUL): $(HANGUL_PUA)
 	(cd $(HEXDIR)/hangul && make && install -m 0644 hangul-syllables ..)
 
-# $(HANGUL): $(HANGUL_SYL)
-# 	install -m 0644 $(HANGUL_SYL) $(HANGUL) 
-
 hex-stamp:
 	if [ ! -d $(BINDIR) ] ; then \
 	   (cd .. ; make) ; \
@@ -219,23 +236,21 @@ hex-stamp:
 	   mkdir -p $(COMPILED_DIR) ; \
 	fi
 	sort $(UNIFILES) > $(COMPILED_DIR)/unifont-$(VERSION).hex
+	# Create Chinese and Japanese versions of Plane 2 and Plane 3 glyphs.
+	./build-cjk-upper
+	# Create Unifont sample version with combining circles.
 	(cd $(HEXDIR) && sort $(PLANE0)) | \
 	  egrep -v "^FFF[EF]" | grep -v "^01F12F:" | \
 	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
 	   > $(COMPILED_DIR)/unifont_sample-$(VERSION).hex
-	# Create separate Chinese and Japanese Plane 2 versions temporarily.
-	sort -u -t ':' -k 1,1 $(PLANE_2_ZH_HEX)  $(PLANE_2_JP_HEX) \
-	   -o $(COMPILED_DIR)/unifont_zh-plane02.hex
-	sort -u -t ':' -k 1,1 $(PLANE_2_JP_HEX) $(PLANE_2_ZH_HEX) \
-	   -o $(COMPILED_DIR)/unifont_jp-plane02.hex
+	# Prepare upper-plane glyphs.
 	sort $(UPPER_COMBINING) > $(COMPILED_DIR)/upper_combining.txt
 	sort plane0[1-E]/plane*-nonprinting.hex \
 	   > $(COMPILED_DIR)/upper_nonprinting.hex
 	# Generate files in plane01/all directory to create font sample book.
 	(cd plane01 && make)
-	sort plane01/plane01-all.hex \
-	     $(COMPILED_DIR)/unifont_zh-plane02.hex \
-	     plane0[3-E]/*.hex | \
+	sort plane01/plane01-all.hex plane02/zh-plane02.hex \
+		plane0[3-E]/*.hex | \
 	   grep -v "^0020:"       | \
 	   egrep -v "^..FFF[EF]"  | \
 	   $(BINDIR)/unigencircles $(COMPILED_DIR)/upper_combining.txt \
@@ -268,23 +283,10 @@ hex-stamp:
 	   $(BINDIR)/unigencircles $(COMBINING) plane00/plane00-nonprinting.hex \
               > $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).hex
 	# Build upper plane hex files with Chinese & Japanese variants.
-	sort $(ALL_HEX_PLANE0E)      > $(COMPILED_DIR)/unifont-plane0E.hex
-	cp  plane01/plane01-all.hex \
-	    $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
-	cat $(COMPILED_DIR)/unifont_zh-plane02.hex \
-	    >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
-	cat $(PLANE_3_ZH_HEX) \
-	    >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
-	cat   $(COMPILED_DIR)/unifont-plane0E.hex \
-	   >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
-	grep -v "^0020:" plane01/plane01-all.hex | \
-	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
-	cat $(COMPILED_DIR)/unifont_jp-plane02.hex \
-	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
-	cat $(PLANE_3_ZH_HEX) \
-	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
-	cat   $(COMPILED_DIR)/unifont-plane0E.hex \
-	   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
+	cp  plane01/plane01-all.hex     $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	cat $(ZH_UPPER_SUPERSET_HEX) >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	sort -u $(ALL_HEX_PLANE0E)   >> $(COMPILED_DIR)/unifont_upper-$(VERSION).hex
+	cat $(JP_UPPER_SUBSET_HEX)   >> $(COMPILED_DIR)/unifont_jp-$(VERSION).hex
 	touch $@
 
 #
@@ -467,7 +469,7 @@ png: hex $(BINDIR)/unihex2png
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(PERL) $(BINDIR)/unihex2png -p 02$$i$$j \
-	         -i $(COMPILED_DIR)/unifont_jp-plane02.hex \
+	         -i $(JP_UPPER_SUBSET_HEX) \
 	         -o $(PNGDIR)/plane02-jp/uni02$$i$$j-jp.png ; \
 	   done ; \
 	done
@@ -477,7 +479,7 @@ png: hex $(BINDIR)/unihex2png
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(PERL) $(BINDIR)/unihex2png -p 02$$i$$j \
-	         -i $(COMPILED_DIR)/unifont_zh-plane02.hex \
+	         -i $(ZH_UPPER_SUPERSET_HEX) \
 	         -o $(PNGDIR)/plane02-zh/uni02$$i$$j-zh.png ; \
 	   done ; \
 	done
@@ -487,7 +489,7 @@ png: hex $(BINDIR)/unihex2png
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	      $(PERL) $(BINDIR)/unihex2png -p 03$$i$$j \
-	         -i $(PLANE_3_ZH_HEX) \
+	         -i $(ZH_UPPER_SUPERSET_HEX) \
 	         -o $(PNGDIR)/plane03-zh/uni03$$i$$j-zh.png ; \
 	   done ; \
 	done
@@ -581,7 +583,7 @@ bmp: hex $(BINDIR)/unihex2bmp
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      sort $(COMPILED_DIR)/unifont_jp-plane02.hex | \
+	      sort $(JP_UPPER_SUBSET_HEX) | \
 		$(BINDIR)/unihex2bmp -p02$$i$$j \
 	         > $(BMPDIR)/plane02-jp/uni02$$i$$j-jp.bmp ; \
 	   done ; \
@@ -591,7 +593,7 @@ bmp: hex $(BINDIR)/unihex2bmp
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      sort $(COMPILED_DIR)/unifont_zh-plane02.hex | \
+	      sort $(ZH_UPPER_SUBSET_HEX) | \
 		$(BINDIR)/unihex2bmp -p02$$i$$j \
 	         > $(BMPDIR)/plane02-zh/uni02$$i$$j-zh.bmp ; \
 	   done ; \
@@ -601,7 +603,7 @@ bmp: hex $(BINDIR)/unihex2bmp
 	fi
 	for i in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
 	   for j in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do \
-	      sort $(PLANE_3_ZH_HEX) | \
+	      sort $(ZH_UPPER_SUBSET_HEX) | \
 		$(BINDIR)/unihex2bmp -p03$$i$$j \
 	         > $(BMPDIR)/plane03-zh/uni03$$i$$j-zh.bmp ; \
 	   done ; \
@@ -665,6 +667,10 @@ bmp: hex $(BINDIR)/unihex2bmp
 # The CSUR glyphs are optional, appearing in the unifont_csur font
 # files rather than the main unifont font files.
 #
+# Build bitmaps for the Japanese (JIS X 0213) versions of
+# Plane 0 and Plane 1, the Chinese version of Plane 2, and
+# the superset Chinese/Japanese Plane 3.
+#
 bigpic: hex
 	cat $(COMPILED_DIR)/unifont_sample-$(VERSION).hex \
 	    $(COMPILED_DIR)/unifont_csur_sample-$(VERSION).hex | \
@@ -680,14 +686,34 @@ bigpic: hex
 	   < $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).hex \
 	   > $(COMPILED_DIR)/unifont_plane1-$(VERSION).bmp
 	$(BINDIR)/unifontpic -d120 -P2 \
-	   < $(PLANE_2_JP_HEX) \
+	   < $(JP_UPPER_SUPERSET_HEX) \
 	   > $(COMPILED_DIR)/unifont_plane2_jp-$(VERSION).bmp
 	$(BINDIR)/unifontpic -d120 -P2 \
-	   < $(PLANE_2_ZH_HEX) \
+	   < $(ZH_UPPER_SUPERSET_HEX) \
 	   > $(COMPILED_DIR)/unifont_plane2_zh-$(VERSION).bmp
 	$(BINDIR)/unifontpic -d120 -P3 \
-	   < $(PLANE_3_ZH_HEX) \
+	   < $(ZH_UPPER_SUPERSET_HEX) \
 	   > $(COMPILED_DIR)/unifont_plane3_zh-$(VERSION).bmp
+
+thumbnails: bigpic
+	convert $(COMPILED_DIR)/$(PACKAGE)-$(VERSION).bmp \
+	   -thumbnail 124x125 -type GrayScale -depth 8 \
+	   $(COMPILED_DIR)/$(PACKAGE)-thumbnail-$(VERSION).jpg
+	convert $(COMPILED_DIR)/$(PACKAGE)_jp-$(VERSION).bmp \
+	   -thumbnail 124x125 -type GrayScale -depth 8 \
+	   $(COMPILED_DIR)/$(PACKAGE)_jp-thumbnail-$(VERSION).jpg
+	convert $(COMPILED_DIR)/$(PACKAGE)_plane1-$(VERSION).bmp \
+	   -thumbnail 124x125 -type GrayScale -depth 8 \
+	   $(COMPILED_DIR)/$(PACKAGE)_plane1-thumbnail-$(VERSION).jpg
+	convert $(COMPILED_DIR)/$(PACKAGE)_plane2_jp-$(VERSION).bmp \
+	   -thumbnail 124x125 -type GrayScale -depth 8 \
+	   $(COMPILED_DIR)/$(PACKAGE)_plane2_jp-thumbnail-$(VERSION).jpg
+	convert $(COMPILED_DIR)/$(PACKAGE)_plane2_zh-$(VERSION).bmp \
+	   -thumbnail 124x125 -type GrayScale -depth 8 \
+	   $(COMPILED_DIR)/$(PACKAGE)_plane2_zh-thumbnail-$(VERSION).jpg
+	convert $(COMPILED_DIR)/$(PACKAGE)_plane3_zh-$(VERSION).bmp \
+	   -thumbnail 124x125 -type GrayScale -depth 8 \
+	   $(COMPILED_DIR)/$(PACKAGE)_plane3_zh-thumbnail-$(VERSION).jpg
 
 #
 # Note that $(TTFSRC) must exist, because it contains some source files
@@ -701,11 +727,14 @@ opentype: hex bdf otf csurotf upperotf sampleotf
 
 otf: hex
 	# First, copy the ordinary version, to make an OpenType font.
-	install -p \
-		$(COMPILED_DIR)/unifont-$(VERSION).hex \
-		$(OTFSRC)/unifont.hex
+	# install -p \
+	#	$(COMPILED_DIR)/unifont-$(VERSION).hex \
+	#	$(OTFSRC)/unifont.hex
 	# Add the Copyleft symbol to the Plane 0 Unifont OpenueType font
-	cat $(COPYLEFT) >> $(OTFSRC)/unifont.hex
+	# cat $(COPYLEFT) >> $(OTFSRC)/unifont.hex
+	cat $(COMPILED_DIR)/unifont-$(VERSION).hex $(COPYLEFT) \
+	    $(ZH_UPPER_SUBSET_HEX) \
+	    > $(OTFSRC)/unifont.hex
 	install -p \
 		$(HEXDIR)/plane00-combining.txt \
 		$(OTFSRC)/combining.txt
@@ -717,9 +746,8 @@ otf: hex
 	# Second, copy unifont_sample.bdf, to make an SBIT font.
 	# Third, make a version with Japanese glyphs as drawn in
 	# JIS X 0213:2004, adding Copyleft symbol.
-	# sort $(COPYLEFT) $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
-	install $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
-	  	$(OTFSRC)/unifont_jp.hex
+	sort $(COPYLEFT) $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
+		> $(OTFSRC)/unifont_jp.hex
 	install -p \
 		$(HEXDIR)/plane00-combining.txt \
 		$(OTFSRC)/combining-jp.txt
@@ -918,6 +946,7 @@ precompiled: compiled
 			  $(COMPILED_DIR)/unifont_sample-$(VERSION).otf \
 			  $(COMPILED_DIR)/unifont_jp_sample-$(VERSION).otf \
 			  $(COMPILED_DIR)/unifont_upper_sample-$(VERSION).otf \
+	                  $(COMPILED_DIR)/unifont-combining-$(VERSION).txt \
 	   	precompiled
 	touch $@
 
@@ -979,10 +1008,6 @@ clean:
 	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf
 	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).bdf.gz
 	# rm -f $(COMPILED_DIR)/unifont-$(VERSION).sfd.gz
-	# Remove temporary files.
-	rm -f $(COMPILED_DIR)/unifont_zh-plane02.hex \
-	      $(COMPILED_DIR)/unifont_jp-plane02.hex \
-	      $(COMPILED_DIR)/unifont-plane0E.hex
 	$(MAKE) -C plane00/hangul clean
 
 #
@@ -1002,7 +1027,7 @@ distclean:
 
 .PHONY: all compiled-files \
 	hex bdf pcf psf \
-	coverage pagecount png bmp bigpic \
+	coverage pagecount png bmp bigpic thumbnails \
 	truetype opentype \
 	otf csurotf upperotf \
 	ttf csurttf upperttf \
