@@ -1,3 +1,38 @@
+2024-12-01  Paul Hardy <unifoundry@gmail.com>
+	* Version 16.0.02.
+	* font/plane00/unifont-base.hex:
+	  - Johnnie Weaver modified Cherokee glyph U+13C9 and
+	    Cherokee Supplement glyph U+AB99.
+	* font/plane00/wqy.hex:
+	  - 湖 远星 modified U+6A37 to match the change effective as of
+	    Unicode 6.0.
+	  - 湖 远星 fixed errors in U+60C5 and U+6669.
+	* font/plane01/plane01.hex:
+	  - U+10880..U+108AF (Nabataean) and U+108E0..U+108FF (Hatran):
+	    Johnnie Weaver modified many glyphs so these scripts are now
+	    completely half-width.
+	  - U+11380..U+113FF (Tulu-Tigalari) Paul Hardy modified several
+	    glyphs, with recommendations from David Corbett.
+	  - U+11F5A: Paul Hardy modified the strokes to resemble U+11F49.
+	    Thanks to David Corbett for suggesting this.
+	  - U+18B2D: Xiao_Akatsuki (晓晓_Akatsuki) fixed a missing
+	    vertical stroke.
+	  - U+1F232: 湖 远星 added more space between left and right sides.
+	* font/plane01/plane01-combining.txt
+	  - Paul Hardy removed U+113D1 (Tulu-Tigalari REPHA).  Thanks to
+	    David Corbett for noticing that.
+	* font/plane02/plane02-zh.hex:
+	  - Hayden Wong modified four ideographs to fit within
+	    15 columns: U+20083, U+20087, U+20089, and U+200B4.
+	  - 晓晓 Akatsuki contributed the missing glyphs in U+207xx.
+	  - 湖 远星 modified U+28A0F, U+28B4E, U+2CB5B, and U+2CB73
+	    to be 15 columns wide.
+	  - Hayden Wong completed U+29D00..U+29DFF.
+	  - Hayden Wong added U+2B64E, which is an incorrect variant
+	    of U+513A (儺).
+	  - Removed U+2C7EC glyph; it was the glyph for U+2CE7C.
+	    Thanks to Boris Zhang for noticing that.
+
 2024-09-10  Paul Hardy <unifoundry@gmail.com>
 	* Version 16.0.01.
 	* font/Makefile:

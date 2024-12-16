@@ -1,3 +1,6 @@
+2024-12-01: Release 16.0.02
+  * Many glyph modifications; see the ChangeLog file for details.
+
 2024-09-10: Release 16.0.01
   * Updates to synchronize Unifont with Unicode 16.0.0 release.
   * Many new upper-plane Chinese ideographs added.
