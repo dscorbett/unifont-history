@@ -1,0 +1,107 @@
+#!/bin/sh
+#
+# Inspired by David Corbett's very elegant "font/unipatch-hex.awk"
+# script, which he wrote for Unifont in 2017.
+#
+# Author: Paul Hardy, August 2024.
+# License: GPL 2+.
+#
+
+COMPILED_DIR="compiled"
+
+#
+# Add a hex pattern for a glyph if the code point doesn't already have one.
+#
+# $1 is the main file, whose glyphs have priority over later additions.
+# $2 is the file of glyphs to add if the main file lacks any code points.
+# $3 is the output file.
+#
+addunique() {
+   local mainfile="$1"
+   local nonduplicates="$2"
+   local outfile="$3"
+       awk -F: '
+           NR == FNR { a[$1] = $2 }
+           NR > FNR { if (($1 in a) == 0) a[$1] = $2 }
+           END { for (cp in a) print cp":"a[cp] }' \
+          "$mainfile" "$nonduplicates" | \
+       sort >"$outfile"
+}
+
+#
+# Return the desired subset of glyphs from a master (superset) file of glyphs.
+#
+# $1 is the master file, the superset of glyphs
+# $2 is the subset to extract
+# $3 is the output filename
+#
+getsubset() {
+   local master="$1"
+   local subset="$2"
+   local outfile="$3"
+   awk -F: '
+       NR == FNR { a[$1] = $2 }
+       NR > FNR { if ($1 in a) printf("%s:%s\n",$1,a[$1]); }' \
+       "$master" "$subset" | \
+     sort >"$outfile"
+}
+
+#
+# Create output directory if it doesn't exist.
+#
+test -d $COMPILED_DIR || mkdir $COMPILED_DIR
+
+#
+# Create the base upper-plane Chinese and Japanese files.
+#
+cat plane02/zh-plane02.hex     plane03/zh-plane03.hex \
+	> $COMPILED_DIR/zh-upper.hex
+
+cat plane02/izmg16-plane02.hex plane03/jp-plane03.hex \
+	> $COMPILED_DIR/jp-upper.hex
+
+#
+# Add unique code points from the non-main file:
+# - Japanese non-duplicate glyphs for the Chinese file
+# - Chinese non-duplicate glyphs for the Japanese file
+#
+addunique $COMPILED_DIR/zh-upper.hex $COMPILED_DIR/jp-upper.hex \
+	  $COMPILED_DIR/zh++.hex
+
+addunique $COMPILED_DIR/jp-upper.hex $COMPILED_DIR/zh-upper.hex \
+	  $COMPILED_DIR/jp++.hex
+
+#
+# Get non-duplicate code points from subset file.
+# Make sure the code points all have consistent formatting,
+# with six-digit code points in upper-case hexadecimal:
+#
+#   - Find lines starting with an optional '0', then a '2' or '3',
+#     followed by four hexadecial digits and a ':' field separator.
+#   - If a line starts with '2' or '3', prepend a leading '0' for
+#     a full six-digit codepoint.
+#   - Convert lower-case letters to upper-case for correct unique
+#     sort output.
+#   - Perform a unique sort to output each code point only once.
+#
+egrep '^[0]?[23][0-9a-fA-F]{4}:' cjk-subset.dat | \
+	sed -r 's/^(2|3)/0\1/'     | \
+	tr '[:lower:]' '[:upper:]' | \
+	sort -u > $COMPILED_DIR/cjk-nondup.dat
+
+NUM_CJK_GLYPHS=`wc -l < $COMPILED_DIR/cjk-nondup.dat`
+echo "*** Unique upper-plane CJK ideograph subset glyphs:" $NUM_CJK_GLYPHS
+if [ $NUM_CJK_GLYPHS -le 2040 ] ; then
+   echo "    CHECK PASSES:" $NUM_CJK_GLYPHS \
+        "glyphs fits within the additional 2040 glyph limit." ;
+else
+   echo "    CHECK FAILS:" $NUM_CJK_GLYPHS \
+        "glyphs exceeds the 2040 additional glyph limit." ;
+fi
+
+getsubset $COMPILED_DIR/zh++.hex $COMPILED_DIR/cjk-nondup.dat \
+	  $COMPILED_DIR/zh-upper-subset.hex
+
+getsubset $COMPILED_DIR/jp++.hex $COMPILED_DIR/cjk-nondup.dat \
+	  $COMPILED_DIR/jp-upper-subset.hex
+
