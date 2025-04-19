@@ -355,8 +355,7 @@ FFFE-FFFF Noncharacters
 012550-012F8F Unassigned
 012F90-012FFF Cypro-Minoan
 013000-01342F Egyptian Hieroglyphs
-013430-01343F Egyptian Hieroglyph Format Controls
-013440-01345F Unassigned
+013430-01345F Egyptian Hieroglyph Format Controls
 013460-0143FF Egyptian Hieroglyphics Extended-A
 014400-01467F Anatolian Hieroglyphs
 014680-0160FF Unassigned
@@ -468,7 +467,8 @@ FFFE-FFFF Noncharacters
 ;
 ; ===== PLANE 03 =====
 ;
-030000-03134F CJK Unified Ideographs Extension G
+030000-03134A CJK Unified Ideographs Extension G
+03134B-03134F Unassigned
 031350-0323AF CJK Unified Ideographs Extension H
 0323B0-03FFFD Unassigned
 03FFFE-03FFFF Noncharacters
@@ -503,18 +503,6 @@ FFFE-FFFF Noncharacters
 0E0100-0E01EF Variation Selectors Supplement
 0E01F0-0EFFFD Unassigned
 0EFFFE-0EFFFF Noncharacters
-;
-;    (check rendering of all of these)
-; 10A01-10A03
-; 10A05-10A06
-; 10A0C-10A0F
-; 10A38-10A3A
-; 10A3F
-;   (check rendering of all these)
-; 1D165-1D169
-; 1D16D-1D172
-; 1D17B-1D18B
-; 1D1AA-1D1AD
 ;
 ; ===== PLANE 0F (Private Use Area) =====
 ;

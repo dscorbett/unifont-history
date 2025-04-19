@@ -355,8 +355,7 @@ Covered      Range        Script
  100.0% U+12550..U+12F8F  Unassigned
  100.0% U+12F90..U+12FFF  Cypro-Minoan
    0.1% U+13000..U+1342F  Egyptian Hieroglyphs
- 100.0% U+13430..U+1343F  Egyptian Hieroglyph Format Controls
- 100.0% U+13440..U+1345F  Unassigned
+ 100.0% U+13430..U+1345F  Egyptian Hieroglyph Format Controls
    0.1% U+13460..U+143FF  Egyptian Hieroglyphics Extended-A
    8.9% U+14400..U+1467F  Anatolian Hieroglyphs
  100.0% U+14680..U+160FF  Unassigned
@@ -447,7 +446,7 @@ Covered      Range        Script
  100.0% U+1FB00..U+1FBFF  Symbols for Legacy Computing
  100.0% U+1FC00..U+1FFFD  Unassigned
    0.0% U+1FFFE..U+1FFFF  Noncharacters
-   8.6% U+20000..U+2A6DF  CJK Unified Ideographs Extension B
+   9.8% U+20000..U+2A6DF  CJK Unified Ideographs Extension B
    0.0% U+2A6E0..U+2A6FF  Unassigned
    2.2% U+2A700..U+2B739  CJK Unified Ideographs Extension C
    0.0% U+2B73A..U+2B73F  Unassigned
@@ -462,7 +461,8 @@ Covered      Range        Script
    0.4% U+2F800..U+2FA1D  CJK Compatibility Ideographs Supplement
    0.0% U+2FA1E..U+2FFFD  Unassigned
    0.0% U+2FFFE..U+2FFFF  Noncharacters
-   8.6% U+30000..U+3134F  CJK Unified Ideographs Extension G
+   8.6% U+30000..U+3134A  CJK Unified Ideographs Extension G
+   0.0% U+3134B..U+3134F  Unassigned
    0.4% U+31350..U+323AF  CJK Unified Ideographs Extension H
    0.0% U+323B0..U+3FFFD  Unassigned
    0.0% U+3FFFE..U+3FFFF  Noncharacters

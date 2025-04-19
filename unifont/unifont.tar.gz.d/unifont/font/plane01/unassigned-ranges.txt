@@ -294,7 +294,7 @@
 ; Egyptian Hieroglyphs
 01342F
 ; Egyptian Hieroglyph Format Controls
-013439 01343F
+013456 01345F
 ; Egyptian Hieroglyphs Extended-A
 0143FB 0143FF
 ; Anatolian Hieroglyphs

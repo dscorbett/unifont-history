@@ -104,7 +104,9 @@
       - Set U+11B00..U+11B5F (Devanagari Extended-A) to be wide.
       - Set U+11F00..U+11F5F (Kawi) to be wide.
 
-
+   19 April 2025 [Paul Hardy]:
+      - Remove hard-coding of U+1D100..U+1D1FF (Musical Symbols)
+        to double-width; allow range to be dual-width.
 */
 
 #include <stdio.h>
@@ -342,7 +344,6 @@ main (int argc, char *argv[])
    for (i = 0x01B100; i <= 0x01B12F; i++) wide[i] = 1; /* Kana Extended-A    */
    for (i = 0x01B170; i <= 0x01B2FF; i++) wide[i] = 1; /* Nushu              */
    for (i = 0x01CF00; i <= 0x01CFCF; i++) wide[i] = 1; /* Znamenny Musical   */
-   for (i = 0x01D100; i <= 0x01D1FF; i++) wide[i] = 1; /* Musical Symbols    */
    for (i = 0x01D800; i <= 0x01DAAF; i++) wide[i] = 1; /* Sutton SignWriting */
    for (i = 0x01E2C0; i <= 0x01E2FF; i++) wide[i] = 1; /* Wancho             */
    for (i = 0x01E500; i <= 0x01E5FF; i++) wide[i] = 1; /* Ol Onal            */

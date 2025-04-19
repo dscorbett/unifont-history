@@ -19,9 +19,9 @@ PERL =
 #compiled
 
 PACKAGE = "unifont"
-VERSION = 16.0.02
+VERSION = 16.0.03
 
-COPYRIGHT = "Copyright (C) 1998-2024 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright (C) 1998-2025 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \

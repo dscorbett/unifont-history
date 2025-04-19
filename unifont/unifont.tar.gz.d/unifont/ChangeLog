@@ -1,3 +1,68 @@
+2025-04-19  Paul Hardy <unifoundry@gmail.com>
+	* Version 16.0.03.
+	* Updated copyrights for 2025.
+	* font/coverage.dat:
+	  - Extended Egyptian Hieroglyph Format Controls to span
+	    U+13430..U+1345F.
+	  - Added "03134B-03134F Unassigned" at the end of CJK Unified
+	    Ideographs Extension G range.
+	  - Removed some comments.
+	* font/plane00/unifont-base.hex:
+	  - David Corbett:
+	    o Redrew some Arabic glyphs for consistency. Most of these
+	      are minor changes to baseline, i‘jam positioning, or making
+	      a derived letter match its origin letter.  Code points:
+	      U+0625, U+0634, U+0673, U+06B9, U+06BC, U+0753, U+0754,
+	      U+0757, U+075C, U+0762, U+0767, U+0769, U+076A, U+076D, 
+	      U+0770, U+0775, U+0776, U+0777, U+077D, U+077E, U+08A1, 
+	      U+08A2, U+08A3, U+08A6, U+08A8, U+08B1, U+08BB, and U+08BC.
+	    o Redrew some Arabic Presentation Forms:
+	      U+FD42, U+FD43, U+FD44, U+FD45, U+FDF0, U+FDF1, U+FDF4,
+	      U+FDF6, U+FDF7, U+FDFA, U+FDFB, U+FDFC, U+FE87, U+FE88,
+	      U+FEB5, and U+FEB6.
+	    o Modified the top serifs of two Latin fullwidth letters,
+	      U+FF44 and U+FF4B.
+	* font/plane00/wqy.hex: 晓晓_Akatsuki (Xiao_Akatsuki) submitted
+	  modifications from the team of 湖 远星:
+	  - Improved 褝 (U+891D) and 肞 (U+809E).
+	  - Updated to reflect current Unicode rendering:
+	    㳽 (U+3CFD), 㸿 (U+3E3F), 䑮 (U+446E), 䒳 (U+44B3), 䕈 (U+4548),
+	    and 䩶 (U+4A76).
+	  - Updated as per GB18030-2022 change: 垕 (U+5795).
+	  - Modified to comply with the GB18030-2022 standard pertaining to
+	    character composition:
+	    o 姉 (U+59C9): This character is a phono-semantic character.
+	      Therefore, the right side should be "市" (U+5E02) instead
+	      of "巿" (U+5DFF).
+	    o 濲 (U+6FF2): This character is a variant of "瀔" (U+7014),
+	      and the "穀" (U+7A40) on the right side of "瀔" (U+7014) is
+	      a phono-semantic character, and its "semantic" part is "禾"
+	      (U+79BE), not "木" (U+6728).
+	    o 膥 (U+81A5): This character is a Cantonese character for "egg".
+	      Not yet (未) Become (成) Meat (肉) → Egg, so the upper left
+	      corner should be "未" (U+672A), not "末" (U+672B).
+	* font/plane01/plane01.hex:
+	  - Added new glyphs in Egyptian Hieroglyph Format Controls
+	    (U+13430..U+1345F). [Savannah bug 66613]
+	  - Modified U+1D16D, U+01D17C, U+01D17D, U+01D17E, U+01D17F,
+	    U+01D180, U+01D182, U+01D1AB, and U+01D1AD.
+	  - David Corbett modified some Musical Symbols to be one cell wide
+	    where they were two cells wide, but with the right cell blank:
+	    U+01D1DE, U+01D1DF, U+01D1E0, U+01D1E2, U+01D1E3, U+01D1E4,
+	    U+01D1E5, U+01D1E6, U+01D1E7, and U+01D1E8.
+	* font/plane01/plane01-noscript.hex:
+	  - Removed range U+13440..U+1345F, which has been added to
+	    Egyptian Hieroglyph Format Controls.
+	* font/plane01/unassigned-ranges.txt:
+	  - Changed Egyptian Hieroglyph Format Controls unassigned
+	    range to U+013456..U+01345F.
+	* font/plane02/zh-plane02.hex:
+	  - 晓晓_Akatsuki modified U+25ED7 from 16 columns wide to 15 columns.
+	  - Hayden Wong contributed U+29B00..U+29CFF.
+	  - Cod'dte sent a corrected left-hand side of U+2EE57.
+	* font/plane03/jp-plane03.hex:
+	  - Luke036 has drawn a much-improved glyph for taito (U+3106C).
+
 2024-12-01  Paul Hardy <unifoundry@gmail.com>
 	* Version 16.0.02.
 	* font/plane00/unifont-base.hex:

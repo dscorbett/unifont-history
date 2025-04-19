@@ -26,11 +26,11 @@ TTF_LANG = 0x409
 # Could also use bash string replacement if you know you're using bash.
 #
 
-COPYRIGHT = "Copyright © 1998-2024 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright © 1998-2025 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Nils Moskopp, Rebecca Bettencourt, Ho-Seok Ee, et al."
 
-VERSION = 16.0.02
+VERSION = 16.0.03
 
 all: otf
 
