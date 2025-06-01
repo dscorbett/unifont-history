@@ -1,3 +1,10 @@
+2025-05-31: Release 16.0.04
+  * Updates to several Arabic glyphs.
+  * Updates to CSUR/UCSUR glyphs for Sitelen Pona and Sitelen Pona Radicals.
+  * Updates to several emoji glyphs.
+  * Reverted several Musical Symbols glyphs for better combining placement.
+  * Updates to multiple other glyphs; see ChangeLog for details.
+
 2025-04-19: Release 16.0.03
   * Many CJK glyph modifications; see the ChangeLog file for details.
   * Hayden Wong contributed U+29B00..U+29CFF.

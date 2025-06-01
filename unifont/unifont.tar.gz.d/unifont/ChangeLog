@@ -1,3 +1,44 @@
+2025-05-31  Paul Hardy <unifoundry@gmail.com>
+	* Version 16.0.04.
+	* font/Makefile:
+	  - Invoke "make" in plane0Fcsur directory, to run new Makefile.
+          - Changed "convert" to "magick" for creation of thumbnails.
+	  - Remove Variation Selectors (U+FE00..U+FE0F, U+E0100..U+E01EF)
+	    from ordinary TrueType and OpenType font builds; leave in
+	    the sample and SBIT font builds.
+	* font/plane00/unifont-base.hex:
+	  - Modified archaic Greek letter digamma (U+03DC, U+03DD).
+	  - David Corbett modified Arabic glyphs U+0610, U+0616, U+061E,
+	    U+0620, and U+0626.
+	  - Johnnie Weaver modified some Georgian Supplement glyphs
+	    (U+2D00..U+2D2F).
+	  - Modified Korean Won currency symbol, U+20A9, to only have one bar.
+	  - 晓晓_Akatsuki (Xiao_Akatsuki) modified U+2EB2 per Unicode updates.
+	  - David Corbett redrew the yeh-based glyphs in the ranges
+	    U+FC31..U+FDC7 (Arabic Presentation Forms-A) and U+FE89..U+FE8C
+	    (Arabic Presentation Forms-B).
+	* font/plane01/plane01.hex:
+	  - Updated Old Turkic glyph U+10C47.
+	  - Updated Khitan Small Script glyph U+18CCA.
+	  - Reverted several changes in Musical Symbols (U+1D100..U+1D1FF)
+	    for better positioning with combining characters.  Thanks to
+	    David Corbett for requesting the changes.
+	  - Modified mathematical bold digamma (U+1D7CA, U+1D7CB).
+	  - Updated some emojis with those contributed by Josh Hufford:
+	    U+1F602, U+1F605, U+1F606, U+1F607, U+1F609, U+1F923, and U+1FAE0.
+	* font/plane0Fcsur:
+	  - Added plane0Fcsur-unassigned-ranges.txt.
+	  - Added Makefile, to build plane0Fcsur-unassigned.hex from
+	    plane0Fcsur-unassigned-ranges.txt.
+	  - Added plane0Fcsur-spaces.hex for Derani non-breaking space.
+	  - plane0Fcsur-combining.txt: added Zbalermorna (U+F28A0..UU+F28DF).
+	  - plane0Fcsur.hex:
+	    o Added Titi Pula (U+F1C40..UU+F1C7F).
+	    o Added Zbalermorna (U+F28A0..UU+F28DF).
+	    o soweli Kape and NikZapp updated these glyphs:
+	      - U+F1900..U+F19FF (Sitelen Pona)
+	      - U+F1C80..U+F1C9F (Sitelen Pona Radicals)
+
 2025-04-19  Paul Hardy <unifoundry@gmail.com>
 	* Version 16.0.03.
 	* Updated copyrights for 2025.
@@ -2400,7 +2441,7 @@
 	- Nils modified several Plane 1 glyphs from what were in the
 	  Unifont-7.0.04 release in these scripts:
 	     U+01F300..U+01F5FF Miscellaneous Symbols and Pictographs
-	     U+01F600..U+01F4F Emoticons
+	     U+01F600..U+01F64F Emoticons
 	     U+01F680..U+01F6FF and Transport and Map Symbols scripts.
 	* man/Makefile: remove $(MANPAGES) from "install" target.
 

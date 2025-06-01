@@ -1,0 +1,31 @@
+; This file contains code points within assigned scripts
+; in Plane 15 that are not yet assigned for those scripts.
+;
+; Pikto
+0F11E8 0F16AF
+; Derani
+0F16C7 0F16C9
+0F16CF 0F16D1
+0F16DC 0F16DF
+; Sitelen Pona
+0F1989 0F198F
+0F199E
+0F199F
+0F19A4 0F19FF
+; Shidinn
+0F1B59 0F1B5F
+0F1BB9 0F1BBC
+0F1C19 0F1C1F
+0F1C2C 0F1C2F
+0F1C33 0F1C3F
+; Titi Pula
+0F1C67 0F1C7F
+; Sitelen Pona Radicals
+0F1C9D 0F1C9F
+; Sadalian
+0F265B 0F265F
+0F2667 0F266F
+; Zbalermorna
+0F28BC 0F28BF
+0F28CC 0F28CF
+0F28DA 0F28DF

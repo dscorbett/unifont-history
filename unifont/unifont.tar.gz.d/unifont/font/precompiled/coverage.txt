@@ -499,9 +499,9 @@ Covered      Range        Script
  100.0% U+F1900..U+F19FF  PUA (CSUR/UCSUR): Sitelen Pona
    0.0% U+F1A00..U+F1AFF  Reserved
  100.0% U+F1B00..U+F1C3F  PUA (CSUR/UCSUR): Shidinn
-  39.1% U+F1C40..U+F1C7F  PUA (CSUR/UCSUR): Titi Pula
+ 100.0% U+F1C40..U+F1C7F  PUA (CSUR/UCSUR): Titi Pula
  100.0% U+F1C80..U+F1C9F  PUA (CSUR/UCSUR): Sitelen Pona Radicals
    0.0% U+F1CA0..U+F1FFF  Unassigned
  100.0% U+F2000..U+F267F  PUA (CSUR/UCSUR): Sadalian
-   0.0% U+F2680..U+FFFFD  Unassigned
+   0.1% U+F2680..U+FFFFD  Unassigned
  100.0% U+FFFFE..U+FFFFF  Noncharacters

@@ -19,7 +19,7 @@ PERL =
 #compiled
 
 PACKAGE = "unifont"
-VERSION = 16.0.03
+VERSION = 16.0.04
 
 COPYRIGHT = "Copyright (C) 1998-2025 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
@@ -171,6 +171,8 @@ ALL_HEX_PLANE0E =     plane0E/plane0E-nonprinting.hex \
 	              plane0E/plane0E-unassigned.hex \
 	              plane0E/plane0E.hex
 ALL_HEX_PLANE0FCSUR = plane0Fcsur/plane0Fcsur-nonprinting.hex \
+	              plane0Fcsur/plane0Fcsur-spaces.hex \
+	              plane0Fcsur/plane0Fcsur-unassigned.hex \
 	              plane0Fcsur/plane0Fcsur.hex
 ALL_HEX_LOWER = $(ALL_HEX_PLANE00) $(ALL_HEX_PLANE00CSUR)
 ALL_HEX_UPPER = $(ALL_HEX_PLANE01) $(ALL_HEX_PLANE02) $(ALL_HEX_PLANE03) \
@@ -264,6 +266,7 @@ hex-stamp:
 	# Create a .hex file with only CSUR glyphs from all planes
 	sort plane00csur/plane00csur-all.hex | sed -e 's/^/00/' \
 	   > $(COMPILED_DIR)/unifont_csur-$(VERSION).hex
+	(cd plane0Fcsur && make)
 	sort plane0[1-F]csur/*.hex | grep -v "^0020:" \
 	   >> $(COMPILED_DIR)/unifont_csur-$(VERSION).hex
 	# Create a .hex file with all CSUR glyphs, with combining circles
@@ -696,22 +699,22 @@ bigpic: hex
 	   > $(COMPILED_DIR)/unifont_plane3_zh-$(VERSION).bmp
 
 thumbnails: bigpic
-	convert $(COMPILED_DIR)/$(PACKAGE)-$(VERSION).bmp \
+	magick $(COMPILED_DIR)/$(PACKAGE)-$(VERSION).bmp \
 	   -thumbnail 124x125 -type GrayScale -depth 8 \
 	   $(COMPILED_DIR)/$(PACKAGE)-thumbnail-$(VERSION).jpg
-	convert $(COMPILED_DIR)/$(PACKAGE)_jp-$(VERSION).bmp \
+	magick $(COMPILED_DIR)/$(PACKAGE)_jp-$(VERSION).bmp \
 	   -thumbnail 124x125 -type GrayScale -depth 8 \
 	   $(COMPILED_DIR)/$(PACKAGE)_jp-thumbnail-$(VERSION).jpg
-	convert $(COMPILED_DIR)/$(PACKAGE)_plane1-$(VERSION).bmp \
+	magick $(COMPILED_DIR)/$(PACKAGE)_plane1-$(VERSION).bmp \
 	   -thumbnail 124x125 -type GrayScale -depth 8 \
 	   $(COMPILED_DIR)/$(PACKAGE)_plane1-thumbnail-$(VERSION).jpg
-	convert $(COMPILED_DIR)/$(PACKAGE)_plane2_jp-$(VERSION).bmp \
+	magick $(COMPILED_DIR)/$(PACKAGE)_plane2_jp-$(VERSION).bmp \
 	   -thumbnail 124x125 -type GrayScale -depth 8 \
 	   $(COMPILED_DIR)/$(PACKAGE)_plane2_jp-thumbnail-$(VERSION).jpg
-	convert $(COMPILED_DIR)/$(PACKAGE)_plane2_zh-$(VERSION).bmp \
+	magick $(COMPILED_DIR)/$(PACKAGE)_plane2_zh-$(VERSION).bmp \
 	   -thumbnail 124x125 -type GrayScale -depth 8 \
 	   $(COMPILED_DIR)/$(PACKAGE)_plane2_zh-thumbnail-$(VERSION).jpg
-	convert $(COMPILED_DIR)/$(PACKAGE)_plane3_zh-$(VERSION).bmp \
+	magick $(COMPILED_DIR)/$(PACKAGE)_plane3_zh-$(VERSION).bmp \
 	   -thumbnail 124x125 -type GrayScale -depth 8 \
 	   $(COMPILED_DIR)/$(PACKAGE)_plane3_zh-thumbnail-$(VERSION).jpg
 
@@ -732,9 +735,10 @@ otf: hex
 	#	$(OTFSRC)/unifont.hex
 	# Add the Copyleft symbol to the Plane 0 Unifont OpenueType font
 	# cat $(COPYLEFT) >> $(OTFSRC)/unifont.hex
+	# Remove Variation Selectors, U+FE00..U+FE0F.
 	cat $(COMPILED_DIR)/unifont-$(VERSION).hex $(COPYLEFT) \
-	    $(ZH_UPPER_SUBSET_HEX) \
-	    > $(OTFSRC)/unifont.hex
+	    $(ZH_UPPER_SUBSET_HEX) | \
+	    grep -v "^FE0.:" > $(OTFSRC)/unifont.hex
 	install -p \
 		$(HEXDIR)/plane00-combining.txt \
 		$(OTFSRC)/combining.txt
@@ -772,10 +776,10 @@ csurotf: hex
 		$(COMPILED_DIR)/unifont_csur-$(VERSION).otf 
 
 upperotf: hex
-	# First, copy the ordinary version, to make a TrueType font.
-	install -p \
-		$(COMPILED_DIR)/unifont_upper-$(VERSION).hex \
-		$(OTFSRC)/unifont_upper.hex
+	# First, copy the ordinary version, to make an OpenType font.
+	# Remove Variation Selectors, U+E0100..U+E01EF.
+	grep -v "^0E01[0-E].:" $(COMPILED_DIR)/unifont_upper-$(VERSION).hex \
+		             > $(OTFSRC)/unifont_upper.hex
 	sort -u $(UPPER_COMBINING) > $(OTFSRC)/combining_upper.txt
 	cd $(OTFSRC) && \
 	   $(MAKE) FONTFILE="unifont_upper" COMBINING="combining_upper" \
@@ -827,9 +831,9 @@ ttf: hex bdf
 	#   $(COMPILED_DIR)/unifont_sample-$(VERSION).ttf \
 	#   $(COMPILED_DIR)/unifont_jp-$(VERSION).ttf
 	# First, copy the ordinary version, to make a TrueType font.
-	install -p \
-	 	$(COMPILED_DIR)/unifont-$(VERSION).hex \
-	 	$(TTFSRC)/unifont.hex
+	# Remove the Variation Selectors, U+FE00..U+FE0F
+	grep -v "^FE0.:" $(COMPILED_DIR)/unifont-$(VERSION).hex \
+	 	       >  $(TTFSRC)/unifont.hex
 	# Add the Copyleft symbol to the Plane 0 Unifont TrueType font
 	cat $(COPYLEFT) >> $(TTFSRC)/unifont.hex
 	install -p \
@@ -852,8 +856,8 @@ ttf: hex bdf
 		$(COMPILED_DIR)/unifont_sample-$(VERSION).ttf 
 	# Third, make a version with Japanese glyphs as drawn in
 	# JIS X 0213:2004, adding Copyleft symbol.
-	sort $(COPYLEFT) $(COMPILED_DIR)/unifont_jp-$(VERSION).hex \
-		> $(TTFSRC)/unifont_jp.hex
+	sort $(COPYLEFT) $(COMPILED_DIR)/unifont_jp-$(VERSION).hex | \
+		grep -v "^FE0.:" > $(TTFSRC)/unifont_jp.hex
 	install -p \
 		$(HEXDIR)/plane00-combining.txt \
 		$(TTFSRC)/combining-jp.txt
@@ -890,9 +894,9 @@ csurttf: hex
 #
 upperttf: hex
 	# First, copy the ordinary version, to make a TrueType font.
-	install -p \
-		$(COMPILED_DIR)/unifont_upper-$(VERSION).hex \
-		$(TTFSRC)/unifont_upper.hex
+	# Remove Variation Selectors, U+E0100..U+E01EF.
+	grep -v "^0E01[0-E].:" $(COMPILED_DIR)/unifont_upper-$(VERSION).hex \
+		         > $(TTFSRC)/unifont_upper.hex
 	sort -u $(UPPER_COMBINING) > $(TTFSRC)/combining_upper.txt
 	cd $(TTFSRC) && \
 	   $(MAKE) FONTFILE="unifont_upper" COMBINING="combining_upper" \
