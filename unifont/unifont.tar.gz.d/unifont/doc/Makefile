@@ -1,6 +1,22 @@
 
 SHELL = /bin/sh
 
+#
+# $(PREFIX) is defined in the top-level Makefile or on the command line
+# to override the setting below.
+#
+PREFIX = /usr
+INSTALLDIR = $(PREFIX)/share/info
+
+#
+# Set "COMPRESS = 0" to install uncompressed man pages (the default), or
+# override on the command line.
+#
+# Set "COMPRESS = 1" or anything else non-zero to install gzipped man pages.
+#
+COMPRESS = 1
+
+
 MAKEINFO = makeinfo
 TEXI2PDF = texi2pdf
 
@@ -37,6 +53,15 @@ docprep:
 doc: $(OUTPUT_FILES)
 
 install:
+	install -m0755 -d $(INSTALLDIR)
+	install -m0644 unifont-he-zhixiang.png $(INSTALLDIR)
+	if [ $(COMPRESS) = 0 ] ; then \
+	   install -m0644 unifont.info $(INSTALLDIR) ; \
+	else \
+	   gzip $(GZFLAGS) < unifont.info >unifont.info.gz && \
+	   chmod 644 unifont.info.gz && \
+	   mv unifont.info.gz $(INSTALLDIR) ; \
+	fi
 
 clean:
 	\rm -f unifont.aux unifont.cp unifont.fn unifont.ky unifont.log

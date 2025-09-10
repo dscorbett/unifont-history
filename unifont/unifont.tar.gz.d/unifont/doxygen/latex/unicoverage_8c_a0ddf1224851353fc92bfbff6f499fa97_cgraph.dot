@@ -7,7 +7,7 @@ digraph "main"
   rankdir="LR";
   Node1 [label="main",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="The main function."];
   Node1 -> Node2 [color="steelblue1",style="solid"];
-  Node2 [label="nextrange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$unicoverage_8c.html#aecb35821cec5af4455f392b872cc1dc4",tooltip="Get next Unicode range."];
+  Node2 [label="nextrange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$unicoverage_8c.html#ae0cf1429d0cf858fa930c666d8e73954",tooltip="Get next Unicode range."];
   Node1 -> Node3 [color="steelblue1",style="solid"];
-  Node3 [label="print_subtotal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$unicoverage_8c.html#acfeab2c5c5e91c5343674cb7c523911f",tooltip="Print the subtotal for one Unicode script range."];
+  Node3 [label="print_subtotal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$unicoverage_8c.html#a71344b70c39c2995545c3ced4d134ec8",tooltip="Print the subtotal for one Unicode script range."];
 }

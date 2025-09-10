@@ -47,6 +47,10 @@
 	"filename" character string.
       - Defined MAXFILENAME to hold size of "filename" array
 	for snprintf function call.
+
+   6 September 2025 [Paul Hardy]:
+      - Changed code_point and nextbyte from "int" to "unsigned" for
+        compatibility with sscanf definition.
 */
 
 #include <stdio.h>
@@ -66,7 +70,7 @@
    @return This program exits with status EXIT_SUCCESS.
 */
 int
-main () {
+main (void) {
 
    int i; /* loop variable */
 
@@ -108,7 +112,7 @@ main () {
    };
 
    char instring[MAXSTRING]; /* input string                        */
-   int  code_point;          /* current Unicode code point          */
+   unsigned  code_point;     /* current Unicode code point          */
    char glyph[MAXSTRING];    /* bitmap string for this glyph        */
    int  glyph_height=16;     /* for now, fixed at 16 pixels high    */
    int  glyph_width;         /* 8, 16, 24, or 32 pixels wide        */
@@ -116,7 +120,7 @@ main () {
    FILE *outfp;              /* file pointer to current output file */
 
    int string_index;  /* pointer into hexadecimal glyph string */
-   int nextbyte;      /* next set of 8 bits to print out       */
+   unsigned nextbyte; /* next set of 8 bits to print out       */
 
    /* Repeat for each line in the input stream */
    while (fgets (instring, MAXSTRING - 1, stdin) != NULL) {

@@ -31,6 +31,12 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/*
+   6 September 2025 [Paul Hardy]:
+      - Changed iy from "int" to "unsigned" for compatibility with
+        sscanf definition.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -48,7 +54,7 @@ int
 main (int argc, char **argv)
 {
 
-   int ix, iy;
+   int  ix, iy;  /* two code points to compare for equality */
    char inbuf[MAXBUF];
    char *infile;   /* the input file name */
    FILE *infilefp; /* file pointer to input file */
@@ -67,7 +73,7 @@ main (int argc, char **argv)
    ix = -1;
 
    while (fgets (inbuf, MAXBUF-1, infilefp) != NULL) {
-      sscanf (inbuf, "%X", &iy);
+      sscanf (inbuf, "%X", (unsigned *)&iy);
       if (ix == iy) fprintf (stderr, "Duplicate code point: %04X\n", ix);
       else ix = iy;
    }

@@ -157,7 +157,7 @@ Covered      Range        Script
    0.0%  U+D800..U+DFFF   Surrogate Pairs-Not Used
  100.0%  U+E000..U+E07F   PUA (CSUR/UCSUR): Tengwar
  100.0%  U+E080..U+E0FF   PUA (CSUR/UCSUR): Cirth
-  11.2%  U+E100..U+E14F   PUA (CSUR/UCSUR): Engsvanyáli
+ 100.0%  U+E100..U+E14F   PUA (CSUR/UCSUR): Engsvanyáli
  100.0%  U+E150..U+E1AF   PUA (CSUR/UCSUR): Kinya
  100.0%  U+E1B0..U+E1CF   PUA (CSUR/UCSUR): Ilianóre
  100.0%  U+E1D0..U+E1FF   PUA (CSUR/UCSUR): Syai
@@ -171,17 +171,17 @@ Covered      Range        Script
  100.0%  U+E360..U+E37F   PUA (CSUR/UCSUR): Sarkai
  100.0%  U+E380..U+E3AF   PUA (CSUR/UCSUR): Thelwik
  100.0%  U+E3B0..U+E3FF   PUA (CSUR/UCSUR): Olaetyan
-  25.0%  U+E400..U+E42F   PUA (CSUR/UCSUR): Nísklôz
-   0.0%  U+E430..U+E44F   PUA (CSUR/UCSUR): Kazat ?Akkorou
-  37.5%  U+E450..U+E46F   PUA (CSUR/UCSUR): Kazvarad
-  12.5%  U+E470..U+E48F   PUA (CSUR/UCSUR): Zarkhánd
-  22.9%  U+E490..U+E4BF   PUA (CSUR/UCSUR): Røzhxh
+ 100.0%  U+E400..U+E42F   PUA (CSUR/UCSUR): Nísklôz
+ 100.0%  U+E430..U+E44F   PUA (CSUR/UCSUR): Kazat ?Akkorou
+ 100.0%  U+E450..U+E46F   PUA (CSUR/UCSUR): Kazvarad
+ 100.0%  U+E470..U+E48F   PUA (CSUR/UCSUR): Zarkhánd
+ 100.0%  U+E490..U+E4BF   PUA (CSUR/UCSUR): Røzhxh
   14.6%  U+E4C0..U+E4EF   PUA (CSUR/UCSUR): Serivelna
-   0.0%  U+E4F0..U+E4FF   PUA (CSUR/UCSUR): Kelwathi
-  12.5%  U+E500..U+E51F   PUA (CSUR/UCSUR): Saklor
-  14.6%  U+E520..U+E54F   PUA (CSUR/UCSUR): Rynnan
-  27.1%  U+E550..U+E57F   PUA (CSUR/UCSUR): Alzetjan
-  37.5%  U+E580..U+E59F   PUA (CSUR/UCSUR): Telarasso
+ 100.0%  U+E4F0..U+E4FF   PUA (CSUR/UCSUR): Kelwathi
+ 100.0%  U+E500..U+E51F   PUA (CSUR/UCSUR): Saklor
+ 100.0%  U+E520..U+E54F   PUA (CSUR/UCSUR): Rynnan
+ 100.0%  U+E550..U+E57F   PUA (CSUR/UCSUR): Alzetjan
+ 100.0%  U+E580..U+E59F   PUA (CSUR/UCSUR): Telarasso
    9.4%  U+E5A0..U+E5BF   PUA (CSUR/UCSUR): Ssûraki
  100.0%  U+E5C0..U+E5DF   PUA (CSUR/UCSUR): Gargoyle
  100.0%  U+E5E0..U+E5FF   PUA (CSUR/UCSUR): Ophidian
@@ -189,7 +189,7 @@ Covered      Range        Script
  100.0%  U+E630..U+E64F   PUA (CSUR/UCSUR): Seussian Latin Extenstions
  100.0%  U+E650..U+E67F   PUA (CSUR/UCSUR): Sylabica
  100.0%  U+E680..U+E6CF   PUA (CSUR/UCSUR): Ewellic
-  33.3%  U+E6D0..U+E6FF   PUA (CSUR/UCSUR): Amlin
+ 100.0%  U+E6D0..U+E6FF   PUA (CSUR/UCSUR): Amlin
  100.0%  U+E700..U+E73F   PUA (CSUR/UCSUR): Unifon Extended
  100.0%  U+E740..U+E76F   PUA (CSUR/UCSUR): Unifon
  100.0%  U+E770..U+E77F   PUA (CSUR/UCSUR): Solresol
@@ -207,20 +207,25 @@ Covered      Range        Script
  100.0%  U+EB40..U+EB5F   PUA (CSUR/UCSUR): Standard Galactic
  100.0%  U+EB60..U+EB9F   PUA (CSUR/UCSUR): Braille Extended
  100.0%  U+EBA0..U+EBDF   PUA (CSUR/UCSUR): Cistercian Numerals
-   0.0%  U+EBE0..U+EBFF   PUA (CSUR/UCSUR): Unassigned
-   0.0%  U+EC00..U+EC2F   PUA (CSUR/UCSUR): Cylenian
-   0.0%  U+EC30..U+EC6F   PUA (CSUR/UCSUR): Syrrin
-   0.0%  U+EC70..U+ECFF   PUA (CSUR/UCSUR): Unassigned
- 100.0%  U+ED00..U+ED3F   PUA (CSUR/UCSUR): Deini
+ 100.0%  U+EBE0..U+EBEF   PUA (CSUR/UCSUR): Lapointe Hexadecimal Numerals
+ 100.0%  U+EBF0..U+EBFF   PUA (CSUR/UCSUR): Martin Hexadecimal Numerals
+ 100.0%  U+EC00..U+EC2F   PUA (CSUR/UCSUR): Cylenian
+ 100.0%  U+EC30..U+EC6F   PUA (CSUR/UCSUR): Syrrin
+ 100.0%  U+EC70..U+ECEF   PUA (CSUR/UCSUR): Graflect
+ 100.0%  U+ECF0..U+ECFF   PUA (CSUR/UCSUR): Whitaker Hexadecimal Numerals
+ 100.0%  U+ED00..U+ED3F   PUA (CSUR/UCSUR): Dein
  100.0%  U+ED40..U+ED7F   PUA (CSUR/UCSUR): Niji
-  27.3%  U+ED80..U+EDFF   PUA (CSUR/UCSUR): Unassigned
-   0.0%  U+EE00..U+EEFF   PUA (CSUR/UCSUR): Unassigned
-   0.0%  U+EF00..U+EF7F   PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
-   0.0%  U+EF80..U+EFFF   PUA (CSUR/UCSUR): Unassigned; Reserved for Encoding Hacks
-   0.0%  U+F000..U+F4BF   PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
+ 100.0%  U+ED80..U+EDAF   PUA (CSUR/UCSUR): Iranic
+  29.2%  U+EDB0..U+EDDF   PUA (CSUR/UCSUR): Tassarunese
+   0.0%  U+EDE0..U+EDEF   PUA (CSUR/UCSUR): Zese
+   0.0%  U+EDF0..U+EDFF   PUA (CSUR/UCSUR): Grawlixes
+   0.0%  U+EE00..U+EEFF   PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+   0.0%  U+EF00..U+EF7F   PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+   0.0%  U+EF80..U+EFFF   PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+   0.0%  U+F000..U+F4BF   PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
  100.0%  U+F4C0..U+F4EF   PUA (CSUR/UCSUR): Ath (compatible with Nishiki-teki and Fairfax HD)
-   0.0%  U+F4F0..U+F7FF   PUA (CSUR/UCSUR): Unassigned; Reserved for Font Hacks
-   0.0%  U+F800..U+F89F   PUA (CSUR/UCSUR): Unassigned; Reserved for Apple Hacks
+   0.0%  U+F4F0..U+F7FF   PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
+   0.0%  U+F800..U+F89F   PUA (CSUR/UCSUR): Unassigned; Reserveed for Hacks and Corporate Use
  100.0%  U+F8A0..U+F8CF   PUA (CSUR/UCSUR): Aiha (Kesh)
  100.0%  U+F8D0..U+F8FF   PUA (CSUR/UCSUR): Klingon
  100.0%  U+F900..U+FAFF   CJK Compatibility Ideographs
@@ -258,7 +263,7 @@ Covered      Range        Script
  100.0% U+10500..U+1052F  Elbasan
  100.0% U+10530..U+1056F  Caucasian Albanian
  100.0% U+10570..U+105BF  Vithkuqi
- 100.0% U+105C0..U+105FF  Unassigned
+ 100.0% U+105C0..U+105FF  Todhri
  100.0% U+10600..U+1077F  Linear A
  100.0% U+10780..U+107BF  Latin Extended-F
  100.0% U+107C0..U+107FF  Unassigned
@@ -270,7 +275,8 @@ Covered      Range        Script
  100.0% U+108E0..U+108FF  Hatran
  100.0% U+10900..U+1091F  Phoenecian
  100.0% U+10920..U+1093F  Lydian
- 100.0% U+10940..U+1097F  Unassigned
+ 100.0% U+10940..U+1095F  Sidetic
+ 100.0% U+10960..U+1097F  Unassigned
  100.0% U+10980..U+1099F  Meroitic Hieroglyphs
  100.0% U+109A0..U+109FF  Meroitic Cursive
  100.0% U+10A00..U+10A5F  Kharoshthi
@@ -287,7 +293,8 @@ Covered      Range        Script
  100.0% U+10C50..U+10C7F  Unassigned
  100.0% U+10C80..U+10CFF  Old Hungarian
  100.0% U+10D00..U+10D3F  Hanifi Rohingya
- 100.0% U+10D40..U+10E5F  Unassigned
+ 100.0% U+10D40..U+10D8F  Garay
+ 100.0% U+10D90..U+10E5F  Unassigned
  100.0% U+10E60..U+10E7F  Rumi Numeral Symbols
  100.0% U+10E80..U+10EBF  Yezidi
  100.0% U+10EC0..U+10EFF  Arabic Extended-C
@@ -308,7 +315,7 @@ Covered      Range        Script
  100.0% U+11280..U+112AF  Multani
  100.0% U+112B0..U+112FF  Khudawadi
  100.0% U+11300..U+1137F  Grantha
- 100.0% U+11380..U+113FF  Unassigned
+ 100.0% U+11380..U+113FF  Tulu-Tigalari
  100.0% U+11400..U+1147F  Newa
  100.0% U+11480..U+114DF  Tirhuta
  100.0% U+114E0..U+1157F  Unassigned
@@ -316,7 +323,7 @@ Covered      Range        Script
  100.0% U+11600..U+1165F  Modi
  100.0% U+11660..U+1167F  Mongolian Supplement
  100.0% U+11680..U+116CF  Takri
- 100.0% U+116D0..U+116FF  Unassigned
+ 100.0% U+116D0..U+116FF  Myanmar Extended-C
  100.0% U+11700..U+1174F  Ahom
  100.0% U+11750..U+117FF  Unassigned
  100.0% U+11800..U+1184F  Dogra
@@ -330,13 +337,16 @@ Covered      Range        Script
  100.0% U+11AB0..U+11ABF  Unified Canadian Aboriginal Syllabics Extended-A
  100.0% U+11AC0..U+11AFF  Pau Cin Hau
  100.0% U+11B00..U+11B5F  Devanagari Extended-A
-   0.0% U+11B60..U+11BFF  Unassigned
+ 100.0% U+11B60..U+11B7F  Sharada Supplement
+ 100.0% U+11B80..U+11BBF  Unassigned
+ 100.0% U+11BC0..U+11BFF  Sunuwar
  100.0% U+11C00..U+11C6F  Bhaiksuki
  100.0% U+11C70..U+11CBF  Marchen
  100.0% U+11CC0..U+11CFF  Unassigned
  100.0% U+11D00..U+11D5F  Masaram Gondi
  100.0% U+11D60..U+11DAF  Gunjala Gondi
- 100.0% U+11DB0..U+11EDF  Unassigned
+ 100.0% U+11DB0..U+11DEF  Tolong Siki
+ 100.0% U+11DF0..U+11EDF  Unassigned
  100.0% U+11EE0..U+11EFF  Makasar
  100.0% U+11F00..U+11F5F  Kawi
  100.0% U+11F60..U+11FAF  Unassigned
@@ -348,26 +358,34 @@ Covered      Range        Script
  100.0% U+12550..U+12F8F  Unassigned
  100.0% U+12F90..U+12FFF  Cypro-Minoan
    0.1% U+13000..U+1342F  Egyptian Hieroglyphs
- 100.0% U+13430..U+1343F  Egyptian Hieroglyph Format Controls
- 100.0% U+13440..U+143FF  Unassigned
+ 100.0% U+13430..U+1345F  Egyptian Hieroglyph Format Controls
+   0.1% U+13460..U+143FF  Egyptian Hieroglyphics Extended-A
    8.9% U+14400..U+1467F  Anatolian Hieroglyphs
- 100.0% U+14680..U+167FF  Unassigned
+ 100.0% U+14680..U+160FF  Unassigned
+ 100.0% U+16100..U+1613F  Gurung Khema
+ 100.0% U+16140..U+167FF  Unassigned
    1.2% U+16800..U+16A3F  Bamum Supplement
  100.0% U+16A40..U+16A6F  Mro
  100.0% U+16A70..U+16ACF  Tangsa
  100.0% U+16AD0..U+16AFF  Bassa Vah
  100.0% U+16B00..U+16B8F  Pahawh Hmong
- 100.0% U+16B90..U+16E3F  Unassigned
+ 100.0% U+16B90..U+16D3F  Unassigned
+ 100.0% U+16D40..U+16D7F  Kirat Rai
+   0.0% U+16D80..U+16DAF  Chisoi
+ 100.0% U+16DB0..U+16E3F  Unassigned
  100.0% U+16E40..U+16E9F  Medefaidrin
- 100.0% U+16EA0..U+16EFF  Unassigned
+ 100.0% U+16EA0..U+16EDF  Beria Erfe
+ 100.0% U+16EE0..U+16EFF  Unassigned
  100.0% U+16F00..U+16F9F  Miao
  100.0% U+16FA0..U+16FDF  Unassigned
  100.0% U+16FE0..U+16FFF  Ideographic Symbols and Punctuation
-   0.1% U+17000..U+187FF  Tangut
+   0.0% U+17000..U+187FF  Tangut
    0.0% U+18800..U+18AFF  Tangut Components
  100.0% U+18B00..U+18CFF  Khitan Small Script
-  43.8% U+18D00..U+18D0F  Tangut Supplement
- 100.0% U+18D10..U+1AFEF  Unassigned
+   0.0% U+18D00..U+18D0F  Tangut Supplement
+  86.6% U+18D10..U+18D7F  Unassigned
+  10.2% U+18D80..U+18DFF  Tangut Components Supplement
+ 100.0% U+18E00..U+1AFEF  Unassigned
  100.0% U+1AFF0..U+1AFFF  Kana Extended-B
  100.0% U+1B000..U+1B0FF  Kana Supplement
  100.0% U+1B100..U+1B12F  Kana Extended-A
@@ -376,7 +394,9 @@ Covered      Range        Script
  100.0% U+1B300..U+1BBFF  Unassigned
  100.0% U+1BC00..U+1BC9F  Duployan
  100.0% U+1BCA0..U+1BCAF  Shorthand Format Controls
- 100.0% U+1BCB0..U+1CEFF  Unassigned
+ 100.0% U+1BCB0..U+1CBFF  Unassigned
+ 100.0% U+1CC00..U+1CEBF  Symbols for Legacy Computing Supplement
+ 100.0% U+1CEC0..U+1CEFF  Miscellaneous Symbols Supplement
  100.0% U+1CF00..U+1CFCF  Znamenny Musical Notation
  100.0% U+1CFD0..U+1CFFF  Unassigned
  100.0% U+1D000..U+1D0FF  Byzantine Musical Symbols
@@ -401,7 +421,11 @@ Covered      Range        Script
  100.0% U+1E2C0..U+1E2FF  Wancho
  100.0% U+1E300..U+1E4CF  Unassigned
  100.0% U+1E4D0..U+1E4FF  Nag Mundari
- 100.0% U+1E500..U+1E7DF  Unassigned
+ 100.0% U+1E500..U+1E5CF  Unassigned
+ 100.0% U+1E5D0..U+1E5FF  Ol Onal
+ 100.0% U+1E600..U+1E6BF  Unassigned
+ 100.0% U+1E6C0..U+1E6FF  Tai Yo
+ 100.0% U+1E700..U+1E7DF  Unassigned
  100.0% U+1E7E0..U+1E7FF  Ethiopic Extended-B
  100.0% U+1E800..U+1E8DF  Mende Kikakui
  100.0% U+1E8E0..U+1E8FF  Unassigned
@@ -431,17 +455,26 @@ Covered      Range        Script
  100.0% U+1FB00..U+1FBFF  Symbols for Legacy Computing
  100.0% U+1FC00..U+1FFFD  Unassigned
    0.0% U+1FFFE..U+1FFFF  Noncharacters
-   0.8% U+20000..U+2A6FF  CJK Unified Ideographs Extension B
-   1.1% U+2A700..U+2B73F  CJK Unified Ideographs Extension C
-   4.0% U+2B740..U+2B81F  CJK Unified Ideographs Extension D
-   2.0% U+2B820..U+2CEAF  CJK Unified Ideographs Extension E
-   0.0% U+2CEB0..U+2F7FF  CJK Unified Ideographs Extension F
-   0.1% U+2F800..U+2FF7F  CJK Compatibility Ideographs Supplement
-   0.0% U+2FF80..U+2FFFD  Unassigned
+   9.9% U+20000..U+2A6DF  CJK Unified Ideographs Extension B
+   0.0% U+2A6E0..U+2A6FF  Unassigned
+   2.2% U+2A700..U+2B739  CJK Unified Ideographs Extension C
+   0.0% U+2B73A..U+2B73F  Unassigned
+ 100.0% U+2B740..U+2B81D  CJK Unified Ideographs Extension D
+   0.0% U+2B81E..U+2B81F  Unassigned
+   2.8% U+2B820..U+2CEA1  CJK Unified Ideographs Extension E
+   0.0% U+2CEA2..U+2CEAF  Unassigned
+   0.5% U+2CEB0..U+2EBE0  CJK Unified Ideographs Extension F
+   0.0% U+2EBE1..U+2EBEF  Unassigned
+ 100.0% U+2EBF0..U+2EE5D  CJK Unified Ideographs Extension I
+   0.0% U+2EE5E..U+2F7FF  Unassigned
+   0.4% U+2F800..U+2FA1D  CJK Compatibility Ideographs Supplement
+   0.0% U+2FA1E..U+2FFFD  Unassigned
    0.0% U+2FFFE..U+2FFFF  Noncharacters
-   0.1% U+30000..U+3134F  CJK Unified Ideographs Extension G
-   0.0% U+31350..U+323AF  CJK Unified Ideographs Extension H
-   0.0% U+323B0..U+3FFFD  Unassigned
+  12.8% U+30000..U+3134A  CJK Unified Ideographs Extension G
+   0.0% U+3134B..U+3134F  Unassigned
+   0.4% U+31350..U+323AF  CJK Unified Ideographs Extension H
+   0.0% U+323B0..U+3347F  CJK Unified Ideographs Extension J
+   0.0% U+33480..U+3FFFD  Unassigned
    0.0% U+3FFFE..U+3FFFF  Noncharacters
    0.0% U+40000..U+4FFFD  Unassigned
    0.0% U+4FFFE..U+4FFFF  Noncharacters
@@ -470,9 +503,15 @@ Covered      Range        Script
    0.0% U+EFFFE..U+EFFFF  Noncharacters
  100.0% U+F0000..U+F0E6F  PUA (CSUR/UCSUR): Kinya Syllables
  100.0% U+F0E70..U+F16AF  PUA (CSUR/UCSUR): Pikto
-   0.0% U+F16B0..U+F18FF  Unassigned
+ 100.0% U+F16B0..U+F16DF  PUA (CSUR/UCSUR): Derani
+   0.0% U+F16E0..U+F16FF  Unassigned
+   0.0% U+F1700..U+F18FF  PUA (CSUR/UCSUR): Semtog
  100.0% U+F1900..U+F19FF  PUA (CSUR/UCSUR): Sitelen Pona
-   0.0% U+F1A00..U+F1AFF  Unassigned
+   0.0% U+F1A00..U+F1AFF  Reserved
  100.0% U+F1B00..U+F1C3F  PUA (CSUR/UCSUR): Shidinn
-   0.0% U+F1C40..U+FFFFD  Unassigned
+ 100.0% U+F1C40..U+F1C7F  PUA (CSUR/UCSUR): Titi Pula
+ 100.0% U+F1C80..U+F1C9F  PUA (CSUR/UCSUR): Sitelen Pona Radicals
+   0.0% U+F1CA0..U+F1FFF  Unassigned
+ 100.0% U+F2000..U+F267F  PUA (CSUR/UCSUR): Sadalian
+   0.1% U+F2680..U+FFFFD  Unassigned
  100.0% U+FFFFE..U+FFFFF  Noncharacters

@@ -275,7 +275,8 @@ Covered      Range        Script
  100.0% U+108E0..U+108FF  Hatran
  100.0% U+10900..U+1091F  Phoenecian
  100.0% U+10920..U+1093F  Lydian
- 100.0% U+10940..U+1097F  Unassigned
+ 100.0% U+10940..U+1095F  Sidetic
+ 100.0% U+10960..U+1097F  Unassigned
  100.0% U+10980..U+1099F  Meroitic Hieroglyphs
  100.0% U+109A0..U+109FF  Meroitic Cursive
  100.0% U+10A00..U+10A5F  Kharoshthi
@@ -336,14 +337,16 @@ Covered      Range        Script
  100.0% U+11AB0..U+11ABF  Unified Canadian Aboriginal Syllabics Extended-A
  100.0% U+11AC0..U+11AFF  Pau Cin Hau
  100.0% U+11B00..U+11B5F  Devanagari Extended-A
- 100.0% U+11B60..U+11BBF  Unassigned
+ 100.0% U+11B60..U+11B7F  Sharada Supplement
+ 100.0% U+11B80..U+11BBF  Unassigned
  100.0% U+11BC0..U+11BFF  Sunuwar
  100.0% U+11C00..U+11C6F  Bhaiksuki
  100.0% U+11C70..U+11CBF  Marchen
  100.0% U+11CC0..U+11CFF  Unassigned
  100.0% U+11D00..U+11D5F  Masaram Gondi
  100.0% U+11D60..U+11DAF  Gunjala Gondi
- 100.0% U+11DB0..U+11EDF  Unassigned
+ 100.0% U+11DB0..U+11DEF  Tolong Siki
+ 100.0% U+11DF0..U+11EDF  Unassigned
  100.0% U+11EE0..U+11EFF  Makasar
  100.0% U+11F00..U+11F5F  Kawi
  100.0% U+11F60..U+11FAF  Unassigned
@@ -368,17 +371,21 @@ Covered      Range        Script
  100.0% U+16B00..U+16B8F  Pahawh Hmong
  100.0% U+16B90..U+16D3F  Unassigned
  100.0% U+16D40..U+16D7F  Kirat Rai
- 100.0% U+16D80..U+16E3F  Unassigned
+   0.0% U+16D80..U+16DAF  Chisoi
+ 100.0% U+16DB0..U+16E3F  Unassigned
  100.0% U+16E40..U+16E9F  Medefaidrin
- 100.0% U+16EA0..U+16EFF  Unassigned
+ 100.0% U+16EA0..U+16EDF  Beria Erfe
+ 100.0% U+16EE0..U+16EFF  Unassigned
  100.0% U+16F00..U+16F9F  Miao
  100.0% U+16FA0..U+16FDF  Unassigned
  100.0% U+16FE0..U+16FFF  Ideographic Symbols and Punctuation
-   0.1% U+17000..U+187FF  Tangut
+   0.0% U+17000..U+187FF  Tangut
    0.0% U+18800..U+18AFF  Tangut Components
  100.0% U+18B00..U+18CFF  Khitan Small Script
-  43.8% U+18D00..U+18D0F  Tangut Supplement
- 100.0% U+18D10..U+1AFEF  Unassigned
+   0.0% U+18D00..U+18D0F  Tangut Supplement
+  86.6% U+18D10..U+18D7F  Unassigned
+  10.2% U+18D80..U+18DFF  Tangut Components Supplement
+ 100.0% U+18E00..U+1AFEF  Unassigned
  100.0% U+1AFF0..U+1AFFF  Kana Extended-B
  100.0% U+1B000..U+1B0FF  Kana Supplement
  100.0% U+1B100..U+1B12F  Kana Extended-A
@@ -389,7 +396,7 @@ Covered      Range        Script
  100.0% U+1BCA0..U+1BCAF  Shorthand Format Controls
  100.0% U+1BCB0..U+1CBFF  Unassigned
  100.0% U+1CC00..U+1CEBF  Symbols for Legacy Computing Supplement
- 100.0% U+1CEC0..U+1CEFF  Unassigned
+ 100.0% U+1CEC0..U+1CEFF  Miscellaneous Symbols Supplement
  100.0% U+1CF00..U+1CFCF  Znamenny Musical Notation
  100.0% U+1CFD0..U+1CFFF  Unassigned
  100.0% U+1D000..U+1D0FF  Byzantine Musical Symbols
@@ -416,7 +423,9 @@ Covered      Range        Script
  100.0% U+1E4D0..U+1E4FF  Nag Mundari
  100.0% U+1E500..U+1E5CF  Unassigned
  100.0% U+1E5D0..U+1E5FF  Ol Onal
- 100.0% U+1E600..U+1E7DF  Unassigned
+ 100.0% U+1E600..U+1E6BF  Unassigned
+ 100.0% U+1E6C0..U+1E6FF  Tai Yo
+ 100.0% U+1E700..U+1E7DF  Unassigned
  100.0% U+1E7E0..U+1E7FF  Ethiopic Extended-B
  100.0% U+1E800..U+1E8DF  Mende Kikakui
  100.0% U+1E8E0..U+1E8FF  Unassigned
@@ -446,25 +455,26 @@ Covered      Range        Script
  100.0% U+1FB00..U+1FBFF  Symbols for Legacy Computing
  100.0% U+1FC00..U+1FFFD  Unassigned
    0.0% U+1FFFE..U+1FFFF  Noncharacters
-   9.8% U+20000..U+2A6DF  CJK Unified Ideographs Extension B
+   9.9% U+20000..U+2A6DF  CJK Unified Ideographs Extension B
    0.0% U+2A6E0..U+2A6FF  Unassigned
    2.2% U+2A700..U+2B739  CJK Unified Ideographs Extension C
    0.0% U+2B73A..U+2B73F  Unassigned
  100.0% U+2B740..U+2B81D  CJK Unified Ideographs Extension D
    0.0% U+2B81E..U+2B81F  Unassigned
-   2.7% U+2B820..U+2CEA1  CJK Unified Ideographs Extension E
+   2.8% U+2B820..U+2CEA1  CJK Unified Ideographs Extension E
    0.0% U+2CEA2..U+2CEAF  Unassigned
-   0.4% U+2CEB0..U+2EBE0  CJK Unified Ideographs Extension F
+   0.5% U+2CEB0..U+2EBE0  CJK Unified Ideographs Extension F
    0.0% U+2EBE1..U+2EBEF  Unassigned
  100.0% U+2EBF0..U+2EE5D  CJK Unified Ideographs Extension I
    0.0% U+2EE5E..U+2F7FF  Unassigned
    0.4% U+2F800..U+2FA1D  CJK Compatibility Ideographs Supplement
    0.0% U+2FA1E..U+2FFFD  Unassigned
    0.0% U+2FFFE..U+2FFFF  Noncharacters
-   8.6% U+30000..U+3134A  CJK Unified Ideographs Extension G
+  12.8% U+30000..U+3134A  CJK Unified Ideographs Extension G
    0.0% U+3134B..U+3134F  Unassigned
    0.4% U+31350..U+323AF  CJK Unified Ideographs Extension H
-   0.0% U+323B0..U+3FFFD  Unassigned
+   0.0% U+323B0..U+3347F  CJK Unified Ideographs Extension J
+   0.0% U+33480..U+3FFFD  Unassigned
    0.0% U+3FFFE..U+3FFFF  Noncharacters
    0.0% U+40000..U+4FFFD  Unassigned
    0.0% U+4FFFE..U+4FFFF  Noncharacters

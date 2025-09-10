@@ -29,21 +29,6 @@
 */
 
 /*
-   2 September 2024 [Paul Hardy] - Set these scripts to double width:
-      - U+10D40..U+10D8F (Garay)
-      - U+11380..U+113FF (Tulu-Tigalari)
-      - U+116D0..U+116FF (Myanmar Extended-C)
-      - U+11F00..U+11F5F (Kawi)
-      - U+16100..U+1613F (Gurung Khema)
-      - U+16D40..U+16D7F (Kirat Rai)
-      - U+18B00..U+18CFF (Khitan Small Script)
-      - U+1E5D0..U+1E5FF (Ol Onal)
-
-   6 September 2021 [Paul Hardy]:
-      - Set U+12F90..U+12FFF (Cypro-Minoan) to be double width.
-      - Set U+1CF00..U+1CFCF (Znamenny Musical Notation) to be double width.
-      - Set U+1AFF0..U+1AFFF (Kana Extended-B) to be double width.
-
    20 June 2017 [Paul Hardy]:
       - Modify to allow hard-coding of quadruple-width hex glyphs.
         The 32nd column (rightmost column) is cleared to zero, because
@@ -97,6 +82,11 @@
       - Add DEBUG compile flag to print header information, to ease
         adding support for additional bitmap formats in the future.
 
+   6 September 2021 [Paul Hardy]:
+      - Set U+12F90..U+12FFF (Cypro-Minoan) to be double width.
+      - Set U+1CF00..U+1CFCF (Znamenny Musical Notation) to be double width.
+      - Set U+1AFF0..U+1AFFF (Kana Extended-B) to be double width.
+
    13 March 2022 [Paul Hardy]:
       - Added support for 24 bits per pixel RGB file.
 
@@ -104,9 +94,24 @@
       - Set U+11B00..U+11B5F (Devanagari Extended-A) to be wide.
       - Set U+11F00..U+11F5F (Kawi) to be wide.
 
+   2 September 2024 [Paul Hardy] - Set these scripts to double width:
+      - U+10D40..U+10D8F (Garay)
+      - U+11380..U+113FF (Tulu-Tigalari)
+      - U+116D0..U+116FF (Myanmar Extended-C)
+      - U+11F00..U+11F5F (Kawi)
+      - U+16100..U+1613F (Gurung Khema)
+      - U+16D40..U+16D7F (Kirat Rai)
+      - U+18B00..U+18CFF (Khitan Small Script)
+      - U+1E5D0..U+1E5FF (Ol Onal)
+
    19 April 2025 [Paul Hardy]:
       - Remove hard-coding of U+1D100..U+1D1FF (Musical Symbols)
         to double-width; allow range to be dual-width.
+
+   1 June 2025 [Paul Hardy]:
+      - Removed Wancho U+1E2C0..U+1E2FF) as a wide script; it is now
+        single-width.
+      - Added double-width block U+11B60..U+11B7F (Sharada Supplement).
 */
 
 #include <stdio.h>
@@ -322,6 +327,7 @@ main (int argc, char *argv[])
    for (i = 0x011A00; i <= 0x011A4F; i++) wide[i] = 1; /* Zanabazar Square   */
    for (i = 0x011A50; i <= 0x011AAF; i++) wide[i] = 1; /* Soyombo            */
    for (i = 0x011B00; i <= 0x011B5F; i++) wide[i] = 1;/*Devanagari Extended-A*/
+   for (i = 0x011B60; i <= 0x011B7F; i++) wide[i] = 1; /* Sharada Supplement */
    for (i = 0x011F00; i <= 0x011F5F; i++) wide[i] = 1; /* Kawi               */
    for (i = 0x011C00; i <= 0x011C6F; i++) wide[i] = 1; /* Bhaiksuki          */
    for (i = 0x011C70; i <= 0x011CBF; i++) wide[i] = 1; /* Marchen            */
@@ -345,7 +351,6 @@ main (int argc, char *argv[])
    for (i = 0x01B170; i <= 0x01B2FF; i++) wide[i] = 1; /* Nushu              */
    for (i = 0x01CF00; i <= 0x01CFCF; i++) wide[i] = 1; /* Znamenny Musical   */
    for (i = 0x01D800; i <= 0x01DAAF; i++) wide[i] = 1; /* Sutton SignWriting */
-   for (i = 0x01E2C0; i <= 0x01E2FF; i++) wide[i] = 1; /* Wancho             */
    for (i = 0x01E500; i <= 0x01E5FF; i++) wide[i] = 1; /* Ol Onal            */
    for (i = 0x01E800; i <= 0x01E8DF; i++) wide[i] = 1; /* Mende Kikakui      */
    for (i = 0x01F200; i <= 0x01F2FF; i++) wide[i] = 1; /* Encl Ideograp Suppl*/

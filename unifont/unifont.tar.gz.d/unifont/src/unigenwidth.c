@@ -37,6 +37,10 @@
       - Modifies sscanf format strings to ignore second field after
         the ":" field separator, newly added to "*combining.txt" files
         and already present in "*.hex" files.
+
+   6 September 2025 [Paul Hardy]:
+      - Changed loc from "int" to "unsigned" for compatibility with
+        sscanf definition.
 */
 
 #include <stdio.h>
@@ -66,7 +70,7 @@ main (int argc, char **argv)
    int i; /* loop variable */
 
    char teststring[MAXSTRING];
-   int  loc;
+   unsigned  loc;
    char *gstart;
 
    char glyph_width[0x20000];

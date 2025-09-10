@@ -1,3 +1,21 @@
+2025-09-09: Release 17.0.01
+  * Updates to synchronize Unifont with Unicode 17.0.0 release,
+    including the addition of new script ranges Sidetic, Sharada
+    Supplement, Tolong Siki, Beria Erfe, Miscellaneous Symbols
+    Supplement, and Tai Yo.
+  * All Arabic glyphs introduced in Unicode 17.0.0.
+  * Updates and additions to many ideographs in the first list of the
+    second round of simplified Chinese characters.
+  * Updates to many other glyphs; see ChangeLog for details.
+  * All C programs are now configured to compile cleanly with the GCC
+    flags "-std=c99", "-Wall", and "-pedantic".  This should allow
+    compilation with all versions of GCC from GCC 4.2.1 (the last
+    version with a GPLv2 license) to the latest.  GCC 4.2.1 compiles
+    C99 sources, but not by default and so requires the "-std=c99" flag
+    to compile hex2otf.c.
+  * The unifont.info Texinfo file is now installed in $(PREFIX)/share/info
+    compressed with "gzip -9" by default.
+
 2025-05-31: Release 16.0.04
   * Updates to several Arabic glyphs.
   * Updates to CSUR/UCSUR glyphs for Sitelen Pona and Sitelen Pona Radicals.

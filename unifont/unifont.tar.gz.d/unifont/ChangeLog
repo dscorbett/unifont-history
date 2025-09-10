@@ -1,3 +1,115 @@
+2025-09-09  Paul Hardy <unifoundry@gmail.com>
+	* Version 17.0.01.
+	* COPYING: changed old FSF street address to FSF URLs now that the
+	  FSF no longer maintains a physical office.
+	* Makefile:
+	  - Changed install target to install doc/unifont.info.gz or
+	    doc/unifont.info and doc/unifont-he-zhixiang.png in
+	    $(DESTDIR)/share/info.  Previously, these files were
+	    installed in $(PKGDEST).
+	* doc:
+	  - Renamed he-zhixiang.png to unifont-he-zhixiang.png.
+	  - Modified hex2otf.texi and unifont.texi to refer to
+	    unifont-he-zhixiang.png instead of he-zhixiang.png.
+	* doc/Makefile:
+	  - The install target now installs unifont.info.gz or unifont.info
+	    and unifont-he-zhixiang.png in $(DESTDIR)/share/info directory.
+	* font/Makefile:
+	  - Create font/coverage.txt and then install it in $(COMPILED_DIR)
+	    so that it is updated in both places.
+	* font/plane00/plane00-combining.txt - Updated for Unicode 17.0.0.
+	* font/plane00/plane00-unassigned.hex - Updated for Unicode 17.0.0.
+	* font/plane00/unifont-base.hex:
+	  - David Corbett contributed the new Arabic glyphs:
+	    o Arabic Extended-B: U+088F
+	    o Riyal currency symbol: U+20C1.
+	    o Arabic Presentation Forms-A: U+FBC3..U+FBD2, U+FD90, U+FD91,
+	      and U+FDC8..U+FDCE.
+	  - Paul Hardy added these new glyphs:
+	    o Telugu: U+0C5C;
+	    o Kannada: U+0CDC;
+	    o Combining Diacritical Marks Extended: U+1ACF..U+1ADD,
+	      U+1AE0..U+1AEB;
+	    o Updated U+1BBF; thanks to Marco for mentioning the change.
+	    o Miscellaneous Symbols and Arrows: U+2B96;
+	    o Latin Extended-D: U+A7CE, U+A7CF, U+A7D2, U+A7D4, U+A7F1.
+	    o Latin Extended-E: modified U+AB4B and U+AB4C per Unicode
+	      17.0.0 recommendation.
+	* font/plane01/noscript-ranges.txt   - Updated for Unicode 17.0.0.
+	* font/plane01/plane01-combining.txt - Updated for Unicode 17.0.0.
+	* font/plane01/plane01.hex:
+	  - David Corbett contributed the new Arabic Extended-C glyphs:
+	    U+10EC5..U+10EC7, U+10ED0..U+10ED8, U+10EFA, and U+10EFB.
+	  - Johnnie Weaver drew:
+	    o U+10940..U+1095F (Sidetic)
+	    o U+11DB0..U+11DEF (Tolong Siki)
+	    o U+16EA0..U+16EDF (Beria Erfe)
+	    o U+1E900..U+1E95F (Adlam) - modified per Unicode 17.0.0 changes.
+	  - Paul Hardy drew:
+	    o U+11B60..U+11B67 (Sharada Supplement)
+	    o U+16FF2..U+16FF6 (Ideographic Symbols and Punctuation)
+	    o U+1CCFA..U+1CCFC and U+1CEBA..U+1CEBF (Symbols for Legacy
+	      Computing Supplement).
+	    o U+1CEC0..U+1DEFF (Miscellaneous Symbols Supplement)
+	    o U+1E6C0..U+1E6FF (Tai Yo)
+	    o U+1F6D8 (Transport and Map Symbols)
+	    o U+1F8D0..U+1F8D8 (Supplemental Arrows-C)
+	    o U+1FBFA (Symbols for Legacy Computing).
+	  - Paul Hardy added missing bottom merlons to U+1343E and U+1343F.
+            Thanks to David Corbett for spotting that omission.
+	* font/plane01/plane01-combining.txt
+	  - Changed Wancho combining glyphs (U+1E2EC..U+01E2EF) to single-
+	    width, now that the Wancho script is single-width.
+	* font/plane01/unassigned-ranges.txt - Updated for Unicode 17.0.0.
+	* font/plane02/zh-plane02.hex:
+	  - Yzy32767:
+	    o Improved these glyphs in the first list of the second round
+              of simplified Chinese characters: U+0200D3 and U+0201A8.
+	    o Added these glyphs in the first list of the second round
+              of simplified Chinese characters: U+20B15, U+20BB5,
+	      U+20CAD, U+219F3, U+21C52, U+22342, U+22488, U+22A83,
+	      U+2418A, U+2462F, U+26678, U+26B01, U+2A9F7, U+2BA4F,
+	      U+2BA51, U+2BBDC, U+2BCB7, U+2BDC0, U+2BE6F, U+2D026,
+	      U+2D64F, U+2D70C, U+2DCFF, and U+2E0B9.
+	    o Fixed U+2CAD2, which wfz2020 on Bilibili noticed appeared
+	      as the glyph for code point U+2CA02.
+	* font/plane03/zh-plane03.hex:
+	  - Yzy32767:
+	    o Improved these glyphs in the first list of the second
+	      round of simplified Chinese characters: U+030008, U+030061,
+	      U+03006C, U+03011D, U+03014A, and U+0301E3.
+	    o Added these glyphs: U+30180..U+301E2, U+301E4..U+301FF,
+	      U+30270, U+302D9, U+302DB, U+302DC, U+302DE, U+302F7,
+	      U+302FB, U+30335, U+3033B, U+3034E, U+30370, U+30371,
+	      U+30409, U+30414, U+3043A, U+3043F, U+3044A, U+3044C,
+	      U+30450, U+3045D, U+3045E, U+304CC, U+304E2, U+304E3,
+	      U+304E8, U+304ED, U+3057A, U+305D1, U+305DD, U+305F6,
+	      U+3067D, U+306D1, U+306D3, U+306EC, U+30708, U+30776,
+	      U+30831, U+30842, U+308F2, U+3094C, U+30955, U+30969,
+	      U+30993, U+309AA, U+309AB, U+30A1B, U+30A62, U+30AA9,
+	      U+30AB1, U+30AFE, U+30B04, U+30B0A, U+30B15, U+30B43,
+	      U+30B4B, U+30B5D, U+30BF6, U+30C21, U+30C2B, U+30CBD,
+	      U+30CC7, U+30D4B, U+30D55, U+30D5F, U+30DDF, U+30DE3,
+	      U+30E01, U+30E04, U+30E70, U+30E79, U+30F03, U+30F5F,
+	      U+30F64, U+30F82, U+310AA, U+3114C, and U+31151.
+	* src/Makefile:
+	  - Compile all programs using "-std=c99".
+	  - Add "-pedantic" to CFLAGS definition.
+	  - Add unifontpic.h file dependency for unifontpic.c.
+	  - Add hangul.h file dependency for unihangul-support.c.
+	* src/hex2otf.c, src/johab2syllables.c, src/unibdf2hex.c, 
+	  src/unifont1per.c, and src/unihexpose.c:
+	  - Added "void" to function prototype and function definition
+	    for functions that have no parameters.
+	* src/unipagecount.c, src/unihexgen.c, src/unigenwidth.c,
+	  src/unigencircles.c, src/unifontpic.c, src/unidup.c,
+	  src/unifont1per.c, and src/unicoverage.c:
+	  - Changed types for sscanf and fscanf parameters from
+	    "int *" to "unsigned *" to match function definitions.
+	* src/unibmp2hex.c:
+	  - Added double-width block U+11B60..U+11B7F (Sharada Supplement).
+	* src/unipagecount.c: added parameter to strlen prototype.
+
 2025-05-31  Paul Hardy <unifoundry@gmail.com>
 	* Version 16.0.04.
 	* font/Makefile:
@@ -2392,7 +2504,7 @@
 	* font/plane01/plane01.hex:
 	  - Added one glyph inadvertently omitted from Old Italic:
 	    U+01031F (Paul Hardy).
-	  - Improved animals in U+01F400..U+01F43F (Nils Dagsson Moskopp).
+	  - Improved animals in U+01F400..U+01F43F (Ælla Chiana Moskopp).
 	  - Added more scripts:
 	     U+010350..U+01037F Old Permic (Paul Hardy)
 	     U+01F650..U+01F67F Ornamental Dingbats (Paul Hardy)
@@ -2436,9 +2548,9 @@
 	       U+FB00..U+FB4F Alphabetic Presentation Forms
 	       U+FF00..U+FFEF Halfwidth and Fullwidth Forms.
 	* font/plane01.hex:
-	- Paul Hardy and Nils Dagsson Moskopp completed Miscellaneous
+	- Paul Hardy and Ælla Chiana Moskopp completed Miscellaneous
 	  Symbols and Pictographs (U+01F300..U+01F5FF).
-	- Nils modified several Plane 1 glyphs from what were in the
+	- Ælla modified several Plane 1 glyphs from what were in the
 	  Unifont-7.0.04 release in these scripts:
 	     U+01F300..U+01F5FF Miscellaneous Symbols and Pictographs
 	     U+01F600..U+01F64F Emoticons
@@ -2500,10 +2612,10 @@
 	    Map Symbols.
 	  - Anonymous1 added Siddham and the script letters in the Mathematical
 	    Alphanumeric Symbols block.
-	  - Paul Hardy, Nils Dagsson Moskopp, and Anonymous1 added more
-	    to the Miscellaneous Symbols and Pictographs, and Nils improved
+	  - Paul Hardy, Ælla Chiana Moskopp, and Anonymous1 added more
+	    to the Miscellaneous Symbols and Pictographs, and Ælla improved
 	    existing glyphs.
-	  - Nils Dagsson Moskopp made improvements to some Transport and
+	  - Ælla Chiana Moskopp made improvements to some Transport and
 	    Map Symbols.
 	  - Anonymous1 improved U+01F200.
 	* font/plane01/plane01-nonprinting.hex: new file contains the
@@ -2570,8 +2682,8 @@
 	    Old Turkic, Rumi Numeral Symbols, Brahmi, Kaithi, Kana Supplement,
 	    Shorthand Format Controls, Emoticons, and Alchemical Symbols.
 	    He also redrew U+01F195 ("NEW").
-	  - Nils Dagsson Moskopp drew more glyphs in the Miscellaneous
-	    Symbols and Pictographs block.
+	  - Ælla Chiana Moskopp drew more glyphs in the Miscellaneous Symbols
+	    and Pictographs block.
 	  - Anonymous1 contributed the Pahawh Hmong glyphs.  He contributed
 	    new Mah Jong glyphs: U+01F010, U+01F022 through U+01F02A.  He
 	    also redrew U+01F16A ("MC") and U+01F198 ("SOS").
@@ -2634,7 +2746,7 @@
 	  - Redrew Halfwidth Katakana Variants, U+FF65 through U+FF9F, because
 	    the original glyphs were too tall compared to the rest of Unifont.
 	  - Using new versions of U+2619 (the "Aldus leaf"), U+2622,
-	    and U+26DF that Nils Moskopp submitted.
+	    and U+26DF that Ælla Chiana Moskopp submitted.
 	* font/plane00csur/csur.hex: removed U+EFFF as a Copyleft symbol, as
 	  it is not part of the ConScript Unicode Registry.
 	* font/plane01/Makefile: created Makefile to generate "unassigned.hex"
@@ -2649,7 +2761,8 @@
 	  - Andrew Miller added new glyphs for Playing Cards and Enclosed
 	    Alphanumeric Supplement.  Also drew more glyphs for Mathematical
 	    Alphanumeric Supplement.
-	  - Nils Moskopp drew the new Miscellaneous Symbols and Pictographs.
+	  - Ælla Chiana Arson Bobbie Moskopp drew the new Miscellaneous Symbols
+	    and Pictographs.
 	* font/plane01/unassigned-ranges.txt: completed all unassigned ranges
 	  for scripts that the Unicode Consortium has assigned.
 	* font/plane01/plane01-nonprinting.hex: created file.

@@ -7,7 +7,7 @@ digraph "main"
   rankdir="LR";
   Node1 [label="main",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="The main function."];
   Node1 -> Node2 [color="steelblue1",style="solid"];
-  Node2 [label="cleanBuffers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#ac947cbe076da5fbab8f5e4c1c821b7a6",tooltip="Free all allocated buffer pointers."];
+  Node2 [label="cleanBuffers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#acfd4c464cd710f2311581f0002c06020",tooltip="Free all allocated buffer pointers."];
   Node1 -> Node3 [color="steelblue1",style="solid"];
   Node3 [label="fillBitmap",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#afd499a24ff34cb5c19b52df795422c12",tooltip="Fill OpenType bitmap data and location tables."];
   Node3 -> Node4 [color="steelblue1",style="solid"];
@@ -154,9 +154,9 @@ digraph "main"
   Node35 -> Node36 [color="steelblue1",style="solid"];
   Node36 [label="matchToken",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#af1d113ec0d790035476f2743cbf2696f",tooltip="Match a command line option with its key for enabling."];
   Node35 -> Node37 [color="steelblue1",style="solid"];
-  Node37 [label="printHelp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#a0d20b69b0ad703df78459e1033d5c1d4",tooltip="Print help message to stdout and then exit."];
+  Node37 [label="printHelp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#ae19e0a10c9b6b5aaf1878cac27ea9541",tooltip="Print help message to stdout and then exit."];
   Node35 -> Node38 [color="steelblue1",style="solid"];
-  Node38 [label="printVersion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#a9c4b081f1e1ad60def15811c71a936f2",tooltip="Print program version string on stdout."];
+  Node38 [label="printVersion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#a6ffce9764ba647abe9b3bee1aaadd3a7",tooltip="Print program version string on stdout."];
   Node1 -> Node39 [color="steelblue1",style="solid"];
   Node39 [label="positionGlyphs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#af3ba1ba33ebe63ba0340842b7f83021c",tooltip="Position a glyph within a 16-by-16 pixel bounding box."];
   Node39 -> Node40 [color="steelblue1",style="solid"];

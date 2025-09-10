@@ -11,7 +11,7 @@ digraph "parseOptions"
   Node1 -> Node3 [color="steelblue1",style="solid"];
   Node3 [label="matchToken",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#af1d113ec0d790035476f2743cbf2696f",tooltip="Match a command line option with its key for enabling."];
   Node1 -> Node4 [color="steelblue1",style="solid"];
-  Node4 [label="printHelp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#a0d20b69b0ad703df78459e1033d5c1d4",tooltip="Print help message to stdout and then exit."];
+  Node4 [label="printHelp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#ae19e0a10c9b6b5aaf1878cac27ea9541",tooltip="Print help message to stdout and then exit."];
   Node1 -> Node5 [color="steelblue1",style="solid"];
-  Node5 [label="printVersion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#a9c4b081f1e1ad60def15811c71a936f2",tooltip="Print program version string on stdout."];
+  Node5 [label="printVersion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$hex2otf_8c.html#a6ffce9764ba647abe9b3bee1aaadd3a7",tooltip="Print program version string on stdout."];
 }

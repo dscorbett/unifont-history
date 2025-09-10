@@ -51,6 +51,10 @@
    11 May 2019 [Paul Hardy]:
       - Changed strncpy calls to memcpy calls to avoid a compiler
         warning.
+
+   6 September 2025 [Paul Hardy]:
+      - Changed loc from "int" to "unsigned" for compatibility with
+        fscanf and sscanf definitions.
 */
 
 
@@ -74,7 +78,7 @@ main (int argc, char **argv)
 {
 
    char teststring[MAXSTRING];  /* current input line                       */
-   int  loc;                    /* Unicode code point of current input line */
+   unsigned  loc;               /* Unicode code point of current input line */
    int  offset;                 /* offset value of a combining character    */
    char *gstart;                /* glyph start, pointing into teststring    */
 
@@ -137,11 +141,11 @@ main (int argc, char **argv)
    /*
       Read the hex glyphs.
    */
-   teststring[MAXSTRING - 1] = '\0';   /* so there's no chance we leave array  */
+   teststring[MAXSTRING - 1] = '\0'; /* so there's no chance we leave array  */
    while (fgets (teststring, MAXSTRING-1, stdin) != NULL) {
-      sscanf (teststring, "%X", &loc);     /* loc == the Uniocde code point    */
+      sscanf (teststring, "%X", &loc);   /* loc == the Uniocde code point    */
       gstart = strchr (teststring,':') + 1; /* start of glyph bitmap            */
-      if (combining[loc]) {                /* if a combining character         */
+      if (combining[loc]) {              /* if a combining character         */
          if (strlen (gstart) < 35)
             add_single_circle (gstart);                 /* single-width */
          else

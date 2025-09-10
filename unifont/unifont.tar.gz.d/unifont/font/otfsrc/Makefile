@@ -28,9 +28,9 @@ TTF_LANG = 0x409
 
 COPYRIGHT = "Copyright © 1998-2025 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, Ho-Seok Ee, et al."
+Ælla Chiana Moskopp, Rebecca Bettencourt, Ho-Seok Ee, et al."
 
-VERSION = 16.0.04
+VERSION = 17.0.01
 
 all: otf
 

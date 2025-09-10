@@ -1,10 +1,17 @@
 
 SHELL = /bin/sh
 
-CC = gcc
-C99 = $(CC) -std=c99
+# All C programs are configured to compile cleanly with the GCC
+# flags "-std=c99", "-Wall", and "-pedantic".  This should allow
+# compilation with all versions of GCC from GCC 4.2.1 (the last
+# version with a GPLv2 license) to the latest.  GCC 4.2.1 compiles
+# C99 sources but not by default and so requires the "-std=c99" flag.
+# hex2otf.c requires the "-std=c99" flag to compile with GCC 4.2.1.
+# The other C programs do not.
 
-CFLAGS = -g -O2 -Wall
+CC = gcc
+
+CFLAGS = -std=c99 -g -O2 -Wall -pedantic
 
 LOCALBINDIR = ../bin
 
@@ -53,7 +60,10 @@ all: $(CPROGS) bin
 # declaration at the beginning of this file.
 #
 hex2otf: hex2otf.c hex2otf.h
-	$(C99) $(CFLAGS) hex2otf.c -o hex2otf
+	$(CC) $(CFLAGS) hex2otf.c -o hex2otf
+
+unifontpic: unifontpic.h unifontpic.o
+	$(CC) $(CFLAGS) unifontpic.c -o unifontpic
 
 unihexpose: unihexpose.o unifont-support.o
 	$(CC) $(CFLAGS) unihexpose.o unifont-support.o -o unihexpose
@@ -66,6 +76,9 @@ johab2syllables: hangul.h unihangul-support.o johab2syllables.o
 
 unigen-hangul: hangul.h unihangul-support.o unigen-hangul.o
 	$(CC) $(CFLAGS) unigen-hangul.o unihangul-support.o -o unigen-hangul
+
+unihangul-support.o: hangul.h unihangul-support.c
+	$(CC) $(CFLAGS) -c unihangul-support.c
 
 bin: bin-stamp
 

@@ -43,7 +43,7 @@
    @return Exit status is always 0 (successful termination).
 */
 int
-main()
+main (void)
 {
    int i;
    int digitsout;  /* how many hex digits we output in a bitmap */

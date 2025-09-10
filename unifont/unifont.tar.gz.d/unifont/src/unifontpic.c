@@ -61,6 +61,11 @@
 	  functions gethex, genlongbmp, and genwidebmp.
 	- Typecast ascii_hex[i] to char * in gethex function call
 	  to avoid warning about const char * conversion.
+
+   6 September 2025 [Paul Hardy]:
+      - Changed codept and temprow from "int" to "unsigned" for
+        compatibility with sscanf definition.
+
 */
 
 
@@ -223,15 +228,15 @@ output2 (int thisword)
 void
 gethex (char *instring, int plane_array[0x10000][16], int plane)
 {
-   char *bitstring;  /* pointer into instring for glyph bitmap */
-   int i;       /* loop variable                               */
-   int codept;  /* the Unicode code point of the current glyph */
-   int glyph_plane; /* Unicode plane of current glyph          */
-   int ndigits; /* number of ASCII hexadecimal digits in glyph */
-   int bytespl; /* bytes per line of pixels in a glyph         */
-   int temprow; /* 1 row of a quadruple-width glyph            */
-   int newrow;  /* 1 row of double-width output pixels         */
-   unsigned bitmask; /* to mask off 2 bits of long width glyph */
+   char *bitstring;  /* pointer into instring for glyph bitmap      */
+   int i;            /* loop variable                               */
+   unsigned codept;  /* the Unicode code point of the current glyph */
+   int glyph_plane;  /* Unicode plane of current glyph              */
+   int ndigits;      /* number of ASCII hexadecimal digits in glyph */
+   int bytespl;      /* bytes per line of pixels in a glyph         */
+   unsigned temprow; /* 1 row of a quadruple-width glyph            */
+   int newrow;       /* 1 row of double-width output pixels         */
+   unsigned bitmask; /* to mask off 2 bits of long width glyph      */
 
    /*
       Read each input line and place its glyph into the bit array.

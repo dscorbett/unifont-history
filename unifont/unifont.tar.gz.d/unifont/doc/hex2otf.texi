@@ -433,7 +433,7 @@ the state of the output font file will be undefined.
 @comment TROFF INPUT: .B hex2otf
 @b{hex2otf}
 was written by
-@image{he-zhixiang, 28pt, 8pt, He Zhixiang, .png}(He Zhixiang).
+@image{unifont-he-zhixiang, 28pt, 8pt, He Zhixiang, .png} (He Zhixiang).
 @comment TROFF INPUT: .SH LICENSE
 
 @node hex2otf LICENSE
@@ -443,7 +443,7 @@ was written by
 @comment TROFF INPUT: .B hex2otf
 @b{hex2otf}
 is Copyright @copyright{} 2022
-@image{he-zhixiang, 28pt, 8pt, He Zhixiang, .png}(He Zhixiang).
+@image{unifont-he-zhixiang, 28pt, 8pt, He Zhixiang, .png} (He Zhixiang).
 @comment TROFF INPUT: .PP
 
 This program is free software; you can redistribute it and/or modify

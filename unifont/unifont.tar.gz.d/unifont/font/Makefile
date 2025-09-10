@@ -19,11 +19,11 @@ PERL =
 #compiled
 
 PACKAGE = "unifont"
-VERSION = 16.0.04
+VERSION = 17.0.01
 
 COPYRIGHT = "Copyright (C) 1998-2025 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al. \
+Ælla Chiana Moskopp, Rebecca Bettencourt, Minseo Lee, Ho-Seok Ee, et al. \
 License: SIL Open Font License version 1.1 and GPLv2+: \
 GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html> \
 with the GNU Font Embedding Exception."
@@ -417,10 +417,13 @@ $(COMPILED_DIR)/unifont_all-$(VERSION).hex.gz: \
 # as a baseline.  Remove the Plane 1 Copyleft glyph from the Plane 0
 # set of hex files.
 #
-coverage: bdf $(COMPILED_DIR)/unifont_all-$(VERSION).hex
+coverage.txt: coverage.dat bdf $(COMPILED_DIR)/unifont_all-$(VERSION).hex
 	$(BINDIR)/unicoverage \
 	   -i$(COMPILED_DIR)/unifont_all-$(VERSION).hex \
-	   -o$(COMPILED_DIR)/coverage.txt
+	   -ocoverage.txt
+
+coverage: coverage.txt
+	install -p coverage.txt $(COMPILED_DIR)
 
 #
 # Print HTML page coverage in Basic Multilingual Plane in .txt file.

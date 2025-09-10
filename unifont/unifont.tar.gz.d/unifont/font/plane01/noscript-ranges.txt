@@ -38,7 +38,8 @@
 ; Hatran
 ; Phoenecian
 ; Lydian
-010940 01097F
+; Sidetic
+010960 01097F
 ; Meroitic Hieroglyphs
 ; Meroitic Cursive
 ; Kharoshthi
@@ -99,14 +100,16 @@
 ; Unified Canadian Aboriginal Syllables Extended-A
 ; Pau Cin Hau
 ; Devanagari Extended-A
-011B60 011BBF
+; Sharada Supplement
+011B80 011BBF
 ; Sunuwar
 ; Bhaiksuki
 ' Marchen
 011CC0 011CFF
 ; Masaram Gondi
 ; Gunjala Gondi
-011DB0 011EDF
+; Tolong Siki
+011DF0 011EDF
 ; Makasar
 ; Kawi
 011F60 011FAF
@@ -119,7 +122,6 @@
 ; Cypro-Minoan
 ; Egyptian Hieroglyphs
 ; Egyptian Hieroglyph Format Controls
-013440 01345F
 ; Egyptian Hieroglyphs Extended-A
 ; Anatolian Hieroglyphs
 014680 0160FF
@@ -132,9 +134,11 @@
 ; Pahawh Hmong
 016B90 016D3F
 ; Kirat Rai
-016D80 016E3F
+; Chisoi
+016DB0 016E3F
 ; Medefaidrin
-016EA0 016EFF
+; Beria Erfe
+016EE0 016EFF
 ; Miao
 016FA0 016FDF
 ; Ideographic Symbols and Punctuation
@@ -142,7 +146,8 @@
 ; Tangut Components
 ; Khitan Small Script
 ; Tangut Supplement
-018D80 01AFEF
+; Tangut Components Supplement
+018E00 01AFEF
 ; Kana Extended - B
 ; Kana Supplement
 ; Kana Extended - A
@@ -153,7 +158,7 @@
 ; Shorthand Format Controls
 01BCB0 01CBFF
 ; Symbols for Legacy Computing Supplement
-01CEC0 01CEFF
+; Miscellaneous Symbols Supplement
 ; Znamenny Musical Notation
 01CFD0 01CFFF
 ; Byzantine Musical Symbols
@@ -179,7 +184,9 @@
 ; Nag Mundari
 01E500 01E5CF
 ; Ol Onal
-01E600 01E7DF
+01E600 01E6BF
+; Tai Yo
+01E700 01E7DF
 ; Ethiopic Extended-B
 ; Mende Kikakui
 01E8E0 01E8FF

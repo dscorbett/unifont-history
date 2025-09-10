@@ -46,7 +46,11 @@
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+/*
+   6 September 2025 [Paul Hardy]:
+      - Changed startcp, endcp, and thiscp from "int" to "unsigned"
+        for compatibility with sscanf definition.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -112,7 +116,7 @@ int
 main (int argc, char *argv[])
 {
 
-   int startcp, endcp, thiscp;
+   unsigned startcp, endcp, thiscp;
    void hexprint4(int); /* function to print one 4-digit unifont.hex code point */
    void hexprint6(int); /* function to print one 6-digit unifont.hex code point */
 

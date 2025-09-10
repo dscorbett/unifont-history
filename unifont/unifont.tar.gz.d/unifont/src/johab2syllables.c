@@ -52,7 +52,7 @@ main (int argc, char *argv[]) {
    FILE *outfp = stdout;  /* Output Hangul Syllables file  */
 
    /* Print a help message */
-   void print_help ();
+   void print_help (void);
 
    /* Read the file containing Hangul base glyphs. */
    unsigned hangul_read_base8 (FILE *infp, unsigned char hangul_base[][32]);
@@ -152,7 +152,7 @@ main (int argc, char *argv[]) {
    @brief Print a help message.
 */
 void
-print_help () {
+print_help (void) {
 
    printf ("\ngen-hangul [options]\n\n");
    printf ("     Generates Hangul syllables from an input Unifont .hex file encoded\n");

@@ -13,7 +13,7 @@ Basic Multilingual Plane and beyond, along with Unifont's utility programs.
 Copyright @copyright{} 2023 Paul Hardy.
 
 @code{hex2otf} section Copyright @copyright{} 2023 
-@image{he-zhixiang, 35pt, 10pt, He Zhixiang, .png}(He Zhixiang)
+@image{unifont-he-zhixiang, 35pt, 10pt, He Zhixiang, .png} (He Zhixiang)
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document

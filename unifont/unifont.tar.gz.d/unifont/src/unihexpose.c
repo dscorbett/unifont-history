@@ -50,7 +50,7 @@ main (int argc, char *argv[]) {
    unsigned char glyphbits [16][16];  /* One glyphbits row, for transposing */
    unsigned char transpose [2][16];  /* Transponsed glyphbits bitmap   */
 
-   void print_syntax ();
+   void print_syntax (void);
 
    void parse_hex (char *hexstring,
                    int *width,
@@ -91,7 +91,7 @@ main (int argc, char *argv[]) {
 
 
 void
-print_syntax () {
+print_syntax (void) {
 
    fprintf (stderr, "\nSyntax: unihexpose < input.hex > output.hex\n\n");
 

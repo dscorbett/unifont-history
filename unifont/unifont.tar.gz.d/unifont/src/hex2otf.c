@@ -167,7 +167,7 @@ initBuffers (size_t count)
     in the initBuffers function.
 */
 void
-cleanBuffers ()
+cleanBuffers (void)
 {
     for (size_t i = 0; i < bufferCount; i++)
         if (allBuffers[i].capacity)
@@ -2404,7 +2404,7 @@ fillNameTable (Font *font, NameStrings nameStrings)
     and then exit successfully.
 */
 void
-printVersion () {
+printVersion (void) {
     printf ("hex2otf (GNU Unifont) %s\n", VERSION);
     printf ("Copyright \u00A9 2022 \u4F55\u5FD7\u7FD4 (He Zhixiang)\n");
     printf ("License GPLv2+: GNU GPL version 2 or later\n");
@@ -2423,7 +2423,7 @@ printVersion () {
     and then exit successfully.
 */
 void
-printHelp () {
+printHelp (void) {
     printf ("Synopsis: hex2otf <options>:\n\n");
     printf ("    hex=<filename>        Specify Unifont .hex input file.\n");
     printf ("    pos=<filename>        Specify combining file. (Optional)\n");

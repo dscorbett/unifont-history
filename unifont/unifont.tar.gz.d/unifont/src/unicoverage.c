@@ -50,6 +50,9 @@
 
    21 October 2023: [Paul Hardy]
    Added full function prototype for nextrange function in main function.
+
+   6 September 2025: [Paul Hardy] changed cstart and cend from int to
+   unsigned int to match sscanf parameter declarations.
 */
 
 #include <stdio.h>
@@ -80,15 +83,16 @@ main (int argc, char *argv[])
    char *infile="", *outfile="";  /* names of input and output files        */
    FILE *infp, *outfp;        /* file pointers of input and output files    */
    FILE *coveragefp;          /* file pointer to coverage.dat file          */
-   int cstart, cend;          /* current coverage start and end code points */
+   unsigned cstart, cend;     /* current coverage start and end code points */
    char coverstring[MAXBUF];  /* description of current coverage range      */
    int nglyphs;               /* number of glyphs in this section           */
 
    /* to get next range & name of Unicode glyphs */
-   int nextrange (FILE *coveragefp, int *cstart, int *cend, char *coverstring);
+   int nextrange (FILE *coveragefp, unsigned *cstart, unsigned *cend,
+                  char *coverstring);
 
    void print_subtotal (FILE *outfp, int print_n, int nglyphs,
-                        int cstart, int cend, char *coverstring);
+                        unsigned cstart, unsigned cend, char *coverstring);
 
    if ((coveragefp = fopen ("coverage.dat", "r")) == NULL) {
       fprintf (stderr, "\nError: data file \"coverage.dat\" not found.\n\n");
@@ -190,7 +194,7 @@ main (int argc, char *argv[])
 */
 int
 nextrange (FILE *coveragefp,
-              int *cstart, int *cend,
+              unsigned *cstart, unsigned *cend,
               char *coverstring)
 {
    int i;
@@ -231,7 +235,7 @@ nextrange (FILE *coveragefp,
    @param[in] coverstring Character string of "<cstart>-<cend>".
 */
 void print_subtotal (FILE *outfp, int print_n, int nglyphs,
-                     int cstart, int cend, char *coverstring) {
+                     unsigned cstart, unsigned cend, char *coverstring) {
 
    /* print old range total */
    if (print_n) {  /* Print number of glyphs, not percentage */

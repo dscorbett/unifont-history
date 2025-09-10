@@ -275,7 +275,8 @@ FFFE-FFFF Noncharacters
 0108E0-0108FF Hatran
 010900-01091F Phoenecian
 010920-01093F Lydian
-010940-01097F Unassigned
+010940-01095F Sidetic
+010960-01097F Unassigned
 010980-01099F Meroitic Hieroglyphs
 0109A0-0109FF Meroitic Cursive
 010A00-010A5F Kharoshthi
@@ -336,14 +337,16 @@ FFFE-FFFF Noncharacters
 011AB0-011ABF Unified Canadian Aboriginal Syllabics Extended-A
 011AC0-011AFF Pau Cin Hau
 011B00-011B5F Devanagari Extended-A
-011B60-011BBF Unassigned
+011B60-011B7F Sharada Supplement
+011B80-011BBF Unassigned
 011BC0-011BFF Sunuwar
 011C00-011C6F Bhaiksuki
 011C70-011CBF Marchen
 011CC0-011CFF Unassigned
 011D00-011D5F Masaram Gondi
 011D60-011DAF Gunjala Gondi
-011DB0-011EDF Unassigned
+011DB0-011DEF Tolong Siki
+011DF0-011EDF Unassigned
 011EE0-011EFF Makasar
 011F00-011F5F Kawi
 011F60-011FAF Unassigned
@@ -368,9 +371,11 @@ FFFE-FFFF Noncharacters
 016B00-016B8F Pahawh Hmong
 016B90-016D3F Unassigned
 016D40-016D7F Kirat Rai
-016D80-016E3F Unassigned
+016D80-016DAF Chisoi
+016DB0-016E3F Unassigned
 016E40-016E9F Medefaidrin
-016EA0-016EFF Unassigned
+016EA0-016EDF Beria Erfe
+016EE0-016EFF Unassigned
 016F00-016F9F Miao
 016FA0-016FDF Unassigned
 016FE0-016FFF Ideographic Symbols and Punctuation
@@ -378,7 +383,9 @@ FFFE-FFFF Noncharacters
 018800-018AFF Tangut Components
 018B00-018CFF Khitan Small Script
 018D00-018D0F Tangut Supplement
-018D10-01AFEF Unassigned
+018D10-018D7F Unassigned
+018D80-018DFF Tangut Components Supplement
+018E00-01AFEF Unassigned
 01AFF0-01AFFF Kana Extended-B
 01B000-01B0FF Kana Supplement
 01B100-01B12F Kana Extended-A
@@ -389,7 +396,7 @@ FFFE-FFFF Noncharacters
 01BCA0-01BCAF Shorthand Format Controls
 01BCB0-01CBFF Unassigned
 01CC00-01CEBF Symbols for Legacy Computing Supplement
-01CEC0-01CEFF Unassigned
+01CEC0-01CEFF Miscellaneous Symbols Supplement
 01CF00-01CFCF Znamenny Musical Notation
 01CFD0-01CFFF Unassigned
 01D000-01D0FF Byzantine Musical Symbols
@@ -416,7 +423,9 @@ FFFE-FFFF Noncharacters
 01E4D0-01E4FF Nag Mundari
 01E500-01E5CF Unassigned
 01E5D0-01E5FF Ol Onal
-01E600-01E7DF Unassigned
+01E600-01E6BF Unassigned
+01E6C0-01E6FF Tai Yo
+01E700-01E7DF Unassigned
 01E7E0-01E7FF Ethiopic Extended-B
 01E800-01E8DF Mende Kikakui
 01E8E0-01E8FF Unassigned
@@ -470,7 +479,8 @@ FFFE-FFFF Noncharacters
 030000-03134A CJK Unified Ideographs Extension G
 03134B-03134F Unassigned
 031350-0323AF CJK Unified Ideographs Extension H
-0323B0-03FFFD Unassigned
+0323B0-03347F CJK Unified Ideographs Extension J
+033480-03FFFD Unassigned
 03FFFE-03FFFF Noncharacters
 ;
 ; ===== PLANE 04..PLANE 0D =====

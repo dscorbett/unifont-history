@@ -13,7 +13,7 @@ INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 16.0.04
+VERSION = 17.0.01
 
 #
 # The settings below will install software, man pages, and documentation
@@ -141,13 +141,14 @@ lib/wchardata.c: $(HEXWIDTH) $(ZEROWIDTH) bin
 #	(cd lib && $(CC) $(CFLAGS) -c wchardata.c && chmod 644 wchardata.o )
 
 install: bindir libdir docdir doxdir
-	$(MAKE) -C src install PREFIX=$(PREFIX)
-	$(MAKE) -C man install PREFIX=$(PREFIX) COMPRESS=$(COMPRESS)
+	$(MAKE) -C src  install PREFIX=$(PREFIX)
+	$(MAKE) -C man  install PREFIX=$(PREFIX) COMPRESS=$(COMPRESS)
+	$(MAKE) -C doc  install PREFIX=$(PREFIX) COMPRESS=$(COMPRESS)
 	$(MAKE) -C font install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
 	install -m0755 -d $(PKGDEST)
-	install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.info \
-	                               doc/unifont.pdf $(PKGDEST)
-	for i in $(TEXTFILES) unifont.txt unifont.info ; do \
+	install -m0644 -p $(TEXTFILES) doc/unifont.txt doc/unifont.pdf \
+	        $(PKGDEST)
+	for i in $(TEXTFILES) unifont.txt ; do \
 	    gzip $(GZFLAGS) $(PKGDEST)/$$i ; \
 	done
 	install -m0644 -p lib/wchardata.c $(PKGDEST)

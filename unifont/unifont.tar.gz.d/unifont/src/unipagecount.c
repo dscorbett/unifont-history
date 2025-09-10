@@ -51,6 +51,10 @@
 
    21 October 2023 [Paul Hardy]:
    - Added full prototype for mkftable function in main function.
+
+   6 September 2025 [Paul Hardy]:
+      - Changed pageno from "int" to "unsigned" for compatibility
+        with sscanf definition.
 */
 
 #include <stdio.h>
@@ -77,14 +81,14 @@ main (int argc, char *argv[])
    unsigned unichar; /* unicode character */
    int pagecount[256] = {256 * 0};
    int onepage=0; /* set to one if printing character grid for one page */
-   int pageno=0; /* page number selected if only examining one page */
+   unsigned pageno=0; /* page number selected if only examining one page */
    int html=0;   /* =0: print plain text; =1: print HTML */
    int links=0;  /* =1: print HTML links; =0: don't print links */
 
    /* make (print) flipped HTML table */
    void mkftable (unsigned plane, int pagecount[256], int links);
 
-   size_t strlen();
+   size_t strlen(const char *s);
 
    if (argc > 1 && argv[1][0] == '-') {  /* Parse option */
       plane = 0;

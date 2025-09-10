@@ -28,5 +28,5 @@ digraph "main"
   Node5 -> Node8 [color="steelblue1",style="solid"];
   Node5 -> Node9 [color="steelblue1",style="solid"];
   Node1 -> Node10 [color="steelblue1",style="solid"];
-  Node10 [label="print_help",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$johab2syllables_8c.html#a853216ac51aa181669ff4d3de74058a7",tooltip="Print a help message."];
+  Node10 [label="print_help",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$johab2syllables_8c.html#a402ea961bfc2ffeee61e3a7c330b1559",tooltip="Print a help message."];
 }
