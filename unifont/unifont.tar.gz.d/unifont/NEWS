@@ -1,3 +1,8 @@
+2025-10-18: Release 17.0.02
+  * Minor fixes to several glyphs.
+  * Additions of new Plane 2 and Plane 3 glyphs.
+  * src/Makefile now reads $(CPPFLAGS) and $(LDFLAGS) for C compilation.
+
 2025-09-09: Release 17.0.01
   * Updates to synchronize Unifont with Unicode 17.0.0 release,
     including the addition of new script ranges Sidetic, Sharada

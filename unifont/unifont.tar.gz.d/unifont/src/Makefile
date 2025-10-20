@@ -9,7 +9,11 @@ SHELL = /bin/sh
 # hex2otf.c requires the "-std=c99" flag to compile with GCC 4.2.1.
 # The other C programs do not.
 
-CC = gcc
+# Set these three  values here if desired; can be overridden from
+# the environment.
+# CC = gcc
+# CPPFLAGS =
+# LDFLAGS =
 
 CFLAGS = -std=c99 -g -O2 -Wall -pedantic
 
@@ -60,25 +64,29 @@ all: $(CPROGS) bin
 # declaration at the beginning of this file.
 #
 hex2otf: hex2otf.c hex2otf.h
-	$(CC) $(CFLAGS) hex2otf.c -o hex2otf
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) hex2otf.c -o hex2otf
 
 unifontpic: unifontpic.h unifontpic.o
-	$(CC) $(CFLAGS) unifontpic.c -o unifontpic
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) unifontpic.c -o unifontpic
 
 unihexpose: unihexpose.o unifont-support.o
-	$(CC) $(CFLAGS) unihexpose.o unifont-support.o -o unihexpose
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) unihexpose.o \
+		unifont-support.o -o unihexpose
 
 unijohab2html: hangul.h unihangul-support.o unijohab2html.o
-	$(CC) $(CFLAGS) unijohab2html.o unihangul-support.o -o unijohab2html
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) unijohab2html.o \
+		unihangul-support.o -o unijohab2html
 
 johab2syllables: hangul.h unihangul-support.o johab2syllables.o
-	$(CC) $(CFLAGS) johab2syllables.o unihangul-support.o -o johab2syllables
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) johab2syllables.o \
+		unihangul-support.o -o johab2syllables
 
 unigen-hangul: hangul.h unihangul-support.o unigen-hangul.o
-	$(CC) $(CFLAGS) unigen-hangul.o unihangul-support.o -o unigen-hangul
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) unigen-hangul.o \
+		unihangul-support.o -o unigen-hangul
 
 unihangul-support.o: hangul.h unihangul-support.c
-	$(CC) $(CFLAGS) -c unihangul-support.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c unihangul-support.c
 
 bin: bin-stamp
 

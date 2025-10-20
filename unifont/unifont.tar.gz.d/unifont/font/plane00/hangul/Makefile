@@ -2,7 +2,7 @@ CC=gcc
 
 CFLAGS = -g -O2
 
-VERSION = 17.0.01
+VERSION = 17.0.02
 
 BINDIR=../../../bin
 

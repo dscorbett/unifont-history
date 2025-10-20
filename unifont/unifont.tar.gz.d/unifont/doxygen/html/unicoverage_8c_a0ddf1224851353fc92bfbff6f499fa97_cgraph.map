@@ -1,5 +1,5 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="The main function." alt="" coords="5,31,60,56"/>
-<area shape="rect" id="node2" href="$unicoverage_8c.html#ae0cf1429d0cf858fa930c666d8e73954" title="Get next Unicode range." alt="" coords="120,5,208,31"/>
-<area shape="rect" id="node3" href="$unicoverage_8c.html#a71344b70c39c2995545c3ced4d134ec8" title="Print the subtotal for one Unicode script range." alt="" coords="108,55,220,80"/>
+<area shape="rect" id="node1" title="The main function." alt="" coords="5,31,56,57"/>
+<area shape="rect" id="node2" href="$unicoverage_8c.html#ae0cf1429d0cf858fa930c666d8e73954" title="Get next Unicode range." alt="" coords="115,5,193,32"/>
+<area shape="rect" id="node3" href="$unicoverage_8c.html#a71344b70c39c2995545c3ced4d134ec8" title="Print the subtotal for one Unicode script range." alt="" coords="104,56,204,83"/>
 </map>

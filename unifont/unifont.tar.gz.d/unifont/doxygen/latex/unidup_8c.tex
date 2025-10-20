@@ -84,32 +84,32 @@ Definition at line \mbox{\hyperlink{unidup_8c_source_l00054}{54}} of file \mbox{
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00055\ \{}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \textcolor{keywordtype}{int}\ \ ix,\ iy;\ \ \textcolor{comment}{/*\ two\ code\ points\ to\ compare\ for\ equality\ */}}
-\DoxyCodeLine{00058\ \ \ \ \textcolor{keywordtype}{char}\ inbuf[\mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}];}
-\DoxyCodeLine{00059\ \ \ \ \textcolor{keywordtype}{char}\ *infile;\ \ \ \textcolor{comment}{/*\ the\ input\ file\ name\ */}}
-\DoxyCodeLine{00060\ \ \ \ FILE\ *infilefp;\ \textcolor{comment}{/*\ file\ pointer\ to\ input\ file\ */}}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \textcolor{keywordflow}{if}\ (argc\ >\ 1)\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ infile\ =\ argv[1];}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((infilefp\ =\ fopen\ (infile,\ \textcolor{stringliteral}{"{}r"{}}))\ ==\ NULL)\ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ fprintf\ (stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)nERROR:\ Can't\ open\ file\ \%s\(\backslash\)n\(\backslash\)n"{}},\ infile);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \}}
-\DoxyCodeLine{00069\ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ infilefp\ =\ stdin;}
-\DoxyCodeLine{00071\ \ \ \ \}}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ ix\ =\ -\/1;}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \textcolor{keywordflow}{while}\ (fgets\ (inbuf,\ \mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}-\/1,\ infilefp)\ !=\ NULL)\ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ sscanf\ (inbuf,\ \textcolor{stringliteral}{"{}\%X"{}},\ (\textcolor{keywordtype}{unsigned}\ *)\&iy);}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ix\ ==\ iy)\ fprintf\ (stderr,\ \textcolor{stringliteral}{"{}Duplicate\ code\ point:\ \%04X\(\backslash\)n"{}},\ ix);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ ix\ =\ iy;}
-\DoxyCodeLine{00079\ \ \ \ \}}
-\DoxyCodeLine{00080\ \ \ \ exit\ (0);}
-\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00055 \{}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057    \textcolor{keywordtype}{int}  ix, iy;  \textcolor{comment}{/* two code points to compare for equality */}}
+\DoxyCodeLine{00058    \textcolor{keywordtype}{char} inbuf[\mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}];}
+\DoxyCodeLine{00059    \textcolor{keywordtype}{char} *infile;   \textcolor{comment}{/* the input file name */}}
+\DoxyCodeLine{00060    FILE *infilefp; \textcolor{comment}{/* file pointer to input file */}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062    \textcolor{keywordflow}{if} (argc > 1) \{}
+\DoxyCodeLine{00063       infile = argv[1];}
+\DoxyCodeLine{00064       \textcolor{keywordflow}{if} ((infilefp = fopen (infile, \textcolor{stringliteral}{"{}r"{}})) == NULL) \{}
+\DoxyCodeLine{00065          fprintf (stderr, \textcolor{stringliteral}{"{}\(\backslash\)nERROR: Can't open file \%s\(\backslash\)n\(\backslash\)n"{}}, infile);}
+\DoxyCodeLine{00066          exit (EXIT\_FAILURE);}
+\DoxyCodeLine{00067       \}}
+\DoxyCodeLine{00068    \}}
+\DoxyCodeLine{00069    \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00070       infilefp = stdin;}
+\DoxyCodeLine{00071    \}}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073    ix = -\/1;}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075    \textcolor{keywordflow}{while} (fgets (inbuf, \mbox{\hyperlink{unidup_8c_ad7871643c05865c80f5d8050aead2b57}{MAXBUF}}-\/1, infilefp) != NULL) \{}
+\DoxyCodeLine{00076       sscanf (inbuf, \textcolor{stringliteral}{"{}\%X"{}}, (\textcolor{keywordtype}{unsigned} *)\&iy);}
+\DoxyCodeLine{00077       \textcolor{keywordflow}{if} (ix == iy) fprintf (stderr, \textcolor{stringliteral}{"{}Duplicate code point: \%04X\(\backslash\)n"{}}, ix);}
+\DoxyCodeLine{00078       \textcolor{keywordflow}{else} ix = iy;}
+\DoxyCodeLine{00079    \}}
+\DoxyCodeLine{00080    exit (0);}
+\DoxyCodeLine{00081 \}}
 
 \end{DoxyCode}

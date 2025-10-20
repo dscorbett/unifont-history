@@ -33,7 +33,7 @@
 #ifndef _HEX2OTF_H_
 #define _HEX2OTF_H_
 
-#define UNIFONT_VERSION "17.0.01"	///< Current Unifont version.
+#define UNIFONT_VERSION "17.0.02"	///< Current Unifont version.
 
 /**
     Define default strings for some TrueType font NameID strings.
@@ -50,9 +50,9 @@
 
     Default NameID 0 string (Copyright Notice)
 */
-#define DEFAULT_ID0 "Copyright © 1998-2022 Roman Czyborra, Paul Hardy, \
+#define DEFAULT_ID0 "Copyright © 1998-2025 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
-Nils Moskopp, Rebecca Bettencourt, et al."
+Ælla Chiana Moskopp, Rebecca Bettencourt, et al."
 
 #define DEFAULT_ID1 "Unifont"	///< Default NameID 1 string (Font Family)
 #define DEFAULT_ID2 "Regular"	///< Default NameID 2 string (Font Subfamily)

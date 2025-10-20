@@ -458,11 +458,11 @@ Covered      Range        Script
    9.9% U+20000..U+2A6DF  CJK Unified Ideographs Extension B
    0.0% U+2A6E0..U+2A6FF  Unassigned
    2.2% U+2A700..U+2B739  CJK Unified Ideographs Extension C
-   0.0% U+2B73A..U+2B73F  Unassigned
+ 100.0% U+2B73A..U+2B73F  Unassigned
  100.0% U+2B740..U+2B81D  CJK Unified Ideographs Extension D
    0.0% U+2B81E..U+2B81F  Unassigned
    2.8% U+2B820..U+2CEA1  CJK Unified Ideographs Extension E
-   0.0% U+2CEA2..U+2CEAF  Unassigned
+  85.7% U+2CEA2..U+2CEAF  Unassigned
    0.5% U+2CEB0..U+2EBE0  CJK Unified Ideographs Extension F
    0.0% U+2EBE1..U+2EBEF  Unassigned
  100.0% U+2EBF0..U+2EE5D  CJK Unified Ideographs Extension I
@@ -473,7 +473,7 @@ Covered      Range        Script
   12.8% U+30000..U+3134A  CJK Unified Ideographs Extension G
    0.0% U+3134B..U+3134F  Unassigned
    0.4% U+31350..U+323AF  CJK Unified Ideographs Extension H
-   0.0% U+323B0..U+3347F  CJK Unified Ideographs Extension J
+  10.2% U+323B0..U+3347F  CJK Unified Ideographs Extension J
    0.0% U+33480..U+3FFFD  Unassigned
    0.0% U+3FFFE..U+3FFFF  Noncharacters
    0.0% U+40000..U+4FFFD  Unassigned

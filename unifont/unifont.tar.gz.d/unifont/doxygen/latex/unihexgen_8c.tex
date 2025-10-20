@@ -74,57 +74,57 @@ Definition at line \mbox{\hyperlink{unihexgen_8c_source_l00164}{164}} of file \m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00165\ \{}
-\DoxyCodeLine{00166\ }
-\DoxyCodeLine{00167\ \ \ \ \textcolor{keywordtype}{int}\ grid[16];\ \textcolor{comment}{/*\ the\ glyph\ grid\ we'll\ build\ */}}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \ \textcolor{keywordtype}{int}\ row;\ \ \ \ \ \ \textcolor{comment}{/*\ row\ number\ in\ current\ glyph\ */}}
-\DoxyCodeLine{00170\ \ \ \ \textcolor{keywordtype}{int}\ digitrow;\ \textcolor{comment}{/*\ row\ number\ in\ current\ hex\ digit\ being\ rendered\ */}}
-\DoxyCodeLine{00171\ \ \ \ \textcolor{keywordtype}{int}\ rowbits;\ \ \textcolor{comment}{/*\ 1\ \&\ 0\ bits\ to\ draw\ current\ glyph\ row\ */}}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ \ \textcolor{keywordtype}{int}\ d1,\ d2,\ d3,\ d4;\ \textcolor{comment}{/*\ four\ hexadecimal\ digits\ of\ each\ code\ point\ */}}
-\DoxyCodeLine{00174\ }
-\DoxyCodeLine{00175\ \ \ \ d1\ =\ (thiscp\ >>\ 12)\ \&\ 0xF;}
-\DoxyCodeLine{00176\ \ \ \ d2\ =\ (thiscp\ >>\ \ 8)\ \&\ 0xF;}
-\DoxyCodeLine{00177\ \ \ \ d3\ =\ (thiscp\ >>\ \ 4)\ \&\ 0xF;}
-\DoxyCodeLine{00178\ \ \ \ d4\ =\ (thiscp\ \ \ \ \ \ )\ \&\ 0xF;}
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \ \ \ \textcolor{comment}{/*\ top\ and\ bottom\ rows\ are\ white\ */}}
-\DoxyCodeLine{00181\ \ \ \ grid[0]\ =\ grid[15]\ =\ 0x0000;}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00183\ \ \ \ \textcolor{comment}{/*\ 14\ inner\ rows\ are\ 14-\/pixel\ wide\ black\ lines,\ centered\ */}}
-\DoxyCodeLine{00184\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 1;\ row\ <\ 15;\ row++)\ grid[row]\ =\ 0x7FFE;}
-\DoxyCodeLine{00185\ }
-\DoxyCodeLine{00186\ \ \ \ printf\ (\textcolor{stringliteral}{"{}\%04X:"{}},\ thiscp);}
-\DoxyCodeLine{00187\ }
-\DoxyCodeLine{00188\ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00189\ \textcolor{comment}{\ \ \ \ \ \ Render\ the\ first\ row\ of\ 2\ hexadecimal\ digits}}
-\DoxyCodeLine{00190\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{00191\ \ \ \ digitrow\ =\ 0;\ \textcolor{comment}{/*\ start\ at\ top\ of\ first\ row\ of\ digits\ to\ render\ */}}
-\DoxyCodeLine{00192\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 2;\ row\ <\ 7;\ row++)\ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ rowbits\ =\ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d1][digitrow]\ <<\ 9)\ |}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d2][digitrow]\ <<\ 3);}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ grid[row]\ \string^=\ rowbits;\ \textcolor{comment}{/*\ digits\ appear\ as\ white\ on\ black\ background\ */}}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ digitrow++;}
-\DoxyCodeLine{00197\ \ \ \ \}}
-\DoxyCodeLine{00198\ }
-\DoxyCodeLine{00199\ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00200\ \textcolor{comment}{\ \ \ \ \ \ Render\ the\ second\ row\ of\ 2\ hexadecimal\ digits}}
-\DoxyCodeLine{00201\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{00202\ \ \ \ digitrow\ =\ 0;\ \textcolor{comment}{/*\ start\ at\ top\ of\ first\ row\ of\ digits\ to\ render\ */}}
-\DoxyCodeLine{00203\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 9;\ row\ <\ 14;\ row++)\ \{}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ rowbits\ =\ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d3][digitrow]\ <<\ 9)\ |}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d4][digitrow]\ <<\ 3);}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ grid[row]\ \string^=\ rowbits;\ \textcolor{comment}{/*\ digits\ appear\ as\ white\ on\ black\ background\ */}}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ digitrow++;}
-\DoxyCodeLine{00208\ \ \ \ \}}
-\DoxyCodeLine{00209\ }
-\DoxyCodeLine{00210\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 0;\ row\ <\ 16;\ row++)\ printf\ (\textcolor{stringliteral}{"{}\%04X"{}},\ grid[row]\ \&\ 0xFFFF);}
-\DoxyCodeLine{00211\ }
-\DoxyCodeLine{00212\ \ \ \ putchar\ (\textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{00213\ }
-\DoxyCodeLine{00214\ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00215\ \}}
+\DoxyCodeLine{00165 \{}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167    \textcolor{keywordtype}{int} grid[16]; \textcolor{comment}{/* the glyph grid we'll build */}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169    \textcolor{keywordtype}{int} row;      \textcolor{comment}{/* row number in current glyph */}}
+\DoxyCodeLine{00170    \textcolor{keywordtype}{int} digitrow; \textcolor{comment}{/* row number in current hex digit being rendered */}}
+\DoxyCodeLine{00171    \textcolor{keywordtype}{int} rowbits;  \textcolor{comment}{/* 1 \& 0 bits to draw current glyph row */}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173    \textcolor{keywordtype}{int} d1, d2, d3, d4; \textcolor{comment}{/* four hexadecimal digits of each code point */}}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175    d1 = (thiscp >> 12) \& 0xF;}
+\DoxyCodeLine{00176    d2 = (thiscp >>  8) \& 0xF;}
+\DoxyCodeLine{00177    d3 = (thiscp >>  4) \& 0xF;}
+\DoxyCodeLine{00178    d4 = (thiscp      ) \& 0xF;}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180    \textcolor{comment}{/* top and bottom rows are white */}}
+\DoxyCodeLine{00181    grid[0] = grid[15] = 0x0000;}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183    \textcolor{comment}{/* 14 inner rows are 14-\/pixel wide black lines, centered */}}
+\DoxyCodeLine{00184    \textcolor{keywordflow}{for} (row = 1; row < 15; row++) grid[row] = 0x7FFE;}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186    printf (\textcolor{stringliteral}{"{}\%04X:"{}}, thiscp);}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188    \textcolor{comment}{/*}}
+\DoxyCodeLine{00189 \textcolor{comment}{      Render the first row of 2 hexadecimal digits}}
+\DoxyCodeLine{00190 \textcolor{comment}{   */}}
+\DoxyCodeLine{00191    digitrow = 0; \textcolor{comment}{/* start at top of first row of digits to render */}}
+\DoxyCodeLine{00192    \textcolor{keywordflow}{for} (row = 2; row < 7; row++) \{}
+\DoxyCodeLine{00193       rowbits = (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d1][digitrow] << 9) |}
+\DoxyCodeLine{00194                 (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d2][digitrow] << 3);}
+\DoxyCodeLine{00195       grid[row] \string^= rowbits; \textcolor{comment}{/* digits appear as white on black background */}}
+\DoxyCodeLine{00196       digitrow++;}
+\DoxyCodeLine{00197    \}}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199    \textcolor{comment}{/*}}
+\DoxyCodeLine{00200 \textcolor{comment}{      Render the second row of 2 hexadecimal digits}}
+\DoxyCodeLine{00201 \textcolor{comment}{   */}}
+\DoxyCodeLine{00202    digitrow = 0; \textcolor{comment}{/* start at top of first row of digits to render */}}
+\DoxyCodeLine{00203    \textcolor{keywordflow}{for} (row = 9; row < 14; row++) \{}
+\DoxyCodeLine{00204       rowbits = (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d3][digitrow] << 9) |}
+\DoxyCodeLine{00205                 (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d4][digitrow] << 3);}
+\DoxyCodeLine{00206       grid[row] \string^= rowbits; \textcolor{comment}{/* digits appear as white on black background */}}
+\DoxyCodeLine{00207       digitrow++;}
+\DoxyCodeLine{00208    \}}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) printf (\textcolor{stringliteral}{"{}\%04X"{}}, grid[row] \& 0xFFFF);}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212    putchar (\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00215 \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -152,62 +152,62 @@ Definition at line \mbox{\hyperlink{unihexgen_8c_source_l00227}{227}} of file \m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00228\ \{}
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00230\ \ \ \ \textcolor{keywordtype}{int}\ grid[16];\ \textcolor{comment}{/*\ the\ glyph\ grid\ we'll\ build\ */}}
-\DoxyCodeLine{00231\ }
-\DoxyCodeLine{00232\ \ \ \ \textcolor{keywordtype}{int}\ row;\ \ \ \ \ \ \textcolor{comment}{/*\ row\ number\ in\ current\ glyph\ */}}
-\DoxyCodeLine{00233\ \ \ \ \textcolor{keywordtype}{int}\ digitrow;\ \textcolor{comment}{/*\ row\ number\ in\ current\ hex\ digit\ being\ rendered\ */}}
-\DoxyCodeLine{00234\ \ \ \ \textcolor{keywordtype}{int}\ rowbits;\ \ \textcolor{comment}{/*\ 1\ \&\ 0\ bits\ to\ draw\ current\ glyph\ row\ */}}
-\DoxyCodeLine{00235\ }
-\DoxyCodeLine{00236\ \ \ \ \textcolor{keywordtype}{int}\ d1,\ d2,\ d3,\ d4,\ d5,\ d6;\ \textcolor{comment}{/*\ six\ hexadecimal\ digits\ of\ each\ code\ point\ */}}
-\DoxyCodeLine{00237\ }
-\DoxyCodeLine{00238\ \ \ \ d1\ =\ (thiscp\ >>\ 20)\ \&\ 0xF;}
-\DoxyCodeLine{00239\ \ \ \ d2\ =\ (thiscp\ >>\ 16)\ \&\ 0xF;}
-\DoxyCodeLine{00240\ \ \ \ d3\ =\ (thiscp\ >>\ 12)\ \&\ 0xF;}
-\DoxyCodeLine{00241\ \ \ \ d4\ =\ (thiscp\ >>\ \ 8)\ \&\ 0xF;}
-\DoxyCodeLine{00242\ \ \ \ d5\ =\ (thiscp\ >>\ \ 4)\ \&\ 0xF;}
-\DoxyCodeLine{00243\ \ \ \ d6\ =\ (thiscp\ \ \ \ \ \ )\ \&\ 0xF;}
-\DoxyCodeLine{00244\ }
-\DoxyCodeLine{00245\ \ \ \ \textcolor{comment}{/*\ top\ and\ bottom\ rows\ are\ white\ */}}
-\DoxyCodeLine{00246\ \ \ \ grid[0]\ =\ grid[15]\ =\ 0x0000;}
-\DoxyCodeLine{00247\ }
-\DoxyCodeLine{00248\ \ \ \ \textcolor{comment}{/*\ 14\ inner\ rows\ are\ 16-\/pixel\ wide\ black\ lines,\ centered\ */}}
-\DoxyCodeLine{00249\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 1;\ row\ <\ 15;\ row++)\ grid[row]\ =\ 0xFFFF;}
-\DoxyCodeLine{00250\ }
-\DoxyCodeLine{00251\ }
-\DoxyCodeLine{00252\ \ \ \ printf\ (\textcolor{stringliteral}{"{}\%06X:"{}},\ thiscp);}
-\DoxyCodeLine{00253\ }
-\DoxyCodeLine{00254\ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00255\ \textcolor{comment}{\ \ \ \ \ \ Render\ the\ first\ row\ of\ 3\ hexadecimal\ digits}}
-\DoxyCodeLine{00256\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{00257\ \ \ \ digitrow\ =\ 0;\ \textcolor{comment}{/*\ start\ at\ top\ of\ first\ row\ of\ digits\ to\ render\ */}}
-\DoxyCodeLine{00258\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 2;\ row\ <\ 7;\ row++)\ \{}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ rowbits\ =\ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d1][digitrow]\ <<\ 11)\ |}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d2][digitrow]\ <<\ \ 6)\ |}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d3][digitrow]\ <<\ \ 1);}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ grid[row]\ \string^=\ rowbits;\ \textcolor{comment}{/*\ digits\ appear\ as\ white\ on\ black\ background\ */}}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ digitrow++;}
-\DoxyCodeLine{00264\ \ \ \ \}}
-\DoxyCodeLine{00265\ }
-\DoxyCodeLine{00266\ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00267\ \textcolor{comment}{\ \ \ \ \ \ Render\ the\ second\ row\ of\ 3\ hexadecimal\ digits}}
-\DoxyCodeLine{00268\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{00269\ \ \ \ digitrow\ =\ 0;\ \textcolor{comment}{/*\ start\ at\ top\ of\ first\ row\ of\ digits\ to\ render\ */}}
-\DoxyCodeLine{00270\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 9;\ row\ <\ 14;\ row++)\ \{}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ rowbits\ =\ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d4][digitrow]\ <<\ 11)\ |}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d5][digitrow]\ <<\ \ 6)\ |}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d6][digitrow]\ <<\ \ 1);}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ grid[row]\ \string^=\ rowbits;\ \textcolor{comment}{/*\ digits\ appear\ as\ white\ on\ black\ background\ */}}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ digitrow++;}
-\DoxyCodeLine{00276\ \ \ \ \}}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00278\ \ \ \ \textcolor{keywordflow}{for}\ (row\ =\ 0;\ row\ <\ 16;\ row++)\ printf\ (\textcolor{stringliteral}{"{}\%04X"{}},\ grid[row]\ \&\ 0xFFFF);}
-\DoxyCodeLine{00279\ }
-\DoxyCodeLine{00280\ \ \ \ putchar\ (\textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{00281\ }
-\DoxyCodeLine{00282\ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00283\ \}}
+\DoxyCodeLine{00228 \{}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230    \textcolor{keywordtype}{int} grid[16]; \textcolor{comment}{/* the glyph grid we'll build */}}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232    \textcolor{keywordtype}{int} row;      \textcolor{comment}{/* row number in current glyph */}}
+\DoxyCodeLine{00233    \textcolor{keywordtype}{int} digitrow; \textcolor{comment}{/* row number in current hex digit being rendered */}}
+\DoxyCodeLine{00234    \textcolor{keywordtype}{int} rowbits;  \textcolor{comment}{/* 1 \& 0 bits to draw current glyph row */}}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236    \textcolor{keywordtype}{int} d1, d2, d3, d4, d5, d6; \textcolor{comment}{/* six hexadecimal digits of each code point */}}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238    d1 = (thiscp >> 20) \& 0xF;}
+\DoxyCodeLine{00239    d2 = (thiscp >> 16) \& 0xF;}
+\DoxyCodeLine{00240    d3 = (thiscp >> 12) \& 0xF;}
+\DoxyCodeLine{00241    d4 = (thiscp >>  8) \& 0xF;}
+\DoxyCodeLine{00242    d5 = (thiscp >>  4) \& 0xF;}
+\DoxyCodeLine{00243    d6 = (thiscp      ) \& 0xF;}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00245    \textcolor{comment}{/* top and bottom rows are white */}}
+\DoxyCodeLine{00246    grid[0] = grid[15] = 0x0000;}
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248    \textcolor{comment}{/* 14 inner rows are 16-\/pixel wide black lines, centered */}}
+\DoxyCodeLine{00249    \textcolor{keywordflow}{for} (row = 1; row < 15; row++) grid[row] = 0xFFFF;}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251 }
+\DoxyCodeLine{00252    printf (\textcolor{stringliteral}{"{}\%06X:"{}}, thiscp);}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254    \textcolor{comment}{/*}}
+\DoxyCodeLine{00255 \textcolor{comment}{      Render the first row of 3 hexadecimal digits}}
+\DoxyCodeLine{00256 \textcolor{comment}{   */}}
+\DoxyCodeLine{00257    digitrow = 0; \textcolor{comment}{/* start at top of first row of digits to render */}}
+\DoxyCodeLine{00258    \textcolor{keywordflow}{for} (row = 2; row < 7; row++) \{}
+\DoxyCodeLine{00259       rowbits = (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d1][digitrow] << 11) |}
+\DoxyCodeLine{00260                 (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d2][digitrow] <<  6) |}
+\DoxyCodeLine{00261                 (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d3][digitrow] <<  1);}
+\DoxyCodeLine{00262       grid[row] \string^= rowbits; \textcolor{comment}{/* digits appear as white on black background */}}
+\DoxyCodeLine{00263       digitrow++;}
+\DoxyCodeLine{00264    \}}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266    \textcolor{comment}{/*}}
+\DoxyCodeLine{00267 \textcolor{comment}{      Render the second row of 3 hexadecimal digits}}
+\DoxyCodeLine{00268 \textcolor{comment}{   */}}
+\DoxyCodeLine{00269    digitrow = 0; \textcolor{comment}{/* start at top of first row of digits to render */}}
+\DoxyCodeLine{00270    \textcolor{keywordflow}{for} (row = 9; row < 14; row++) \{}
+\DoxyCodeLine{00271       rowbits = (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d4][digitrow] << 11) |}
+\DoxyCodeLine{00272                 (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d5][digitrow] <<  6) |}
+\DoxyCodeLine{00273                 (\mbox{\hyperlink{unihexgen_8c_af6ebead7b0a2d2e67e8de1e35d55a866}{hexdigit}}[d6][digitrow] <<  1);}
+\DoxyCodeLine{00274       grid[row] \string^= rowbits; \textcolor{comment}{/* digits appear as white on black background */}}
+\DoxyCodeLine{00275       digitrow++;}
+\DoxyCodeLine{00276    \}}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278    \textcolor{keywordflow}{for} (row = 0; row < 16; row++) printf (\textcolor{stringliteral}{"{}\%04X"{}}, grid[row] \& 0xFFFF);}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00280    putchar (\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00283 \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -238,42 +238,42 @@ Definition at line \mbox{\hyperlink{unihexgen_8c_source_l00116}{116}} of file \m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00117\ \{}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \textcolor{keywordtype}{unsigned}\ startcp,\ endcp,\ thiscp;}
-\DoxyCodeLine{00120\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unihexgen_8c_a65e81f32c04621e4a0985e7767223c9b}{hexprint4}}(\textcolor{keywordtype}{int});\ \textcolor{comment}{/*\ function\ to\ print\ one\ 4-\/digit\ unifont.hex\ code\ point\ */}}
-\DoxyCodeLine{00121\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{unihexgen_8c_aaa160beefc690fbc75658fa9134d07a2}{hexprint6}}(\textcolor{keywordtype}{int});\ \textcolor{comment}{/*\ function\ to\ print\ one\ 6-\/digit\ unifont.hex\ code\ point\ */}}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 3)\ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}\(\backslash\)n\%s\ -\/\ generate\ unifont.hex\ code\ points\ as\(\backslash\)n"{}},\ argv[0]);}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}four-\/digit\ hexadecimal\ numbers\ in\ a\ 2\ by\ 2\ grid,\(\backslash\)n"{}});}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}or\ six-\/digit\ hexadecimal\ numbers\ in\ a\ 3\ by\ 2\ grid.\(\backslash\)n"{}});}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}Syntax:\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}\ \ \ \ \ \%s\ first\_code\_point\ last\_code\_point\ >\ glyphs.hex\(\backslash\)n\(\backslash\)n"{}},\ argv[0]);}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}Example\ (to\ generate\ glyphs\ for\ the\ Private\ Use\ Area):\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}\ \ \ \ \ \%s\ e000\ f8ff\ >\ pua.hex\(\backslash\)n\(\backslash\)n"{}},\ argv[0]);}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);}
-\DoxyCodeLine{00132\ \ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ sscanf\ (argv[1],\ \textcolor{stringliteral}{"{}\%x"{}},\ \&startcp);}
-\DoxyCodeLine{00135\ \ \ \ sscanf\ (argv[2],\ \textcolor{stringliteral}{"{}\%x"{}},\ \&endcp);}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00137\ \ \ \ startcp\ \&=\ 0xFFFFFF;\ \textcolor{comment}{/*\ limit\ to\ 6\ hex\ digits\ */}}
-\DoxyCodeLine{00138\ \ \ \ endcp\ \ \ \&=\ 0xFFFFFF;\ \textcolor{comment}{/*\ limit\ to\ 6\ hex\ digits\ */}}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00141\ \textcolor{comment}{\ \ \ \ \ \ For\ each\ code\ point\ in\ the\ desired\ range,\ generate\ a\ glyph.}}
-\DoxyCodeLine{00142\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{00143\ \ \ \ \textcolor{keywordflow}{for}\ (thiscp\ =\ startcp;\ thiscp\ <=\ endcp;\ thiscp++)\ \{}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (thiscp\ <=\ 0xFFFF)\ \{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{unihexgen_8c_a65e81f32c04621e4a0985e7767223c9b}{hexprint4}}\ (thiscp);\ \textcolor{comment}{/*\ print\ digits\ 2/line,\ 2\ lines\ */}}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{unihexgen_8c_aaa160beefc690fbc75658fa9134d07a2}{hexprint6}}\ (thiscp);\ \textcolor{comment}{/*\ print\ digits\ 3/line,\ 2\ lines\ */}}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00150\ \ \ \ \}}
-\DoxyCodeLine{00151\ \ \ \ exit\ (EXIT\_SUCCESS);}
-\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{00117 \{}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119    \textcolor{keywordtype}{unsigned} startcp, endcp, thiscp;}
+\DoxyCodeLine{00120    \textcolor{keywordtype}{void} \mbox{\hyperlink{unihexgen_8c_a65e81f32c04621e4a0985e7767223c9b}{hexprint4}}(\textcolor{keywordtype}{int}); \textcolor{comment}{/* function to print one 4-\/digit unifont.hex code point */}}
+\DoxyCodeLine{00121    \textcolor{keywordtype}{void} \mbox{\hyperlink{unihexgen_8c_aaa160beefc690fbc75658fa9134d07a2}{hexprint6}}(\textcolor{keywordtype}{int}); \textcolor{comment}{/* function to print one 6-\/digit unifont.hex code point */}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123    \textcolor{keywordflow}{if} (argc != 3) \{}
+\DoxyCodeLine{00124       fprintf (stderr,\textcolor{stringliteral}{"{}\(\backslash\)n\%s -\/ generate unifont.hex code points as\(\backslash\)n"{}}, argv[0]);}
+\DoxyCodeLine{00125       fprintf (stderr,\textcolor{stringliteral}{"{}four-\/digit hexadecimal numbers in a 2 by 2 grid,\(\backslash\)n"{}});}
+\DoxyCodeLine{00126       fprintf (stderr,\textcolor{stringliteral}{"{}or six-\/digit hexadecimal numbers in a 3 by 2 grid.\(\backslash\)n"{}});}
+\DoxyCodeLine{00127       fprintf (stderr,\textcolor{stringliteral}{"{}Syntax:\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00128       fprintf (stderr,\textcolor{stringliteral}{"{}     \%s first\_code\_point last\_code\_point > glyphs.hex\(\backslash\)n\(\backslash\)n"{}}, argv[0]);}
+\DoxyCodeLine{00129       fprintf (stderr,\textcolor{stringliteral}{"{}Example (to generate glyphs for the Private Use Area):\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00130       fprintf (stderr,\textcolor{stringliteral}{"{}     \%s e000 f8ff > pua.hex\(\backslash\)n\(\backslash\)n"{}}, argv[0]);}
+\DoxyCodeLine{00131       exit (EXIT\_FAILURE);}
+\DoxyCodeLine{00132    \}}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134    sscanf (argv[1], \textcolor{stringliteral}{"{}\%x"{}}, \&startcp);}
+\DoxyCodeLine{00135    sscanf (argv[2], \textcolor{stringliteral}{"{}\%x"{}}, \&endcp);}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137    startcp \&= 0xFFFFFF; \textcolor{comment}{/* limit to 6 hex digits */}}
+\DoxyCodeLine{00138    endcp   \&= 0xFFFFFF; \textcolor{comment}{/* limit to 6 hex digits */}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140    \textcolor{comment}{/*}}
+\DoxyCodeLine{00141 \textcolor{comment}{      For each code point in the desired range, generate a glyph.}}
+\DoxyCodeLine{00142 \textcolor{comment}{   */}}
+\DoxyCodeLine{00143    \textcolor{keywordflow}{for} (thiscp = startcp; thiscp <= endcp; thiscp++) \{}
+\DoxyCodeLine{00144       \textcolor{keywordflow}{if} (thiscp <= 0xFFFF) \{}
+\DoxyCodeLine{00145          \mbox{\hyperlink{unihexgen_8c_a65e81f32c04621e4a0985e7767223c9b}{hexprint4}} (thiscp); \textcolor{comment}{/* print digits 2/line, 2 lines */}}
+\DoxyCodeLine{00146       \}}
+\DoxyCodeLine{00147       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00148          \mbox{\hyperlink{unihexgen_8c_aaa160beefc690fbc75658fa9134d07a2}{hexprint6}} (thiscp); \textcolor{comment}{/* print digits 3/line, 2 lines */}}
+\DoxyCodeLine{00149       \}}
+\DoxyCodeLine{00150    \}}
+\DoxyCodeLine{00151    exit (EXIT\_SUCCESS);}
+\DoxyCodeLine{00152 \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -289,23 +289,23 @@ Here is the call graph for this function\+:
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=\ \{}
-\DoxyCodeLine{\ \ \ \{0x6,0x9,0x9,0x9,0x6\},\ \ }
-\DoxyCodeLine{\ \ \ \{0x2,0x6,0x2,0x2,0x7\},\ \ }
-\DoxyCodeLine{\ \ \ \{0xF,0x1,0xF,0x8,0xF\},\ \ }
-\DoxyCodeLine{\ \ \ \{0xE,0x1,0x7,0x1,0xE\},\ \ }
-\DoxyCodeLine{\ \ \ \{0x9,0x9,0xF,0x1,0x1\},\ \ }
-\DoxyCodeLine{\ \ \ \{0xF,0x8,0xF,0x1,0xF\},\ \ }
-\DoxyCodeLine{\ \ \ \{0x6,0x8,0xE,0x9,0x6\},\ \ \ }
-\DoxyCodeLine{\ \ \ \{0xF,0x1,0x2,0x4,0x4\},\ \ }
-\DoxyCodeLine{\ \ \ \{0x6,0x9,0x6,0x9,0x6\},\ \ }
-\DoxyCodeLine{\ \ \ \{0x6,0x9,0x7,0x1,0x6\},\ \ \ }
-\DoxyCodeLine{\ \ \ \{0xF,0x9,0xF,0x9,0x9\},\ \ }
-\DoxyCodeLine{\ \ \ \{0xE,0x9,0xE,0x9,0xE\},\ \ }
-\DoxyCodeLine{\ \ \ \{0x7,0x8,0x8,0x8,0x7\},\ \ }
-\DoxyCodeLine{\ \ \ \{0xE,0x9,0x9,0x9,0xE\},\ \ }
-\DoxyCodeLine{\ \ \ \{0xF,0x8,0xE,0x8,0xF\},\ \ }
-\DoxyCodeLine{\ \ \ \{0xF,0x8,0xE,0x8,0x8\}\ \ \ }
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{   \{0x6,0x9,0x9,0x9,0x6\},  }
+\DoxyCodeLine{   \{0x2,0x6,0x2,0x2,0x7\},  }
+\DoxyCodeLine{   \{0xF,0x1,0xF,0x8,0xF\},  }
+\DoxyCodeLine{   \{0xE,0x1,0x7,0x1,0xE\},  }
+\DoxyCodeLine{   \{0x9,0x9,0xF,0x1,0x1\},  }
+\DoxyCodeLine{   \{0xF,0x8,0xF,0x1,0xF\},  }
+\DoxyCodeLine{   \{0x6,0x8,0xE,0x9,0x6\},   }
+\DoxyCodeLine{   \{0xF,0x1,0x2,0x4,0x4\},  }
+\DoxyCodeLine{   \{0x6,0x9,0x6,0x9,0x6\},  }
+\DoxyCodeLine{   \{0x6,0x9,0x7,0x1,0x6\},   }
+\DoxyCodeLine{   \{0xF,0x9,0xF,0x9,0x9\},  }
+\DoxyCodeLine{   \{0xE,0x9,0xE,0x9,0xE\},  }
+\DoxyCodeLine{   \{0x7,0x8,0x8,0x8,0x7\},  }
+\DoxyCodeLine{   \{0xE,0x9,0x9,0x9,0xE\},  }
+\DoxyCodeLine{   \{0xF,0x8,0xE,0x8,0xF\},  }
+\DoxyCodeLine{   \{0xF,0x8,0xE,0x8,0x8\}   }
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}

@@ -1,3 +1,77 @@
+2025-10-18  Paul Hardy <unifoundry@gmail.com>
+	* Version 17.0.02.
+	* font/plane00/plane00-combining.txt:
+	  - Removed U+0B53 and U+0B54; these were for glyphs that were
+	    scheduled to be included in Unicode 17.0.0 but were removed.
+	  - Changed U+1B00 combining code point to U+1B0D.
+	* font/plane00/unifont-base.hex:
+	  - Paul Hardy:
+	    o Fixed Unified Canadian Aboriginal Syllabics glyph for U+1521.
+	      Thanks to Marco for reporting that.
+	    o Fixed Rejang glyph U+A93D per Unicode 17.0.0 errata.
+	    o Fixed glyph U+FB30, HEBREW LETTER ALEF WITH MAPIQ.
+	  - David Corbett updated U+2B96, U+!7CE, U+A7CF, and U+A7D2.
+	* font/plane00/wqy.hex:
+	  晓晓Akatsuki adjusted U+4748, U+6B25, and U+6F78 per the latest
+	  Unicode recommendations, and adjusted U+5100 to be 16 pixels tall.
+	* font/plane01/plane1.hex:
+	  - Fixed Adlam glyph U+1E912 per Unicode 17.0.0 errata.
+	  - David Corbett:
+	    o Patched small gaps in U+1CEDD and U+1E6DE.
+	    o Modified U+1F778 ASTRAEA FORM TWO to look more like
+              U+2693 ANCHOR.
+	    o Modified U+1CEF0 MEDIUM SMALL WHITE CIRCLE WITH HORIZONTAL BAR
+	      to be on the same baseline as U+26AC MEDIUM SMALL WHITE CIRCLE.
+	    o Modified U+1F77A PARTHENOPE FORM TWO to be taller.
+	    o Adjusted vertical inner vertical strokes in Tolong Siki
+	      glyphs U+11DCC, U+11DCD, and U+11DD6 for consistency.
+	    o Adjusted base height in chess glyphs U+1FA54..U+1FA57 and eye
+	      height in U+1FA55 and U+1FA57 to match eye height of knights.
+	  - Xiao Akatsuki drew smaller versions of U+16FF2 and U+16FF3.
+	* font/plane02/zh-plane02.hex:
+	  - Five glyphs added for complete jf7000 0.9 coverage:
+	    o Boris Zhang added U+217DA and U+21A4B.
+	    o 湖 远星 added U+24259, U+249DF, and U+270FD.
+	  - 晓晓Akatsuki redrew U+29B9A.
+	* font/plane02/zh-plane02.hex:
+	  - 晓晓Akatsuki: Drew U+323B0..U+32401, U+32403..U+32406,
+	    U+32409..U+32452, U+32454..U+3246A, U+3246C..U+3247D,
+	    U+3247F..U+32484, U+32486..U+3248D, and U+3248F..U+324A4.
+	  - Boris Zhang redrew U+2B7A4, U+2B7E8, and U+2EC06.
+	  - Boris Zhang drew U+32402, U+32407, U+32408, U+32453, U+3246B,
+	    U+3247E, U+32485, U+3248E, U+324D1, U+324DD, U+324DE, U+324E0,
+	    U+3251F, U+32520, U+3261E, U+32623, U+32629, U+3262C, U+32631,
+	    U+32632, U+32635, U+3263B, U+3263C, U+3263F, U+32640, U+32641,
+	    U+32644, U+32646, U+32647, U+3264F, U+32650, U+32656, U+32657,
+	    U+3265A, U+3265D, U+3265E, U+3265F, U+32660, U+32662, U+32669,
+	    U+3266F, U+32672, U+32674, U+3267B, U+3267C, U+3267D, U+32688,
+	    U+3268A, U+3268F, U+32694, U+32695, U+3269A, U+326AD, U+326BD,
+	    U+326BE, U+326C0, U+326F5, U+326FA, U+32709, U+3270B, U+32714,
+	    U+32744, U+32748, U+3274B, U+3274C, U+3274E, U+32755, U+32765,
+	    U+32768, U+32769, U+327C0, U+327C3, U+327FB, U+32800, U+32859,
+	    U+3285A, U+3285F, U+3287C, U+32901, U+32940, U+3295B, U+32985,
+	    U+32996, U+32997, U+32A3A, U+32A3B, U+32A4C, U+32A5A, U+32A72,
+	    U+32A98, U+32ACE, U+32AF9, U+32BDD, U+32BE1, U+32BE8, U+32BFF,
+	    U+32C0A, U+32C0D, U+32C0E, U+32C13, U+32C36, U+32C37, U+32C39,
+	    U+32C3B, U+32C3C, U+32C82, U+32CCA, U+32CCC, U+32CCD, U+32CD3,
+	    U+32CD4, U+32CD6, U+32CDA, U+32CDC, U+32CDD, U+32CE4, U+32CE5,
+	    U+32CE6, U+32CF3, U+32CF4, U+32CF7, U+32CFD, U+32D09, U+32D46,
+	    U+32D49, U+32D4F, U+32D50, U+32D79, U+32D89, U+32DAF, U+32DB7,
+	    U+32E2F, U+32E31, U+32E34, U+32E8B, U+32EA3, U+32ED0, U+32EF0,
+	    U+32EF2, U+32F17, U+32F1D, U+32F1E, U+32F36, U+32F49, U+32F56,
+	    U+32F58, U+32F59, U+32F6C, U+32F8C, U+32F9D, U+32FF9, U+3301A,
+	    U+33074, U+33084, U+330AC, U+330D4, U+330F1, U+330F2, U+33113,
+	    U+33157, U+331B2, U+331E7, U+331E9, U+331EA, U+331EF, U+331F0,
+	    U+331F2, U+33211, U+33213, U+33214, U+33215, U+33216, U+33217,
+	    U+3321B, U+33220, U+3323A, U+33255, U+33257, U+33261, U+33279,
+	    U+3327A, U+3327C, U+33282, U+33283, U+33287, U+3328B, U+3328E,
+	    U+3328F, U+33291, U+33293, U+33294, U+332AD, U+332BF, U+332E1,
+	    U+3331A, U+3331E, U+33366, U+33397, U+33398, U+3339A, U+3339D,
+	    U+33400, U+3340A, and U+33410.
+	* src/Makefile: added $(CPPFLAGS) and $(LDFLAGS) for C compilation
+	  per request. [Savannah bug #67483]
+	* src/hex2otf.h: updated copyright for 2025.
+
 2025-09-09  Paul Hardy <unifoundry@gmail.com>
 	* Version 17.0.01.
 	* COPYING: changed old FSF street address to FSF URLs now that the
