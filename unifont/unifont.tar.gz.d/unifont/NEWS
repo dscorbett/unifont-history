@@ -1,3 +1,7 @@
+2025-11-01: Release 17.0.03
+  * Updated numerous Chinese ideographs.
+  * Updated constant width macro in hex2otf.1 for better nroff compatibility.
+
 2025-10-18: Release 17.0.02
   * Minor fixes to several glyphs.
   * Additions of new Plane 2 and Plane 3 glyphs.

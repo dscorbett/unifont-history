@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="OTTO" ttLibVersion="4.39">
+<ttFont sfntVersion="OTTO" ttLibVersion="4.60">
 
   <head>
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="0.0"/>
-    <checkSumAdjustment value="0xc6cf1ef5"/>
+    <checkSumAdjustment value="0x320e9167"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="64"/>
@@ -113,13 +113,13 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      Unifont-17.0.02.otf
+      Unifont-17.0.03.otf
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       Unifont
     </namerecord>
     <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
-      Version 17.0.02
+      Version 17.0.03
     </namerecord>
     <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
       Unifont

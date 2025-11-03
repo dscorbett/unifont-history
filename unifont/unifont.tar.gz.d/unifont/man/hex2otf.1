@@ -15,15 +15,15 @@ utility generates an OpenType font from a GNU Unifont .hex file.
 .PP
 .B hex2otf
 reads a file in Unifont .hex file format, as specified with the
-\fChex=\fP\fIfilename.hex\/\fP operand, and creates an OpenType
-file as specified with the \fCout=\fP\fIfilename.otf\/\fP operand.
+\f(CRhex=\fP\fIfilename.hex\/\fP operand, and creates an OpenType
+file as specified with the \f(CRout=\fP\fIfilename.otf\/\fP operand.
 A combining character offset file may optionally be specified
-with the \fCpos=\fP\fIcombining-file\/\fP operand.
+with the \f(CRpos=\fP\fIcombining-file\/\fP operand.
 .PP
 TrueType and OpenType ID fields are specified with operands
 of the form \fIid\/\fP=\fIstring\/\fP.
 .PP
-A dummy GPOS table can be generated with the \fCgpos\fP option.
+A dummy GPOS table can be generated with the \f(CRgpos\fP option.
 The following subsection describes why this is beneficial.
 .SS "GPOS RATIONALE"
 A dummy GPOS table is useful for positioning combining characters consistently.
@@ -197,12 +197,12 @@ Sample text.
 .SH "FONTFORGE NOTE"
 Default FontForge package installations can incorrectly ignore the
 Unicode plane of glyphs beyond Plane 0 in CID-keyed fonts (such as
-are generated with the \fCformat=cff\fP option).  This is caused by
-the presence of the file \fCAdobe-Identity-0.cidmap\fP, which FontForge
+are generated with the \f(CRformat=cff\fP option).  This is caused by
+the presence of the file \f(CRAdobe-Identity-0.cidmap\fP, which FontForge
 interprets incorrectly to determine Unicode code point glyph mappings
-if present.  This file is located in \fC/usr/share/fontforge/cidmap\fP
+if present.  This file is located in \f(CR/usr/share/fontforge/cidmap\fP
 or a similar directory on GNU/Linux systems.  Removing or renaming
-\fCAdobe-Identity-0.cidmap\fP will cause FontForge to fall back
+\f(CRAdobe-Identity-0.cidmap\fP will cause FontForge to fall back
 on OpenType cmap entries in the font.  FontForge will then correctly
 display all Unicode code points.
 .SH EXAMPLE
@@ -210,12 +210,12 @@ Sample usage:
 .PP
 .RS
 .HP 6
-\fChex2otf hex=unifont.hex pos=combining.txt \\
+\f(CRhex2otf hex=unifont.hex pos=combining.txt \\
 .br
 format=cff,gpos,gsub out=unifont.otf\fP
 .RE
 .SH "EXIT STATUS"
-Status values are defined in \fC<stdlib.h>\fP.
+Status values are defined in \f(CR<stdlib.h>\fP.
 The program exits with status EXIT_SUCCESS upon successful font generation,
 or EXIT_FAILURE if an error occurred.  If an error condition is encountered,
 \fBhex2otf\fP writes a brief diagnostic message to STDERR; in this event,

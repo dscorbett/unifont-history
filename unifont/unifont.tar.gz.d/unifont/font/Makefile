@@ -19,7 +19,7 @@ PERL =
 #compiled
 
 PACKAGE = "unifont"
-VERSION = 17.0.02
+VERSION = 17.0.03
 
 COPYRIGHT = "Copyright (C) 1998-2025 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \

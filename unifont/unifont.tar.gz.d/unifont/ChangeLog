@@ -1,3 +1,54 @@
+2025-11-01  Paul Hardy <unifoundry@gmail.com>
+	* Version 17.0.03.
+	* font/plane00/unifont-base.hex:
+	  - 晓晓Akatsuki simplified U+3022.
+	* font/plane00/wqy.hex:
+	  - 晓晓Akatsuki modified U+887F (衿) to be less similar to U+2561E
+	    (𥘞), used in the Second round of simplified Chinese Characters.
+	  - 晓晓Akatsuk, Boris Zhang, and Kusanagi_Sans modified ideographs
+	    containing the "馬" (Horse) and "鳥" (Bird) radicals to be more
+	    balanced: U+4B77, U+4B7C, U+4B7D, U+4B84, U+4B88, U+99AD, U+99AF,
+	    U+99B0, U+99B1, U+99B2, U+99B4, U+99B7, U+99B8, U+99B9, U+99BB,
+	    U+99BF, U+99C1, U+99C3, U+99C7, U+99CB, U+99CE, U+99CF, U+99D0,
+	    U+99D2, U+99D3, U+99D4, U+99D6, U+99D7, U+99D8, U+99DB, U+99DD,
+	    U+99E4, U+99E8, U+99E9, U+99EC, U+9A02, U+9A0F, U+9CE6, U+9CE8,
+	    U+9CED, U+9CFD, U+9D03, U+9D15, U+9D24, U+9D2B, U+9D3C, U+9D80,
+	    U+9D93, and U+9D95.
+	* font/plane02/zh-plane02.hex, font/plane03/zh-plane03.hex:
+	  - 晓晓Akatsuki added
+	    o 第一批簡體字表 (August 21, 1935~February 1936)
+	    o Chinese Character Simplification Scheme (1956-1986)
+	    o The simplified character list (1986-2013), including
+	      simplified radicals and Chinese characters used for
+	      descriptions and annotations in official documents
+            o The second list of the Second round of simplified Chinese
+	      characters (not officially implemented)
+	    o Plane 2 code points added:
+	      U+2265D, U+2275D, U+22A73, U+23143, U+233B7, U+23519, U+23C76,
+	      U+24D52, U+25081, U+2561E, U+2563D, U+25FBA, U+26B38, U+26BB4,
+	      U+27E89, U+282CC, U+28473, U+2868D, U+28C44, U+2974E, U+2A8C8,
+	      U+2ABC8, U+2B0F5, U+2B124, U+2B209, U+2B2A5, U+2B35A, U+2B4F1,
+	      U+2B52D, U+2BC06, U+2C329, U+2C3BF, U+2C4E0, U+2C728, U+2C94E,
+	      U+2CBA2, U+2CBA6, U+2CE9E, U+2CF65, and U+2E5FB.
+	    o Plane 3 code points added:
+	      U+304BC, U+304CA, U+305E3, U+30B38, U+30C1F, U+30C24, U+30C2C,
+	      U+30F62, U+32064, and U+322A6.
+	  - 晓晓Akatsuki modified U+300DD.
+	  - 晓晓Akatsuki modified U+20509 to conform to the updated form
+	    in additions to the latest CJK Unified Ideographs–Extension J
+	    characters and simultaneously added G-source (mainland China)
+	    glyphs for some characters in other extension blocks.
+	  - 晓晓Akatsuk, Boris Zhang, and Kusanagi_Sans modified ideographs
+	    containing the "馬" (Horse) and "鳥" (Bird) radicals to be more
+	    balanced: U+29FA1, U+29FA7, U+29FE1, U+2A00A, U+2A02C, U+2A02E,
+	    and U+2A068.
+	  - 晓晓Akatsuki and others added the glyphs required by the
+	    Specification of Common Modern Chinese Character Components
+	    and Components Names (现代常用字部件及部件名称规范), published
+	    in mainland China in 2009: U+20094, U+20541, U+215DC, U+223A8,
+	    U+23942, U+248E9, U+26222, U+268DE, and U+26954.
+	* man/hex2otf.1: changed "\fC" to "\f(CR" for better nroff portability.
+
 2025-10-18  Paul Hardy <unifoundry@gmail.com>
 	* Version 17.0.02.
 	* font/plane00/plane00-combining.txt:
