@@ -1,4 +1,6 @@
 
+SHELL = /bin/sh
+
 #
 # Create the Plane 15 unassigned.hex file, with filler glyphs.
 #

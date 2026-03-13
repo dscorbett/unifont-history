@@ -1,6 +1,4 @@
 
-SHELL = /bin/sh
-
 # All C programs are configured to compile cleanly with the GCC
 # flags "-std=c99", "-Wall", and "-pedantic".  This should allow
 # compilation with all versions of GCC from GCC 4.2.1 (the last
@@ -9,13 +7,16 @@ SHELL = /bin/sh
 # hex2otf.c requires the "-std=c99" flag to compile with GCC 4.2.1.
 # The other C programs do not.
 
-# Set these three  values here if desired; can be overridden from
-# the environment.
-# CC = gcc
-# CPPFLAGS =
-# LDFLAGS =
+SHELL = /bin/sh
 
-CFLAGS = -std=c99 -g -O2 -Wall -pedantic
+# Set these values here if desired; can be overridden from
+# the environment.
+CC         ?= gcc
+C99        ?= $(CC) -std=c99
+CFLAGS     ?= -g -O2 -Wall -pedantic
+# CPPFLAGS   ?=
+# LDFLAGS    ?=
+
 
 LOCALBINDIR = ../bin
 
@@ -59,12 +60,12 @@ all: $(CPROGS) bin
 # Earlier Unifont C programs written before hex2otf follow C89 syntax.
 # hex2otf follows C99 syntax, so compile with a C99 flag for older gcc
 # versions.   Notably, several platforms have remained with gcc 4.2.1
-# because it was the last version of gcc licensed under GPLv2.  In
-# the future, the "-std=c99" flag could be added to the global CFLAGS
-# declaration at the beginning of this file.
+# as a default C compiler because it was the last version of gcc
+# licensed under GPLv2.  In the future, the "-std=c99" flag could be
+# added to the global CFLAGS declaration at the beginning of this file.
 #
 hex2otf: hex2otf.c hex2otf.h
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) hex2otf.c -o hex2otf
+	$(C99) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) hex2otf.c -o hex2otf
 
 unifontpic: unifontpic.h unifontpic.o
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) unifontpic.c -o unifontpic
@@ -88,9 +89,9 @@ unigen-hangul: hangul.h unihangul-support.o unigen-hangul.o
 unihangul-support.o: hangul.h unihangul-support.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c unihangul-support.c
 
-bin: bin-stamp
+bin: ../bin-stamp
 
-bin-stamp: $(CPROGS) $(PPROGS)
+../bin-stamp: $(CPROGS) $(PPROGS)
 	install -m0755 -d $(LOCALBINDIR)
 	$(INSTALL) -m0755 $(CPROGS) $(LOCALBINDIR)
 	$(INSTALL) -m0755 $(PPROGS) $(LOCALBINDIR)
@@ -119,12 +120,12 @@ install: bin
 # The *.dSYM is for Mac OS X.
 #
 clean:
-	\rm -f $(CPROGS) *.o
-	\rm -f *~
-	\rm -f *.exe
-	\rm -rf *.dSYM
+	-rm -f $(CPROGS) *.o
+	-rm -f *~
+	-rm -f *.exe
+	-rm -rf *.dSYM
 
 distclean: clean
-	\rm -f bin-stamp *~
+	-rm -f *-stamp ../bin-stamp *~
 
 .PHONY: all bin install clean distclean

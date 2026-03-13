@@ -1,3 +1,15 @@
+2026-03-13: Release 17.0.04
+  * Kusanagi_Sans and Kao Chen-tung (高振東) added a set of over
+    28,000 Unicode Standard T-source Chinese glyphs, adding a new
+    Unicode Plane 0 (Basic Multilingual Plane) variation to Unifont.
+  * Reorganized font/Makefile for more efficient parallel builds.
+  * Large single Unicode plane images now in PNG format instead
+    of BMP to reduce file size.
+  * Additional modifications and additions to Chinese Plane 2 and
+    Plane 3 glyphs.
+  * Devanagari glyphs adjusted.
+  * Miscellaneous other glyph modifications and minor Makefile updates.
+
 2025-11-01: Release 17.0.03
   * Updated numerous Chinese ideographs.
   * Updated constant width macro in hex2otf.1 for better nroff compatibility.

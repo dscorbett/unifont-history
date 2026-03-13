@@ -1,12 +1,14 @@
-CC=gcc
 
-CFLAGS = -g -O2
+SHELL = "/bin/sh"
 
-VERSION = 17.0.03
+CC     ?= gcc
+CFLAGS ?= -g -O2
+
+VERSION = 17.0.04
 
 BINDIR=../../../bin
 
-all: hangul-base.html hangul-syllables.hex hangul-syllables2.hex check man
+all: hangul-base.html ../hangul-syllables.hex hangul-syllables2.hex check
 
 hangul-base.hex: hangul-base.txt
 	$(BINDIR)/hexdraw hangul-base.txt > hangul-base.hex
@@ -17,8 +19,12 @@ hangul-base.hex: hangul-base.txt
 hangul-base.html: hangul-base.hex
 	$(BINDIR)/unijohab2html < hangul-base.hex > hangul-base.html
 
+../hangul-syllables.hex: hangul-syllables.hex
+
 hangul-syllables.hex: hangul-base.hex
 	$(BINDIR)/unigen-hangul -i hangul-base.hex -o hangul-syllables.hex
+	rm -f ../hangul-syllables.hex
+	install -p -m 0644 hangul-syllables.hex ..
 
 hangul-syllables2.hex: hangul-base.hex
 	$(BINDIR)/johab2syllables -i hangul-base.hex -o hangul-syllables2.hex
@@ -56,8 +62,7 @@ check-overlaps:
 	fi
 
 clean:
-	rm -f hangul-syllables.hex hangul-syllables2.hex
 
 distclean: clean
 
-.PHONY: all man check check-diffs check-overlaps clean dist distclean
+.PHONY: all check check-diffs check-overlaps clean dist distclean

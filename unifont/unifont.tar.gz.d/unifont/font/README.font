@@ -1,0 +1,30 @@
+
+Files normally present in the font directory:
+
+Makefile	The make file for building fonts.
+README.font	This file.
+build-cjk-upper
+cjk-subset.dat
+coverage.dat
+coverage.txt
+hexadecimate.awk
+index.html
+otfsrc
+plane00
+plane00csur
+plane01
+plane02
+plane02-jp.html
+plane02-zh.html
+plane03
+plane03-zh.html
+plane0E
+plane0Fcsur
+precompiled
+psf
+ttfsrc
+unipatch-hex.awk
+
+For details on the "*-stamp" and "graphawks-env" intermediate files,
+see explanations in the Makefile in this directory.
+

@@ -8,12 +8,13 @@
 # To build only the font from scratch, use
 # "cd font ; make"
 #
+
 SHELL = /bin/sh
 INSTALL = install
 GZFLAGS = -f -9 -n
 
 PACKAGE = "unifont"
-VERSION = 17.0.03
+VERSION = 17.0.04
 
 #
 # The settings below will install software, man pages, and documentation
@@ -74,19 +75,28 @@ dist: distclean
 	(cd .. && tar chf $(PACKAGE)-$(VERSION).tar $(PACKAGE)-$(VERSION) && \
 		gzip $(GZFLAGS) $(PACKAGE)-$(VERSION).tar)
 
-bindir: bin
+bindir: bin-stamp
 
-bin: src/*
+bin-stamp: src/*
 	set -e && $(MAKE) -C src
+	touch $@
 
 #
 # Conditionally build the font, depending on the value of BUILDFONT.
 # To build the font unconditionally, use the "fontdir" target below.
 #
-buildfont: bindir
+buildfont: bin-stamp buildfont-stamp
+
+#
+# Only touch buildfont-stamp if BUILDFONT=1 is selected;
+# otherwise, the font has not been built.
+#
+buildfont-stamp: bin-stamp
 	if [ x$(BUILDFONT) != x ] ; \
         then \
            set -e && $(MAKE) -C font ; \
+           set -e && $(MAKE) clean -C font ; \
+	   touch $@ ; \
         fi
 
 #
@@ -100,18 +110,27 @@ fontdir:
 # Library directory, which only contains wchardata.c with
 # functions for determining string and letter widths.
 #
-libdir: lib/wchardata.c
+libdir: libdir-stamp
+
+libdir-stamp: lib/wchardata.c
+	touch $@
 
 #
 # texinfo documentation files.
 #
-docdir:
+docdir: docdir-stamp
+
+docdir-stamp:
 	set -e && $(MAKE) -C doc
+	touch $@
 
 #
 # Doxygen HTML and LaTeX/PDF source code documentation.
 #
-doxdir: doxygen
+doxdir: doxdir-stamp
+
+doxdir-stamp: doxygen
+	touch $@
 
 #
 # Generate doxygen/html/* and doxygen/latex/refman.pdf
@@ -132,7 +151,7 @@ precompiled:
 # Create lib/wchardata.c.  If you want to also build the object file
 # wchardata.o, uncomment the last line
 #
-lib/wchardata.c: $(HEXWIDTH) $(ZEROWIDTH) bin
+lib/wchardata.c: $(HEXWIDTH) $(ZEROWIDTH) bin-stamp
 	install -m0755 -d lib
 	sort $(HEXWIDTH) > unifonttemp.hex
 	sort $(ZEROWIDTH) > combiningtemp.txt
@@ -160,14 +179,14 @@ install: bindir libdir docdir doxdir
 	   install -m0644 -p font/precompiled/unifont-$(VERSION).hex     $(PKGDEST)/unifont.hex     && \
 	   install -m0644 -p font/precompiled/unifont_jp-$(VERSION).hex  $(PKGDEST)/unifont_jp.hex  && \
 	   install -m0644 -p font/precompiled/unifont_all-$(VERSION).hex $(PKGDEST)/unifont_all.hex && \
-	   install -m0644 -p font/precompiled/unifont-$(VERSION).bmp     $(PKGDEST)/unifont.bmp ; \
+	   install -m0644 -p font/precompiled/unifont-$(VERSION).png     $(PKGDEST)/unifont.png ; \
 	else \
 	   install -m0644 -p font/compiled/unifont-$(VERSION).hex        $(PKGDEST)/unifont.hex     && \
 	   install -m0644 -p font/compiled/unifont_jp-$(VERSION).hex     $(PKGDEST)/unifont_jp.hex  && \
 	   install -m0644 -p font/compiled/unifont_all-$(VERSION).hex    $(PKGDEST)/unifont_all.hex && \
-	   install -m0644 -p font/compiled/unifont-$(VERSION).bmp        $(PKGDEST)/unifont.bmp ; \
+	   install -m0644 -p font/compiled/unifont-$(VERSION).png        $(PKGDEST)/unifont.png ; \
 	fi
-	gzip $(GZFLAGS) $(PKGDEST)/unifont.bmp
+	gzip $(GZFLAGS) $(PKGDEST)/unifont.png
 
 clean:
 	$(MAKE) -C src  clean
@@ -184,10 +203,12 @@ distclean:
 	$(MAKE) -C doc  distclean
 	$(MAKE) -C man  distclean
 	$(MAKE) -C font distclean
-	\rm -rf bin lib
-	\rm -f unifonttemp.hex
-	\rm -rf *~
-	\rm -rf .DS* ._.DS*
+	-rm -rf bin lib
+	-rm -f *-stamp
+	-rm -f unifonttemp.hex
+	-rm -rf *~
+	-rm -rf .DS* ._.DS*
 
 .PHONY: all dist buildfont fontdir libdir docdir doxdir mandir \
-	truetype precompiled install clean distclean
+	truetype precompiled install clean distclean \
+	bin lib

@@ -28,11 +28,11 @@ TTF_LANG = 0x409
 # Could also use bash string replacement if you know you're using bash.
 #
 
-COPYRIGHT = "Copyright © 1998-2025 Roman Czyborra, Paul Hardy, \
+COPYRIGHT = "Copyright © 1998-2026 Roman Czyborra, Paul Hardy, \
 Qianqian Fang, Andrew Miller, Johnnie Weaver, David Corbett, \
 Ælla Chiana Moskopp, Rebecca Bettencourt, Ho-Seok Ee, et al."
 
-VERSION = 17.0.03
+VERSION = 17.0.04
 
 #
 # How to build unifont.ttf from GNU Unifont's unifont.hex
@@ -131,12 +131,12 @@ sbit: $(FONTFILE).bdf
 # Delete files copied into this directory to build TTF fonts.
 #
 clean:
-	rm -f *.hex *.txt
+	-rm -f *.hex *.txt
 
 #
 # Delete files created within this directory while building TTF fonts.
 #
 distclean: clean
-	rm -f *.sfd *.ttf
+	-rm -f *.sfd *.ttf
 
 .PHONY: all ttf sbit clean distclean

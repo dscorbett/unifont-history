@@ -1,4 +1,6 @@
 
+SHELL = /bin/sh
+
 #
 # Create the Plane 1 unassigned.hex file, with filler glyphs.
 # Create filler glyphs in areas where Unicode scripts are not assigned;
@@ -26,6 +28,6 @@ plane01-noscript.hex: noscript-ranges.txt
 clean:
 
 distclean: clean
-	rm -rf plane01-all.hex
+	-rm -rf plane01-all.hex
 
 .PHONY: clean distclean

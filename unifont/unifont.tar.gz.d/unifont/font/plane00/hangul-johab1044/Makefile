@@ -1,4 +1,6 @@
 
+SHELL = /bin/sh
+
 #
 # Directory where compiled C programs and Perl scripts are.
 #
@@ -212,11 +214,11 @@ hanbase-02.bmp:
 # Remove the files that this Makefile creates.
 
 clean:
-	rm -f hangul-base.hex hangul-base.bdf
-	rm -f ksx-syllables.hex chojung-syllables.hex
-	rm -f syllables/* ksx-syllables/* chojung-syllables/*
+	# -rm -f hangul-base.hex hangul-base.bdf
+	# -rm -f ksx-syllables.hex chojung-syllables.hex
+	# -rm -f syllables/* ksx-syllables/* chojung-syllables/*
 
 distclean: clean
-	rm -rf hangul-syllables.hex syllables ksx-syllables chojung-syllables
+	# -rm -rf hangul-syllables.hex syllables ksx-syllables chojung-syllables
 
 .PHONY: all bin hangul-bmp ksx chujung

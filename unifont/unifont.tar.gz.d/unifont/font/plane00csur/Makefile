@@ -1,4 +1,6 @@
 
+SHELL = /bin/sh
+
 #
 # Create the Plane 0 CSUR unassigned.hex file, with filler glyphs.
 # Create filler glyphs in areas where Unicode scripts are not assigned;
@@ -24,6 +26,6 @@ plane00csur-unassigned.hex: unassigned-ranges.txt
 clean:
 
 distclean: clean
-	rm -f plane00csur-all.hex
+	-rm -f plane00csur-all.hex
 
 .PHONY: clean distclean

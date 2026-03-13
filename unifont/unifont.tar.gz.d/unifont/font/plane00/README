@@ -33,25 +33,29 @@ conveniently determined in this directory with
 
 The last line will be a grand total.
 
-Here is the output of "wc -l *.hex" with the Unifont 13.0.01 glyph files:
+Here is the output of "wc -l *.hex" with the Unifont 17.0.04 glyph files:
 
        1 copyleft.hex
        0 custom00.hex
    11172 hangul-syllables.hex
-    9880 izmg16-plane00.hex
+    9968 izmg16-plane00.hex
        2 omit.hex
-      90 plane00-nonprinting.hex
-    1551 plane00-unassigned.hex
+      92 plane00-nonprinting.hex
+    1336 plane00-unassigned.hex
     6400 pua.hex
       17 spaces.hex
-   16461 unifont-base.hex
-   27795 wqy.hex
-   73369 total
+   28142 t-source.hex
+   16671 unifont-base.hex
+   27798 wqy.hex
+  ------
+  101599 total
 
-This makes a total of 73,369 lines in all *.hex files in this directory.
-Subtracting the 9,880 duplicate code points that exist in izmg16-plane00.hex
-and the one Plane 1 glyph in copyleft.hex, the total non-duplicate Plane 0
-code points amount to 73,369 - 9,880 - 1 = 63,488 glyphs.  That subtotal
+This makes a total of 101,599 lines in all *.hex files in this directory
+as of Unifont 17.0.04.
+
+Subtracting the duplicate code points that exist in izmg16-plane00.hex,
+t-source.hex, and the one Plane 1 glyph in copyleft.hex, the total
+non-duplicate Plane 0 code points amount to 63,488 glyphs.  That subtotal
 should remain constant for Plane 0, as described at the beginning of
 this document.
 
